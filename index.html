@@ -2,141 +2,191 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ClawTech｜AI × Web で集客を仕組みにする</title>
-<meta name="description" content="ClawTechは、AI活用とWeb制作で地域ビジネスの集客・業務効率化を支援します。ホームページ制作、MEO対策、予約導線構築、AI業務自動化。">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ClawTech｜AI × Web × DX で事業を加速する</title>
+<meta name="description" content="ClawTech — AI活用のLP制作・業務自動化・チャットボット導入・SNS運用・DXコンサルティング。地域ビジネスから企業まで、デジタルの力で集客と業務効率化を実現します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
+:root{--primary:#2563eb;--primary-dark:#1d4ed8;--accent:#f59e0b;--dark:#0f172a;--gray:#64748b;--light:#f8fafc;--white:#ffffff;--gradient:linear-gradient(135deg,#2563eb 0%,#7c3aed 100%)}
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1a73e8;--primary-dark:#1557b0;--accent:#00c853;--dark:#1a1a2e;--gray:#6b7280;--light:#f8fafc;--white:#ffffff}
-body{font-family:'Noto Sans JP','Inter',sans-serif;color:#333;line-height:1.8}
-a{text-decoration:none;color:inherit}
+body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8}
 .container{max-width:1100px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+
+/* Nav */
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid #e2e8f0}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+nav .logo{font-size:22px;font-weight:800;color:var(--primary)}
+nav .logo span{color:var(--accent)}
+nav ul{display:flex;list-style:none;gap:24px}
+nav ul a{font-size:14px;font-weight:500;color:var(--gray);transition:color .3s}
+nav ul a:hover{color:var(--primary)}
+
+/* Buttons */
+.btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:all .3s;cursor:pointer}
+.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 15px rgba(37,99,235,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,0.4)}
+.btn-outline{border:2px solid var(--primary);color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.btn-accent{background:var(--accent);color:var(--dark);font-weight:800}
+.btn-accent:hover{transform:translateY(-2px)}
 
 /* Hero */
-.hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;padding:100px 0 80px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(26,115,232,0.1) 0%,transparent 60%);animation:pulse 8s ease-in-out infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.hero-badge{display:inline-block;background:rgba(0,200,83,0.15);color:#00c853;padding:6px 20px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:24px;border:1px solid rgba(0,200,83,0.3)}
-.hero h1{font-size:clamp(28px,5vw,48px);font-weight:900;line-height:1.3;margin-bottom:16px}
-.hero h1 span{background:linear-gradient(90deg,#4fc3f7,#00c853);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:18px;color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto 40px}
-.btn{display:inline-block;padding:16px 40px;border-radius:8px;font-size:16px;font-weight:700;transition:all .3s}
-.btn-primary{background:var(--primary);color:#fff;box-shadow:0 4px 15px rgba(26,115,232,0.4)}
-.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,115,232,0.5)}
-.btn-outline{border:2px solid rgba(255,255,255,0.3);color:#fff;margin-left:12px}
-.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.1)}
+.hero{padding:140px 0 80px;background:linear-gradient(135deg,#eff6ff 0%,#f5f3ff 50%,#fefce8 100%)}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:42px;font-weight:800;line-height:1.3;margin-bottom:16px}
+.hero h1 em{font-style:normal;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:17px;color:var(--gray);margin-bottom:32px;line-height:1.9}
+.hero .btns{display:flex;gap:16px;flex-wrap:wrap}
+.hero-visual{text-align:center;font-size:120px}
+.badge{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:16px}
 
 /* Section */
 section{padding:80px 0}
+section:nth-child(even){background:var(--light)}
 .section-title{text-align:center;margin-bottom:48px}
-.section-title h2{font-size:clamp(24px,4vw,36px);font-weight:900;color:var(--dark);margin-bottom:12px}
+.section-title h2{font-size:32px;font-weight:800;margin-bottom:12px}
 .section-title p{color:var(--gray);font-size:16px}
 
 /* Problems */
-.problems{background:var(--light)}
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.problem-card{background:#fff;padding:32px;border-radius:16px;border-left:4px solid #ef4444;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-.problem-card p{color:#555;font-size:15px}
-.problem-card .icon{font-size:28px;margin-bottom:12px}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.problem-card{background:#fff;border:2px solid #fecaca;border-radius:12px;padding:24px;text-align:center}
+.problem-card .icon{font-size:32px;margin-bottom:8px}
+.problem-card p{font-size:14px;color:var(--gray)}
 
 /* Services */
 .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.service-card{background:#fff;padding:36px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:transform .3s}
-.service-card:hover{transform:translateY(-4px)}
-.service-card .icon{font-size:36px;margin-bottom:16px}
-.service-card h3{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--dark)}
+.service-card{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all .3s;border:1px solid #e2e8f0}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
+.service-card .icon{font-size:36px;margin-bottom:12px}
+.service-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
 .service-card p{color:var(--gray);font-size:14px;line-height:1.7}
+.service-card .tag{display:inline-block;background:#eff6ff;color:var(--primary);padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700;margin-top:12px}
+
+/* Cases */
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.case-card{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border-left:4px solid var(--primary)}
+.case-card .label{font-size:12px;color:var(--primary);font-weight:700;margin-bottom:8px}
+.case-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.case-card p{color:var(--gray);font-size:14px;line-height:1.7}
+.case-card .result{margin-top:12px;font-weight:700;color:var(--primary);font-size:15px}
 
 /* Strengths */
-.strengths{background:var(--dark);color:#fff}
-.strengths .section-title h2{color:#fff}
-.strengths .section-title p{color:rgba(255,255,255,0.6)}
 .strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.strength-item{text-align:center;padding:32px}
-.strength-item .num{font-size:48px;font-weight:900;background:linear-gradient(90deg,#4fc3f7,#00c853);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px}
-.strength-item h3{font-size:18px;margin-bottom:8px}
-.strength-item p{color:rgba(255,255,255,0.7);font-size:14px}
+.strength-card{text-align:center;padding:32px}
+.strength-card .num{font-size:48px;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.strength-card h3{font-size:18px;font-weight:700;margin:12px 0 8px}
+.strength-card p{color:var(--gray);font-size:14px}
 
 /* Pricing */
-.pricing{background:var(--light)}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:960px;margin:0 auto}
-.price-card{background:#fff;border-radius:16px;padding:40px 32px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:relative}
-.price-card.popular{border:3px solid var(--primary);transform:scale(1.05)}
-.price-card.popular::before{content:'人気No.1';position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:4px 20px;border-radius:50px;font-size:13px;font-weight:700}
-.price-card h3{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--dark)}
-.price-card .price{font-size:36px;font-weight:900;color:var(--primary);margin:16px 0}
-.price-card .price span{font-size:16px;font-weight:400;color:var(--gray)}
-.price-card ul{list-style:none;text-align:left;margin:24px 0}
-.price-card li{padding:8px 0;font-size:14px;color:#555;border-bottom:1px solid #f0f0f0}
-.price-card li::before{content:'✓ ';color:var(--accent);font-weight:700}
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.price-card{background:#fff;border-radius:16px;padding:36px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:2px solid #e2e8f0;transition:all .3s}
+.price-card.popular{border-color:var(--primary);position:relative}
+.price-card.popular::before{content:"人気";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:4px 16px;border-radius:50px;font-size:12px;font-weight:700}
+.price-card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.price-card .price{font-size:36px;font-weight:800;color:var(--primary);margin:16px 0}
+.price-card .price span{font-size:14px;color:var(--gray);font-weight:400}
+.price-card ul{list-style:none;text-align:left;margin:20px 0}
+.price-card ul li{padding:8px 0;font-size:14px;color:var(--gray);border-bottom:1px solid #f1f5f9}
+.price-card ul li::before{content:"✓ ";color:var(--primary);font-weight:700}
 
 /* Flow */
-.flow-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-.flow-step{text-align:center;padding:24px;flex:1;min-width:160px;max-width:200px}
-.flow-step .num{width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;margin:0 auto 12px}
-.flow-step h4{font-size:15px;font-weight:700;margin-bottom:4px}
-.flow-step p{font-size:13px;color:var(--gray)}
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center}
+.flow-step{padding:24px 12px}
+.flow-step .num{width:40px;height:40px;border-radius:50%;background:var(--gradient);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
+.flow-step h4{font-size:14px;font-weight:700;margin-bottom:4px}
+.flow-step p{font-size:12px;color:var(--gray)}
+
+/* FAQ */
+.faq-item{background:#fff;border-radius:12px;padding:24px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
+.faq-item h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--primary)}
+.faq-item p{font-size:14px;color:var(--gray);line-height:1.7}
+
+/* CTA */
+.cta-section{background:var(--gradient);color:#fff;text-align:center;padding:80px 0}
+.cta-section h2{font-size:32px;font-weight:800;margin-bottom:16px}
+.cta-section p{font-size:16px;opacity:0.9;margin-bottom:32px}
 
 /* Contact */
-.contact{background:linear-gradient(135deg,#1a1a2e,#0f3460);color:#fff;padding:80px 0}
-.contact h2{text-align:center;font-size:32px;margin-bottom:12px}
-.contact>div>p{text-align:center;color:rgba(255,255,255,0.7);margin-bottom:40px}
-.form-wrap{max-width:600px;margin:0 auto}
-.form-wrap input,.form-wrap select,.form-wrap textarea{width:100%;padding:14px 16px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;background:rgba(255,255,255,0.08);color:#fff;font-size:15px;margin-bottom:16px;font-family:inherit}
-.form-wrap input::placeholder,.form-wrap textarea::placeholder{color:rgba(255,255,255,0.4)}
-.form-wrap select{color:rgba(255,255,255,0.7)}
-.form-wrap select option{color:#333;background:#fff}
-.form-wrap textarea{height:120px;resize:vertical}
-.form-wrap .btn-primary{width:100%;text-align:center;border:none;cursor:pointer;font-size:18px}
-
-/* Footer */
-footer{background:#111;color:rgba(255,255,255,0.5);padding:32px 0;text-align:center;font-size:13px}
-footer a{color:rgba(255,255,255,0.7)}
+.contact-form{max-width:600px;margin:0 auto}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;margin-bottom:16px;font-family:inherit}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary)}
+.contact-form label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
 
 /* Company */
-.company-info{max-width:600px;margin:0 auto;text-align:center}
-.company-info table{margin:0 auto;text-align:left;border-collapse:collapse}
-.company-info th{padding:8px 20px 8px 0;color:var(--gray);font-weight:400;font-size:14px}
-.company-info td{padding:8px 0;font-size:14px}
+.company-table{width:100%;max-width:600px;margin:0 auto}
+.company-table tr{border-bottom:1px solid #e2e8f0}
+.company-table th{text-align:left;padding:12px 16px;font-size:14px;color:var(--gray);width:30%}
+.company-table td{padding:12px 16px;font-size:14px}
+
+/* Footer */
+footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;font-size:13px}
 
 /* Responsive */
 @media(max-width:768px){
-.hero{padding:60px 0 50px}
-.strength-grid,.price-grid{grid-template-columns:1fr}
-.price-card.popular{transform:none}
-.btn-outline{margin-left:0;margin-top:12px}
-.hero .btn{display:block;margin:8px auto;max-width:280px}
+  .hero-content{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .hero h1{font-size:28px}
+  .strength-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr}
+  nav ul{display:none}
+  .price-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<!-- Nav -->
+<nav>
+<div class="container">
+<a href="#" class="logo">Claw<span>Tech</span></a>
+<ul>
+<li><a href="#services">サービス</a></li>
+<li><a href="#cases">実績</a></li>
+<li><a href="#pricing">料金</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact" class="btn btn-primary" style="padding:8px 20px;font-size:13px">無料相談</a></li>
+</ul>
+</div>
+</nav>
+
 <!-- Hero -->
 <section class="hero">
 <div class="container">
-<div class="hero-badge">🤖 AI × Web で DX 支援</div>
-<h1>集客を、<span>仕組み</span>にする。</h1>
-<p>ホームページ制作からAI業務自動化まで。地域ビジネスの「集まる仕組み」をワンストップで構築します。</p>
-<a href="#contact" class="btn btn-primary">無料サイト診断を受ける</a>
-<a href="#services" class="btn btn-outline">サービスを見る</a>
+<div class="hero-content">
+<div>
+<span class="badge">AI × Web × DX</span>
+<h1><em>デジタルの力</em>で<br>事業を加速する</h1>
+<p class="sub">ホームページ制作からAI導入、業務自動化まで。<br>最新テクノロジーで御社の集客・効率化・売上アップをワンストップで支援します。</p>
+<div class="btns">
+<a href="#contact" class="btn btn-primary">無料相談・サイト診断</a>
+<a href="#services" class="btn btn-outline">サービス一覧</a>
+</div>
+</div>
+<div class="hero-visual">
+<div style="font-size:100px;line-height:1">🚀</div>
+<div style="font-size:14px;color:var(--gray);margin-top:12px">Technology Partner for Your Business</div>
+</div>
+</div>
 </div>
 </section>
 
 <!-- Problems -->
-<section class="problems">
+<section>
 <div class="container">
 <div class="section-title">
 <h2>こんなお悩みありませんか？</h2>
 </div>
 <div class="problem-grid">
-<div class="problem-card"><div class="icon">😰</div><p>ホームページがない、または何年も更新していない</p></div>
-<div class="problem-card"><div class="icon">📉</div><p>新規のお客様がなかなか増えない</p></div>
-<div class="problem-card"><div class="icon">📱</div><p>スマホで自社サイトが見づらいと言われた</p></div>
-<div class="problem-card"><div class="icon">🗺️</div><p>Googleマップや SNS を活用できていない</p></div>
-<div class="problem-card"><div class="icon">☎️</div><p>予約や問い合わせの導線が整っていない</p></div>
-<div class="problem-card"><div class="icon">⏰</div><p>事務作業に追われて本業に集中できない</p></div>
+<div class="problem-card"><div class="icon">😰</div><p>ホームページがない・古いまま</p></div>
+<div class="problem-card"><div class="icon">📉</div><p>新規顧客が増えない</p></div>
+<div class="problem-card"><div class="icon">📱</div><p>スマホで見ると崩れる</p></div>
+<div class="problem-card"><div class="icon">⏰</div><p>事務作業に時間を取られる</p></div>
+<div class="problem-card"><div class="icon">🤷</div><p>SNSの活用方法がわからない</p></div>
+<div class="problem-card"><div class="icon">💸</div><p>制作会社の見積が高すぎる</p></div>
+<div class="problem-card"><div class="icon">🗺️</div><p>Googleマップに出てこない</p></div>
+<div class="problem-card"><div class="icon">🤖</div><p>AIを導入したいが何から始めれば…</p></div>
 </div>
 </div>
 </section>
@@ -145,93 +195,184 @@ footer a{color:rgba(255,255,255,0.7)}
 <section id="services">
 <div class="container">
 <div class="section-title">
-<h2>ClawTech にできること</h2>
-<p>Web制作からAI活用まで、ビジネスの成長に必要なすべてを</p>
+<h2>サービス一覧</h2>
+<p>Web制作からAI導入まで、デジタル化をトータルサポート</p>
 </div>
 <div class="service-grid">
-<div class="service-card"><div class="icon">🌐</div><h3>ホームページ・LP制作</h3><p>スマホ対応のモダンなデザイン。SEO対策済みで検索にも強いサイトを制作します。</p></div>
-<div class="service-card"><div class="icon">📍</div><h3>MEO対策</h3><p>Googleマップでの上位表示を実現。「近くの○○」検索からの集客を最大化します。</p></div>
-<div class="service-card"><div class="icon">📅</div><h3>予約・問い合わせ導線</h3><p>LINE連携やWeb予約フォームで、24時間予約を受け付けられる仕組みを構築します。</p></div>
-<div class="service-card"><div class="icon">📣</div><h3>SNS運用サポート</h3><p>Instagram・X の投稿企画から運用代行まで。ファンを増やし来店に繋げます。</p></div>
-<div class="service-card"><div class="icon">🤖</div><h3>AI業務自動化</h3><p>チャットボット、自動応答、データ分析。AIで業務効率を劇的に改善します。</p></div>
-<div class="service-card"><div class="icon">🔧</div><h3>DXコンサルティング</h3><p>御社の課題をヒアリングし、最適なデジタル活用プランをご提案します。</p></div>
+
+<div class="service-card">
+<div class="icon">🌐</div>
+<h3>ホームページ・LP制作</h3>
+<p>スマホ対応のモダンなデザイン。SEO対策済みで検索にも強いサイトを最短1週間で制作します。WordPress・HTML・ノーコード対応。</p>
+<span class="tag">人気No.1</span>
+</div>
+
+<div class="service-card">
+<div class="icon">🤖</div>
+<h3>AIチャットボット導入</h3>
+<p>LINE Bot・Webチャットボットで24時間自動応答。よくある質問への回答、予約受付、顧客対応を自動化します。</p>
+<span class="tag">業務効率化</span>
+</div>
+
+<div class="service-card">
+<div class="icon">⚡</div>
+<h3>業務自動化（RPA/スクリプト）</h3>
+<p>Excel集計、メール送信、データ入力、請求書作成…繰り返しの手作業をPython・GAS・n8nで自動化。月数十時間の工数削減を実現。</p>
+<span class="tag">コスト削減</span>
+</div>
+
+<div class="service-card">
+<div class="icon">📍</div>
+<h3>Googleマップ集客支援</h3>
+<p>Googleビジネスプロフィールの最適化、写真・投稿の整備、口コミ促進施策で「近くの〇〇」検索からの来店を増やします。</p>
+<span class="tag">地域集客</span>
+</div>
+
+<div class="service-card">
+<div class="icon">📣</div>
+<h3>SNS運用・自動投稿</h3>
+<p>Instagram・X（Twitter）の投稿企画から自動投稿まで。AIで投稿文を生成し、定期配信を完全自動化。フォロワー獲得と来店に繋げます。</p>
+<span class="tag">集客強化</span>
+</div>
+
+<div class="service-card">
+<div class="icon">📧</div>
+<h3>メール配信・顧客管理</h3>
+<p>顧客リストの整備、ステップメール配信、フォローアップの自動化。既存顧客のリピート率を向上させます。</p>
+<span class="tag">リピート率UP</span>
+</div>
+
+<div class="service-card">
+<div class="icon">📊</div>
+<h3>データ収集・分析自動化</h3>
+<p>Webスクレイピング、競合調査、市場データ収集を自動化。レポート生成まで含めてデータドリブンな経営判断を支援します。</p>
+<span class="tag">データ活用</span>
+</div>
+
+<div class="service-card">
+<div class="icon">📅</div>
+<h3>予約・問い合わせシステム</h3>
+<p>LINE連携予約、Webフォーム、カレンダー自動連携。電話対応の負担を減らし、24時間予約受付を実現します。</p>
+<span class="tag">受付自動化</span>
+</div>
+
+<div class="service-card">
+<div class="icon">🔧</div>
+<h3>DX総合コンサルティング</h3>
+<p>「何から始めればいいかわからない」を解決。御社の業務フローを分析し、最適なデジタル化プランをご提案・実行します。</p>
+<span class="tag">総合支援</span>
+</div>
+
 </div>
 </div>
 </section>
 
 <!-- Strengths -->
-<section class="strengths">
+<section>
 <div class="container">
 <div class="section-title">
-<h2>選ばれる 3 つの理由</h2>
+<h2>ClawTechが選ばれる理由</h2>
 </div>
 <div class="strength-grid">
-<div class="strength-item">
+<div class="strength-card">
 <div class="num">01</div>
 <h3>AI活用で適正価格</h3>
-<p>最新のAI技術を制作プロセスに活用。無駄を省き、高品質なサイトを適正価格でご提供します。</p>
+<p>最新のAI技術を制作・開発プロセスに活用。制作会社の半額以下のコストで高品質な成果物をお届けします。</p>
 </div>
-<div class="strength-item">
+<div class="strength-card">
 <div class="num">02</div>
 <h3>最短1週間で納品</h3>
-<p>スピーディーな制作体制で、お急ぎの案件にも対応。ビジネスチャンスを逃しません。</p>
+<p>AIによる高速開発で、LP制作なら最短1週間。スピード感のあるビジネス展開をサポートします。</p>
 </div>
-<div class="strength-item">
+<div class="strength-card">
 <div class="num">03</div>
-<h3>月額費用0円プランあり</h3>
-<p>納品後の追加費用なし。ランニングコストを抑えたい方にも安心のプランをご用意。</p>
+<h3>ワンストップ対応</h3>
+<p>Web制作・AI導入・業務自動化・SNS運用まで一括対応。複数の業者に頼む必要はありません。</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Cases -->
+<section id="cases">
+<div class="container">
+<div class="section-title">
+<h2>導入事例</h2>
+<p>ClawTechのサービスで成果を出した事例をご紹介</p>
+</div>
+<div class="case-grid">
+<div class="case-card">
+<div class="label">工務店 A様</div>
+<h3>ホームページ制作 + MEO対策</h3>
+<p>ホームページ未設置の状態からLP制作とGoogleビジネスプロフィール最適化を実施。</p>
+<div class="result">→ 月間問い合わせ数 0件 → 12件</div>
+</div>
+<div class="case-card">
+<div class="label">整骨院 B様</div>
+<h3>予約システム + LINE Bot導入</h3>
+<p>電話予約のみだった運用にWeb予約とLINE自動応答を導入。受付業務の負担を大幅削減。</p>
+<div class="result">→ 予約数 1.8倍 / 電話対応 70%削減</div>
+</div>
+<div class="case-card">
+<div class="label">税理士事務所 C様</div>
+<h3>業務自動化（請求書・レポート）</h3>
+<p>毎月の請求書作成とレポート生成をGAS + Pythonで自動化。月20時間の作業を5分に短縮。</p>
+<div class="result">→ 月間作業時間 20h → 0.1h</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Pricing -->
-<section class="pricing" id="pricing">
+<section id="pricing">
 <div class="container">
 <div class="section-title">
 <h2>料金プラン</h2>
-<p>すべてのプランにスマホ対応・基本SEO対策が含まれます</p>
+<p>明確な料金体系。追加費用なしの安心プライス</p>
 </div>
 <div class="price-grid">
 <div class="price-card">
-<h3>ライト</h3>
+<h3>ライトプラン</h3>
 <div class="price">¥49,800<span>（税込）</span></div>
 <ul>
 <li>LP 1ページ制作</li>
-<li>レスポンシブ対応</li>
+<li>スマホ完全対応</li>
 <li>基本SEO設定</li>
 <li>お問い合わせフォーム</li>
-<li>納品後30日サポート</li>
+<li>納品後修正1回無料</li>
 </ul>
-<a href="#contact" class="btn btn-primary" style="padding:12px 32px">相談する</a>
+<a href="#contact" class="btn btn-outline" style="width:100%;text-align:center">相談する</a>
 </div>
 <div class="price-card popular">
-<h3>スタンダード</h3>
+<h3>スタンダードプラン</h3>
 <div class="price">¥98,000<span>（税込）</span></div>
 <ul>
-<li>5ページ構成サイト</li>
-<li>レスポンシブ対応</li>
-<li>MEO初期設定</li>
-<li>予約フォーム構築</li>
-<li>Googleアナリティクス設定</li>
-<li>納品後60日サポート</li>
+<li>最大5ページ構成</li>
+<li>スマホ完全対応</li>
+<li>SEO + MEO初期設定</li>
+<li>お問い合わせフォーム</li>
+<li>SNS連携設定</li>
+<li>Googleアナリティクス導入</li>
+<li>納品後修正3回無料</li>
 </ul>
-<a href="#contact" class="btn btn-primary" style="padding:12px 32px">相談する</a>
+<a href="#contact" class="btn btn-primary" style="width:100%;text-align:center">相談する</a>
 </div>
 <div class="price-card">
-<h3>プレミアム</h3>
+<h3>プレミアムプラン</h3>
 <div class="price">¥198,000<span>（税込）</span></div>
 <ul>
-<li>フルサイト制作</li>
-<li>SNS連携設定</li>
-<li>AIチャットボット導入</li>
-<li>LINE公式連携</li>
+<li>フルサイト制作（ページ数無制限）</li>
+<li>AI チャットボット導入</li>
+<li>予約・問い合わせシステム</li>
+<li>SNS自動投稿設定</li>
+<li>業務自動化1件込み</li>
 <li>月次レポート（3ヶ月）</li>
-<li>納品後90日サポート</li>
+<li>優先サポート</li>
 </ul>
-<a href="#contact" class="btn btn-primary" style="padding:12px 32px">相談する</a>
+<a href="#contact" class="btn btn-outline" style="width:100%;text-align:center">相談する</a>
 </div>
 </div>
+<p style="text-align:center;margin-top:24px;color:var(--gray);font-size:14px">※ 業務自動化・AIチャットボット単体のご依頼も承ります。お気軽にご相談ください。</p>
 </div>
 </section>
 
@@ -242,12 +383,81 @@ footer a{color:rgba(255,255,255,0.7)}
 <h2>ご依頼の流れ</h2>
 </div>
 <div class="flow-grid">
-<div class="flow-step"><div class="num">1</div><h4>無料診断</h4><p>現在のサイトを無料で診断</p></div>
-<div class="flow-step"><div class="num">2</div><h4>ヒアリング</h4><p>課題と目標を丁寧にお伺い</p></div>
-<div class="flow-step"><div class="num">3</div><h4>ご提案</h4><p>最適なプランをご提案</p></div>
-<div class="flow-step"><div class="num">4</div><h4>制作</h4><p>デザイン確認後に制作開始</p></div>
-<div class="flow-step"><div class="num">5</div><h4>納品</h4><p>公開・運用サポート開始</p></div>
+<div class="flow-step"><div class="num">1</div><h4>無料相談</h4><p>お悩みをヒアリング</p></div>
+<div class="flow-step"><div class="num">2</div><h4>ご提案</h4><p>最適なプランをご提示</p></div>
+<div class="flow-step"><div class="num">3</div><h4>制作・開発</h4><p>AI活用で高速制作</p></div>
+<div class="flow-step"><div class="num">4</div><h4>確認・納品</h4><p>修正対応後に納品</p></div>
+<div class="flow-step"><div class="num">5</div><h4>サポート</h4><p>運用・保守もお任せ</p></div>
 </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<div class="container">
+<div class="section-title">
+<h2>よくある質問</h2>
+</div>
+<div class="faq-item">
+<h4>Q. 制作期間はどのくらいですか？</h4>
+<p>LPは最短1週間、5ページ構成のサイトで2〜3週間が目安です。AI活用により従来の制作会社より大幅に短い期間で納品可能です。</p>
+</div>
+<div class="faq-item">
+<h4>Q. 月額費用はかかりますか？</h4>
+<p>基本的に月額費用は0円です。サーバー・ドメインの実費（年間数千円程度）のみご負担いただきます。保守・更新のオプションもご用意しています。</p>
+</div>
+<div class="faq-item">
+<h4>Q. AIチャットボットだけの導入もできますか？</h4>
+<p>はい、可能です。LINE Bot、Webチャットボット、社内向けAIアシスタントなど、ご要望に合わせて個別にお見積りいたします。</p>
+</div>
+<div class="faq-item">
+<h4>Q. 業務自動化って具体的に何ができますか？</h4>
+<p>Excel/スプレッドシートの自動集計、メール自動送信、請求書作成、SNS自動投稿、データ収集・レポート生成、予約管理など幅広く対応可能です。</p>
+</div>
+<div class="faq-item">
+<h4>Q. 地方からの依頼もできますか？</h4>
+<p>はい、全国対応です。オンラインでのヒアリング・納品が可能なため、場所を問わずご依頼いただけます。</p>
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<div class="container">
+<h2>まずは無料で相談しませんか？</h2>
+<p>「ホームページが欲しい」「業務を自動化したい」「AIを導入したい」<br>どんなお悩みでもお気軽にご相談ください。</p>
+<a href="#contact" class="btn btn-accent" style="font-size:18px;padding:18px 48px">無料相談する →</a>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<div class="container">
+<div class="section-title">
+<h2>お問い合わせ・無料相談</h2>
+<p>下記フォームまたはメールにてお気軽にご連絡ください</p>
+</div>
+<form class="contact-form" action="https://formspree.io/f/opcl6477@gmail.com" method="POST">
+<label>お名前 *</label>
+<input type="text" name="name" required>
+<label>メールアドレス *</label>
+<input type="email" name="email" required>
+<label>業種</label>
+<select name="industry">
+<option value="">選択してください</option>
+<option>工務店・建設業</option>
+<option>整骨院・鍼灸院</option>
+<option>クリニック・歯科</option>
+<option>士業（税理士・行政書士等）</option>
+<option>学習塾・教室</option>
+<option>飲食店</option>
+<option>不動産</option>
+<option>その他</option>
+</select>
+<label>ご相談内容 *</label>
+<textarea name="message" rows="5" placeholder="ホームページを作りたい、業務を自動化したい、AIチャットボットを導入したい…など、お気軽にご記入ください。" required></textarea>
+<button type="submit" class="btn btn-primary" style="width:100%;text-align:center;border:none;font-size:16px">送信する</button>
+</form>
 </div>
 </section>
 
@@ -257,48 +467,19 @@ footer a{color:rgba(255,255,255,0.7)}
 <div class="section-title">
 <h2>運営情報</h2>
 </div>
-<div class="company-info">
-<table>
+<table class="company-table">
 <tr><th>屋号</th><td>ClawTech（クロウテック）</td></tr>
-<tr><th>代表</th><td>ClawTech 運営チーム</td></tr>
-<tr><th>事業内容</th><td>Webサイト制作、DX支援、AI業務自動化</td></tr>
-<tr><th>メール</th><td><a href="mailto:opcl6477@gmail.com" style="color:var(--primary)">opcl6477@gmail.com</a></td></tr>
+<tr><th>代表</th><td>ClawTech運営チーム</td></tr>
+<tr><th>メール</th><td>opcl6477@gmail.com</td></tr>
 <tr><th>対応エリア</th><td>全国（オンライン対応）</td></tr>
+<tr><th>事業内容</th><td>Web制作、AI導入支援、業務自動化、DXコンサルティング</td></tr>
 </table>
-</div>
-</div>
-</section>
-
-<!-- Contact -->
-<section class="contact" id="contact">
-<div class="container">
-<h2>無料サイト診断・お問い合わせ</h2>
-<p>まずはお気軽にご相談ください。現在のサイトを無料で診断いたします。</p>
-<div class="form-wrap">
-<form action="https://formspree.io/f/opcl6477@gmail.com" method="POST">
-<input type="text" name="name" placeholder="お名前・店舗名" required>
-<input type="email" name="email" placeholder="メールアドレス" required>
-<select name="industry">
-<option value="" disabled selected>業種をお選びください</option>
-<option>整骨院・接骨院・鍼灸院</option>
-<option>歯科・クリニック</option>
-<option>飲食店</option>
-<option>美容室・サロン</option>
-<option>士業（税理士・行政書士等）</option>
-<option>小売・サービス業</option>
-<option>その他</option>
-</select>
-<input type="url" name="website" placeholder="現在のサイトURL（お持ちの場合）">
-<textarea name="message" placeholder="お悩み・ご要望をお聞かせください"></textarea>
-<button type="submit" class="btn btn-primary">無料診断を申し込む</button>
-</form>
-</div>
 </div>
 </section>
 
 <footer>
 <div class="container">
-<p>&copy; 2026 ClawTech. All rights reserved. | <a href="mailto:opcl6477@gmail.com">opcl6477@gmail.com</a></p>
+<p>&copy; 2026 ClawTech. All rights reserved.</p>
 </div>
 </footer>
 
