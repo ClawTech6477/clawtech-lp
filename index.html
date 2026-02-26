@@ -628,9 +628,10 @@ MEO初期設定 ¥0
 <p>明確な料金体系。追加費用なしの安心プライス</p>
 </div>
 <div class="price-grid">
+
 <div class="price-card popular fade-up">
 <h3>スタンダードプラン</h3>
-<div class="price">¥98,000<small>（税込）</small></div>
+<div class="price">&yen;98,000<small>（税込）</small></div>
 <div class="price-note">本格サイトに最適</div>
 <ul>
 <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>最大5ページ構成</li>
@@ -643,9 +644,10 @@ MEO初期設定 ¥0
 </ul>
 <a href="#contact" class="btn btn-primary" style="width:100%">&#x2728; 無料相談する</a>
 </div>
+
 <div class="price-card fade-up">
 <h3>ライトプラン</h3>
-<div class="price">¥49,800<small>（税込）</small></div>
+<div class="price">&yen;49,800<small>（税込）</small></div>
 <div class="price-note">LP 1ページに最適</div>
 <ul>
 <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>LP 1ページ制作</li>
@@ -656,9 +658,10 @@ MEO初期設定 ¥0
 </ul>
 <a href="#contact" class="btn btn-dark" style="width:100%">無料相談する &rarr;</a>
 </div>
+
 <div class="price-card fade-up">
 <h3>プレミアムプラン</h3>
-<div class="price">¥198,000<small>（税込）</small></div>
+<div class="price">&yen;198,000<small>（税込）</small></div>
 <div class="price-note">フルパッケージ</div>
 <ul>
 <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>フルサイト制作（ページ数無制限）</li>
@@ -671,6 +674,7 @@ MEO初期設定 ¥0
 </ul>
 <a href="#contact" class="btn btn-dark" style="width:100%">無料相談する &rarr;</a>
 </div>
+
 </div>
 <p style="text-align:center;margin-top:28px;color:var(--gray);font-size:13px">※ 業務自動化・AIチャットボット単体のご依頼も承ります。お気軽にご相談ください。</p>
 </div>
@@ -834,5 +838,9 @@ const obs = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 
+
+<script>
+if(window.location.hash){history.replaceState(null,null,' ');window.scrollTo(0,0)}
+</script>
 </body>
 </html>
