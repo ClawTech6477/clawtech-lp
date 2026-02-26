@@ -39,7 +39,9 @@ img{max-width:100%;height:auto}
 /* ===== Nav ===== */
 nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,0.92);backdrop-filter:blur(20px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
 nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
-nav .logo{font-size:24px;font-weight:900;color:#fff;letter-spacing:-0.5px}
+nav .logo{font-size:26px;font-weight:900;color:#fff;letter-spacing:-0.5px;display:flex;align-items:center;gap:8px}
+nav .logo::before{content:'';display:inline-block;width:32px;height:32px;background:var(--gradient);border-radius:8px;position:relative}
+nav .logo::after{content:'CT';position:absolute;left:24px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:900;color:#fff;letter-spacing:1px}
 nav .logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 nav ul{display:flex;list-style:none;gap:28px;align-items:center}
 nav ul a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.7);transition:color .3s;letter-spacing:0.02em}
@@ -129,9 +131,9 @@ section{padding:100px 0;position:relative}
 .bg-light{background:var(--light)}
 .bg-dark{background:var(--gradient2);color:#fff}
 .section-title{text-align:center;margin-bottom:56px}
-.section-title .overline{display:inline-block;font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title .overline{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;display:inline-block}
 .bg-dark .section-title .overline{color:var(--accent)}
-.section-title h2{font-size:36px;font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.section-title h2{font-size:36px;font-weight:900;margin-bottom:12px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,0.7) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px}
 .section-title p{color:var(--gray);font-size:16px;max-width:520px;margin:0 auto}
 .bg-dark .section-title p{color:rgba(255,255,255,0.6)}
 
@@ -143,7 +145,12 @@ section{padding:100px 0;position:relative}
 .problem-item p{font-size:14px;font-weight:600;color:var(--dark)}
 
 /* ===== Services ===== */
-.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:20px 0 30px;scrollbar-width:none}
+.service-grid::-webkit-scrollbar{display:none}
+.service-grid .service-card{background:var(--dark);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.4s ease}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);transform:scaleX(0);transition:transform 0.4s ease}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{border-color:rgba(37,99,235,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
 .service-card{background:#fff;padding:36px;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;transition:all .4s;position:relative;overflow:hidden}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient);transform:scaleX(0);transition:transform .4s;transform-origin:left}
 .service-card:hover::before{transform:scaleX(1)}
@@ -174,9 +181,14 @@ section{padding:100px 0;position:relative}
 .monitor-benefit svg{width:20px;height:20px;stroke:#22c55e;fill:none;stroke-width:2.5}
 
 /* ===== Pricing ===== */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:20px 0 30px;scrollbar-width:none}
+.price-grid::-webkit-scrollbar{display:none}
+.price-grid .price-card{background:var(--dark);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;transition:all 0.4s ease}
+.price-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(37,99,235,0.03) 0%,transparent 70%);pointer-events:none}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.4);border-color:rgba(37,99,235,0.2)}
 .price-card{background:#fff;border-radius:var(--radius);padding:40px 32px;text-align:center;box-shadow:var(--shadow-sm);border:2px solid #e2e8f0;transition:all .3s;position:relative}
-.price-card.popular{border-color:var(--primary);box-shadow:var(--shadow-glow);transform:scale(1.03)}
+.price-card.popular{border:2px solid var(--primary);background:linear-gradient(180deg,rgba(37,99,235,0.08) 0%,var(--dark) 100%);transform:scale(1.03)}
+.price-card.popular::before{content:'人気 No.1';position:absolute;top:0;left:0;right:0;background:var(--gradient);color:#fff;text-align:center;font-size:13px;font-weight:700;padding:6px;letter-spacing:1px}
 .price-card.popular::before{content:"人気 No.1";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;padding:6px 20px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap}
 .price-card h3{font-size:20px;font-weight:800;margin-bottom:8px}
 .price-card .price{font-size:40px;font-weight:900;color:var(--primary);margin:16px 0 8px;line-height:1}
@@ -244,9 +256,9 @@ footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padd
   .hero .sub{font-size:15px;line-height:1.8}
   .hero-visual{display:block;margin-top:24px;transform:scale(0.75);transform-origin:center top}
   .problems-row{grid-template-columns:repeat(2,1fr);gap:12px}
-  .service-grid{grid-template-columns:1fr;gap:16px}
+  .service-grid{flex-wrap:nowrap}
   .strength-grid{grid-template-columns:1fr;gap:16px}
-  .price-grid{grid-template-columns:1fr;gap:20px}
+  .price-grid{flex-wrap:nowrap}
   .price-card.popular{transform:none}
   .flow-grid{grid-template-columns:repeat(3,1fr)}
   .flow-step::after{display:none}
@@ -275,6 +287,9 @@ footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padd
   .section-title h2{font-size:22px}
   footer{padding:30px 0;font-size:13px}
 }
+
+.scroll-hint{text-align:center;margin-top:8px;font-size:12px;color:var(--gray);opacity:0.6}
+.scroll-hint::before{content:'← スワイプ →';display:inline-block;padding:4px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:11px}
 </style>
 </head>
 <body>
