@@ -4,134 +4,254 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ClawTech｜AI × Web × DX で事業を加速する</title>
-<meta name="description" content="ClawTech — AI活用のLP制作・業務自動化・チャットボット導入・SNS運用・DXコンサルティング。地域ビジネスから企業まで、デジタルの力で集客と業務効率化を実現します。">
+<meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+<meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+<meta property="og:description" content="LP制作 ¥49,800〜。AI活用で高品質・適正価格のWeb制作とDX支援。">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#2563eb;--primary-dark:#1d4ed8;--accent:#f59e0b;--dark:#0f172a;--gray:#64748b;--light:#f8fafc;--white:#ffffff;--gradient:linear-gradient(135deg,#2563eb 0%,#7c3aed 100%)}
+:root{
+  --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#dbeafe;
+  --accent:#f59e0b;--accent-light:#fef3c7;
+  --dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--gray-light:#94a3b8;
+  --light:#f8fafc;--white:#ffffff;
+  --gradient:linear-gradient(135deg,#2563eb 0%,#7c3aed 50%,#6366f1 100%);
+  --gradient2:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
+  --shadow-glow:0 0 40px rgba(37,99,235,0.15);
+  --radius:16px;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8}
-.container{max-width:1100px;margin:0 auto;padding:0 24px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8;overflow-x:hidden}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
 a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
 
-/* Nav */
-nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid #e2e8f0}
-nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
-nav .logo{font-size:22px;font-weight:800;color:var(--primary)}
-nav .logo span{color:var(--accent)}
-nav ul{display:flex;list-style:none;gap:24px}
-nav ul a{font-size:14px;font-weight:500;color:var(--gray);transition:color .3s}
-nav ul a:hover{color:var(--primary)}
+/* ===== Scroll Animations ===== */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
 
-/* Buttons */
-.btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;transition:all .3s;cursor:pointer}
-.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 15px rgba(37,99,235,0.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,0.4)}
-.btn-outline{border:2px solid var(--primary);color:var(--primary)}
-.btn-outline:hover{background:var(--primary);color:#fff}
-.btn-accent{background:var(--accent);color:var(--dark);font-weight:800}
-.btn-accent:hover{transform:translateY(-2px)}
+/* ===== Nav ===== */
+nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,0.92);backdrop-filter:blur(20px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav .logo{font-size:24px;font-weight:900;color:#fff;letter-spacing:-0.5px}
+nav .logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+nav ul{display:flex;list-style:none;gap:28px;align-items:center}
+nav ul a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.7);transition:color .3s;letter-spacing:0.02em}
+nav ul a:hover{color:#fff}
+.nav-cta{background:var(--gradient)!important;color:#fff!important;padding:10px 24px!important;border-radius:8px;font-size:13px!important;font-weight:700!important;transition:all .3s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(37,99,235,0.4)}
 
-/* Hero */
-.hero{padding:140px 0 80px;background:linear-gradient(135deg,#eff6ff 0%,#f5f3ff 50%,#fefce8 100%)}
-.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.hero h1{font-size:42px;font-weight:800;line-height:1.3;margin-bottom:16px}
-.hero h1 em{font-style:normal;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero .sub{font-size:17px;color:var(--gray);margin-bottom:32px;line-height:1.9}
-.hero .btns{display:flex;gap:16px;flex-wrap:wrap}
-.hero-visual{text-align:center;font-size:120px}
-.badge{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:16px}
+/* Mobile nav toggle */
+.nav-toggle{display:none;background:none;border:none;cursor:pointer}
+.nav-toggle svg{stroke:#fff;width:28px;height:28px}
 
-/* Section */
-section{padding:80px 0}
-section:nth-child(even){background:var(--light)}
-.section-title{text-align:center;margin-bottom:48px}
-.section-title h2{font-size:32px;font-weight:800;margin-bottom:12px}
-.section-title p{color:var(--gray);font-size:16px}
+/* ===== Buttons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;border-radius:10px;font-weight:700;font-size:15px;transition:all .3s;cursor:pointer;border:none}
+.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.45)}
+.btn-outline{border:2px solid rgba(255,255,255,0.3);color:#fff;background:transparent}
+.btn-outline:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.5)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:var(--dark2);transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:var(--dark);font-weight:800;box-shadow:0 4px 15px rgba(245,158,11,0.3)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,158,11,0.4)}
+.btn-white{background:#fff;color:var(--primary);font-weight:700;box-shadow:var(--shadow-md)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
 
-/* Problems */
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.problem-card{background:#fff;border:2px solid #fecaca;border-radius:12px;padding:24px;text-align:center}
-.problem-card .icon{font-size:32px;margin-bottom:8px}
-.problem-card p{font-size:14px;color:var(--gray)}
+/* ===== Hero ===== */
+.hero{position:relative;padding:160px 0 120px;background:var(--gradient2);overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
+.hero .glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.15) 0%,transparent 70%);border-radius:50%;top:-100px;right:-100px;z-index:0}
+.hero .glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,0.1) 0%,transparent 70%);border-radius:50%;bottom:-50px;left:-50px;z-index:0}
+.hero .container{position:relative;z-index:1}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.hero-text{color:#fff}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:8px 20px;border-radius:50px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.8);margin-bottom:24px}
+.hero-badge .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:48px;font-weight:900;line-height:1.25;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 50%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:17px;color:rgba(255,255,255,0.6);margin-bottom:36px;line-height:1.9;max-width:480px}
+.hero .btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero-stats{display:flex;gap:40px}
+.hero-stat{text-align:left}
+.hero-stat .num{font-size:32px;font-weight:900;color:#fff;line-height:1}
+.hero-stat .label{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px}
 
-/* Services */
-.service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.service-card{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);transition:all .3s;border:1px solid #e2e8f0}
-.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
-.service-card .icon{font-size:36px;margin-bottom:12px}
-.service-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
-.service-card p{color:var(--gray);font-size:14px;line-height:1.7}
-.service-card .tag{display:inline-block;background:#eff6ff;color:var(--primary);padding:4px 10px;border-radius:4px;font-size:11px;font-weight:700;margin-top:12px}
+/* Hero Visual — Device Mockup */
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.device-frame{position:relative;width:380px;height:260px;background:var(--dark);border-radius:12px;border:2px solid rgba(255,255,255,0.1);box-shadow:var(--shadow-lg),0 0 60px rgba(37,99,235,0.15);overflow:hidden}
+.device-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:28px;background:rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.08);z-index:2}
+.device-dots{position:absolute;top:9px;left:12px;display:flex;gap:6px;z-index:3}
+.device-dots span{width:10px;height:10px;border-radius:50%}
+.device-dots span:nth-child(1){background:#ef4444}
+.device-dots span:nth-child(2){background:#f59e0b}
+.device-dots span:nth-child(3){background:#22c55e}
+.device-screen{position:absolute;top:28px;left:0;right:0;bottom:0;background:linear-gradient(180deg,#1e293b 0%,#0f172a 100%);padding:20px;overflow:hidden}
+.screen-line{height:8px;border-radius:4px;margin-bottom:10px;opacity:0.6}
+.screen-line.l1{width:60%;background:var(--gradient)}
+.screen-line.l2{width:80%;background:rgba(255,255,255,0.08)}
+.screen-line.l3{width:45%;background:rgba(255,255,255,0.06)}
+.screen-line.l4{width:70%;background:rgba(255,255,255,0.05)}
+.screen-cards{display:flex;gap:12px;margin-top:16px}
+.screen-card{flex:1;height:60px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06)}
+.screen-card:nth-child(1){background:linear-gradient(135deg,rgba(37,99,235,0.2),rgba(124,58,237,0.1))}
+.screen-btn{width:80px;height:28px;border-radius:6px;background:var(--gradient);margin-top:14px;opacity:0.8}
 
-/* Cases */
-.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.case-card{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border-left:4px solid var(--primary)}
-.case-card .label{font-size:12px;color:var(--primary);font-weight:700;margin-bottom:8px}
-.case-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
-.case-card p{color:var(--gray);font-size:14px;line-height:1.7}
-.case-card .result{margin-top:12px;font-weight:700;color:var(--primary);font-size:15px}
+/* Mobile device */
+.device-mobile{position:absolute;right:-30px;bottom:-20px;width:120px;height:200px;background:var(--dark);border-radius:16px;border:2px solid rgba(255,255,255,0.1);box-shadow:var(--shadow-lg);overflow:hidden;z-index:2}
+.device-mobile::before{content:'';position:absolute;top:0;left:0;right:0;height:20px;background:rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.06)}
+.device-mobile .notch{position:absolute;top:4px;left:50%;transform:translateX(-50%);width:40px;height:8px;background:rgba(255,255,255,0.08);border-radius:4px}
+.mobile-screen{position:absolute;top:20px;left:0;right:0;bottom:0;padding:10px;background:linear-gradient(180deg,#1e293b,#0f172a)}
+.mobile-line{height:5px;border-radius:3px;margin-bottom:6px}
+.mobile-line.ml1{width:70%;background:var(--gradient);opacity:0.6}
+.mobile-line.ml2{width:90%;background:rgba(255,255,255,0.07)}
+.mobile-line.ml3{width:50%;background:rgba(255,255,255,0.05)}
+.mobile-card{height:30px;border-radius:6px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.05);margin-top:8px}
 
-/* Strengths */
+/* Float badge on device */
+.float-badge{position:absolute;background:#fff;padding:10px 16px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:3;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--dark);animation:float 3s ease-in-out infinite}
+.float-badge.fb1{top:-10px;left:-20px}
+.float-badge.fb2{bottom:40px;left:-40px;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.float-badge svg{width:18px;height:18px;stroke:var(--primary);fill:none;stroke-width:2}
+.float-badge .check{width:18px;height:18px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.float-badge .check svg{width:12px;height:12px;stroke:#fff;stroke-width:3}
+
+/* ===== Section Base ===== */
+section{padding:100px 0;position:relative}
+.bg-light{background:var(--light)}
+.bg-dark{background:var(--gradient2);color:#fff}
+.section-title{text-align:center;margin-bottom:56px}
+.section-title .overline{display:inline-block;font-size:13px;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.bg-dark .section-title .overline{color:var(--accent)}
+.section-title h2{font-size:36px;font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.section-title p{color:var(--gray);font-size:16px;max-width:520px;margin:0 auto}
+.bg-dark .section-title p{color:rgba(255,255,255,0.6)}
+
+/* ===== Problems (Horizontal) ===== */
+.problems-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.problem-item{background:#fff;border-radius:var(--radius);padding:28px 20px;text-align:center;box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;transition:all .3s}
+.problem-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.problem-item svg{width:32px;height:32px;stroke:var(--primary);fill:none;stroke-width:1.5;margin-bottom:12px}
+.problem-item p{font-size:14px;font-weight:600;color:var(--dark)}
+
+/* ===== Services ===== */
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service-card{background:#fff;padding:36px;border-radius:var(--radius);box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;transition:all .4s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient);transform:scaleX(0);transition:transform .4s;transform-origin:left}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.service-icon{width:52px;height:52px;border-radius:12px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.service-icon svg{width:26px;height:26px;stroke:var(--primary);fill:none;stroke-width:2}
+.service-card h3{font-size:20px;font-weight:800;margin-bottom:10px;letter-spacing:-0.3px}
+.service-card p{color:var(--gray);font-size:14px;line-height:1.8}
+.service-tag{display:inline-block;background:var(--primary-light);color:var(--primary);padding:4px 12px;border-radius:6px;font-size:11px;font-weight:700;margin-top:16px}
+
+/* ===== Strengths (Horizontal bar) ===== */
 .strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.strength-card{text-align:center;padding:32px}
-.strength-card .num{font-size:48px;font-weight:800;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.strength-card h3{font-size:18px;font-weight:700;margin:12px 0 8px}
-.strength-card p{color:var(--gray);font-size:14px}
+.strength-card{text-align:center;padding:40px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);transition:all .3s}
+.strength-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-4px)}
+.strength-num{font-size:56px;font-weight:900;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:16px}
+.strength-card h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.strength-card p{color:rgba(255,255,255,0.5);font-size:14px;line-height:1.7}
 
-/* Pricing */
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.price-card{background:#fff;border-radius:16px;padding:36px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:2px solid #e2e8f0;transition:all .3s}
-.price-card.popular{border-color:var(--primary);position:relative}
-.price-card.popular::before{content:"人気";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:4px 16px;border-radius:50px;font-size:12px;font-weight:700}
-.price-card h3{font-size:20px;font-weight:700;margin-bottom:4px}
-.price-card .price{font-size:36px;font-weight:800;color:var(--primary);margin:16px 0}
-.price-card .price span{font-size:14px;color:var(--gray);font-weight:400}
-.price-card ul{list-style:none;text-align:left;margin:20px 0}
-.price-card ul li{padding:8px 0;font-size:14px;color:var(--gray);border-bottom:1px solid #f1f5f9}
-.price-card ul li::before{content:"✓ ";color:var(--primary);font-weight:700}
+/* ===== Monitor CTA (replacing fake cases) ===== */
+.monitor-section{position:relative;overflow:hidden}
+.monitor-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#2563eb 0%,#7c3aed 100%);opacity:0.95}
+.monitor-inner{position:relative;z-index:1;text-align:center;color:#fff}
+.monitor-inner h2{font-size:36px;font-weight:900;margin-bottom:16px}
+.monitor-inner .limit{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.2);padding:8px 20px;border-radius:50px;font-size:14px;font-weight:700;margin-bottom:24px}
+.monitor-inner p{font-size:16px;opacity:0.85;margin-bottom:36px;max-width:520px;margin-left:auto;margin-right:auto}
+.monitor-benefits{display:flex;justify-content:center;gap:40px;margin-bottom:40px;flex-wrap:wrap}
+.monitor-benefit{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.monitor-benefit svg{width:20px;height:20px;stroke:#22c55e;fill:none;stroke-width:2.5}
 
-/* Flow */
-.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center}
-.flow-step{padding:24px 12px}
-.flow-step .num{width:40px;height:40px;border-radius:50%;background:var(--gradient);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:12px}
-.flow-step h4{font-size:14px;font-weight:700;margin-bottom:4px}
+/* ===== Pricing ===== */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.price-card{background:#fff;border-radius:var(--radius);padding:40px 32px;text-align:center;box-shadow:var(--shadow-sm);border:2px solid #e2e8f0;transition:all .3s;position:relative}
+.price-card.popular{border-color:var(--primary);box-shadow:var(--shadow-glow);transform:scale(1.03)}
+.price-card.popular::before{content:"人気 No.1";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;padding:6px 20px;border-radius:50px;font-size:12px;font-weight:700;white-space:nowrap}
+.price-card h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.price-card .price{font-size:40px;font-weight:900;color:var(--primary);margin:16px 0 8px;line-height:1}
+.price-card .price small{font-size:14px;color:var(--gray);font-weight:400}
+.price-card .price-note{font-size:12px;color:var(--gray-light);margin-bottom:20px}
+.price-card ul{list-style:none;text-align:left;margin:24px 0}
+.price-card ul li{padding:10px 0;font-size:14px;color:var(--gray);border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:10px}
+.price-card ul li svg{width:16px;height:16px;stroke:var(--primary);fill:none;stroke-width:2.5;flex-shrink:0}
+
+/* ===== Flow ===== */
+.flow-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;text-align:center}
+.flow-step{position:relative;padding:24px 12px}
+.flow-step .num{width:44px;height:44px;border-radius:50%;background:var(--gradient);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin-bottom:14px}
+.flow-step h4{font-size:15px;font-weight:700;margin-bottom:6px}
 .flow-step p{font-size:12px;color:var(--gray)}
+.flow-step::after{content:'→';position:absolute;right:-12px;top:36px;font-size:20px;color:var(--gray-light)}
+.flow-step:last-child::after{display:none}
 
-/* FAQ */
-.faq-item{background:#fff;border-radius:12px;padding:24px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,0.04)}
-.faq-item h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--primary)}
-.faq-item p{font-size:14px;color:var(--gray);line-height:1.7}
+/* ===== FAQ ===== */
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px;box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;transition:all .3s}
+.faq-item:hover{box-shadow:var(--shadow-md)}
+.faq-item h4{font-size:15px;font-weight:700;margin-bottom:10px;color:var(--dark);display:flex;align-items:flex-start;gap:10px}
+.faq-item h4 .q{flex-shrink:0;width:28px;height:28px;border-radius:6px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.faq-item p{font-size:14px;color:var(--gray);line-height:1.8;padding-left:38px}
 
-/* CTA */
-.cta-section{background:var(--gradient);color:#fff;text-align:center;padding:80px 0}
-.cta-section h2{font-size:32px;font-weight:800;margin-bottom:16px}
-.cta-section p{font-size:16px;opacity:0.9;margin-bottom:32px}
+/* ===== Contact ===== */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info h3{font-size:24px;font-weight:800;margin-bottom:16px}
+.contact-info p{color:var(--gray);font-size:15px;line-height:1.8;margin-bottom:28px}
+.contact-info-item{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.contact-info-item svg{width:22px;height:22px;stroke:var(--primary);fill:none;stroke-width:2;flex-shrink:0}
+.contact-info-item span{font-size:14px;color:var(--gray)}
+.contact-form{background:#fff;padding:36px;border-radius:var(--radius);box-shadow:var(--shadow-md);border:1px solid #e2e8f0}
+.contact-form label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px 16px;border:2px solid #e2e8f0;border-radius:10px;font-size:15px;margin-bottom:18px;font-family:inherit;transition:border-color .3s;background:#fff}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
 
-/* Contact */
-.contact-form{max-width:600px;margin:0 auto}
-.contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:14px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;margin-bottom:16px;font-family:inherit}
-.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--primary)}
-.contact-form label{display:block;font-size:14px;font-weight:700;margin-bottom:6px}
-
-/* Company */
-.company-table{width:100%;max-width:600px;margin:0 auto}
+/* ===== Company ===== */
+.company-table{width:100%;max-width:600px;margin:0 auto;border-collapse:collapse}
 .company-table tr{border-bottom:1px solid #e2e8f0}
-.company-table th{text-align:left;padding:12px 16px;font-size:14px;color:var(--gray);width:30%}
-.company-table td{padding:12px 16px;font-size:14px}
+.company-table th{text-align:left;padding:14px 16px;font-size:13px;color:var(--gray);width:30%;font-weight:600}
+.company-table td{padding:14px 16px;font-size:14px;font-weight:500}
 
-/* Footer */
-footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;font-size:13px}
+/* ===== Footer ===== */
+footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:36px 0;font-size:13px}
 
-/* Responsive */
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero .sub{margin-left:auto;margin-right:auto}
+  .hero .btns{justify-content:center}
+  .hero-stats{justify-content:center}
+  .hero-visual{margin-top:40px}
+  .contact-wrap{grid-template-columns:1fr}
+}
 @media(max-width:768px){
-  .hero-content{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .hero h1{font-size:28px}
-  .strength-grid{grid-template-columns:1fr}
-  .flow-grid{grid-template-columns:1fr}
   nav ul{display:none}
+  .nav-toggle{display:block}
+  .hero{padding:120px 0 80px;min-height:auto}
+  .hero h1{font-size:32px}
+  .hero-visual{display:none}
+  .problems-row{grid-template-columns:repeat(2,1fr)}
+  .service-grid{grid-template-columns:1fr}
+  .strength-grid{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
+  .price-card.popular{transform:none}
+  .flow-grid{grid-template-columns:repeat(3,1fr)}
+  .flow-step::after{display:none}
+  .section-title h2{font-size:28px}
+}
+@media(max-width:480px){
+  .problems-row{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr}
+  .hero-stats{flex-direction:column;gap:16px}
+  .monitor-benefits{flex-direction:column;align-items:center}
 }
 </style>
 </head>
@@ -142,51 +262,116 @@ footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;fon
 <div class="container">
 <a href="#" class="logo">Claw<span>Tech</span></a>
 <ul>
+<li><a href="#problems">お悩み</a></li>
 <li><a href="#services">サービス</a></li>
-<li><a href="#cases">実績</a></li>
 <li><a href="#pricing">料金</a></li>
 <li><a href="#faq">FAQ</a></li>
-<li><a href="#contact" class="btn btn-primary" style="padding:8px 20px;font-size:13px">無料相談</a></li>
+<li><a href="#contact" class="nav-cta">無料相談</a></li>
 </ul>
+<button class="nav-toggle" onclick="document.querySelector('nav ul').style.display=document.querySelector('nav ul').style.display==='flex'?'none':'flex'" aria-label="メニュー">
+<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+</button>
 </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
+<div class="glow"></div>
+<div class="glow2"></div>
 <div class="container">
 <div class="hero-content">
-<div>
-<span class="badge">AI × Web × DX</span>
+<div class="hero-text">
+<div class="hero-badge"><span class="dot"></span>AI駆動のWeb制作・DX支援</div>
 <h1><em>デジタルの力</em>で<br>事業を加速する</h1>
-<p class="sub">ホームページ制作からAI導入、業務自動化まで。<br>最新テクノロジーで御社の集客・効率化・売上アップをワンストップで支援します。</p>
+<p class="sub">ホームページ制作・Googleマップ集客・業務自動化まで。<br>AI活用で高品質 × 適正価格。御社のデジタル化をワンストップで。</p>
 <div class="btns">
 <a href="#contact" class="btn btn-primary">無料相談・サイト診断</a>
-<a href="#services" class="btn btn-outline">サービス一覧</a>
+<a href="#services" class="btn btn-outline">サービスを見る</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">¥49,800〜</div><div class="label">LP制作</div></div>
+<div class="hero-stat"><div class="num">最短1週間</div><div class="label">納品スピード</div></div>
+<div class="hero-stat"><div class="num">月額0円〜</div><div class="label">ランニングコスト</div></div>
 </div>
 </div>
-<div class="hero-visual">
-<div style="font-size:100px;line-height:1">🚀</div>
-<div style="font-size:14px;color:var(--gray);margin-top:12px">Technology Partner for Your Business</div>
+<div class="hero-visual fade-up">
+<div class="device-frame">
+<div class="device-dots"><span></span><span></span><span></span></div>
+<div class="device-screen">
+<div class="screen-line l1"></div>
+<div class="screen-line l2"></div>
+<div class="screen-line l3"></div>
+<div class="screen-cards">
+<div class="screen-card"></div>
+<div class="screen-card"></div>
+<div class="screen-card"></div>
+</div>
+<div class="screen-btn"></div>
+</div>
+</div>
+<div class="device-mobile">
+<div class="notch"></div>
+<div class="mobile-screen">
+<div class="mobile-line ml1"></div>
+<div class="mobile-line ml2"></div>
+<div class="mobile-line ml3"></div>
+<div class="mobile-card"></div>
+<div class="mobile-card"></div>
+</div>
+</div>
+<div class="float-badge fb1">
+<svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+SEO対策済み
+</div>
+<div class="float-badge fb2">
+<svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+スマホ対応
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <!-- Problems -->
-<section>
+<section id="problems" class="bg-light">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Problems</div>
 <h2>こんなお悩みありませんか？</h2>
 </div>
-<div class="problem-grid">
-<div class="problem-card"><div class="icon">😰</div><p>ホームページがない・古いまま</p></div>
-<div class="problem-card"><div class="icon">📉</div><p>新規顧客が増えない</p></div>
-<div class="problem-card"><div class="icon">📱</div><p>スマホで見ると崩れる</p></div>
-<div class="problem-card"><div class="icon">⏰</div><p>事務作業に時間を取られる</p></div>
-<div class="problem-card"><div class="icon">🤷</div><p>SNSの活用方法がわからない</p></div>
-<div class="problem-card"><div class="icon">💸</div><p>制作会社の見積が高すぎる</p></div>
-<div class="problem-card"><div class="icon">🗺️</div><p>Googleマップに出てこない</p></div>
-<div class="problem-card"><div class="icon">🤖</div><p>AIを導入したいが何から始めれば…</p></div>
+<div class="problems-row">
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+<p>ホームページがない<br>古いまま</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+<p>新規の集客が<br>伸びない</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+<p>スマホで見ると<br>崩れる</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<p>事務作業に<br>時間を取られる</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<p>Googleマップに<br>表示されない</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+<p>制作会社の<br>見積が高すぎる</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<p>SNSの活用法が<br>わからない</p>
+</div>
+<div class="problem-item fade-up">
+<svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+<p>AIを導入したいが<br>何から始めれば…</p>
+</div>
 </div>
 </div>
 </section>
@@ -194,254 +379,243 @@ footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;fon
 <!-- Services -->
 <section id="services">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Services</div>
 <h2>サービス一覧</h2>
-<p>Web制作からAI導入まで、デジタル化をトータルサポート</p>
+<p>中小企業・個人事業主のデジタル化に必要なものをすべて揃えました</p>
 </div>
 <div class="service-grid">
-
-<div class="service-card">
-<div class="icon">🌐</div>
+<div class="service-card fade-up">
+<div class="service-icon">
+<svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+</div>
 <h3>ホームページ・LP制作</h3>
-<p>スマホ対応のモダンなデザイン。SEO対策済みで検索にも強いサイトを最短1週間で制作します。WordPress・HTML・ノーコード対応。</p>
-<span class="tag">人気No.1</span>
+<p>スマホ完全対応のモダンなデザイン。SEO対策済みで「地域名 + 業種」の検索にも強いサイトを最短1週間で制作。WordPress・HTML・ノーコード対応。</p>
+<span class="service-tag">人気 No.1</span>
 </div>
-
-<div class="service-card">
-<div class="icon">🤖</div>
-<h3>AIチャットボット導入</h3>
-<p>LINE Bot・Webチャットボットで24時間自動応答。よくある質問への回答、予約受付、顧客対応を自動化します。</p>
-<span class="tag">業務効率化</span>
+<div class="service-card fade-up">
+<div class="service-icon" style="background:var(--accent-light)">
+<svg viewBox="0 0 24 24" style="stroke:var(--accent)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
 </div>
-
-<div class="service-card">
-<div class="icon">⚡</div>
-<h3>業務自動化（RPA/スクリプト）</h3>
-<p>Excel集計、メール送信、データ入力、請求書作成…繰り返しの手作業をPython・GAS・n8nで自動化。月数十時間の工数削減を実現。</p>
-<span class="tag">コスト削減</span>
+<h3>Googleマップ集客（MEO対策）</h3>
+<p>Googleビジネスプロフィールの最適化、写真・投稿の整備、口コミ促進施策で「近くの〇〇」検索からの来店・問い合わせを増やします。</p>
+<span class="service-tag" style="background:var(--accent-light);color:var(--accent)">地域集客</span>
 </div>
-
-<div class="service-card">
-<div class="icon">📍</div>
-<h3>Googleマップ集客支援</h3>
-<p>Googleビジネスプロフィールの最適化、写真・投稿の整備、口コミ促進施策で「近くの〇〇」検索からの来店を増やします。</p>
-<span class="tag">地域集客</span>
+<div class="service-card fade-up">
+<div class="service-icon" style="background:#f0fdf4">
+<svg viewBox="0 0 24 24" style="stroke:#16a34a"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
 </div>
-
-<div class="service-card">
-<div class="icon">📣</div>
-<h3>SNS運用・自動投稿</h3>
-<p>Instagram・X（Twitter）の投稿企画から自動投稿まで。AIで投稿文を生成し、定期配信を完全自動化。フォロワー獲得と来店に繋げます。</p>
-<span class="tag">集客強化</span>
+<h3>業務自動化（AI / RPA）</h3>
+<p>Excel集計、メール送信、請求書作成、SNS投稿…繰り返しの手作業をPython・GAS・AI自動化。月数十時間の工数削減とヒューマンエラーの撲滅を実現。</p>
+<span class="service-tag" style="background:#f0fdf4;color:#16a34a">コスト削減</span>
 </div>
-
-<div class="service-card">
-<div class="icon">📧</div>
-<h3>メール配信・顧客管理</h3>
-<p>顧客リストの整備、ステップメール配信、フォローアップの自動化。既存顧客のリピート率を向上させます。</p>
-<span class="tag">リピート率UP</span>
+<div class="service-card fade-up">
+<div class="service-icon" style="background:#faf5ff">
+<svg viewBox="0 0 24 24" style="stroke:#7c3aed"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
 </div>
-
-<div class="service-card">
-<div class="icon">📊</div>
-<h3>データ収集・分析自動化</h3>
-<p>Webスクレイピング、競合調査、市場データ収集を自動化。レポート生成まで含めてデータドリブンな経営判断を支援します。</p>
-<span class="tag">データ活用</span>
-</div>
-
-<div class="service-card">
-<div class="icon">📅</div>
-<h3>予約・問い合わせシステム</h3>
-<p>LINE連携予約、Webフォーム、カレンダー自動連携。電話対応の負担を減らし、24時間予約受付を実現します。</p>
-<span class="tag">受付自動化</span>
-</div>
-
-<div class="service-card">
-<div class="icon">🔧</div>
 <h3>DX総合コンサルティング</h3>
-<p>「何から始めればいいかわからない」を解決。御社の業務フローを分析し、最適なデジタル化プランをご提案・実行します。</p>
-<span class="tag">総合支援</span>
+<p>「何から始めればいいかわからない」を解決。御社の業務フローを分析し、最適なデジタル化プランをご提案。LINE予約、チャットBot、SNS運用代行まで対応。</p>
+<span class="service-tag" style="background:#faf5ff;color:#7c3aed">総合支援</span>
 </div>
-
 </div>
 </div>
 </section>
 
 <!-- Strengths -->
-<section>
+<section class="bg-dark">
 <div class="container">
-<div class="section-title">
-<h2>ClawTechが選ばれる理由</h2>
+<div class="section-title fade-up">
+<div class="overline">Why ClawTech</div>
+<h2>選ばれる3つの理由</h2>
 </div>
 <div class="strength-grid">
-<div class="strength-card">
-<div class="num">01</div>
+<div class="strength-card fade-up">
+<div class="strength-num">01</div>
 <h3>AI活用で適正価格</h3>
-<p>最新のAI技術を制作・開発プロセスに活用。制作会社の半額以下のコストで高品質な成果物をお届けします。</p>
+<p>最新のAI技術を制作プロセスに活用。制作会社の半額以下のコストで高品質な成果物をお届けします。</p>
 </div>
-<div class="strength-card">
-<div class="num">02</div>
+<div class="strength-card fade-up">
+<div class="strength-num">02</div>
 <h3>最短1週間で納品</h3>
 <p>AIによる高速開発で、LP制作なら最短1週間。スピード感のあるビジネス展開をサポートします。</p>
 </div>
-<div class="strength-card">
-<div class="num">03</div>
+<div class="strength-card fade-up">
+<div class="strength-num">03</div>
 <h3>ワンストップ対応</h3>
-<p>Web制作・AI導入・業務自動化・SNS運用まで一括対応。複数の業者に頼む必要はありません。</p>
+<p>Web制作・MEO・業務自動化・SNS運用まで一括対応。複数の業者に頼む手間がありません。</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- Cases -->
-<section id="cases">
+<!-- Monitor CTA (replacing fake cases) -->
+<section class="monitor-section" style="padding:100px 0">
 <div class="container">
-<div class="section-title">
-<h2>導入事例</h2>
-<p>ClawTechのサービスで成果を出した事例をご紹介</p>
+<div class="monitor-inner fade-up">
+<div class="limit">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+先着3社限定
 </div>
-<div class="case-grid">
-<div class="case-card">
-<div class="label">工務店 A様</div>
-<h3>ホームページ制作 + MEO対策</h3>
-<p>ホームページ未設置の状態からLP制作とGoogleビジネスプロフィール最適化を実施。</p>
-<div class="result">→ 月間問い合わせ数 0件 → 12件</div>
+<h2>無料モニター募集中</h2>
+<p>サービス品質の向上と実績づくりのため、LP制作＋MEO対策を<strong>無料</strong>で提供するモニター企業様を募集しています。</p>
+<div class="monitor-benefits">
+<div class="monitor-benefit">
+<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+LP制作費 ¥0
 </div>
-<div class="case-card">
-<div class="label">整骨院 B様</div>
-<h3>予約システム + LINE Bot導入</h3>
-<p>電話予約のみだった運用にWeb予約とLINE自動応答を導入。受付業務の負担を大幅削減。</p>
-<div class="result">→ 予約数 1.8倍 / 電話対応 70%削減</div>
+<div class="monitor-benefit">
+<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+MEO初期設定 ¥0
 </div>
-<div class="case-card">
-<div class="label">税理士事務所 C様</div>
-<h3>業務自動化（請求書・レポート）</h3>
-<p>毎月の請求書作成とレポート生成をGAS + Pythonで自動化。月20時間の作業を5分に短縮。</p>
-<div class="result">→ 月間作業時間 20h → 0.1h</div>
+<div class="monitor-benefit">
+<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+追加費用なし
 </div>
+<div class="monitor-benefit">
+<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+事例掲載にご協力いただくだけ
+</div>
+</div>
+<a href="#contact" class="btn btn-accent" style="font-size:17px;padding:18px 48px">モニターに応募する →</a>
 </div>
 </div>
 </section>
 
 <!-- Pricing -->
-<section id="pricing">
+<section id="pricing" class="bg-light">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Pricing</div>
 <h2>料金プラン</h2>
 <p>明確な料金体系。追加費用なしの安心プライス</p>
 </div>
 <div class="price-grid">
-<div class="price-card">
+<div class="price-card fade-up">
 <h3>ライトプラン</h3>
-<div class="price">¥49,800<span>（税込）</span></div>
+<div class="price">¥49,800<small>（税込）</small></div>
+<div class="price-note">LP 1ページに最適</div>
 <ul>
-<li>LP 1ページ制作</li>
-<li>スマホ完全対応</li>
-<li>基本SEO設定</li>
-<li>お問い合わせフォーム</li>
-<li>納品後修正1回無料</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>LP 1ページ制作</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>スマホ完全対応</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>基本SEO設定</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>お問い合わせフォーム</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>納品後修正1回無料</li>
 </ul>
-<a href="#contact" class="btn btn-outline" style="width:100%;text-align:center">相談する</a>
+<a href="#contact" class="btn btn-dark" style="width:100%">相談する</a>
 </div>
-<div class="price-card popular">
+<div class="price-card popular fade-up">
 <h3>スタンダードプラン</h3>
-<div class="price">¥98,000<span>（税込）</span></div>
+<div class="price">¥98,000<small>（税込）</small></div>
+<div class="price-note">本格サイトに最適</div>
 <ul>
-<li>最大5ページ構成</li>
-<li>スマホ完全対応</li>
-<li>SEO + MEO初期設定</li>
-<li>お問い合わせフォーム</li>
-<li>SNS連携設定</li>
-<li>Googleアナリティクス導入</li>
-<li>納品後修正3回無料</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>最大5ページ構成</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>スマホ完全対応</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SEO + MEO初期設定</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>お問い合わせフォーム</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SNS連携設定</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Googleアナリティクス導入</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>納品後修正3回無料</li>
 </ul>
-<a href="#contact" class="btn btn-primary" style="width:100%;text-align:center">相談する</a>
+<a href="#contact" class="btn btn-primary" style="width:100%">相談する</a>
 </div>
-<div class="price-card">
+<div class="price-card fade-up">
 <h3>プレミアムプラン</h3>
-<div class="price">¥198,000<span>（税込）</span></div>
+<div class="price">¥198,000<small>（税込）</small></div>
+<div class="price-note">フルパッケージ</div>
 <ul>
-<li>フルサイト制作（ページ数無制限）</li>
-<li>AI チャットボット導入</li>
-<li>予約・問い合わせシステム</li>
-<li>SNS自動投稿設定</li>
-<li>業務自動化1件込み</li>
-<li>月次レポート（3ヶ月）</li>
-<li>優先サポート</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>フルサイト制作（ページ数無制限）</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>AIチャットボット導入</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>予約・問い合わせシステム</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SNS自動投稿設定</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>業務自動化1件込み</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>月次レポート（3ヶ月）</li>
+<li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>優先サポート</li>
 </ul>
-<a href="#contact" class="btn btn-outline" style="width:100%;text-align:center">相談する</a>
+<a href="#contact" class="btn btn-dark" style="width:100%">相談する</a>
 </div>
 </div>
-<p style="text-align:center;margin-top:24px;color:var(--gray);font-size:14px">※ 業務自動化・AIチャットボット単体のご依頼も承ります。お気軽にご相談ください。</p>
+<p style="text-align:center;margin-top:28px;color:var(--gray);font-size:13px">※ 業務自動化・AIチャットボット単体のご依頼も承ります。お気軽にご相談ください。</p>
 </div>
 </section>
 
 <!-- Flow -->
 <section>
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Flow</div>
 <h2>ご依頼の流れ</h2>
 </div>
 <div class="flow-grid">
-<div class="flow-step"><div class="num">1</div><h4>無料相談</h4><p>お悩みをヒアリング</p></div>
-<div class="flow-step"><div class="num">2</div><h4>ご提案</h4><p>最適なプランをご提示</p></div>
-<div class="flow-step"><div class="num">3</div><h4>制作・開発</h4><p>AI活用で高速制作</p></div>
-<div class="flow-step"><div class="num">4</div><h4>確認・納品</h4><p>修正対応後に納品</p></div>
-<div class="flow-step"><div class="num">5</div><h4>サポート</h4><p>運用・保守もお任せ</p></div>
+<div class="flow-step fade-up"><div class="num">1</div><h4>無料相談</h4><p>お悩みをヒアリング</p></div>
+<div class="flow-step fade-up"><div class="num">2</div><h4>ご提案</h4><p>最適なプランをご提示</p></div>
+<div class="flow-step fade-up"><div class="num">3</div><h4>制作・開発</h4><p>AI活用で高速制作</p></div>
+<div class="flow-step fade-up"><div class="num">4</div><h4>確認・納品</h4><p>修正対応後に納品</p></div>
+<div class="flow-step fade-up"><div class="num">5</div><h4>サポート</h4><p>運用・保守もお任せ</p></div>
 </div>
 </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq">
+<section id="faq" class="bg-light">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">FAQ</div>
 <h2>よくある質問</h2>
 </div>
-<div class="faq-item">
-<h4>Q. 制作期間はどのくらいですか？</h4>
+<div class="faq-list">
+<div class="faq-item fade-up">
+<h4><span class="q">Q</span>制作期間はどのくらいですか？</h4>
 <p>LPは最短1週間、5ページ構成のサイトで2〜3週間が目安です。AI活用により従来の制作会社より大幅に短い期間で納品可能です。</p>
 </div>
-<div class="faq-item">
-<h4>Q. 月額費用はかかりますか？</h4>
+<div class="faq-item fade-up">
+<h4><span class="q">Q</span>月額費用はかかりますか？</h4>
 <p>基本的に月額費用は0円です。サーバー・ドメインの実費（年間数千円程度）のみご負担いただきます。保守・更新のオプションもご用意しています。</p>
 </div>
-<div class="faq-item">
-<h4>Q. AIチャットボットだけの導入もできますか？</h4>
+<div class="faq-item fade-up">
+<h4><span class="q">Q</span>AIチャットボットだけの導入もできますか？</h4>
 <p>はい、可能です。LINE Bot、Webチャットボット、社内向けAIアシスタントなど、ご要望に合わせて個別にお見積りいたします。</p>
 </div>
-<div class="faq-item">
-<h4>Q. 業務自動化って具体的に何ができますか？</h4>
+<div class="faq-item fade-up">
+<h4><span class="q">Q</span>業務自動化って具体的に何ができますか？</h4>
 <p>Excel/スプレッドシートの自動集計、メール自動送信、請求書作成、SNS自動投稿、データ収集・レポート生成、予約管理など幅広く対応可能です。</p>
 </div>
-<div class="faq-item">
-<h4>Q. 地方からの依頼もできますか？</h4>
+<div class="faq-item fade-up">
+<h4><span class="q">Q</span>地方からの依頼もできますか？</h4>
 <p>はい、全国対応です。オンラインでのヒアリング・納品が可能なため、場所を問わずご依頼いただけます。</p>
 </div>
 </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-<div class="container">
-<h2>まずは無料で相談しませんか？</h2>
-<p>「ホームページが欲しい」「業務を自動化したい」「AIを導入したい」<br>どんなお悩みでもお気軽にご相談ください。</p>
-<a href="#contact" class="btn btn-accent" style="font-size:18px;padding:18px 48px">無料相談する →</a>
 </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Contact</div>
 <h2>お問い合わせ・無料相談</h2>
-<p>下記フォームまたはメールにてお気軽にご連絡ください</p>
+</div>
+<div class="contact-wrap fade-up">
+<div class="contact-info">
+<h3>お気軽にご相談ください</h3>
+<p>「ホームページが欲しい」「Googleマップで上位に出たい」「業務を自動化したい」——どんなお悩みでもまずはお気軽にご連絡ください。24時間以内にご返信いたします。</p>
+<div class="contact-info-item">
+<svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+<span>opcl6477@gmail.com</span>
+</div>
+<div class="contact-info-item">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span>返信: 原則24時間以内</span>
+</div>
+<div class="contact-info-item">
+<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+<span>全国対応（オンライン）</span>
+</div>
 </div>
 <form class="contact-form" action="https://formspree.io/f/opcl6477@gmail.com" method="POST">
-<label>お名前 *</label>
-<input type="text" name="name" required>
-<label>メールアドレス *</label>
-<input type="email" name="email" required>
+<label>お名前 <span style="color:#ef4444">*</span></label>
+<input type="text" name="name" required placeholder="山田 太郎">
+<label>メールアドレス <span style="color:#ef4444">*</span></label>
+<input type="email" name="email" required placeholder="info@example.com">
 <label>業種</label>
 <select name="industry">
 <option value="">選択してください</option>
@@ -454,25 +628,27 @@ footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;fon
 <option>不動産</option>
 <option>その他</option>
 </select>
-<label>ご相談内容 *</label>
-<textarea name="message" rows="5" placeholder="ホームページを作りたい、業務を自動化したい、AIチャットボットを導入したい…など、お気軽にご記入ください。" required></textarea>
-<button type="submit" class="btn btn-primary" style="width:100%;text-align:center;border:none;font-size:16px">送信する</button>
+<label>ご相談内容 <span style="color:#ef4444">*</span></label>
+<textarea name="message" rows="5" placeholder="ホームページを作りたい、Googleマップの順位を上げたい、業務を自動化したい…など" required></textarea>
+<button type="submit" class="btn btn-primary" style="width:100%;border:none;font-size:16px;padding:18px">送信する</button>
 </form>
+</div>
 </div>
 </section>
 
 <!-- Company -->
-<section>
+<section class="bg-light">
 <div class="container">
-<div class="section-title">
+<div class="section-title fade-up">
+<div class="overline">Company</div>
 <h2>運営情報</h2>
 </div>
-<table class="company-table">
+<table class="company-table fade-up">
 <tr><th>屋号</th><td>ClawTech（クロウテック）</td></tr>
 <tr><th>代表</th><td>ClawTech運営チーム</td></tr>
 <tr><th>メール</th><td>opcl6477@gmail.com</td></tr>
 <tr><th>対応エリア</th><td>全国（オンライン対応）</td></tr>
-<tr><th>事業内容</th><td>Web制作、AI導入支援、業務自動化、DXコンサルティング</td></tr>
+<tr><th>事業内容</th><td>Web制作 / AI導入支援 / 業務自動化 / MEO対策 / DXコンサルティング</td></tr>
 </table>
 </div>
 </section>
@@ -482,6 +658,14 @@ footer{background:var(--dark);color:#94a3b8;text-align:center;padding:32px 0;fon
 <p>&copy; 2026 ClawTech. All rights reserved.</p>
 </div>
 </footer>
+
+<!-- Scroll Animation -->
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+}, {threshold:0.15});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
 
 </body>
 </html>
