@@ -147,7 +147,7 @@ section{padding:100px 0;position:relative}
 /* ===== Services ===== */
 .service-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:20px 0 30px;scrollbar-width:none}
 .service-grid::-webkit-scrollbar{display:none}
-.service-grid .service-card{background:var(--dark);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.4s ease}
+.service-grid .service-card{flex:0 0 280px;scroll-snap-align:start;background:var(--dark);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:32px 24px;position:relative;overflow:hidden;transition:all 0.4s ease}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient);transform:scaleX(0);transition:transform 0.4s ease}
 .service-card:hover::before{transform:scaleX(1)}
 .service-card:hover{border-color:rgba(37,99,235,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
@@ -183,7 +183,7 @@ section{padding:100px 0;position:relative}
 /* ===== Pricing ===== */
 .price-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:20px 0 30px;scrollbar-width:none}
 .price-grid::-webkit-scrollbar{display:none}
-.price-grid .price-card{background:var(--dark);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;transition:all 0.4s ease}
+.price-grid .price-card{flex:0 0 300px;scroll-snap-align:center;background:var(--dark);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:36px 28px;position:relative;overflow:hidden;transition:all 0.4s ease}
 .price-card::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(37,99,235,0.03) 0%,transparent 70%);pointer-events:none}
 .price-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(0,0,0,0.4);border-color:rgba(37,99,235,0.2)}
 .price-card{background:#fff;border-radius:var(--radius);padding:40px 32px;text-align:center;box-shadow:var(--shadow-sm);border:2px solid #e2e8f0;transition:all .3s;position:relative}
@@ -290,6 +290,11 @@ footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padd
 
 .scroll-hint{text-align:center;margin-top:8px;font-size:12px;color:var(--gray);opacity:0.6}
 .scroll-hint::before{content:'← スワイプ →';display:inline-block;padding:4px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:20px;font-size:11px}
+
+@media(max-width:480px){
+  .service-grid .service-card{flex:0 0 240px}
+  .price-grid .price-card{flex:0 0 260px}
+}
 </style>
 </head>
 <body>
