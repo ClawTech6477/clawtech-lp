@@ -736,11 +736,40 @@ MEO初期設定 ¥0
 <option>学習塾・教室</option>
 <option>飲食店</option>
 <option>不動産</option>
+<option>美容室・サロン</option>
 <option>その他</option>
 </select>
-<label>ご相談内容 <span style="color:#ef4444">*</span></label>
-<textarea name="message" rows="5" placeholder="ホームページを作りたい、Googleマップの順位を上げたい、業務を自動化したい…など" required></textarea>
-<button type="submit" class="btn btn-primary" style="width:100%;border:none;font-size:16px;padding:18px">送信する</button>
+<label>興味のある分野 <span style="font-size:11px;color:#94a3b8">（複数選択OK）</span></label>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px">
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="HP制作・改善" style="width:auto;margin:0;padding:0">HP制作・改善</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="MEO・Googleマップ対策" style="width:auto;margin:0;padding:0">MEO・Googleマップ対策</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="LINE公式 Bot" style="width:auto;margin:0;padding:0">LINE公式 Bot</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="業務自動化" style="width:auto;margin:0;padding:0">業務自動化</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="AI導入支援" style="width:auto;margin:0;padding:0">AI導入支援</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="SNS運用" style="width:auto;margin:0;padding:0">SNS運用</label>
+<label style="display:flex;align-items:center;gap:6px;font-size:14px;font-weight:400;margin:0;cursor:pointer"><input type="checkbox" name="interest" value="その他" style="width:auto;margin:0;padding:0">その他</label>
+</div>
+<label>ご予算感 <span style="font-size:11px;color:#94a3b8">（おおよそで構いません）</span></label>
+<select name="budget">
+<option value="">選択してください</option>
+<option>〜5万円</option>
+<option>5万〜15万円</option>
+<option>15万〜30万円</option>
+<option>30万円〜</option>
+<option>まだ決まっていない</option>
+</select>
+<label>ご希望の時期 <span style="font-size:11px;color:#94a3b8">（おおよそで構いません）</span></label>
+<select name="timeline">
+<option value="">選択してください</option>
+<option>すぐにでも</option>
+<option>1ヶ月以内</option>
+<option>3ヶ月以内</option>
+<option>まだ決まっていない</option>
+</select>
+<label>ご相談内容 <span style="font-size:11px;color:#94a3b8">（なんでもお気軽にどうぞ）</span></label>
+<textarea name="message" rows="4" placeholder="例：ホームページをリニューアルしたい、LINEで予約受付を自動化したい、Googleマップの順位を上げたい…など、なんでもOKです！"></textarea>
+<button type="submit" class="btn btn-primary" style="width:100%;border:none;font-size:16px;padding:18px">無料で相談する</button>
+<p style="text-align:center;font-size:12px;color:#94a3b8;margin-top:10px">※ 営業メールは送りません。24時間以内にご返信いたします。</p>
 </form>
 </div>
 </div>
