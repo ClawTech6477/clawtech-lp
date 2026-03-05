@@ -74,6 +74,12 @@ nav ul a:hover{color:#fff}
 .section-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,30,0.7) 0%,rgba(10,10,30,0.85) 100%)}
 .has-video{position:relative;overflow:hidden}
 .has-video .container{position:relative;z-index:1}
+#contact.has-video .section-video video{opacity:0.2}
+#contact.has-video .section-video::after{background:linear-gradient(180deg,rgba(10,10,30,0.8) 0%,rgba(10,10,30,0.9) 100%)}
+#contact .contact-form,#contact form{background:rgba(255,255,255,0.97) !important;border-radius:12px}
+#contact h2,#contact .section-title h2{color:#fff !important}
+#contact p{color:rgba(255,255,255,0.8) !important}
+
 .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero-video video{width:100%;height:100%;object-fit:cover;opacity:0.4}
 .hero-video::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,30,0.6) 0%,rgba(10,10,30,0.8) 100%)}
@@ -472,7 +478,7 @@ SEO対策済み
 </section>
 
 <!-- Services -->
-<section id="services" class="has-video"><div class="section-video"><video autoplay muted loop playsinline><source src="assets/service-bg.mp4" type="video/mp4"></video></div>
+<section id="services">
 <div class="container">
 <div class="section-title fade-up">
 <div class="overline">Services</div>
@@ -562,7 +568,7 @@ SEO対策済み
 </section>
 
 <!-- Strengths -->
-<section class="bg-dark">
+<section class="bg-dark has-video"><div class="section-video"><video autoplay muted loop playsinline><source src="assets/service-bg.mp4" type="video/mp4"></video></div>
 <div class="container">
 <div class="section-title fade-up">
 <div class="overline">Why ClawTech</div>
