@@ -6,38 +6,25 @@
 <title>ClawTech｜AI営業代行 — メール・テレアポを丸ごとお任せ</title>
 <meta name="description" content="ClawTechのAI営業代行。リスト取得→AIメール→架電（人間）まで全工程代行。月¥29,800〜、最短5日稼働。守秘義務契約締結。中小企業・個人事業主向けBtoB特化。">
 <meta property="og:title" content="ClawTech｜AI営業代行 — メール・テレアポを丸ごとお任せ">
-<meta property="og:description" content="リスト取得→AIメール→架電（人間）まで全工程代行。月¥29,800〜。">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/assets/og-image.jpg">
 <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/sales/">
-<meta property="og:site_name" content="ClawTech">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/assets/og-image.jpg">
+<meta property="og:type" content="website">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
-
-<!-- Google Analytics GA4 共通タグ -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
-<script>
-window.dataLayer=window.dataLayer||[];
-function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-RZ1TP2K3N0');
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-/* ========================================
-   CSS変数 — メインLPと完全共通
-======================================== */
 :root{
   --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#dbeafe;
-  --accent:#f59e0b;--accent-light:#fef3c7;
+  --accent:#f59e0b;--accent-dark:#d97706;
   --dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--gray-light:#94a3b8;
-  --light:#f8fafc;--white:#ffffff;
   --gradient:linear-gradient(135deg,#2563eb 0%,#7c3aed 50%,#6366f1 100%);
   --gradient2:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);
+  --gradient-gold:linear-gradient(135deg,#f59e0b 0%,#d97706 100%);
   --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
   --shadow-md:0 4px 20px rgba(0,0,0,0.08);
   --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
@@ -48,776 +35,667 @@ html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8;overflow-x:hidden}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;height:auto}
-
-/* ===== アニメーション ===== */
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
-
-/* ===== ナビ（メインLP共通） ===== */
-nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,0.92);backdrop-filter:blur(20px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
+nav{position:fixed;top:0;width:100%;background:rgba(15,23,42,0.88);backdrop-filter:blur(24px);z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
 nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
-nav .logo{font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.5px}
+nav .logo{font-size:22px;font-weight:900;color:#fff;display:flex;align-items:center;gap:8px}
 nav .logo span{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-nav ul{display:flex;list-style:none;gap:24px;align-items:center}
-nav ul a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.7);transition:color .3s}
+nav ul{display:flex;list-style:none;gap:20px;align-items:center}
+nav ul a{font-size:13px;font-weight:600;color:rgba(255,255,255,0.65);transition:color .3s}
 nav ul a:hover{color:#fff}
-.nav-cta{background:var(--gradient)!important;color:#fff!important;padding:10px 24px!important;border-radius:8px;font-size:13px!important;font-weight:700!important;transition:all .3s}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 15px rgba(37,99,235,0.4)}
+.nav-cta{background:var(--gradient-gold)!important;color:#fff!important;padding:10px 22px!important;border-radius:8px;font-weight:700!important;transition:all .3s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,158,11,0.4)!important}
 .nav-toggle{display:none;background:none;border:none;cursor:pointer}
 .nav-toggle svg{stroke:#fff;width:28px;height:28px}
-
-/* ===== ボタン ===== */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 36px;border-radius:10px;font-weight:700;font-size:15px;transition:all .3s;cursor:pointer;border:none;font-family:inherit}
-.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,99,235,0.45)}
-.btn-outline{border:2px solid rgba(255,255,255,0.3);color:#fff;background:transparent}
-.btn-outline:hover{background:rgba(255,255,255,0.1)}
-.btn-accent{background:var(--accent);color:var(--dark);font-weight:800;box-shadow:0 4px 15px rgba(245,158,11,0.3)}
-.btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(245,158,11,0.4)}
-
-/* ===== セクション共通 ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 36px;border-radius:10px;font-weight:700;font-size:15px;transition:all .3s;cursor:pointer;border:none;font-family:inherit}
+.btn-primary{background:var(--gradient);color:#fff;box-shadow:0 4px 20px rgba(37,99,235,0.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(37,99,235,0.5)}
+.btn-outline{border:2px solid rgba(255,255,255,0.25);color:#fff;background:rgba(255,255,255,0.05)}
+.btn-outline:hover{background:rgba(255,255,255,0.12);transform:translateY(-1px)}
+.btn-accent{background:var(--gradient-gold);color:#fff;font-weight:800;box-shadow:0 4px 15px rgba(245,158,11,0.35)}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(245,158,11,0.45)}
 section{padding:100px 0;position:relative}
 .bg-dark{background:var(--gradient2);color:#fff}
-.bg-light{background:#f8fafc}
-.section-title{text-align:center;margin-bottom:56px}
-.section-title .overline{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;display:inline-block}
-.section-title h2{font-size:36px;font-weight:900;margin-bottom:12px;color:var(--dark);letter-spacing:-0.5px}
+.bg-light{background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%)}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title .overline{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:10px;display:inline-block}
+.section-title h2{font-size:38px;font-weight:900;margin-bottom:14px;letter-spacing:-0.5px;color:var(--dark)}
 .bg-dark .section-title h2{color:#fff}
-.section-title p{color:var(--gray);font-size:16px;max-width:540px;margin:0 auto}
-.bg-dark .section-title p{color:rgba(255,255,255,0.6)}
-
-/* ===== ヒーロー ===== */
-.hero{position:relative;padding:160px 0 120px;background:var(--gradient2);overflow:hidden;min-height:90vh;display:flex;align-items:center}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
-.hero .glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.18) 0%,transparent 70%);border-radius:50%;top:-100px;right:-100px;z-index:0}
-.hero .glow2{position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(245,158,11,0.1) 0%,transparent 70%);border-radius:50%;bottom:-50px;left:-50px;z-index:0}
+.section-title p{color:var(--gray);font-size:16px;max-width:560px;margin:0 auto;line-height:1.8}
+.bg-dark .section-title p{color:rgba(255,255,255,0.55)}
+.hero{position:relative;padding:160px 0 100px;background:var(--gradient2);overflow:hidden;min-height:88vh;display:flex;align-items:center}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");z-index:0}
+.hero .glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(37,99,235,0.18) 0%,transparent 70%);border-radius:50%;top:-150px;right:-150px;z-index:0;animation:glowPulse 6s ease-in-out infinite}
+.hero .glow2{position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(245,158,11,0.1) 0%,transparent 70%);border-radius:50%;bottom:-80px;left:-80px;z-index:0;animation:glowPulse 6s ease-in-out infinite 3s}
+@keyframes glowPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.7;transform:scale(1.08)}}
 .hero .container{position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);padding:8px 20px;border-radius:50px;font-size:13px;font-weight:700;color:#fbbf24;margin-bottom:24px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);padding:8px 20px;border-radius:50px;font-size:13px;font-weight:700;color:#fbbf24;margin-bottom:28px}
 .hero-badge .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero h1{font-size:52px;font-weight:900;line-height:1.2;margin-bottom:20px;letter-spacing:-1.5px;color:#fff}
-.hero h1 em{font-style:normal;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero h1{font-size:54px;font-weight:900;line-height:1.18;margin-bottom:22px;letter-spacing:-2px;color:#fff}
+.hero h1 em{font-style:normal;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero h1 strong{background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900}
-.hero .sub{font-size:17px;color:rgba(255,255,255,0.65);margin-bottom:36px;line-height:1.9;max-width:540px}
-.hero .btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+.hero .sub{font-size:17px;color:rgba(255,255,255,0.62);margin-bottom:38px;line-height:1.9;max-width:560px}
+.hero .btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px}
 .hero-stats{display:flex;gap:40px;flex-wrap:wrap}
 .hero-stat .num{font-size:36px;font-weight:900;color:#fff;line-height:1}
-.hero-stat .num span{font-size:16px;font-weight:600;color:rgba(255,255,255,0.5);margin-left:2px}
-.hero-stat .label{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px}
-
-/* 架電バナー */
-.human-call-banner{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.08));border:1px solid rgba(245,158,11,0.3);border-radius:12px;padding:16px 24px;display:inline-flex;align-items:center;gap:12px;margin-top:32px;max-width:560px}
-.human-call-banner .icon{font-size:24px;flex-shrink:0}
-.human-call-banner p{font-size:14px;color:rgba(255,255,255,0.85);line-height:1.6}
-.human-call-banner strong{color:#fbbf24}
-
-/* ===== 課題セクション ===== */
+.hero-stat .num span{font-size:15px;font-weight:600;color:rgba(255,255,255,0.45);margin-left:2px}
+.hero-stat .label{font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px}
+.human-banner{background:linear-gradient(135deg,rgba(245,158,11,0.14),rgba(245,158,11,0.06));border:1px solid rgba(245,158,11,0.3);border-radius:14px;padding:18px 26px;display:inline-flex;align-items:flex-start;gap:14px;margin-top:36px;max-width:600px}
+.human-banner .bicon{width:40px;height:40px;border-radius:10px;background:rgba(245,158,11,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.human-banner .bicon i{font-size:18px;color:#fbbf24}
+.human-banner p{font-size:14px;color:rgba(255,255,255,0.82);line-height:1.7}
+.human-banner strong{color:#fbbf24}
+#problems{background:linear-gradient(180deg,#f0f4ff 0%,#ffffff 100%)}
 .problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.problem-card{background:#fff;padding:28px 20px;border-radius:14px;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid #e8ecf1;transition:all .3s}
-.problem-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.problem-card .icon{font-size:32px;margin-bottom:12px;display:block}
-.problem-card p{font-size:14px;font-weight:700;color:var(--dark);line-height:1.5}
-
-/* ===== AIフロー図 ===== */
-.ai-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:center;margin-top:48px}
-.ai-flow-step{text-align:center;position:relative;padding:0 8px}
-.ai-flow-step .step-icon{width:72px;height:72px;border-radius:50%;background:var(--gradient);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;box-shadow:0 8px 24px rgba(37,99,235,0.3)}
-.ai-flow-step.human .step-icon{background:linear-gradient(135deg,#f59e0b,#d97706);box-shadow:0 8px 24px rgba(245,158,11,0.3)}
-.ai-flow-step h4{font-size:14px;font-weight:800;margin-bottom:6px;color:#fff}
-.ai-flow-step p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5}
-.ai-flow-step .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;margin-bottom:8px}
-.ai-badge-ai{background:rgba(37,99,235,0.3);color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
-.ai-badge-human{background:rgba(245,158,11,0.25);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)}
-.ai-flow-arrow{display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:24px;padding-bottom:40px}
-
-/* ===== サービス詳細カード ===== */
-.service-detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-.service-detail-card{background:#fff;border-radius:var(--radius);padding:36px 32px;box-shadow:var(--shadow-md);border:1px solid rgba(37,99,235,0.08);transition:all .3s;position:relative;overflow:hidden}
-.service-detail-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gradient)}
-.service-detail-card:nth-child(2)::before{background:linear-gradient(135deg,#f59e0b,#d97706)}
-.service-detail-card:nth-child(3)::before{background:linear-gradient(135deg,#22c55e,#16a34a)}
-.service-detail-card:nth-child(4)::before{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}
-.service-detail-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(37,99,235,0.1)}
-.service-detail-card .card-icon{width:56px;height:56px;border-radius:14px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
-.service-detail-card h3{font-size:20px;font-weight:800;margin-bottom:8px;color:var(--dark)}
-.service-detail-card .card-tag{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:700;background:var(--primary-light);color:var(--primary);margin-bottom:14px}
-.service-detail-card p{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:16px}
-.service-detail-card ul{list-style:none;padding:0}
-.service-detail-card ul li{font-size:13px;color:var(--gray);padding:6px 0;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:8px}
-.service-detail-card ul li::before{content:'✓';color:var(--primary);font-weight:800;flex-shrink:0}
-
-/* ===== 強みセクション ===== */
-.strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.strength-card{text-align:center;padding:40px 24px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);transition:all .3s}
-.strength-card:hover{background:rgba(255,255,255,0.08);transform:translateY(-4px)}
-.strength-num{font-size:56px;font-weight:900;background:linear-gradient(135deg,#fbbf24,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:16px}
-.strength-card h3{font-size:18px;font-weight:800;margin-bottom:10px;color:#fff}
-.strength-card p{color:rgba(255,255,255,0.5);font-size:14px;line-height:1.7}
-
-/* ===== 料金プラン ===== */
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.price-card{background:#fff;border-radius:20px;padding:32px 24px;border:2px solid #e8ecf1;transition:all .4s;position:relative;overflow:hidden}
-.price-card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(37,99,235,0.12);border-color:var(--primary)}
-.price-card.popular{border-color:var(--primary);background:linear-gradient(180deg,rgba(37,99,235,0.04) 0%,#fff 30%);padding-top:52px}
-.price-card.popular::before{content:"⭐ 人気 No.1";position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;padding:8px 24px;border-radius:0 0 16px 16px;font-size:12px;font-weight:800;white-space:nowrap}
-.price-card h3{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:6px}
-.price-card .price-amount{font-size:38px;font-weight:900;color:var(--primary);line-height:1;margin:12px 0 4px}
-.price-card .price-amount small{font-size:14px;color:var(--gray);font-weight:400}
-.price-card .price-note{font-size:12px;color:var(--gray-light);margin-bottom:20px}
+.problem-card{background:#fff;padding:28px 18px;border-radius:16px;text-align:center;box-shadow:0 2px 16px rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.08);transition:all .35s}
+.problem-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(37,99,235,0.14)}
+.problem-card .picon{width:56px;height:56px;border-radius:14px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;transition:all .35s}
+.problem-card:hover .picon{background:var(--gradient);box-shadow:0 8px 20px rgba(37,99,235,0.3)}
+.problem-card .picon i{font-size:22px;color:var(--primary);transition:color .35s}
+.problem-card:hover .picon i{color:#fff}
+.problem-card p{font-size:14px;font-weight:600;color:var(--dark);line-height:1.6}
+#flow-overview{background:var(--gradient2)}
+.ai-flow{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-top:48px;flex-wrap:nowrap}
+.ai-flow-step{text-align:center;flex:1;max-width:200px;padding:0 8px}
+.ai-flow-step .step-icon{width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 10px 28px rgba(37,99,235,0.35)}
+.ai-step .step-icon{background:var(--gradient)}
+.human-step .step-icon{background:var(--gradient-gold)}
+.ai-flow-step .step-icon i{font-size:28px;color:#fff}
+.step-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:10px;font-weight:700;margin-bottom:10px}
+.badge-ai{background:rgba(37,99,235,0.25);color:#60a5fa;border:1px solid rgba(96,165,250,0.3)}
+.badge-human{background:rgba(245,158,11,0.2);color:#fbbf24;border:1px solid rgba(251,191,36,0.3)}
+.ai-flow-step h4{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
+.ai-flow-step p{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.6}
+.ai-flow-arrow{display:flex;align-items:center;justify-content:center;padding-bottom:40px;flex-shrink:0;width:32px}
+.ai-flow-arrow i{font-size:18px;color:rgba(255,255,255,0.2)}
+#services{background:linear-gradient(180deg,#ffffff 0%,#f4f7ff 100%)}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.svc-card{background:#fff;border-radius:20px;padding:36px 32px;box-shadow:0 4px 28px rgba(0,0,0,0.06);border:1px solid rgba(37,99,235,0.07);transition:all .35s;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.svc-card:nth-child(1)::before{background:var(--gradient)}
+.svc-card:nth-child(2)::before{background:var(--gradient-gold)}
+.svc-card:nth-child(3)::before{background:linear-gradient(135deg,#22c55e,#16a34a)}
+.svc-card:nth-child(4)::before{background:linear-gradient(135deg,#8b5cf6,#7c3aed)}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 20px 52px rgba(37,99,235,0.1)}
+.svc-icon{width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.svc-card:nth-child(1) .svc-icon{background:var(--primary-light)}
+.svc-card:nth-child(1) .svc-icon i{color:var(--primary);font-size:26px}
+.svc-card:nth-child(2) .svc-icon{background:#fef3c7}
+.svc-card:nth-child(2) .svc-icon i{color:#d97706;font-size:26px}
+.svc-card:nth-child(3) .svc-icon{background:#f0fdf4}
+.svc-card:nth-child(3) .svc-icon i{color:#16a34a;font-size:26px}
+.svc-card:nth-child(4) .svc-icon{background:#f3f0ff}
+.svc-card:nth-child(4) .svc-icon i{color:#7c3aed;font-size:26px}
+.svc-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:14px}
+.svc-card:nth-child(1) .svc-tag{background:var(--primary-light);color:var(--primary)}
+.svc-card:nth-child(2) .svc-tag{background:#fef3c7;color:#d97706}
+.svc-card:nth-child(3) .svc-tag{background:#f0fdf4;color:#16a34a}
+.svc-card:nth-child(4) .svc-tag{background:#f3f0ff;color:#7c3aed}
+.svc-card h3{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:10px}
+.svc-card p{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:16px}
+.svc-card ul{list-style:none;padding:0}
+.svc-card ul li{font-size:13px;color:var(--gray);padding:7px 0;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;gap:10px}
+.svc-card ul li i{color:var(--primary);font-size:13px;flex-shrink:0}
+.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.str-card{text-align:center;padding:44px 28px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;transition:all .35s}
+.str-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.3)}
+.str-icon{width:68px;height:68px;border-radius:18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;transition:all .35s}
+.str-card:hover .str-icon{background:var(--gradient-gold);border-color:transparent;box-shadow:0 8px 24px rgba(245,158,11,0.35)}
+.str-icon i{font-size:28px;color:#fbbf24;transition:color .35s}
+.str-card:hover .str-icon i{color:#fff}
+.str-num{font-size:52px;font-weight:900;background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:12px}
+.str-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:10px}
+.str-card p{color:rgba(255,255,255,0.45);font-size:14px;line-height:1.7}
+#pricing{background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%)}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.price-card{background:#fff;border-radius:22px;padding:32px 22px;border:1.5px solid #e8ecf2;transition:all .4s;position:relative;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.04)}
+.price-card:hover{transform:translateY(-8px);box-shadow:0 28px 56px rgba(37,99,235,0.12);border-color:var(--primary)}
+.price-card.popular{border:2px solid transparent;background:linear-gradient(#fff,#fff) padding-box,var(--gradient) border-box;padding-top:54px;box-shadow:0 8px 40px rgba(37,99,235,0.16)}
+.price-card.popular::before{content:"⭐ 人気 No.1";position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gradient);color:#fff;padding:8px 26px;border-radius:0 0 16px 16px;font-size:12px;font-weight:800;white-space:nowrap}
+.pln-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.price-card h3{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.price-card .amount{font-size:36px;font-weight:900;color:var(--primary);line-height:1;margin:12px 0 5px}
+.price-card .amount small{font-size:14px;color:var(--gray);font-weight:400}
+.price-card .pnote{font-size:12px;color:var(--gray-light);margin-bottom:18px}
+.profit-tag{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;font-size:11px;font-weight:700;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;margin-bottom:16px}
 .price-card ul{list-style:none;padding:0;margin-bottom:24px}
-.price-card ul li{font-size:13px;color:var(--gray);padding:8px 0;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;gap:8px}
-.price-card ul li svg{width:15px;height:15px;stroke:var(--primary);fill:none;stroke-width:2.5;flex-shrink:0;margin-top:3px}
-.price-card .profit-tag{display:inline-block;padding:4px 12px;border-radius:6px;font-size:11px;font-weight:700;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;margin-bottom:16px}
-
-/* ===== 導入フロー ===== */
-.flow-timeline{max-width:800px;margin:0 auto}
-.flow-item{display:grid;grid-template-columns:80px 1fr;gap:24px;margin-bottom:8px;position:relative}
-.flow-item:not(:last-child)::after{content:'';position:absolute;left:39px;top:72px;bottom:-8px;width:2px;background:linear-gradient(180deg,var(--primary),rgba(37,99,235,0.1))}
-.flow-num{width:80px;height:80px;border-radius:50%;background:var(--gradient);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px rgba(37,99,235,0.3)}
-.flow-num .step-label{font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:1px}
-.flow-num .step-n{font-size:26px;font-weight:900;color:#fff;line-height:1}
-.flow-body{background:#fff;border-radius:14px;padding:24px 28px;box-shadow:var(--shadow-sm);border:1px solid #e8ecf1;margin-bottom:32px}
+.price-card ul li{font-size:13px;color:var(--gray);padding:8px 0;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;gap:9px}
+.price-card ul li i{color:var(--primary);font-size:12px;flex-shrink:0;margin-top:4px}
+#flow{background:linear-gradient(180deg,#f8faff 0%,#ffffff 100%)}
+.flow-timeline{max-width:820px;margin:0 auto}
+.flow-item{display:grid;grid-template-columns:88px 1fr;gap:24px;margin-bottom:8px;position:relative}
+.flow-item:not(:last-child)::after{content:'';position:absolute;left:43px;top:88px;bottom:-8px;width:2px;background:linear-gradient(180deg,var(--primary),rgba(37,99,235,0.08))}
+.flow-num{width:88px;height:88px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 6px 20px rgba(37,99,235,0.3)}
+.flow-num .sl{font-size:9px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:1px}
+.flow-num .sn{font-size:28px;font-weight:900;color:#fff;line-height:1}
+.step1{background:var(--gradient)}
+.step2{background:linear-gradient(135deg,#7c3aed,#6d28d9)}
+.step3{background:linear-gradient(135deg,#0ea5e9,#2563eb)}
+.step4{background:var(--gradient-gold)}
+.step5{background:linear-gradient(135deg,#22c55e,#16a34a)}
+.flow-body{background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 2px 16px rgba(0,0,0,0.05);border:1px solid #e8ecf2;margin-bottom:32px}
+.ftag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;background:var(--primary-light);color:var(--primary);margin-bottom:10px}
 .flow-body h4{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:8px}
 .flow-body p{font-size:14px;color:var(--gray);line-height:1.8}
-.flow-body .flow-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:6px;font-size:11px;font-weight:700;background:var(--primary-light);color:var(--primary);margin-bottom:10px}
-
-/* ===== 秘密保持・約款セクション ===== */
+#legal{background:var(--gradient2)}
 .legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.legal-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:32px}
-.legal-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.legal-card h3 .icon{font-size:22px}
+.legal-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px}
+.legal-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.legal-card h3 i{font-size:20px;color:#fbbf24}
 .legal-card p,.legal-card li{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.9}
 .legal-card ul{list-style:none;padding:0}
-.legal-card ul li{padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-start;gap:8px}
-.legal-card ul li::before{content:'•';color:#60a5fa;flex-shrink:0;margin-top:2px}
-.legal-highlight{background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.3);border-radius:10px;padding:16px 20px;margin-top:16px}
-.legal-highlight p{color:rgba(255,255,255,0.85);font-size:13px}
-
-/* ===== FAQ ===== */
-.faq-list{max-width:760px;margin:0 auto}
-.faq-item{background:#fff;border-radius:12px;padding:24px 28px;margin-bottom:14px;box-shadow:var(--shadow-sm);border:1px solid #e2e8f0;transition:all .3s}
-.faq-item:hover{box-shadow:var(--shadow-md)}
-.faq-item details summary{font-size:15px;font-weight:700;color:var(--dark);cursor:pointer;list-style:none;display:flex;align-items:flex-start;gap:12px;padding-right:16px}
+.legal-card ul li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;align-items:flex-start;gap:9px}
+.legal-card ul li i{color:#60a5fa;font-size:13px;flex-shrink:0;margin-top:4px}
+.legal-hl{background:rgba(37,99,235,0.14);border:1px solid rgba(37,99,235,0.3);border-radius:12px;padding:16px 20px;margin-top:18px}
+.legal-hl p{color:rgba(255,255,255,0.85);font-size:13px}
+section#faq{background:linear-gradient(180deg,#f0f4ff 0%,#ffffff 100%)}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{background:#fff;border-radius:14px;margin-bottom:14px;box-shadow:0 2px 16px rgba(0,0,0,0.05);border:1px solid #e8ecf1;overflow:hidden;transition:all .3s}
+.faq-item:hover{box-shadow:0 8px 32px rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.15)}
+.faq-item details summary{font-size:15px;font-weight:700;color:var(--dark);cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;padding:20px 24px}
 .faq-item details summary::-webkit-details-marker{display:none}
-.faq-item details summary .q{flex-shrink:0;width:28px;height:28px;border-radius:6px;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
-.faq-item details summary::after{content:'＋';margin-left:auto;font-size:18px;color:var(--primary);font-weight:700;flex-shrink:0;transition:transform .3s}
-.faq-item details[open] summary::after{content:'－'}
-.faq-item details .faq-answer{font-size:14px;color:var(--gray);line-height:1.9;padding:16px 0 0 40px}
-
-/* ===== メインLPバナー ===== */
-.crosslink-banner{background:linear-gradient(135deg,rgba(37,99,235,0.12),rgba(124,58,237,0.08));border:1px solid rgba(37,99,235,0.2);border-radius:var(--radius);padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.crosslink-banner h3{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:6px}
-.crosslink-banner p{font-size:14px;color:var(--gray)}
-
-/* ===== コンタクト ===== */
-.contact-form-wrap{background:#fff;padding:40px;border-radius:var(--radius);box-shadow:var(--shadow-md);border:1px solid #e2e8f0;max-width:640px;margin:0 auto}
-.contact-form-wrap label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--dark)}
-.contact-form-wrap input,
-.contact-form-wrap select,
-.contact-form-wrap textarea{width:100%;padding:14px 16px;border:2px solid #e2e8f0;border-radius:10px;font-size:15px;margin-bottom:18px;font-family:inherit;transition:border-color .3s;background:#fff}
-.contact-form-wrap input:focus,
-.contact-form-wrap select:focus,
-.contact-form-wrap textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
-.contact-form-wrap .form-note{font-size:12px;color:var(--gray-light);margin-bottom:20px;line-height:1.7}
-
-/* ===== フッター ===== */
-footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:36px 0;font-size:13px}
-footer a{color:rgba(255,255,255,0.5);text-decoration:underline}
-
-/* ===== レスポンシブ ===== */
+.faq-item details summary .q{flex-shrink:0;width:30px;height:30px;border-radius:8px;background:var(--gradient-gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.faq-item details summary::after{content:'';width:16px;height:16px;border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:rotate(45deg);margin-left:auto;flex-shrink:0;transition:transform .3s;margin-top:-6px}
+.faq-item details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.faq-item details .faq-answer{font-size:14px;color:var(--gray);line-height:1.9;padding:0 24px 20px 66px}
+.crosslink{background:linear-gradient(135deg,rgba(37,99,235,0.07),rgba(124,58,237,0.05));border:1px solid rgba(37,99,235,0.15);border-radius:20px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.crosslink h3{font-size:20px;font-weight:800;color:var(--dark);margin-bottom:6px}
+.crosslink p{font-size:14px;color:var(--gray)}
+.cform-wrap{background:#fff;padding:44px;border-radius:22px;box-shadow:0 12px 48px rgba(0,0,0,0.08);border:1px solid #e8ecf2;max-width:660px;margin:0 auto}
+.cform-wrap label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--dark)}
+.cform-wrap input,.cform-wrap select,.cform-wrap textarea{width:100%;padding:14px 16px;border:2px solid #e8ecf2;border-radius:10px;font-size:15px;margin-bottom:18px;font-family:inherit;transition:all .3s;background:#fff}
+.cform-wrap input:focus,.cform-wrap select:focus,.cform-wrap textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(245,158,11,0.12)}
+footer{background:#060d1a;color:rgba(255,255,255,0.35);text-align:center;padding:40px 0;font-size:13px;border-top:1px solid rgba(255,255,255,0.06)}
+footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
 @media(max-width:1024px){
   .price-grid{grid-template-columns:repeat(2,1fr)}
-  .ai-flow{grid-template-columns:1fr;gap:16px}
+  .svc-grid{grid-template-columns:1fr}
+  .ai-flow{flex-wrap:wrap;justify-content:center;gap:16px}
   .ai-flow-arrow{display:none}
-  .service-detail-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
-  nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(15,23,42,0.98);backdrop-filter:blur(20px);padding:16px;gap:4px;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100}
+  nav ul{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(15,23,42,0.98);padding:16px;gap:4px;border-bottom:1px solid rgba(255,255,255,0.1);z-index:100}
   nav ul li a{padding:12px 16px;display:block;font-size:16px;border-radius:8px;color:#fff}
   nav{position:relative}
   .nav-toggle{display:block}
   .hero{padding:100px 0 60px;min-height:auto}
-  .hero h1{font-size:28px}
+  .hero h1{font-size:30px;line-height:1.3}
   .hero .sub{font-size:14px}
   .container{padding:0 20px}
   section{padding:60px 0}
-  .section-title h2{font-size:24px}
-  .section-title{margin-bottom:32px}
+  .section-title h2{font-size:26px}
   .problem-grid{grid-template-columns:repeat(2,1fr);gap:12px}
-  .strength-grid{grid-template-columns:1fr;gap:16px}
+  .str-grid{grid-template-columns:1fr;gap:16px}
   .price-grid{grid-template-columns:1fr;gap:16px}
   .legal-grid{grid-template-columns:1fr}
-  .flow-item{grid-template-columns:60px 1fr;gap:16px}
-  .flow-num{width:60px;height:60px}
-  .flow-item:not(:last-child)::after{left:29px}
-  .crosslink-banner{flex-direction:column}
+  .flow-item{grid-template-columns:64px 1fr;gap:16px}
+  .flow-num{width:64px;height:64px}
+  .flow-item:not(:last-child)::after{left:31px}
+  .crosslink{flex-direction:column}
+  .cform-wrap{padding:28px 20px}
   .btn{padding:14px 24px;font-size:14px}
-  .btn-primary{width:100%;text-align:center}
   input,textarea,select{font-size:16px}
-  .human-call-banner{flex-direction:column;text-align:center}
+  .human-banner{flex-direction:column}
 }
 @media(max-width:480px){
-  .hero h1{font-size:22px}
+  .hero h1{font-size:24px}
   .hero-stats{flex-direction:column;gap:12px}
+  .section-title h2{font-size:22px}
   .price-card.popular{margin-top:20px}
-  .section-title h2{font-size:20px}
 }
 </style>
 </head>
 <body>
-
-<!-- ナビゲーション -->
 <nav>
-  <div class="container">
-    <a href="../" class="logo">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect width="28" height="28" rx="6" fill="url(#lg2)"/>
-        <path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <defs><linearGradient id="lg2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
-      </svg>Claw<span>Tech</span>
-    </a>
-    <ul id="nav-menu">
-      <li><a href="#problems">課題</a></li>
-      <li><a href="#services">サービス</a></li>
-      <li><a href="#pricing">料金</a></li>
-      <li><a href="#flow">フロー</a></li>
-      <li><a href="#legal">守秘義務</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="../">LP制作へ</a></li>
-      <li><a href="#contact" class="nav-cta">無料相談</a></li>
-    </ul>
-    <button class="nav-toggle" onclick="document.getElementById('nav-menu').style.display=document.getElementById('nav-menu').style.display==='flex'?'none':'flex'" aria-label="メニュー">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
+<div class="container">
+<a href="../" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="url(#lg2)"/><path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>Claw<span>Tech</span></a>
+<ul id="snav">
+<li><a href="#problems">課題</a></li>
+<li><a href="#services">サービス</a></li>
+<li><a href="#pricing">料金</a></li>
+<li><a href="#flow">フロー</a></li>
+<li><a href="#legal">守秘義務</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="../">LP制作へ</a></li>
+<li><a href="#contact" class="nav-cta">無料相談</a></li>
+</ul>
+<button class="nav-toggle" onclick="var m=document.getElementById('snav');m.style.display=m.style.display==='flex'?'none':'flex'" aria-label="メニュー"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</div>
 </nav>
 
-<!-- ヒーロー -->
 <section class="hero" id="top">
-  <div class="glow"></div>
-  <div class="glow2"></div>
-  <div class="container">
-    <div class="hero-badge"><span class="dot"></span>AI × 人間 ハイブリッド営業代行</div>
-    <h1>営業、<em>全部 AI</em> に<br>お任せください。<br><strong>架電は人間が対応。</strong></h1>
-    <p class="sub">リスト取得・AIメール・フォーム営業・テレアポまで一気通貫。<br>月¥29,800〜、最短5日稼働。守秘義務契約締結。中小企業・個人事業主向けBtoB特化。</p>
-    <div class="btns">
-      <a href="#contact" class="btn btn-accent">📞 無料相談・見積もり依頼</a>
-      <a href="#pricing" class="btn btn-outline">料金を見る</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="num">¥29,800<span>/月〜</span></div><div class="label">最安プラン</div></div>
-      <div class="hero-stat"><div class="num">5<span>日〜</span></div><div class="label">稼働開始最短</div></div>
-      <div class="hero-stat"><div class="num">300<span>件/月〜</span></div><div class="label">AIメール送付数</div></div>
-      <div class="hero-stat"><div class="num">NDA<span>締結</span></div><div class="label">守秘義務契約</div></div>
-    </div>
-    <div class="human-call-banner">
-      <span class="icon">📞</span>
-      <p><strong>架電（テレアポ）は経験豊富な人間のオペレーターが担当。</strong><br>AIが自動化しにくい「声のコミュニケーション」は、信頼できる人の力で。AIと人間の最適な役割分担で成果を最大化します。</p>
-    </div>
-  </div>
+<div class="glow"></div><div class="glow2"></div>
+<div class="container">
+<div class="hero-badge"><span class="dot"></span><i class="fa-solid fa-robot"></i>AI × 人間 ハイブリッド営業代行</div>
+<h1>営業、<em>全部 AI</em> に<br>お任せください。<br><strong>架電は人間が対応。</strong></h1>
+<p class="sub">リスト取得・AIメール・フォーム営業・テレアポまで一気通貫。<br>月¥29,800〜、最短5日稼働。守秘義務契約締結。中小企業・個人事業主向けBtoB特化。</p>
+<div class="btns">
+<a href="#contact" class="btn btn-accent"><i class="fa-solid fa-phone"></i>無料相談・見積もり依頼</a>
+<a href="#pricing" class="btn btn-outline"><i class="fa-solid fa-list"></i>料金を見る</a>
+</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="num">¥29,800<span>/月〜</span></div><div class="label">最安プラン</div></div>
+<div class="hero-stat"><div class="num">5<span>日〜</span></div><div class="label">稼働開始最短</div></div>
+<div class="hero-stat"><div class="num">300<span>件/月〜</span></div><div class="label">AIメール送付数</div></div>
+<div class="hero-stat"><div class="num">NDA<span>締結</span></div><div class="label">守秘義務契約</div></div>
+</div>
+<div class="human-banner">
+<div class="bicon"><i class="fa-solid fa-phone-volume"></i></div>
+<p><strong>架電（テレアポ）は経験豊富な人間のオペレーターが担当。</strong><br>AIが自動化しにくい「声のコミュニケーション」は信頼できる人の力で。AIと人間の最適な役割分担で成果を最大化します。</p>
+</div>
+</div>
 </section>
 
-<!-- 課題セクション -->
-<section id="problems" class="bg-light">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline">Problems</div>
-      <h2>こんなお悩みありませんか？</h2>
-      <p>営業リソース不足に悩む中小企業・個人事業主のために開発しました</p>
-    </div>
-    <div class="problem-grid fade-up">
-      <div class="problem-card">
-        <span class="icon">😩</span>
-        <p>営業担当を雇う<br>コストが払えない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">⏰</span>
-        <p>本業が忙しくて<br>新規開拓できない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">📉</span>
-        <p>メール・電話をしても<br>全然反応がない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">🗂️</span>
-        <p>営業リストを<br>どこから集めるかわからない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">💸</span>
-        <p>大手代行は月50万〜で<br>高すぎて頼めない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">🔄</span>
-        <p>毎月同じ作業の<br>繰り返しで疲弊</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">📊</span>
-        <p>どの業種に<br>アプローチすれば良いかわからない</p>
-      </div>
-      <div class="problem-card">
-        <span class="icon">🤝</span>
-        <p>商談まで持ち込めず<br>受注につながらない</p>
-      </div>
-    </div>
-  </div>
+<section id="problems">
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline">Problems</div>
+<h2>こんなお悩みありませんか？</h2>
+<p>営業リソース不足に悩む中小企業・個人事業主のために開発しました</p>
+</div>
+<div class="problem-grid fade-up">
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-user-slash"></i></div><p>営業担当を雇う<br>コストが払えない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-clock"></i></div><p>本業が忙しくて<br>新規開拓できない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-chart-line-down"></i></div><p>メール・電話をしても<br>全然反応がない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-magnifying-glass"></i></div><p>営業リストをどこから<br>集めるかわからない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-sack-dollar"></i></div><p>大手代行は月50万〜で<br>高すぎて頼めない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-arrows-spin"></i></div><p>毎月同じ作業の<br>繰り返しで疲弊</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-map"></i></div><p>どの業種に<br>アプローチすれば良いかわからない</p></div>
+<div class="problem-card"><div class="picon"><i class="fa-solid fa-handshake-slash"></i></div><p>商談まで持ち込めず<br>受注につながらない</p></div>
+</div>
+</div>
 </section>
 
-<!-- AIフロー図 -->
 <section id="flow-overview" class="bg-dark">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">How It Works</div>
-      <h2 style="color:#fff">ClawTechのAI営業代行フロー</h2>
-      <p>リスト取得から商談設定まで、AIと人間が最適な役割で分担します</p>
-    </div>
-    <div class="ai-flow fade-up">
-      <div class="ai-flow-step">
-        <span class="badge ai-badge-ai">AI自動</span>
-        <div class="step-icon">🎯</div>
-        <h4>リスト取得</h4>
-        <p>業種・地域・サイトスコアで自動収集。電話番号付き</p>
-      </div>
-      <div class="ai-flow-arrow">→</div>
-      <div class="ai-flow-step">
-        <span class="badge ai-badge-ai">AI自動</span>
-        <div class="step-icon">📧</div>
-        <h4>AIメール・フォーム営業</h4>
-        <p>パーソナライズされた文面を自動生成・送付</p>
-      </div>
-      <div class="ai-flow-arrow">→</div>
-      <div class="ai-flow-step human">
-        <span class="badge ai-badge-human">人間対応</span>
-        <div class="step-icon">📞</div>
-        <h4>テレアポ架電</h4>
-        <p>経験豊富なオペレーターが丁寧にアプローチ</p>
-      </div>
-      <div class="ai-flow-arrow">→</div>
-      <div class="ai-flow-step">
-        <span class="badge ai-badge-ai">AI自動</span>
-        <div class="step-icon">📋</div>
-        <h4>レポート・分析</h4>
-        <p>反応率・アポ率・業種別成果を毎月報告</p>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">How It Works</div>
+<h2 style="color:#fff">ClawTechのAI営業代行フロー</h2>
+<p>リスト取得から商談設定まで、AIと人間が最適な役割で分担します</p>
+</div>
+<div class="ai-flow fade-up">
+<div class="ai-flow-step ai-step">
+<span class="step-badge badge-ai"><i class="fa-solid fa-robot"></i> AI自動</span>
+<div class="step-icon"><i class="fa-solid fa-crosshairs"></i></div>
+<h4>リスト取得</h4>
+<p>業種・地域・スコアで自動収集。電話番号付き</p>
+</div>
+<div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+<div class="ai-flow-step ai-step">
+<span class="step-badge badge-ai"><i class="fa-solid fa-robot"></i> AI自動</span>
+<div class="step-icon"><i class="fa-solid fa-envelope"></i></div>
+<h4>AIメール・フォーム</h4>
+<p>個別提案文を自動生成・送付</p>
+</div>
+<div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+<div class="ai-flow-step human-step">
+<span class="step-badge badge-human"><i class="fa-solid fa-user"></i> 人間対応</span>
+<div class="step-icon"><i class="fa-solid fa-phone"></i></div>
+<h4>テレアポ架電</h4>
+<p>熟練オペレーターが丁寧にアプローチ</p>
+</div>
+<div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+<div class="ai-flow-step ai-step">
+<span class="step-badge badge-ai"><i class="fa-solid fa-robot"></i> AI自動</span>
+<div class="step-icon"><i class="fa-solid fa-chart-bar"></i></div>
+<h4>レポート・分析</h4>
+<p>反応率・アポ率を毎月報告</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- サービス詳細 -->
 <section id="services">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline">Services</div>
-      <h2>サービス詳細</h2>
-      <p>4つの機能を組み合わせて、貴社の営業活動を完全代行します</p>
-    </div>
-    <div class="service-detail-grid fade-up">
-      <div class="service-detail-card">
-        <div class="card-icon">🎯</div>
-        <div class="card-tag">AI自動 / 毎日更新</div>
-        <h3>営業リスト自動収集</h3>
-        <p>独自AIシステム「hawk_scout」が業種・地域・キーワードを指定すると自動でBtoB企業リストを収集。電話番号・メールアドレス・サイトスコア付き。</p>
-        <ul>
-          <li>業種・地域を指定して自動収集</li>
-          <li>電話番号・会社名・住所付き</li>
-          <li>重複排除・品質スコアリング自動実施</li>
-          <li>毎月新規リスト追加（鮮度を維持）</li>
-        </ul>
-      </div>
-      <div class="service-detail-card">
-        <div class="card-icon" style="background:#fef3c7">📧</div>
-        <div class="card-tag" style="background:#fef3c7;color:#d97706">AI自動 / パーソナライズ</div>
-        <h3>AIメール・フォーム営業</h3>
-        <p>各企業のサイトを診断し、「御社のサイトに〇〇の改善余地があります」という具体的な提案文を自動生成。汎用メールでない個別提案が反応率を高めます。</p>
-        <ul>
-          <li>サイト診断結果を元にした個別提案文</li>
-          <li>月300件〜メール・フォーム自動送付</li>
-          <li>送付間隔・時間帯を法令準拠で設定</li>
-          <li>開封率・返信率をレポートで可視化</li>
-        </ul>
-      </div>
-      <div class="service-detail-card">
-        <div class="card-icon" style="background:#f0fdf4">📞</div>
-        <div class="card-tag" style="background:#f0fdf4;color:#16a34a">人間対応 / 安心品質</div>
-        <h3>テレアポ代行（架電）</h3>
-        <p>架電はAIに任せず、経験豊富な人間のオペレーターが担当します。リスト・スクリプトはClawTechが準備し、ワーカーは架電のみに集中できる体制を整備。</p>
-        <ul>
-          <li>架電はすべて人間が対応（安心感）</li>
-          <li>ClawTechがスクリプト作成・提供</li>
-          <li>架電時間は法令準拠（8:00〜20:00）</li>
-          <li>通話録音・結果報告書を毎週提出</li>
-        </ul>
-      </div>
-      <div class="service-detail-card">
-        <div class="card-icon" style="background:#f3f0ff">📊</div>
-        <div class="card-tag" style="background:#f3f0ff;color:#7c3aed">毎月レポート</div>
-        <h3>月次レポート・効果検証</h3>
-        <p>送付数・開封率・架電数・アポ獲得数・業種別成果を毎月レポート。翌月の改善提案まで含めてお届けします。PDCAサイクルで成果を継続的に改善します。</p>
-        <ul>
-          <li>月次レポート（PDF）を毎月送付</li>
-          <li>業種別・地域別の成果分析</li>
-          <li>翌月の改善提案を提示</li>
-          <li>担当者との月1回オンライン報告会</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline">Services</div>
+<h2>サービス詳細</h2>
+<p>4つの機能を組み合わせて、貴社の営業活動を完全代行します</p>
+</div>
+<div class="svc-grid fade-up">
+<div class="svc-card">
+<div class="svc-icon"><i class="fa-solid fa-crosshairs"></i></div>
+<div class="svc-tag"><i class="fa-solid fa-robot"></i>AI自動 / 毎日更新</div>
+<h3>営業リスト自動収集</h3>
+<p>独自AIシステムが業種・地域・キーワードを指定すると自動でBtoB企業リストを収集。電話番号・メールアドレス・サイトスコア付き。</p>
+<ul>
+<li><i class="fa-solid fa-check"></i>業種・地域を指定して自動収集</li>
+<li><i class="fa-solid fa-check"></i>電話番号・会社名・住所付き</li>
+<li><i class="fa-solid fa-check"></i>重複排除・品質スコアリング自動実施</li>
+<li><i class="fa-solid fa-check"></i>毎月新規リスト追加（鮮度を維持）</li>
+</ul>
+</div>
+<div class="svc-card">
+<div class="svc-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+<div class="svc-tag"><i class="fa-solid fa-wand-magic-sparkles"></i>AI自動 / パーソナライズ</div>
+<h3>AIメール・フォーム営業</h3>
+<p>各企業のサイトを診断し、個別提案文を自動生成。汎用メールでない具体的な提案が反応率を高めます。月300件〜自動送付。</p>
+<ul>
+<li><i class="fa-solid fa-check"></i>サイト診断結果を元にした個別提案文</li>
+<li><i class="fa-solid fa-check"></i>月300件〜メール・フォーム自動送付</li>
+<li><i class="fa-solid fa-check"></i>送付間隔・時間帯を法令準拠で設定</li>
+<li><i class="fa-solid fa-check"></i>開封率・返信率をレポートで可視化</li>
+</ul>
+</div>
+<div class="svc-card">
+<div class="svc-icon"><i class="fa-solid fa-phone-volume"></i></div>
+<div class="svc-tag"><i class="fa-solid fa-user-tie"></i>人間対応 / 安心品質</div>
+<h3>テレアポ代行（架電）</h3>
+<p>架電はAIに任せず、経験豊富な人間のオペレーターが担当。リスト・スクリプトはClawTechが準備し、架電のみに集中できる体制を整備。</p>
+<ul>
+<li><i class="fa-solid fa-check"></i>架電はすべて人間が対応（安心感）</li>
+<li><i class="fa-solid fa-check"></i>ClawTechがスクリプト作成・提供</li>
+<li><i class="fa-solid fa-check"></i>架電時間は法令準拠（8:00〜20:00）</li>
+<li><i class="fa-solid fa-check"></i>通話録音・結果報告書を毎週提出</li>
+</ul>
+</div>
+<div class="svc-card">
+<div class="svc-icon"><i class="fa-solid fa-chart-pie"></i></div>
+<div class="svc-tag"><i class="fa-solid fa-file-lines"></i>毎月レポート</div>
+<h3>月次レポート・効果検証</h3>
+<p>送付数・開封率・架電数・アポ獲得数・業種別成果を毎月レポート。翌月の改善提案まで含めてお届けします。</p>
+<ul>
+<li><i class="fa-solid fa-check"></i>月次レポート（PDF）を毎月送付</li>
+<li><i class="fa-solid fa-check"></i>業種別・地域別の成果分析</li>
+<li><i class="fa-solid fa-check"></i>翌月の改善提案・戦略提示</li>
+<li><i class="fa-solid fa-check"></i>オンラインでの振り返りMTG対応</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 
-<!-- 選ばれる理由 -->
-<section class="bg-dark">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Why ClawTech</div>
-      <h2 style="color:#fff">選ばれる3つの理由</h2>
-      <p>大手代行会社にはできない、ClawTech独自の強みです</p>
-    </div>
-    <div class="strength-grid fade-up">
-      <div class="strength-card">
-        <div class="strength-num">1/10</div>
-        <h3>大手の10分の1のコスト</h3>
-        <p>大手営業代行は月額50〜70万円が相場。ClawTechはAI自動化により月¥29,800〜で同等以上の活動量を実現。リスト収集コストもほぼゼロ。</p>
-      </div>
-      <div class="strength-card">
-        <div class="strength-num">5日</div>
-        <h3>最短5日で稼働開始</h3>
-        <p>ヒアリング→リスト取得→スクリプト作成→初回送付まで最短5営業日で完結。長期の準備期間なく、すぐに営業活動を開始できます。</p>
-      </div>
-      <div class="strength-card">
-        <div class="strength-num">NDA</div>
-        <h3>守秘義務契約を必ず締結</h3>
-        <p>業務開始前に秘密保持契約（NDA）を必ず締結。顧客リスト・商材情報・営業戦略は第三者に一切開示しません。個人情報保護法完全準拠。</p>
-      </div>
-    </div>
-  </div>
+<section id="strengths" class="bg-dark">
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Why Us</div>
+<h2 style="color:#fff">選ばれる3つの理由</h2>
+<p>大手代行と比べてコスト1/10以下、最短5日稼働</p>
+</div>
+<div class="str-grid fade-up">
+<div class="str-card">
+<div class="str-icon"><i class="fa-solid fa-yen-sign"></i></div>
+<div class="str-num">1/10</div>
+<h3>大手比コスト</h3>
+<p>大手営業代行は月50〜100万円。ClawTechは¥29,800〜。AIと外注の組み合わせで圧倒的コスパを実現。</p>
+</div>
+<div class="str-card">
+<div class="str-icon"><i class="fa-solid fa-rocket"></i></div>
+<div class="str-num">5<span style="font-size:22px">日〜</span></div>
+<h3>最速稼働</h3>
+<p>ヒアリング→リスト準備→メール設定まで最短5日。急ぎの新規開拓にもすぐ対応できます。</p>
+</div>
+<div class="str-card">
+<div class="str-icon"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="str-num">NDA</div>
+<h3>守秘義務締結</h3>
+<p>すべての契約でNDA（秘密保持契約）を締結。お客様の情報・リスト・商談内容は厳重に管理します。</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- 料金プラン -->
 <section id="pricing">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline">Pricing</div>
-      <h2>料金プラン</h2>
-      <p>すべて月額固定型。成果が出なくても追加費用なし。いつでもプラン変更可能。</p>
-    </div>
-    <div class="price-grid fade-up">
-      <!-- プラン1 -->
-      <div class="price-card">
-        <h3>AIライトプラン</h3>
-        <div class="price-amount">¥29,800<small>/月（税込）</small></div>
-        <div class="price-note">初期費用 ¥0 / 最低契約期間 1ヶ月</div>
-        <div class="profit-tag">粗利率 約90%</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>AIメール自動送付 月300件</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>フォーム営業 月200件</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>業種・地域指定リスト提供</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>月次レポート（PDF）</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>NDA締結・個人情報管理</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">相談・申込</a>
-      </div>
-      <!-- プラン2（人気） -->
-      <div class="price-card popular">
-        <h3>AI＋電話スタンダード</h3>
-        <div class="price-amount">¥59,800<small>/月（税込）</small></div>
-        <div class="price-note">初期費用 ¥0 / 最低契約期間 1ヶ月</div>
-        <div class="profit-tag">粗利率 約70%</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>ライトプランすべて含む</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>テレアポ架電 月50件（人間対応）</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>ClawTech作成スクリプト提供</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>週次進捗報告</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>月1回オンライン報告会</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">相談・申込</a>
-      </div>
-      <!-- プラン3 -->
-      <div class="price-card">
-        <h3>AI＋電話プレミアム</h3>
-        <div class="price-amount">¥98,000<small>/月（税込）</small></div>
-        <div class="price-note">初期費用 ¥0 / 最低契約期間 1ヶ月</div>
-        <div class="profit-tag">粗利率 約65%</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>スタンダードすべて含む</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>テレアポ架電 月200件</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>アポイント3件保証</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>商材に合わせたターゲット選定</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>優先サポート対応</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">相談・申込</a>
-      </div>
-      <!-- プラン4 -->
-      <div class="price-card">
-        <h3>フルコミットプラン</h3>
-        <div class="price-amount">¥148,000<small>/月（税込）</small></div>
-        <div class="price-note">初期費用 ¥0 / 最低契約期間 1ヶ月</div>
-        <div class="profit-tag">粗利率 約65%</div>
-        <ul>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>プレミアムすべて含む</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>LP制作 1ページ込み</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>SEOブログ記事 2本/月</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>営業資料（提案書）作成</li>
-          <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>戦略コンサルティング込み</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">相談・申込</a>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:13px;color:var(--gray);margin-top:24px">※ 業種・ターゲット・商材によって成果は異なります。アポイント保証は条件（30分以上の商談・決裁者参加等）を満たした場合のみ適用。</p>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline">Pricing</div>
+<h2>料金プラン</h2>
+<p>すべて月額・税込。初期費用なし。いつでも解約可能。</p>
+</div>
+<div class="price-grid fade-up">
+<div class="price-card">
+<div class="pln-icon" style="background:#dbeafe"><i class="fa-solid fa-seedling" style="font-size:22px;color:#2563eb"></i></div>
+<h3>AIライト</h3>
+<div class="amount">¥29,800<small>/月</small></div>
+<div class="pnote">AIメール特化プラン</div>
+<div class="profit-tag"><i class="fa-solid fa-chart-line"></i>粗利約90%</div>
+<ul>
+<li><i class="fa-solid fa-check"></i>営業リスト収集（月200件）</li>
+<li><i class="fa-solid fa-check"></i>AIメール自動送付（月300件）</li>
+<li><i class="fa-solid fa-check"></i>フォーム営業（月200件）</li>
+<li><i class="fa-solid fa-check"></i>月次レポート</li>
+<li><i class="fa-solid fa-check"></i>NDA締結</li>
+</ul>
+<a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right"></i>相談する</a>
+</div>
+<div class="price-card popular">
+<div class="pln-icon" style="background:#dbeafe"><i class="fa-solid fa-star" style="font-size:22px;color:#2563eb"></i></div>
+<h3>AI＋電話スタンダード</h3>
+<div class="amount">¥59,800<small>/月</small></div>
+<div class="pnote">メール＋テレアポ併用</div>
+<div class="profit-tag"><i class="fa-solid fa-chart-line"></i>粗利約70%</div>
+<ul>
+<li><i class="fa-solid fa-check"></i>ライトプランの全内容</li>
+<li><i class="fa-solid fa-check"></i>テレアポ外注（月50件架電）</li>
+<li><i class="fa-solid fa-check"></i>スクリプト作成込み</li>
+<li><i class="fa-solid fa-check"></i>週次進捗レポート</li>
+<li><i class="fa-solid fa-check"></i>オンラインMTG月1回</li>
+</ul>
+<a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right"></i>相談する</a>
+</div>
+<div class="price-card">
+<div class="pln-icon" style="background:#fef3c7"><i class="fa-solid fa-crown" style="font-size:22px;color:#d97706"></i></div>
+<h3>AI＋電話プレミアム</h3>
+<div class="amount" style="color:#d97706">¥98,000<small>/月</small></div>
+<div class="pnote">架電200件＋アポ保証付き</div>
+<div class="profit-tag"><i class="fa-solid fa-chart-line"></i>粗利約65%</div>
+<ul>
+<li><i class="fa-solid fa-check"></i>スタンダードの全内容</li>
+<li><i class="fa-solid fa-check"></i>架電200件/月</li>
+<li><i class="fa-solid fa-check"></i>アポイント3件保証</li>
+<li><i class="fa-solid fa-check"></i>業種・エリア戦略立案</li>
+<li><i class="fa-solid fa-check"></i>週次MTG対応</li>
+</ul>
+<a href="#contact" class="btn btn-accent" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right"></i>相談する</a>
+</div>
+<div class="price-card">
+<div class="pln-icon" style="background:#f3f0ff"><i class="fa-solid fa-infinity" style="font-size:22px;color:#7c3aed"></i></div>
+<h3>フルコミット</h3>
+<div class="amount" style="color:#7c3aed">¥148,000<small>/月</small></div>
+<div class="pnote">営業完全外注パッケージ</div>
+<div class="profit-tag"><i class="fa-solid fa-chart-line"></i>粗利約65%</div>
+<ul>
+<li><i class="fa-solid fa-check"></i>プレミアムの全内容</li>
+<li><i class="fa-solid fa-check"></i>LP制作1本込み</li>
+<li><i class="fa-solid fa-check"></i>SEOブログ記事2本/月</li>
+<li><i class="fa-solid fa-check"></i>SNS投稿代行（月8本）</li>
+<li><i class="fa-solid fa-check"></i>専任担当制</li>
+</ul>
+<a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right"></i>相談する</a>
+</div>
+</div>
+</div>
 </section>
 
-<!-- 導入フロー（詳細） -->
-<section id="flow" class="bg-light">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline">Flow</div>
-      <h2>ご依頼の流れ</h2>
-      <p>お申し込みから稼働開始まで最短5営業日。複雑な準備は一切不要です。</p>
-    </div>
-    <div class="flow-timeline fade-up">
-      <div class="flow-item">
-        <div class="flow-num"><span class="step-label">STEP</span><span class="step-n">1</span></div>
-        <div class="flow-body">
-          <div class="flow-tag">📋 無料・約30分</div>
-          <h4>無料ヒアリング・相談</h4>
-          <p>フォームまたはオンラインにて、ターゲット業種・地域・商材・現状の課題をヒアリングします。この段階で費用は一切かかりません。ご要望に合わせた最適プランをご提案します。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num"><span class="step-label">STEP</span><span class="step-n">2</span></div>
-        <div class="flow-body">
-          <div class="flow-tag">📝 業務開始前に必ず締結</div>
-          <h4>秘密保持契約（NDA）締結・契約</h4>
-          <p>業務委託契約および秘密保持契約（NDA）を電子契約で締結します。貴社の顧客情報・商材情報・営業戦略はすべて機密情報として扱い、第三者への開示を一切禁止します。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num"><span class="step-label">STEP</span><span class="step-n">3</span></div>
-        <div class="flow-body">
-          <div class="flow-tag">🎯 最短1〜2日</div>
-          <h4>リスト取得・スクリプト作成</h4>
-          <p>指定業種・地域のBtoBリストをAIで自動収集。同時にヒアリング内容を元にした架電スクリプト・メール文面をClawTechが作成・提出します。内容の確認・修正にご協力ください。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num"><span class="step-label">STEP</span><span class="step-n">4</span></div>
-        <div class="flow-body">
-          <div class="flow-tag">🚀 稼働開始</div>
-          <h4>AIメール・テレアポ 同時稼働</h4>
-          <p>AIメール・フォーム営業を自動稼働させつつ、人間オペレーターによる架電を開始します。稼働開始後は週次で進捗を報告。気になる点はいつでもご相談いただけます。</p>
-        </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num"><span class="step-label">STEP</span><span class="step-n">5</span></div>
-        <div class="flow-body">
-          <div class="flow-tag">📊 毎月末</div>
-          <h4>月次レポート・改善提案</h4>
-          <p>送付数・架電数・反応率・アポ獲得数・業種別成果を月次レポートにまとめて提出。翌月の改善提案（ターゲット変更・文面改善等）も含めてお届けします。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<section id="flow">
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline">Flow</div>
+<h2>導入の流れ</h2>
+<p>お問い合わせから稼働開始まで最短5日。スムーズに進めます。</p>
+</div>
+<div class="flow-timeline fade-up">
+<div class="flow-item">
+<div class="flow-num step1"><span class="sl">STEP</span><span class="sn">1</span></div>
+<div class="flow-body">
+<div class="ftag"><i class="fa-solid fa-envelope"></i>当日〜翌日</div>
+<h4>無料相談・ヒアリング</h4>
+<p>フォームからお問い合わせ後、オンラインでヒアリング。ターゲット業種・地域・ご予算・目標アポ数を確認します。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="flow-num step2"><span class="sl">STEP</span><span class="sn">2</span></div>
+<div class="flow-body">
+<div class="ftag"><i class="fa-solid fa-file-contract"></i>1〜2日</div>
+<h4>NDA締結・契約</h4>
+<p>秘密保持契約（NDA）と業務委託契約を締結。情報管理を徹底した上で業務を開始します。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="flow-num step3"><span class="sl">STEP</span><span class="sn">3</span></div>
+<div class="flow-body">
+<div class="ftag"><i class="fa-solid fa-list-check"></i>2〜3日</div>
+<h4>リスト作成・スクリプト準備</h4>
+<p>AIがターゲット企業リストを自動収集。メール文面・テレアポスクリプトをClawTechが作成し、承認後に稼働準備完了。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="flow-num step4"><span class="sl">STEP</span><span class="sn">4</span></div>
+<div class="flow-body">
+<div class="ftag" style="background:#fef3c7;color:#d97706"><i class="fa-solid fa-rocket"></i>最短5日目〜</div>
+<h4>営業活動スタート</h4>
+<p>AIメール・フォーム営業・テレアポを並行して開始。進捗はリアルタイムで共有します。</p>
+</div>
+</div>
+<div class="flow-item">
+<div class="flow-num step5"><span class="sl">STEP</span><span class="sn">5</span></div>
+<div class="flow-body">
+<div class="ftag" style="background:#f0fdf4;color:#16a34a"><i class="fa-solid fa-chart-bar"></i>毎月末</div>
+<h4>レポート・改善提案</h4>
+<p>月末に成果レポートを提出。翌月の戦略改善提案と共にPDCAサイクルを回し、継続的に成果を向上させます。</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- 守秘義務・約款セクション -->
 <section id="legal" class="bg-dark">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Legal &amp; Security</div>
-      <h2 style="color:#fff">守秘義務・契約・個人情報管理</h2>
-      <p>安心してご依頼いただけるよう、法的な取り決めを明確にしています</p>
-    </div>
-    <div class="legal-grid fade-up">
-      <div class="legal-card">
-        <h3><span class="icon">🔒</span>秘密保持契約（NDA）</h3>
-        <ul>
-          <li>業務開始前に電子契約（クラウドサイン対応）にて秘密保持契約を締結</li>
-          <li>ご提供いただいた顧客情報・商材・営業戦略はすべて機密情報として管理</li>
-          <li>第三者への開示・漏洩を契約上禁止（違反時は損害賠償の対象）</li>
-          <li>業務終了後も情報の適切な廃棄・返却を実施</li>
-        </ul>
-        <div class="legal-highlight">
-          <p>💡 NDA締結後に業務を開始するため、情報提供前に契約内容をご確認いただけます。</p>
-        </div>
-      </div>
-      <div class="legal-card">
-        <h3><span class="icon">📋</span>業務委託契約の主な条件</h3>
-        <ul>
-          <li>委託業務：リスト収集・メール送付・架電代行・レポート提出</li>
-          <li>最低契約期間：1ヶ月（月途中解約は翌月末までを残余期間として精算）</li>
-          <li>支払：前払い（月初請求・翌月開始）</li>
-          <li>再委託：架電業務はClawTechが管理する外注ワーカーへの再委託あり（NDA締結済）</li>
-          <li>成果保証の制限：アポ保証は条件（30分以上商談・決裁者参加）を満たした商談のみ対象</li>
-        </ul>
-      </div>
-      <div class="legal-card">
-        <h3><span class="icon">🛡️</span>個人情報保護・法令遵守</h3>
-        <ul>
-          <li>個人情報の取り扱いは個人情報保護法（改正個人情報保護法）に完全準拠</li>
-          <li>架電は法令で定める時間帯（8:00〜20:00）のみ実施</li>
-          <li>「興味なし」と意思表示した相手への再架電は行わない（特定商取引法第17条準拠）</li>
-          <li>収集リストはBtoB（法人）に限定。個人宅への架電は原則不実施</li>
-          <li>取得した個人情報は目的外利用禁止・第三者提供禁止</li>
-        </ul>
-      </div>
-      <div class="legal-card">
-        <h3><span class="icon">⚠️</span>免責事項・ご注意</h3>
-        <ul>
-          <li>営業代行は成果（受注・売上）を保証するものではありません</li>
-          <li>アポイント数・反応率は業種・商材・地域・時期により大きく異なります</li>
-          <li>「誇大広告」「虚偽説明」を含むスクリプトの作成・使用はお断りします</li>
-          <li>医薬品・金融商品・マルチ商法等、法令上規制の強い商材はお断りする場合があります</li>
-          <li>当サービスは業務委託であり、雇用契約ではありません</li>
-        </ul>
-        <div class="legal-highlight">
-          <p>⚖️ ご不明な点は契約前に必ずご確認ください。誠実に対応いたします。</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Legal</div>
+<h2 style="color:#fff">秘密保持・契約・法的事項</h2>
+<p>安心してご依頼いただけるよう、契約・法令対応を徹底しています</p>
+</div>
+<div class="legal-grid fade-up">
+<div class="legal-card">
+<h3><i class="fa-solid fa-shield-halved"></i>秘密保持契約（NDA）</h3>
+<ul>
+<li><i class="fa-solid fa-circle-check"></i>全契約でNDA締結（契約前に締結可能）</li>
+<li><i class="fa-solid fa-circle-check"></i>営業リスト・商談情報の第三者提供禁止</li>
+<li><i class="fa-solid fa-circle-check"></i>契約終了後もデータを完全消去・返却</li>
+<li><i class="fa-solid fa-circle-check"></i>クラウド保管は暗号化ストレージを使用</li>
+</ul>
+<div class="legal-hl"><p><i class="fa-solid fa-lock"></i> 契約締結前でもNDAのみ先行締結が可能です。安心してご相談ください。</p></div>
+</div>
+<div class="legal-card">
+<h3><i class="fa-solid fa-file-contract"></i>業務委託契約・約款</h3>
+<ul>
+<li><i class="fa-solid fa-circle-check"></i>業務委託契約書を全案件で締結</li>
+<li><i class="fa-solid fa-circle-check"></i>成果物の著作権はクライアントに帰属</li>
+<li><i class="fa-solid fa-circle-check"></i>月単位契約・解約は1ヶ月前通知でOK</li>
+<li><i class="fa-solid fa-circle-check"></i>反社会的勢力排除条項を含む</li>
+</ul>
+<div class="legal-hl"><p><i class="fa-solid fa-info-circle"></i> 契約書の雛形は事前にご確認いただけます。弁護士監修の標準書式を使用。</p></div>
+</div>
+<div class="legal-card">
+<h3><i class="fa-solid fa-gavel"></i>特定商取引法・迷惑メール法対応</h3>
+<ul>
+<li><i class="fa-solid fa-circle-check"></i>特定電子メール法に準拠した送信設定</li>
+<li><i class="fa-solid fa-circle-check"></i>オプトアウト（配信停止）機能を標準搭載</li>
+<li><i class="fa-solid fa-circle-check"></i>架電時間は法令準拠（8:00〜20:00）</li>
+<li><i class="fa-solid fa-circle-check"></i>営業電話の禁止リスト管理を実施</li>
+</ul>
+</div>
+<div class="legal-card">
+<h3><i class="fa-solid fa-user-shield"></i>個人情報保護・プライバシー</h3>
+<ul>
+<li><i class="fa-solid fa-circle-check"></i>個人情報保護法に準拠した情報管理</li>
+<li><i class="fa-solid fa-circle-check"></i>収集リストは業務目的のみに使用</li>
+<li><i class="fa-solid fa-circle-check"></i>不要になったデータは速やかに削除</li>
+<li><i class="fa-solid fa-circle-check"></i>プライバシーポリシーを明示</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 
-<!-- FAQ -->
 <section id="faq">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline">FAQ</div>
-      <h2>よくある質問</h2>
-    </div>
-    <div class="faq-list fade-up">
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>架電は本当に人間がするんですか？AIロボコールではないですか？</summary>
-          <div class="faq-answer">はい、架電（テレアポ）はすべて人間のオペレーターが担当します。AIは「リスト取得」「メール文面生成」「フォーム送付」「レポート分析」を担当し、お電話でのコミュニケーションは経験豊富なスタッフが丁寧に対応します。ロボコールは一切使用しません。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>どんな業種・商材に対応していますか？</summary>
-          <div class="faq-answer">BtoB（法人向け）の商材であれば幅広く対応可能です。特に飲食・美容・工務店・クリニック・士業・ITサービスへのWeb制作・DX提案での実績があります。医薬品・金融商品・マルチ商法等、法令上規制の強い商材はお断りする場合があります。詳しくはヒアリング時にご相談ください。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>最低契約期間はありますか？途中解約できますか？</summary>
-          <div class="faq-answer">最低契約期間は1ヶ月です。月途中での解約の場合、翌月末を契約終了日として残余期間分の費用が発生します。長期縛りはありません。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>NDA（秘密保持契約）の内容を事前に確認できますか？</summary>
-          <div class="faq-answer">もちろんです。無料ヒアリング後、業務委託契約書・秘密保持契約書（NDA）の雛形をご確認いただいた上で締結します。内容に不明点があればご質問・修正依頼をお気軽にどうぞ。電子契約（クラウドサイン等）にて締結します。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>アポイント保証の「条件」とは何ですか？</summary>
-          <div class="faq-answer">プレミアム・フルコミットプランのアポイント保証は、「30分以上の商談時間が確保され、かつ相手方の決裁者または決裁に関与できる方が参加する商談」を1件としてカウントします。単なる「話を聞いてもいい」という程度の架電は保証件数に含まれません。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>リストはどうやって集めますか？個人情報の扱いは大丈夫ですか？</summary>
-          <div class="faq-answer">法人（会社・店舗）のみを対象としたBtoBリストを、公開情報（iタウンページ・Googleマップ・企業Webサイト）から自動収集します。個人宅の情報は収集しません。収集した情報は個人情報保護法に準拠して管理し、目的外利用・第三者提供は一切行いません。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>支払い方法と請求タイミングを教えてください。</summary>
-          <div class="faq-answer">月初に翌月分の請求書を発行し、銀行振込にてご入金をお願いします（前払い）。入金確認後に翌月の稼働を開始します。請求書は電子請求書（PDF）でお送りします。</div>
-        </details>
-      </div>
-      <div class="faq-item">
-        <details>
-          <summary><span class="q">Q</span>LP制作とセットで依頼できますか？</summary>
-          <div class="faq-answer">はい、フルコミットプランにはLP制作1ページが含まれます。また、LP制作単体でのご依頼も承っています。ClawTechのLP制作サービス（¥49,800〜）と組み合わせることで、「集客ページ＋営業活動」を一括でご依頼いただけます。</div>
-        </details>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline">FAQ</div>
+<h2>よくある質問</h2>
+</div>
+<div class="faq-list fade-up">
+<div class="faq-item"><details><summary><span class="q">Q</span>どんな業種・業態に対応していますか？</summary><div class="faq-answer">BtoBビジネスであれば基本的に対応可能です。IT・Web・コンサル・士業・製造業・建設業・不動産など幅広く対応実績があります。BtoCのみの業態はご相談ください。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>成果（アポイント数）は保証されますか？</summary><div class="faq-answer">プレミアム・フルコミットプランではアポイント3件/月を保証しています。ライト・スタンダードプランは成果保証なしですが、改善提案を継続的に行い成果向上を目指します。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>最低契約期間はありますか？</summary><div class="faq-answer">最低契約期間は1ヶ月です。解約は1ヶ月前のご通知でいつでも可能です。成果を見ながら柔軟にご判断いただけます。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>営業代行は法律的に問題ありませんか？</summary><div class="faq-answer">適切な形態での営業代行は完全に合法です。特定電子メール法・個人情報保護法・特定商取引法に準拠した運用を徹底しており、法的リスクを最小化しています。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>テレアポの架電スクリプトは誰が作りますか？</summary><div class="faq-answer">ClawTechが作成します。ヒアリング内容を元に貴社の強み・ターゲットに合わせたスクリプトを作成し、承認いただいてから架電を開始します。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>どのようなレポートが届きますか？</summary><div class="faq-answer">毎月末にPDFレポートをお送りします。内容はメール送付数・開封率・返信率・架電数・アポ獲得数・業種別成果・翌月改善提案です。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>既存の営業リストがある場合は使えますか？</summary><div class="faq-answer">はい、既存リストをご提供いただければ活用可能です。ClawTechのAI収集リストと組み合わせることで、より効果的な営業活動が可能になります。</div></details></div>
+<div class="faq-item"><details><summary><span class="q">Q</span>支払い方法は何がありますか？</summary><div class="faq-answer">銀行振込・クレジットカード（Stripe経由）に対応しています。月末締め翌月払いが基本です。</div></details></div>
+</div>
+</div>
 </section>
 
-<!-- LP制作へのクロスリンク -->
-<section style="padding:60px 0">
-  <div class="container">
-    <div class="crosslink-banner fade-up">
-      <div>
-        <h3>🌐 ホームページ・LP制作もClawTechにお任せ</h3>
-        <p>営業代行でアポを獲得した後、商談相手に見せる「自社サイト」も必要ですよね。ClawTechのLP制作サービス（¥49,800〜、最短1週間）と組み合わせれば、集客から受注まで一気通貫です。</p>
-      </div>
-      <a href="../" class="btn btn-primary" style="white-space:nowrap;flex-shrink:0">LP制作を見る →</a>
-    </div>
-  </div>
+<section id="crosslink-section" class="bg-light">
+<div class="container">
+<div class="crosslink fade-up">
+<div>
+<h3><i class="fa-solid fa-laptop-code" style="color:var(--primary);margin-right:8px"></i>LP・ホームページ制作もClawTechへ</h3>
+<p>営業代行と合わせてLP制作もご依頼いただくと、専用LPで問い合わせ数をさらに向上。¥49,800〜、最短1週間納品。</p>
+</div>
+<a href="../" class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i>LP制作サービスを見る</a>
+</div>
+</div>
 </section>
 
-<!-- コンタクト -->
 <section id="contact" class="bg-dark">
-  <div class="container">
-    <div class="section-title fade-up">
-      <div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Contact</div>
-      <h2 style="color:#fff">無料相談・お問い合わせ</h2>
-      <p>まずはお気軽にご相談ください。お見積もりは無料です。</p>
-    </div>
-    <div class="contact-form-wrap fade-up">
-      <form action="https://formspree.io/f/xpqjbyya" method="POST">
-        <input type="hidden" name="_subject" value="【営業代行】お問い合わせ">
-        <input type="hidden" name="_next" value="https://clawtech6477.github.io/clawtech-lp/sales/#contact">
-        <label>お名前 <span style="color:red">*</span></label>
-        <input type="text" name="name" required placeholder="山田 太郎">
-        <label>会社名・屋号</label>
-        <input type="text" name="company" placeholder="株式会社〇〇">
-        <label>メールアドレス <span style="color:red">*</span></label>
-        <input type="email" name="email" required placeholder="example@mail.com">
-        <label>電話番号</label>
-        <input type="tel" name="phone" placeholder="090-0000-0000">
-        <label>ご希望プラン</label>
-        <select name="plan">
-          <option value="">選択してください</option>
-          <option value="ai-light">AIライトプラン（¥29,800/月）</option>
-          <option value="standard">AI＋電話スタンダード（¥59,800/月）</option>
-          <option value="premium">AI＋電話プレミアム（¥98,000/月）</option>
-          <option value="full">フルコミットプラン（¥148,000/月）</option>
-          <option value="consult">まずは相談したい</option>
-        </select>
-        <label>ターゲット業種・商材・ご相談内容</label>
-        <textarea name="message" rows="5" placeholder="例：飲食店向けにホームページ制作の営業を月50件程度お願いしたい。現在リストはありません。"></textarea>
-        <p class="form-note">送信後、1営業日以内にご返信いたします。NDA締結についてのご相談もお気軽にどうぞ。送信内容はSSL暗号化により保護されています。</p>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:18px">📩 無料相談を申し込む</button>
-      </form>
-    </div>
-  </div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Contact</div>
+<h2 style="color:#fff">無料相談・見積もり依頼</h2>
+<p>まずはお気軽にご相談ください。24時間以内にご返信します。</p>
+</div>
+<div class="cform-wrap fade-up">
+<form action="https://formspree.io/f/xpqjbyya" method="POST">
+<input type="hidden" name="_subject" value="【AI営業代行】お問い合わせ">
+<input type="hidden" name="_next" value="https://clawtech6477.github.io/clawtech-lp/sales/#contact">
+<label>お名前 <span style="color:#ef4444">*</span></label>
+<input type="text" name="name" placeholder="山田 太郎" required>
+<label>会社名・屋号</label>
+<input type="text" name="company" placeholder="株式会社〇〇">
+<label>メールアドレス <span style="color:#ef4444">*</span></label>
+<input type="email" name="email" placeholder="example@email.com" required>
+<label>ご希望プラン</label>
+<select name="plan">
+<option value="">選択してください</option>
+<option>AIライト（¥29,800/月）</option>
+<option>AI＋電話スタンダード（¥59,800/月）</option>
+<option>AI＋電話プレミアム（¥98,000/月）</option>
+<option>フルコミット（¥148,000/月）</option>
+<option>まずは相談したい</option>
+</select>
+<label>ターゲット業種・地域（任意）</label>
+<input type="text" name="target" placeholder="例：飲食店・大阪府">
+<label>メッセージ</label>
+<textarea name="message" rows="4" placeholder="ご要望・ご質問をご記入ください"></textarea>
+<p style="font-size:12px;color:var(--gray-light);margin-bottom:20px">送信後24時間以内にご返信します。NDA締結をご希望の場合はメッセージにご記入ください。</p>
+<button type="submit" class="btn btn-accent" style="width:100%;justify-content:center;font-size:16px"><i class="fa-solid fa-paper-plane"></i>送信する（無料・秘密厳守）</button>
+</form>
+</div>
+</div>
 </section>
 
-<!-- フッター -->
 <footer>
-  <div class="container">
-    <p style="margin-bottom:8px">
-      <a href="../">ClawTech トップ（LP制作・DX支援）</a>
-      &nbsp;|&nbsp;
-      <a href="#top">営業代行トップへ戻る</a>
-      &nbsp;|&nbsp;
-      <a href="#legal">守秘義務・約款</a>
-      &nbsp;|&nbsp;
-      <a href="#contact">お問い合わせ</a>
-    </p>
-    <p>© 2026 ClawTech. All rights reserved.</p>
-  </div>
+<div class="container">
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px">
+<svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="url(#lgf2)"/><path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lgf2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+<span style="font-size:18px;font-weight:900;color:rgba(255,255,255,0.7)">ClawTech</span>
+</div>
+<div style="display:flex;justify-content:center;gap:20px;margin-bottom:16px;flex-wrap:wrap">
+<a href="#problems">課題</a><a href="#services">サービス</a><a href="#pricing">料金</a><a href="#flow">フロー</a><a href="#legal">守秘義務</a><a href="#faq">FAQ</a><a href="../">LP制作へ</a><a href="#contact">お問い合わせ</a>
+</div>
+<p>© 2024 ClawTech. All rights reserved. | <a href="../">LP制作・DX支援はこちら</a></p>
+</div>
 </footer>
 
 <script>
-// スクロールアニメーション
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1});
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-// モバイルナビ外クリックで閉じる
-document.addEventListener('click',e=>{
-  const menu=document.getElementById('nav-menu');
-  if(menu&&!menu.contains(e.target)&&!e.target.closest('.nav-toggle')){
-    menu.style.display='none';
-  }
-});
+document.querySelectorAll('#snav a').forEach(a=>{a.addEventListener('click',()=>{const m=document.getElementById('snav');if(m)m.style.display='none';});});
 </script>
 </body>
 </html>
