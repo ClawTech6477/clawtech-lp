@@ -10,7 +10,7 @@
 <style>
 :root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.8;background:var(--light)}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--dark);line-height:1.8;background:var(--light)}
 a{text-decoration:none;color:inherit}
 nav{background:rgba(15,23,42,0.95);backdrop-filter:blur(20px);padding:0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
 nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:68px}
@@ -20,33 +20,31 @@ nav .logo{color:#fff;font-size:24px;font-weight:900}
 nav .logo span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 nav .nav-links{display:flex;gap:24px;align-items:center}
 .nav-cta{background:linear-gradient(135deg,#2563eb,#7c3aed)!important;color:#fff!important;padding:10px 24px!important;border-radius:8px}
-.hero-blog-list{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:80px 24px 60px;text-align:center}
-.hero-blog-list .overline{display:inline-block;font-size:13px;font-weight:700;color:#f59e0b;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.hero-blog-list h1{font-size:36px;font-weight:900;margin-bottom:12px}
-.hero-blog-list p{color:rgba(255,255,255,0.5);font-size:15px}
+.hero-blog{background:linear-gradient(135deg,#1e293b,#0f172a);color:#fff;padding:80px 24px 60px;text-align:center}
+.hero-blog .overline{display:inline-block;font-size:13px;font-weight:700;color:#f59e0b;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.hero-blog h1{font-size:36px;font-weight:900;margin-bottom:12px}
+.hero-blog p{color:rgba(255,255,255,0.5);font-size:15px}
 .blog-container{max-width:1120px;margin:0 auto;padding:48px 24px 80px}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);border:1px solid #e2e8f0;transition:all .3s}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.1)}
-.blog-card-img{height:180px;background:linear-gradient(135deg,#1e293b,#2563eb);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.blog-card-img svg{width:48px;height:48px;stroke:rgba(255,255,255,0.3);fill:none;stroke-width:1.5}
-.blog-card-img .cat-badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700}
-.blog-card-body{padding:24px}
-.blog-card-body h3{font-size:17px;font-weight:800;margin-bottom:8px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.blog-card-body p{font-size:13px;color:var(--gray);line-height:1.7;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}
-.blog-card-body .meta{font-size:12px;color:#94a3b8}
-.coming-soon{background:#fff;border-radius:16px;border:2px dashed #e2e8f0;display:flex;align-items:center;justify-content:center;min-height:280px;color:var(--gray);font-size:14px;font-weight:600}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px}
+.blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.12)}
+.card-img{width:100%;height:190px;object-fit:cover;display:block}
+.card-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.cat-badge{display:inline-block;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:10px}
+.cat-web{background:#dbeafe;color:#1d4ed8}
+.cat-meo{background:#dcfce7;color:#16a34a}
+.cat-ai{background:#ede9fe;color:#6d28d9}
+.cat-koumuten{background:#fef3c7;color:#b45309}
+.cat-dx{background:#e0f2fe;color:#0369a1}
+.card-title{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:8px;color:var(--dark);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-desc{font-size:13px;color:var(--gray);line-height:1.7;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px}
+.card-meta{font-size:12px;color:#94a3b8;margin-top:auto}
 footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padding:32px;font-size:13px}
-@media(max-width:768px){.hero-blog-list h1{font-size:28px}.blog-grid{grid-template-columns:1fr}.nav-links{display:none}}
+@media(max-width:768px){.hero-blog h1{font-size:26px}.blog-grid{grid-template-columns:1fr}.nav-links{display:none}}
+@media(max-width:480px){.blog-container{padding:32px 16px 60px}}
 </style>
-<!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-RZ1TP2K3N0');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-RZ1TP2K3N0");</script>
 </head>
 <body>
 <nav>
@@ -61,188 +59,94 @@ gtag('config', 'G-RZ1TP2K3N0');
 </div>
 </nav>
 
-<div class="hero-blog-list">
+<div class="hero-blog">
 <div class="overline">Blog</div>
 <h1>ClawTech ブログ</h1>
 <p>中小企業・個人事業主のWeb集客・業務効率化に役立つ情報を発信</p>
 </div>
 
 <div class="blog-container">
-
 <div class="blog-grid">
 
-  <article class="blog-card">
-    <a href="koumuten-homepage.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ">
-        <span class="category-badge construction">工務店</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">工務店がホームページを持つべき5つの理由【2026年版】</h2>
-        <p class="card-desc">工務店・リフォーム会社がWeb集客を始めるべき理由を解説。実例データと費用感も紹介。</p>
-        <div class="card-meta"><span>📅 2026.02.26</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="koumuten-homepage.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-koumuten">工務店</span>
+      <div class="card-title">工務店がホームページを持つべき5つの理由【2026年版】</div>
+      <div class="card-desc">工務店・リフォーム会社がWeb集客を始めるべき理由を解説。実例データと費用感も紹介。</div>
+      <div class="card-meta">📅 2026.02.26</div>
+    </div>
+  </a>
 
-  <article class="blog-card">
-    <a href="meo-taisaku.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80" alt="MEO対策">
-        <span class="category-badge meo">MEO対策</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">MEO対策とは？Googleマップで集客する方法を徹底解説</h2>
-        <p class="card-desc">Googleマップ上位表示の仕組みと、すぐ実践できるMEO対策の手順を解説。</p>
-        <div class="card-meta"><span>📅 2026.03.05</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="meo-taisaku.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&q=80" alt="MEO対策" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-meo">MEO対策</span>
+      <div class="card-title">MEO対策とは？Googleマップで集客する方法を徹底解説</div>
+      <div class="card-desc">Googleマップ上位表示の仕組みと、すぐ実践できるMEO対策の手順を解説。</div>
+      <div class="card-meta">📅 2026.03.05</div>
+    </div>
+  </a>
 
-  <article class="blog-card">
-    <a href="gbp-setup-guide.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Googleビジネスプロフィール">
-        <span class="category-badge meo">MEO対策</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">【2026年最新】Googleビジネスプロフィール登録方法完全ガイド</h2>
-        <p class="card-desc">無料で始められるGoogleビジネスプロフィールの登録・設定を画像付きで解説。</p>
-        <div class="card-meta"><span>📅 2026.03.07</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="gbp-setup-guide.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Googleビジネスプロフィール" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-meo">MEO対策</span>
+      <div class="card-title">【2026年最新】Googleビジネスプロフィール登録方法完全ガイド</div>
+      <div class="card-desc">無料で始められるGoogleビジネスプロフィールの登録・設定を画像付きで解説。</div>
+      <div class="card-meta">📅 2026.03.07</div>
+    </div>
+  </a>
 
-  <article class="blog-card">
-    <a href="ai-katsuyou-jirei.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI活用">
-        <span class="category-badge ai">AI活用</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</h2>
-        <p class="card-desc">AI導入で業務効率化を実現した中小企業の事例と具体的な活用方法を紹介。</p>
-        <div class="card-meta"><span>📅 2026.03.05</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="ai-katsuyou-jirei.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI活用" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</div>
+      <div class="card-desc">AI導入で業務効率化を実現した中小企業の事例と具体的な活用方法を紹介。</div>
+      <div class="card-meta">📅 2026.03.05</div>
+    </div>
+  </a>
 
-  <article class="blog-card">
-    <a href="homepage-cost-2026.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="ホームページ制作費用">
-        <span class="category-badge web">Web制作</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">2026年版: ホームページ制作費用の相場と賢い選び方</h2>
-        <p class="card-desc">制作費用の相場から失敗しない業者選びのポイントまで、初心者向けに解説。</p>
-        <div class="card-meta"><span>📅 2026.03.05</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="homepage-cost-2026.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="ホームページ制作費用" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">2026年版：ホームページ制作費用の相場と賢い選び方</div>
+      <div class="card-desc">制作費用の相場から失敗しない業者選びのポイントまで、初心者向けに解説。</div>
+      <div class="card-meta">📅 2026.03.05</div>
+    </div>
+  </a>
 
-  <article class="blog-card">
-    <a href="lp-beginner-guide.html">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ランディングページ">
-        <span class="category-badge web">Web制作</span>
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</h2>
-        <p class="card-desc">コンバージョン率を高めるLPの構成・デザイン・制作手順を初心者向けに解説。</p>
-        <div class="card-meta"><span>📅 2026.03.06</span></div>
-      </div>
-    </a>
-  </article>
+  <a href="lp-beginner-guide.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ランディングページ" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</div>
+      <div class="card-desc">コンバージョン率を高めるLPの構成・デザイン・制作手順を初心者向けに解説。</div>
+      <div class="card-meta">📅 2026.03.06</div>
+    </div>
+  </a>
 
-</div>
-</div>
-</a>
+  <a href="sme-dx-guide.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-dx">DX</span>
+      <div class="card-title">中小企業DX成功の道標2026！事例と進め方を徹底解説</div>
+      <div class="card-desc">中小企業のDX推進、何から始める？成功事例に基づいた戦略的な進め方を解説。</div>
+      <div class="card-meta">📅 2026.03.08</div>
+    </div>
+  </a>
 
-<!-- 記事: lp-beginner-guide -->
-<a href="lp-beginner-guide.html" class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,#1e293b,#2563eb)">
-<svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
-<span class="cat-badge">Web制作</span>
-</div>
-<div class="blog-card-body">
-<h3>【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</h3>
-<p>LP(ランディングページ)の作り方を初心者向けに徹底解説！構成、デザイン、ツール、公開後の改善まで、コンバージョン率を高めるためのノウハウを伝授します。ClawTechの豊富な事例も紹介。</p>
-<div class="meta">2026.03.06</div>
-</div>
-</a>
-
-<!-- 記事: gbp-setup-guide -->
-<a href="gbp-setup-guide.html" class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,#1e293b,#2563eb)">
-<svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
-<span class="cat-badge">MEO対策</span>
-</div>
-<div class="blog-card-body">
-<h3>【2026年最新】Googleビジネスプロフィール登録方法完全ガイド</h3>
-<p>Googleビジネスプロフィール（旧Googleマイビジネス）の登録方法を2026年最新情報で解説！集客効果を最大化する最適化戦略、運用方法、よくある質問まで網羅。MEO対策ならClawTechへ。</p>
-<div class="meta">2026.03.07</div>
-</div>
-</a>
-
-<!-- 記事: sme-dx-guide -->
-<a href="sme-dx-guide.html" class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,#1e293b,#2563eb)">
-<svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
-<span class="cat-badge">DX</span>
-</div>
-<div class="blog-card-body">
-<h3>中小企業DX成功の道標2026！事例と進め方を徹底解説</h3>
-<p>中小企業のDX推進、何から始める？2026年に向けた成功の鍵は、事例に基づいた戦略的な進め方と適切なツール選び。課題解決を支援します！</p>
-<div class="meta">2026.03.08</div>
-</div>
-</a>
-
-<!-- 記事: chatgpt-business-use -->
-<a href="chatgpt-business-use.html" class="blog-card"><div class="blog-card-img" style="background:linear-gradient(135deg,#1e293b,#2563eb)">
-<svg viewBox="0 0 24 24"><path d="M12 2L2 7v10l10 5 10-5V7L12 2z"/></svg>
-<span class="cat-badge">AI活用</span>
-</div>
-<div class="blog-card-body">
-<h3>2026年版ChatGPT業務効率化術！プロが教える活用法</h3>
-<p>2026年もChatGPTは進化！業務効率化に役立つ活用法を徹底解説。メール作成、情報収集、企画立案…事例満載。注意点やリスクも網羅。ClawTechが支援。</p>
-<div class="meta">2026.03.09</div>
-</div>
-</a>
-
-<!-- 記事1 -->
-<a href="koumuten-homepage.html" class="blog-card"><div class="blog-card-img" style="background:url(../assets/blog/koumuten.jpg) center/cover">
-<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-<span class="cat-badge">工務店</span>
-</div>
-<div class="blog-card-body">
-<h3>工務店がホームページを持つべき5つの理由【2026年版】</h3>
-<p>消費者の78%がネットで業者を検索する時代。ホームページがないと「存在しない会社」になる理由を解説。</p>
-<div class="meta">2026.02.26</div>
-</div>
-</a>
-
-<!-- 記事2 -->
-<a href="meo-taisaku.html" class="blog-card"><div class="blog-card-img" style="background:url(../assets/blog/meo.jpg) center/cover">
-<svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-<span class="cat-badge">MEO対策</span>
-</div>
-<div class="blog-card-body">
-<h3>MEO対策とは？Googleマップで集客する方法を徹底解説</h3>
-<p>ローカル検索の46%がGoogleマップ経由。地域ビジネスに必須のMEO対策を基本から実践手順まで網羅的に解説。</p>
-<div class="meta">2026.03.05</div>
-</div>
-</a>
-
-<!-- 記事3 -->
-<a href="ai-katsuyou-jirei.html" class="blog-card">
-<div class="blog-card-img" style="background:linear-gradient(135deg,#1e293b,#7c3aed)">
-<svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"/><path d="M16 14H8a6 6 0 0 0-6 6v1h20v-1a6 6 0 0 0-6-6z"/></svg>
-<span class="cat-badge">AI活用</span>
-</div>
-<div class="blog-card-body">
-<h3>中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</h3>
-<p>請求書自動作成、メール自動返信、SNS自動投稿など、月30時間の業務削減を実現した具体的な方法を解説。</p>
-<div class="meta">2026.03.05</div>
-</div>
-</a>
+  <a href="chatgpt-business-use.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="ChatGPT業務活用" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">2026年版ChatGPT業務効率化術！プロが教える活用法</div>
+      <div class="card-desc">2026年もChatGPTは進化！業務効率化に役立つ活用法をメール・企画立案など事例満載で解説。</div>
+      <div class="card-meta">📅 2026.03.09</div>
+    </div>
+  </a>
 
 </div>
 </div>
