@@ -25,17 +25,17 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ブログ記事 -->
+  <!-- ブログ記事（自動生成） -->
   <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/koumuten-homepage.html</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/ai-katsuyou-jirei.html</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/meo-taisaku.html</loc>
-    <lastmod>2026-03-05</lastmod>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/chatgpt-business-use.html</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -48,14 +48,14 @@
   </url>
 
   <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/ai-katsuyou-jirei.html</loc>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/homepage-cost-2026.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/homepage-cost-2026.html</loc>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/koumuten-homepage.html</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -69,15 +69,8 @@
   </url>
 
   <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/sme-dx-guide.html</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://clawtech6477.github.io/clawtech-lp/blog/chatgpt-business-use.html</loc>
-    <lastmod>2026-03-09</lastmod>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/meo-taisaku.html</loc>
+    <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -85,6 +78,13 @@
   <url>
     <loc>https://clawtech6477.github.io/clawtech-lp/blog/restaurant-website.html</loc>
     <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/sme-dx-guide.html</loc>
+    <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
