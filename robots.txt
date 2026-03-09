@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clawtech6477.github.io/clawtech-lp/sitemap.xml
