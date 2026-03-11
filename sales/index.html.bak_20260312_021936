@@ -37,7 +37,7 @@ nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.97);backdrop-filt
 .nav-links{display:flex;align-items:center;gap:24px;}
 .nav-links a{color:#aaa;text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover{color:#00d4ff;}
-.nav-cta{background:transparent;border:2px solid rgba(0,212,255,0.5);color:#00d4ff!important;padding:8px 20px;border-radius:50px;font-weight:700!important;font-size:13px!important;text-decoration:none;transition:all 0.2s;}
+.nav-cta{background:transparent;border:2px solid rgba(0,212,255,0.5);color:#00d4ff!important;padding:8px 20px;border-radius:50px;font-weight:700!important;font-size:13px!important;}
 .nav-cta:hover{opacity:0.9;transform:scale(1.03);}
 
 /* ===== HERO ===== */
@@ -54,7 +54,7 @@ nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.97);backdrop-filt
 .hero-price-block{margin-bottom:44px;}
 .hero-price{font-size:clamp(42px,7vw,80px);font-weight:900;color:#00d4ff;line-height:1;letter-spacing:-2px;}
 .hero-price .unit{font-size:clamp(16px,2vw,22px);color:#888;font-weight:400;letter-spacing:0;}
-.hero-price-note{font-size:13px;color:#666;margin-top:8px;}.hero-price-note::after{content:'※アポ獲得率最大3倍・効率化最大80%は当社2024年1-3月実績(n=47社)。個別効果を保証するものではありません';display:block;font-size:11px;color:#888;margin-top:4px;}
+.hero-price-note{font-size:13px;color:#666;margin-top:8px;}.hero-price-note::after{content:'※アポ獲得率等は当社実績の最大値です';display:block;font-size:11px;color:#888;margin-top:4px;}
 .hero-price-note span{color:#ff6b35;font-weight:700;}
 .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .btn-primary{background:linear-gradient(135deg,#00d4ff,#0088cc);color:#000;padding:18px 44px;border-radius:50px;font-size:17px;font-weight:700;text-decoration:none;display:inline-block;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,212,255,0.3);}
@@ -151,7 +151,7 @@ nav{position:fixed;top:0;width:100%;background:rgba(10,10,10,0.97);backdrop-filt
 .plan-features{list-style:none;text-align:left;margin-bottom:28px;}
 .plan-features li{font-size:13px;color:#aaa;padding:7px 0;border-bottom:1px solid #151515;display:flex;align-items:flex-start;gap:10px;line-height:1.5;}
 .plan-features li::before{content:'✓';color:#00d4ff;font-weight:700;flex-shrink:0;margin-top:1px;}
-.plan-btn{display:block;text-align:center;padding:14px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(0,212,255,0.3);color:#00d4ff;transition:all 0.2s;}.plan-btn::before{content:'詳しく見る';}}
+.plan-btn{display:block;text-align:center;padding:14px;border-radius:50px;font-size:14px;font-weight:700;text-decoration:none;border:2px solid rgba(0,212,255,0.3);color:#00d4ff;transition:all 0.2s;}.plan-btn::before{content:'詳しく見る';}
 .plan-btn:hover{background:rgba(0,212,255,0.1);border-color:#00d4ff;}
 .plan-card.popular .plan-btn{background:linear-gradient(135deg,#00d4ff,#0088cc);border-color:transparent;color:#000;}
 .plan-card.popular .plan-btn:hover{opacity:0.9;}
