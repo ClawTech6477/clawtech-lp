@@ -120,14 +120,9 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <p>ClawTechでは、Googleビジネスプロフィールの初期設定から継続的な運用まで、MEO対策を丸ごとサポートしています。写真撮影のアドバイス、口コミ返信テンプレートの提供、月次レポートでの効果測定まで対応。地域ビジネスのGoogleマップ集客を強力にバックアップします。</p>
 
 <div class="cta-box">
-<div style="background:linear-gradient(135deg,#1e3a5f,#2563eb);padding:24px;border-radius:12px;margin:32px 0;text-align:center;">
-<p style="color:#93c5fd;font-size:13px;margin:0 0 8px;">AI×自動化で営業を仕組み化</p>
-<h3 style="color:#fff;margin:0 0 12px;">AI営業代行サービスの詳細はこちら</h3>
-<a href="../sales/" style="display:inline-block;padding:12px 28px;background:#f59e0b;color:#fff;border-radius:50px;font-weight:700;text-decoration:none;">サービス詳細・料金を見る→</a>
-</div>
 <h3>MEO対策のご相談は無料です</h3>
 <p>「自分のビジネスでもMEO対策は効果ある？」そんなご質問だけでもOK。お気軽にご相談ください。</p>
-<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">無料相談・お見積もりはこちら→</a>
+<a href="../#contact" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">無料相談・お見積もりはこちら→</a>
 </div>
 
 </div>
