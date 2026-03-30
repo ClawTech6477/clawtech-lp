@@ -1,1 +1,446 @@
-google-site-verification: googleaa21be9eb5b342ab.html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech - 革新的なAIソリューションで未来を創造</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* ダークネイビー */
+            --secondary-color: #e74c3c; /* テラコッタレッド */
+            --accent-color: #f39c12; /* マスタードイエロー */
+            --text-color: #34495e; /* ダークグレー */
+            --light-text-color: #ecf0f1; /* ライトグレー */
+            --background-color: #f8f9fa; /* オフホワイト */
+            --dark-background-color: #212529; /* ほぼブラック */
+            --border-color: #bdc3c7; /* ミディアムグレー */
+            --font-family-body: 'Noto Sans JP', sans-serif;
+            --font-family-heading: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-family-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--light-text-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://source.unsplash.com/random/1600x900/?industrial,innovation') no-repeat center center/cover;
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        .hero h1 {
+            font-family: var(--font-family-heading);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: #c0392b; /* Darker terracotta */
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--dark-background-color);
+            color: var(--light-text-color);
+        }
+
+        section:nth-of-type(even) h2 {
+            color: var(--accent-color);
+        }
+
+        h2 {
+            font-family: var(--font-family-heading);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .features-grid, .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-item, .solution-item {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--secondary-color);
+        }
+
+        section:nth-of-type(even) .feature-item,
+        section:nth-of-type(even) .solution-item {
+            background-color: #34495e; /* Darker blue-gray */
+            color: var(--light-text-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-top-color: var(--accent-color);
+        }
+
+        .feature-item:hover, .solution-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item h3, .solution-item h3 {
+            font-family: var(--font-family-heading);
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        section:nth-of-type(even) .feature-item h3,
+        section:nth-of-type(even) .solution-item h3 {
+            color: var(--accent-color);
+        }
+
+        .feature-item p, .solution-item p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        section:nth-of-type(even) .feature-item p,
+        section:nth-of-type(even) .solution-item p {
+            color: var(--light-text-color);
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 30px;
+            padding-bottom: 20px;
+            margin-top: 50px;
+        }
+
+        .testimonial-item {
+            flex: 0 0 450px; /* Adjust width as needed */
+            scroll-snap-align: start;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        section:nth-of-type(even) .testimonial-item {
+            background-color: #34495e;
+            color: var(--light-text-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-left-color: var(--secondary-color);
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        section:nth-of-type(even) .testimonial-item p {
+            color: var(--light-text-color);
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        section:nth-of-type(even) .testimonial-author {
+            color: var(--accent-color);
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 50px auto 0;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        section:nth-of-type(even) .contact-form {
+            background-color: #34495e;
+            color: var(--light-text-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        section:nth-of-type(even) .contact-form label {
+            color: var(--light-text-color);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-family: var(--font-family-body);
+            font-size: 1rem;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        section:nth-of-type(even) .contact-form input[type="text"],
+        section:nth-of-type(even) .contact-form input[type="email"],
+        section:nth-of-type(even) .contact-form textarea {
+            background-color: #212529;
+            border-color: #495057;
+            color: var(--light-text-color);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #1a242f; /* Darker primary */
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--dark-background-color);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        .footer-nav a {
+            color: var(--light-text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .features-grid, .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-carousel {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .testimonial-item {
+                flex: 0 0 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">ClawTech</a>
+                <ul>
+                    <li><a href="#about">ClawTechについて</a></li>
+                    <li><a href="#features">特徴</a></li>
+                    <li><a href="#solutions">ソリューション</a></li>
+                    <li><a href="#testimonials">お客様の声</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>革新的なAIソリューションで<br>未来を創造する</h1>
+                <p>ClawTechは、最先端のAI技術を駆使し、ビジネスの課題を解決し、新たな価値を創造します。データから洞察を引き出し、効率を最大化するカスタムAIソリューションを提供します。</p>
+                <a href="#contact" class="btn">今すぐ相談する</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>ClawTechについて</h2>
+                <p>ClawTechは、AIと機械学習の専門知識を活かし、お客様のビジネス成長を支援するテクノロジー企業です。私たちは、複雑なデータを理解し、予測し、自動化することで、企業がよりスマートな意思決定を行えるようサポートします。製造業からサービス業まで、幅広い業界で実績を積み重ねています。</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2>ClawTechの強み</h2>
+                <div class="features-grid
