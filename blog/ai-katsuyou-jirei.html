@@ -12,19 +12,223 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root {
-  --primary: #36454F; /* チャコールグレー */
-  --secondary: #A9A9A9; /* ダークグレー */
-  --accent: #B0C4DE; /* ライトスチールブルー */
-  --dark: #2F4F4F; /* ダークスレートグレー */
-  --dark2: #4682B4; /* スチールブルー */
-  --gray: #778899; /* ライトスレートグレー */
-  --light: #F5F5DC; /* ベージュ */
-  --white: #FFFFFF; /* 純粋な白 */
-  --border-color: #D3D3D3; /* ライトグレーのボーダー */
-  --font-family-sans: 'Georgia', serif; /* クラシックで読みやすいセントフォント */
-  --font-family-serif: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* 信頼感のあるセリフフォント */
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech - AIとWeb技術でビジネスを加速</title>
+    <meta name="description" content="ClawTechはAIとWeb技術を組み合わせ、お客様のビジネス課題を解決し、成長を支援します。">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@4400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #36454F; /* チャコールグレー */
+            --secondary: #A9A9A9; /* ダークグレー */
+            --accent: #B0C4DE; /* ライトスチールブルー */
+            --dark: #2F4F4F; /* ダークスレートグレー */
+            --dark2: #4682B4; /* スチールブルー */
+            --gray: #778899; /* ライトスレートグレー */
+            --light: #F5F5DC; /* ベージュ */
+            --white: #FFFFFF; /* 純粋な白 */
+            --border-color: #D3D3D3; /* ライトグレーのボーダー */
+            --font-family-sans: 'Roboto', sans-serif; /* モダンで読みやすいサンセリフフォント */
+            --font-family-serif: 'Noto Serif JP', serif; /* 信頼感のある日本語セリフフォント */
+        }
+
+        body {
+            font-family: var(--font-family-serif);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--primary);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-serif);
+            color: var(--dark);
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+
+        a {
+            color: var(--dark2);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: var(--font-family-serif);
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--white);
+            font-family: var(--font-family-sans);
+            font-weight: 400;
+            font-size: 1.1em;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(54, 69, 79, 0.8), rgba(54, 69, 79, 0.8)), url('https://source.unsplash.com/random/1600x900/?technology,office') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            font-family: var(--font-family-sans);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--dark2);
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--dark2);
+            border-radius: 2px;
+        }
+
+        /* Problems Section */
+        #problems .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .problem-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 
 body {
   font-family: var(--font-family-sans);

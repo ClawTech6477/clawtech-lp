@@ -30,17 +30,258 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #a87b5a; /* 落ち着いたゴールドブラウン */
-            --dark: #3a3a3a;    /* ダークグレー */
-            --dark2: #555555;   /* ミディアムグレー */
-            --gray: #888888;    /* ソフトグレー */
-            --light: #f5f5f5;   /* オフホワイト */
-            --accent: #7a5a4a;  /* アクセントカラー */
-            --text-color: #3a3a3a;
-            --bg-color: #f5f5f5;
-            --header-bg: #3a3a3a;
-            --footer-bg: #3a3a3a;
-        }
+    --primary: #a87b5a; /* 落ち着いたゴールドブラウン */
+    --dark: #3a3a3a;    /* ダークグレー */
+    --dark2: #555555;   /* ミディアムグレー */
+    --gray: #888888;    /* ソフトグレー */
+    --light: #f5f5f5;   /* オフホワイト */
+    --accent: #7a5a4a;  /* アクセントカラー */
+    --text-color: #3a3a3a;
+    --bg-color: #f5f5f5;
+    --header-bg: #3a3a3a;
+    --footer-bg: #3a3a3a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--light);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?tech,business') no-repeat center center/cover;
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--dark);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-us, .services, .problems, .solutions, .cta, .contact {
+    background-color: var(--light);
+    border-bottom: 1px solid #eee;
+}
+
+.about-us .content, .services .grid, .problems .grid, .solutions .grid {
+    display: grid;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-us .content {
+    grid-template-columns: 1fr 1fr;
+}
+
+.about-us .text h3 {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.about-us .text p {
+    font-size: 1.1rem;
+    color: var(--dark2);
+}
+
+.about-us .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.services .grid, .problems .grid, .solutions .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card .icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--dark2);
+    font-size: 1rem;
+}
+
+.cta {
+    background-color: var(--primary);
+    color: var(--light);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta h2 {
+    color: var(--light);
+    margin-bottom: 30px;
+}
+
+.cta h2::after {
+    background-color: var(--light);
+}
+
+.cta p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact .contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark2);
 
         body {
             font-family: 'Noto Sans JP', sans-serif;

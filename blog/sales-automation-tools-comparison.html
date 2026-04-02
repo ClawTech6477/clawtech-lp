@@ -31,15 +31,242 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B4513; /* SaddleBrown */
-            --dark: #2F4F4F;    /* DarkSlateGray */
-            --dark2: #4682B4;   /* SteelBlue */
-            --gray: #A9A9A9;    /* DarkGray */
-            --light: #F5DEB3;   /* Wheat */
-            --accent: #D2B48C;  /* Tan */
-            --text-color: #333;
-            --heading-color: #2F4F4F;
-        }
+    --primary: #8B4513;    /* SaddleBrown - メインブランドカラー */
+    --dark: #2F4F4F;     /* DarkSlateGray - 濃いテキスト、背景要素 */
+    --dark2: #4682B4;    /* SteelBlue - アクセント、リンク */
+    --gray: #A9A9A9;     /* DarkGray - 補助的なテキスト、ボーダー */
+    --light: #F5DEB3;    /* Wheat - 明るい背景、ハイライト */
+    --accent: #D2B48C;   /* Tan - 強調、CTAボタン */
+    --text-color: #333;  /* 一般的なテキスト色 */
+    --heading-color: #2F4F4F; /* 見出し色 */
+    --background-color: #FDF8F0; /* 全体的な背景色 */
+    --card-background: #FFFFFF; /* カードやセクションの背景 */
+    --border-color: #E0D8CC; /* ボーダー色 */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* シャドウ色 */
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語対応フォント */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP', serif; /* 見出し用フォント */
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+a {
+    color: var(--dark2);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* 全体的なコンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--card-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://source.unsplash.com/random/1600x900/?japanese-garden,traditional-architecture') no-repeat center center/cover;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--heading-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* 半透明のオーバーレイ */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: var(--text-color);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--dark2);
+    margin-left: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark);
+}
+
+/* セクション共通スタイル */
+section {
+    padding: 80px 0;
+    background-color: var(--card-background);
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light); /* 交互の背景色 */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    color: var(--primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* お悩みセクション */
+#problems .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.problem-item {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--accent);
+}
+
+.problem-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.problem-item h3 {
+    color
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
