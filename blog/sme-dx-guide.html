@@ -41,6 +41,240 @@
     --border-color: #cccccc;
 }
 
+/* 全体設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* ナビゲーション */
+nav {
+    background-color: var(--primary);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1200x600/?business,consulting') no-repeat center center/cover;
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero .cta-button {
+    background-color: var(--accent);
+    color: var(--dark);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.hero .cta-button:hover {
+    background-color: #c09060;
+    transform: translateY(-3px);
+}
+
+/* セクション共通スタイル */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    color: var(--primary);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* 特徴・サービスセクション */
+.features, .services {
+    background-color: var(--light);
+}
+
+.feature-grid, .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item, .service-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover, .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i, .service-item i {
+    font-size: 3em;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-item h3, .service-item h3 {
+    font-size: 1.8em;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.feature-item p, .service-item p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* 導入事例セクション */
+.case-studies {
+    background-color: var(--light);
+}
+
+.case-study-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.case-study-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.case-study-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.case-study-content {
+    padding: 25px;
+}
+
+.case-study-content h3 {
+    font-size: 1.6em;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.case-study-content p {
+    font-size: 0.95em;
+    color: var(--gray);
+}
+
+/* 会社概要セクション */
+.about {
+    background-color: var(--light);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.about
+
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを優先 */
     margin: 0;
@@ -590,7 +824,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="cta-box">
 <h3>プロに相談してみませんか？</h3>
 <p>ClawTechではDXに関する無料相談を承っています。お気軽にお問い合わせください。</p>
-<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#00d4ff,#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
+<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
 </div>
 </div>
 

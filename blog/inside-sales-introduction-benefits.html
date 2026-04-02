@@ -31,15 +31,257 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #0056b3; /* 深い青 */
-    --secondary: #e0e0e0; /* 落ち着いたグレー */
-    --accent: #d9534f; /* アクセントの赤 */
-    --text-dark: #333333;
+    --primary: #2a6f97; /* 深い青緑 */
+    --secondary: #f0f4f8; /* 柔らかいオフホワイト */
+    --accent: #e67e22; /* 暖かみのあるオレンジ */
+    --text-dark: #34495e; /* ダークなチャコール */
     --text-light: #ffffff;
-    --background-light: #f8f8f8;
+    --background-light: #ffffff;
     --background-dark: #2c3e50; /* ダークな背景 */
-    --border-color: #cccccc;
+    --border-color: #dcdcdc;
+    --font-family-sans: 'Noto Sans JP', sans-serif;
+    --font-family-serif: 'Merriweather', serif;
 }
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 全体的なリセットと基本スタイル */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--background-light);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-serif);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #4a90e2 100%);
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: rotate 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-family: var(--font-family-serif);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: #d66a1a;
+    transform: translateY(-2px);
+}
+
+/* セクション共通スタイル */
+section {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--secondary);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    color: var(--primary);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* 特徴セクション */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    background-color: var(--text-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--primary);
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: var(--text-dark);
+}
+
+/* サービスセクション */
+.services-list {
+    display:
 
 /* 基本スタイル */
 body {
@@ -565,7 +807,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="cta-box">
 <h3>プロに相談してみませんか？</h3>
 <p>ClawTechでは営業に関する専門サービスを提供しています。まずはお気軽にご相談ください。</p>
-<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#00d4ff,#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
+<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
 </div>
 </div>
 </article>

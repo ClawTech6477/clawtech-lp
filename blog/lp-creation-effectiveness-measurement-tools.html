@@ -31,17 +31,244 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #8B4513; /* SaddleBrown */
-            --dark: #2F4F4F; /* DarkSlateGray */
-            --dark2: #4682B4; /* SteelBlue */
-            --gray: #A9A9A9; /* DarkGray */
-            --light: #F5DEB3; /* Wheat */
-            --accent: #D2B48C; /* Tan */
-            --text-color: #36454F; /* Charcoal */
-            --bg-color: #FFF8DC; /* Cornsilk */
-            --header-bg: #8B4513;
-            --footer-bg: #2F4F4F;
-        }
+    --primary: #5C8D89; /* Deep Teal */
+    --dark: #28363D; /* Dark Charcoal */
+    --dark2: #3A506B; /* Muted Blue */
+    --gray: #A2B2B2; /* Slate Gray */
+    --light: #E0EAEB; /* Pale Cyan */
+    --accent: #C2B280; /* Muted Gold */
+    --text-color: #28363D; /* Dark Charcoal */
+    --bg-color: #F8FBFB; /* Off-White */
+    --header-bg: #5C8D89; /* Deep Teal */
+    --footer-bg: #28363D; /* Dark Charcoal */
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出しに合うフォント */
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--light);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark2) 100%);
+    color: var(--light);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 15s infinite ease-out;
+    opacity: 0.3;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.5); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.5; }
+    100% { transform: scale(0.5); opacity: 0.3; }
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    color: var(--light);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--dark);
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #E0C99B; /* Lighter Tan */
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+    background-color: var(--bg-color);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light);
+}
+
+.section-title {
+    font-size: 3.2em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--dark);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    border-radius: 2px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.grid-2-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+.feature-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.
 
         body {
             font-family: 'Noto Sans JP', sans-serif;

@@ -31,13 +31,259 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #a0522d; /* セピア系の暖色 */
-    --dark: #36454f;    /* チャコールグレー */
-    --dark2: #4a5a6a;   /* やや明るいチャコールグレー */
-    --gray: #8b8b8b;    /* 落ち着いたグレー */
-    --light: #fdfaf6;   /* オフホワイト */
-    --accent: #d2b48c;  /* タン（ベージュ系） */
+    --primary: #2c3e50;   /* ダークネイビー */
+    --secondary: #e74c3c; /* テラコッタレッド */
+    --accent: #f39c12;    /* マスタードイエロー */
+    --dark: #34495e;      /* ミッドナイトブルー */
+    --light: #ecf0f1;     /* ライトグレー */
+    --text-color: #333333; /* 濃いめのテキスト色 */
+    --light-text: #fdfdfd; /* 明るいテキスト色 */
+    --border-color: #bdc3c7; /* 落ち着いたボーダー色 */
 }
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語対応フォント */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出し用フォント */
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 1.05em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://source.unsplash.com/random/1600x900/?business,consulting') no-repeat center center/cover;
+    color: var(--light-text);
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--light-text);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    color: var(--light);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+    background-color: var(--light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:nth-of-type(even) {
+    background-color: #f8f8f8; /* 交互の背景色 */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 60px;
+    color: var(--dark);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+}
+
+/* Features/Services Grid */
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--secondary);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.grid-item h3 {
+    font-size: 1.8em;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.grid-item p {
+    color: var(--text-color);
+    font-size: 1.05em;
+}
+
+.grid-item .icon {
+    font-size: 3.5em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-color
 
 body {
     font-family: 'Noto Sans JP', sans-serif;

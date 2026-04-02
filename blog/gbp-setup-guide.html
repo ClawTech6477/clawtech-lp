@@ -44,17 +44,233 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0056b3; /* Deep Blue */
-            --secondary: #e0e0e0; /* Light Gray for accents */
-            --dark: #2c3e50; /* Dark Slate */
-            --dark2: #34495e; /* Slightly lighter dark */
-            --gray: #7f8c8d; /* Medium Gray */
-            --light: #fdfdfd; /* Off-white */
-            --accent-green: #27ae60; /* Green for success/CTA */
-            --accent-orange: #e67e22; /* Orange for emphasis */
-            --font-family-base: 'Noto Sans JP', sans-serif;
-            --font-family-heading: 'Montserrat', sans-serif;
-        }
+    /* Brand Colors - Inspired by natural, trustworthy tones */
+    --primary: #2a6f5e; /* Deep Forest Green - Represents growth, stability, nature */
+    --secondary: #f0f4f8; /* Soft Off-White - Clean, modern, spacious */
+    --dark: #2c3e50; /* Dark Slate - Strong, professional, grounding */
+    --dark2: #4a6c82; /* Muted Blue-Gray - Sophisticated, calm */
+    --gray: #7f8c8d; /* Medium Gray - Neutral, supportive */
+    --light: #ffffff; /* Pure White - Clarity, simplicity */
+    --accent-green: #5cb85c; /* Vibrant Green - Action, positive, fresh */
+    --accent-orange: #f0ad4e; /* Warm Orange - Energy, creativity, attention */
+
+    /* Typography - Modern yet approachable */
+    --font-family-base: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    --font-family-heading: 'Montserrat', 'Lato', sans-serif; /* Strong, clean headings */
+
+    /* Spacing & Sizing */
+    --spacing-unit: 8px;
+    --max-width: 1200px;
+    --border-radius-base: 6px;
+    --box-shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --box-shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--dark);
+    background-color: var(--secondary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; font-weight: 700; }
+h2 { font-size: 2.2em; font-weight: 600; }
+h3 { font-size: 1.8em; font-weight: 600; }
+h4 { font-size: 1.4em; font-weight: 500; }
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: var(--border-radius-base);
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: var(--box-shadow-light);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+    box-shadow: 0 6px 15px rgba(42, 111, 94, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #3a8c7a; /* Slightly darker green */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(42, 111, 94, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--accent-orange);
+    color: var(--light);
+    box-shadow: 0 6px 15px rgba(240, 173, 78, 0.3);
+}
+
+.btn-secondary:hover {
+    background-color: #e09b3a; /* Slightly darker orange */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 173, 78, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-light);
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--dark2); }
+.text-accent-green { color: var(--accent-green); }
+.text-accent-orange { color: var(--accent-orange); }
+
+.bg-primary { background-color: var(--primary); color: var(--light); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-dark { background-color: var(--dark); color: var(--light); }
+.bg-light { background-color: var(--light); }
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Header */
+header {
+    background-color: var(--light);
+    padding: 20px 0;
+    box-shadow: var(--box-shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 36px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    font-weight: 500;
+    color: var(--dark2);
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, var(--primary)
 
         body {
             font-family: var(--font-family-base);

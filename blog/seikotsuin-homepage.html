@@ -31,15 +31,260 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #a0522d; /* セピア系の暖色 */
-            --dark: #36454f;    /* チャコールグレー */
-            --dark2: #4f626e;   /* やや明るいチャコールグレー */
-            --gray: #8b9ea7;    /* グレイッシュブルー */
-            --light: #fdfaf6;   /* オフホワイト */
-            --accent: #d4a373;  /* 落ち着いたオレンジ */
-            --text-color: #36454f;
-            --heading-color: #2c3e50;
-        }
+    --primary: #2c3e50;   /* ダークネイビー */
+    --dark: #34495e;      /* やや明るいダークネイビー */
+    --dark2: #4a647d;     /* ミディアムブルーグレー */
+    --gray: #7f8c8d;      /* アッシュグレー */
+    --light: #ecf0f1;     /* ライトグレー */
+    --accent: #e67e22;    /* 鮮やかなオレンジ */
+    --text-color: #34495e;
+    --heading-color: #2c3e50;
+    --font-family-sans: 'Noto Sans JP', sans-serif;
+    --font-family-serif: 'Merriweather', serif;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light);
+}
+
+section:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark2) 100%);
+    color: var(--light);
+    text-align: center;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background-color: #d66a1a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    margin-left: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--accent);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.6em;
+}
+
+.card p {
+    font-size: 1.05em;
+    color: var(--dark);
+}
+
+.icon {
+    font-size: 3em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.feature-item .icon {
+    font-size: 2.5em;
+    margin-right: 20px;
+    flex-shrink: 0;
+    color: var(--primary);
+}
+
+.feature-item h3 {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: var(--dark);
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    border-left: 5px solid var(--accent);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.cta-section {
+    background: linear-gradient(45deg, var(--accent) 0%, #f39c12 100%);
 
         body {
             font-family: 'Noto Sans JP', sans-serif;

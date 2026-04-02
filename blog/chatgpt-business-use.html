@@ -29,15 +29,254 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #a34a2a; /* 深みのある赤茶色 */
-    --dark: #2c3e50;    /* ダークネイビー */
-    --dark2: #34495e;   /* やや明るいダークネイビー */
-    --gray: #7f8c8d;    /* 落ち着いたグレー */
-    --light: #ecf0f1;   /* 明るいグレー */
-    --accent: #e67e22;  /* 暖かみのあるオレンジ */
-    --text-color: #34495e; /* 基本テキスト色 */
-    --heading-color: #2c3e50; /* 見出し色 */
+    --primary: #2a6a4a; /* 深みのある緑 */
+    --dark: #1a3a2a;    /* 非常に濃い緑 */
+    --dark2: #2a4a3a;   /* やや明るい濃い緑 */
+    --gray: #6a8a7a;    /* 落ち着いた緑がかったグレー */
+    --light: #e0f0e0;   /* 明るい緑がかったグレー */
+    --accent: #4a9a6a;  /* 鮮やかな緑 */
+    --text-color: #3a5a4a; /* 基本テキスト色 */
+    --heading-color: #1a3a2a; /* 見出し色 */
+    --border-color: #c0d0c0; /* 枠線色 */
+    --background-light: #f8fcf8; /* 明るい背景色 */
+    --background-dark: #e8f2e8; /* やや濃い背景色 */
 }
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; font-weight: 700; }
+h2 { font-size: 2.2em; font-weight: 600; }
+h3 { font-size: 1.8em; font-weight: 600; }
+h4 { font-size: 1.4em; font-weight: 500; }
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--light);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--light);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark2) 100%);
+    color: var(--light);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--light);
+    color: var(--light);
+    margin-left: 20px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--light);
+    color: var(--primary);
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--background-dark);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Features/Services Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.grid-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 5px solid var(--accent);
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,
 
 body {
     font-family: 'Noto Sans JP', sans-serif;

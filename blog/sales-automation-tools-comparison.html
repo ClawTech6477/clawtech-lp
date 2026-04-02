@@ -30,20 +30,239 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root {
-    --primary: #8B4513;    /* SaddleBrown - メインブランドカラー */
-    --dark: #2F4F4F;     /* DarkSlateGray - 濃いテキスト、背景要素 */
-    --dark2: #4682B4;    /* SteelBlue - アクセント、リンク */
-    --gray: #A9A9A9;     /* DarkGray - 補助的なテキスト、ボーダー */
-    --light: #F5DEB3;    /* Wheat - 明るい背景、ハイライト */
-    --accent: #D2B48C;   /* Tan - 強調、CTAボタン */
-    --text-color: #333;  /* 一般的なテキスト色 */
-    --heading-color: #2F4F4F; /* 見出し色 */
-    --background-color: #FDF8F0; /* 全体的な背景色 */
-    --card-background: #FFFFFF; /* カードやセクションの背景 */
-    --border-color: #E0D8CC; /* ボーダー色 */
-    --shadow-color: rgba(0, 0, 0, 0.08); /* シャドウ色 */
+        /* Backup of original CSS */
+/*
+:root {
+    --primary: #8B4513;    // SaddleBrown - メインブランドカラー
+    --dark: #2F4F4F;     // DarkSlateGray - 濃いテキスト、背景要素
+    --dark2: #4682B4;    // SteelBlue - アクセント、リンク
+    --gray: #A9A9A9;     // DarkGray - 補助的なテキスト、ボーダー
+    --light: #F5DEB3;    // Wheat - 明るい背景、ハイライト
+    --accent: #D2B48C;   // Tan - 強調、CTAボタン
+    --text-color: #333;  // 一般的なテキスト色
+    --heading-color: #2F4F4F; // 見出し色
+    --background-color: #FDF8F0; // 全体的な背景色
+    --card-background: #FFFFFF; // カードやセクションの背景
+    --border-color: #E0D8CC; // ボーダー色
+    --shadow-color: rgba(0, 0, 0, 0.08); // シャドウ色
 }
+*/
+
+/* New CSS for a more unique and industry-appropriate design */
+:root {
+    --primary: #0056b3;       /* Deep Blue - Strong, professional, trustworthy */
+    --secondary: #28a745;     /* Forest Green - Growth, success, natural */
+    --accent: #ffc107;        /* Golden Yellow - Energy, attention, optimism */
+    --dark: #343a40;          /* Charcoal - Strong contrast, modern */
+    --light: #f8f9fa;         /* Off-White - Clean, spacious background */
+    --gray: #6c757d;          /* Medium Gray - Subtlety, secondary text */
+    --text-color: #343a40;    /* Main text color */
+    --heading-color: #0056b3; /* Headings stand out */
+    --background-color: #f8f9fa; /* Overall light background */
+    --card-background: #ffffff; /* Clean card backgrounds */
+    --border-color: #e9ecef;  /* Subtle borders */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Soft shadows */
+    --font-family-base: 'Noto Sans JP', sans-serif; /* Modern, readable Japanese font */
+    --font-family-heading: 'Montserrat', sans-serif; /* Strong, impactful headings */
+}
+
+/* General Body and HTML styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+/* Layout and Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light);
+}
+
+.logo a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://source.unsplash.com/random/1600x900/?business,technology') no-repeat center center/cover;
+    color: var(--light);
+    text-align: center;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Darker overlay for text readability */
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 20px;
+    color: var(--light);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255
 
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語対応フォント */
@@ -542,7 +761,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="cta-box">
 <h3>プロに相談してみませんか？</h3>
 <p>ClawTechでは自動化に関する専門サービスを提供しています。まずはお気軽にご相談ください。</p>
-<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#00d4ff,#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
+<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
 </div>
 </div>
 </article>
