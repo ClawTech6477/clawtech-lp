@@ -19,27 +19,20 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root {
-  --primary: #6a0572; /* 深い紫 */
-  --primary-dark: #4a034f;
-  --primary-light: #f3e5f5;
-  --accent: #e67e22; /* 落ち着いたオレンジ */
-  --accent-light: #fcf4e9;
-  --dark: #2c3e50; /* ダークネイビー */
-  --dark2: #34495e;
-  --gray: #7f8c8d;
-  --gray-light: #bdc3c7;
-  --light: #ecf0f1; /* 非常に明るいグレー */
-  --white: #ffffff;
-  --gradient: linear-gradient(135deg, #6a0572 0%, #8e44ad 50%, #6a0572 100%); /* 紫系のグラデーション */
-  --gradient2: linear-gradient(135deg, #2c3e50 0%, #1a242f 100%); /* ダーク系のグラデーション */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
-  --shadow-glow: 0 0 20px rgba(106, 5, 114, 0.3); /* プライマリカラーに合わせたグロー */
-  --radius: 8px; /* 角を少し丸く */
-  --glass: rgba(255, 255, 255, 0.1); /* 少し透明度を上げる */
-  --glass-border: rgba(255, 255, 255, 0.2);
+:root{
+  --primary:#2563eb;--primary-dark:#1d4ed8;--primary-light:#dbeafe;
+  --accent:#f59e0b;--accent-light:#fef3c7;
+  --dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--gray-light:#94a3b8;
+  --light:#f8fafc;--white:#ffffff;
+  --gradient:linear-gradient(135deg,#2563eb 0%,#7c3aed 50%,#6366f1 100%);
+  --gradient2:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);
+  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
+  --shadow-glow:0 0 40px rgba(37,99,235,0.2);
+  --radius:16px;
+  --glass:rgba(255,255,255,0.06);
+  --glass-border:rgba(255,255,255,0.12);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -337,7 +330,8 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 </head>
-<body><nav>
+<body>
+<nav>
 <div class="container">
 <a href="#" class="logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="url(#lg)"/><path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lg" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>Claw<span>Tech</span></a>
 <ul id="nav-menu">
@@ -686,6 +680,8 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
 </div>
 </section>
 
+<section id="blog-dummy-replaced"
+
 <section id="faq">
 <div class="container">
 <div class="section-title fade-up">
@@ -722,5 +718,189 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
 <div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e8ecf2">
 <div style="display:flex;gap:4px;margin-bottom:14px"><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i></div>
 <p style="font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:16px">「請求書の自動化で月20時間の事務作業がゼロに。本業に集中できるようになりました。」</p>
-<div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6366f1);display:flex;align-items:center;justify-content:center"><i class="fa</body>
+<div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#6366f1);display:flex;align-items:center;justify-content:center"><i class="fa-solid fa-user" style="color:#fff;font-size:16px"></i></div><div><div style="font-size:14px;font-weight:700;color:var(--dark)">士業事務所 M様</div><div style="font-size:12px;color:var(--gray)">東京都・法人</div></div></div>
+</div>
+<div style="background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #e8ecf2">
+<div style="display:flex;gap:4px;margin-bottom:14px"><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star" style="color:#f59e0b;font-size:14px"></i><i class="fa-solid fa-star-half-stroke" style="color:#f59e0b;font-size:14px"></i></div>
+<p style="font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:16px">「LP制作をお願いしたら想像以上のクオリティで驚きました。問い合わせが3倍になりました。」</p>
+<div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#059669,#10b981);display:flex;align-items:center;justify-content:center"><i class="fa-solid fa-user" style="color:#fff;font-size:16px"></i></div><div><div style="font-size:14px;font-weight:700;color:var(--dark)">EC事業者 K様</div><div style="font-size:12px;color:var(--gray)">愛知県・個人事業主</div></div></div>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- ===== SERVICES OVERVIEW ===== -->
+<section id="services-overview" style="padding:100px 0;background:linear-gradient(180deg,#f0f4ff 0%,#f8faff 100%);">
+  <div class="container">
+    <div class="section-title fade-up">
+      <span class="overline">Our Services</span>
+      <h2>ClawTechの3つのサービス</h2>
+      <p>AI × 自動化で、あなたのビジネスの課題をワンストップで解決します。</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:0;">
+
+      <!-- Service 1: AI営業代行 -->
+      <div class="fade-up" style="background:#fff;border-radius:22px;padding:40px 32px;border:1.5px solid #e8ecf2;box-shadow:0 4px 24px rgba(37,99,235,0.07);transition:all 0.35s;position:relative;overflow:hidden;">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#7c3aed);display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 8px 24px rgba(37,99,235,0.3);">
+          <span style="font-size:26px;">🤖</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:#dbeafe;color:#2563eb;border:1px solid #bfdbfe;padding:5px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:14px;">AI営業代行</div>
+        <h3 style="font-size:22px;font-weight:900;color:#0f172a;margin-bottom:12px;letter-spacing:-0.3px;">AIハイブリッド<br>営業代行</h3>
+        <p style="font-size:14px;color:#64748b;line-height:1.85;margin-bottom:24px;">AIのスピードと人間の温かみを組み合わせた次世代営業代行。月額29,800円〜で、大手の1/5コストで新規顧客を獲得します。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+          <span style="background:#f0f9ff;color:#0369a1;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">メール自動化</span>
+          <span style="background:#f0fdf4;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">テレアポ</span>
+          <span style="background:#faf5ff;color:#7e22ce;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">月額29,800円〜</span>
+        </div>
+        <a href="sales/" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(37,99,235,0.3);transition:all 0.3s;">
+          詳細・料金を見る <span style="font-size:16px;">→</span>
+        </a>
+      </div>
+
+      <!-- Service 2: SEO記事自動生成 -->
+      <div class="fade-up" style="background:#fff;border-radius:22px;padding:40px 32px;border:1.5px solid #e8ecf2;box-shadow:0 4px 24px rgba(37,99,235,0.07);transition:all 0.35s;position:relative;overflow:hidden;">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#059669,#0d9488);display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 8px 24px rgba(5,150,105,0.3);">
+          <span style="font-size:26px;">📝</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:#d1fae5;color:#065f46;border:1px solid #a7f3d0;padding:5px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:14px;">SEO自動化</div>
+        <h3 style="font-size:22px;font-weight:900;color:#0f172a;margin-bottom:12px;letter-spacing:-0.3px;">SEO記事<br>自動生成サービス</h3>
+        <p style="font-size:14px;color:#64748b;line-height:1.85;margin-bottom:24px;">競合分析→キーワード選定→記事自動生成→投稿まで全自動。月額29,800円〜で、SEO対策にかかる時間とコストを大幅削減します。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+          <span style="background:#f0fdf4;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">競合分析</span>
+          <span style="background:#ecfdf5;color:#065f46;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">AI記事生成</span>
+          <span style="background:#f0fdf4;color:#166534;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">月額29,800円〜</span>
+        </div>
+        <a href="sales/seo.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#059669,#0d9488);color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(5,150,105,0.3);transition:all 0.3s;">
+          詳細・料金を見る <span style="font-size:16px;">→</span>
+        </a>
+      </div>
+
+      <!-- Service 3: GA4×LP自動改善 -->
+      <div class="fade-up" style="background:#fff;border-radius:22px;padding:40px 32px;border:1.5px solid #e8ecf2;box-shadow:0 4px 24px rgba(37,99,235,0.07);transition:all 0.35s;position:relative;overflow:hidden;">
+        <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,#d97706,#dc2626);display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 8px 24px rgba(217,119,6,0.3);">
+          <span style="font-size:26px;">📊</span>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:5px 14px;border-radius:8px;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:14px;">LP自動改善</div>
+        <h3 style="font-size:22px;font-weight:900;color:#0f172a;margin-bottom:12px;letter-spacing:-0.3px;">GA4×LP<br>自動改善サービス</h3>
+        <p style="font-size:14px;color:#64748b;line-height:1.85;margin-bottom:24px;">GA4データ分析→AI改善提案→承認→自動適用→効果測定のサイクルを実現。月額49,800円〜でCVR改善を継続的に行います。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;">
+          <span style="background:#fffbeb;color:#92400e;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">GA4分析</span>
+          <span style="background:#fef9ee;color:#78350f;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">AI改善提案</span>
+          <span style="background:#fffbeb;color:#92400e;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">月額49,800円〜</span>
+        </div>
+        <a href="sales/lp-kaizen.html" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#d97706,#dc2626);color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 4px 16px rgba(217,119,6,0.3);transition:all 0.3s;">
+          詳細・料金を見る <span style="font-size:16px;">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="bg-dark has-video">
+<div class="section-video"><video autoplay muted loop playsinline><source src="assets/hero-bg.mp4" type="video/mp4"></video></div>
+<div class="container">
+<div class="section-title fade-up">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Contact</div>
+<h2>無料相談・お問い合わせ</h2>
+<p style="color:rgba(255,255,255,0.6)">まずはお気軽にご相談ください。24時間以内にご返信します。</p>
+</div>
+<div class="contact-wrap fade-up">
+<div class="contact-info">
+<h3>お気軽にご相談ください</h3>
+<p>制作のご依頼、料金のご相談、サービスについての質問など、何でもお問い合わせください。</p>
+<div class="contact-info-item"><i class="fa-solid fa-clock"></i><span>返信時間：24時間以内（土日祝含む）</span></div>
+<div class="contact-info-item"><i class="fa-solid fa-shield-check"></i><span>秘密保持契約（NDA）締結可能</span></div>
+<div class="contact-info-item"><i class="fa-solid fa-circle-check"></i><span>初回相談・お見積もり無料</span></div>
+<div class="contact-info-item"><i class="fa-solid fa-video"></i><span>オンライン打ち合わせ対応</span></div>
+</div>
+<div class="contact-form">
+<form action="https://formspree.io/f/xpqjbyya" method="POST">
+<input type="hidden" name="_subject" value="【LP制作】お問い合わせ">
+<input type="hidden" name="_next" value="https://clawtech6477.github.io/clawtech-lp/#contact">
+<label>お名前 <span style="color:#ef4444">*</span></label>
+<input type="text" name="name" placeholder="山田 太郎" required>
+<label>会社名・屋号</label>
+<input type="text" name="company" placeholder="株式会社〇〇">
+<label>メールアドレス <span style="color:#ef4444">*</span></label>
+<input type="email" name="email" placeholder="example@email.com" required>
+<label>ご相談内容</label>
+<select name="service">
+<option value="">選択してください</option>
+<option>LP・ホームページ制作</option>
+<option>MEO対策</option>
+<option>業務自動化</option>
+<option>DXコンサルティング</option>
+<option>AI営業代行</option>
+<option>その他</option>
+</select>
+<label>メッセージ</label>
+<textarea name="message" rows="4" placeholder="ご要望・ご質問をご記入ください"></textarea>
+<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane"></i>送信する（無料）</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<section id="company" class="bg-dark" style="padding:60px 0">
+<div class="container">
+<div class="section-title fade-up" style="margin-bottom:32px">
+<div class="overline" style="-webkit-text-fill-color:#fbbf24;background:none;color:#fbbf24">Company</div>
+<h2>会社概要</h2>
+</div>
+<table class="company-table fade-up">
+<tr><th>屋号</th><td>ClawTech</td></tr>
+<tr><th>代表者</th><td>非公開</td></tr>
+<tr><th>所在地</th><td>大阪府</td></tr>
+<tr><th>設立</th><td>2024年</td></tr>
+<tr><th>事業内容</th><td>Web制作・AI活用支援・業務自動化・DXコンサルティング・AI営業代行</td></tr>
+<tr><th>対応エリア</th><td>全国（オンライン対応）</td></tr>
+</table>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:16px">
+<svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="url(#lgf)"/><path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="lgf" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#2563EB"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs></svg>
+<span style="font-size:18px;font-weight:900;color:rgba(255,255,255,0.7)">ClawTech</span>
+</div>
+<div style="display:flex;justify-content:center;gap:24px;margin-bottom:16px;flex-wrap:wrap">
+<a href="#problems">お悩み</a><a href="#services">サービス</a><a href="#pricing">料金</a><a href="#faq">FAQ</a><a href="/clawtech-lp/sales/">AI営業代行</a><a href="#contact">お問い合わせ</a>
+</div>
+<p>© 2024 ClawTech. All rights reserved.</p>
+</div>
+</footer>
+
+<script>
+// Scroll animation
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}})},{threshold:0.12});
+document.querySelectorAll('.fade-up,.fade-in').forEach(el=>obs.observe(el));
+
+// Count-up animation
+function countUp(el){
+  const target=parseInt(el.dataset.count);
+  if(!target)return;
+  let start=0;const dur=1800;const step=dur/60;
+  const inc=target/60;
+  const timer=setInterval(()=>{
+    start+=inc;
+    if(start>=target){start=target;clearInterval(timer);}
+    el.textContent='¥'+Math.floor(start).toLocaleString()+'〜';
+  },step);
+}
+const countObs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){countUp(i.target);countObs.unobserve(i.target)}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(el=>countObs.observe(el));
+
+// Mobile nav
+document.querySelectorAll('nav ul a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    const m=document.getElementById('nav-menu');
+    if(m)m.style.display='none';
+  });
+});
+</script>
+</body>
 </html>
