@@ -19,28 +19,254 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{
-  --primary:#00bcd4; /* Cyan */
-  --primary-dark:#0097a7;
-  --primary-light:#e0f7fa;
-  --accent:#ff4081; /* Pink */
-  --accent-light:#fce4ec;
-  --dark:#263238; /* Dark Blue Grey */
-  --dark2:#37474f;
-  --gray:#78909c; /* Blue Grey */
-  --gray-light:#b0bec5;
-  --light:#eceff1; /* Light Blue Grey */
-  --white:#ffffff;
-  --gradient:linear-gradient(135deg,#00bcd4 0%,#673ab7 50%,#3f51b5 100%); /* Cyan to Deep Purple to Indigo */
-  --gradient2:linear-gradient(135deg,#263238 0%,#000000 100%); /* Dark Blue Grey to Black */
-  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:0 4px 20px rgba(0,0,0,0.08);
-  --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
-  --shadow-glow:0 0 40px rgba(0,188,212,0.2); /* Cyan glow */
-  --radius:16px;
-  --glass:rgba(255,255,255,0.06);
-  --glass-border:rgba(255,255,255,0.12);
+:root {
+  --primary: #2c3e50; /* Dark Slate Blue */
+  --primary-dark: #233140;
+  --primary-light: #e8f0f7;
+  --accent: #e74c3c; /* Alizarin Red */
+  --accent-light: #fdedec;
+  --dark: #34495e; /* Wet Asphalt */
+  --dark2: #2c3e50;
+  --gray: #7f8c8d; /* Asbestos */
+  --gray-light: #bdc3c7;
+  --light: #ecf0f1; /* Clouds */
+  --white: #ffffff;
+  --gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); /* Dark Slate Blue to Wet Asphalt */
+  --gradient2: linear-gradient(135deg, #2c3e50 0%, #233140 100%); /* Dark Slate Blue to Darker */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px rgba(44, 62, 80, 0.3); /* Dark Slate Blue glow */
+  --radius: 8px;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
 }
+
+/* General Body Styles */
+body {
+  font-family: 'Noto Sans JP', sans-serif; /* More natural Japanese font */
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Stronger, more modern headings */
+  color: var(--dark2);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1em;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-accent:hover {
+  background-color: #c0392b; /* Darker Alizarin Red */
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Sections */
+section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: var(--white);
+  padding: 20px 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--dark2);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+#hero {
+  background: var(--gradient);
+  color: var(--white);
+  text-align: center;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+  animation: rotateBackground 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes rotateBackground {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: var(--white);
+  text-shadow: var(--shadow-sm);
+}
+
+#hero p {
+  font-size: 1.3em;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+/* About Section */
+#about {
+  background-color: var(--white);
+  text-align: center;
+}
+
+#about h2 {
+  margin-bottom: 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.about-item {
+  background-color: var(--light);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow:
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8;overflow-x:hidden}

@@ -12,7 +12,207 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a0522d; /* セピア系の暖色 */
+            --dark: #36454f;    /* チャコールグレー */
+            --dark2: #4f626e;   /* やや明るいチャコールグレー */
+            --gray: #8b9ea7;    /* グレイッシュブルー */
+            --light: #fdfaf6;   /* オフホワイト */
+            --accent: #d4a373;  /* 落ち着いたオレンジ */
+            --text-color: #36454f;
+            --heading-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--heading-color);
+            line-height: 1.4;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--light);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            font-weight: 700;
+            font-size: 1.05em;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+            color: var(--light);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(var(--accent), 0.1);
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: float1 10s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(var(--primary), 0.1);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            animation: float2 12s infinite ease-in-out;
+        }
+
+        @keyframes float1 {
+            0% { transform: translate(0, 0) rotate(45deg); }
+            50% { transform: translate(20px, 20px) rotate(50deg); }
+            100% { transform: translate(0, 0) rotate(45deg); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(0, 0) rotate(-30deg); }
+            50% { transform: translate(-20px, -20px) rotate(-35deg); }
+            100% { transform: translate(0, 0) rotate(-30deg); }
+        }
+
+
+        .hero h1 {
+            color: var(--light);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

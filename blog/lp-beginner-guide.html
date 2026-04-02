@@ -12,7 +12,705 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+:root {
+  --primary: #4a6d7c; /* ダスティブルー */
+  --secondary: #8c7b70; /* ウォームグレー */
+  --accent: #d9ad7c; /* ソフトオレンジ */
+  --background-light: #f5f0e1; /* クリームホワイト */
+  --background-dark: #3a3a3a; /* ダークチャコール */
+  --text-dark: #3a3a3a; /* ダークチャコール */
+  --text-light: #f5f0e1; /* クリームホワイト */
+  --border-color: #c2b2a1; /* ソフトブラウン */
+  --font-family-sans: 'Noto Serif JP', serif; /* 日本語に合うセリフ体 */
+  --font-family-serif: 'Noto Serif JP', serif; /* 日本語に合うセリフ体 */
+  --gradient-start: #4a6d7c; /* グラデーション開始色 */
+  --gradient-end: #8c7b70; /* グラデーション終了色 */
+}
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-serif);
+  color: var(--primary);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-family-serif);
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+.logo a {
+  color: var(--text-light);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--text-light);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: subtle-pulse 15s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes subtle-pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.hero h1 {
+  color: var(--text-light);
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--accent), 10%);
+  transform: translateY(-2px);
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Features / Services */
+.features-grid, .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-item, .service-item {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.feature-item:hover, .service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i, .service-item i {
+  font-size: 3em;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.feature-item h3, .service-item h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.feature-item p, .service-item p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* About Section */
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 2;
+  min-width:
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-sans);
+  color: var(--primary);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5em;
+  font-weight: 800;
+  color: var(--background-dark);
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 1.8em;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: var(--text-light);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+  animation: pulse 15s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.hero h1 {
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-size: 4em;
+  font-weight: 900;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 300;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #e08e00; /* Slightly darker accent */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styling */
+section {
+  padding: 80px 0;
+  background-color: var(--background-light);
+}
+
+section:nth-of-type(even) {
+  background-color: #eef2f6; /* わずかに異なる背景色 */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 3em;
+  font-weight: 800;
+  color: var(--primary);
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.feature-item {
+  background-color: var(--text-light);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid var(--
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-serif);
+  color: var(--primary);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ヘッダー */
+header {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-light);
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: var(--text-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+/* メインコンテンツ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  padding: 40px 0;
+  margin-bottom: 20px;
+  background-color: var(--text-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--background-light);
+}
+
+/* ヒーローセクション */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #007bff 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 0; /* ヒーローは角丸なし */
+  box-shadow: none;
+}
+
+.hero h1 {
+  color: var(--text-light);
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #218838; /* 少し濃い緑 */
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* 特徴セクション */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-item {
+  background-color: var(--background-light);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.feature-item .icon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: var(--text-dark);
+}
+
+/* CTAセクション */
+.cta-banner {
+  background: linear-gradient(135deg, var(--secondary) 0%, #218838 100%);
+  color: var(--text-light);
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 8px;
+  margin: 40px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-banner h2 {
+  color: var(--text-light);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-banner .btn-primary {
+  background-color: var(--primary); /* CTAボタンはプライマリカラー */
+}
+
+.cta-banner .btn-primary:hover {
+  background-color: #004085; /* 少し濃い青 */
+}
+
+/* フォーム */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--text-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}
@@ -41,101 +739,109 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 @media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
 </style>
 </head>
-<body>
-<nav><div class="inner"><a href="../" class="logo">Claw<span>Tech</span></a><div><a href="../#services" style="margin-right:20px">サービス</a><a href="./">ブログ</a></div></div></nav>
+<body><nav>
+    <div class="inner">
+        <a href="../" class="logo">Claw<span>Tech</span></a>
+        <div>
+            <a href="../#services" style="margin-right:20px">サービス</a>
+            <a href="./">ブログ</a>
+        </div>
+    </div>
+</nav>
 <article class="article">
-<div class="article-header">
-<span class="tag">Web制作</span>
-<h1>【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</h1>
-<div class="meta">2026年3月6日 ・ 読了目安 8分</div>
-</div>
-<div class="article-body">
-<h2>LP(ランディングページ)とは？ 初心者が知るべき基本</h2>
+    <div class="article-header">
+        <span class="tag">Web制作</span>
+        <h1>【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</h1>
+        <div class="meta">2026年3月6日 ・ 読了目安 8分</div>
+    </div>
+    <div class="article-body">
+        <h2>LP(ランディングページ)とは？ 初心者が知るべき基本</h2>
 
-<h3>LPの目的：コンバージョン最大化</h3>
-<p>LP（ランディングページ）とは、Webサイトへの訪問者を特定の行動（購入、問い合わせ、資料請求など）に誘導するために最適化された、一枚完結型のWebページです。通常のWebサイトとは異なり、ナビゲーションを最小限に抑え、特定の製品やサービスの魅力を集中的に訴求します。LPの最大の目的は、コンバージョン率（CVR）を最大化することです。つまり、訪問者の中からどれだけの割合の人が、最終的に目的とする行動を起こしてくれるかを高めることを目指します。</p>
-<p>例えば、弊社のクライアントであるECサイトでは、LPを導入した結果、特定商品の購入率が30%向上しました。これは、LPが訪問者の注意を一点に集中させ、購買意欲を高める効果があることを示しています。</p>
+        <h3>LPの目的：コンバージョン最大化</h3>
+        <p>LP（ランディングページ）とは、Webサイトへの訪問者を特定の行動（購入、問い合わせ、資料請求など）に誘導するために最適化された、一枚完結型のWebページです。通常のWebサイトとは異なり、ナビゲーションを最小限に抑え、特定の製品やサービスの魅力を集中的に訴求します。LPの最大の目的は、コンバージョン率（CVR）を最大化することです。つまり、訪問者の中からどれだけの割合の人が、最終的に目的とする行動を起こしてくれるかを高めることを目指します。</p>
+        <p>例えば、弊社のクライアントであるECサイトでは、LPを導入した結果、特定商品の購入率が30%向上しました。これは、LPが訪問者の注意を一点に集中させ、購買意欲を高める効果があることを示しています。</p>
 
-<h3>LPとホームページの違い：役割と構造</h3>
-<p>ホームページは、企業やブランド全体の情報を網羅的に提供するのに対し、LPは特定のキャンペーンや製品・サービスに焦点を当てます。ホームページは複数のページで構成され、ナビゲーションを通じて様々な情報にアクセスできますが、LPは原則として一枚のページで完結し、スクロールすることで情報を伝えます。この構造の違いが、LPのコンバージョン率を高める要因の一つです。</p>
-<p>LPは、訪問者が迷うことなく、スムーズにコンバージョンに至るように設計されています。不要な情報を排除し、重要な情報のみを効果的に配置することで、訪問者の注意を惹きつけ、行動を促します。</p>
+        <h3>LPとホームページの違い：役割と構造</h3>
+        <p>ホームページは、企業やブランド全体の情報を網羅的に提供するのに対し、LPは特定のキャンペーンや製品・サービスに焦点を当てます。ホームページは複数のページで構成され、ナビゲーションを通じて様々な情報にアクセスできますが、LPは原則として一枚のページで完結し、スクロールすることで情報を伝えます。この構造の違いが、LPのコンバージョン率を高める要因の一つです。</p>
+        <p>LPは、訪問者が迷うことなく、スムーズにコンバージョンに至るように設計されています。不要な情報を排除し、重要な情報のみを効果的に配置することで、訪問者の注意を惹きつけ、行動を促します。</p>
 
-<h2>LP作成のステップ：初心者でも簡単！</h2>
+        <h2>LP作成のステップ：初心者でも簡単！</h2>
 
-<h3>ステップ1：ターゲット設定と目的の明確化</h3>
-<p>LP作成の最初のステップは、誰に、何を伝えたいのかを明確にすることです。ターゲットとする顧客層（年齢、性別、興味関心など）を詳細に定義し、彼らが抱える課題やニーズを把握します。そして、LPを通じて達成したい具体的な目的（資料請求数の増加、無料トライアルへの登録促進、商品購入数の増加など）を設定します。</p>
-<p>例えば、工務店様向けのLPを作成する場合、ターゲットは「新築住宅を検討している30代〜40代のファミリー層」とし、目的は「完成見学会への参加予約数を増やす」と設定します。ターゲット層のニーズ（デザイン性、耐震性、省エネ性能など）を考慮し、LPのコンテンツを構成します。ClawTechでは、工務店様向けのホームページ制作も承っております。施工事例ページを充実させ、お客様の信頼感を高めるデザインを提案します。（<a href="koumuten-homepage.html">工務店ホームページ制作はこちら</a>）</p>
+        <h3>ステップ1：ターゲット設定と目的の明確化</h3>
+        <p>LP作成の最初のステップは、誰に、何を伝えたいのかを明確にすることです。ターゲットとする顧客層（年齢、性別、興味関心など）を詳細に定義し、彼らが抱える課題やニーズを把握します。そして、LPを通じて達成したい具体的な目的（資料請求数の増加、無料トライアルへの登録促進、商品購入数の増加など）を設定します。</p>
+        <p>例えば、工務店様向けのLPを作成する場合、ターゲットは「新築住宅を検討している30代〜40代のファミリー層」とし、目的は「完成見学会への参加予約数を増やす」と設定します。ターゲット層のニーズ（デザイン性、耐震性、省エネ性能など）を考慮し、LPのコンテンツを構成します。ClawTechでは、工務店様向けのホームページ制作も承っております。施工事例ページを充実させ、お客様の信頼感を高めるデザインを提案します。（<a href="koumuten-homepage.html">工務店ホームページ制作はこちら</a>）</p>
 
-<h3>ステップ2：LPの構成要素と効果的な配置</h3>
-<p>LPは、一般的に以下の要素で構成されます。これらの要素を効果的に配置することで、訪問者の興味を引きつけ、コンバージョンを促進することができます。</p>
-<ul>
- <li><strong>ファーストビュー：</strong>LPを開いたときに最初に目に入る部分。キャッチコピー、イメージ画像、CTAボタンなどで構成され、訪問者の興味を惹きつけ、スクロールを促します。</li>
- <li><strong>ベネフィット：</strong>製品やサービスを利用することで得られるメリットを具体的に示します。機能の説明だけでなく、顧客の課題解決にどのように役立つのかを強調します。</li>
- <li><strong>証拠：</strong>顧客の声、実績データ、専門家の推薦など、製品やサービスの信頼性を高めるための情報を提供します。</li>
- <li><strong>CTA（Call to Action）：</strong>資料請求、問い合わせ、購入などの行動を促すためのボタンやリンク。目立つ色やデザインを使用し、クリックを促します。</li>
-</ul>
-<p>これらの要素を、ストーリー性を持たせて配置することで、訪問者の感情に訴えかけ、共感を呼び起こすことができます。例えば、顧客の課題を提示し、製品やサービスがその課題を解決する過程を示すことで、訪問者の興味を引きつけ、行動を促すことができます。</p>
+        <h3>ステップ2：LPの構成要素と効果的な配置</h3>
+        <p>LPは、一般的に以下の要素で構成されます。これらの要素を効果的に配置することで、訪問者の興味を引きつけ、コンバージョンを促進することができます。</p>
+        <ul>
+            <li><strong>ファーストビュー：</strong>LPを開いたときに最初に目に入る部分。キャッチコピー、イメージ画像、CTAボタンなどで構成され、訪問者の興味を惹きつけ、スクロールを促します。</li>
+            <li><strong>ベネフィット：</strong>製品やサービスを利用することで得られるメリットを具体的に示します。機能の説明だけでなく、顧客の課題解決にどのように役立つのかを強調します。</li>
+            <li><strong>証拠：</strong>顧客の声、実績データ、専門家の推薦など、製品やサービスの信頼性を高めるための情報を提供します。</li>
+            <li><strong>CTA（Call to Action）：</strong>資料請求、問い合わせ、購入などの行動を促すためのボタンやリンク。目立つ色やデザインを使用し、クリックを促します。</li>
+        </ul>
+        <p>これらの要素を、ストーリー性を持たせて配置することで、訪問者の感情に訴えかけ、共感を呼び起こすことができます。例えば、顧客の課題を提示し、製品やサービスがその課題を解決する過程を示すことで、訪問者の興味を引きつけ、行動を促すことができます。</p>
 
-<h3>ステップ3：LPデザインの基礎知識</h3>
-<p>LPデザインは、訪問者の第一印象を左右する重要な要素です。配色、フォント、画像選定など、デザインの基礎知識を身につけることで、効果的なLPを作成することができます。</p>
-<ul>
- <li><strong>配色：</strong>ブランドイメージに合った色を選び、統一感のある配色を心がけます。重要な要素を目立たせるために、コントラストの強い色を使用するのも有効です。</li>
- <li><strong>フォント：</strong>読みやすく、LPの目的に合ったフォントを選びます。見出しには太めのフォント、本文には細めのフォントを使用するなど、メリハリをつけることが重要です。</li>
- <li><strong>画像選定：</strong>高品質で、LPのメッセージを効果的に伝える画像を選びます。人物画像を使用する場合は、ターゲット層に合ったモデルを選び、共感を呼び起こすことが重要です。</li>
-</ul>
-<p>デザインの知識がない場合は、LP作成ツールに用意されているテンプレートを利用するのも有効です。テンプレートを参考に、自社のブランドイメージに合ったデザインにカスタマイズすることができます。</p>
+        <h3>ステップ3：LPデザインの基礎知識</h3>
+        <p>LPデザインは、訪問者の第一印象を左右する重要な要素です。配色、フォント、画像選定など、デザインの基礎知識を身につけることで、効果的なLPを作成することができます。</p>
+        <ul>
+            <li><strong>配色：</strong>ブランドイメージに合った色を選び、統一感のある配色を心がけます。重要な要素を目立たせるために、コントラストの強い色を使用するのも有効です。</li>
+            <li><strong>フォント：</strong>読みやすく、LPの目的に合ったフォントを選びます。見出しには太めのフォント、本文には細めのフォントを使用するなど、メリハリをつけることが重要です。</li>
+            <li><strong>画像選定：</strong>高品質で、LPのメッセージを効果的に伝える画像を選びます。人物画像を使用する場合は、ターゲット層に合ったモデルを選び、共感を呼び起こすことが重要です。</li>
+        </ul>
+        <p>デザインの知識がない場合は、LP作成ツールに用意されているテンプレートを利用するのも有効です。テンプレートを参考に、自社のブランドイメージに合ったデザインにカスタマイズすることができます。</p>
 
-<h2>LP作成ツール：無料から有料まで比較</h2>
+        <h2>LP作成ツール：無料から有料まで比較</h2>
 
-<h3>無料LP作成ツール：手軽に始める</h3>
-<p>LP作成ツールには、無料で利用できるものから、高機能な有料のものまで、様々な種類があります。無料ツールは、手軽にLPを作成できるのがメリットですが、機能が制限されている場合や、広告が表示される場合があります。初心者の方や、予算が限られている場合は、無料ツールから試してみるのがおすすめです。</p>
-<p>代表的な無料LP作成ツールとしては、Wix、Strikingly、ペライチなどがあります。これらのツールは、ドラッグ＆ドロップで簡単にLPを作成できるのが特徴です。テンプレートも豊富に用意されているため、デザインの知識がない方でも、高品質なLPを作成することができます。</p>
+        <h3>無料LP作成ツール：手軽に始める</h3>
+        <p>LP作成ツールには、無料で利用できるものから、高機能な有料のものまで、様々な種類があります。無料ツールは、手軽にLPを作成できるのがメリットですが、機能が制限されている場合や、広告が表示される場合があります。初心者の方や、予算が限られている場合は、無料ツールから試してみるのがおすすめです。</p>
+        <p>代表的な無料LP作成ツールとしては、Wix、Strikingly、ペライチなどがあります。これらのツールは、ドラッグ＆ドロップで簡単にLPを作成できるのが特徴です。テンプレートも豊富に用意されているため、デザインの知識がない方でも、高品質なLPを作成することができます。</p>
 
-<h3>有料LP作成ツール：高機能で自由度の高いLPを</h3>
-<p>有料LP作成ツールは、無料ツールに比べて機能が豊富で、自由度の高いLPを作成することができます。A/Bテスト機能、アクセス解析機能、SEO対策機能など、コンバージョン率を高めるための機能が充実しています。</p>
-<p>代表的な有料LP作成ツールとしては、Instapage、Unbounce、Leadpagesなどがあります。これらのツールは、プロのマーケター向けに設計されており、高度な分析機能やカスタマイズ機能を提供しています。本格的にLPを活用して、ビジネスを成長させたい場合は、有料ツールの導入を検討する価値があります。</p>
-<p>ClawTechでは、お客様のニーズに合わせて最適なLP作成ツールを選定し、LP制作をサポートしています。ホームページ・LP制作は¥49,800〜、最短1週間で対応可能です。まずはお気軽にご相談ください。</p>
+        <h3>有料LP作成ツール：高機能で自由度の高いLPを</h3>
+        <p>有料LP作成ツールは、無料ツールに比べて機能が豊富で、自由度の高いLPを作成することができます。A/Bテスト機能、アクセス解析機能、SEO対策機能など、コンバージョン率を高めるための機能が充実しています。</p>
+        <p>代表的な有料LP作成ツールとしては、Instapage、Unbounce、Leadpagesなどがあります。これらのツールは、プロのマーケター向けに設計されており、高度な分析機能やカスタマイズ機能を提供しています。本格的にLPを活用して、ビジネスを成長させたい場合は、有料ツールの導入を検討する価値があります。</p>
+        <p>ClawTechでは、お客様のニーズに合わせて最適なLP作成ツールを選定し、LP制作をサポートしています。ホームページ・LP制作は¥49,800〜、最短1週間で対応可能です。まずはお気軽にご相談ください。</p>
 
-<h3>ノーコードLP作成：プログラミング不要で簡単作成</h3>
-<p>近年、プログラミングの知識がなくても、簡単にLPを作成できるノーコードツールが人気を集めています。ノーコードツールは、ドラッグ＆ドロップで直感的に操作できるため、デザインの知識がない方でも、高品質なLPを作成することができます。</p>
-<p>代表的なノーコードLP作成ツールとしては、STUDIO、Webflowなどがあります。これらのツールは、デザインの自由度が高く、アニメーションやインタラクションを簡単に実装できるのが特徴です。また、SEO対策機能も充実しており、検索エンジンからの集客にも効果的です。</p>
+        <h3>ノーコードLP作成：プログラミング不要で簡単作成</h3>
+        <p>近年、プログラミングの知識がなくても、簡単にLPを作成できるノーコードツールが人気を集めています。ノーコードツールは、ドラッグ＆ドロップで直感的に操作できるため、デザインの知識がない方でも、高品質なLPを作成することができます。</p>
+        <p>代表的なノーコードLP作成ツールとしては、STUDIO、Webflowなどがあります。これらのツールは、デザインの自由度が高く、アニメーションやインタラクションを簡単に実装できるのが特徴です。また、SEO対策機能も充実しており、検索エンジンからの集客にも効果的です。</p>
 
-<h2>LP公開後の効果測定と改善：PDCAサイクルを回す</h2>
+        <h2>LP公開後の効果測定と改善：PDCAサイクルを回す</h2>
 
-<h3>アクセス解析ツールの導入：データに基づいた改善</h3>
-<p>LPを公開したら、効果測定を行い、改善を繰り返すことが重要です。アクセス解析ツールを導入し、LPへのアクセス数、コンバージョン率、離脱率などを測定します。これらのデータを分析することで、LPの課題を特定し、改善策を立てることができます。</p>
-<p>代表的なアクセス解析ツールとしては、Google Analyticsがあります。Google Analyticsは、無料で利用できる高機能なアクセス解析ツールで、LPへのアクセス状況を詳細に分析することができます。Google Analyticsを活用して、LPのボトルネックを特定し、改善策を実行することで、コンバージョン率を向上させることができます。</p>
+        <h3>アクセス解析ツールの導入：データに基づいた改善</h3>
+        <p>LPを公開したら、効果測定を行い、改善を繰り返すことが重要です。アクセス解析ツールを導入し、LPへのアクセス数、コンバージョン率、離脱率などを測定します。これらのデータを分析することで、LPの課題を特定し、改善策を立てることができます。</p>
+        <p>代表的なアクセス解析ツールとしては、Google Analyticsがあります。Google Analyticsは、無料で利用できる高機能なアクセス解析ツールで、LPへのアクセス状況を詳細に分析することができます。Google Analyticsを活用して、LPのボトルネックを特定し、改善策を実行することで、コンバージョン率を向上させることができます。</p>
 
-<h3>A/Bテスト：効果的な改善策を見つける</h3>
-<p>A/Bテストは、LPの異なるバージョンを比較し、どちらがより高いコンバージョン率を達成できるかを検証する手法です。例えば、キャッチコピー、画像、CTAボタンの色などを変更した複数のバージョンを用意し、それぞれに異なるアクセスを割り当てて、効果を比較します。</p>
-<p>A/Bテストの結果、より高いコンバージョン率を達成したバージョンを採用することで、LPの効果を最大化することができます。A/Bテストは、地道な作業ですが、LPのコンバージョン率を向上させるためには不可欠なプロセスです。</p>
-<p>ClawTechでは、MEO対策・Googleマップ集客もサポートしています。クリニック・整骨院様であれば、予約システムを導入し、Googleマップからの集客を強化することで、来院数を増やすことができます。（<a href="meo-taisaku.html">MEO対策はこちら</a>）</p>
+        <h3>A/Bテスト：効果的な改善策を見つける</h3>
+        <p>A/Bテストは、LPの異なるバージョンを比較し、どちらがより高いコンバージョン率を達成できるかを検証する手法です。例えば、キャッチコピー、画像、CTAボタンの色などを変更した複数のバージョンを用意し、それぞれに異なるアクセスを割り当てて、効果を比較します。</p>
+        <p>A/Bテストの結果、より高いコンバージョン率を達成したバージョンを採用することで、LPの効果を最大化することができます。A/Bテストは、地道な作業ですが、LPのコンバージョン率を向上させるためには不可欠なプロセスです。</p>
+        <p>ClawTechでは、MEO対策・Googleマップ集客もサポートしています。クリニック・整骨院様であれば、予約システムを導入し、Googleマップからの集客を強化することで、来院数を増やすことができます。（<a href="meo-taisaku.html">MEO対策はこちら</a>）</p>
 
-<h3>LPの運用・保守：継続的な改善と最適化</h3>
-<p>LPは、公開して終わりではありません。継続的に運用・保守を行い、常に最新の情報に更新し、効果を最大化する必要があります。例えば、季節限定のキャンペーンを実施したり、顧客のニーズに合わせてコンテンツを更新したりすることで、LPの鮮度を保ち、訪問者の興味を引きつけることができます。</p>
-<p>また、LPのセキュリティ対策も重要です。SSL証明書を導入し、個人情報を安全に保護することで、顧客の信頼を得ることができます。LPの運用・保守には、専門的な知識が必要となる場合もあるため、専門業者に委託することも検討しましょう。</p>
-<p>ClawTechでは、LP制作後の運用・保守も承っております。サーバー、ドメイン、セキュリティ対策など、LPの運用に必要な全てをサポートいたします。</p>
+        <h3>LPの運用・保守：継続的な改善と最適化</h3>
+        <p>LPは、公開して終わりではありません。継続的に運用・保守を行い、常に最新の情報に更新し、効果を最大化する必要があります。例えば、季節限定のキャンペーンを実施したり、顧客のニーズに合わせてコンテンツを更新したりすることで、LPの鮮度を保ち、訪問者の興味を引きつけることができます。</p>
+        <p>また、LPのセキュリティ対策も重要です。SSL証明書を導入し、個人情報を安全に保護することで、顧客の信頼を得ることができます。LPの運用・保守には、専門的な知識が必要となる場合もあるため、専門業者に委託することも検討しましょう。</p>
+        <p>ClawTechでは、LP制作後の運用・保守も承っております。サーバー、ドメイン、セキュリティ対策など、LPの運用に必要な全てをサポートいたします。</p>
 
-<div style="background-color:#f0f0f0; padding:20px; border-radius:5px; text-align:center;">
- <h3>LP制作に関するお悩み、お気軽にご相談ください！</h3>
- <p>ClawTechでは、お客様のビジネスに最適なLPを制作いたします。無料相談も承っておりますので、お気軽にお問い合わせください。</p>
- <a href="#" style="background-color:#007bff; color:#fff; padding:10px 20px; border-radius:5px; text-decoration:none;">無料相談はこちら</a>
-</div>
-<div class="cta-box">
-<h3>プロに相談してみませんか？</h3>
-<p>ClawTechではWeb制作に関する無料相談を承っています。お気軽にお問い合わせください。</p>
-<a href="../#contact" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">無料相談・お見積もりはこちら→</a>
-</div>
-</div>
+        <div class="cta-section">
+            <h3>LP制作に関するお悩み、お気軽にご相談ください！</h3>
+            <p>ClawTechでは、お客様のビジネスに最適なLPを制作いたします。無料相談も承っておりますので、お気軽にお問い合わせください。</p>
+            <a href="#" class="button primary">無料相談はこちら</a>
+        </div>
+        <div class="cta-box">
+            <h3>プロに相談してみませんか？</h3>
+            <p>ClawTechではWeb制作に関する無料相談を承っています。お気軽にお問い合わせください。</p>
+            <a href="../#contact" class="button secondary">無料相談・お見積もりはこちら→</a>
+        </div>
+    </div>
 
-<!-- CTA: LP自動改善 -->
-<div style="margin:40px 0;padding:28px 24px;background:linear-gradient(135deg,#1c0a00,#2d1600);border-radius:16px;border-left:4px solid #f59e0b;text-align:center;">
-  <p style="color:#fcd34d;font-size:12px;font-weight:700;letter-spacing:2px;margin:0 0 8px;">GA4 × AI データ駆動LP改善</p>
-  <h3 style="color:#fff;font-size:18px;margin:0 0 10px;">LPのCVRを自動で改善し続けませんか？</h3>
-  <p style="color:#94a3b8;font-size:13px;margin:0 0 18px;line-height:1.7;">GA4分析→AI改善提案→承認→自動適用→効果測定のサイクルを実現。<br>月額49,800円〜でCVRを継続的に引き上げます。</p>
-  <a href="../sales/lp-kaizen.html" style="display:inline-block;padding:13px 32px;background:linear-gradient(135deg,#d97706,#dc2626);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:14px;">LP自動改善サービスを見る→</a>
-</div>
+    <!-- CTA: LP自動改善 -->
+    <div class="cta-lp-improvement">
+        <div class="cta-lp-improvement-content">
+            <p class="cta-lp-improvement-tag">GA4 × AI データ駆動LP改善</p>
+            <h3 class="cta-lp-improvement-title">LPのCVRを自動で改善し続けませんか？</h3>
+            <p class="cta-lp-improvement-description">GA4分析→AI改善提案→承認→自動適用→効果測定のサイクルを実現。<br>月額49,800円〜でCVRを継続的に引き上げます。</p>
+            <a href="../sales/lp-kaizen.html" class="button tertiary">LP自動改善サービスを見る→</a>
+        </div>
+    </div>
 </article>
-<footer>&copy; 2026 ClawTech Inc.</footer>
-</body>
+<footer>&copy; 2026 ClawTech Inc.</footer></body>
 </html>

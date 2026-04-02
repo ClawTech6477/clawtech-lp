@@ -8,7 +8,225 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #34495e; /* Dark Slate Gray */
+            --secondary-color: #e74c3c; /* Alizarin Red */
+            --accent-color: #2ecc71; /* Emerald Green */
+            --text-dark: #2c3e50; /* Midnight Blue */
+            --text-light: #ecf0f1; /* Clouds */
+            --bg-light: #fdfdfd; /* Near White */
+            --bg-dark: #34495e; /* Dark Slate Gray */
+            --border-color: #bdc3c7; /* Silver */
+            --font-family-base: 'Noto Sans JP', sans-serif;
+            --font-family-heading: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--text-dark);
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.8em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+        h4 { font-size: 1.4em; }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-family-heading);
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 1.05em;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #4a6984 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+        }
+
+        #hero h1 {
+            color: var(--text-light);
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:2;background:#fff}
 nav{background:rgba(15,23,42,0.95);padding:16px 0;position:sticky;top:0;z-index:100}

@@ -12,7 +12,718 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+:root {
+  --primary: #36454F; /* チャコールグレー */
+  --secondary: #A9A9A9; /* ダークグレー */
+  --accent: #B0C4DE; /* ライトスチールブルー */
+  --dark: #2F4F4F; /* ダークスレートグレー */
+  --dark2: #4682B4; /* スチールブルー */
+  --gray: #778899; /* ライトスレートグレー */
+  --light: #F5F5DC; /* ベージュ */
+  --white: #FFFFFF; /* 純粋な白 */
+  --border-color: #D3D3D3; /* ライトグレーのボーダー */
+  --font-family-sans: 'Georgia', serif; /* クラシックで読みやすいセントフォント */
+  --font-family-serif: 'Palatino Linotype', 'Book Antiqua', Palatino, serif; /* 信頼感のあるセリフフォント */
+}
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ヘッダー */
+header {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--dark2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* ヒーローセクション */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--dark2) 100%);
+  color: var(--white);
+  padding: 6rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: hero-pulse 10s infinite alternate;
+}
+
+@keyframes hero-pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.hero h1 {
+  font-family: var(--font-family-serif);
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary:hover {
+  background-color: #e66a14; /* 少し暗いオレンジ */
+  transform: translateY(-2px);
+}
+
+/* セクション共通 */
+section {
+  padding: 4rem 0;
+  background-color: var(--light);
+  border-bottom: 1px solid var(--border-color);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--white);
+}
+
+h2 {
+  font-family: var(--font-family-serif);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--dark);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+h3 {
+  font-family: var(--font-family-serif);
+  font-size: 1.8rem;
+  color: var(--dark2);
+  margin-bottom: 1rem;
+}
+
+/* サービスセクション */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.service-card .icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--dark);
+}
+
+.service-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* お悩みセクション */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.problem-item {
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border-left: 5px solid var(--dark2);
+}
+
+.problem-item .icon {
+  font-
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--dark2);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-serif);
+  color: var(--dark);
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--white);
+  font-family: var(--font-family-serif);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.05em;
+  padding: 5px 0;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--white);
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: pulse 10s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: var(--white);
+  font-family: var(--font-family-serif);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #e06000; /* Slightly darker orange */
+  transform: translateY(-2px);
+}
+
+/* Section Styling */
+section {
+  padding: 80px 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--light);
+}
+
+section h2 {
+  font-size: 2.8em;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  padding-bottom: 15px;
+  color: var(--dark);
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--secondary);
+  border-radius: 2px;
+}
+
+/* Features Section */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.feature-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item .icon {
+  font-size: 3.5em;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.feature-item h3 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: var
+
+body {
+  font-family: var(--font-family-sans);
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-serif);
+  color: var(--dark2);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-family: var(--font-family-serif);
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--white);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary), #007bff); /* 青系のグラデーション */
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  font-family: var(--font-family-serif);
+}
+
+.hero p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary);
+  color: var(--white);
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #218838; /* 少し濃い緑 */
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+  margin: 15px auto 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.grid-item {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid-item h3 {
+  color: var(--primary);
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.grid-item p {
+  color: var(--gray);
+  font-size: 1.1em;
+}
+
+.cta-banner {
+  background: linear-gradient(135deg, #007bff, var(--primary)); /* 青系のグラデーション */
+  color: var(--white);
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.cta-banner h2 {
+  color: var(--white);
+  font-size: 2.8em;
+  margin-bottom: 20px;
+}
+
+.cta-banner p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.form-section {
+  background-color: var(--white);
+  padding: 60px 0;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--dark2);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group input[type="submit"] {
+  width: auto;
+  padding: 12px 30px;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group input
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}
@@ -46,96 +757,103 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 @media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
 </style>
 </head>
-<body>
-<nav><div class="inner"><a href="../" class="logo">Claw<span>Tech</span></a><div><a href="../#services" style="margin-right:20px">サービス</a><a href="./">ブログ</a></div></div></nav>
+<body><nav>
+  <div class="inner">
+    <a href="../" class="logo">Claw<span>Tech</span></a>
+    <div>
+      <a href="../#services" style="margin-right:20px">サービス</a>
+      <a href="./">ブログ</a>
+    </div>
+  </div>
+</nav>
 <article class="article">
-<div class="article-header">
-<span class="tag">AI活用</span>
-<img src="../assets/blog/ai.jpg" alt="" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin-bottom:32px"><h1>中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</h1>
-<p class="meta">2026年3月5日 ・ 読了目安 10分</p>
-</div>
-<div class="article-body">
+  <div class="article-header">
+    <span class="tag">AI活用</span>
+    <img src="../assets/blog/ai.jpg" alt="" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin-bottom:32px">
+    <h1>中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</h1>
+    <p class="meta">2026年3月5日 ・ 読了目安 10分</p>
+  </div>
+  <div class="article-body">
 
-<p>「AIは大企業のもの」——そう思っていませんか？実は2026年現在、中小企業でも<strong>月額0円〜数千円</strong>でAIを活用した業務自動化が可能になっています。</p>
+    <p>「AIは大企業のもの」——そう思っていませんか？実は2026年現在、中小企業でも<strong>月額0円〜数千円</strong>でAIを活用した業務自動化が可能になっています。</p>
 
-<p>この記事では、実際に中小企業が導入して成果を出しているAI活用事例を5つご紹介します。すべて初期費用10万円以下で導入できるものばかりです。</p>
+    <p>この記事では、実際に中小企業が導入して成果を出しているAI活用事例を5つご紹介します。すべて初期費用10万円以下で導入できるものばかりです。</p>
 
-<h2>事例1: 請求書・見積書の自動作成</h2>
+    <h2>事例1: 請求書・見積書の自動作成</h2>
 
-<div class="case-box">
-<div class="label">導入企業: 工務店（従業員5名）</div>
-<h4>Excelで毎月半日かかっていた請求書作成を自動化</h4>
-<p>顧客情報と工事内容をスプレッドシートに入力するだけで、請求書PDFが自動生成されてメールで送付されるシステムを構築。Google Apps Script + AIテンプレート生成を活用。</p>
-<div class="result">導入効果: 月8時間 → 30分に短縮（93%削減）</div>
-</div>
+    <div class="case-box">
+      <div class="label">導入企業: 工務店（従業員5名）</div>
+      <h4>Excelで毎月半日かかっていた請求書作成を自動化</h4>
+      <p>顧客情報と工事内容をスプレッドシートに入力するだけで、請求書PDFが自動生成されてメールで送付されるシステムを構築。Google Apps Script + AIテンプレート生成を活用。</p>
+      <div class="result">導入効果: 月8時間 → 30分に短縮（93%削減）</div>
+    </div>
 
-<h2>事例2: お問い合わせメールの自動振り分け・返信</h2>
+    <h2>事例2: お問い合わせメールの自動振り分け・返信</h2>
 
-<div class="case-box">
-<div class="label">導入企業: 学習塾（3教室展開）</div>
-<h4>問い合わせ内容をAIが判別し、適切な担当者に自動転送</h4>
-<p>入塾相談・体験授業申し込み・既存生徒の相談など、メールの内容をAIが自動で分類。定型的な回答はAIがドラフトを作成し、担当者は確認して送信するだけに。</p>
-<div class="result">導入効果: メール対応時間 月15時間 → 3時間（80%削減）</div>
-</div>
+    <div class="case-box">
+      <div class="label">導入企業: 学習塾（3教室展開）</div>
+      <h4>問い合わせ内容をAIが判別し、適切な担当者に自動転送</h4>
+      <p>入塾相談・体験授業申し込み・既存生徒の相談など、メールの内容をAIが自動で分類。定型的な回答はAIがドラフトを作成し、担当者は確認して送信するだけに。</p>
+      <div class="result">導入効果: メール対応時間 月15時間 → 3時間（80%削減）</div>
+    </div>
 
-<h2>事例3: SNS投稿の自動化</h2>
+    <h2>事例3: SNS投稿の自動化</h2>
 
-<div class="case-box">
-<div class="label">導入企業: エステサロン（個人経営）</div>
-<h4>Instagram・Xの投稿をAIが自動生成＋スケジュール投稿</h4>
-<p>施術のビフォーアフター写真をアップロードするだけで、AIがハッシュタグ付きのキャプションを自動生成。週7本の投稿を自動でスケジュール配信。</p>
-<div class="result">導入効果: SNS運用時間 週5時間 → 30分（90%削減）</div>
-</div>
+    <div class="case-box">
+      <div class="label">導入企業: エステサロン（個人経営）</div>
+      <h4>Instagram・Xの投稿をAIが自動生成＋スケジュール投稿</h4>
+      <p>施術のビフォーアフター写真をアップロードするだけで、AIがハッシュタグ付きのキャプションを自動生成。週7本の投稿を自動でスケジュール配信。</p>
+      <div class="result">導入効果: SNS運用時間 週5時間 → 30分（90%削減）</div>
+    </div>
 
-<h2>事例4: 予約管理の自動化</h2>
+    <h2>事例4: 予約管理の自動化</h2>
 
-<div class="case-box">
-<div class="label">導入企業: 歯科クリニック（スタッフ8名）</div>
-<h4>LINE公式アカウント + AIチャットボットで24時間予約受付</h4>
-<p>患者がLINEで予約希望日時を送ると、AIチャットボットが空き状況を確認して自動で予約を確定。リマインド通知も自動送信。電話対応を大幅に削減。</p>
-<div class="result">導入効果: 受付の電話対応 1日30件 → 5件（83%削減）</div>
-</div>
+    <div class="case-box">
+      <div class="label">導入企業: 歯科クリニック（スタッフ8名）</div>
+      <h4>LINE公式アカウント + AIチャットボットで24時間予約受付</h4>
+      <p>患者がLINEで予約希望日時を送ると、AIチャットボットが空き状況を確認して自動で予約を確定。リマインド通知も自動送信。電話対応を大幅に削減。</p>
+      <div class="result">導入効果: 受付の電話対応 1日30件 → 5件（83%削減）</div>
+    </div>
 
-<h2>事例5: 競合調査・市場分析の自動化</h2>
+    <h2>事例5: 競合調査・市場分析の自動化</h2>
 
-<div class="case-box">
-<div class="label">導入企業: 不動産会社（従業員10名）</div>
-<h4>競合物件の価格変動をAIが自動モニタリング</h4>
-<p>競合の不動産ポータルサイトをAIが定期的にチェックし、新着物件や価格変更を自動で通知。市場レポートも週次で自動生成。手動での競合チェックが不要に。</p>
-<div class="result">導入効果: 競合調査時間 月20時間 → 2時間（90%削減）</div>
-</div>
+    <div class="case-box">
+      <div class="label">導入企業: 不動産会社（従業員10名）</div>
+      <h4>競合物件の価格変動をAIが自動モニタリング</h4>
+      <p>競合の不動産ポータルサイトをAIが定期的にチェックし、新着物件や価格変更を自動で通知。市場レポートも週次で自動生成。手動での競合チェックが不要に。</p>
+      <div class="result">導入効果: 競合調査時間 月20時間 → 2時間（90%削減）</div>
+    </div>
 
-<h2>AI導入を成功させる3つのポイント</h2>
+    <h2>AI導入を成功させる3つのポイント</h2>
 
-<h3>1. 小さく始める</h3>
-<p>いきなり全業務をAI化しようとすると挫折します。まずは<strong>最も時間がかかっている1つの業務</strong>から始めましょう。成功体験を積むことで、社内のAI活用が加速します。</p>
+    <h3>1. 小さく始める</h3>
+    <p>いきなり全業務をAI化しようとすると挫折します。まずは<strong>最も時間がかかっている1つの業務</strong>から始めましょう。成功体験を積むことで、社内のAI活用が加速します。</p>
 
-<h3>2. 完璧を求めない</h3>
-<p>AIの出力は100%完璧ではありません。しかし、80%の精度でも人間がチェック・修正すれば十分な品質になります。「80%自動 + 20%人間チェック」のハイブリッド運用が現実的です。</p>
+    <h3>2. 完璧を求めない</h3>
+    <p>AIの出力は100%完璧ではありません。しかし、80%の精度でも人間がチェック・修正すれば十分な品質になります。「80%自動 + 20%人間チェック」のハイブリッド運用が現実的です。</p>
 
-<h3>3. 専門家に相談する</h3>
-<p>どの業務にAIを導入すべきか、どのツールが最適かは、専門家に相談するのが最も効率的です。自社で試行錯誤するよりも、<strong>初期費用数万円でプロに依頼した方が結果的に安い</strong>ケースがほとんどです。</p>
+    <h3>3. 専門家に相談する</h3>
+    <p>どの業務にAIを導入すべきか、どのツールが最適かは、専門家に相談するのが最も効率的です。自社で試行錯誤するよりも、<strong>初期費用数万円でプロに依頼した方が結果的に安い</strong>ケースがほとんどです。</p>
 
-<h2>まとめ</h2>
+    <h2>まとめ</h2>
 
-<p>AI活用はもはや大企業だけのものではありません。月額0円から始められるツールも多く、中小企業こそAI導入の恩恵を大きく受けられます。まずは自社の業務を棚卸しして、「これ、毎月何時間かかってる？」と考えてみてください。きっと自動化できる業務が見つかるはずです。</p>
+    <p>AI活用はもはや大企業だけのものではありません。月額0円から始められるツールも多く、中小企業こそAI導入の恩恵を大きく受けられます。まずは自社の業務を棚卸しして、「これ、毎月何時間かかってる？」と考えてみてください。きっと自動化できる業務が見つかるはずです。</p>
 
-<div class="cta-box">
-<h3>あなたの会社のAI活用、無料で診断します</h3>
-<p>「うちの業務でもAIは使える？」——そんなご質問だけでもOK。業務フローを伺い、最適なAI活用プランをご提案します。</p>
-<a href="../#contact" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">無料相談・お見積もりはこちら→</a>
-</div>
+    <div class="cta-box">
+      <h3>あなたの会社のAI活用、無料で診断します</h3>
+      <p>「うちの業務でもAIは使える？」——そんなご質問だけでもOK。業務フローを伺い、最適なAI活用プランをご提案します。</p>
+      <a href="../#contact" style="display:inline-block;padding:14px 32px;background:#333;color:#fff;border-radius:5px;font-weight:700;text-decoration:none;font-size:15px;transition:background 0.3s ease;">無料相談・お見積もりはこちら→</a>
+    </div>
 
-</div>
+  </div>
 
-<!-- CTA: AI営業代行 -->
-<div style="margin:40px 0;padding:28px 24px;background:linear-gradient(135deg,#1e3a5f,#0f1f3d);border-radius:16px;border-left:4px solid #2563eb;text-align:center;">
-  <p style="color:#93c5fd;font-size:12px;font-weight:700;letter-spacing:2px;margin:0 0 8px;">AI × 自動化で営業を仕組み化</p>
-  <h3 style="color:#fff;font-size:18px;margin:0 0 10px;">新規顧客獲得を自動化しませんか？</h3>
-  <p style="color:#94a3b8;font-size:13px;margin:0 0 18px;line-height:1.7;">月額29,800円〜・初期費用0円・最短5日スタート。<br>AIと人間のハイブリッド営業代行で競合の1/5コストを実現。</p>
-  <a href="../sales/" style="display:inline-block;padding:13px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:14px;">サービス詳細・無料相談→</a>
-</div>
+  <!-- CTA: AI営業代行 -->
+  <div style="margin:40px 0;padding:28px 24px;background:#f8f8f8;border-radius:8px;border-left:4px solid #555;text-align:center;">
+    <p style="color:#666;font-size:12px;font-weight:700;letter-spacing:1px;margin:0 0 8px;">ビジネスを加速する</p>
+    <h3 style="color:#333;font-size:18px;margin:0 0 10px;">新規顧客獲得を自動化しませんか？</h3>
+    <p style="color:#777;font-size:13px;margin:0 0 18px;line-height:1.7;">月額29,800円〜・初期費用0円・最短5日スタート。<br>AIと人間のハイブリッド営業代行で競合の1/5コストを実現。</p>
+    <a href="../sales/" style="display:inline-block;padding:13px 32px;background:#555;color:#fff;border-radius:5px;font-weight:700;text-decoration:none;font-size:14px;transition:background 0.3s ease;">サービス詳細・無料相談→</a>
+  </div>
 </article>
-<footer>&copy; 2026 ClawTech. All rights reserved.</footer>
-</body>
+<footer>&copy; 2026 ClawTech. All rights reserved.</footer></body>
 </html>

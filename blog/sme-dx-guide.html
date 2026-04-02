@@ -12,7 +12,219 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a34a2a; /* 深みのある赤茶色 */
+            --dark: #2c2c2c; /* 濃いグレー */
+            --dark2: #4a4a4a; /* やや明るいグレー */
+            --gray: #888888; /* 中間グレー */
+            --light: #f5f5f5; /* オフホワイト */
+            --accent: #d4a373; /* 落ち着いたオレンジ */
+            --text-color: #333333;
+            --border-color: #cccccc;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+            color: var(--light);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotateBackground 20s linear infinite;
+        }
+
+        @keyframes rotateBackground {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background-color: #8a3c22; /* primaryの少し濃い色 */
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light);
+        }
+
+        section:nth-of-type(odd) {
+            background-color: #e8e8e8; /* lightより少し濃い色 */
+        }
+
+        h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        h3 {
+            font-size: 28px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid var(--accent);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

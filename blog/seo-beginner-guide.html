@@ -12,7 +12,191 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a34a2a; /* 深みのある赤茶色 */
+            --dark: #3a2e2a;    /* 濃い茶色 */
+            --dark2: #5c4b45;   /* やや明るい茶色 */
+            --gray: #8d7e77;    /* 落ち着いたグレーブラウン */
+            --light: #f5f0eb;   /* 温かみのあるオフホワイト */
+            --accent: #d4a373;  /* アクセントのベージュ */
+            --text-color: #3a2e2a;
+            --heading-color: #a34a2a;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.8em; text-align: center; }
+        h2 { font-size: 2.2em; border-bottom: 2px solid var(--accent); padding-bottom: 0.3em; margin-top: 2em; }
+        h3 { font-size: 1.8em; color: var(--dark); }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--light);
+            text-decoration: none;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a {
+            color: var(--light);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: var(--dark2);
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+            color: var(--light);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 1px, transparent 1px) no-repeat;
+            background-size: 20px 20px;
+            animation: background-pan 60s linear infinite;
+            opacity: 0.1;
+        }
+        @keyframes background-pan {
+            from { background-position: 0 0; }
+            to { background-position: 100% 100%; }
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255,255,255,0.9);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .cta-button:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--gray);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Features / Services */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-item {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

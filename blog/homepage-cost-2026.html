@@ -12,7 +12,206 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://clawtech6477.github.io/clawtech-lp/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a34a2a; /* 深みのある赤茶色 */
+            --dark: #3a2e2b;    /* 濃い茶色 */
+            --dark2: #5c4b47;   /* やや明るい茶色 */
+            --gray: #8d7b77;    /* グレイッシュな茶色 */
+            --light: #f5f0eb;   /* クリームがかった白 */
+            --accent: #d4a373;  /* アクセントカラーのベージュ */
+            --text-color: #3a2e2b;
+            --heading-color: #3a2e2b;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--heading-color);
+            margin-top: 0;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.5rem; }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--light);
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--dark2) 0%, var(--dark) 100%);
+            color: var(--light);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(var(--accent), 0.1);
+            border-radius: 50%;
+            animation: float1 10s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -70px;
+            right: -70px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(var(--primary), 0.1);
+            border-radius: 50%;
+            animation: float2 12s infinite ease-in-out;
+        }
+
+        @keyframes float1 {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(20px, 20px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-20px, -20px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0,
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

@@ -12,7 +12,228 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
+    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
+    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.png">
+    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="https://clawtech6477.github.io/clawtech-lp/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        :root {
+            --primary: #0056b3; /* Deep Blue */
+            --secondary: #e0f2f7; /* Light Cyan */
+            --accent: #ff8c00; /* Dark Orange */
+            --text-dark: #333333;
+            --text-light: #ffffff;
+            --bg-light: #f8f8f8;
+            --bg-dark: #2c3e50; /* Dark Slate Gray */
+            --border-color: #cccccc;
+            --font-sans-jp: 'Noto Sans JP', sans-serif;
+            --font-roboto: 'Roboto', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans-jp);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+        }
+
+        .bg-secondary {
+            background-color: var(--secondary);
+        }
+
+        .bg-dark {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #cc7000; /* Slightly darker orange */
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--text-light);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-roboto);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            font-weight: 700;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003366 100%); /* Deeper blue gradient */
+            color: var(--text-light);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: pulse 15s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(0.8); opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero .btn-group
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}
