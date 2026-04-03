@@ -6,7 +6,7 @@
 <title>LP・ホームページ制作 ¥49,800〜 最短1週間｜ClawTech</title>
 <meta name="description" content="LP制作¥49,800〜・最短1週間納品。SEO・スマホ対応込み。無料相談受付中。AI活用で高品質×適正価格のWeb制作・MEO対策・業務自動化をワンストップで。">
 <meta property="og:title" content="LP・ホームページ制作 ¥49,800〜 最短1週間｜ClawTech">
-<meta property="og:description" content="LP制作 ¥49,800〜。AI活用で高品質・適正価格のWeb制作とDX支援。">
+<meta property="og:description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/assets/og-image.jpg">
 <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
@@ -799,7 +799,7 @@ footer a{color:rgba(255,255,255,0.45);text-decoration:underline}
 <li><a href="#cases">お客様の声</a></li>
 <li><a href="#contact" class="nav-cta">無料相談</a></li>
 </ul>
-<button class="nav-toggle" onclick="var m=document.getElementById('nav-menu');m.style.display=m.style.display==='flex'?'none':'flex'" aria-label="メニュー"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<button class="nav-toggle" id="nav-toggle-btn" aria-label="メニュー" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
 </div>
 </nav>
 
@@ -1355,6 +1355,20 @@ document.querySelectorAll('nav ul a').forEach(a=>{
     if(m)m.style.display='none';
   });
 });
+</script>
+
+<script>
+(function(){
+  var btn = document.getElementById('nav-toggle-btn');
+  var menu = document.getElementById('nav-menu');
+  if(btn && menu){
+    btn.addEventListener('click', function(){
+      var isOpen = menu.style.display === 'flex';
+      menu.style.display = isOpen ? 'none' : 'flex';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  }
+})();
 </script>
 </body>
 </html>
