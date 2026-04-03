@@ -30,7 +30,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Reset & Base Styles */
-        :root {
+        <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ClawTech｜AI × Web × DX で事業を加速する</title>
+<meta name="description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+<meta property="og:description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.claw-tech.com/">
+<meta property="og:image" content="https://www.claw-tech.com/ogp.jpg">
+<meta property="og:site_name" content="ClawTech">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
     --primary: #2a6f97; /* Steel Blue */
     --secondary: #f0f4f8; /* Light Grayish Blue */
     --accent: #d9534f; /* Muted Red */
@@ -41,6 +59,201 @@
     --border-color: #ced4da; /* Light Gray Border */
     --font-sans-jp: 'BIZ UDGothic', sans-serif; /* More traditional Japanese font */
     --font-roboto: 'Roboto Slab', serif; /* More substantial serif font */
+}
+
+body {
+    font-family: var(--font-sans-jp);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto);
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--bg-light);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--text-dark);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: none; /* Hidden by default on larger screens */
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-light);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+    }
+
+    nav.is-open {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary), #4a90e2); /* Blue gradient */
+    color: var(--text-light);
+    text-align: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    background-color: #c0392b; /* Darker red */
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.problems-grid, .services-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 body {

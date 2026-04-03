@@ -24,7 +24,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Roboto:wght@4400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+        <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ClawTech｜AI × Web × DX で事業を加速する</title>
+<meta name="description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+<meta property="og:description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://claw-tech.jp/">
+<meta property="og:image" content="https://claw-tech.jp/ogp.jpg">
+<meta property="og:site_name" content="ClawTech">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://claw-tech.jp/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root {
     /* 新しいカラースキーム */
     --primary: #2C3E50; /* ダークネイビー - 信頼感とプロフェッショナリズム */
     --secondary: #34495E; /* ミッドナイトブルー - 深みと落ち着き */
@@ -44,6 +64,169 @@
     --box-shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08); /* 柔らかい影 */
     --border-radius-default: 8px; /* 角の丸み */
 }
+
+body {
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    color: var(--primary);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--secondary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--white);
+    padding: 15px 0;
+    box-shadow: var(--box-shadow-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-sans);
+    font-weight: 900;
+    font-size: 1.8em;
+    color: var(--primary);
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.05em;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-family: var(--font-family-serif);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: var(--border-radius-default);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 15
 
 body {
     font-family: var(--font-family-sans);

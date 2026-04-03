@@ -14,7 +14,25 @@
     <title>ClawTech — AI × Web × DX</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
+        <!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ClawTech｜AI × Web × DX で事業を加速する</title>
+<meta name="description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
+<meta property="og:description" content="中小企業・個人事業主向けにAI活用でLP制作¥49,800〜。MEO・業務自動化・DXをワンストップ支援。無料診断受付中">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.clawtech.jp">
+<meta property="og:image" content="https://www.clawtech.jp/ogp.jpg">
+<meta property="og:site_name" content="ClawTech">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
     --primary-color: #5C6F5C; /* 深いフォレストグリーン */
     --secondary-color: #A3B18A; /* 落ち着いたセージグリーン */
     --accent-color: #DDA15E; /* 温かみのあるテラコッタオレンジ */
@@ -26,6 +44,189 @@
     --font-family-body: 'Noto Serif JP', serif; /* 日本語に合うセリフ体 */
     --font-family-heading: 'Playfair Display', serif; /* 優雅でモダンなセリフ体 */
 }
+
+body {
+    font-family: var(--font-family-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--dark-background-color);
+    color: var(--light-text-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--light-text-color);
+}
+
+.logo span {
+    font-weight: 900;
+    color: rgba(255,255,255,0.7);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--light-text-color);
+    font-weight: 700;
+    font-size: 1.1em;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--light-text-color);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(52, 78, 65, 0.7), rgba(52, 78, 65, 0.7)), url('https://source.unsplash.com/random/1600x900/?nature,forest') no-repeat center center/cover;
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--light-text-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    background-color: #E6B87C; /* Accent color slightly lighter */
+    transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--background-color);
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--light-text-color);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    width:
 
 body {
     font-family: var(--font-family-body);
