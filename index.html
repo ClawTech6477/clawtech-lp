@@ -361,63 +361,6 @@ section {
   padding: 0 20px;
 }
 
-/* Header */
-header {
-  background-color: var(--white);
-  padding: 20px 0;
-  box-shadow: var(--shadow-sm);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8em;
-  font-weight: bold;
-  color: var(--dark);
-}
-
-.logo span {
-  color: var(--primary);
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: var(--dark2);
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 5px;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--primary);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
 /* Hero Section */
 #hero {
   background: var(--gradient);
