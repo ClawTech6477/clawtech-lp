@@ -55,17 +55,242 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --primary: #1a4a72; /* Deep Ocean Blue */
-    --secondary: #f0f4f8; /* Soft Off-white */
-    --dark: #263238; /* Dark Charcoal */
-    --dark2: #37474f; /* Slightly lighter charcoal */
-    --gray: #78909c; /* Muted Blue-Gray */
-    --light: #eceff1; /* Lightest Gray-Blue */
-    --text-color: #333;
-    --heading-color: #1a4a72; /* Primary for headings */
-    --accent-color: #d32f2f; /* Strong Red for emphasis */
-    --border-color: #b0bec5; /* Light Blue-Gray border */
+    --primary: #1e3a5f; /* Darker Blue - Deep Sea */
+    --secondary: #e0f2f7; /* Light Blue-Gray - Ocean Mist */
+    --dark: #0f172a; /* Very Dark Blue - Midnight */
+    --dark2: #1a202c; /* Slightly Lighter Dark Blue */
+    --gray: #64748b; /* Muted Slate Gray */
+    --light: #f8fafc; /* Off-White - Cloud */
+    --text-color: #334155; /* Dark Slate Gray for body text */
+    --heading-color: #0f172a; /* Midnight for headings */
+    --accent-color: #ef4444; /* Vibrant Red - Coral */
+    --border-color: #94a3b8; /* Medium Slate Gray border */
+    --cta-background: linear-gradient(135deg, #2563eb, #1e3a5f); /* Blue Gradient for CTA */
+    --cta-text: #ffffff; /* White text for CTA */
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--light);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--dark2));
+    color: var(--light);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 1.5em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cta-background);
+    color: var(--cta-text);
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-heading h2 {
+    font-size: 2.5em;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-heading h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.features-grid, .services-grid, .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-item, .service-item, .blog-post {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.feature-item:hover, .service-item:hover, .blog-post:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.feature-item i, .service-item i {
+    font-size: 3.5em;
+    color: var(--primary);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-item h3, .service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.feature-item p, .service-item p, .blog-post p {
+    font-size: 1em;
+    color: var(--text-
 
 body {
     font-family: 'Noto Sans JP', sans-serif;

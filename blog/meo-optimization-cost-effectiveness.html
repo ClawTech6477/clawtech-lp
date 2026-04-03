@@ -12,7 +12,215 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+:root {
+    --primary: #1a73e8; /* Google Blue */
+    --dark: #202124;    /* Google Dark Gray */
+    --dark2: #3c4043;   /* Google Medium Gray */
+    --gray: #5f6368;    /* Google Gray */
+    --light: #f8f9fa;   /* Google Light Gray */
+    --accent: #ea4335;  /* Google Red */
+    --secondary: #fbbc05; /* Google Yellow */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Google's preferred font */
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Google Sans', sans-serif; /* A more distinctive Google-like font for headings */
+    color: var(--dark);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #155acb; /* Slightly darker blue */
+    border-color: #155acb;
+}
+
+.btn-secondary {
+    background-color: var(--light);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #155acb;
+}
+
+/* Layout/Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-dark {
+    background-color: var(--dark2);
+    color: var(--light);
+}
+
+.section-dark h1, .section-dark h2, .section-dark h3 {
+    color: var(--light);
+}
+
+/* Specific components (example, adjust as needed) */
+.header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--light);
+}
+
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header nav ul li {
+    margin-left: 25px;
+}
+
+.header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--dark), var(--dark2));
+    color: var(--light);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {
+    background-color: var(--dark);
+    color: var(--gray);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: var(--gray);
+}
+
+.footer a:hover {
+    color: var(--light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 3em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

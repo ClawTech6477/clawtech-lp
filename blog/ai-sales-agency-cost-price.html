@@ -25,6 +25,241 @@
   --font-family-serif: 'Playfair Display', serif; /* 優雅で読みやすいセリフ */
 }
 
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* ここからデザイン調整 */
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--dark);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--primary), 10%);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--white);
+    border: 1px solid var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--secondary), 10%);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* フォーム要素の基本スタイル */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    font-family: var(--font-family-sans);
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: darken(var(--primary), 10%);
+}
+
+/* セクションのパディングとマージン */
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+/* コンテナの最大幅と中央揃え */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダーとフッターのスタイル */
+header, footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* カードやグリッドレイアウトの基本 */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* CTAセクションのスタイル */
+.cta-section {
+    background-color: var(--secondary);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 40px;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    font-family: var(--font-family-serif);
+    margin-bottom: 20px;
+}
+
+.cta-section .btn {
+    background-color: var(--white);
+    color: var(--secondary);
+    border: 1px solid var(--white);
+    font-size: 1.1rem;
+    padding: 12px 25px;
+}
+
+.cta-section .btn:hover {
+    background-color: var(--light);
+    color: var(--secondary);
+}
+
+/* CTAバナーのスタイル */
+.cta-banner {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta-banner h3 {
+    color: var(--white);
+    font-family: var(--font-family-serif);
+    margin-bottom: 16px;
+    font-size: 1.8rem;
+}
+
+.cta-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.cta-banner .btn {
+    background-color: var(--white);
+    color: #1e3a5f; /* バナーの背景色に合わせて調整 */
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.cta-banner .btn:hover {
+    background-color: var(--light);
+    color: #1e3a5f;
+}
+
+/* レスポンシブデザインの基本 */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
 body {
   font-family: var(--font-family-sans);
   line-height: 1.6;

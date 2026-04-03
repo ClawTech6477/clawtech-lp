@@ -30,17 +30,131 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #4a6b8a; /* 深みのあるブルーグレー */
-    --dark: #2c3e50;    /* ダークネイビー */
-    --dark2: #5a7d9a;   /* ミディアムブルー */
-    --gray: #95a5a6;    /* グレイッシュブルー */
-    --light: #ecf0f1;   /* ライトグレー */
-    --accent: #e74c3c;  /* アクセントレッド */
-    --text-color: #34495e; /* ダークなテキスト色 */
-    --heading-color: #2c3e50; /* 見出し色 */
-    --border-color: #bdc3c7; /* ボーダー色 */
-    --shadow-color: rgba(44, 62, 80, 0.15); /* シャドウ色 */
+    --primary: #1e3a5f; /* 深みのあるネイビーブルー */
+    --dark: #0f172a;    /* 非常に濃いネイビー */
+    --dark2: #2d3a52;   /* ミディアムダークブルー */
+    --gray: #64748b;    /* スレートグレー */
+    --light: #f1f5f9;   /* オフホワイト */
+    --accent: #ef4444;  /* 鮮やかなレッド */
+    --text-color: #334155; /* ダークスレート */
+    --heading-color: #0f172a; /* 見出し色 */
+    --border-color: #94a3b8; /* ソフトなボーダー色 */
+    --shadow-color: rgba(15, 23, 42, 0.1); /* 控えめなシャドウ色 */
 }
+
+/* その他のスタイルは既存のものを維持し、上記の変数を使用するように調整 */
+/* 例: */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+    border: 1px solid var(--primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark2);
+    border-color: var(--dark2);
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* CTAバナーのスタイル */
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary), #2563eb); /* primary変数と既存の青を組み合わせ */
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    color: var(--light);
+    text-align: center;
+}
+
+.cta-banner h3 {
+    color: var(--light); /* バナー内の見出し色をライトに */
+    margin-bottom: 16px;
+}
+
+.cta-banner p {
+    color: var(--light);
+    margin-bottom: 24px;
+    font-size: 1.1em;
+}
+
+.cta-banner .btn {
+    display: inline-block;
+    background-color: var(--accent); /* アクセントカラーを使用 */
+    color: var(--light);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-banner .btn:hover {
+    background-color: #dc2626; /* アクセントカラーの少し濃い色 */
+    text-decoration: none;
+}
+
+/* フォーム要素のスタイル */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--dark2);
+}
+
+/* その他のセクションやコンポーネントのスタイルも、
+   上記のCSS変数に合わせて調整してください。
+   例: ヘッダー、フッター、ナビゲーションなど。 */
 
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */

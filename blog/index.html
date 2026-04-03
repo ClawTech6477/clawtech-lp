@@ -9,15 +9,253 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
-    --primary: #2c3e50; /* ダークネイビー */
-    --secondary: #ecf0f1; /* ライトグレー */
-    --accent: #e74c3c; /* テラコッタレッド */
-    --dark: #34495e; /* ミッドナイトブルー */
-    --light: #fdfefe; /* オフホワイト */
-    --text-color: #34495e;
-    --heading-color: #2c3e50;
-    --border-color: #bdc3c7;
+    --primary: #1a3a5a; /* 深い紺色 */
+    --secondary: #f0f4f8; /* 柔らかいオフホワイト */
+    --accent: #e67e22; /* 暖かみのあるオレンジ */
+    --dark: #2c3e50; /* ミッドナイトブルー */
+    --light: #ffffff; /* 純粋な白 */
+    --text-color: #34495e; /* 濃いめのグレー */
+    --heading-color: #1a3a5a; /* プライマリーと同じ */
+    --border-color: #c0c7d0; /* 落ち着いたグレー */
 }
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出し用フォント */
+    color: var(--heading-color);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d35400; /* アクセントより少し濃いオレンジ */
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: hero-pulse 15s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes hero-pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(1.2); opacity: 0.5; }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.btn:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+section {
+    padding: 80px 0;
+    background-color: var(--light);
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:nth-of-type(even) {
+    background-color: var(--secondary);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5em;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+.features-grid, .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-item, .service-item {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.feature-item:hover, .service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.feature-item i, .service-item i {
+    font-size: 3em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.feature-item h3, .service-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, var(--accent) 0%, #e67e22 100%);
+    color: var(--light);
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
@@ -868,6 +1106,17 @@ footer{background:var(--dark);color:rgba(255,255,255,0.4);text-align:center;padd
       <div class="card-title">【2026年版】中小企業のMEO対策｜費用対効果を最大化</div>
       <div class="card-desc">中小企業向けMEO対策の費用対効果を徹底解説！2026年の最新情報に基づき、具体的な施策、費用相場、効果測定方法を分かりやすくご紹介します。</div>
       <div class="card-meta">📅 2026.04.03</div>
+    </div>
+  </a>
+
+
+  <a href="ai-writing-tools-comparison-sales-materials.html" class="blog-card">
+    <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="2026年版：AIライティングツール徹底比較！営業資料作成を効率化" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-other">AI活用</span>
+      <div class="card-title">2026年版：AIライティングツール徹底比較！営業資料作成を効率化</div>
+      <div class="card-desc">営業資料作成を劇的に効率化するAIライティングツールを徹底比較！機能、料金、導入事例、選び方まで網羅。2026年最新情報で最適なツールを見つけよう。</div>
+      <div class="card-meta">📅 2026.04.04</div>
     </div>
   </a>
 

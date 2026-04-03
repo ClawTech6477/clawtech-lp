@@ -38,15 +38,273 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #4a6d7c; /* 深い青緑 */
-    --dark: #2c3e50;    /* 濃いネイビー */
-    --dark2: #5a7d8c;   /* やや明るい青緑 */
-    --gray: #9bb0b9;    /* グレイッシュな青緑 */
-    --light: #eef4f7;   /* 非常に明るいグレー */
-    --accent: #e0a84a;  /* アクセントカラーのマスタードイエロー */
-    --text-color: #2c3e50;
-    --heading-color: #2c3e50;
+    --primary: #1e3a5f; /* 深い青 */
+    --dark: #0f172a;    /* 非常に濃い青 */
+    --dark2: #2563eb;   /* 鮮やかな青 */
+    --gray: #64748b;    /* グレイッシュブルー */
+    --light: #f8fafc;   /* 非常に明るいグレー */
+    --accent: #f97316;  /* アクセントカラーのオレンジ */
+    --text-color: #334155; /* ダークグレイッシュブルー */
+    --heading-color: #1e3a5f; /* 深い青 */
 }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* よりモダンなフォント */
+    color: var(--text-color);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--dark2);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--dark2);
+    color: var(--light);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8; /* 少し濃い青 */
+    transform: translateY(-2px);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--light);
+}
+
+.btn-accent:hover {
+    background-color: #ea580c; /* 少し濃いオレンジ */
+    transform: translateY(-2px);
+}
+
+/* フォーム要素のスタイル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+    border-color: var(--dark2);
+    outline: none;
+}
+
+/* セクションのパディング */
+section {
+    padding: 60px 0;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--dark2));
+    color: var(--light);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 特徴セクション */
+.features {
+    background-color: var(--light);
+    text-align: center;
+}
+
+.features .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.features .feature-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features .feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.features .feature-item i {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin-bottom: 20px;
+}
+
+.features .feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.features .feature-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* サービスセクション */
+.services {
+    background-color: #ffffff;
+}
+
+.services .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.services .service-item {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.services .service-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.services .service-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* CTAセクション */
+.cta {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: var(--light);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.cta h2 {
+    color: var(--light);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* フッター */
+footer {
+    background-color: var(--dark);
+    color: var
 
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */

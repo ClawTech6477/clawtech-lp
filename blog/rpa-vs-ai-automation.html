@@ -39,6 +39,219 @@
     --heading-color: #2c3e50;
 }
 
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* 以下に、業種に合ったデザイン調整を追加します */
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントの指定 */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出し用フォントの指定 */
+    color: var(--heading-color);
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #c0392b; /* アクセントカラーの少し濃い色 */
+    text-decoration: none;
+}
+
+/* フォーム要素のスタイル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--dark);
+}
+
+/* セクションのパディング */
+section {
+    padding: 60px 0;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* フッター */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* バナーHTMLのスタイル */
+.banner-cta {
+    background: linear-gradient(135deg, var(--primary), var(--dark2));
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    text-align: center;
+    color: var(--light);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.banner-cta h3 {
+    color: var(--light);
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.8em;
+}
+
+.banner-cta p {
+    font-size: 1.1em;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.banner-cta .btn {
+    background-color: var(--accent);
+    color: var(--light);
+    padding: 14px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+
+.banner-cta .btn:hover {
+    background-color: #c0392b;
+}
+
+/* レスポンシブデザインの調整 */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .banner-cta h3 {
+        font-size: 1.5em;
+    }
+
+    .banner-cta p {
+        font-size: 1em;
+    }
+
+    .banner-cta .btn {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを優先 */
     line-height: 1.6;
