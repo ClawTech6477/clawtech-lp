@@ -52,7 +52,7 @@
     --dark: #1A252F; /* 非常に濃いネイビー - フッターや強調部分 */
     --dark2: #5D6D7E; /* スレートグレー - サブテキストやボーダー */
     --gray: #BDC3C7; /* シルバーグレー - 背景のニュアンス */
-    --light: #ECF0F1; /* ライトグレー - メインコンテンツ背景 */
+    --light: #ECF0F1; /* メインコンテンツ背景 */
     --white: #FFFFFF; /* 純粋な白 - テキストやアイコン */
     --border-color: #D0D3D4; /* 落ち着いたボーダー色 */
 
@@ -64,6 +64,240 @@
     --box-shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.08); /* 柔らかい影 */
     --border-radius-default: 8px; /* 角の丸み */
 }
+
+/* ここから追加・修正 */
+
+/* 全体的なリセットと基本スタイル */
+body {
+    margin: 0;
+    font-family: var(--font-family-sans);
+    color: var(--primary);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--white);
+    padding: 15px 0;
+    box-shadow: var(--box-shadow-subtle);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-serif);
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: var(--white);
+    font-size: 4em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 15px 30px;
+    border-radius: var(--border-radius-default);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #C0392B; /* Accentの少し濃い色 */
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* セクション共通スタイル */
+.section {
+    padding: 80px 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section:nth-of-type(even) {
+    background-color: var(--light);
+}
+
+.section h2 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* 特徴セクション */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.feature-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-subtle);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.8em;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: var(--dark2);
+}
+
+/* サービスセクション */
+.service-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-subtle);
+}
+
+.service-item:last-child {
+    margin-bottom: 0;
+}
+
+.service-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--border-radius-default);
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+.service-item .content {
+    flex-grow: 1;
+}
+
+.service-item h3 {
+    font-size: 2em;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: var(--dark2);
+}
+
+/* お問い合わせフォーム */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius-default);
 
 /* ここから追加・修正 */
 

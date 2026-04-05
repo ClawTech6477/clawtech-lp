@@ -30,17 +30,233 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #1a3a5a; /* 深い青 */
-    --dark: #1a3a5a;    /* 深い青 */
-    --dark2: #2a4a6a;   /* やや明るい青 */
-    --gray: #6c7a89;    /* グレイッシュブルー */
-    --light: #f0f4f8;   /* 明るいオフホワイト */
-    --accent: #e74c3c;  /* テラコッタレッド */
-    --text-color: #1a3a5a;
-    --bg-color: #f0f4f8;
-    --header-bg: #1a3a5a;
-    --footer-bg: #1a3a5a;
+    /* ClawTechのブランドカラーを意識した、信頼感と先進性を感じる配色 */
+    --primary: #0056b3;       /* 濃いめの青 - メインのアクションカラー */
+    --dark: #003366;          /* 非常に濃い青 - ヘッダー、フッター、重要な要素の背景 */
+    --dark2: #004080;         /* やや明るい濃い青 - サブセクションの背景、ホバーエフェクト */
+    --gray: #6c7a89;          /* グレイッシュブルー - テキスト、ボーダー、区切り線 */
+    --light: #f8f9fa;         /* 非常に明るいオフホワイト - 背景、カードのベース */
+    --accent: #e74c3c;        /* テラコッタレッド - 警告、強調、特定のCTA */
+    --text-color: #212529;    /* ほぼ黒に近い濃いグレー - 本文テキスト */
+    --bg-color: #f8f9fa;      /* 全体の背景色 */
+    --header-bg: #003366;     /* ヘッダーの背景色 */
+    --footer-bg: #003366;     /* フッターの背景色 */
+
+    /* フォント設定 */
+    --font-family-sans-serif: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-family-monospace: 'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+
+    /* シャドウ設定 */
+    --box-shadow-sm: 0 .125rem .25rem rgba(0,0,0,.075);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    --box-shadow-lg: 0 1rem 3rem rgba(0,0,0,.175);
+
+    /* ボーダー半径 */
+    --border-radius: .25rem;
+    --border-radius-lg: .3rem;
+    --border-radius-sm: .2rem;
 }
+
+body {
+    font-family: var(--font-family-sans-serif);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 600;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--dark2);
+    text-decoration: underline;
+}
+
+/* ボタンの基本スタイル */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: var(--light);
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: .6rem 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: var(--light);
+    background-color: var(--dark2);
+    border-color: var(--dark2);
+}
+
+.btn-outline-primary {
+    color: var(--primary);
+    background-color: transparent;
+    border-color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+    color: var(--light);
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+/* カードスタイル */
+.card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-sm);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* フォーム要素 */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    display: block;
+    width: 100%;
+    padding: .75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    color: var(--text-color);
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+
+/* ヘッダーとフッターの基本スタイル */
+header {
+    background-color: var(--header-bg);
+    color: var(--light);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow-sm);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 1rem;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    padding: .5rem 0;
+    transition: color .3s ease;
+}
+
+header nav ul li a:hover {
+    color: #a0c8f5; /* 明るい青 */
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: var(--light);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: #a0c8f5;
+}
+
+footer a:hover {
+    color: #d0e0f5;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* セクションのパディング */
+section {
+    padding: 4rem 0;
+}
+
+/* ヒーローセクション */
+.hero-section {
+    background: linear-gradient(135deg, var(--dark), var(--primary));
+    color: var(--light);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+.hero-section h1 {
+    color: var(--light);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* サービスセクション */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.service-item
 
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */

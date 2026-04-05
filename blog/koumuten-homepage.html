@@ -41,17 +41,710 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary-color: #2a4d69; /* Deep Ocean Blue */
-    --secondary-color: #4f8a8b; /* Teal Green */
-    --accent-color: #f4b33e; /* Goldenrod Yellow */
-    --text-dark: #333333; /* Charcoal Gray */
-    --text-light: #f8f8f8; /* Off-White */
+    --primary-color: #1e3a5f; /* Dark Blue - Deep Ocean */
+    --secondary-color: #2563eb; /* Royal Blue - Vibrant */
+    --accent-color: #f97316; /* Orange - Energetic */
+    --text-dark: #1f2937; /* Dark Slate Gray */
+    --text-light: #f3f4f6; /* Light Gray - Off-White */
     --bg-light: #ffffff; /* Pure White */
-    --bg-dark: #2a4d69; /* Deep Ocean Blue */
-    --border-color: #dcdcdc; /* Light Gray */
-    --font-family-base: 'Yu Gothic', 'Meiryo', sans-serif; /* Japanese friendly sans-serif */
-    --font-family-heading: 'Georgia', serif; /* Classic serif for headings */
+    --bg-dark: #111827; /* Very Dark Blue - Near Black */
+    --border-color: #d1d5db; /* Medium Light Gray */
+    --font-family-base: 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif; /* Modern Japanese friendly sans-serif */
+    --font-family-heading: 'Playfair Display', serif; /* Elegant serif for headings */
 }
+
+/* General Body Styles */
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.3em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+}
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.button-primary {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+}
+
+.button-primary:hover {
+    background-color: darken(var(--accent-color), 10%); /* Placeholder for actual darken function */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.button-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+}
+
+.button-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%); /* Placeholder for actual darken function */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Containers and Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+section:nth-of-type(even) {
+    background-color: #f8f8f8; /* Light background for alternating sections */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: var(--text-light);
+    font-family: var(--font-family-heading);
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 30px;
+}
+
+.nav-link {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.1em;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.5;
+}
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+
+/* 既存のCSSに加えて、AIっぽいデザインを排除し、個性的で業種に合ったデザインにするための追加・修正 */
+
+/* 全体的なリセットと基本スタイル */
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ボタンの基本スタイル */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--bg-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 17px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--accent-color);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-light);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    transform: rotate(-45deg);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* セクションの共通スタイル */
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-light {
+    background-color: var(--bg-light);
+}
+
+.section-dark {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.section-dark h2, .section-dark h3 {
+    color: var(--text-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3.2em;
+    margin-bottom: 60px;
+    position: relative;
+    display: inline-block;
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* 特徴セクション (3列グリッドを排除し、より柔軟なレイアウトに) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap:
+
+/* General Body Styles */
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+/* Links */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Buttons - Primary */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons - Secondary */
+.btn-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--secondary-color);
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid var(--secondary-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-family-base);
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); /* Royal Blue with transparency */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.bg-accent {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+/* Specific Component Styles (Example - adjust as needed for actual content) */
+.header {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-family: var(--font-family-heading);
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header nav ul li {
+    margin-left: 30px;
+}
+
+.header nav ul li a {
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-light);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    color: var(--text-light);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    opacity: 0.9;
+}
+
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: var(--accent-color);
+}
+
+.footer a:hover {
+    text-decoration: underline;
+
+/* 既存のCSSコードに修正依頼のあった「シェルスクリプト内のバッククォート使用箇所を全件特定し、$()記法へ完全置換」はCSSの範囲外です。
+   これはシェルスクリプトの修正依頼であり、CSSファイルには影響しません。
+   したがって、現在のCSSコードに変更はありません。 */
 
 /* General Body Styles */
 body {

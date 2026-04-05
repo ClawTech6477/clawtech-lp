@@ -57,6 +57,101 @@
     --accent-color: #ff8c00; /* Dark Orange */
 }
 
+/* その他のスタイルは既存のものを維持し、AIっぽいデザイン要素を排除 */
+/* 例: フォント、背景、レイアウト、コンポーネントのスタイルを調整 */
+
+/* フォントの調整 */
+body {
+    font-family: "Noto Sans JP", sans-serif; /* 日本語に合うフォントに変更 */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Noto Serif JP", serif; /* 見出しはセリフ体で重厚感を */
+    color: var(--heading-color);
+    margin-bottom: 0.8em;
+}
+
+/* 全体的な背景色の調整 */
+body {
+    background-color: var(--light);
+}
+
+/* コンテナのシャドウやボーダーを調整し、AIっぽいフラット感を排除 */
+.container, .card, .section {
+    background-color: #ffffff; /* 白背景は維持しつつ、シャドウで深みを */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 柔らかいシャドウ */
+    border-radius: 8px; /* 角を少し丸く */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* CTAボタンのスタイル調整 */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #e67e00; /* ホバー時の色を少し濃く */
+}
+
+/* フォーム要素のスタイル調整 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* 3列グリッドの排除（もしあれば） */
+/* 既存のレイアウト構造が不明なため、一般的なグリッドクラスを想定 */
+/* .grid-container {
+    display: block;
+}
+.grid-item {
+    width: 100%;
+    margin-bottom: 20px;
+} */
+
+/* メディアクエリでレスポンシブ対応を強化 */
+@media (min-width: 768px) {
+    /* .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .grid-item {
+        margin-bottom: 0;
+    } */
+}
+
+/* その他のセクションやコンポーネントのスタイルも、
+   AIっぽいデザイン（例: 紫グラデーション、過度なフラットデザイン）を排除し、
+   業種に合った落ち着いた、信頼感のあるデザインに調整してください。
+   具体的なHTML構造が不明なため、一般的な要素に対する調整を記述しています。
+*/
+
 /* General Body Styles */
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */

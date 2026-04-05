@@ -20,27 +20,249 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #dbeafe;
-  --accent: #f59e0b;
-  --accent-light: #fef3c7;
-  --dark: #0f172a;
-  --dark2: #1e293b;
-  --gray: #64748b;
-  --gray-light: #94a3b8;
-  --light: #f8fafc;
+  --primary: #1a5276; /* 深い青緑 */
+  --primary-dark: #154360;
+  --primary-light: #aed6f1;
+  --accent: #d4ac0d; /* 落ち着いたゴールド */
+  --accent-light: #f9e79f;
+  --dark: #2c3e50; /* 暗いチャコール */
+  --dark2: #34495e;
+  --gray: #7f8c8d; /* ミディアムグレー */
+  --gray-light: #bdc3c7;
+  --light: #ecf0f1; /* 明るいグレー */
   --white: #ffffff;
-  --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #6366f1 100%);
-  --gradient2: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.2);
-  --radius: 16px;
-  --glass: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.12);
+  --gradient: linear-gradient(135deg, #1a5276 0%, #2874a6 50%, #5dade2 100%); /* 青緑系のグラデーション */
+  --gradient2: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 40px rgba(26, 82, 118, 0.3); /* primaryカラーに合わせたグロー */
+  --radius: 8px; /* 少し角を丸く */
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
 }
+
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* ここからデザイン調整 */
+
+body {
+  font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントの指定 */
+  background-color: var(--light); /* 全体の背景色を明るく */
+  color: var(--dark); /* 基本の文字色 */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* 見出しにアクセントフォント */
+  color: var(--dark2);
+  margin-bottom: 0.8em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ボタンのスタイル */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* セクションのパディング */
+section {
+  padding: 80px 0;
+}
+
+/* コンテナの幅 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* カードスタイル */
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+/* フォーム要素のスタイル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ヘッダーとフッターのスタイル */
+header {
+  background-color: var(--dark);
+  color: var(--white);
+  padding: 20px 0;
+  box-shadow: var(--shadow-md);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 17px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+footer {
+  background-color: var(--dark2);
+  color: var(--gray-light);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer a {
+  color: var(--primary-light);
+}
+
+footer a:hover {
+  color: var(--primary);
+}
+
+/* ヒーローセクション */
+.hero {
+  background: var(--gradient); /* グラデーション背景 */
+  color: var(--white);
+  padding: 120px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: hero-glow 15s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes hero-glow {
+  0% { transform: scale(0.8) rotate(0deg); opacity: 0.8; }
+  100% { transform: scale(1.2) rotate(360deg); opacity: 1; }
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 4.
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans JP','Inter',sans-serif;color:var(--dark);line-height:1.8;overflow-x:hidden}

@@ -13,18 +13,444 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
 :root {
-    --primary: #1a73e8; /* Google Blue */
-    --dark: #212121; /* Dark Grey */
-    --dark2: #424242; /* Medium Dark Grey */
-    --gray: #757575; /* Grey */
-    --light: #f5f5f5; /* Light Grey */
-    --accent: #fbbc05; /* Google Yellow */
-    --background-gradient: linear-gradient(135deg, #e0f2f7, #bbdefb); /* Light Blue Gradient */
-    --card-background: #ffffff;
-    --border-color: #e0e0e0;
-    --text-color: #333333;
-    --heading-color: #1a1a1a;
+    --primary: #1e3a5f; /* Dark Blue - inspired by deep ocean/sky */
+    --secondary: #2563eb; /* Vibrant Blue - for accents and interactive elements */
+    --dark: #0f172a; /* Very Dark Blue - for deep contrast text/backgrounds */
+    --dark2: #1a202c; /* Slightly Lighter Dark Blue */
+    --gray: #64748b; /* Slate Gray - for subtle text/borders */
+    --light: #f8fafc; /* Off-White - for clean backgrounds */
+    --accent: #f59e0b; /* Amber - for highlights and warnings */
+    --background-gradient: linear-gradient(135deg, #e0f2f7, #bbdefb); /* Light Blue Gradient - kept for now, but consider replacing with more thematic gradient */
+    --card-background: #ffffff; /* White - for clean card elements */
+    --border-color: #e0e0e0; /* Light Gray - for subtle borders */
+    --text-color: #334155; /* Dark Slate Gray - for body text */
+    --heading-color: #0f172a; /* Very Dark Blue - for prominent headings */
+
+    /* New additions for a more distinct, professional, and less "AI-like" feel */
+    --font-family-sans: 'Noto Sans JP', sans-serif; /* Professional, readable Japanese font */
+    --font-family-serif: 'Merriweather', serif; /* For headings or special emphasis */
+    --box-shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    --box-shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    --border-radius-default: 8px; /* Slightly rounded corners */
+    --transition-speed: 0.3s ease-in-out; /* Smooth transitions */
 }
+
+/* General Body and Typography */
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--heading-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Layout and Containers */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-default);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--light);
+    box-shadow: var(--box-shadow-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.btn-secondary {
+    background-color: var(--accent);
+    color: var(--dark);
+    box-shadow: var(--box-shadow-light);
+}
+
+.btn-secondary:hover {
+    background-color: darken(var(--accent), 10%); /* Placeholder for a darken function */
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+/* Cards */
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-light);
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    box-sizing: border-box;
+    font-family: var(--font-family-sans);
+    font-size: 1em;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+/* Header/Navigation (Example, assuming a common structure) */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: var(--box-shadow-medium);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: var(--font-family-serif);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light);
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 25px;
+}
+
+header nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+header nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Footer (Example) */
+footer {
+    background-color: var(--dark2);
+    color: var(--gray);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--light);
+}
+
+footer a:hover {
+    color: var(--accent);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+
+/* General body styling */
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-color);
+    background: var(--background-gradient); /* Consider updating this gradient later */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--heading-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+
+/* Links */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-default);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+/* Cards/Sections */
+.card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-light);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-default);
+    font-family: var(--font-family-sans);
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Specific elements that might need custom styling based on content */
+/* Example: A hero section */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 16px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 32px auto;
+}
+
+/* Example: A feature grid (if applicable) */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 24px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius-default);
+    box-shadow: var(--box-shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.feature-item h3 {
+    color: var(--primary);
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--dark);
+    color: var(--gray);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer a {
+    color: var(--light);
+}
+
+footer a:hover {
+    color: var(--secondary);
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768
 
 body {
     font-family: 'Roboto', sans-serif; /* Google's preferred font */

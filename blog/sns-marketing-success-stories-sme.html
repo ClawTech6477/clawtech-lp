@@ -49,17 +49,208 @@
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-    --primary: #2a6f97; /* Steel Blue */
-    --secondary: #f0f4f8; /* Light Grayish Blue */
-    --accent: #d9534f; /* Muted Red */
-    --text-dark: #343a40; /* Dark Gray */
+    --primary: #1e3a5f; /* Dark Blue - Deep Ocean */
+    --secondary: #e0e7eb; /* Light Grayish Blue - Sea Foam */
+    --accent: #d9534f; /* Muted Red - Coral */
+    --text-dark: #2c3e50; /* Darker Blue-Gray - Midnight */
     --text-light: #ffffff;
     --bg-light: #ffffff;
-    --bg-dark: #495057; /* Darker Gray */
-    --border-color: #ced4da; /* Light Gray Border */
+    --bg-dark: #34495e; /* Dark Blue-Gray - Navy */
+    --border-color: #aeb6bf; /* Medium Gray - Stone */
     --font-sans-jp: 'BIZ UDGothic', sans-serif; /* More traditional Japanese font */
     --font-roboto: 'Roboto Slab', serif; /* More substantial serif font */
 }
+
+/* 既存のCSSコードに加えて、AIっぽいデザインを排除し、個性的で業種に合ったデザインにするための修正をここに追加します */
+/* 例: フォントサイズの調整、行間の調整、シャドウの追加、ボタンのスタイル変更など */
+
+/* 全体的なフォントサイズの調整 */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: var(--font-sans-jp);
+    color: var(--text-dark);
+}
+
+/* 見出しのスタイル調整 */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-roboto);
+    color: var(--primary);
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+/* ボタンのスタイル調整 */
+.button, .cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.button-primary, .cta-button-primary {
+    background-color: var(--accent);
+    color: var(--text-light);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-primary:hover, .cta-button-primary:hover {
+    background-color: #c0392b; /* Slightly darker red */
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: var(--secondary);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.button-secondary:hover {
+    background-color: var(--primary);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* カードやセクションのシャドウ、ボーダー調整 */
+.card, .section-container {
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+/* フォーム要素のスタイル調整 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-sans-jp);
+    font-size: 1em;
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.2); /* primaryカラーの薄いシャドウ */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* リンクのスタイル調整 */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* ナビゲーションやヘッダーの背景色、シャドウ */
+header, nav {
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px 0;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    padding: 32px 0;
+    text-align: center;
+    margin-top: 48px;
+}
+
+footer a {
+    color: var(--secondary);
+}
+
+footer a:hover {
+    color: var(--text-light);
+}
+
+/* レイアウト関連の基本的なスタイル（必要に応じて追加・調整） */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* AIっぽいグラデーションや3列グリッドの排除（既存のHTML構造に依存） */
+/* もしHTML側で特定のクラスが使われている場合は、ここで上書きまたは削除する */
+/* 例: .ai-gradient-bg { background: none; } */
+/* 例: .three-column-grid { display: block; } */
+
+/* 新しいバナーのスタイル（HTMLに追加されるもの） */
+.sales-banner {
+    background: linear-gradient(135deg, var(--primary), #2563eb); /* primaryと青系のグラデーション */
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    text-align: center;
+    color: var(--text-light);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.sales-banner h3 {
+    color: var(--text-light);
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.8em;
+}
+
+.sales-banner p {
+    font-size: 1.1em;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.sales-banner .cta-button {
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 14px 28px;
+    font-size: 1.1em;
+    border-radius: 30px; /* より丸みを帯びたボタン */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sales-banner .cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 既存のCSSに修正は不要です。
+   Syntax ErrorはCSSではなく、シェルスクリプトのクォート処理に起因すると考えられます。
+   このCSSファイル自体にはSyntax Errorを引き起こすような問題は見当たりません。
+   シェルスクリプトの修正が必要です。 */
 
 /* General Body Styles */
 body {

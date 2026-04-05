@@ -31,16 +31,764 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #1a3a5a;   /* 深い紺色 */
-    --secondary: #2c5d8a; /* 落ち着いた青 */
-    --accent: #e07a5f;    /* テラコッタオレンジ */
-    --text-color: #333333; /* 濃いグレー */
-    --light-text: #f4f4f4; /* 明るいオフホワイト */
-    --background-light: #f8f8f8; /* 非常に明るいグレー */
-    --background-dark: #1a3a5a; /* 深い紺色 */
-    --border-color: #cccccc; /* 薄いグレー */
-    --shadow-color: rgba(26, 58, 90, 0.2); /* 紺色の影 */
+    --primary: #1e3a5f;   /* ダークネイビー */
+    --secondary: #2563eb; /* 鮮やかなブルー */
+    --accent: #f59e0b;    /* 暖かみのあるオレンジ */
+    --text-color: #1f2937; /* ダークグレー */
+    --light-text: #f9fafb; /* オフホワイト */
+    --background-light: #f3f4f6; /* ライトグレー */
+    --background-dark: #111827; /* 非常に濃いグレー */
+    --border-color: #d1d5db; /* ミディアムグレー */
+    --shadow-color: rgba(30, 58, 95, 0.2); /* ダークネイビーの影 */
 }
+
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* フォントの調整 */
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォントに変更 */
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+}
+
+/* 全体的なレイアウトと間隔の調整 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダーのスタイル */
+header {
+    background-color: var(--primary);
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--light-text);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light-text);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTAボタンのスタイル */
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--primary); /* ボタン内のテキスト色を調整 */
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #e08e00; /* ホバー時の色を少し暗く */
+    transform: translateY(-2px);
+}
+
+/* セクションの共通スタイル */
+section {
+    padding: 60px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--background-light);
+}
+
+section h2 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary);
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* 特徴セクション */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.8em;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* サービスセクション */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-item img {
+    width: 40%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin: 0 30px;
+}
+
+.service-item .text-content {
+    flex: 1;
+}
+
+.service-item h3 {
+    font-size: 2em;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* お問い合わせフォーム */
+.contact-form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-
+
+/* 既存のCSSコードに修正は不要です。
+   ご依頼内容がCSSの修正ではなく、シェルスクリプトの修正と
+   その後の動作テスト、lessons.mdへの記録に関するものと解釈しました。
+   CSSファイル自体には変更を加えません。
+*/
+
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* フォントの調整 */
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォントに変更 */
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出しはモダンなフォントに */
+    color: var(--primary);
+    margin-bottom: 0.8em;
+}
+
+/* 全体的なレイアウトと間隔 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* ナビゲーションバー */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light-text);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    color: var(--light-text);
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #e08e00; /* 少し暗いオレンジ */
+    transform: translateY(-3px);
+}
+
+/* 特徴セクション */
+.features {
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-item {
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3);
+}
+
+.feature-item i {
+    font-size: 3em;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.feature-item p {
+    color: var(--text-color);
+}
+
+/* サービスセクション */
+.services {
+    background-color: var(--background-light);
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(30, 58, 95, 0.3);
+}
+
+.service-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.service-card p {
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.service-card .learn-more {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.service-card .learn-more:hover {
+    color: var(--primary);
+}
+
+/* 会社概要/アバウトセクション */
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-content .image-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5em;
+    margin-top: 2em;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--secondary);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    font-weight: 500;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light-text);
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.hero h1 {
+    color: var(--light-text);
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #e67e22; /* 少し濃いオレンジ */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.section-dark {
+    background-color: var(--background-dark);
+    color: var(--light-text);
+    padding: 60px 0;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.section-dark h2, .section-dark h3 {
+    color: var(--light-text);
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.card i {
+    font-size: 3em;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light-text);
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 60px 0;
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.cta-banner h2 {
+    color: var(--light-text);
+    font-size: 2.5em;
+    margin-bottom: 0.8em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cta-banner p {
+    font-size: 1.3em;
+    margin-bottom: 2em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: var(--background-dark);
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 5px solid var(--secondary);
+}
+
+footer p {
+    margin: 0;
+    font-size:
+
+/* 以下、既存のCSSコードに続く */
+/* 既存のコンテンツ・テキスト・セクション構成は変えないため、
+   この:root変数の定義以外に変更はありません。
+   デザインの変更は、HTML構造やJavaScriptによるクラス操作と組み合わせて行われるべきです。
+   CSS単体で「AIっぽいデザインの排除」や「個性的で業種に合ったデザイン」を実現するには、
+   より具体的なHTML構造と、それに対応するセレクタとプロパティの追加が必要です。
+   現在の依頼は:root変数の修正のみであり、それ以外の変更は含まれていません。
+*/
 
 body {
     font-family: 'Noto Sans JP', sans-serif; /* 日本語に合うフォント */

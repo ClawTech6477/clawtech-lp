@@ -31,16 +31,737 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-    --primary: #2a6f97; /* 深い青緑 */
+    --primary: #1e3a5f; /* 深いネイビーブルー */
     --secondary: #f0f4f8; /* 柔らかいオフホワイト */
-    --accent: #e67e22; /* 暖かみのあるオレンジ */
+    --accent: #2563eb; /* 鮮やかなロイヤルブルー */
     --text-dark: #34495e; /* ダークなチャコール */
     --text-light: #ffffff;
     --background-light: #ffffff;
-    --background-dark: #2c3e50; /* ダークな背景 */
+    --background-dark: #1a202c; /* 非常にダークな背景 */
     --border-color: #dcdcdc;
     --font-family-sans: 'Noto Sans JP', sans-serif;
     --font-family-serif: 'Merriweather', serif;
+}
+
+/* 既存のCSSコードに加えて、AIっぽいデザインを排除し、業種に合ったデザインにするための修正・追加 */
+
+/* 全体的なリセットと基本スタイル */
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(135deg, var(--primary), #3a6ea5); /* 深い青から少し明るい青へ */
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    animation: hero-pulse 10s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes hero-pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.hero .container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.hero .btn-primary {
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn-primary:hover {
+    background-color: #1a4ed8; /* 少し暗いアクセントカラー */
+    transform: translateY(-2px);
+}
+
+/* セクション共通スタイル */
+.section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* 特徴セクション */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item .icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* サービスセクション */
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--secondary);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.service-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.service-item .service-image {
+    flex: 1;
+    min-width: 250px;
+}
+
+.service-item .service-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-item .service-content {
+    flex: 2
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: var(--font-family-serif);
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text-light);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: 3.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.section {
+    padding: 60px 0;
+    background-color: var(--background-light);
+}
+
+.section.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card i {
+    font-size: 3em;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--text-light);
+    padding: 60px 0;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.cta-banner h2 {
+    color: var(--text-light);
+    font-size: 2.5em;
+    margin-bottom: 0.8em;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cta-banner p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--accent);
+}
+
+footer a:hover {
+    color: var(--text-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8em;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+
+/* 既存のCSSに加えて、デザインを調整するためのスタイルを追加・変更します */
+
+body {
+    font-family: var(--font-family-sans);
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-serif);
+    color: var(--primary);
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-family: var(--font-family-serif);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* メインコンテンツのコンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* セクション */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #d66a1a; /* 少し暗いオレンジ */
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: #225a7d; /* 少し暗い青緑 */
+}
+
+/* フォーム */
+form {
+    background-color: var(--secondary);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form input[type="submit"] {
+    width: auto;
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #225a7d;
+}
+
+/* フッター */
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 /* General Body Styles */

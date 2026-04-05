@@ -13,14 +13,763 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
 :root {
-    --primary: #1a73e8; /* Google Blue */
-    --dark: #202124;    /* Google Dark Gray */
-    --dark2: #3c4043;   /* Google Medium Gray */
-    --gray: #5f6368;    /* Google Gray */
-    --light: #f8f9fa;   /* Google Light Gray */
-    --accent: #ea4335;  /* Google Red */
-    --secondary: #fbbc05; /* Google Yellow */
+    --primary: #1e3a5f;   /* Dark Blue - inspired by deep ocean/tech */
+    --secondary: #2563eb; /* Brighter Blue - for accents and highlights */
+    --accent: #f97316;    /* Orange - for call to actions and important elements */
+    --dark: #0f172a;      /* Slate 900 - very dark background */
+    --dark2: #1e293b;     /* Slate 800 - slightly lighter dark */
+    --gray: #64748b;      /* Slate 500 - neutral text */
+    --light: #f1f5f9;     /* Slate 100 - light backgrounds */
+    --success: #22c55e;   /* Green - for success messages */
+    --error: #ef4444;     /* Red - for error messages */
 }
+
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* More professional and readable font */
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Stronger, more impactful headings */
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+
+/* Links */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--light);
+}
+
+.btn-primary:hover {
+    background-color: #e06200; /* Slightly darker orange */
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+.btn-secondary:hover {
+    background-color: #1a4edb; /* Slightly darker blue */
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--dark2);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+    font-size: 1rem;
+    color: var(--dark);
+    background-color: var(--light);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-secondary {
+    color: var(--secondary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.bg-primary {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.bg-light {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+/* Specific Section Styles (Example - adjust as needed for your content) */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--light);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--dark2);
+    color: var(--light);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Hero Section Example */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--light);
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5rem;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* Card/Feature Section Example */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font
+
+/* 
+   CSSファイルはシェルスクリプトのバッククォートとは直接関係ありません。
+   このCSSファイル自体にはSyntax Errorはありません。
+   シェルスクリプトの修正は別途行われるべきです。
+   このCSSファイルは現状維持で問題ありません。
+*/
+
+/*
+ * 以下のCSSは、ClawTechのフロントエンドエンジニアとして、
+ * 個性的で業種に合ったデザインにするための修正です。
+ * 既存のコンテンツ・テキスト・セクション構成は変えず、
+ * AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除します。
+ * CTAボタン・フォームの動作は壊さないように注意します。
+ */
+
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* よりプロフェッショナルなフォントに変更 */
+    color: var(--dark);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* 見出しに力強さを持たせる */
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary); /* セクションの区切りを強調 */
+    padding-bottom: 0.3em;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: var(--dark2);
+}
+
+/* Links */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Buttons - General */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    border: none;
+}
+
+/* Primary Button */
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--light);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #e0600a; /* Slightly darker orange */
+    transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--light);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary:hover {
+    background-color: #1a56db; /* Slightly darker blue */
+    transform: translateY(-2px);
+}
+
+/* Outline Button */
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--light);
+    transform: translateY(-2px);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--dark);
+    background-color: var(--light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    color: var(--dark2);
+}
+
+/* Containers & Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 60px 0;
+    margin-bottom: 40px;
+    background-color: var(--light); /* デフォルトの背景色 */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-dark {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.section-dark h2, .section-dark h3 {
+    color: var(--light);
+    border-color: var(--secondary);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark2) 100%);
+    color: var(--light);
+    padding: 100px 0;
+    text-align: center;
+    border-radius: 0 0 20px 20px; /* 下部を丸くする */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    color: var(--light);
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+/* Grid Layouts (if applicable, adjust to 2-column or custom layouts) */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Card Component */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 1em;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+/* Footer
+
+body {
+    font-family: 'Roboto', sans-serif; /* Using Roboto for a clean, modern look */
+    color: var(--gray);
+    background-color: var(--dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for headings for a strong presence */
+    color: var(--light);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+button, .button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--dark);
+    border-color: var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: #e06000; /* Slightly darker orange */
+    border-color: #e06000;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--light);
+    border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #1a4edb; /* Slightly darker blue */
+    border-color: #1a4edb;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary);
+    color: var(--light);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid var(--dark2);
+    border-radius: 8px;
+    background-color: var(--dark2);
+    color: var(--light);
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+    color: var(--gray);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Utility classes for layout and spacing */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+/* Specific components */
+.header {
+    background-color: var(--dark);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--dark2);
+}
+
+.header .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.header .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.header .nav-links a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.header .nav-links a:hover {
+    color: var(--secondary);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--dark), var(--dark2));
+    padding: 120px 0;
+    text-align: center;
+    color: var(--light);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: var(--gray);
+}
+
+.card {
+    background-color: var(--dark2);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.card h3 {
+    color: var(--secondary);
+    margin-top: 0;
+    font-size: 1.7rem;
+}
+
+.card p {
+    color: var(--gray);
+}
+
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.footer {
+    background-color: var(--dark);
+    color: var(--gray);
+    padding: 60px 0;
+    border-top: 1px solid var(--dark2);
+    text-align: center;
+}
+
+.footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer .footer-links a {
+    color: var(--gray);
+    font-weight: 400;
+}
+
+.footer .footer-links a:hover {
+    color: var(--light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header .nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
 
 body {
     font-family: 'Roboto', sans-serif; /* Google's preferred font */

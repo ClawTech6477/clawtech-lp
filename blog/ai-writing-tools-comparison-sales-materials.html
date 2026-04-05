@@ -12,7 +12,201 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root{--primary:#2563eb;--dark:#0f172a;--dark2:#1e293b;--gray:#64748b;--light:#f8fafc}
+:root {
+    --primary: #1a5276; /* 深い青緑色 */
+    --secondary: #d4ac0d; /* 落ち着いた金色 */
+    --accent: #a93226; /* 深い赤 */
+    --background-light: #f4f6f6; /* わずかに暖かみのあるオフホワイト */
+    --background-dark: #212f3c; /* 濃いチャコールグレー */
+    --text-color-light: #333333;
+    --text-color-dark: #e0e0e0;
+    --border-color: #cccccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Merriweather', serif; /* 伝統的で読みやすいフォント */
+    color: var(--text-color-light);
+    background-color: var(--background-light);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif; /* 見出しにエレガントなフォント */
+    color: var(--primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--background-light);
+}
+
+.btn-primary:hover {
+    background-color: #154360; /* 少し暗い青緑 */
+    color: var(--background-light);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--background-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #b7950b; /* 少し暗い金色 */
+    color: var(--background-dark);
+}
+
+/* フォームのスタイル */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="submit"] {
+    width: auto;
+    padding: 12px 30px;
+    background-color: var(--accent);
+    color: var(--background-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #8d2a20; /* 少し暗い赤 */
+}
+
+/* ヘッダー、フッター、セクションなどの基本的なレイアウト要素 */
+header {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: var(--text-color-dark);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px var(--shadow-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* カードやセクションのスタイル */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: var(--primary);
+}
+
+/* メディアクエリ */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+    header nav ul {
+        flex-direction: column;
+    }
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
 a{text-decoration:none;color:inherit}

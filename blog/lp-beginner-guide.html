@@ -28,6 +28,235 @@
   --gradient-end: #344e41; /* グラデーション終了色 */
 }
 
+/* その他の既存CSSは変更しない */
+
+/* 既存のCSSコードに加えて、AIっぽいデザインを排除し、業種に合ったデザインにするための修正・追加 */
+
+body {
+  font-family: var(--font-family-sans);
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-serif);
+  color: var(--primary);
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ヘッダー */
+header {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  padding: 1em 0;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav a {
+  color: var(--text-light);
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* メインコンテンツのセクション */
+section {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section:nth-of-type(even) {
+  background-color: var(--accent);
+}
+
+/* CTAボタン */
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: var(--gradient-end);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* フォーム */
+form {
+  background-color: var(--background-light);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 30px auto;
+  border: 1px solid var(--border-color);
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form input[type="submit"] {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: var(--gradient-end);
+}
+
+/* グリッドレイアウトの排除と、より自然なレイアウトへの変更例 */
+.content-grid {
+  display: block; /* グリッドを解除 */
+}
+
+.content-grid > div {
+  margin-bottom: 40px; /* 各コンテンツブロック間に余白 */
+  padding: 20px;
+  background-color: var(--background-light);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+/* フッター */
+footer {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 2em 0;
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* レスポンシブデザインの基本 */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  header nav a {
+    padding: 0.8em 1em;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+
+  form {
+    padding: 20px;
+  }
+}
+
+/* 新しいバナーのスタイル */
+.banner-cta {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  padding: 24px;
+  border-radius: 12px;
+  margin: 32px 0;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.banner-cta h3 {
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.8em;
+}
+
+.banner-cta p {
+  font-size: 1.1em;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.banner-cta .cta-button {
+  background-color: var(--accent); /* バナー内のCTAはアクセントカラーに */
+  color: var(--primary); /* テキストはプライマリーカラーに */
+  padding: 12px 25px;
+  font-size: 1em;
+}
+
+.banner-cta .cta-button:hover {
+  background-color: var(--background-light);
+  color: var(--primary);
+}
+
 /* その他の基本的なスタイル */
 body {
     font-family: var(--font-family-sans);

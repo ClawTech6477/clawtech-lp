@@ -52,6 +52,227 @@
     --box-shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+/* AIっぽいデザインの排除と業種に合ったデザイン調整 */
+
+/* 全体的なリセットと基本設定 */
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ヘディング */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--dark);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+
+/* リンク */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* ボタン (CTAボタンのスタイルを強化) */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: var(--box-shadow-subtle);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.btn-primary:hover {
+    background-color: #1e5a7d; /* primaryより少し濃い色 */
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--dark);
+    border: 1px solid var(--gray);
+}
+
+.btn-secondary:hover {
+    background-color: #90c4c6; /* secondaryより少し濃い色 */
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+/* セクションのパディングとマージン */
+section {
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+/* コンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* カードスタイル (グリッドレイアウトの排除) */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow-subtle);
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-medium);
+}
+
+/* フォーム要素 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(42, 111, 151, 0.2); /* primaryの透明度を上げたシャドウ */
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ヘッダーとフッターの基本スタイル */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 20px 0;
+    box-shadow: var(--box-shadow-medium);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--light);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: 500;
+    font-size: 1.05em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* ヒーローセクションの調整 */
+.hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 10
+
 /* 全体的なスタイルリセットと基本設定 */
 html {
     scroll-behavior: smooth;

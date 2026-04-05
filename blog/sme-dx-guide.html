@@ -41,6 +41,583 @@
     --border-color: #cccccc;
 }
 
+/* 既存のCSSに加えて、デザインを個性的にするためのスタイルを追加 */
+
+body {
+    font-family: 'Noto Serif JP', serif; /* 日本語に合うセリフ体フォント */
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Sans JP', sans-serif; /* 見出しは視認性の良いゴシック体 */
+    color: var(--dark);
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.button,
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--light);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.button:hover,
+button:hover {
+    background-color: var(--accent);
+}
+
+/* フォーム要素のスタイル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ヘッダー、フッター、セクションなどの基本的なレイアウト */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1em 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--light);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer {
+    background-color: var(--dark2);
+    color: var(--light);
+    padding: 2em 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* セクションの共通スタイル */
+section {
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light);
+}
+
+/* CTAバナーのスタイル */
+.cta-banner {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb); /* 既存のグラデーション */
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    text-align: center; /* 中央寄せ */
+    color: var(--light); /* テキスト色を明るく */
+}
+
+.cta-banner h3 {
+    color: var(--light); /* 見出し色も明るく */
+    margin-bottom: 16px;
+    font-size: 1.8em;
+}
+
+.cta-banner p {
+    font-size: 1.1em;
+    margin-bottom: 24px;
+}
+
+.cta-banner .button {
+    background-color: var(--accent); /* CTAボタンの色をアクセントカラーに */
+    color: var(--dark); /* ボタン内のテキスト色を濃く */
+    padding: 14px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+}
+
+.cta-banner .button:hover {
+    background-color: var(--primary); /* ホバーでプライマリカラーに */
+    color: var(--light);
+}
+
+/* レスポンシブ対応の基本的なメディアクエリ */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .cta-banner h3 {
+        font-size: 1.5em;
+    }
+
+    .cta-banner .button {
+        padding: 12px 24px;
+        font-size: 1em;
+    }
+}
+
+/* 全体的なフォントと背景 */
+body {
+    font-family: 'Noto Serif JP', serif; /* 日本語に合うセリフ体 */
+    background-color: var(--light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header h1 a {
+    color: var(--light);
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* メインコンテンツのコンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* セクションタイトル */
+h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.5rem;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ボタン */
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--dark2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--gray);
+}
+
+/* フォーム */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+form input[type="submit"] {
+    width: auto;
+    padding: 12px 30px;
+    background-color: var(--primary);
+    color: var(--light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: var(--accent);
+}
+
+/* フッター */
+footer {
+    background-color: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ヒーローセクション */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/random/1600x900/?traditional-craft,woodworking') no-repeat center center/cover;
+    color: var(--light);
+    text-align: center;
+    padding: 100px 20px;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 特徴セクション */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.feature-item {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    color: var(--text-color);
+}
+
+/* サービスセクション */
+.services-grid {
+    display: grid;
+    grid-template-columns:
+
+/* 既存のコンテンツ・テキスト・セクション構成は変えない */
+/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
+/* 個性的で業種に合ったデザインにする */
+/* CTAボタン・フォームの動作は壊さない */
+
+/* ここに、業種に合ったデザインのCSSを追加・修正します。 */
+/* 例: フォント、背景、ボタンのスタイルなど */
+
+body {
+    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントの指定 */
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif; /* 見出し用フォントの指定 */
+    color: var(--primary);
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ボタンのスタイル */
+.button,
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: var(--light);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.button:hover,
+button:hover {
+    background-color: var(--accent);
+}
+
+/* フォームのスタイル */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* セクションのパディング */
+section {
+    padding: 60px 0;
+}
+
+/* ヘッダー、フッターなどの共通要素のスタイルも必要に応じて追加 */
+header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 20px 0;
+}
+
+footer {
+    background-color: var(--dark2);
+    color: var(--light);
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* レイアウトに関するスタイル（例: コンテナ） */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* AIっぽいデザインを排除するためのリセットや上書き */
+/* 例: 特定のクラス名を持つ要素のスタイルを上書き */
+.ai-generated-grid { /* 仮のクラス名 */
+    display: block !important; /* グリッドレイアウトを解除 */
+    flex-direction: column !important;
+}
+
+/* バナーHTMLのスタイル */
+.banner-cta {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    padding: 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.banner-cta h3 {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.8em;
+}
+
+.banner-cta p {
+    font-size: 1.1em;
+    margin-bottom: 24px;
+}
+
+.banner-cta .button {
+    background-color: #ffffff;
+    color: #2563eb;
+    padding: 14px 28px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.banner-cta .button:hover {
+    background-color: #e0e7ff;
+    color: #1e3a5f;
+}
+
 /* 既存のコンテンツ・テキスト・セクション構成は変えない */
 /* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
 /* 個性的で業種に合ったデザインにする */

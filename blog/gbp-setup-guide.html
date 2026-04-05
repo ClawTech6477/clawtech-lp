@@ -71,6 +71,238 @@ body {
     font-family: var(--font-family-base);
     line-height: 1.6;
     color: var(--dark);
+    background-color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.8em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+h4 { font-size: 1.4em; }
+h5 { font-size: 1.2em; }
+h6 { font-size: 1em; }
+
+/* Links */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-green);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+    border-radius: var(--border-radius-base);
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+.btn-primary:hover {
+    background-color: #225a4d; /* Slightly darker primary */
+}
+
+.btn-secondary {
+    background-color: var(--accent-green);
+    color: var(--light);
+}
+
+.btn-secondary:hover {
+    background-color: #4cae4c; /* Slightly darker accent green */
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/* Forms */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: var(--spacing-unit);
+    margin-bottom: var(--spacing-unit) * 2;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-base);
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+input[type="submit"] {
+    @extend .btn-primary; /* Reusing button styles */
+    width: auto;
+    cursor: pointer;
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-unit) * 2;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.margin-top-large {
+    margin-top: var(--spacing-unit) * 4;
+}
+
+.margin-bottom-large {
+    margin-bottom: var(--spacing-unit) * 4;
+}
+
+.padding-large {
+    padding: var(--spacing-unit) * 4;
+}
+
+.shadow-light {
+    box-shadow: var(--box-shadow-light);
+}
+
+.shadow-medium {
+    box-shadow: var(--box-shadow-medium);
+}
+
+/* Specific component styles (example) */
+.card {
+    background-color: var(--light);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-light);
+    padding: var(--spacing-unit) * 3;
+    margin-bottom: var(--spacing-unit) * 3;
+}
+
+/* Header/Navigation (example) */
+.header {
+    background-color: var(--light);
+    padding: var(--spacing-unit) * 2 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: var(--box-shadow-light);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-family-heading);
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: var(--spacing-unit) * 3;
+}
+
+.nav-menu a {
+    color: var(--dark);
+    font-weight: 500;
+    padding: var(--spacing-unit) 0;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section (example) */
+.hero {
+    background: linear-gradient(135deg, var(--primary), #4a9080); /* Custom gradient */
+    color: var(--light);
+    padding: var(--spacing-unit) * 8 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+
+/* General Body Styles */
+body {
+    font-family: var(--font-family-base);
+    line-height: 1.6;
+    color: var(--dark);
     margin: 0;
     padding: 0;
     background-color: var(--secondary);
