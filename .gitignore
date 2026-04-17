@@ -1,1 +1,7 @@
 *.bak_*
+.env
+*.env
+secrets/
+.secrets
+*.key
+*.pem
