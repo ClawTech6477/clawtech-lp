@@ -451,6 +451,58 @@ footer a:hover{color:rgba(255,255,255,0.85)}
 @media(min-width:769px) and (max-width:1024px){
   .blog-grid{grid-template-columns:repeat(2,1fr)}
 }
+
+/* =============================================
+   STATS STRIP
+   ============================================= */
+#stats-strip{background:linear-gradient(180deg,var(--primary-light) 0%,#fff 100%);padding:56px 0;border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{text-align:center;padding:24px 16px;border-right:1px solid var(--border)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:54px;font-weight:900;color:var(--primary);line-height:1;margin-bottom:8px;letter-spacing:-2px;display:flex;align-items:baseline;justify-content:center;gap:0}
+.stat-sup{font-size:26px;font-weight:900;color:var(--accent)}
+.stat-lbl{font-size:12px;color:var(--gray);font-weight:600;letter-spacing:0.5px}
+@media(max-width:768px){
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:1px solid var(--border)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3){border-bottom:none}
+  .stat-item:nth-child(4){border-right:none;border-bottom:none}
+  .stat-num{font-size:40px}
+  .stat-sup{font-size:20px}
+}
+
+/* =============================================
+   INDUSTRY STRIP
+   ============================================= */
+#industry{background:#fff;padding:44px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.industry-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:3px;color:var(--gray);text-transform:uppercase;margin-bottom:20px}
+.industry-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.ind-badge{display:inline-flex;align-items:center;gap:7px;background:var(--light);border:1px solid var(--border);border-radius:50px;padding:9px 18px;font-size:13px;font-weight:600;color:var(--dark);transition:all var(--tr)}
+.ind-badge:hover{background:var(--primary-light);border-color:rgba(0,82,204,0.2);color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,82,204,0.1)}
+.ind-badge i{font-size:14px;color:var(--primary)}
+
+/* =============================================
+   EXTRA ANIMATIONS
+   ============================================= */
+.slide-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
+.slide-left.visible{opacity:1;transform:translateX(0)}
+.slide-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
+.slide-right.visible{opacity:1;transform:translateX(0)}
+.scale-in{opacity:0;transform:scale(0.93);transition:opacity .55s ease,transform .55s ease}
+.scale-in.visible{opacity:1;transform:scale(1)}
+.stagger .scale-in:nth-child(1){transition-delay:.05s}
+.stagger .scale-in:nth-child(2){transition-delay:.13s}
+.stagger .scale-in:nth-child(3){transition-delay:.21s}
+.stagger .scale-in:nth-child(4){transition-delay:.29s}
+.stagger .scale-in:nth-child(5){transition-delay:.37s}
+.stagger .scale-in:nth-child(6){transition-delay:.45s}
+
+/* Voice card photo */
+.voice-avatar{width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid var(--border)}
+.voice-avatar img{width:100%;height:100%;object-fit:cover}
+.voice-card{transition:all var(--tr)}
+.voice-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 </style>
 </head>
 <body>
@@ -495,7 +547,7 @@ Claw<span style="color:var(--accent)">Tech</span>
 <section id="hero" aria-label="ヒーローセクション">
 <div class="container">
 <div class="hero-inner">
-<div class="hero-text fade-up">
+<div class="hero-text slide-left">
 <div class="hero-badge"><span class="dot" aria-hidden="true"></span>AI駆動のWeb制作・DX支援</div>
 <h1><em>LP・ホームページ制作</em><br>¥49,800〜 最短1週間</h1>
 <p class="hero-sub">ホームページ制作・Googleマップ集客・業務自動化まで。<br>AI活用で高品質 × 適正価格。御社のデジタル化をワンストップで。</p>
@@ -509,7 +561,7 @@ Claw<span style="color:var(--accent)">Tech</span>
 <div class="hero-stat" role="listitem"><div class="num">月額0円〜</div><div class="label">公開後ランニングコスト</div></div>
 </div>
 </div>
-<div class="hero-visual fade-in" aria-hidden="true">
+<div class="hero-visual slide-right" aria-hidden="true">
 <div class="float-tag ft1"><div class="ft-icon"><i class="fa-solid fa-shield-check"></i></div>SEO対策済み</div>
 <div class="hero-card">
 <div class="hc-header">
@@ -538,6 +590,32 @@ ClawTech Analytics
 </section>
 
 <!-- =============================================
+     STATS STRIP
+     ============================================= -->
+<div id="stats-strip">
+<div class="container">
+<div class="stats-grid fade-up">
+<div class="stat-item">
+<div class="stat-num"><span class="count-num" data-target="50">0</span><span class="stat-sup">+</span></div>
+<div class="stat-lbl">累計制作実績</div>
+</div>
+<div class="stat-item">
+<div class="stat-num"><span class="count-num" data-target="340">0</span><span class="stat-sup">%</span></div>
+<div class="stat-lbl">平均問い合わせ増加率</div>
+</div>
+<div class="stat-item">
+<div class="stat-num"><span class="count-num" data-target="80">0</span><span class="stat-sup">%</span></div>
+<div class="stat-lbl">最大業務時間削減</div>
+</div>
+<div class="stat-item">
+<div class="stat-num"><span class="count-num" data-target="24">0</span><span class="stat-sup">h</span></div>
+<div class="stat-lbl">返信保証時間</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- =============================================
      PROBLEMS
      ============================================= -->
 <section id="problems" aria-labelledby="problems-title">
@@ -563,6 +641,25 @@ ClawTech Analytics
 </div>
 </div>
 </section>
+
+<!-- =============================================
+     INDUSTRY STRIP
+     ============================================= -->
+<div id="industry">
+<div class="container">
+<p class="industry-label">対応業種・実績あり</p>
+<div class="industry-badges fade-up">
+<span class="ind-badge"><i class="fa-solid fa-utensils" aria-hidden="true"></i>飲食・カフェ</span>
+<span class="ind-badge"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i>工務店・建設</span>
+<span class="ind-badge"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>士業・法律</span>
+<span class="ind-badge"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>医療・クリニック</span>
+<span class="ind-badge"><i class="fa-solid fa-house" aria-hidden="true"></i>不動産</span>
+<span class="ind-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>教育・スクール</span>
+<span class="ind-badge"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>EC・通販</span>
+<span class="ind-badge"><i class="fa-solid fa-spa" aria-hidden="true"></i>美容・サロン</span>
+</div>
+</div>
+</div>
 
 <!-- =============================================
      SERVICES
@@ -626,20 +723,20 @@ ClawTech Analytics
 <h2 class="section-title" id="strengths-title">選ばれる3つの理由</h2>
 <p class="section-sub">AI活用だからこそ実現できる、品質・スピード・コストの三位一体</p>
 </div>
-<div class="strengths-grid stagger fade-up">
-<div class="str-card">
+<div class="strengths-grid stagger">
+<div class="str-card scale-in">
 <div class="str-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-<div class="str-num" aria-label="コスト80%削減">80<span>%</span></div>
+<div class="str-num" aria-label="コスト80%削減"><span class="count-num" data-target="80">0</span><span>%</span></div>
 <h3>コスト削減</h3>
 <p>AI活用により従来の制作コストを最大80%削減。高品質を適正価格で提供します。</p>
 </div>
-<div class="str-card">
+<div class="str-card scale-in">
 <div class="str-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
-<div class="str-num" aria-label="最短1週間納品">1<span>週間</span></div>
+<div class="str-num" aria-label="最短7日納品"><span class="count-num" data-target="7">0</span><span>日</span></div>
 <h3>最短納品</h3>
 <p>テンプレートに頼らず、最短1週間での納品を実現。急ぎのご依頼もお気軽にご相談ください。</p>
 </div>
-<div class="str-card">
+<div class="str-card scale-in">
 <div class="str-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
 <div class="str-num" aria-label="無制限サポート">∞</div>
 <h3>充実サポート</h3>
@@ -895,17 +992,17 @@ ClawTech Analytics
 <div class="voice-card">
 <div class="voice-stars" aria-label="星5つ評価"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
 <p class="voice-text">「依頼から1週間でサイトが完成。Googleマップからの集客も月20件以上に増えました。」</p>
-<div class="voice-author"><div class="voice-avatar" style="background:linear-gradient(135deg,var(--primary),#60a5fa)"><i class="fa-solid fa-user" aria-hidden="true"></i></div><div><div class="voice-name">飲食店オーナー T様</div><div class="voice-role">大阪府・個人事業主</div></div></div>
+<div class="voice-author"><div class="voice-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="飲食店オーナー T様" loading="lazy" width="46" height="46"></div><div><div class="voice-name">飲食店オーナー T様</div><div class="voice-role">大阪府・個人事業主</div></div></div>
 </div>
 <div class="voice-card">
 <div class="voice-stars" aria-label="星5つ評価"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
 <p class="voice-text">「請求書の自動化で月20時間の事務作業がゼロに。本業に集中できるようになりました。」</p>
-<div class="voice-author"><div class="voice-avatar" style="background:linear-gradient(135deg,#7c3aed,#6366f1)"><i class="fa-solid fa-user" aria-hidden="true"></i></div><div><div class="voice-name">士業事務所 M様</div><div class="voice-role">東京都・法人</div></div></div>
+<div class="voice-author"><div class="voice-avatar"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=80&q=80" alt="士業事務所 M様" loading="lazy" width="46" height="46"></div><div><div class="voice-name">士業事務所 M様</div><div class="voice-role">東京都・法人</div></div></div>
 </div>
 <div class="voice-card">
 <div class="voice-stars" aria-label="星4.5評価"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i></div>
 <p class="voice-text">「LP制作をお願いしたら想像以上のクオリティで驚きました。問い合わせが3倍になりました。」</p>
-<div class="voice-author"><div class="voice-avatar" style="background:linear-gradient(135deg,#059669,#10b981)"><i class="fa-solid fa-user" aria-hidden="true"></i></div><div><div class="voice-name">EC事業者 K様</div><div class="voice-role">愛知県・個人事業主</div></div></div>
+<div class="voice-author"><div class="voice-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="EC事業者 K様" loading="lazy" width="46" height="46"></div><div><div class="voice-name">EC事業者 K様</div><div class="voice-role">愛知県・個人事業主</div></div></div>
 </div>
 </div>
 </div>
@@ -1007,7 +1104,29 @@ const obs = new IntersectionObserver(entries => {
     if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
   });
 }, { threshold: 0.1 });
-document.querySelectorAll('.fade-up, .fade-in').forEach(el => obs.observe(el));
+document.querySelectorAll('.fade-up, .fade-in, .slide-left, .slide-right, .scale-in').forEach(el => obs.observe(el));
+
+// Count-up animation
+function countUp(el, target, duration) {
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - elapsed, 3);
+    el.textContent = Math.floor(eased * target);
+    if (elapsed < 1) requestAnimationFrame(update);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(update);
+}
+const countObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting && !e.target.dataset.counted) {
+      e.target.dataset.counted = '1';
+      countUp(e.target, parseInt(e.target.dataset.target), 1800);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.count-num').forEach(el => countObs.observe(el));
 
 // Nav scroll shadow
 window.addEventListener('scroll', () => {
