@@ -15,545 +15,434 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "ClawTech ブログ",
-  "description": "中小企業のWeb集客・MEO・AI活用・業務自動化のノウハウを発信",
-  "url": "https://clawtech6477.github.io/clawtech-lp/blog/",
-  "publisher": {"@type": "Organization", "name": "ClawTech"}
-}
-</script>
-
 <style>
 :root{
   --primary:#0052CC;--primary-dark:#003D99;--primary-light:#EBF2FF;
   --accent:#FF6B35;--accent-dark:#E55A2B;
   --dark:#1F2937;--gray:#6B7280;--light:#F9FAFB;--border:#E5E7EB;
-  --white:#FFFFFF;--green:#10B981;
-  --shadow-sm:0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md:0 4px 20px rgba(0,0,0,0.10);
-  --shadow-lg:0 12px 40px rgba(0,0,0,0.14);
-  --radius:8px;--radius-lg:16px;--tr:200ms ease-out;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
+*{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:var(--dark);overflow-x:hidden;line-height:1.8;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.8;background:var(--light);}
 a{text-decoration:none;color:inherit;}
 
-.fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-
 /* NAV */
-nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000;padding:0 32px;height:64px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);box-shadow:var(--shadow-sm);}
+nav{background:#fff;position:fixed;top:0;width:100%;z-index:1000;border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.08);}
+nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:64px;}
 .nav-logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:900;color:var(--primary);}
 .nav-logo svg{width:28px;height:28px;}
-.nav-links{display:flex;align-items:center;gap:20px;}
-.nav-links a{color:var(--gray);font-size:13px;font-weight:500;transition:color var(--tr);}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{color:var(--gray);font-size:13px;font-weight:500;transition:color .2s;}
 .nav-links a:hover{color:var(--primary);}
 .nav-links a.active{color:var(--primary);font-weight:700;}
-.nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 20px;border-radius:var(--radius);font-weight:700!important;font-size:13px!important;transition:all var(--tr)!important;}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:700!important;transition:all .2s!important;}
 .nav-cta:hover{background:var(--accent-dark)!important;transform:scale(1.03);}
 
 /* HERO */
-.hero{padding:100px 20px 60px;background:var(--primary);text-align:center;}
-.hero-inner{max-width:720px;margin:0 auto;}
-.hero h1{font-size:clamp(24px,4vw,40px);font-weight:900;line-height:1.3;color:#fff;margin-bottom:14px;}
-.hero p{font-size:15px;color:rgba(255,255,255,.8);line-height:1.9;max-width:560px;margin:0 auto;}
+.hero-blog{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;padding:96px 24px 60px;text-align:center;}
+.hero-overline{display:inline-block;font-size:12px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;}
+.hero-blog h1{font-size:clamp(24px,4vw,40px);font-weight:900;margin-bottom:12px;line-height:1.25;}
+.hero-blog p{color:rgba(255,255,255,.7);font-size:15px;max-width:560px;margin:0 auto;}
 
-/* CATEGORY FILTER */
-.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:64px;z-index:900;}
-.filter-inner{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-.filter-btn{background:var(--light);color:var(--gray);border:1px solid var(--border);padding:6px 16px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:all var(--tr);}
+/* FILTER */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:14px 24px;position:sticky;top:64px;z-index:900;}
+.filter-inner{max-width:1120px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{background:var(--light);color:var(--gray);border:1px solid var(--border);padding:5px 14px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
 .filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
 
 /* BLOG GRID */
-.blog-section{padding:56px 20px 80px;}
-.blog-inner{max-width:1100px;margin:0 auto;}
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:32px;}
-.blog-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all var(--tr);display:flex;flex-direction:column;}
-.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.blog-card-img{height:160px;background:var(--primary-light);display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden;}
-.blog-card-img.cat-ai{background:linear-gradient(135deg,#EBF2FF,#DBEAFE);}
-.blog-card-img.cat-meo{background:linear-gradient(135deg,#ECFDF5,#D1FAE5);}
-.blog-card-img.cat-lp{background:linear-gradient(135deg,#FFF7ED,#FED7AA);}
-.blog-card-img.cat-sales{background:linear-gradient(135deg,#EEF2FF,#DDD6FE);}
-.blog-card-img.cat-seo{background:linear-gradient(135deg,#F0FDF4,#BBF7D0);}
-.blog-card-img.cat-web{background:linear-gradient(135deg,#F0F9FF,#BAE6FD);}
-.blog-card-img.cat-dx{background:linear-gradient(135deg,#FDF4FF,#F5D0FE);}
-.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;}
-.blog-cat{display:inline-block;background:var(--primary-light);color:var(--primary);border:1px solid rgba(0,82,204,0.15);padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:10px;}
-.blog-cat.cat-meo{background:#ECFDF5;color:#059669;border-color:rgba(5,150,105,.15);}
-.blog-cat.cat-lp{background:#FFF7ED;color:#C2410C;border-color:rgba(194,65,12,.15);}
-.blog-cat.cat-sales{background:#EEF2FF;color:#4F46E5;border-color:rgba(79,70,229,.15);}
-.blog-cat.cat-seo{background:#F0FDF4;color:#16A34A;border-color:rgba(22,163,74,.15);}
-.blog-cat.cat-web{background:#F0F9FF;color:#0369A1;border-color:rgba(3,105,161,.15);}
-.blog-cat.cat-dx{background:#FDF4FF;color:#9333EA;border-color:rgba(147,51,234,.15);}
-.blog-title{font-size:15px;font-weight:700;color:var(--dark);line-height:1.5;margin-bottom:8px;flex:1;}
-.blog-card:hover .blog-title{color:var(--primary);}
-.blog-excerpt{font-size:12px;color:var(--gray);line-height:1.7;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.blog-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);}
-.blog-date{font-size:11px;color:var(--gray);}
-.blog-link{font-size:12px;color:var(--primary);font-weight:700;display:flex;align-items:center;gap:4px;}
+.blog-container{max-width:1120px;margin:0 auto;padding:40px 24px 80px;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;}
 
-/* SECTION HEADER */
-.section-header{margin-bottom:0;}
-.section-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--primary);text-transform:uppercase;display:block;margin-bottom:6px;}
-.section-title{font-size:clamp(20px,3vw,30px);font-weight:900;color:var(--dark);}
+/* CARD */
+.blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column;}
+.blog-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.12);}
+.card-img{width:100%;height:190px;object-fit:cover;display:block;}
+.card-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+.cat-badge{display:inline-block;padding:3px 12px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:10px;}
+.cat-web{background:#dbeafe;color:#1d4ed8;}
+.cat-meo{background:#dcfce7;color:#16a34a;}
+.cat-ai{background:#ede9fe;color:#6d28d9;}
+.cat-koumuten{background:#fef3c7;color:#b45309;}
+.cat-dx{background:#e0f2fe;color:#0369a1;}
+.cat-sales{background:#fce7f3;color:#be185d;}
+.cat-other{background:#f1f5f9;color:#475569;}
+.card-title{font-size:15px;font-weight:800;line-height:1.5;margin-bottom:8px;color:var(--dark);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.blog-card:hover .card-title{color:var(--primary);}
+.card-desc{font-size:13px;color:var(--gray);line-height:1.7;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;}
+.card-meta{font-size:12px;color:#94a3b8;margin-top:auto;}
 
-/* CTA BANNER */
-.cta-banner{background:var(--accent);padding:56px 20px;text-align:center;}
-.cta-inner{max-width:640px;margin:0 auto;}
-.cta-banner h2{font-size:clamp(20px,3vw,32px);font-weight:900;color:#fff;margin-bottom:10px;}
-.cta-banner p{color:rgba(255,255,255,.9);font-size:15px;margin-bottom:28px;line-height:1.8;}
-.btn-white{background:#fff;color:var(--accent);padding:14px 36px;border-radius:var(--radius);font-size:16px;font-weight:700;display:inline-block;transition:all var(--tr);box-shadow:0 4px 16px rgba(0,0,0,0.15);}
-.btn-white:hover{transform:scale(1.05);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+/* CTA */
+.cta-band{background:var(--accent);padding:56px 24px;text-align:center;}
+.cta-band h2{font-size:clamp(18px,3vw,30px);font-weight:900;color:#fff;margin-bottom:10px;}
+.cta-band p{color:rgba(255,255,255,.9);font-size:14px;margin-bottom:24px;line-height:1.8;}
+.btn-white{display:inline-block;background:#fff;color:var(--accent);padding:13px 32px;border-radius:8px;font-size:15px;font-weight:700;transition:all .2s;box-shadow:0 4px 14px rgba(0,0,0,0.15);}
+.btn-white:hover{transform:scale(1.05);}
 
 /* FOOTER */
-footer{background:var(--dark);padding:36px 20px;text-align:center;color:var(--gray);font-size:12px;}
-.footer-logo{font-size:17px;font-weight:900;color:#fff;margin-bottom:12px;}
-footer a{color:var(--gray);transition:color var(--tr);}
+footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:32px;font-size:13px;}
+footer a{color:rgba(255,255,255,.4);transition:color .2s;}
 footer a:hover{color:#fff;}
+.footer-logo{font-size:16px;font-weight:900;color:#fff;margin-bottom:10px;}
 
 /* BACK TO TOP */
-#backToTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;z-index:999;box-shadow:var(--shadow-md);}
+#backToTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
 #backToTop.show{opacity:1;transform:translateY(0);}
 #backToTop:hover{background:var(--primary-dark);}
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .blog-grid{grid-template-columns:repeat(2,1fr);}
-}
+@media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);gap:18px;}}
 @media(max-width:640px){
-  nav{padding:0 16px;}
+  nav .inner{padding:0 16px;}
+  .nav-links{gap:14px;}
+  .hero-blog{padding:88px 16px 48px;}
   .blog-grid{grid-template-columns:1fr;}
-  .filter-inner{gap:6px;}
+  .blog-container{padding:28px 16px 60px;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="../" class="nav-logo" aria-label="ClawTech ホーム">
-    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M16 4C10 4 6 8 6 13c0 3 1.5 5.5 4 7l-2 6h16l-2-6c2.5-1.5 4-4 4-7 0-5-4-9-10-9z" fill="#0052CC"/>
-      <path d="M10 13c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="#EBF2FF"/>
-      <circle cx="13" cy="13" r="1.5" fill="#0052CC"/>
-      <circle cx="19" cy="13" r="1.5" fill="#0052CC"/>
-    </svg>
-    ClawTech
-  </a>
-  <div class="nav-links">
-    <a href="../">ホーム</a>
-    <a href="index.html" class="active">ブログ</a>
-    <a href="../sales/">AI営業代行</a>
-    <a href="../sales/seo.html">SEO自動化</a>
-    <a href="../#contact" class="nav-cta">無料相談</a>
+  <div class="inner">
+    <a href="../" class="nav-logo" aria-label="ClawTech ホーム">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 4C10 4 6 8 6 13c0 3 1.5 5.5 4 7l-2 6h16l-2-6c2.5-1.5 4-4 4-7 0-5-4-9-10-9z" fill="#0052CC"/>
+        <path d="M10 13c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="#EBF2FF"/>
+        <circle cx="13" cy="13" r="1.5" fill="#0052CC"/>
+        <circle cx="19" cy="13" r="1.5" fill="#0052CC"/>
+      </svg>
+      ClawTech
+    </a>
+    <div class="nav-links">
+      <a href="../">ホーム</a>
+      <a href="index.html" class="active">ブログ</a>
+      <a href="../sales/">AI営業代行</a>
+      <a href="../sales/seo.html">SEO自動化</a>
+      <a href="../#contact" class="nav-cta">無料相談</a>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <h1>AI × Web × DX<br>中小企業の集客ノウハウ</h1>
-    <p>工務店・クリニック・士業など中小企業向けに、Web集客・MEO対策・AI活用・業務自動化のノウハウを発信しています。</p>
-  </div>
-</section>
+<div class="hero-blog">
+  <div class="hero-overline">Blog</div>
+  <h1>ClawTech ブログ</h1>
+  <p>中小企業・個人事業主のWeb集客・業務効率化に役立つ情報を発信</p>
+</div>
 
-<!-- FILTER -->
 <div class="filter-bar">
   <div class="filter-inner">
     <button class="filter-btn active" onclick="filterPosts('all',this)">すべて</button>
-    <button class="filter-btn" onclick="filterPosts('ai',this)">AI活用</button>
-    <button class="filter-btn" onclick="filterPosts('sales',this)">営業・集客</button>
-    <button class="filter-btn" onclick="filterPosts('seo',this)">SEO</button>
-    <button class="filter-btn" onclick="filterPosts('meo',this)">MEO</button>
-    <button class="filter-btn" onclick="filterPosts('lp',this)">LP・Web制作</button>
-    <button class="filter-btn" onclick="filterPosts('dx',this)">DX・自動化</button>
-    <button class="filter-btn" onclick="filterPosts('web',this)">Web集客</button>
+    <button class="filter-btn" onclick="filterPosts('cat-ai',this)">AI活用</button>
+    <button class="filter-btn" onclick="filterPosts('cat-sales',this)">営業・集客</button>
+    <button class="filter-btn" onclick="filterPosts('cat-meo',this)">MEO対策</button>
+    <button class="filter-btn" onclick="filterPosts('cat-web',this)">Web制作</button>
+    <button class="filter-btn" onclick="filterPosts('cat-dx',this)">DX・自動化</button>
+    <button class="filter-btn" onclick="filterPosts('cat-koumuten',this)">工務店</button>
   </div>
 </div>
 
-<!-- BLOG GRID -->
-<section class="blog-section">
-  <div class="blog-inner">
-    <div class="section-header fade-up">
-      <span class="section-label">Blog</span>
-      <h2 class="section-title">最新記事</h2>
-    </div>
-    <div class="blog-grid" id="blogGrid">
+<div class="blog-container">
+  <div class="blog-grid" id="blogGrid">
 
-      <!-- AI活用 -->
-      <article class="blog-card fade-up" data-cat="ai">
-        <div class="blog-card-img cat-ai">🤖</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">AI活用</span>
-          <h3 class="blog-title">中小企業のAI活用事例｜業務効率化を実現した5社の具体的な取り組み</h3>
-          <p class="blog-excerpt">AI導入で業務を効率化した中小企業の具体的な事例を紹介。コスト削減から新規顧客獲得まで、実際の数字と共に解説します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="ai-katsuyou-jirei.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="koumuten-homepage.html" class="blog-card" data-cat="cat-koumuten">
+      <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-koumuten">工務店</span>
+        <div class="card-title">工務店がホームページを持つべき5つの理由【2026年版】</div>
+        <div class="card-desc">工務店・リフォーム会社がWeb集客を始めるべき理由を解説。実例データと費用感も紹介。</div>
+        <div class="card-meta">📅 2026.02.26</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="ai" style="transition-delay:.07s">
-        <div class="blog-card-img cat-ai">💬</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">AI活用</span>
-          <h3 class="blog-title">ChatGPTのビジネス活用完全ガイド｜業務効率を3倍にする使い方</h3>
-          <p class="blog-excerpt">ChatGPTを使ってビジネスの生産性を大幅アップする方法を解説。メール作成・議事録・提案書作成まで実践的な活用法を網羅。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="chatgpt-business-use.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="meo-taisaku.html" class="blog-card" data-cat="cat-meo">
+      <img class="card-img" src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=80" alt="MEO対策" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-meo">MEO対策</span>
+        <div class="card-title">MEO対策とは？Googleマップで集客する方法を徹底解説</div>
+        <div class="card-desc">Googleマップ上位表示の仕組みと、すぐ実践できるMEO対策の手順を解説。</div>
+        <div class="card-meta">📅 2026.03.05</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="ai" style="transition-delay:.14s">
-        <div class="blog-card-img cat-ai">📊</div>
-        <div class="blog-card-body">
-          <span class="blog-cat">AI活用</span>
-          <h3 class="blog-title">業務効率化AIツール比較｜中小企業が今すぐ導入すべき10選</h3>
-          <p class="blog-excerpt">無料〜月額3万円以内で使えるAIツールを徹底比較。業種別におすすめのツールと導入ポイントを解説します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="business-efficiency-ai-tools.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="gbp-setup-guide.html" class="blog-card" data-cat="cat-meo">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Googleビジネスプロフィール" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-meo">MEO対策</span>
+        <div class="card-title">【2026年最新】Googleビジネスプロフィール登録方法完全ガイド</div>
+        <div class="card-desc">無料で始められるGoogleビジネスプロフィールの登録・設定を画像付きで解説。</div>
+        <div class="card-meta">📅 2026.03.07</div>
+      </div>
+    </a>
 
-      <!-- 営業・集客 -->
-      <article class="blog-card fade-up" data-cat="sales">
-        <div class="blog-card-img cat-sales">📞</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">AI営業代行の費用・料金相場｜大手比較と選び方ガイド2026年版</h3>
-          <p class="blog-excerpt">AI営業代行の料金相場を徹底調査。大手から中小まで各社の特徴とコスト比較、失敗しない選び方を解説します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="ai-sales-agency-cost-price.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="ai-katsuyou-jirei.html" class="blog-card" data-cat="cat-ai">
+      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI活用事例" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-ai">AI活用</span>
+        <div class="card-title">中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</div>
+        <div class="card-desc">AI導入で業務効率化を実現した中小企業の事例と具体的な活用方法を紹介。</div>
+        <div class="card-meta">📅 2026.03.05</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="sales" style="transition-delay:.07s">
-        <div class="blog-card-img cat-sales">🎯</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">AI営業代行の成功事例5選｜中小企業が3ヶ月で新規顧客を獲得した方法</h3>
-          <p class="blog-excerpt">実際にAI営業代行を導入して成果を出した企業の事例を紹介。業種別の成功パターンと導入後の変化を詳しく解説。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="ai-sales-agent-cases.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="homepage-cost-2026.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="ホームページ制作費用" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">2026年版：ホームページ制作費用の相場と賢い選び方</div>
+        <div class="card-desc">制作費用の相場から失敗しない業者選びのポイントまで、初心者向けに解説。</div>
+        <div class="card-meta">📅 2026.03.05</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="sales" style="transition-delay:.14s">
-        <div class="blog-card-img cat-sales">🚀</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">BtoB営業自動化の完全ガイド｜リード獲得から商談までを自動化する方法</h3>
-          <p class="blog-excerpt">BtoB営業をゼロから自動化する方法を解説。リスト作成・メール送信・フォローアップまで自動化できるツールと設定方法を紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="btob-sales-automation.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="lp-beginner-guide.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ランディングページ制作" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">【2026年最新】LP(ランディングページ)の作り方｜初心者向け完全ガイド</div>
+        <div class="card-desc">コンバージョン率を高めるLPの構成・デザイン・制作手順を初心者向けに解説。</div>
+        <div class="card-meta">📅 2026.03.06</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="sales">
-        <div class="blog-card-img cat-sales">💰</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">中小企業の営業コスト削減術｜AI活用で月30万円を節約する方法</h3>
-          <p class="blog-excerpt">営業にかかるコストをAI活用で削減する具体的な方法。リスト作成・架電・メール対応の自動化で実現できるコスト削減幅を解説。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="sme-sales-cost-reduction.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="sme-dx-guide.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX</span>
+        <div class="card-title">中小企業DX成功の道標2026！事例と進め方を徹底解説</div>
+        <div class="card-desc">中小企業のDX推進、何から始める？成功事例に基づいた戦略的な進め方を解説。</div>
+        <div class="card-meta">📅 2026.03.08</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="sales" style="transition-delay:.07s">
-        <div class="blog-card-img cat-sales">📈</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">リード獲得自動化の仕組み作り｜中小企業が月10件の問い合わせを増やす方法</h3>
-          <p class="blog-excerpt">リード獲得を自動化する具体的な仕組みを解説。コンテンツ→SEO→LP→メール自動化の連携で問い合わせを増やすフローを紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="lead-generation-automation-mechanism.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="chatgpt-business-use.html" class="blog-card" data-cat="cat-ai">
+      <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="ChatGPT業務活用" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-ai">AI活用</span>
+        <div class="card-title">2026年版ChatGPT業務効率化術！プロが教える活用法</div>
+        <div class="card-desc">2026年もChatGPTは進化！業務効率化に役立つ活用法をメール・企画立案など事例満載で解説。</div>
+        <div class="card-meta">📅 2026.03.09</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="sales" style="transition-delay:.14s">
-        <div class="blog-card-img cat-sales">🔧</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-sales">営業・集客</span>
-          <h3 class="blog-title">営業効率化AIツール比較｜インサイドセールスを自動化する6つのツール</h3>
-          <p class="blog-excerpt">インサイドセールスを効率化するAIツールを徹底比較。各ツールの特徴・料金・導入難易度を中小企業目線で解説します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="sales-efficiency-ai-tools.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="restaurant-website.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="飲食店ホームページ" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">【2026年】飲食店にHPは必須？集客を最大化する秘訣</div>
+        <div class="card-desc">飲食店経営者必見！2026年にホームページが必要な理由を徹底解説。集客、ブランディング、費用対効果まで。</div>
+        <div class="card-meta">📅 2026.03.09</div>
+      </div>
+    </a>
 
-      <!-- SEO -->
-      <article class="blog-card fade-up" data-cat="seo">
-        <div class="blog-card-img cat-seo">🔍</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-seo">SEO</span>
-          <h3 class="blog-title">SEO初心者ガイド2026年版｜Googleに評価されるコンテンツの作り方</h3>
-          <p class="blog-excerpt">SEOをゼロから学ぶための完全ガイド。キーワード選定から記事構成・内部リンク・被リンクまで、初心者にもわかりやすく解説。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="seo-beginner-guide.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="seo-beginner-guide.html" class="blog-card" data-cat="cat-other">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SEO対策初心者" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-other">SEO</span>
+        <div class="card-title">【2026年版】SEO対策 初心者がやるべき事</div>
+        <div class="card-desc">SEO対策を始めたい初心者向けに、2026年にやるべきことを徹底解説！キーワード選定から内部対策まで。</div>
+        <div class="card-meta">📅 2026.03.10</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="seo" style="transition-delay:.07s">
-        <div class="blog-card-img cat-seo">📝</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-seo">SEO</span>
-          <h3 class="blog-title">Web集客戦略2026｜中小企業が検索上位を獲得するための実践ロードマップ</h3>
-          <p class="blog-excerpt">2026年のSEOトレンドを踏まえた集客戦略を解説。コンテンツSEO・ローカルSEO・AI活用を組み合わせた戦略を紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="web-marketing-strategy-2026.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="instagram-business.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="Instagram集客" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">SNS集客</span>
+        <div class="card-title">2026年版！Instagram集客で成功する秘訣</div>
+        <div class="card-desc">2026年もInstagram集客は重要！中小企業・個人事業主向けに、最新トレンド、成功事例、費用対効果を解説。</div>
+        <div class="card-meta">📅 2026.03.11</div>
+      </div>
+    </a>
 
-      <!-- MEO -->
-      <article class="blog-card fade-up" data-cat="meo">
-        <div class="blog-card-img cat-meo">📍</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-meo">MEO</span>
-          <h3 class="blog-title">MEO対策完全ガイド｜Googleマップで地域ビジネスの集客を増やす方法</h3>
-          <p class="blog-excerpt">MEO対策の基本から応用まで徹底解説。Googleビジネスプロフィールの最適化・口コミ対策・写真投稿のコツを紹介します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="meo-taisaku.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="it-hojo-kin.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="IT補助金" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">補助金・DX</span>
+        <div class="card-title">【2026年版】IT導入補助金でホームページ制作を成功させる！</div>
+        <div class="card-desc">2026年のIT導入補助金を活用してホームページを制作・リニューアル。対象、申請方法、業者選びまで解説。</div>
+        <div class="card-meta">📅 2026.03.12</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="meo" style="transition-delay:.07s">
-        <div class="blog-card-img cat-meo">🗺️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-meo">MEO</span>
-          <h3 class="blog-title">Googleビジネスプロフィール設定ガイド｜MEO効果を最大化する完全手順</h3>
-          <p class="blog-excerpt">Googleビジネスプロフィールの設定を一から解説。カテゴリ設定・営業時間・写真・投稿機能の活用法まで網羅的に紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="gbp-setup-guide.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="seikotsuin-marketing.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="整骨院集客" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">集客</span>
+        <div class="card-title">整骨院集客 2026年成功戦略｜最新Webマーケティング</div>
+        <div class="card-desc">整骨院の集客方法、2026年に向けた最新戦略を徹底解説！SEO、SNS、Web広告、地域密着型戦略まで網羅。</div>
+        <div class="card-meta">📅 2026.03.12</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="meo" style="transition-delay:.14s">
-        <div class="blog-card-img cat-meo">💹</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-meo">MEO</span>
-          <h3 class="blog-title">MEO対策のROI計算方法｜中小企業が月10万円以上の売上増を実現する戦略</h3>
-          <p class="blog-excerpt">MEO対策の費用対効果を数字で解説。投資額・集客効果・売上貢献の計算方法と、ROIを最大化するための実践的な戦略を紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="meo-measures-roi-sme.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="koumuten-hp-case.html" class="blog-card" data-cat="cat-koumuten">
+      <img class="card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="工務店HP集客成功事例" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-koumuten">工務店</span>
+        <div class="card-title">【2026年版】工務店HP集客成功事例｜Web戦略徹底解説</div>
+        <div class="card-desc">工務店向けホームページ集客の成功事例を徹底解説！SEO対策、コンテンツマーケティング、SNS活用まで。</div>
+        <div class="card-meta">📅 2026.03.12</div>
+      </div>
+    </a>
 
-      <!-- LP・Web制作 -->
-      <article class="blog-card fade-up" data-cat="lp">
-        <div class="blog-card-img cat-lp">🖥️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">LP制作費用の相場2026年版｜安く・早く・質高く作る方法を徹底解説</h3>
-          <p class="blog-excerpt">LPの制作費用相場を徹底調査。フリーランス・制作会社・AIツール別のコスト比較と、予算別の選び方ガイドを公開します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="lp-production-cost-market-price-effect.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="lp-creation-effectiveness-measurement-tools.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="LP効果測定ツール" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">【2026年最新】LP制作の効果測定ツール完全ガイド</div>
+        <div class="card-desc">LP制作の効果測定で成果を最大化！Google Analyticsからヒートマップまで、目的別ツールの選び方と改善事例を紹介。</div>
+        <div class="card-meta">📅 2026.03.13</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="lp" style="transition-delay:.07s">
-        <div class="blog-card-img cat-lp">🏗️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">工務店ホームページ制作ガイド｜集客できるサイトに必須の8つの要素</h3>
-          <p class="blog-excerpt">工務店のホームページ制作で失敗しないためのポイントを解説。施工事例・スタッフ紹介・口コミなど集客に効く要素を紹介します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="koumuten-homepage.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="seikotsuin-homepage.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="整骨院ホームページ" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">【2026年】整骨院ホームページ集客成功の秘訣！</div>
+        <div class="card-desc">整骨院のホームページ集客を成功させる秘訣を徹底解説！SEO対策、MEO対策、コンテンツマーケティングまで。</div>
+        <div class="card-meta">📅 2026.03.14</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="lp" style="transition-delay:.14s">
-        <div class="blog-card-img cat-lp">💻</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">ホームページ制作費用2026年版｜相場・比較・安く作るコツを完全解説</h3>
-          <p class="blog-excerpt">ホームページ制作の費用相場を詳しく解説。業種・規模別の目安金額と、コストを抑えながらも質を落とさない方法を紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="homepage-cost-2026.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="rpa-vs-ai-automation.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="RPA vs AI自動化" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX・自動化</span>
+        <div class="card-title">2026年版：業務自動化RPA、AIの違いとは？徹底比較ガイド</div>
+        <div class="card-desc">業務自動化を検討中ですか？RPA、AIの違いを徹底解説！導入メリット、デメリット、事例、選び方まで網羅。</div>
+        <div class="card-meta">📅 2026.03.16</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="lp">
-        <div class="blog-card-img cat-lp">📱</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">LPビギナーガイド｜コンバージョンを3倍にするランディングページの作り方</h3>
-          <p class="blog-excerpt">LP制作の基礎から応用まで解説。ヘッダー・CTA・フォーム設計のベストプラクティスと、CVRを高めるテクニックを紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="lp-beginner-guide.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="lead-generation-lp-template.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="リード獲得LPテンプレート" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">2026年版！リード獲得LPテンプレートと成功事例</div>
+        <div class="card-desc">2026年も使えるリード獲得LPテンプレートと成功事例集。構成要素、デザイン、コピーライティング、改善方法を解説。</div>
+        <div class="card-meta">📅 2026.03.25</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="lp" style="transition-delay:.07s">
-        <div class="blog-card-img cat-lp">🦷</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">整骨院ホームページ制作｜患者数を増やすためのWeb戦略完全ガイド</h3>
-          <p class="blog-excerpt">整骨院のホームページ制作で集客を増やす方法を解説。MEO対策・口コミ戦略・予約フォーム設置のポイントを詳しく紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="seikotsuin-homepage.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="line-auto-reply-setup.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="LINE自動返信設定" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">自動化</span>
+        <div class="card-title">【2026年版】LINE公式アカウント自動返信：設定方法を徹底解説</div>
+        <div class="card-desc">LINE公式アカウントの自動返信設定でお困りですか？初心者でも安心！2026年最新の設定方法をステップごとに解説。</div>
+        <div class="card-meta">📅 2026.03.26</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="lp" style="transition-delay:.14s">
-        <div class="blog-card-img cat-lp">🍽️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-lp">LP・Web制作</span>
-          <h3 class="blog-title">飲食店ホームページ制作｜予約・集客を増やすWebサイトの作り方</h3>
-          <p class="blog-excerpt">飲食店向けホームページ制作のポイントを解説。メニュー掲載・予約システム連携・Instagramとの組み合わせ方を紹介します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="restaurant-website.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="ai-sales-agency-cost-price.html" class="blog-card" data-cat="cat-ai">
+      <img class="card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="AI営業代行費用" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-ai">AI活用・営業</span>
+        <div class="card-title">2026年版｜AI営業代行の費用相場と効果を徹底解説</div>
+        <div class="card-desc">AI営業代行の費用相場は？導入効果は？2026年最新情報を徹底解説！費用体系の種類、ROI算出、サービス選定のポイントまで網羅。</div>
+        <div class="card-meta">📅 2026.03.27</div>
+      </div>
+    </a>
 
-      <!-- DX・自動化 -->
-      <article class="blog-card fade-up" data-cat="dx">
-        <div class="blog-card-img cat-dx">⚙️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-dx">DX・自動化</span>
-          <h3 class="blog-title">中小企業DX推進ガイド｜2026年成功事例から学ぶ業務デジタル化の進め方</h3>
-          <p class="blog-excerpt">DX推進に成功した中小企業の事例を紹介。どの業務から着手すべきか、コストをかけずにDXを進めるロードマップを解説。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="dx-promotion-sme-success-cases-2026.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="sns-marketing-success-stories-sme.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SNSマーケティング成功事例" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">SNS運用</span>
+        <div class="card-title">2026年最新版！中小企業のSNSマーケティング成功事例集</div>
+        <div class="card-desc">中小企業向けSNSマーケティング成功事例を2026年最新情報としてご紹介。プラットフォーム戦略、低予算施策、分析ツール活用まで網羅。</div>
+        <div class="card-meta">📅 2026.03.28</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="dx" style="transition-delay:.07s">
-        <div class="blog-card-img cat-dx">🤖</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-dx">DX・自動化</span>
-          <h3 class="blog-title">RPA vs AI自動化｜中小企業に本当に向いているのはどちらか？徹底比較</h3>
-          <p class="blog-excerpt">RPAとAI自動化の違いを分かりやすく解説。導入コスト・対応業務・拡張性など、中小企業の視点で選ぶべきツールを比較します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="rpa-vs-ai-automation.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="inside-sales-introduction-benefits.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="インサイドセールス" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">営業</span>
+        <div class="card-title">2026年版！インサイドセールス導入で売上爆増の秘訣</div>
+        <div class="card-desc">インサイドセールス導入のメリットを徹底解説！リード獲得数増加、営業効率向上、成約率UPまで。</div>
+        <div class="card-meta">📅 2026.03.29</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="dx" style="transition-delay:.14s">
-        <div class="blog-card-img cat-dx">💼</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-dx">DX・自動化</span>
-          <h3 class="blog-title">個人事業主・フリーランス向けおすすめ業務自動化ツール10選</h3>
-          <p class="blog-excerpt">個人事業主が今すぐ使えるツールを厳選紹介。請求書・スケジュール・SNS投稿・メール返信の自動化で本業に集中できます。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="business-automation-tools-recommended-sole-proprietor.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="business-automation-tools-recommended-sole-proprietor.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="個人事業主向け自動化ツール" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX・自動化</span>
+        <div class="card-title">【2026年版】個人事業主向け事業自動化ツールおすすめ10選</div>
+        <div class="card-desc">個人事業主の業務効率化に！2026年におすすめの事業自動化ツールを厳選。RPA、会計ソフト、SFA/CRMから業種特化型まで。</div>
+        <div class="card-meta">📅 2026.03.30</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="dx">
-        <div class="blog-card-img cat-dx">🏛️</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-dx">DX・自動化</span>
-          <h3 class="blog-title">IT補助金2026年版｜中小企業が使える補助金・助成金完全ガイド</h3>
-          <p class="blog-excerpt">IT導入補助金・ものづくり補助金など2026年に使える補助金を解説。申請方法・対象経費・採択のポイントを分かりやすく紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="it-hojo-kin.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="meo-optimization-cost-effectiveness.html" class="blog-card" data-cat="cat-meo">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="MEO対策費用対効果" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-meo">MEO対策</span>
+        <div class="card-title">【2026年版】MEO対策費用対効果を徹底解説</div>
+        <div class="card-desc">MEO対策の費用対効果を最大化する方法を解説。費用相場、KPI設定、業者選びの注意点、成功事例・失敗事例まで網羅。</div>
+        <div class="card-meta">📅 2026.04.03</div>
+      </div>
+    </a>
 
-      <!-- Web集客 -->
-      <article class="blog-card fade-up" data-cat="web">
-        <div class="blog-card-img cat-web">📸</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-web">Web集客</span>
-          <h3 class="blog-title">Instagram集客の完全ガイド｜中小企業がフォロワー1000人を達成する方法</h3>
-          <p class="blog-excerpt">Instagram集客を成功させる具体的な方法を解説。投稿頻度・ハッシュタグ戦略・ストーリーズ活用法まで実践的なノウハウを紹介。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-04</span>
-            <a href="instagram-business.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="sme-sales-cost-reduction.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="営業コスト削減" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">AI営業</span>
+        <div class="card-title">2026年 中小企業向けAI営業コスト削減術</div>
+        <div class="card-desc">中小企業の営業コスト削減にAIをどう活用？AI営業代行の費用対効果、成功事例、導入の注意点を解説。</div>
+        <div class="card-meta">📅 2026.04.03</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="web" style="transition-delay:.07s">
-        <div class="blog-card-img cat-web">📋</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-web">Web集客</span>
-          <h3 class="blog-title">中小企業のWeb集客戦略｜売上につながるWebマーケティング実践ガイド</h3>
-          <p class="blog-excerpt">中小企業がWebで集客・売上を伸ばすための実践的な戦略を解説。SEO・SNS・リスティング広告の組み合わせ方を紹介します。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-03</span>
-            <a href="web-marketing-strategy-sme.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="web-marketing-strategy-sme.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" alt="Web集客戦略" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">集客</span>
+        <div class="card-title">2026年版 中小企業Web集客戦略｜成功の鍵</div>
+        <div class="card-desc">中小企業向けWeb集客戦略を徹底解説！SEO、MEO、SNS、広告まで網羅。2026年に向けた最新トレンドと成功事例で売上UPを実現。</div>
+        <div class="card-meta">📅 2026.04.03</div>
+      </div>
+    </a>
 
-      <article class="blog-card fade-up" data-cat="web" style="transition-delay:.14s">
-        <div class="blog-card-img cat-web">💬</div>
-        <div class="blog-card-body">
-          <span class="blog-cat cat-web">Web集客</span>
-          <h3 class="blog-title">LINE自動返信の設定方法｜ビジネスアカウントで顧客対応を24時間自動化する</h3>
-          <p class="blog-excerpt">LINE公式アカウントの自動返信を設定する方法を解説。よくある質問・予約案内・プッシュ通知の活用で顧客対応コストを削減。</p>
-          <div class="blog-footer">
-            <span class="blog-date">2026-02</span>
-            <a href="line-auto-reply-setup.html" class="blog-link">続きを読む →</a>
-          </div>
-        </div>
-      </article>
+    <a href="meo-measures-roi-sme.html" class="blog-card" data-cat="cat-meo">
+      <img class="card-img" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="中小企業MEO対策" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-meo">MEO対策</span>
+        <div class="card-title">【2026年版】中小企業のMEO対策｜費用対効果を最大化</div>
+        <div class="card-desc">中小企業向けMEO対策の費用対効果を徹底解説！2026年の最新情報に基づき、具体的な施策、費用相場、効果測定方法を紹介。</div>
+        <div class="card-meta">📅 2026.04.03</div>
+      </div>
+    </a>
 
-    </div>
+    <a href="business-efficiency-ai-tools.html" class="blog-card" data-cat="cat-ai">
+      <img class="card-img" src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&q=80" alt="業務効率化AIツール" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-ai">AI活用</span>
+        <div class="card-title">業務効率化AIツール比較｜中小企業が今すぐ導入すべき10選</div>
+        <div class="card-desc">無料〜月額3万円以内で使えるAIツールを徹底比較。業種別におすすめのツールと導入ポイントを解説します。</div>
+        <div class="card-meta">📅 2026.04.05</div>
+      </div>
+    </a>
+
+    <a href="dx-promotion-sme-success-cases-2026.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80" alt="中小企業DX成功事例" loading="lazy" width="600" height="190">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX</span>
+        <div class="card-title">中小企業DX推進ガイド｜2026年成功事例から学ぶ業務デジタル化</div>
+        <div class="card-desc">DX推進に成功した中小企業の事例を紹介。どの業務から着手すべきか、コストをかけずにDXを進めるロードマップを解説。</div>
+        <div class="card-meta">📅 2026.04.08</div>
+      </div>
+    </a>
+
   </div>
-</section>
+</div>
 
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="cta-inner">
-    <h2>AI × Webで、あなたのビジネスを加速させましょう</h2>
-    <p>ClawTechなら、AI営業代行・SEO自動化・LP改善をまとめてお任せいただけます。<br>まずは無料相談で現状のお悩みをお聞かせください。</p>
-    <a href="../#contact" class="btn-white">無料相談する（0円）→</a>
-  </div>
-</section>
+<div class="cta-band">
+  <h2>AI × Webで、あなたのビジネスを加速させましょう</h2>
+  <p>ClawTechなら、AI営業代行・SEO自動化・LP改善をまとめてお任せいただけます。<br>まずは無料相談で現状のお悩みをお聞かせください。</p>
+  <a href="../#contact" class="btn-white">無料相談する（0円）→</a>
+</div>
 
 <footer>
   <div class="footer-logo">ClawTech</div>
@@ -564,25 +453,14 @@ footer a:hover{color:#fff;}
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
 
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, {threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
 const backBtn = document.getElementById('backToTop');
-window.addEventListener('scroll', () => {
-  backBtn.classList.toggle('show', window.scrollY > 400);
-});
+window.addEventListener('scroll', () => backBtn.classList.toggle('show', window.scrollY > 400));
 
 function filterPosts(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.blog-card').forEach(card => {
-    if(cat === 'all' || card.dataset.cat === cat) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
   });
 }
 </script>
