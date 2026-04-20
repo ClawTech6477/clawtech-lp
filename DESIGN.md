@@ -1,269 +1,324 @@
-# DESIGN.md - ClawTech LP デザイン設計書
+# DESIGN.md — ClawTech LP デザイン設計書 & 汎用テンプレート
 
-## 1. Visual Theme & Atmosphere
-ClawTechは「AI × 実行力」を体現するブランド。
-- 印象：テック企業らしい・信頼感・スピード感
-- 対象：中小企業経営者・個人事業主（40代男性が中核）
-- トーン：プロフェッショナル × 親しみやすい
+> **用途**: ClawTech自社LP + クライアントLP制作時の共通ガイドライン
+> **更新**: 2026-04-20
 
-## 2. Color Palette & Roles
+---
 
-### Primary Colors
-- **Brand Blue: #0052CC** （Figmaブルー。テック感）
-- **Accent Orange: #FF6B35** （CTAボタン・数字。スピード感）
-- **Text Dark: #1F2937** （本文。読みやすさ重視）
-- **Text Light: #6B7280** （補足・説明文）
+## 1. 設計思想
 
-### Secondary Colors
-- **Success Green: #10B981** （「成果」「安心」を示すアイコン）
-- **Background Light: #F9FAFB** （セクション背景。淡すぎない）
-- **Border Gray: #E5E7EB** （カード区切り線）
+### ClawTech（自社）のデフォルト設定
+- **印象**: 信頼感・スピード感・AI活用の専門性
+- **ターゲット**: 中小企業経営者・個人事業主（40代男性中核）
+- **トーン**: プロフェッショナル × 親しみやすい
+- **差別化**: 「AI × 適正価格 × 最短納品」
 
-### Application Rules
-- H1・メイン見出し: Brand Blue (#0052CC)
-- CTA ボタン: Accent Orange (#FF6B35)
-- メインコピー: Text Dark (#1F2937)
-- サポートテキスト: Text Light (#6B7280)
-- 成功事例アイコン: Success Green (#10B981)
-- セクション背景: Background Light (#F9FAFB)
+### クライアントLP制作時のカスタマイズ指針
+```
+業種      → 色 / トーン / フォント強調を変える
+飲食・美容 → ウォーム系（オレンジ・テラコッタ）、親しみやすさ重視
+士業・法律 → ネイビー・グレー、信頼感・格調
+医療・健康 → グリーン・ホワイト、清潔感・安心感
+IT・テック → ブルー・ダーク、革新性・精度感
+不動産    → アース系、安定感・高級感
+教育      → ブルー・イエロー、活力・成長感
+```
+色以外の構造（セクション順・コンポーネント）は本書のまま流用可。
 
-## 3. Typography Rules
+---
 
-### Heading Hierarchy
-- **H1（ページタイトル）**: Noto Sans JP Bold 48px
-  - 行間: 1.2
-  - 色: Brand Blue (#0052CC)
-  - マージン下: 24px
+## 2. カラーパレット
 
-- **H2（セクションタイトル）**: Noto Sans JP Bold 36px
-  - 行間: 1.3
-  - 色: Text Dark (#1F2937)
-  - マージン上: 64px / 下: 32px
+### ClawTech デフォルト
+| 変数名 | HEX | 用途 |
+|--------|-----|------|
+| `--primary` | `#0052CC` | H1・見出し・ボタン背景・アイコン |
+| `--primary-dark` | `#003D99` | primaryのホバー状態 |
+| `--primary-light` | `#EBF2FF` | アイコン背景・バッジ・薄いアクセント |
+| `--accent` | `#FF6B35` | CTAボタン（全ページ最大3個）・NEWバッジ |
+| `--accent-dark` | `#E55A2B` | accentのホバー状態 |
+| `--dark` | `#1F2937` | 本文・H3以下 |
+| `--gray` | `#6B7280` | サポートテキスト・説明文 |
+| `--light` | `#F9FAFB` | セクション背景（白と交互使用） |
+| `--border` | `#E5E7EB` | カード枠線・区切り線 |
+| `--white` | `#FFFFFF` | カード本体・フォーム背景 |
+| `--green` | `#10B981` | 成果・チェックアイコン |
 
-- **H3（見出し3）**: Noto Sans JP SemiBold 20px
-  - 行間: 1.4
-  - 色: Text Dark (#1F2937)
+### カラー適用ルール
+- **H1・主要見出し**: `--primary`（#0052CC）
+- **CTAボタン**: `--accent`（#FF6B35）→ ページに2〜3個まで
+- **本文**: `--dark`（#1F2937）
+- **サポートテキスト**: `--gray`（#6B7280）
+- **成功・チェック**: `--green`（#10B981）
+- **セクション背景**: white ↔ `--light` を交互に使う
 
-- **H4（カード見出し）**: Noto Sans JP Medium 16px
-  - 行間: 1.5
-  - 色: Brand Blue (#0052CC)
+---
 
-### Body Text
-- **本文（Body）**: Noto Sans JP Regular 16px
-  - 行間: 1.75
-  - 色: Text Light (#6B7280)
-  - 文字間隔: 0.5px
+## 3. タイポグラフィ
 
-- **小文字（Caption）**: Noto Sans JP Regular 14px
-  - 行間: 1.6
-  - 色: Text Light (#6B7280)
+### フォント
+- **全体**: `Noto Sans JP`（Google Fonts）
+- **ウェイト**: 400（本文）/ 500（ラベル）/ 700（見出し）/ 900（数字・H1）
 
-### Button Text
-- **CTA Button**: Noto Sans JP SemiBold 16px
-  - 色: White (#FFFFFF)
-  - 大文字でない（日本語は対象外）
-  - 左右パディング: 32px
+### 見出しサイズ
+| 要素 | デスクトップ | モバイル | 行間 | 色 |
+|------|-------------|---------|------|-----|
+| H1 | 48px | 26〜32px | 1.22 | `--dark` or `--primary` |
+| H2 (section-title) | 36px | 22〜26px | 1.3 | `--dark` |
+| H3 (card) | 18〜22px | 16〜18px | 1.4 | `--dark` |
+| H4 (flow/step) | 14〜15px | 13〜14px | 1.5 | #fff（dark bg時）|
 
-## 4. Component Stylings
+### 本文・サポートテキスト
+- **Body**: 14〜16px、行間 1.8、`--gray`
+- **Caption**: 12〜13px、行間 1.6、`--gray` or `#94a3b8`
+- **最小フォント**: 12px（アクセシビリティ要件）
 
-### CTA Button（最重要）
-Background: Accent Orange (#FF6B35)
-Padding: 16px 32px
-Border-radius: 8px
-Font: Noto Sans JP SemiBold 16px
-Color: White (#FFFFFF)
-Height: 56px（Material Design タッチターゲット: 48px 最小）
-Hover State:
-  - Background: #E55A2B（オレンジを暗く）
-  - Transform: scale(1.05)
-  - Transition: 200ms ease-out
-Focus State:
-  - Outline: 2px solid Brand Blue
-  - Outline-offset: 2px
+---
 
-### Secondary Button（サービスページリンク）
-Background: Transparent
-Border: 2px solid Brand Blue (#0052CC)
-Color: Brand Blue (#0052CC)
-Padding: 12px 24px
-Border-radius: 6px
-Font: Noto Sans JP Medium 14px
-Hover:
-  - Background: Brand Blue (#0052CC)
-  - Color: White (#FFFFFF)
-  - Transition: 200ms ease-out
+## 4. コンポーネント仕様
 
-### Card Styles（Services / Why / Voices）
-Background: White (#FFFFFF)
-Border: 1px solid Border Gray (#E5E7EB)
-Border-radius: 8px
-Padding: 24px
-Box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08)
-Hover shadow: 0 8px 16px rgba(0, 0, 0, 0.12)
-Transition: box-shadow 200ms ease-out, transform 200ms ease-out
-Hover transform: translateY(-4px)
+### CTAボタン（最重要）
+```css
+.btn-primary {
+  background: var(--accent);   /* #FF6B35 */
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 56px;
+  transition: all 200ms ease-out;
+}
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255,107,53,0.45);
+}
+```
 
-### Badge / Label（"人気No.1"）
-Background: #FEF3E2（薄いオレンジ）
-Color: Accent Orange (#FF6B35)
-Padding: 4px 12px
-Border-radius: 20px
-Font: Noto Sans JP Medium 12px
-Display: inline-block
+### セカンダリボタン
+```css
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  min-height: 52px;
+}
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.03);
+}
+```
 
-### Number / Stat Display（"80%"）
-Font: Noto Sans JP Bold 48px
-Color: Brand Blue (#0052CC)
-Line-height: 1.1
-Margin-bottom: 8px
+### カード（Services / Strengths / Voices）
+```css
+background: #fff;
+border: 1px solid var(--border);    /* #E5E7EB */
+border-radius: 16px;
+padding: 28〜44px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+/* Hover */
+transform: translateY(-4px);
+box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+transition: all 200ms ease-out;
+```
 
-## 5. Layout Principles
+### Serviceカード（上部アクセントライン付き）
+```css
+border-top: 3px solid var(--primary);
+/* NEWサービスはvar(--accent) */
+```
 
-### Section Spacing
-- 上下マージン: 80px（デスクトップ）/ 48px（モバイル）
-- セクション間ボーダー: なし（背景色で区別）
+### バッジ / ラベル
+```css
+/* primary系 */
+background: var(--primary-light);
+color: var(--primary);
+border: 1px solid rgba(0,82,204,0.15);
+padding: 5px 12px;
+border-radius: 6px;
+font-size: 11px;
+font-weight: 700;
 
-### Grid System
-- 最大幅: 1200px（コンテンツ）
-- カラム: 12 列
-- ガター: 24px
-- グリッド: CSS Grid 推奨
+/* accent系（NEWバッジ等） */
+background: var(--accent);
+color: #fff;
+border-radius: 50px;
+```
 
-### Content Box
-Max-width: 1200px
-Margin: 0 auto
-Padding: 0 24px（デスクトップ）/ 0 16px（モバイル）
+### 数値表示（strength-num）
+```css
+font-size: 56px;
+font-weight: 900;
+color: var(--primary);
+line-height: 1;
+```
 
-### Services Grid（3 列）
-Display: grid
-Grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
-Gap: 32px（横）/ 24px（縦）
+---
 
-### Why ClawTech Grid（3 列）
-同上
-Card min-width: 320px
-Gap: 28px
+## 5. レイアウト原則
 
-### Voices Grid（3 列）
-同上
-Card min-width: 300px
+### セクション間隔
+- **デスクトップ**: `padding: 80px 0`
+- **モバイル (≤768px)**: `padding: 56px 0`
+- **背景**: white ↔ `#F9FAFB` を交互
 
-### Hero Section
-Min-height: 560px
-Display: flex
-Align-items: center
-Justify-content: center
-Background: Linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%)
-Text-align: center
-Padding: 80px 24px
+### グリッドシステム
+- **最大幅**: 1200px（コンテンツ幅）
+- **パディング**: 0 24px（デスクトップ）/ 0 16px（モバイル）
+- **ガター**: 24〜32px
 
-### Pricing Grid（3 列 + 1 列別枠）
-Display: grid
-Grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-Gap: 24px
-最後の行（AI営業代行）: full-width or 4 列目に配置
+### 主要グリッド
+| セクション | デスクトップ | モバイル |
+|------------|-------------|---------|
+| Problems | 4列 | 2列 |
+| Services | 3列 | 1列 |
+| Strengths | 3列 | 1列 |
+| Pricing | 3列 | 1列 |
+| Flow | 5列 | 2列 |
+| Blog | 3列 | 1列 |
+| Voices | 3列 | 1列 |
+| Contact | 2列 | 1列 |
 
-## 6. Depth & Elevation
+---
 
-### Shadows
-- **Subtle (Card)**: 0 1px 3px rgba(0, 0, 0, 0.08)
-- **Medium (Hover Card)**: 0 8px 16px rgba(0, 0, 0, 0.12)
-- **Button Hover**: 0 4px 12px rgba(0, 0, 0, 0.15)
+## 6. セクション構成（推奨順）
 
-### Borders
-- **Primary Border**: 1px solid #E5E7EB
-- **Divider**: 1px solid #E5E7EB
-- **Focus Outline**: 2px solid #0052CC
+```
+1. Hero        → 価値提案・メインCTA・スタッツ
+2. Problems    → ターゲットの痛みポイント（4〜8項目）
+3. Services    → サービス一覧（3〜6項目）
+4. Strengths   → 選ばれる理由（3項目・数字で表現）
+5. CTA Banner  → キャンペーン・限定オファー
+6. Pricing     → 料金プラン（3プラン標準）
+7. Flow        → 依頼の流れ（5ステップ）
+8. Blog        → 関連記事（3本）
+9. FAQ         → よくある質問（5項目）
+10. Voices     → お客様の声（3件）
+11. Contact    → お問い合わせフォーム
+12. Company    → 会社概要
+13. Footer
+```
 
-### Background Layers
-- Layer 0 (Base): White (#FFFFFF)
-- Layer 1 (Sections): #F9FAFB
-- Layer 2 (Hover elements): Transparent with shadow
+---
 
-## 7. Do's and Don'ts
+## 7. SEO設計
+
+### メタタグ
+```html
+<title>[主要KW] ¥XX,XXX〜 [特徴]｜[ブランド名]（地域）</title>
+<meta name="description" content="[ブランド名]は[KW]を[価格]〜[特徴]で提供。[サービス一覧]。無料相談[レスポンス時間]受付中。">
+<link rel="canonical" href="[正規URL]">
+<meta property="og:locale" content="ja_JP">
+```
+
+### 構造化データ（必須）
+- `LocalBusiness` schema → 事業者情報・サービス・価格
+- `FAQPage` schema → FAQセクションの全Q&A
+- `WebSite` schema → ブランド名とURL
+
+### 見出し階層（厳守）
+```
+H1: 1個のみ。主要KWを含む
+H2: 各セクションタイトル
+H3: カード・アイテムタイトル
+H4: フロー・ステップタイトル
+```
+
+### 画像
+- `alt` 属性: 必ず内容を説明するテキスト
+- `loading="lazy"`: ファーストビュー以外の全画像
+- `width` / `height`: 全画像に指定（CLS防止）
+
+---
+
+## 8. エフェクト・アニメーション
+
+### スクロールアニメーション
+```css
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+/* stagger: nth-child(n) { transition-delay: n*0.07s } */
+```
+
+### ホバー（カード）
+```
+transform: translateY(-4px)
+box-shadow: 0 12px 40px rgba(0,0,0,0.14)
+transition: all 200ms ease-out
+```
+
+### ホバー（CTAボタン）
+```
+transform: scale(1.05)
+background: --accent-dark
+transition: all 200ms ease-out
+```
+
+### フローティングタグ
+```css
+animation: floatY 3.5s ease-in-out infinite;
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+```
+
+---
+
+## 9. アクセシビリティ
+
+| 項目 | 基準 |
+|------|------|
+| 最小フォント | 12px |
+| ボタン最小サイズ | 48px × 48px（タッチターゲット） |
+| コントラスト比 | 4.5:1以上（WCAG AA） |
+| フォーカス | `outline: 2px solid var(--primary); outline-offset: 3px` |
+| `aria-label` | ナビ・ボタン・アイコンに付与 |
+| `role` | nav / list / listitem / complementary 等 |
+| 画像 | alt必須、装飾画像は `aria-hidden="true"` |
+
+---
+
+## 10. Do's and Don'ts
 
 ### ✅ Do's
-- 大胆な数字表示（"80%"は大きく、Brand Blue で）
-- CTA はオレンジ（ページに 2-3 個まで）
-- 余白は 24px または 32px の倍数で（8px グリッド）
-- ホバーエフェクトは動きを付ける（200ms ease-out）
-- Icons はシンプル（Fill: Brand Blue or Success Green）
-- テキスト: 行間 1.75 以上（読みやすさ）
+- 大胆な数字表示（"80%"は56px・Brand Blue）
+- CTAはオレンジのみ（ページに2〜3個まで）
+- 余白は8pxグリッドの倍数（8 / 16 / 24 / 32 / 48 / 64 / 80）
+- セクション背景を white ↔ `#F9FAFB` で交互に変える
+- カードに subtle border（`#E5E7EB`）を必ず付ける
+- ホバーエフェクトは200ms ease-out
 
 ### ❌ Don'ts
-- グラデーション背景（白ベース、淡い色のみ）
-- 複数の原色を同時に使う（Brand Blue + Orange が基本）
-- 境界線なし（カードは subtle border で区別）
-- アニメーション過多（ホバーのみ）
-- 小文字 12px 未満（アクセシビリティ）
-- フォント混在（Noto Sans JP のみ）
-- ボタンサイズ 48px 未満（Material Design）
+- グラデーション背景（特に紫グラデ）→ 白ベースのみ
+- 同時に3色以上の原色を使う
+- `Inter` / `Arial` / `system-ui` → `Noto Sans JP` 一択
+- ボタン・リンクのタッチターゲット48px未満
+- フォント12px未満
+- アニメーション過多（ホバー + スクロールフェードのみ）
+- セクション間の背景色が同じ連続（視認性低下）
 
-## 8. Responsive Behavior
+---
 
-### Breakpoints
-- **Desktop**: 1200px 以上
-- **Tablet**: 768px - 1199px
-- **Mobile**: 767px 以下
+## 11. Claude Code へのプロンプト例
 
-### Mobile Adjustments
-- **H1**: 36px（デスクトップ 48px）
-- **H2**: 28px（デスクトップ 36px）
-- **Section Spacing**: 48px（デスクトップ 80px）
-- **Grid Columns**: 1 列（Desktop: 3 列）
-- **Padding**: 16px（Desktop: 24px）
+### 基本指示
+```
+DESIGN.md を読んで、[クライアント業種] の LP を制作してください。
+セクション順: Hero / Problems / Services / Strengths / Pricing / Flow / FAQ / Voices / Contact
+ターゲット: [ターゲット属性]
+主要KW: [KW1], [KW2], [KW3]
+CTAテキスト: [CTA文言]
+```
 
-### Mobile Grid
-Services / Why / Voices / Pricing: 1 列
-Gap: 20px
+### 色カスタマイズ
+```
+デフォルトの --primary: #0052CC を [業種に合った色] に変更してください。
+--accent: #FF6B35 は維持（CTAはオレンジ統一）
+```
 
-### Touch Target
-- 全ボタン・リンク: 最小 48px × 48px
-- タップ領域パディング: 12px 以上
-
-## 9. Agent Prompt Guide
-
-Claude Code に対する指示方法：
-
-基本指示
-DESIGN.md を読んで、ClawTech LP を改善してください。
-セクション: Hero / Problems / Services / Why / Pricing / Flow / Blog / FAQ / Voices / Contact
-
-色指定
-色はDESIGN.md の Color Palette を厳守してください。
-- H1・見出し: Brand Blue (#0052CC)
-- CTA ボタン: Accent Orange (#FF6B35)
-- 本文: Text Dark (#1F2937)
-- サポート: Text Light (#6B7280)
-
-タイポグラフィ指定
-フォントはすべて Noto Sans JP にしてください。
-見出しサイズ：H1 48px / H2 36px / H3 20px / H4 16px
-本文: 16px、行間 1.75
-
-CTA 指定
-CTA ボタンはオレンジ (#FF6B35)、高さ 56px、ホバーで scale(1.05)
-全ページで最大 3 個まで。
-
-グリッド指定
-Services / Why / Voices は 3 列グリッド (gap: 32px)
-Pricing は 3 列 + AI営業代行は別レイアウト
-
-スペーシング指定
-セクション上下マージン: 80px
-内部パディング: 24px
-カード間ギャップ: 24-32px
-余白はすべて 8px グリッド
-
-ホバーエフェクト
-カード: translateY(-4px) + shadow 増加
-ボタン: scale(1.05) + 色濃化
-リンク: underline + color 変更
-全て 200ms ease-out
-
-アクセシビリティ
-- 最小文字サイズ: 14px
-- ボタン最小サイズ: 48px
-- コントラスト比: 4.5:1 以上（WCAG AA）
-- Focus outline: 2px solid Brand Blue
-
+### SEO指定
+```
+title: [KW] ¥XX,XXX〜 [特徴]｜[ブランド名]（地域）
+description: 120文字以内、主要KWを自然に含める
+LocalBusiness + FAQPage の schema.org JSON-LD を必ず追加
+```
