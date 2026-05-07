@@ -3,21 +3,21 @@
 
   <url>
     <loc>https://clawtech6477.github.io/clawtech-lp/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://clawtech6477.github.io/clawtech-lp/sales/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://clawtech6477.github.io/clawtech-lp/blog/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -60,6 +60,13 @@
   <url>
     <loc>https://clawtech6477.github.io/clawtech-lp/blog/btob-sales-automation.html</loc>
     <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://clawtech6477.github.io/clawtech-lp/blog/btob-sales-strategy-ai-case-studies.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
