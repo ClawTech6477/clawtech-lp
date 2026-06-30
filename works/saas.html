@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FLOWBOARD — チームの仕事を、もっとスムーズに。</title>
+<meta name="description" content="FLOWBOARDはAI搭載のプロジェクト管理ツール。タスク・進捗・チームコミュニケーションを一元管理。無料から始められます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --indigo:#6366F1;
+  --indigo-dk:#4F46E5;
+  --pink:#EC4899;
+  --sky:#0EA5E9;
+  --green:#10B981;
+  --orange:#F59E0B;
+  --t-dark:#0F172A;
+  --t-gray:#475569;
+  --t-muted:#94A3B8;
+  --bg:#F8FAFF;
+  --bg-white:#FFFFFF;
+  --bd:#E2E8F0;
+  --r:10px;
+  --r-lg:16px;
+  --r-xl:24px;
+  --sh:0 4px 24px rgba(0,0,0,.08);
+  --sh-lg:0 16px 56px rgba(0,0,0,.12);
+  --tr:200ms ease;
+}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--t-dark);background:var(--bg-white);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;height:auto;display:block}
+
+.container{max-width:1160px;margin:0 auto;padding:0 24px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.tag-indigo{background:rgba(99,102,241,.1);color:var(--indigo);border:1px solid rgba(99,102,241,.2)}
+.section-title{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.2;margin-bottom:14px;letter-spacing:-.5px}
+.section-sub{font-size:15px;color:var(--t-gray);line-height:1.85;max-width:520px}
+.sec-head{text-align:center;margin-bottom:60px}
+.sec-head .section-sub{margin:0 auto}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;border:none;transition:all var(--tr);white-space:nowrap;min-height:50px}
+.btn-indigo{background:var(--indigo);color:#fff;box-shadow:0 4px 16px rgba(99,102,241,.35)}
+.btn-indigo:hover{background:var(--indigo-dk);transform:translateY(-2px);box-shadow:0 8px 28px rgba(99,102,241,.45)}
+.btn-outline{background:transparent;color:var(--indigo);border:2px solid var(--indigo)}
+.btn-outline:hover{background:var(--indigo);color:#fff;transform:translateY(-2px)}
+.btn-white{background:#fff;color:var(--t-dark);box-shadow:var(--sh)}
+.btn-white:hover{box-shadow:var(--sh-lg);transform:translateY(-2px)}
+.btn-lg{padding:18px 40px;font-size:16px;min-height:58px}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);transition:box-shadow var(--tr)}
+#nav.scrolled{box-shadow:var(--sh)}
+#nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Inter',sans-serif;font-size:20px;font-weight:800;color:var(--t-dark);display:flex;align-items:center;gap:8px}
+.nav-logo-mark{width:30px;height:30px;background:linear-gradient(135deg,var(--indigo),var(--pink));border-radius:8px;display:flex;align-items:center;justify-content:center}
+.nav-logo-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2.5}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--t-gray);padding:7px 12px;border-radius:8px;transition:all var(--tr)}
+.nav-links a:hover{color:var(--t-dark);background:#F1F5F9}
+.nav-cta-wrap{display:flex;align-items:center;gap:10px}
+.nav-login{font-size:14px;font-weight:600;color:var(--t-gray)}
+.nav-login:hover{color:var(--t-dark)}
+.nav-toggle{display:none;background:none;border:1px solid var(--bd);padding:7px;border-radius:8px;cursor:pointer}
+.nav-toggle svg{stroke:var(--t-dark);width:20px;height:20px}
+.nav-mob{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:12px 16px 20px}
+.nav-mob.open{display:block}
+.nav-mob a{display:block;padding:11px 14px;font-size:15px;color:var(--t-dark);border-radius:var(--r);font-weight:500;transition:all var(--tr)}
+.nav-mob a:hover{background:#F8FAFF}
+
+/* HERO */
+#hero{padding:140px 0 80px;position:relative;overflow:hidden}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(99,102,241,.06) 0%,rgba(236,72,153,.04) 50%,rgba(14,165,233,.06) 100%);pointer-events:none}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;animation:blob-drift 10s ease-in-out infinite alternate}
+.blob-1{width:500px;height:500px;background:rgba(99,102,241,.12);top:-100px;right:-50px;animation-duration:12s}
+.blob-2{width:350px;height:350px;background:rgba(236,72,153,.08);bottom:-80px;left:-50px;animation-duration:16s;animation-delay:-5s}
+@keyframes blob-drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,20px) scale(1.06)}}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.eyebrow-text{font-size:12px;font-weight:700;color:var(--indigo);letter-spacing:2px;text-transform:uppercase}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--indigo)}
+#hero h1{font-size:clamp(32px,4.5vw,52px);font-weight:900;line-height:1.18;margin-bottom:18px;letter-spacing:-.8px}
+#hero h1 .hl{background:linear-gradient(135deg,var(--indigo),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16px;color:var(--t-gray);line-height:1.9;margin-bottom:36px;max-width:460px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.hero-trust{display:flex;align-items:center;gap:16px}
+.trust-text{font-size:12px;color:var(--t-muted);font-weight:500}
+.trust-logos{display:flex;gap:14px}
+.trust-badge{font-size:11px;font-weight:700;color:var(--t-gray);background:#F1F5F9;padding:5px 12px;border-radius:50px;border:1px solid var(--bd)}
+
+/* Mock UI Card */
+.hero-ui{position:relative}
+.ui-card{background:#fff;border-radius:var(--r-xl);border:1px solid var(--bd);box-shadow:0 24px 64px rgba(0,0,0,.12);overflow:hidden;animation:ui-float 4s ease-in-out infinite}
+@keyframes ui-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.ui-topbar{background:#F8FAFF;border-bottom:1px solid var(--bd);padding:12px 16px;display:flex;align-items:center;gap:10px}
+.ui-dots{display:flex;gap:5px}
+.ui-dots span{width:9px;height:9px;border-radius:50%}
+.ui-dots span:nth-child(1){background:#EF4444}
+.ui-dots span:nth-child(2){background:#F59E0B}
+.ui-dots span:nth-child(3){background:#10B981}
+.ui-title-bar{font-size:12px;color:var(--t-muted);font-family:'Inter',sans-serif;margin-left:8px}
+.ui-body{padding:20px}
+.ui-proj-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.ui-proj-name{font-size:14px;font-weight:800;color:var(--t-dark)}
+.ui-status{display:flex;gap:6px}
+.status-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.status-dot.green{background:var(--green)}
+.status-dot.orange{background:var(--orange)}
+.status-dot.indigo{background:var(--indigo)}
+.ui-task-list{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.ui-task{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#F8FAFF;border-radius:var(--r);border:1px solid var(--bd)}
+.ui-task-check{width:18px;height:18px;border-radius:5px;border:2px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ui-task-check.done{background:var(--green);border-color:var(--green)}
+.ui-task-check.done i{font-size:9px;color:#fff}
+.ui-task-text{font-size:12px;color:var(--t-gray);flex:1}
+.ui-task-text.done{text-decoration:line-through;color:var(--t-muted)}
+.ui-avatar-stack{display:flex;gap:-4px}
+.ui-avatar{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--pink));border:2px solid #fff;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;font-weight:700;margin-left:-6px}
+.ui-avatar:first-child{margin-left:0}
+.ui-progress-section{margin-bottom:12px}
+.ui-prog-label{display:flex;justify-content:space-between;font-size:11px;color:var(--t-muted);margin-bottom:5px}
+.ui-prog-track{height:5px;background:#F1F5F9;border-radius:50px;overflow:hidden}
+.ui-prog-fill{height:100%;border-radius:50px;background:linear-gradient(90deg,var(--indigo),var(--pink))}
+.ui-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ui-stat{text-align:center;padding:10px 8px;background:#F8FAFF;border-radius:var(--r);border:1px solid var(--bd)}
+.ui-stat .n{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:var(--indigo)}
+.ui-stat .l{font-size:10px;color:var(--t-muted)}
+
+/* Floating notification */
+.notif{position:absolute;background:#fff;border-radius:var(--r-lg);padding:12px 16px;box-shadow:var(--sh-lg);border:1px solid var(--bd);display:flex;align-items:center;gap:10px;animation:notif-float 3s ease-in-out infinite}
+@keyframes notif-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.notif-1{top:-16px;right:-20px;animation-delay:0s}
+.notif-2{bottom:-12px;left:-16px;animation-delay:1.5s}
+.notif-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.notif-icon.green{background:rgba(16,185,129,.12)}
+.notif-icon.green i{font-size:12px;color:var(--green)}
+.notif-icon.indigo{background:rgba(99,102,241,.12)}
+.notif-icon.indigo i{font-size:12px;color:var(--indigo)}
+.notif-text{font-size:11px;font-weight:700;color:var(--t-dark)}
+.notif-sub{font-size:10px;color:var(--t-muted)}
+
+/* LOGOS STRIP */
+#logos{background:#F8FAFF;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:32px 0}
+.logos-label{text-align:center;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--t-muted);text-transform:uppercase;margin-bottom:24px}
+.logos-row{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap;opacity:.45}
+.logo-item{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:var(--t-dark);letter-spacing:-.5px}
+
+/* PROBLEMS */
+#problems{padding:96px 0;background:#fff}
+.problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prob-card{background:#F8FAFF;border:1px solid var(--bd);border-radius:var(--r-lg);padding:28px 24px;transition:all var(--tr)}
+.prob-card:hover{border-color:rgba(99,102,241,.25);box-shadow:0 8px 24px rgba(99,102,241,.08);transform:translateY(-3px)}
+.prob-icon{width:44px;height:44px;border-radius:12px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.prob-icon i{font-size:18px;color:var(--indigo)}
+.prob-card h3{font-size:15px;font-weight:800;color:var(--t-dark);margin-bottom:8px}
+.prob-card p{font-size:13px;color:var(--t-gray);line-height:1.7}
+
+/* FEATURES */
+#features{padding:96px 0;background:var(--bg)}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.feat-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r-xl);padding:36px 28px;transition:all var(--tr);position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--indigo),var(--pink))}
+.feat-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px)}
+.feat-num{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;color:var(--t-muted);letter-spacing:2px;margin-bottom:16px}
+.feat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.feat-icon.a{background:rgba(99,102,241,.1)} .feat-icon.a i{color:var(--indigo)}
+.feat-icon.b{background:rgba(236,72,153,.1)} .feat-icon.b i{color:var(--pink)}
+.feat-icon.c{background:rgba(14,165,233,.1)} .feat-icon.c i{color:var(--sky)}
+.feat-icon i{font-size:22px}
+.feat-card h3{font-size:18px;font-weight:800;margin-bottom:10px}
+.feat-card p{font-size:14px;color:var(--t-gray);line-height:1.8}
+
+/* STATS */
+#stats{background:linear-gradient(135deg,var(--indigo) 0%,#4F46E5 50%,#7C3AED 100%);padding:80px 0}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{text-align:center;padding:20px 16px;border-right:1px solid rgba(255,255,255,.15)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Inter',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;color:#fff;line-height:1;margin-bottom:6px;display:flex;align-items:baseline;justify-content:center;gap:2px}
+.stat-sup{font-size:24px;color:rgba(255,255,255,.7)}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,.65);font-weight:500}
+
+/* HOW IT WORKS */
+#how{padding:96px 0;background:#fff}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.steps-grid::before{content:'';position:absolute;top:28px;left:15%;width:70%;height:2px;background:linear-gradient(90deg,var(--indigo),var(--pink));opacity:.2;z-index:0}
+.step-item{text-align:center;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--pink));color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;box-shadow:0 8px 24px rgba(99,102,241,.3)}
+.step-item h4{font-size:15px;font-weight:800;margin-bottom:8px}
+.step-item p{font-size:13px;color:var(--t-gray);line-height:1.7}
+
+/* PRICING */
+#pricing{padding:96px 0;background:var(--bg)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.price-card{background:#fff;border:1.5px solid var(--bd);border-radius:var(--r-xl);padding:36px 28px;transition:all var(--tr);position:relative}
+.price-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.price-card.popular{border:2px solid var(--indigo);padding-top:58px}
+.price-card.popular::before{content:'✦ 最もお得';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--indigo),var(--pink));color:#fff;padding:7px 24px;border-radius:0 0 12px 12px;font-size:11px;font-weight:800;white-space:nowrap}
+.pc-plan{font-size:12px;font-weight:700;color:var(--t-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.pc-price{font-family:'Inter',sans-serif;font-size:48px;font-weight:800;color:var(--t-dark);line-height:1;margin-bottom:4px}
+.pc-price small{font-size:14px;color:var(--t-muted);font-family:'Noto Sans JP',sans-serif;font-weight:400}
+.pc-desc{font-size:13px;color:var(--t-gray);margin-bottom:24px}
+.pc-ul{margin-bottom:28px}
+.pc-ul li{font-size:13px;color:var(--t-gray);padding:9px 0;border-bottom:1px solid #F1F5F9;display:flex;align-items:center;gap:8px}
+.pc-ul li:last-child{border-bottom:none}
+.pc-ul li i{font-size:13px;color:var(--green)}
+
+/* TESTIMONIALS */
+#voices{padding:96px 0;background:#fff}
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice-card{background:#F8FAFF;border:1px solid var(--bd);border-radius:var(--r-xl);padding:28px;transition:all var(--tr)}
+.voice-card:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.voice-stars{display:flex;gap:3px;margin-bottom:14px}
+.voice-stars i{font-size:13px;color:#F59E0B}
+.voice-quote{font-size:14px;color:var(--t-dark);line-height:1.85;margin-bottom:18px;font-weight:500}
+.voice-author{display:flex;align-items:center;gap:12px}
+.voice-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--indigo),var(--pink));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;color:#fff;flex-shrink:0}
+.voice-name{font-size:13px;font-weight:700;color:var(--t-dark)}
+.voice-role{font-size:11px;color:var(--t-muted)}
+
+/* FAQ */
+#faq{padding:96px 0;background:var(--bg)}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{background:#fff;border-radius:var(--r-lg);margin-bottom:10px;border:1px solid var(--bd);overflow:hidden;transition:all var(--tr)}
+.faq-item:hover{border-color:rgba(99,102,241,.2)}
+.faq-item details summary{display:flex;align-items:center;gap:12px;padding:18px 22px;cursor:pointer;list-style:none;font-size:15px;font-weight:700}
+.faq-item details summary::-webkit-details-marker{display:none}
+.faq-q-badge{width:26px;height:26px;border-radius:8px;background:rgba(99,102,241,.1);color:var(--indigo);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0}
+.faq-item details summary::after{content:'';width:12px;height:12px;border-right:2px solid var(--indigo);border-bottom:2px solid var(--indigo);transform:rotate(45deg);margin-left:auto;flex-shrink:0;transition:transform var(--tr);margin-top:-5px}
+.faq-item details[open] summary::after{transform:rotate(-135deg);margin-top:3px}
+.faq-answer{font-size:14px;color:var(--t-gray);line-height:1.9;padding:0 22px 18px 60px}
+
+/* FINAL CTA */
+#cta-final{padding:96px 0;background:linear-gradient(135deg,#4338CA 0%,var(--indigo) 40%,#7C3AED 100%);position:relative;overflow:hidden;text-align:center}
+#cta-final::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:20px 20px}
+#cta-final .container{position:relative;z-index:1}
+.cta-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}
+#cta-final h2{font-size:clamp(26px,4vw,44px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:16px}
+#cta-final .sub{font-size:15px;color:rgba(255,255,255,.72);max-width:500px;margin:0 auto 36px;line-height:1.85}
+.cta-badges{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.cta-badge{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,.9)}
+.cta-badge i{color:#6EE7B7;font-size:14px}
+.cta-note{font-size:12px;color:rgba(255,255,255,.45);margin-top:16px}
+
+/* FOOTER */
+footer{background:#0F172A;padding:56px 0 40px;color:rgba(255,255,255,.45)}
+.footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .nav-logo{color:rgba(255,255,255,.85);margin-bottom:14px}
+.footer-tagline{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);padding:4px 0;transition:color var(--tr)}
+.footer-col a:hover{color:rgba(255,255,255,.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;text-align:center;font-size:12px}
+
+/* Responsive */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-sub,.hero-btns,.hero-trust{margin-left:auto;margin-right:auto;justify-content:center}
+  .ui-card{max-width:420px;margin:0 auto}
+  .notif{display:none}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item{border-bottom:1px solid rgba(255,255,255,.1)}
+  .stat-item:nth-child(2){border-right:none}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  #hero{padding:100px 0 56px}
+  .ui-card{display:none}
+  .problems-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid::before{display:none}
+  .price-grid{grid-template-columns:1fr}
+  .voices-grid{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .nav-links,.nav-cta-wrap .btn{display:none}
+  .nav-toggle{display:block}
+  .cta-badges{flex-direction:column;align-items:center}
+}
+
+/* Scroll reveal via IntersectionObserver */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- Mobile CTA bar -->
+<div style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;padding:12px 16px;background:#fff;border-top:1px solid var(--bd);box-shadow:0 -4px 20px rgba(0,0,0,.1)" id="mob-bar">
+  <a href="#cta-final" class="btn btn-indigo" style="width:100%;justify-content:center">無料で始める（クレジットカード不要）</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark"><svg viewBox="0 0 20 20"><path d="M3 10l5 5 9-9"/></svg></div>
+      FLOWBOARD
+    </a>
+    <div class="nav-links">
+      <a href="#features">機能</a>
+      <a href="#how">使い方</a>
+      <a href="#pricing">料金</a>
+      <a href="#voices">事例</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta-wrap">
+      <a href="#" class="nav-login" style="font-size:14px;font-weight:600;color:var(--t-gray);margin-right:6px">ログイン</a>
+      <a href="#cta-final" class="btn btn-indigo" style="padding:10px 22px;font-size:14px;min-height:40px">無料で始める</a>
+      <button class="nav-toggle" onclick="document.getElementById('nav-mob').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mob" id="nav-mob">
+    <a href="#features" onclick="this.closest('.nav-mob').classList.remove('open')">機能</a>
+    <a href="#how" onclick="this.closest('.nav-mob').classList.remove('open')">使い方</a>
+    <a href="#pricing" onclick="this.closest('.nav-mob').classList.remove('open')">料金</a>
+    <a href="#voices" onclick="this.closest('.nav-mob').classList.remove('open')">導入事例</a>
+    <a href="#faq" onclick="this.closest('.nav-mob').classList.remove('open')">よくある質問</a>
+    <a href="#cta-final" onclick="this.closest('.nav-mob').classList.remove('open')" style="background:var(--indigo);color:#fff;text-align:center;border-radius:50px;margin-top:8px;font-weight:700">無料で始める</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grad" aria-hidden="true"></div>
+  <div class="hero-blob blob-1" aria-hidden="true"></div>
+  <div class="hero-blob blob-2" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">AI搭載プロジェクト管理ツール</span>
+        </div>
+        <h1>チームの仕事を、<br><span class="hl">もっとスムーズに。</span></h1>
+        <p class="hero-sub">タスク管理・進捗共有・コミュニケーション—すべてをひとつの画面で。FLOWBOARDで、チームの生産性を平均<strong>40%向上</strong>させましょう。</p>
+        <div class="hero-btns">
+          <a href="#cta-final" class="btn btn-indigo btn-lg"><i class="fa-solid fa-bolt"></i>無料で始める（14日間トライアル）</a>
+          <a href="#features" class="btn btn-outline">機能を見る →</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-text">導入企業</span>
+          <div class="trust-logos">
+            <span class="trust-badge">クレジットカード不要</span>
+            <span class="trust-badge">即日利用開始</span>
+            <span class="trust-badge">無料プランあり</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-ui reveal reveal-delay-2">
+        <div style="position:relative">
+          <div class="notif notif-1">
+            <div class="notif-icon indigo"><i class="fa-solid fa-check"></i></div>
+            <div><div class="notif-text">タスク完了 🎉</div><div class="notif-sub">田中さんが「LP修正」を完了</div></div>
+          </div>
+          <div class="ui-card">
+            <div class="ui-topbar">
+              <div class="ui-dots"><span></span><span></span><span></span></div>
+              <span class="ui-title-bar">FLOWBOARD — Webリニューアルプロジェクト</span>
+            </div>
+            <div class="ui-body">
+              <div class="ui-proj-header">
+                <span class="ui-proj-name">🚀 Webサイトリニューアル</span>
+                <div class="ui-status">
+                  <span class="status-dot green"></span>
+                  <span class="status-dot orange"></span>
+                  <span class="status-dot indigo"></span>
+                </div>
+              </div>
+              <div class="ui-task-list">
+                <div class="ui-task">
+                  <div class="ui-task-check done"><i class="fa-solid fa-check"></i></div>
+                  <span class="ui-task-text done">デザインカンプ作成</span>
+                  <div class="ui-avatar-stack">
+                    <div class="ui-avatar" style="background:linear-gradient(135deg,#6366F1,#EC4899)">田</div>
+                  </div>
+                </div>
+                <div class="ui-task">
+                  <div class="ui-task-check done"><i class="fa-solid fa-check"></i></div>
+                  <span class="ui-task-text done">コーディング（PC）</span>
+                  <div class="ui-avatar-stack">
+                    <div class="ui-avatar" style="background:linear-gradient(135deg,#0EA5E9,#6366F1)">山</div>
+                  </div>
+                </div>
+                <div class="ui-task">
+                  <div class="ui-task-check" style="border-color:var(--orange)"></div>
+                  <span class="ui-task-text" style="font-weight:600">レスポンシブ対応 <span style="font-size:10px;background:rgba(245,158,11,.1);color:var(--orange);padding:2px 6px;border-radius:4px;font-weight:700">作業中</span></span>
+                  <div class="ui-avatar-stack">
+                    <div class="ui-avatar" style="background:linear-gradient(135deg,#10B981,#0EA5E9)">鈴</div>
+                  </div>
+                </div>
+                <div class="ui-task">
+                  <div class="ui-task-check"></div>
+                  <span class="ui-task-text">クライアントレビュー・納品</span>
+                  <div class="ui-avatar-stack">
+                    <div class="ui-avatar" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">佐</div>
+                    <div class="ui-avatar" style="background:linear-gradient(135deg,#6366F1,#10B981)">中</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-progress-section">
+                <div class="ui-prog-label"><span>進捗状況</span><span style="font-weight:700;color:var(--indigo)">65%</span></div>
+                <div class="ui-prog-track"><div class="ui-prog-fill" style="width:65%"></div></div>
+              </div>
+              <div class="ui-stats-row">
+                <div class="ui-stat"><div class="n">4</div><div class="l">タスク完了</div></div>
+                <div class="ui-stat"><div class="n" style="color:var(--orange)">2</div><div class="l">進行中</div></div>
+                <div class="ui-stat"><div class="n" style="color:var(--green)">3</div><div class="l">メンバー</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="notif notif-2">
+            <div class="notif-icon green"><i class="fa-solid fa-comment"></i></div>
+            <div><div class="notif-text">コメントが届いています</div><div class="notif-sub">山田さんより「確認お願いします」</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS STRIP -->
+<div id="logos">
+  <p class="logos-label">多くの企業チームが導入中</p>
+  <div class="logos-row">
+    <div class="logo-item">NEXTECH</div>
+    <div class="logo-item">GLOBAL·CO</div>
+    <div class="logo-item">BRIDGE</div>
+    <div class="logo-item">PRISM</div>
+    <div class="logo-item">VERTEX·INC</div>
+    <div class="logo-item">LINK·CORP</div>
+  </div>
+</div>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">Problem</div>
+      <h2 class="section-title">こんな課題、抱えていませんか？</h2>
+      <p class="section-sub">チームの規模が大きくなるほど、情報管理の複雑さは増します</p>
+    </div>
+    <div class="problems-grid">
+      <div class="prob-card reveal"><div class="prob-icon"><i class="fa-solid fa-envelope-open"></i></div><h3>メールが埋もれて、やり取りが追えない</h3><p>重要な連絡が埋もれ、対応漏れが発生。誰が何を確認したか不明。</p></div>
+      <div class="prob-card reveal reveal-delay-1"><div class="prob-icon"><i class="fa-solid fa-chart-bar"></i></div><h3>進捗確認のたびにミーティングが必要</h3><p>「今どうなってる？」の確認に時間をとられ、本来の仕事が進まない。</p></div>
+      <div class="prob-card reveal reveal-delay-2"><div class="prob-icon"><i class="fa-solid fa-file-excel"></i></div><h3>Excelの管理ファイルが複数存在する</h3><p>誰かが古いファイルで作業してしまい、データの食い違いが多発。</p></div>
+      <div class="prob-card reveal"><div class="prob-icon"><i class="fa-solid fa-users"></i></div><h3>リモートチームとの連携が難しい</h3><p>在宅・オフィス混在で、誰が何をしているか把握できない。</p></div>
+      <div class="prob-card reveal reveal-delay-1"><div class="prob-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>期限切れタスクが気づいたら山積みに</h3><p>担当者が不明なタスクが放置され、デッドラインを過ぎても誰も動かない。</p></div>
+      <div class="prob-card reveal reveal-delay-2"><div class="prob-icon"><i class="fa-solid fa-robot"></i></div><h3>作業の自動化・効率化が進まない</h3><p>ルーティン作業に追われ、クリエイティブな仕事に集中できない。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">Features</div>
+      <h2 class="section-title">FLOWBOARDが選ばれる3つの理由</h2>
+      <p class="section-sub">シンプルなのに、チームに必要なものがすべて揃っています</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-num">01</div>
+        <div class="feat-icon a"><i class="fa-solid fa-eye"></i></div>
+        <h3>チームの全タスクをリアルタイムで可視化</h3>
+        <p>誰が何をしているか、一目でわかるボード管理。「確認依頼」「進行中」「完了」のステータスを秒速で把握。メンバー全員が同じ情報を共有できます。</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-num">02</div>
+        <div class="feat-icon b"><i class="fa-solid fa-sparkles"></i></div>
+        <h3>AI補助で、タスク漏れ・遅延を自動検知</h3>
+        <p>AIがスケジュールと進捗を分析し、遅延リスクのあるタスクを事前に警告。担当者へ自動リマインドを送信し、抜け漏れをゼロに近づけます。</p>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-num">03</div>
+        <div class="feat-icon c"><i class="fa-solid fa-plug"></i></div>
+        <h3>Slack・Google・Notionと即連携</h3>
+        <p>使い慣れたツールとシームレスに連携。新しいツールに乗り換えるのではなく、既存の環境をそのままパワーアップ。導入コストは最小限です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item"><div class="stat-num"><span class="count-num" data-target="12000">0</span><span class="stat-sup">+</span></div><div class="stat-lbl">導入チーム数</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="count-num" data-target="40">0</span><span class="stat-sup">%</span></div><div class="stat-lbl">平均生産性向上</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="count-num" data-target="98">0</span><span class="stat-sup">%</span></div><div class="stat-lbl">継続利用率</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="count-num" data-target="4.9">0</span></div><div class="stat-lbl">App Store評価</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">How it works</div>
+      <h2 class="section-title">最短5分で、チーム導入完了</h2>
+      <p class="section-sub">複雑な設定は不要。招待リンクを送るだけで、すぐに使い始められます</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item reveal"><div class="step-num">1</div><h4>アカウント作成（無料）</h4><p>メールアドレスだけで即日開始。クレジットカード不要、14日間の全機能トライアル。</p></div>
+      <div class="step-item reveal reveal-delay-1"><div class="step-num">2</div><h4>プロジェクトを作成</h4><p>テンプレートから選択するか、ゼロから作成。ドラッグ＆ドロップでカンタン設定。</p></div>
+      <div class="step-item reveal reveal-delay-2"><div class="step-num">3</div><h4>チームメンバーを招待</h4><p>メールアドレスを入力するだけ。リンクを送れば最大5秒で参加完了。</p></div>
+      <div class="step-item reveal reveal-delay-3"><div class="step-num">4</div><h4>チームで動き出す</h4><p>タスク割り当て・期限設定・進捗管理—すべてリアルタイムで同期されます。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">Pricing</div>
+      <h2 class="section-title">チームの規模に合わせた料金プラン</h2>
+      <p class="section-sub">すべてのプランで14日間の無料トライアルを提供しています</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <div class="pc-plan">Free</div>
+        <div class="pc-price">¥0<small>/月</small></div>
+        <div class="pc-desc">小規模チームの最初の一歩に</div>
+        <ul class="pc-ul">
+          <li><i class="fa-solid fa-check"></i>最大3名まで利用可能</li>
+          <li><i class="fa-solid fa-check"></i>プロジェクト数：5件まで</li>
+          <li><i class="fa-solid fa-check"></i>タスク管理・カンバンボード</li>
+          <li><i class="fa-solid fa-check"></i>コメント・ファイル共有</li>
+          <li style="opacity:.4"><i class="fa-solid fa-times" style="color:var(--t-muted)"></i>AI補助機能</li>
+        </ul>
+        <a href="#cta-final" class="btn btn-outline" style="width:100%;justify-content:center">無料で始める</a>
+      </div>
+      <div class="price-card popular reveal reveal-delay-1">
+        <div class="pc-plan">Pro</div>
+        <div class="pc-price">¥1,980<small>/人・月</small></div>
+        <div class="pc-desc">成長中のチームに最適な全機能セット</div>
+        <ul class="pc-ul">
+          <li><i class="fa-solid fa-check"></i>メンバー数：無制限</li>
+          <li><i class="fa-solid fa-check"></i>プロジェクト数：無制限</li>
+          <li><i class="fa-solid fa-check"></i>AI遅延検知・自動リマインド</li>
+          <li><i class="fa-solid fa-check"></i>Slack / Google Workspace連携</li>
+          <li><i class="fa-solid fa-check"></i>ガントチャート・レポート機能</li>
+        </ul>
+        <a href="#cta-final" class="btn btn-indigo" style="width:100%;justify-content:center">14日間無料で試す</a>
+      </div>
+      <div class="price-card reveal reveal-delay-2">
+        <div class="pc-plan">Enterprise</div>
+        <div class="pc-price">要<small>お見積もり</small></div>
+        <div class="pc-desc">大規模組織・セキュリティ要件に対応</div>
+        <ul class="pc-ul">
+          <li><i class="fa-solid fa-check"></i>Proプランの全機能</li>
+          <li><i class="fa-solid fa-check"></i>SAML SSO / 2要素認証</li>
+          <li><i class="fa-solid fa-check"></i>専任サポートマネージャー</li>
+          <li><i class="fa-solid fa-check"></i>カスタムAPI連携</li>
+          <li><i class="fa-solid fa-check"></i>SLA保証・監査ログ</li>
+        </ul>
+        <a href="#cta-final" class="btn btn-outline" style="width:100%;justify-content:center">営業に相談する</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="voices">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">Voices</div>
+      <h2 class="section-title">導入チームのリアルな声</h2>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card reveal">
+        <div class="voice-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="voice-quote">「導入前は週3回の進捗会議が必要でしたが、今は週1回に減りました。みんなが自律的に動けるようになったと感じています。」</p>
+        <div class="voice-author"><div class="voice-av">田</div><div><div class="voice-name">田中 雄一様</div><div class="voice-role">Web制作会社 / チームリーダー（8名）</div></div></div>
+      </div>
+      <div class="voice-card reveal reveal-delay-1">
+        <div class="voice-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p class="voice-quote">「他のツールは機能が多すぎて使いこなせませんでしたが、FLOWBOARDは直感的で、エンジニア以外のメンバーもすぐ使えました。」</p>
+        <div class="voice-author"><div class="voice-av" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">山</div><div><div class="voice-name">山本 咲様</div><div class="voice-role">マーケティング会社 / PM（15名）</div></div></div>
+      </div>
+      <div class="voice-card reveal reveal-delay-2">
+        <div class="voice-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+        <p class="voice-quote">「リモートワーク導入後、チームの一体感が失われていましたが、FLOWBOARDで誰が何をしているか見えるようになり、コミュニケーションが改善されました。」</p>
+        <div class="voice-author"><div class="voice-av" style="background:linear-gradient(135deg,#10B981,#0EA5E9)">鈴</div><div><div class="voice-name">鈴木 浩二様</div><div class="voice-role">IT企業 / 部長（32名）</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="tag tag-indigo" style="margin-bottom:12px">FAQ</div>
+      <h2 class="section-title">よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><details><summary><span class="faq-q-badge">Q</span>無料プランと有料プランの違いは？</summary><div class="faq-answer">無料プランは3名まで・5プロジェクトまでの制限があります。Proプランではメンバー数・プロジェクト数が無制限になり、AI補助機能・外部ツール連携・ガントチャートなどの上位機能が使用できます。</div></details></div>
+      <div class="faq-item reveal"><details><summary><span class="faq-q-badge">Q</span>無料トライアル中にクレジットカードは必要ですか？</summary><div class="faq-answer">いいえ、14日間のトライアル期間中はクレジットカードの登録は不要です。トライアル終了後に有料プランへ移行される場合にのみ、お支払い情報のご登録をお願いしています。</div></details></div>
+      <div class="faq-item reveal"><details><summary><span class="faq-q-badge">Q</span>既存のSlack・Notionからのデータ移行はできますか？</summary><div class="faq-answer">CSVインポートまたはAPIを通じて、既存のタスク・プロジェクトデータをFLOWBOARDへインポートすることが可能です。Enterpriseプランではデータ移行サポートも提供しています。</div></details></div>
+      <div class="faq-item reveal"><details><summary><span class="faq-q-badge">Q</span>セキュリティ面で安心して使えますか？</summary><div class="faq-answer">SSL暗号化通信・2段階認証に対応しており、データはISO27001認証取得済みのデータセンターで管理されています。Enterpriseプランではより高度なセキュリティ設定も提供しています。</div></details></div>
+      <div class="faq-item reveal"><details><summary><span class="faq-q-badge">Q</span>解約はいつでもできますか？</summary><div class="faq-answer">はい、いつでも解約可能です。契約縛りや違約金は一切ありません。解約後もトライアル期間内はすべての機能を引き続きご利用いただけます。</div></details></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta-final">
+  <div class="container">
+    <p class="cta-eyebrow">Get started today</p>
+    <h2>今すぐチームの生産性を<br>引き上げましょう</h2>
+    <p class="sub">14日間の無料トライアル。クレジットカード不要。5分でセットアップ完了。チームの全員が、明日から変わります。</p>
+    <div class="cta-badges">
+      <div class="cta-badge"><i class="fa-solid fa-circle-check"></i>クレジットカード不要</div>
+      <div class="cta-badge"><i class="fa-solid fa-circle-check"></i>14日間全機能無料</div>
+      <div class="cta-badge"><i class="fa-solid fa-circle-check"></i>いつでもキャンセル可</div>
+      <div class="cta-badge"><i class="fa-solid fa-circle-check"></i>5分でセットアップ</div>
+    </div>
+    <a href="#" class="btn btn-white btn-lg"><i class="fa-solid fa-bolt" style="color:var(--indigo)"></i>無料トライアルを始める</a>
+    <p class="cta-note">※ Pro / Enterpriseプランへのアップグレードは、トライアル終了後にご選択いただけます</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo" style="color:rgba(255,255,255,.85);margin-bottom:14px">
+          <div class="nav-logo-mark"><svg viewBox="0 0 20 20"><path d="M3 10l5 5 9-9"/></svg></div>
+          FLOWBOARD
+        </div>
+        <p class="footer-tagline">チームの仕事を、もっとスムーズに。</p>
+      </div>
+      <div class="footer-col">
+        <h4>プロダクト</h4>
+        <a href="#">機能一覧</a>
+        <a href="#">料金プラン</a>
+        <a href="#">導入事例</a>
+        <a href="#">アップデート情報</a>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <a href="#">ヘルプセンター</a>
+        <a href="#">お問い合わせ</a>
+        <a href="#">セキュリティ</a>
+        <a href="#">プライバシーポリシー</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 FLOWBOARD Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// Count-up
+function countUp(el, target, dur) {
+  const start = performance.now();
+  const isFloat = !Number.isInteger(target);
+  const update = now => {
+    const t = Math.min((now - start)/dur, 1);
+    const eased = 1 - Math.pow(1-t, 3);
+    const val = eased * target;
+    el.textContent = isFloat ? val.toFixed(1) : Math.floor(val);
+    if(t < 1) requestAnimationFrame(update);
+    else el.textContent = isFloat ? target.toFixed(1) : target;
+  };
+  requestAnimationFrame(update);
+}
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting && !e.target.dataset.done){
+      e.target.dataset.done='1';
+      const t = parseFloat(e.target.dataset.target);
+      countUp(e.target, t, 1800);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.count-num').forEach(el => cntObs.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+}, {passive:true});
+
+// Mobile CTA bar
+const mobBar = document.getElementById('mob-bar');
+if(window.innerWidth <= 768) mobBar.style.display = 'block';
+</script>
+</body>
+</html>

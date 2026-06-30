@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIÈRE（ルミエール）| 自然派ラグジュアリースキンケア</title>
+<meta name="description" content="大地の恵みを、科学の力で。植物の本質的な力を余すことなく引き出した、自然派スキンケアブランド LUMIÈRE（ルミエール）。初回限定トライアルセット¥2,980。">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome 6.5.0 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+/* ============================================
+   RESET & BASE
+============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:      #FDFAF5;
+  --cream-alt:  #F7F0E6;
+  --amber:      #C4956A;
+  --amber-dark: #8B5E3C;
+  --amber-light:#EDD9C3;
+  --text-dark:  #2C1B0E;
+  --text-muted: #7A5C44;
+  --green:      #6B7C5E;
+  --white:      #FFFFFF;
+  --shadow-sm:  0 2px 12px rgba(196,149,106,0.10);
+  --shadow-md:  0 8px 32px rgba(196,149,106,0.14);
+  --shadow-lg:  0 20px 60px rgba(196,149,106,0.16);
+  --radius-sm:  12px;
+  --radius-md:  20px;
+  --radius-lg:  32px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a  { text-decoration: none; color: inherit; }
+
+/* ============================================
+   TYPOGRAPHY
+============================================ */
+.font-playfair   { font-family: 'Playfair Display', serif; }
+.font-garamond   { font-family: 'EB Garamond', serif; }
+
+h1,h2,h3 { line-height: 1.3; }
+
+.section-label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* ============================================
+   BUTTONS
+============================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--amber);
+  color: var(--white);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 20px rgba(196,149,106,0.35);
+}
+.btn-primary:hover {
+  background: var(--amber-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(139,94,60,0.35);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--amber);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.65rem 1.6rem;
+  border-radius: 50px;
+  border: 1.5px solid var(--amber);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+}
+.btn-outline:hover {
+  background: var(--amber);
+  color: var(--white);
+}
+
+.btn-lg {
+  font-size: 1.05rem;
+  padding: 1.1rem 3rem;
+}
+
+/* ============================================
+   LAYOUT
+============================================ */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: 90px 0; }
+
+/* ============================================
+   DECORATIVE
+============================================ */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ============================================
+   NAVIGATION
+============================================ */
+#navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: all 0.4s ease;
+}
+#navbar.scrolled {
+  background: rgba(253,250,245,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(196,149,106,0.10);
+  padding: 0.8rem 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+}
+.nav-logo span {
+  color: var(--amber);
+  display: block;
+  font-family: 'EB Garamond', serif;
+  font-style: normal;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: -4px;
+  font-weight: 400;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  letter-spacing: 0.05em;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--amber); }
+.nav-cta { margin-left: 1rem; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ============================================
+   HERO
+============================================ */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=1920&q=80');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(253,250,245,0.88) 0%,
+    rgba(247,240,230,0.72) 45%,
+    rgba(237,217,195,0.30) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: 1px solid var(--amber-light);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-family: 'EB Garamond', serif;
+  font-size: 0.78rem;
+  color: var(--amber);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.8rem;
+  box-shadow: var(--shadow-sm);
+}
+.hero-badge i { font-size: 0.65rem; }
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.01em;
+}
+.hero-headline em {
+  font-style: normal;
+  color: var(--amber);
+}
+.hero-sub {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 2;
+  margin-bottom: 2.4rem;
+  max-width: 480px;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+.hero-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.hero-note i { color: var(--green); }
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+.hero-scroll span {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.hero-scroll i { color: var(--amber); font-size: 0.8rem; }
+@keyframes scrollBounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ============================================
+   TRUST STRIP
+============================================ */
+#trust {
+  padding: 36px 0;
+  background: var(--white);
+  border-top: 1px solid var(--amber-light);
+  border-bottom: 1px solid var(--amber-light);
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.trust-icon {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--cream-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.trust-icon i {
+  font-size: 1.2rem;
+  color: var(--amber);
+}
+.trust-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.03em;
+}
+.trust-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-top: 1px;
+}
+
+/* ============================================
+   PROBLEM SECTION
+============================================ */
+#problems {
+  background: var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#problems::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(237,217,195,0.4) 0%, transparent 70%);
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-top: 3.5rem;
+}
+.problem-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,149,106,0.12);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+.problem-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--amber-light);
+}
+.problem-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: var(--cream-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+.problem-icon i { font-size: 1.3rem; color: var(--amber); }
+.problem-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+.problem-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+.problem-check {
+  font-size: 0.8rem;
+  color: var(--amber);
+  font-weight: 500;
+  margin-top: 0.8rem;
+}
+
+/* ============================================
+   PHILOSOPHY SECTION
+============================================ */
+#philosophy {
+  background: var(--cream-alt);
+  position: relative;
+  overflow: hidden;
+}
+.philosophy-header { text-align: center; margin-bottom: 4rem; }
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.phil-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease;
+}
+.phil-card:hover { transform: translateY(-6px); }
+.phil-img {
+  width: 100%; height: 220px;
+  object-fit: cover;
+}
+.phil-img-placeholder {
+  width: 100%; height: 220px;
+  background: linear-gradient(135deg, var(--cream-alt) 0%, var(--amber-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.phil-img-placeholder i { font-size: 2.5rem; color: var(--amber); opacity: 0.6; }
+.phil-body { padding: 1.8rem; }
+.phil-num {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--amber-light);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.phil-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.7rem;
+}
+.phil-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+/* ============================================
+   PRODUCT LINEUP
+============================================ */
+#products {
+  background: var(--cream);
+  text-align: center;
+}
+.products-header { margin-bottom: 3.5rem; }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: left;
+}
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,149,106,0.1);
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+.product-img-wrap {
+  position: relative;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--cream-alt) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+}
+.product-img-icon {
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+.product-img-icon i { font-size: 2.2rem; color: var(--amber); }
+.product-badge {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: var(--amber);
+  color: var(--white);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+}
+.product-body { padding: 1.6rem; }
+.product-cat {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+.product-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+.product-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.product-tag {
+  font-size: 0.7rem;
+  background: var(--cream-alt);
+  color: var(--amber-dark);
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  font-weight: 500;
+  border: 1px solid var(--amber-light);
+}
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--cream-alt);
+}
+.product-price-wrap {}
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--amber-dark);
+}
+.product-price-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.product-btn {
+  background: var(--cream);
+  color: var(--amber);
+  border: 1.5px solid var(--amber-light);
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.product-btn:hover {
+  background: var(--amber);
+  color: var(--white);
+  border-color: var(--amber);
+}
+
+/* ============================================
+   INGREDIENTS
+============================================ */
+#ingredients {
+  background: var(--cream-alt);
+  position: relative;
+  overflow: hidden;
+}
+#ingredients::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,124,94,0.08) 0%, transparent 70%);
+  bottom: -80px; left: -80px;
+}
+.ingr-header { text-align: center; margin-bottom: 4rem; }
+.ingr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.ingr-visual {
+  position: relative;
+}
+.ingr-main-circle {
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cream) 0%, var(--amber-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+.ingr-main-circle i {
+  font-size: 5rem;
+  color: var(--amber);
+  opacity: 0.7;
+}
+.ingr-float {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  box-shadow: var(--shadow-md);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+  border: 1px solid var(--amber-light);
+}
+.ingr-float i { color: var(--amber); margin-right: 0.3rem; }
+.ingr-float-1 { top: 20px; right: -20px; }
+.ingr-float-2 { bottom: 40px; right: -30px; }
+.ingr-float-3 { bottom: 60px; left: -30px; }
+.ingr-list { display: flex; flex-direction: column; gap: 1.6rem; }
+.ingr-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.ingr-icon {
+  width: 54px; height: 54px;
+  border-radius: 16px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+.ingr-icon i { font-size: 1.25rem; color: var(--amber); }
+.ingr-text-wrap {}
+.ingr-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+.ingr-sub {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.75rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+.ingr-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}
+
+/* ============================================
+   STATS/RESULTS
+============================================ */
+#results {
+  background: var(--amber);
+  padding: 70px 0;
+  text-align: center;
+}
+.results-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.results-sub {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.stat-item {}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.stat-unit {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  margin-top: 0.4rem;
+}
+.stat-stars {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  margin-top: 0.5rem;
+}
+.stat-stars i { color: var(--white); font-size: 0.75rem; }
+
+/* ============================================
+   TESTIMONIALS
+============================================ */
+#testimonials {
+  background: var(--cream);
+  text-align: center;
+}
+.testi-header { margin-bottom: 3.5rem; }
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  text-align: left;
+}
+.testi-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(196,149,106,0.1);
+  transition: all 0.3s;
+  position: relative;
+}
+.testi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.testi-quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  line-height: 0.8;
+  color: var(--amber-light);
+  position: absolute;
+  top: 1rem; right: 1.5rem;
+}
+.testi-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+.testi-stars i { color: var(--amber); font-size: 0.85rem; }
+.testi-text {
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+.testi-highlight {
+  background: rgba(196,149,106,0.08);
+  border-left: 3px solid var(--amber);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.82rem;
+  color: var(--amber-dark);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.testi-avatar {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--amber-light);
+}
+.testi-avatar-placeholder {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--cream-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--amber-light);
+  flex-shrink: 0;
+}
+.testi-avatar-placeholder i { color: var(--amber); font-size: 1.1rem; }
+.testi-name { font-size: 0.9rem; font-weight: 700; color: var(--text-dark); }
+.testi-info { font-size: 0.72rem; color: var(--text-muted); font-weight: 300; }
+.testi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(107,124,94,0.12);
+  color: var(--green);
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  margin-top: 0.25rem;
+}
+
+/* ============================================
+   HOW TO USE
+============================================ */
+#howto {
+  background: var(--cream-alt);
+  text-align: center;
+}
+.howto-header { margin-bottom: 4rem; }
+.howto-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+}
+.howto-connector {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber-light), var(--amber));
+  margin-top: 40px;
+  max-width: 80px;
+}
+.howto-step {
+  flex: 0 0 240px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+.howto-step-num {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--amber);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 16px rgba(196,149,106,0.35);
+}
+.howto-step-icon {
+  font-size: 2rem;
+  color: var(--amber);
+  margin-bottom: 0.8rem;
+  opacity: 0.8;
+}
+.howto-step-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+}
+.howto-step-product {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.78rem;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.howto-step-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.75;
+}
+.howto-note {
+  margin-top: 2.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  background: var(--white);
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid var(--amber-light);
+}
+.howto-note i { color: var(--amber); margin-right: 0.3rem; }
+
+/* ============================================
+   FAQ
+============================================ */
+#faq {
+  background: var(--cream);
+  text-align: center;
+}
+.faq-header { margin-bottom: 3rem; }
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+  border: 1px solid rgba(196,149,106,0.12);
+  box-shadow: var(--shadow-sm);
+}
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: background 0.2s;
+  gap: 1rem;
+}
+.faq-q:hover { background: var(--cream); }
+.faq-q.active { background: rgba(196,149,106,0.05); }
+.faq-q-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--cream-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.faq-q-icon i {
+  font-size: 0.7rem;
+  color: var(--amber);
+  transition: transform 0.3s;
+}
+.faq-q.active .faq-q-icon { background: var(--amber); }
+.faq-q.active .faq-q-icon i { color: var(--white); transform: rotate(45deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+.faq-a.open { max-height: 200px; }
+.faq-a-inner {
+  padding: 0 1.6rem 1.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.9;
+  text-align: left;
+  border-top: 1px solid var(--cream-alt);
+  padding-top: 1rem;
+}
+
+/* ============================================
+   FINAL CTA
+============================================ */
+#cta {
+  background: linear-gradient(135deg, var(--amber-dark) 0%, var(--amber) 60%, #D4A574 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#cta::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  top: -200px; right: -200px;
+}
+#cta::after {
+  content: '';
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  bottom: -100px; left: -100px;
+}
+.cta-inner { position: relative; z-index: 1; }
+.cta-label {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+  font-family: 'EB Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.cta-headline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  color: var(--white);
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+.cta-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  line-height: 1.9;
+}
+.cta-box {
+  display: inline-block;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 3.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  margin-bottom: 2rem;
+  min-width: 400px;
+}
+.cta-box-label {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.4rem;
+}
+.cta-box-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+.cta-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.cta-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--amber-dark);
+  line-height: 1;
+}
+.cta-price-unit { font-size: 1rem; color: var(--amber-dark); }
+.cta-original {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 1.2rem;
+}
+.cta-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.cta-item {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.cta-item i { color: var(--amber); font-size: 0.75rem; }
+.cta-urgency {
+  background: rgba(196,149,106,0.08);
+  border: 1px solid var(--amber-light);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  color: var(--amber-dark);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.cta-urgency i { font-size: 0.75rem; }
+.cta-guarantee {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.cta-guarantee i { color: var(--white); }
+
+/* ============================================
+   FOOTER
+============================================ */
+footer {
+  background: var(--text-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 60px 0 30px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 2rem;
+}
+.footer-brand-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.8rem;
+}
+.footer-brand-tagline {
+  font-family: 'EB Garamond', serif;
+  font-size: 0.78rem;
+  color: var(--amber-light);
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+.footer-brand-desc {
+  font-size: 0.82rem;
+  line-height: 1.85;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  max-width: 280px;
+}
+.footer-social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+.footer-social a {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+}
+.footer-social a:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: rgba(196,149,106,0.1);
+}
+.footer-col-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+}
+.footer-col ul { list-style: none; }
+.footer-col li {
+  margin-bottom: 0.5rem;
+}
+.footer-col a {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  transition: color 0.3s;
+  font-weight: 300;
+}
+.footer-col a:hover { color: var(--amber-light); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+}
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.footer-bottom-links a {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.75rem;
+  transition: color 0.3s;
+}
+.footer-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+
+/* ============================================
+   MOBILE STICKY BAR
+============================================ */
+#sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 900;
+  background: var(--white);
+  border-top: 1px solid var(--amber-light);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 -4px 20px rgba(196,149,106,0.12);
+}
+.sticky-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.sticky-text { flex: 1; }
+.sticky-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--amber-dark);
+}
+.sticky-orig {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* ============================================
+   MOBILE NAV PANEL
+============================================ */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(44,27,14,0.5);
+  backdrop-filter: blur(4px);
+}
+#mobile-menu.open { display: block; }
+.mobile-panel {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: min(320px, 90vw);
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.mobile-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+.mobile-nav-links { list-style: none; }
+.mobile-nav-links li { border-bottom: 1px solid var(--cream-alt); }
+.mobile-nav-links a {
+  display: block;
+  padding: 0.9rem 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 1024px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  .hero-headline { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+  .hero-sub { font-size: 0.9rem; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .problem-grid { grid-template-columns: 1fr 1fr; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+  .ingr-grid { grid-template-columns: 1fr; }
+  .ingr-main-circle { width: 280px; height: 280px; }
+  .ingr-float-1, .ingr-float-2, .ingr-float-3 { display: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .testi-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .howto-steps { flex-direction: column; align-items: center; }
+  .howto-connector { width: 2px; height: 30px; margin: 0; }
+  .howto-step { flex: none; width: 100%; max-width: 280px; }
+  .cta-box { min-width: unset; width: 100%; padding: 1.8rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+  #sticky-bar { display: block; }
+  body { padding-bottom: 72px; }
+}
+
+@media (max-width: 480px) {
+  .problem-grid { grid-template-columns: 1fr; }
+  .hero-buttons { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     NAVIGATION
+============================================ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        LUMIÈRE
+        <span>Luxury Natural Skincare</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#philosophy">ブランド理念</a></li>
+        <li><a href="#products">製品ラインナップ</a></li>
+        <li><a href="#ingredients">成分こだわり</a></li>
+        <li><a href="#testimonials">お客様の声</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+      <a href="#cta" class="btn-primary nav-cta">初回限定セット</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu">
+  <div class="mobile-panel">
+    <button class="mobile-close" id="mobileClose"><i class="fa fa-times"></i></button>
+    <ul class="mobile-nav-links">
+      <li><a href="#philosophy">ブランド理念</a></li>
+      <li><a href="#products">製品ラインナップ</a></li>
+      <li><a href="#ingredients">成分こだわり</a></li>
+      <li><a href="#testimonials">お客様の声</a></li>
+      <li><a href="#faq">よくある質問</a></li>
+    </ul>
+    <a href="#cta" class="btn-primary">初回限定セットを試す</a>
+  </div>
+</div>
+
+<!-- ============================================
+     HERO
+============================================ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="900">
+      <div class="hero-badge">
+        <i class="fa-solid fa-leaf"></i>
+        Natural Luxury Skincare since 2018
+      </div>
+      <h1 class="hero-headline">
+        肌は、<em>正直</em>だ。
+      </h1>
+      <p class="hero-sub">
+        大地の恵みを、科学の力で。<br>
+        植物の本質的な力を余すことなく引き出した、<br>
+        自然派ラグジュアリースキンケア。
+      </p>
+      <div class="hero-buttons">
+        <a href="#cta" class="btn-primary btn-lg">
+          初回限定セットを試す
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#products" class="btn-outline">
+          製品を見る
+        </a>
+      </div>
+      <p class="hero-note">
+        <i class="fa-solid fa-shield-check"></i>
+        30日間全額返金保証つき &nbsp;·&nbsp; 送料無料
+      </p>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ============================================
+     TRUST STRIP
+============================================ -->
+<section id="trust">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="trust-icon"><i class="fa-solid fa-certificate"></i></div>
+        <div>
+          <div class="trust-label">オーガニック認証</div>
+          <div class="trust-sub">COSMOS Organic 認証取得済み</div>
+        </div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="80">
+        <div class="trust-icon"><i class="fa-solid fa-flask-vial"></i></div>
+        <div>
+          <div class="trust-label">無添加処方</div>
+          <div class="trust-sub">パラベン・合成着色料・鉱物油 不使用</div>
+        </div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="160">
+        <div class="trust-icon"><i class="fa-solid fa-seedling"></i></div>
+        <div>
+          <div class="trust-label">植物由来成分</div>
+          <div class="trust-sub">全成分の95%以上が天然由来</div>
+        </div>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="240">
+        <div class="trust-icon"><i class="fa-solid fa-user-doctor"></i></div>
+        <div>
+          <div class="trust-label">皮膚科テスト済み</div>
+          <div class="trust-sub">専門医監修・アレルギーテスト実施</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROBLEMS
+============================================ -->
+<section id="problems">
+  <div class="container">
+    <div data-aos="fade-up">
+      <span class="section-label">Skin Concerns</span>
+      <h2 class="section-title">お肌のお悩みに、寄り添いたい。</h2>
+      <p class="section-sub">あなたのお肌が抱える悩みに、LUMIÈRE はひとつひとつ真摯に向き合います。</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="problem-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="problem-name">乾燥・かさつき</div>
+        <div class="problem-desc">季節の変わり目や冷暖房で悩む肌の水分バランスを整え、しっとりとした潤いをキープ。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> 保湿力 12時間持続</div>
+      </div>
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="70">
+        <div class="problem-icon"><i class="fa-solid fa-sun"></i></div>
+        <div class="problem-name">くすみ・透明感不足</div>
+        <div class="problem-desc">ターンオーバーの乱れによる肌くすみをケアし、内側からにじみ出るような透明感を引き出します。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> 4週間で透明感アップ実感</div>
+      </div>
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="140">
+        <div class="problem-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="problem-name">毛穴・テクスチャー</div>
+        <div class="problem-desc">皮脂コントロールと角質ケアで、なめらかでキメの整った素肌へ導きます。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> 毛穴レス肌へ</div>
+      </div>
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="210">
+        <div class="problem-icon"><i class="fa-solid fa-spa"></i></div>
+        <div class="problem-name">シワ・たるみ</div>
+        <div class="problem-desc">年齢とともに気になるシワやたるみに、高濃度のコラーゲン生成促進成分でアプローチ。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> エイジングケアを強力サポート</div>
+      </div>
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="280">
+        <div class="problem-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div class="problem-name">ハリ・弾力不足</div>
+        <div class="problem-desc">弾力成分を複合配合し、触れるたびにもちっとした若々しい弾力を実感できるお肌へ。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> 弾力肌へ導く処方</div>
+      </div>
+      <div class="problem-card" data-aos="fade-up" data-aos-delay="350">
+        <div class="problem-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="problem-name">肌荒れ・敏感肌</div>
+        <div class="problem-desc">敏感な肌にも寄り添う低刺激設計。バリア機能を高め、揺らぎにくい強い肌土台をつくります。</div>
+        <div class="problem-check"><i class="fa-solid fa-circle-check"></i> 敏感肌・乾燥肌にも対応</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PHILOSOPHY
+============================================ -->
+<section id="philosophy">
+  <div class="container">
+    <div class="philosophy-header" data-aos="fade-up">
+      <span class="section-label">Our Philosophy</span>
+      <h2 class="section-title">なぜ LUMIÈRE が選ばれるのか。</h2>
+      <p class="section-sub">創業から一貫して守り続けてきた、3つのこだわり。</p>
+    </div>
+    <div class="philosophy-grid">
+      <div class="phil-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="phil-img-placeholder">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+        <div class="phil-body">
+          <div class="phil-num">01</div>
+          <div class="phil-title">原料の透明性にこだわる</div>
+          <div class="phil-desc">すべての原材料は産地・農場まで遡れる完全トレーサビリティを実現。契約農家から直接仕入れる希少な植物エキスのみを使用し、「何が入っているか」を包み隠さずお伝えします。</div>
+        </div>
+      </div>
+      <div class="phil-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="phil-img-placeholder">
+          <i class="fa-solid fa-microscope"></i>
+        </div>
+        <div class="phil-body">
+          <div class="phil-num">02</div>
+          <div class="phil-title">科学と自然の融合</div>
+          <div class="phil-desc">自然派だから効果がないは過去の話。最新のバイオテクノロジーを活用し、天然成分の有効成分を最大限まで安定化・濃縮。感じる変化、届く成分を追求します。</div>
+        </div>
+      </div>
+      <div class="phil-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="phil-img-placeholder">
+          <i class="fa-solid fa-earth-asia"></i>
+        </div>
+        <div class="phil-body">
+          <div class="phil-num">03</div>
+          <div class="phil-title">地球にやさしいラグジュアリー</div>
+          <div class="phil-desc">パッケージは100%再生可能素材、製造工程もカーボンニュートラルを達成。美しくあることと、地球を大切にすることは、両立できると信じています。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRODUCTS
+============================================ -->
+<section id="products">
+  <div class="container">
+    <div class="products-header" data-aos="fade-up">
+      <span class="section-label">Product Lineup</span>
+      <h2 class="section-title">あなたの肌に合うケアを、選んで。</h2>
+      <p class="section-sub">独自処方による3ステップコレクション。すべて単品でも、セットでも。</p>
+    </div>
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="product-img-wrap">
+          <div class="product-img-icon"><i class="fa-solid fa-flask"></i></div>
+          <div class="product-badge">BESTSELLER</div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Brightening Serum</div>
+          <div class="product-name">ルミエール ブライトニング セラム</div>
+          <div class="product-desc">ローズヒップオイルとナイアシンアミドを高濃度配合した美白美容液。朝のスキンケアに1~2滴プラスするだけで透明感が変わります。</div>
+          <div class="product-tags">
+            <span class="product-tag">ローズヒップオイル</span>
+            <span class="product-tag">ナイアシンアミド10%</span>
+            <span class="product-tag">ビタミンC誘導体</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price-wrap">
+              <div class="product-price">¥6,800</div>
+              <div class="product-price-sub">30ml / 約2ヶ月分</div>
+            </div>
+            <button class="product-btn">詳しく見る</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="product-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="product-img-wrap">
+          <div class="product-img-icon"><i class="fa-solid fa-jar"></i></div>
+          <div class="product-badge" style="background:#6B7C5E;">NEW</div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Deep Moisture Cream</div>
+          <div class="product-name">ルミエール モイスチャークリーム</div>
+          <div class="product-desc">シア脂と5種のヒアルロン酸を組み合わせた深層保湿クリーム。肌のバリア機能を強化し、乾燥知らずのもちもち肌へ。</div>
+          <div class="product-tags">
+            <span class="product-tag">シア脂</span>
+            <span class="product-tag">5種ヒアルロン酸</span>
+            <span class="product-tag">セラミド複合体</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price-wrap">
+              <div class="product-price">¥7,200</div>
+              <div class="product-price-sub">50g / 約2ヶ月分</div>
+            </div>
+            <button class="product-btn">詳しく見る</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="product-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="product-img-wrap">
+          <div class="product-img-icon"><i class="fa-solid fa-droplet"></i></div>
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Balancing Toner</div>
+          <div class="product-name">ルミエール バランシング トナー</div>
+          <div class="product-desc">化粧水のようにするっとなじむ、ミスト型バランシングトナー。肌のpHを整え、後続のケアの浸透を高める下地として機能します。</div>
+          <div class="product-tags">
+            <span class="product-tag">フローラルウォーター</span>
+            <span class="product-tag">乳酸菌発酵エキス</span>
+            <span class="product-tag">アロエベラ</span>
+          </div>
+          <div class="product-footer">
+            <div class="product-price-wrap">
+              <div class="product-price">¥4,200</div>
+              <div class="product-price-sub">120ml / 約2ヶ月分</div>
+            </div>
+            <button class="product-btn">詳しく見る</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     INGREDIENTS
+============================================ -->
+<section id="ingredients">
+  <div class="container">
+    <div class="ingr-header" data-aos="fade-up">
+      <span class="section-label">Key Ingredients</span>
+      <h2 class="section-title">厳選された植物の力。</h2>
+      <p class="section-sub">自然界が育んだ希少なボタニカル成分を、最先端の技術で美肌へ変換します。</p>
+    </div>
+    <div class="ingr-grid">
+      <div data-aos="fade-right">
+        <div class="ingr-visual">
+          <div class="ingr-main-circle">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <div class="ingr-float ingr-float-1">
+            <i class="fa-solid fa-star"></i> COSMOS認証原料
+          </div>
+          <div class="ingr-float ingr-float-2">
+            <i class="fa-solid fa-flask"></i> 93%以上 天然由来
+          </div>
+          <div class="ingr-float ingr-float-3">
+            <i class="fa-solid fa-globe"></i> 全世界17産地から
+          </div>
+        </div>
+      </div>
+      <div class="ingr-list" data-aos="fade-left">
+        <div class="ingr-item">
+          <div class="ingr-icon"><i class="fa-solid fa-spa"></i></div>
+          <div class="ingr-text-wrap">
+            <div class="ingr-name">ローズヒップオイル</div>
+            <div class="ingr-sub">Rosa Canina Fruit Oil — チリ産</div>
+            <div class="ingr-desc">ビタミンCを豊富に含む「奇跡の実」から抽出。肌のターンオーバーを促進し、くすみを取り除いて透明感のある肌へ導きます。コールドプレス製法で栄養をまるごと閉じ込めました。</div>
+          </div>
+        </div>
+        <div class="ingr-item">
+          <div class="ingr-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div class="ingr-text-wrap">
+            <div class="ingr-name">5種 ヒアルロン酸</div>
+            <div class="ingr-sub">Multi-Weight Hyaluronic Acid</div>
+            <div class="ingr-desc">分子量の異なる5種類のヒアルロン酸を絶妙にブレンド。皮膚の深層から表面まで、マルチレイヤーで水分を補給しながらキープ。乾燥によるシワを内側から押し上げます。</div>
+          </div>
+        </div>
+        <div class="ingr-item">
+          <div class="ingr-icon"><i class="fa-solid fa-star"></i></div>
+          <div class="ingr-text-wrap">
+            <div class="ingr-name">ナイアシンアミド</div>
+            <div class="ingr-sub">Niacinamide 10% — 高濃度配合</div>
+            <div class="ingr-desc">シミ・くすみ・毛穴・シワを同時にアプローチできる万能成分。皮膚科学的な裏付けのある処方で、メラニン生成を根本から抑制。10%という高濃度でも低刺激を実現しました。</div>
+          </div>
+        </div>
+        <div class="ingr-item">
+          <div class="ingr-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="ingr-text-wrap">
+            <div class="ingr-name">バクチオール</div>
+            <div class="ingr-sub">Bakuchiol — 天然レチノール代替</div>
+            <div class="ingr-desc">レチノールと同等のアンチエイジング効果をもちながら、刺激がほぼゼロの植物由来成分。敏感肌でも安心してエイジングケアができる、LUMIÈREが誇る秘密の成分です。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     RESULTS / STATS
+============================================ -->
+<section id="results">
+  <div class="container">
+    <div class="results-title" data-aos="fade-up">実感する変化、数字が証明する。</div>
+    <div class="results-sub" data-aos="fade-up" data-aos-delay="80">※ 4週間使用後の自社アンケート調査より</div>
+    <div class="stats-grid">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0">
+        <div class="stat-num"><span class="count" data-target="97">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">潤いの改善を実感</div>
+        <div class="stat-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-num"><span class="count" data-target="89">0</span><span class="stat-unit">%</span></div>
+        <div class="stat-label">くすみの改善を実感</div>
+        <div class="stat-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+        <div class="stat-num"><span class="count" data-target="50000">0</span><span class="stat-unit">+</span></div>
+        <div class="stat-label">累計購入者数</div>
+        <div class="stat-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+      </div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+        <div class="stat-num"><span class="count" data-target="4">0</span><span class="stat-unit">.8</span></div>
+        <div class="stat-label">平均レビュースコア（5点満点）</div>
+        <div class="stat-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     TESTIMONIALS
+============================================ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="testi-header" data-aos="fade-up">
+      <span class="section-label">Customer Voices</span>
+      <h2 class="section-title">使った人が、証明している。</h2>
+      <p class="section-sub">リアルなお客様の声。広告なしの、素直な感想をどうぞ。</p>
+    </div>
+    <div class="testi-grid">
+      <!-- Testimonial 1 -->
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <div class="testi-text">30代後半になってから、急に肌のくすみが気になり始めて。色々試したんですが、どれも「なんか違う」という感じで。LUMIÈREのセラムを使い始めて2週間くらいで、同僚に「肌きれいになった？」と言われてびっくりしました。</div>
+        <div class="testi-highlight">2週間でくすみが改善、周りから気づかれるほどの変化</div>
+        <div class="testi-author">
+          <div class="testi-avatar-placeholder"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">田中 美咲さん</div>
+            <div class="testi-info">38歳 / 乾燥肌・くすみ悩み</div>
+            <div class="testi-badge"><i class="fa-solid fa-circle-check"></i> 購入確認済み</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <div class="testi-text">敏感肌なので新しいコスメを試すのがいつも怖くて。でもLUMIÈREは成分が全部開示されていて、実際に低刺激で安心でした。モイスチャークリームは重くなく、それでいてしっかり保湿される感覚がたまらないです。</div>
+        <div class="testi-highlight">敏感肌でも刺激なし。朝の肌ツヤが格段に変わった</div>
+        <div class="testi-author">
+          <div class="testi-avatar-placeholder"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">山本 さくらさん</div>
+            <div class="testi-info">29歳 / 敏感肌・保湿不足</div>
+            <div class="testi-badge"><i class="fa-solid fa-circle-check"></i> 購入確認済み</div>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="testi-quote-mark">"</div>
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <div class="testi-text">トライアルセットから始めたんですが、一番驚いたのはトナーです。シュッとしてなじませるだけで、その後のクリームがするっと入ってくる感覚が全然違う。毛穴も目立ちにくくなって、素肌でいる時間が増えました。</div>
+        <div class="testi-highlight">毛穴が目立たなくなり、ノーファンデの日が増えた</div>
+        <div class="testi-author">
+          <div class="testi-avatar-placeholder"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <div class="testi-name">佐々木 陽子さん</div>
+            <div class="testi-info">43歳 / 毛穴・テクスチャー悩み</div>
+            <div class="testi-badge"><i class="fa-solid fa-circle-check"></i> 購入確認済み</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     HOW TO USE
+============================================ -->
+<section id="howto">
+  <div class="container">
+    <div class="howto-header" data-aos="fade-up">
+      <span class="section-label">How to Use</span>
+      <h2 class="section-title">3ステップ、それだけでいい。</h2>
+      <p class="section-sub">毎朝・毎晩わずか3分のルーティンで、本格的なスキンケアが完成します。</p>
+    </div>
+    <div class="howto-steps" data-aos="fade-up" data-aos-delay="100">
+      <div class="howto-step">
+        <div class="howto-step-num">01</div>
+        <div class="howto-step-icon"><i class="fa-solid fa-droplets"></i></div>
+        <div class="howto-step-name">トナーで整える</div>
+        <div class="howto-step-product">Balancing Toner</div>
+        <div class="howto-step-desc">洗顔後、コットンまたは手のひらで顔全体になじませます。肌のpHを整え、後続の成分の浸透を高めます。</div>
+      </div>
+      <div class="howto-connector"></div>
+      <div class="howto-step">
+        <div class="howto-step-num">02</div>
+        <div class="howto-step-icon"><i class="fa-solid fa-flask"></i></div>
+        <div class="howto-step-name">セラムで浸透</div>
+        <div class="howto-step-product">Brightening Serum</div>
+        <div class="howto-step-desc">1〜2滴を手のひらで温めてから、顔の中心から外側へ向けてやさしくなじませます。気になる部分は重ねづけ。</div>
+      </div>
+      <div class="howto-connector"></div>
+      <div class="howto-step">
+        <div class="howto-step-num">03</div>
+        <div class="howto-step-icon"><i class="fa-solid fa-jar"></i></div>
+        <div class="howto-step-name">クリームで蓋をする</div>
+        <div class="howto-step-product">Deep Moisture Cream</div>
+        <div class="howto-step-desc">パール粒1〜2粒分をやさしく顔全体に伸ばします。有効成分を閉じ込め、一日中潤いをキープ。</div>
+      </div>
+    </div>
+    <div class="howto-note" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-solid fa-clock"></i>
+      朝晩のルーティンに。日中は日焼け止めを重ねてください。
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FAQ
+============================================ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-header" data-aos="fade-up">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくあるご質問</h2>
+      <p class="section-sub">ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+    </div>
+    <div class="faq-list" data-aos="fade-up" data-aos-delay="80">
+      <div class="faq-item">
+        <button class="faq-q">
+          敏感肌・アレルギー肌でも使えますか？
+          <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">はい、LUMIÈRE の全製品は皮膚科医の監修のもと、アレルギーテストおよびパッチテストを実施しています。パラベン・人工香料・硫酸塩系界面活性剤は一切不使用です。ただし、体質や肌状態によって個人差がございますので、初めての方はパッチテストを推奨しています。30日返金保証もございますのでご安心ください。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          効果を実感するまでどのくらいかかりますか？
+          <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">個人差はありますが、多くの方が1〜2週間で潤い・ハリの変化を実感されています。透明感・くすみ改善は4週間目から、毛穴やシワなど深層的な変化は8週間の継続使用で実感される方が多いです。スキンケアは継続が大切ですので、まずはトライアルセットで2週間お試しください。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          妊娠中・授乳中でも使用できますか？
+          <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">妊娠中・授乳中の方は、かかりつけの医師にご相談の上ご使用ください。LUMIÈRE では妊娠中に避けることが推奨される成分（一部の精油・レチノール等）を使用しておりませんが、個人の体質や状況に応じて専門医への確認をお勧めします。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          トライアルセットを購入した後、定期購入になりますか？
+          <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">いいえ、初回トライアルセットは完全な単品購入です。定期コースへの自動移行は一切ございません。トライアル後に継続をご希望の場合は、お客様ご自身で通常ページからお選びいただけます。強引な定期縛りは行っておりませんので、ご安心ください。</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">
+          返品・返金の条件を教えてください。
+          <div class="faq-q-icon"><i class="fa-solid fa-plus"></i></div>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">ご購入日から30日以内であれば、理由を問わず全額返金いたします。使用済みの製品でも対象です。返品手続きは公式サイトのお問い合わせフォームよりご連絡ください。返送料はLUMIÈREが負担いたします。お客様に損をさせないことを約束します。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FINAL CTA
+============================================ -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner" data-aos="fade-up">
+      <div class="cta-label">Limited Trial Offer</div>
+      <h2 class="cta-headline">あなたの肌に、答えを。</h2>
+      <p class="cta-sub">まずはリスクゼロで、2週間お試しください。<br>感じなければ、全額お返しします。</p>
+      <div class="cta-box" data-aos="zoom-in" data-aos-delay="200">
+        <div class="cta-box-label">First Trial Set — 初回限定</div>
+        <div class="cta-box-title">LUMIÈRE ビギナーズ トライアルセット</div>
+        <div class="cta-price-row">
+          <div class="cta-price-unit">¥</div>
+          <div class="cta-price">2,980</div>
+        </div>
+        <div class="cta-original">通常価格 ¥8,400（63%OFF）</div>
+        <div class="cta-items">
+          <div class="cta-item"><i class="fa-solid fa-check"></i> ブライトニング セラム（15ml / 約1ヶ月分）</div>
+          <div class="cta-item"><i class="fa-solid fa-check"></i> モイスチャークリーム（20g / 約1ヶ月分）</div>
+          <div class="cta-item"><i class="fa-solid fa-check"></i> バランシング トナー（40ml / 約1ヶ月分）</div>
+          <div class="cta-item"><i class="fa-solid fa-check"></i> 送料無料（全国一律）</div>
+          <div class="cta-item"><i class="fa-solid fa-check"></i> 30日間全額返金保証つき</div>
+        </div>
+        <div class="cta-urgency">
+          <i class="fa-solid fa-fire"></i>
+          残り在庫わずか — 本日のご注文で最短翌日お届け
+        </div>
+        <a href="#" class="btn-primary btn-lg" style="width:100%; justify-content:center;">
+          今すぐトライアルセットを試す
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+      <p class="cta-guarantee">
+        <i class="fa-solid fa-shield-check"></i>
+        30日間全額返金保証 &nbsp;|&nbsp; 定期縛りなし &nbsp;|&nbsp; 個人情報は厳重管理
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">LUMIÈRE</div>
+        <div class="footer-brand-tagline">Luxury Natural Skincare</div>
+        <div class="footer-brand-desc">大地の恵みを、科学の力で。植物の本質的な力を余すことなく引き出した、自然派ラグジュアリースキンケアブランド。</div>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-line"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">製品</div>
+        <ul>
+          <li><a href="#">ブライトニング セラム</a></li>
+          <li><a href="#">モイスチャークリーム</a></li>
+          <li><a href="#">バランシング トナー</a></li>
+          <li><a href="#">トライアルセット</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">ブランド</div>
+        <ul>
+          <li><a href="#">ブランドストーリー</a></li>
+          <li><a href="#">成分へのこだわり</a></li>
+          <li><a href="#">サステナビリティ</a></li>
+          <li><a href="#">プレス情報</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">サポート</div>
+        <ul>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+          <li><a href="#">返品・交換</a></li>
+          <li><a href="#">お届けについて</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2024 LUMIÈRE. All rights reserved.</div>
+      <ul class="footer-bottom-links">
+        <li><a href="#">特定商取引法に基づく表記</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">利用規約</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     MOBILE STICKY BAR
+============================================ -->
+<div id="sticky-bar">
+  <div class="container">
+    <div class="sticky-inner">
+      <div class="sticky-text">
+        <div class="sticky-price">¥2,980 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:300;">初回限定</span></div>
+        <div class="sticky-orig">通常 ¥8,400</div>
+      </div>
+      <a href="#cta" class="btn-primary" style="font-size:0.85rem; padding:0.7rem 1.4rem; flex-shrink:0;">
+        今すぐ試す <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SCRIPTS
+============================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+// AOS Init
+AOS.init({
+  duration: 700,
+  easing: 'ease-out-quad',
+  once: true,
+  offset: 60,
+});
+
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Hamburger menu
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu   = document.getElementById('mobile-menu');
+const mobileClose  = document.getElementById('mobileClose');
+
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+mobileClose.addEventListener('click', closeMobileMenu);
+mobileMenu.addEventListener('click', (e) => {
+  if (e.target === mobileMenu) closeMobileMenu();
+});
+function closeMobileMenu() {
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', closeMobileMenu);
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const isOpen = answer.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('active'));
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      btn.classList.add('active');
+    }
+  });
+});
+
+// Count-up animation
+function countUp(el) {
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  const duration = 1800;
+  const step = 16;
+  const increment = target / (duration / step);
+  let current = 0;
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      current = target;
+      clearInterval(timer);
+    }
+    el.textContent = Math.floor(current).toLocaleString();
+  }, step);
+}
+
+// Trigger count-up when stats section comes into view
+const statsSection = document.getElementById('results');
+let counted = false;
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !counted) {
+    counted = true;
+    document.querySelectorAll('.count').forEach(countUp);
+  }
+}, { threshold: 0.3 });
+if (statsSection) observer.observe(statsSection);
+
+// Smooth anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const offset = 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>

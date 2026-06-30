@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AURUM PERSONAL GYM — 結果にコミットする、完全個室の高級ジム</title>
+<meta name="description" content="AURUMは、完全個室・専属トレーナーによる結果保証付きのパーソナルトレーニングジム。東京・渋谷。無料体験トレーニング実施中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --black:#080808;
+  --dark:#0E0E0E;
+  --card:#141414;
+  --card2:#1A1A1A;
+  --gold:#C9A227;
+  --gold-lt:#D4B04A;
+  --gold-dim:#8A6F1A;
+  --cream:#F5EDD8;
+  --t-white:#F0EDE8;
+  --t-light:#C2B89A;
+  --t-muted:#6B6258;
+  --bd:rgba(201,162,39,.15);
+  --r:6px;
+  --r-lg:12px;
+  --sh-gold:0 4px 32px rgba(201,162,39,.18);
+  --tr:220ms ease;
+}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--t-white);background:var(--black);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border:none;transition:all var(--tr);white-space:nowrap}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-lt);box-shadow:var(--sh-gold);transform:translateY(-2px)}
+.btn-outline-gold{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.btn-outline-gold:hover{background:rgba(201,162,39,.08);transform:translateY(-2px)}
+.btn-lg{padding:20px 48px;font-size:14px}
+
+/* Tags */
+.eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyebrow::before,.eyebrow::after{content:'';flex:1;max-width:32px;height:1px;background:var(--gold);opacity:.4}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,58px);font-weight:600;line-height:1.12;letter-spacing:-.5px;margin-bottom:18px}
+.sec-title em{font-style:italic;color:var(--gold)}
+.sec-sub{font-size:14px;color:var(--t-light);line-height:1.95;max-width:500px}
+.sec-head{text-align:center;margin-bottom:64px}
+.sec-head .sec-sub{margin:0 auto}
+
+/* NAV */
+#nav{position:fixed;top:0;width:100%;z-index:100;padding:0 28px;transition:background var(--tr),backdrop-filter var(--tr)}
+#nav.scrolled{background:rgba(8,8,8,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd)}
+#nav .inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;gap:2px}
+.nav-links a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t-light);padding:8px 14px;transition:color var(--tr)}
+.nav-links a:hover{color:var(--gold)}
+.nav-toggle{display:none;background:none;border:1px solid var(--bd);padding:8px 10px;cursor:pointer}
+.nav-toggle i{color:var(--gold);font-size:16px}
+.nav-mob{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(8,8,8,.96);border-bottom:1px solid var(--bd);padding:16px 24px 24px}
+.nav-mob.open{display:block}
+.nav-mob a{display:block;padding:12px 8px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t-light);border-bottom:1px solid rgba(255,255,255,.04);transition:color var(--tr)}
+.nav-mob a:hover{color:var(--gold)}
+
+/* HERO */
+#hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(8,8,8,.88) 0%,rgba(8,8,8,.65) 55%,rgba(8,8,8,.3) 100%)}
+.hero-content{position:relative;z-index:1;max-width:680px;padding:100px 0 80px}
+.hero-pre{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.hero-pre::before{content:'';width:28px;height:1px;background:var(--gold)}
+#hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,7vw,84px);font-weight:700;line-height:1.05;letter-spacing:-1px;margin-bottom:22px}
+#hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:15px;color:var(--t-light);line-height:1.9;margin-bottom:36px;max-width:480px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:52px}
+.hero-guarantee{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--t-muted)}
+.hero-guarantee i{color:var(--gold);font-size:13px}
+
+/* STATS */
+#stats{background:var(--dark);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:0}
+.stats-inner{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-col{padding:44px 28px;text-align:center;border-right:1px solid var(--bd);position:relative}
+.stat-col:last-child{border-right:none}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);font-weight:700;color:var(--gold);line-height:1;display:flex;align-items:baseline;justify-content:center;gap:2px;margin-bottom:8px}
+.stat-unit{font-size:26px;font-weight:500}
+.stat-lbl{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t-muted)}
+
+/* PAIN */
+#pain{padding:100px 0;background:var(--black)}
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bd);border:1px solid var(--bd)}
+.pain-item{background:var(--black);padding:36px 32px;position:relative;overflow:hidden;transition:background var(--tr)}
+.pain-item:hover{background:var(--dark)}
+.pain-num{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:700;color:rgba(201,162,39,.06);position:absolute;top:-8px;right:20px;line-height:1}
+.pain-icon{width:42px;height:42px;border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pain-icon i{font-size:16px;color:var(--gold)}
+.pain-item h3{font-size:16px;font-weight:700;color:var(--t-white);margin-bottom:8px}
+.pain-item p{font-size:13px;color:var(--t-muted);line-height:1.8}
+
+/* REASONS */
+#reasons{padding:100px 0;background:var(--dark)}
+.reasons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.reason-card{background:var(--card);border:1px solid var(--bd);padding:40px 32px;position:relative;overflow:hidden;transition:all var(--tr)}
+.reason-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .4s ease}
+.reason-card:hover{border-color:rgba(201,162,39,.3);box-shadow:0 16px 48px rgba(0,0,0,.4);transform:translateY(-4px)}
+.reason-card:hover::before{transform:scaleX(1)}
+.rc-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:700;color:rgba(201,162,39,.07);line-height:1;margin-bottom:-12px}
+.rc-icon{width:48px;height:48px;background:rgba(201,162,39,.08);border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.rc-icon i{font-size:18px;color:var(--gold)}
+.reason-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--t-white);margin-bottom:12px;line-height:1.25}
+.reason-card p{font-size:13px;color:var(--t-light);line-height:1.85}
+
+/* PROGRAMS */
+#programs{padding:100px 0;background:var(--black)}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.prog-card{position:relative;overflow:hidden;border:1px solid var(--bd);cursor:pointer;transition:all var(--tr)}
+.prog-card:hover{border-color:rgba(201,162,39,.35)}
+.prog-card:hover .prog-overlay{opacity:1}
+.prog-img{aspect-ratio:3/4;overflow:hidden}
+.prog-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.prog-card:hover .prog-img img{transform:scale(1.05)}
+.prog-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,8,.96) 0%,rgba(8,8,8,.3) 60%,transparent 100%);opacity:.85;transition:opacity var(--tr)}
+.prog-info{position:absolute;bottom:0;left:0;right:0;padding:28px 24px}
+.prog-tag{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.prog-info h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#fff;margin-bottom:6px;line-height:1.2}
+.prog-info p{font-size:12px;color:var(--t-light);line-height:1.7}
+.prog-price{margin-top:12px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--gold)}
+
+/* SPACE */
+#space{padding:100px 0;background:var(--dark)}
+.space-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.space-img{aspect-ratio:1.3/1;overflow:hidden;position:relative}
+.space-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.space-img:hover img{transform:scale(1.04)}
+.space-caption{position:absolute;bottom:0;left:0;right:0;padding:16px 20px;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.space-text{background:var(--card);padding:60px 48px;display:flex;flex-direction:column;justify-content:center;gap:20px}
+.space-feat{display:flex;align-items:start;gap:16px;padding:16px 0;border-bottom:1px solid var(--bd)}
+.space-feat:last-child{border-bottom:none}
+.sf-icon{width:36px;height:36px;background:rgba(201,162,39,.08);border:1px solid var(--gold-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sf-icon i{font-size:14px;color:var(--gold)}
+.sf-title{font-size:14px;font-weight:700;color:var(--t-white);margin-bottom:4px}
+.sf-desc{font-size:12px;color:var(--t-muted);line-height:1.7}
+
+/* VOICE / BEFORE-AFTER */
+#transformation{padding:100px 0;background:var(--black)}
+.trans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.trans-card{background:var(--card);border:1px solid var(--bd);overflow:hidden;transition:border-color var(--tr)}
+.trans-card:hover{border-color:rgba(201,162,39,.3)}
+.trans-photos{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.trans-photo{aspect-ratio:1/1.2;overflow:hidden;position:relative}
+.trans-photo img{width:100%;height:100%;object-fit:cover}
+.trans-label{position:absolute;top:10px;left:10px;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:4px 8px}
+.trans-body{padding:24px 20px}
+.trans-name{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:6px}
+.trans-meta{font-size:12px;color:var(--t-muted);margin-bottom:12px}
+.trans-quote{font-size:13px;color:var(--t-light);line-height:1.8;font-style:italic}
+
+/* TESTIMONIALS */
+#voices{padding:100px 0;background:var(--dark)}
+.voices-list{display:flex;flex-direction:column;gap:2px}
+.voice-item{display:grid;grid-template-columns:220px 1fr;background:var(--card);border:1px solid var(--bd);overflow:hidden;transition:border-color var(--tr)}
+.voice-item:hover{border-color:rgba(201,162,39,.25)}
+.voice-side{padding:32px 28px;border-right:1px solid var(--bd);display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;background:var(--card2)}
+.voice-av{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--gold-dim);margin-bottom:4px}
+.voice-name{font-size:14px;font-weight:700;color:var(--t-white)}
+.voice-role{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t-muted)}
+.voice-stars{display:flex;gap:3px;margin-top:4px}
+.voice-stars i{font-size:11px;color:var(--gold)}
+.voice-body{padding:32px 36px;display:flex;flex-direction:column;justify-content:center}
+.voice-quote{font-size:15px;color:var(--t-light);line-height:1.95;font-style:italic;margin-bottom:12px}
+.voice-result{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.voice-result i{font-size:13px}
+
+/* FAQ */
+#faq{padding:100px 0;background:var(--black)}
+.faq-wrap{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-item details summary{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;list-style:none;font-size:15px;font-weight:500;color:var(--t-white);gap:16px}
+.faq-item details summary::-webkit-details-marker{display:none}
+.faq-item details summary::after{content:'+';font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--gold);line-height:1;flex-shrink:0;transition:transform .3s ease}
+.faq-item details[open] summary::after{content:'−'}
+.faq-answer{font-size:14px;color:var(--t-light);line-height:1.9;padding-bottom:24px}
+
+/* FINAL CTA */
+#cta-final{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden}
+.cta-bg{position:absolute;inset:0}
+.cta-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.cta-overlay{position:absolute;inset:0;background:rgba(8,8,8,.78)}
+.cta-content{position:relative;z-index:1;max-width:620px;text-align:center;margin:0 auto;padding:80px 28px}
+.cta-logo{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+#cta-final h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:600;line-height:1.12;color:#fff;margin-bottom:14px}
+#cta-final .sub{font-size:14px;color:var(--t-light);line-height:1.9;margin-bottom:36px}
+.cta-fine{margin-top:20px;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t-muted)}
+
+/* FOOTER */
+footer{background:var(--dark);border-top:1px solid var(--bd);padding:60px 0 36px}
+.footer-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.footer-brand .logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.footer-brand p{font-size:12px;color:var(--t-muted);line-height:1.8}
+.footer-col h4{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--t-muted);margin-bottom:16px}
+.footer-col a{display:block;font-size:13px;color:var(--t-light);padding:4px 0;transition:color var(--tr)}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--bd);padding-top:24px;text-align:center;font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--t-muted)}
+.divider{width:60px;height:1px;background:var(--gold);margin:0 auto 20px;opacity:.4}
+
+/* Mobile CTA */
+#mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,8,8,.95);border-top:1px solid var(--bd);padding:12px 20px}
+
+/* Responsive */
+@media(max-width:960px){
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-col:nth-child(2){border-right:none}
+  .pain-grid{grid-template-columns:1fr}
+  .reasons-grid{grid-template-columns:1fr}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .space-grid{grid-template-columns:1fr}
+  .trans-grid{grid-template-columns:1fr}
+  .voice-item{grid-template-columns:1fr}
+  .voice-side{flex-direction:row;border-right:none;border-bottom:1px solid var(--bd);text-align:left}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  #hero h1{font-size:48px}
+  .prog-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column}
+  .hero-btns .btn{justify-content:center}
+  .nav-links,.nav-cta-wrap .btn-outline-gold{display:none}
+  .nav-toggle{display:block}
+  .footer-inner{grid-template-columns:1fr}
+  #mob-cta{display:block}
+}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.12s}
+.reveal-delay-2{transition-delay:.24s}
+.reveal-delay-3{transition-delay:.36s}
+
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- Mobile CTA -->
+<div id="mob-cta">
+  <a href="#cta-final" class="btn btn-gold" style="width:100%;justify-content:center;font-size:12px">無料体験トレーニングを予約する</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="inner">
+    <a href="#" class="nav-logo">Aurum</a>
+    <div class="nav-links">
+      <a href="#reasons">特徴</a>
+      <a href="#programs">プログラム</a>
+      <a href="#space">施設</a>
+      <a href="#voices">お客様の声</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px" class="nav-cta-wrap">
+      <a href="#cta-final" class="btn btn-outline-gold" style="padding:10px 24px;font-size:11px">無料体験予約</a>
+      <button class="nav-toggle" onclick="document.getElementById('nav-mob').classList.toggle('open')">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+  <div id="nav-mob" class="nav-mob">
+    <a href="#reasons" onclick="this.closest('.nav-mob').classList.remove('open')">特徴</a>
+    <a href="#programs" onclick="this.closest('.nav-mob').classList.remove('open')">プログラム</a>
+    <a href="#space" onclick="this.closest('.nav-mob').classList.remove('open')">施設</a>
+    <a href="#voices" onclick="this.closest('.nav-mob').classList.remove('open')">お客様の声</a>
+    <a href="#faq" onclick="this.closest('.nav-mob').classList.remove('open')">FAQ</a>
+    <a href="#cta-final" onclick="this.closest('.nav-mob').classList.remove('open')" style="color:var(--gold);border-top:1px solid var(--bd);margin-top:8px;padding-top:20px">無料体験予約 →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80" alt="AURUMパーソナルジム" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content reveal">
+      <div class="hero-pre">Aurum Personal Gym · Tokyo</div>
+      <h1>鍛え方を、<br><em>変えれば</em>——<br>人生が変わる。</h1>
+      <p class="hero-desc">完全個室・専属トレーナー制のパーソナルジム。ダイエット・筋力強化・ボディメイクまで、あなたの目標に最短距離でコミットします。</p>
+      <div class="hero-btns">
+        <a href="#cta-final" class="btn btn-gold btn-lg">無料体験トレーニングを予約する</a>
+        <a href="#programs" class="btn btn-outline-gold">プログラムを見る</a>
+      </div>
+      <div class="hero-guarantee">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>60日間結果保証 · 完全個室 · 手ぶらでOK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="stats-inner">
+    <div class="stat-col">
+      <div class="stat-num"><span class="count-num" data-target="98">0</span><span class="stat-unit">%</span></div>
+      <div class="stat-lbl">目標達成率</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num"><span class="count-num" data-target="2400">0</span><span class="stat-unit">+</span></div>
+      <div class="stat-lbl">会員実績数</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num"><span class="count-num" data-target="8">0</span></div>
+      <div class="stat-lbl">年の実績</div>
+    </div>
+    <div class="stat-col">
+      <div class="stat-num"><span class="count-num" data-target="60">0</span><span class="stat-unit">日</span></div>
+      <div class="stat-lbl">結果保証期間</div>
+    </div>
+  </div>
+</div>
+
+<!-- PAIN POINTS -->
+<section id="pain">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Problem</div>
+      <h2 class="sec-title">こんな経験、<em>ありませんか</em>？</h2>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item reveal">
+        <span class="pain-num">01</span>
+        <div class="pain-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <h3>ジムに通っているのに体が変わらない</h3>
+        <p>やみくもに運動しても、正しい方法でなければ結果はついてきません。多くの方が間違ったフォームで怪我をするケースもあります。</p>
+      </div>
+      <div class="pain-item reveal reveal-delay-1">
+        <span class="pain-num">02</span>
+        <div class="pain-icon"><i class="fa-solid fa-utensils"></i></div>
+        <h3>食事制限だけのダイエットで体を壊した</h3>
+        <p>過度な食事制限は筋肉を減らし、代謝を落とします。リバウンドの繰り返しで、体がボロボロになってしまうことも。</p>
+      </div>
+      <div class="pain-item reveal">
+        <span class="pain-num">03</span>
+        <div class="pain-icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>忙しくて継続できない</h3>
+        <p>仕事や家事の合間に通うジム通いは、モチベーションの維持が難しい。三日坊主になってしまうことも珍しくありません。</p>
+      </div>
+      <div class="pain-item reveal reveal-delay-1">
+        <span class="pain-num">04</span>
+        <div class="pain-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>大勢の中でトレーニングするのが恥ずかしい</h3>
+        <p>初心者の方や体型に悩む方にとって、人の目が気になる環境でのトレーニングは大きなストレスになります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 REASONS -->
+<section id="reasons">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Why Aurum</div>
+      <h2 class="sec-title">AURUMが<em>選ばれる</em>理由</h2>
+      <p class="sec-sub">一般的なパーソナルジムとの違いは、圧倒的な「個別性」と「結果へのコミット」にあります</p>
+    </div>
+    <div class="reasons-grid">
+      <div class="reason-card reveal">
+        <div class="rc-num">01</div>
+        <div class="rc-icon"><i class="fa-solid fa-person-chalkboard"></i></div>
+        <h3>専属トレーナーによる<br>完全オーダーメイドプログラム</h3>
+        <p>初回カウンセリングで身体の状態・生活習慣・目標を詳しくヒアリング。あなただけのプログラムを設計します。担当トレーナーは途中で変わりません。</p>
+      </div>
+      <div class="reason-card reveal reveal-delay-1">
+        <div class="rc-num">02</div>
+        <div class="rc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>60日間で変わらなければ<br>全額返金保証</h3>
+        <p>プログラムに自信があるからこそ実現できる保証制度。「やってみたけど変わらなかった」というリスクをゼロにします。※条件あり</p>
+      </div>
+      <div class="reason-card reveal reveal-delay-2">
+        <div class="rc-num">03</div>
+        <div class="rc-icon"><i class="fa-solid fa-door-closed"></i></div>
+        <h3>完全個室で周りの目を<br>気にせず集中できる</h3>
+        <p>全セッションが完全個室制。他の会員と顔を合わせることなく、1対1のトレーニングに専念できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Programs</div>
+      <h2 class="sec-title">目標に合わせた<em>プログラム</em></h2>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card reveal">
+        <div class="prog-img">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="ダイエットプログラム">
+        </div>
+        <div class="prog-overlay"></div>
+        <div class="prog-info">
+          <div class="prog-tag">Diet Program</div>
+          <h3>ダイエット<br>プログラム</h3>
+          <p>体脂肪を減らしながら筋肉を維持。健康的に美しく痩せる。</p>
+          <div class="prog-price">¥47,800〜 / 月（8回）</div>
+        </div>
+      </div>
+      <div class="prog-card reveal reveal-delay-1">
+        <div class="prog-img">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="ボディメイクプログラム">
+        </div>
+        <div class="prog-overlay"></div>
+        <div class="prog-info">
+          <div class="prog-tag">Body Make</div>
+          <h3>ボディメイク<br>プログラム</h3>
+          <p>引き締まった理想のボディラインを作る本格的なプログラム。</p>
+          <div class="prog-price">¥58,000〜 / 月（8回）</div>
+        </div>
+      </div>
+      <div class="prog-card reveal reveal-delay-2">
+        <div class="prog-img">
+          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80" alt="筋力強化プログラム">
+        </div>
+        <div class="prog-overlay"></div>
+        <div class="prog-info">
+          <div class="prog-tag">Strength</div>
+          <h3>筋力強化<br>プログラム</h3>
+          <p>パワーリフティングから機能的な動作改善まで。本格的な筋肥大を目指す方へ。</p>
+          <div class="prog-price">¥62,000〜 / 月（8回）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE -->
+<section id="space">
+  <div class="container-fluid" style="max-width:100%">
+    <div class="container" style="margin-bottom:48px">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Facility</div>
+        <h2 class="sec-title">非日常を感じる<em>空間</em></h2>
+      </div>
+    </div>
+    <div class="space-grid">
+      <div>
+        <div class="space-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=900&q=80" alt="個室トレーニングルーム"><div class="space-caption">Private Training Room</div></div>
+        <div class="space-img"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=900&q=80" alt="最新マシン設備"><div class="space-caption">Premium Equipment</div></div>
+      </div>
+      <div class="space-text reveal">
+        <div>
+          <div class="eyebrow" style="justify-content:flex-start">Facility Details</div>
+          <h2 class="sec-title" style="text-align:left">プレミアムな<br><em>設備</em>と環境</h2>
+        </div>
+        <div class="space-feat">
+          <div class="sf-icon"><i class="fa-solid fa-lock"></i></div>
+          <div><div class="sf-title">完全個室・鍵付きトレーニングルーム</div><div class="sf-desc">全7室が完全個室。他の会員とはいっさい顔を合わせないプライベート空間でトレーニングできます。</div></div>
+        </div>
+        <div class="space-feat">
+          <div class="sf-icon"><i class="fa-solid fa-star"></i></div>
+          <div><div class="sf-title">業務用プレミアムマシン完備</div><div class="sf-desc">ライフフィットネス・テクノジム等の高品質マシンを完備。安全かつ効果的なトレーニングを実現します。</div></div>
+        </div>
+        <div class="space-feat">
+          <div class="sf-icon"><i class="fa-solid fa-shower"></i></div>
+          <div><div class="sf-title">バス・アメニティ完備</div><div class="sf-desc">シャワールーム・ドライヤー・タオルまで完備。仕事前後でもそのまま利用できます（手ぶらでOK）。</div></div>
+        </div>
+        <div class="space-feat">
+          <div class="sf-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div><div class="sf-title">渋谷駅徒歩3分</div><div class="sf-desc">忙しい方でも通いやすい好立地。平日7:00〜23:00・土日祝9:00〜21:00営業。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section id="transformation">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Results</div>
+      <h2 class="sec-title">会員様の<em>変化</em></h2>
+      <p class="sec-sub">実際のAURUM会員様のビフォーアフター（掲載許可取得済み）</p>
+    </div>
+    <div class="trans-grid">
+      <div class="trans-card reveal">
+        <div class="trans-photos">
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1609899537878-48b0b8a5a3b1?w=300&q=80" alt="ビフォー"><div class="trans-label">Before</div></div>
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?w=300&q=80" alt="アフター"><div class="trans-label">After 3M</div></div>
+        </div>
+        <div class="trans-body">
+          <div class="trans-name">M.K様・32歳・女性</div>
+          <div class="trans-meta">体重 -9.2kg ／ 体脂肪率 -8.4%　3ヶ月</div>
+          <div class="trans-quote">「産後体型が気になっていましたが、無理なく続けられて3ヶ月で理想の体型に近づけました。」</div>
+        </div>
+      </div>
+      <div class="trans-card reveal reveal-delay-1">
+        <div class="trans-photos">
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=300&q=80" alt="ビフォー"><div class="trans-label">Before</div></div>
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=300&q=80" alt="アフター"><div class="trans-label">After 4M</div></div>
+        </div>
+        <div class="trans-body">
+          <div class="trans-name">T.S様・45歳・男性</div>
+          <div class="trans-meta">体重 -12.5kg ／ 筋肉量 +3.2kg　4ヶ月</div>
+          <div class="trans-quote">「40代でここまで変われるとは思っていませんでした。仕事のパフォーマンスも上がり、人生が変わりました。」</div>
+        </div>
+      </div>
+      <div class="trans-card reveal reveal-delay-2">
+        <div class="trans-photos">
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=300&q=80" alt="ビフォー"><div class="trans-label">Before</div></div>
+          <div class="trans-photo"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=300&q=80" alt="アフター"><div class="trans-label">After 2M</div></div>
+        </div>
+        <div class="trans-body">
+          <div class="trans-name">Y.N様・28歳・女性</div>
+          <div class="trans-meta">体重 -6.8kg ／ ウエスト -11cm　2ヶ月</div>
+          <div class="trans-quote">「結婚式に向けて短期集中で取り組み、2ヶ月でドレスが2サイズ小さくなりました。」</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="voices">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Testimonials</div>
+      <h2 class="sec-title">お客様の<em>声</em></h2>
+    </div>
+    <div class="voices-list">
+      <div class="voice-item reveal">
+        <div class="voice-side">
+          <img class="voice-av" src="https://randomuser.me/api/portraits/women/44.jpg" alt="会員様の声">
+          <div>
+            <div class="voice-name">佐藤 友美様</div>
+            <div class="voice-role">38歳・主婦</div>
+            <div class="voice-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+        <div class="voice-body">
+          <p class="voice-quote">「他のジムで何度も挫折した私が、AURUMでは6ヶ月間続けられました。完全個室なので人目を気にせず通えますし、担当トレーナーの方が私のペースに合わせて丁寧に指導してくださったおかげです。体重は-11kg、何より自分に自信が持てるようになりました。」</p>
+          <div class="voice-result"><i class="fa-solid fa-chart-line"></i>6ヶ月で体重-11kg ／ 自己最高体型を更新</div>
+        </div>
+      </div>
+      <div class="voice-item reveal">
+        <div class="voice-side">
+          <img class="voice-av" src="https://randomuser.me/api/portraits/men/32.jpg" alt="会員様の声">
+          <div>
+            <div class="voice-name">田中 健二様</div>
+            <div class="voice-role">52歳・会社経営者</div>
+            <div class="voice-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          </div>
+        </div>
+        <div class="voice-body">
+          <p class="voice-quote">「忙しいビジネスパーソンとして、効率的に結果を出せるかが最重要でした。AURUMは週2回、1回50分のセッションで驚くべき結果を出してくれました。健康診断の数値も改善し、体が軽くなったことで仕事の生産性も上がっています。」</p>
+          <div class="voice-result"><i class="fa-solid fa-chart-line"></i>体脂肪率 28% → 16% ／ 健康診断オールA達成</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="sec-title">よくある<em>ご質問</em></h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal"><details><summary>体験トレーニングは本当に無料ですか？</summary><div class="faq-answer">はい、初回のみ完全無料で体験トレーニング（60分）をご提供しています。カウンセリング・体組成測定・トレーニング体験をすべて無料で実施します。入会を強要することは一切ありませんのでご安心ください。</div></details></div>
+      <div class="faq-item reveal"><details><summary>60日間返金保証の詳細を教えてください。</summary><div class="faq-answer">プログラム通りにトレーニングを実施し、指定の食事プランを遵守した上で、60日間で体組成の変化が見られない場合に全額返金をいたします。詳細な条件はカウンセリング時にご説明します。</div></details></div>
+      <div class="faq-item reveal"><details><summary>運動が初めてでも大丈夫ですか？</summary><div class="faq-answer">もちろん大丈夫です。会員様の約60%が運動未経験者または長期ブランクのある方です。現在の体力・体の状態に合わせて段階的にプログラムを設計しますのでご安心ください。</div></details></div>
+      <div class="faq-item reveal"><details><summary>通う頻度はどのくらいですか？</summary><div class="faq-answer">目標や生活スタイルに合わせて週1〜3回でご利用いただけます。一般的に、ダイエット目的は週2回、ボディメイク・筋力強化は週2〜3回をおすすめしています。</div></details></div>
+      <div class="faq-item reveal"><details><summary>食事制限は厳しいですか？</summary><div class="faq-answer">過度な制限は設けません。日常生活を送りながら無理なく継続できる食事アドバイスを提供します。LINEでのサポートも行っており、食事の相談はいつでも可能です。</div></details></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="cta-final">
+  <div class="cta-bg">
+    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80" alt="AURUMパーソナルジム">
+  </div>
+  <div class="cta-overlay"></div>
+  <div class="cta-content reveal">
+    <div class="divider"></div>
+    <div class="cta-logo">Aurum Personal Gym</div>
+    <h2>あなたの変化は、<br>今日から始まります。</h2>
+    <p class="sub">まずは無料体験トレーニングへ。60分間、専属トレーナーがあなたの現在地と理想の体への最短ルートをお伝えします。</p>
+    <a href="#" class="btn btn-gold btn-lg" style="margin-bottom:8px">無料体験トレーニングを予約する <i class="fa-solid fa-arrow-right"></i></a>
+    <p class="cta-fine">完全無料 · 入会強要なし · 所要時間60分 · 渋谷駅徒歩3分</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Aurum</div>
+        <p>完全個室・専属トレーナー制の<br>パーソナルトレーニングジム。<br>東京・渋谷。</p>
+      </div>
+      <div class="footer-col">
+        <h4>メニュー</h4>
+        <a href="#">ダイエットプログラム</a>
+        <a href="#">ボディメイク</a>
+        <a href="#">筋力強化</a>
+        <a href="#">施設案内</a>
+      </div>
+      <div class="footer-col">
+        <h4>その他</h4>
+        <a href="#">無料体験予約</a>
+        <a href="#">アクセス</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">お問い合わせ</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Aurum Personal Gym. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target)} });
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+// Count-up
+function countUp(el, target, dur) {
+  const start = performance.now();
+  const update = now => {
+    const t = Math.min((now - start)/dur, 1);
+    const eased = 1 - Math.pow(1-t, 3);
+    el.textContent = Math.floor(eased * target);
+    if(t < 1) requestAnimationFrame(update);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(update);
+}
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting && !e.target.dataset.done){
+      e.target.dataset.done='1';
+      countUp(e.target, parseInt(e.target.dataset.target), 1800);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.count-num').forEach(el => cntObs.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 60);
+},{passive:true});
+</script>
+</body>
+</html>
