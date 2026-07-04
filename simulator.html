@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ec4899">
+<meta name="theme-color" content="#1e3a8a">
 <title>年収UPシミュレーター｜30秒で適正年収を診断</title>
 <!-- ================================================
      【GA4設定】計測を有効にするには以下のコメントを外し
@@ -20,92 +20,129 @@
 -->
 <style>
   :root{
-    --pink:#ec4899; --deep:#be185d;
-    --ink:#26161f; --muted:#8a7080;
-    --bg:#fcf5f8; --card:#fff; --line:#f0dbe6;
+    --blue:#2563eb; --blue-deep:#1d4ed8; --navy:#1e3a8a;
+    --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+    --bg:#f8fafc; --card:#fff;
+    --sky:#eff6ff; --sky-line:#dbeafe;
+    --green:#06c755; --green-deep:#05a94a;
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
   html{-webkit-text-size-adjust:100%;}
-  body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
   button{font-family:inherit;}
-  button:focus-visible{outline:2px solid var(--deep);outline-offset:2px;}
-  .wrap{max-width:480px;margin:0 auto;padding:20px 16px 60px;}
+  button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid var(--blue-deep);outline-offset:2px;}
 
-  /* ---- ヘッダー ---- */
-  .pill{display:inline-block;font-size:11px;font-weight:700;color:var(--deep);background:#fce7f3;border-radius:99px;padding:3px 12px;margin-bottom:10px;letter-spacing:.05em;}
-  h1{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px;}
-  .sub{font-size:13px;color:var(--muted);margin-bottom:4px;}
+  /* ---- ヒーロー ---- */
+  .hero{background:linear-gradient(120deg,#172f7a 0%,#1e3a8a 45%,#2563eb 100%);color:#fff;padding:44px 20px 52px;}
+  .hero-in{max-width:640px;margin:0 auto;}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:#93c5fd;margin-bottom:10px;}
+  .hero h1{font-size:26px;font-weight:800;letter-spacing:-.01em;line-height:1.35;margin-bottom:10px;text-wrap:balance;}
+  .hero p{font-size:14px;color:#dbeafe;max-width:34em;}
 
-  /* ---- プログレス ---- */
-  .progrow{display:flex;align-items:center;gap:10px;margin:16px 0 14px;}
-  .bar{flex:1;height:8px;background:#f3e3ec;border-radius:99px;overflow:hidden;}
-  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#f472b6,var(--pink));width:0;transition:width .35s ease;}
-  .qpos{font-size:12px;font-weight:800;color:var(--pink);min-width:38px;text-align:right;font-variant-numeric:tabular-nums;}
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px 72px;}
 
-  /* ---- 質問カード ---- */
-  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(190,24,93,.05);}
-  .step{display:none;position:relative;overflow:hidden;}
-  .step::before{content:attr(data-step);position:absolute;top:-18px;right:8px;font-size:88px;font-weight:800;line-height:1;color:var(--pink);opacity:.06;pointer-events:none;}
-  .step.active{display:block;animation:stepIn .28s ease;}
-  @keyframes stepIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:none;}}
-  label.q{display:block;font-weight:800;font-size:17px;margin-bottom:14px;}
-  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-  .opts button{min-height:48px;padding:11px 8px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:14px;color:var(--ink);cursor:pointer;transition:transform .12s,background .15s,border-color .15s,color .15s;}
-  .opts button:active{transform:scale(.97);}
-  .opts button.on{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700;}
+  /* ---- わかることカード ---- */
+  .info{background:var(--sky);border:1px solid var(--sky-line);border-radius:14px;padding:20px 22px;margin:-26px 0 20px;position:relative;box-shadow:0 8px 24px rgba(30,58,138,.10);}
+  .info h2{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:10px;}
+  .info li{list-style:none;font-size:13.5px;color:#334155;padding-left:1.4em;position:relative;margin-bottom:4px;}
+  .info li::before{content:"✓";position:absolute;left:0;color:var(--blue);font-weight:800;}
+  .info b{color:var(--blue-deep);}
+  .info .mini{font-size:12px;color:var(--muted);margin-top:10px;}
 
-  /* ---- ナビ・CTA ---- */
-  .navrow{display:flex;justify-content:flex-start;margin:-4px 0 10px;}
-  .backbtn{background:none;border:none;color:var(--muted);font-size:14px;padding:10px 6px;cursor:pointer;}
-  .cta{display:block;width:100%;min-height:52px;padding:15px;background:var(--pink);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(236,72,153,.35);transition:transform .12s;}
-  .cta:active{transform:scale(.98);}
+  /* ---- フォーム ---- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;margin-bottom:20px;box-shadow:0 1px 3px rgba(15,23,42,.05);}
+  .field{margin-bottom:20px;}
+  .field:last-of-type{margin-bottom:8px;}
+  .lbl{display:block;font-size:13px;font-weight:800;margin-bottom:8px;}
+  .lbl small{font-weight:600;color:var(--muted);margin-left:6px;}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .seg button{min-height:46px;padding:10px 6px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-size:14px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,color .15s,transform .1s;}
+  .seg button:active{transform:scale(.97);}
+  .seg button.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700;}
+  .seg button.wide{grid-column:1/-1;}
+  .selbox{position:relative;}
+  select{width:100%;min-height:48px;padding:11px 40px 11px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink);background:#fff;appearance:none;-webkit-appearance:none;cursor:pointer;}
+  .selbox::after{content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none;}
+  .cta{display:block;width:100%;min-height:54px;padding:15px;background:var(--blue);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;margin-top:16px;box-shadow:0 6px 16px rgba(37,99,235,.30);transition:background .15s,transform .1s;}
+  .cta:active{transform:scale(.985);}
+  .cta:disabled{background:#cbd5e1;box-shadow:none;cursor:not-allowed;}
 
   /* ---- 結果 ---- */
-  .result{text-align:center;padding:10px 0;}
-  .money{font-size:14px;color:var(--muted);}
-  .money b{color:var(--ink);font-size:16px;}
-  .up{font-size:44px;font-weight:800;color:var(--pink);margin:4px 0 2px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
-  .up small{font-size:20px;font-weight:800;}
-  .gauge{height:12px;background:#f3e3ec;border-radius:99px;overflow:hidden;margin:16px 0;}
-  .gauge>i{display:block;height:100%;background:linear-gradient(90deg,#f9a8d4,var(--pink));width:0;transition:width 1.2s ease;}
-  .site{display:flex;align-items:center;gap:12px;padding:15px 14px;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;text-decoration:none;color:inherit;background:#fff;}
-  .site.top{border-color:var(--pink);background:#fff5fa;box-shadow:0 3px 12px rgba(236,72,153,.12);}
-  .rank{width:32px;height:32px;border-radius:50%;background:#f3e3ec;color:var(--deep);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;}
-  .site.top .rank{background:var(--pink);color:#fff;}
-  .site .nm{font-weight:800;font-size:15px;}
+  #result{scroll-margin-top:16px;}
+  .verdict{background:linear-gradient(160deg,#eff6ff,#e0eaff);border:1px solid var(--sky-line);border-radius:16px;padding:30px 22px;text-align:center;margin-bottom:14px;}
+  .verdict .cap{font-size:13px;font-weight:700;color:var(--muted);}
+  .fitnum{font-size:56px;font-weight:800;color:var(--blue-deep);line-height:1.15;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+  .fitnum small{font-size:22px;font-weight:800;margin-left:2px;}
+  .upline{font-size:15px;font-weight:800;color:var(--ink);margin-top:2px;}
+  .upline b{color:var(--blue);font-size:18px;font-variant-numeric:tabular-nums;}
+  .gauge{height:10px;background:#dbeafe;border-radius:99px;overflow:hidden;margin:18px auto 12px;max-width:340px;}
+  .gauge>i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,var(--blue-deep));width:0;transition:width 1.2s ease;}
+  .vmsg{font-size:13px;color:#334155;max-width:30em;margin:0 auto;}
+
+  /* ---- LINE誘導 ---- */
+  .linecard{background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:16px;padding:22px;text-align:center;margin-bottom:22px;}
+  .linecard h3{font-size:15px;font-weight:800;margin-bottom:4px;}
+  .linecard p{font-size:12.5px;color:#4d7c0f;margin-bottom:14px;}
+  .linebtn{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:52px;background:var(--green);color:#fff;border-radius:12px;text-decoration:none;font-size:15px;font-weight:800;box-shadow:0 6px 16px rgba(6,199,85,.28);transition:background .15s,transform .1s;}
+  .linebtn:active{transform:scale(.985);background:var(--green-deep);}
+  .linebtn svg{flex-shrink:0;}
+
+  /* ---- サイトTOP3 ---- */
+  .sec-t{font-size:16px;font-weight:800;margin:26px 0 12px;}
+  .site{display:flex;align-items:center;gap:12px;padding:15px 14px;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;text-decoration:none;color:inherit;background:#fff;transition:border-color .15s;}
+  .site.top{border-color:var(--blue);background:#f7faff;box-shadow:0 3px 12px rgba(37,99,235,.10);}
+  .rank{width:32px;height:32px;border-radius:50%;background:var(--sky);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;}
+  .site.top .rank{background:var(--blue);color:#fff;}
+  .site .nm{font-weight:800;font-size:15px;line-height:1.4;}
   .site .rs{font-size:12px;color:var(--muted);line-height:1.5;}
-  .badge{margin-left:auto;font-size:11px;font-weight:700;background:#fce7f3;color:var(--deep);padding:4px 9px;border-radius:7px;flex-shrink:0;}
-  .note{font-size:11px;color:#b39aa8;margin-top:20px;line-height:1.7;}
-  .xshare{background:#000;box-shadow:0 4px 14px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;gap:8px;}
-  .xshare .xmark{font-size:18px;font-weight:900;}
+  .badge{margin-left:auto;font-size:11px;font-weight:700;background:var(--sky);color:var(--blue-deep);padding:4px 9px;border-radius:7px;flex-shrink:0;}
+
+  .xshare{display:flex;align-items:center;justify-content:center;gap:8px;background:#0f1419;box-shadow:none;}
+  .xshare .xmark{font-size:17px;font-weight:900;}
+  .note{font-size:11px;color:#94a3b8;margin-top:20px;line-height:1.8;}
   .hidden{display:none;}
 
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  #result.show{animation:rise .4s ease;}
   @media (prefers-reduced-motion: reduce){
-    .step.active{animation:none;}
-    .bar>i,.gauge>i{transition:none;}
+    #result.show{animation:none;}
+    .gauge>i{transition:none;}
+  }
+  @media (min-width:560px){
+    .hero h1{font-size:32px;}
+    .seg.cols4{grid-template-columns:repeat(4,1fr);}
+    .seg.cols4 button.wide{grid-column:auto;}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <!-- 診断フォーム -->
-  <div id="form">
-    <span class="pill" id="pill">無料・30秒で完了</span>
-    <h1>年収UPシミュレーター</h1>
-    <p class="sub" id="lead">6つの質問に答えるだけで、あなたの「適正年収」と今より上げられる金額がわかります。</p>
+<header class="hero">
+  <div class="hero-in">
+    <p class="eyebrow">SALARY SIMULATOR ─ 無料・30秒</p>
+    <h1>あなたの年収、<br>あと何万円上げられる？</h1>
+    <p>同業種・同年代のデータをもとに「適正年収」を推定し、今より上げられる金額と最適な転職サービスを診断します。</p>
+  </div>
+</header>
 
-    <div class="progrow">
-      <div class="bar"><i id="prog"></i></div>
-      <div class="qpos" id="qpos">Q1/6</div>
-    </div>
+<main class="wrap">
 
-    <noscript><div class="card">診断の実行にはJavaScriptが必要です。Safari や Chrome などのブラウザで開いてください。</div></noscript>
+  <section class="info">
+    <h2>この診断でわかること</h2>
+    <ul>
+      <li>あなたの業種・年代から見た<b>適正年収の目安</b></li>
+      <li>今の年収との差額 ─ <b>上げられる余地</b>がいくらあるか</li>
+      <li>あなたの状況に合う<b>転職サービスTOP3</b></li>
+    </ul>
+    <p class="mini">4つの項目を選ぶだけ。結果はその場で表示されます。</p>
+  </section>
 
-    <!-- ↓ Q1は最初からactive（JS実行前でも表示される） -->
-    <div class="card step active" data-step="1">
-      <label class="q">あなたの年代は？</label>
-      <div class="opts" id="age">
+  <noscript><div class="card">診断の実行にはJavaScriptが必要です。Safari や Chrome などのブラウザで開いてください。</div></noscript>
+
+  <section class="card" aria-label="診断フォーム">
+    <div class="field">
+      <span class="lbl">年代</span>
+      <div class="seg cols4" id="age">
         <button data-v="20">20〜30歳</button>
         <button data-v="30">31〜40歳</button>
         <button data-v="40">41〜50歳</button>
@@ -113,96 +150,92 @@
       </div>
     </div>
 
-    <div class="card step" data-step="2">
-      <label class="q">現在の年収は？</label>
-      <div class="opts" id="income">
-        <button data-v="250">〜300万円</button>
-        <button data-v="350">300〜400万円</button>
-        <button data-v="450">400〜500万円</button>
-        <button data-v="600">500〜700万円</button>
-        <button data-v="850">700〜1000万円</button>
-        <button data-v="1100">1000万円〜</button>
+    <div class="field">
+      <label class="lbl" for="income">現在の年収</label>
+      <div class="selbox">
+        <select id="income">
+          <option value="">選択してください</option>
+          <option value="250">〜300万円</option>
+          <option value="350">300〜400万円</option>
+          <option value="450">400〜500万円</option>
+          <option value="600">500〜700万円</option>
+          <option value="850">700〜1000万円</option>
+          <option value="1100">1000万円〜</option>
+        </select>
       </div>
     </div>
 
-    <div class="card step" data-step="3">
-      <label class="q">最終学歴は？</label>
-      <div class="opts" id="edu">
-        <button data-v="0.95">高卒</button>
-        <button data-v="0.98">専門卒</button>
-        <button data-v="1.05">大学卒</button>
-        <button data-v="1.1">大学院卒</button>
+    <div class="field">
+      <label class="lbl" for="job">現在の業種</label>
+      <div class="selbox">
+        <select id="job">
+          <option value="">選択してください</option>
+          <option value="it">IT・Web</option>
+          <option value="sales">営業</option>
+          <option value="office">事務</option>
+          <option value="nurse">看護・医療</option>
+          <option value="care">介護・福祉</option>
+          <option value="maker">製造</option>
+          <option value="service">販売・サービス</option>
+          <option value="childcare">保育</option>
+          <option value="other">その他</option>
+        </select>
       </div>
     </div>
 
-    <div class="card step" data-step="4">
-      <label class="q">現在の業種は？</label>
-      <div class="opts" id="job">
-        <button data-v="it">IT・Web</button>
-        <button data-v="sales">営業</button>
-        <button data-v="office">事務</button>
-        <button data-v="nurse">看護・医療</button>
-        <button data-v="care">介護・福祉</button>
-        <button data-v="maker">製造</button>
-        <button data-v="service">販売・サービス</button>
-        <button data-v="childcare">保育</button>
-        <button data-v="other">その他</button>
-      </div>
-    </div>
-
-    <div class="card step" data-step="5">
-      <label class="q">これからどうしたい？</label>
-      <div class="opts" id="dir">
+    <div class="field">
+      <span class="lbl">これからどうしたい？<small>いちばん近いもの</small></span>
+      <div class="seg" id="dir">
         <button data-v="same">今の業種で年収UP</button>
         <button data-v="toit">異業種へ(IT志向)</button>
         <button data-v="new">未経験の職種</button>
         <button data-v="wlb">働き方を変えたい</button>
-        <button data-v="unsure">まだ迷っている</button>
+        <button data-v="unsure" class="wide">まだ迷っている</button>
       </div>
     </div>
 
-    <div class="card step" data-step="6">
-      <label class="q">希望の勤務地は？</label>
-      <div class="opts" id="area">
-        <button data-v="capital" class="on">首都圏</button>
-        <button data-v="kansai">関西</button>
-        <button data-v="local">地方</button>
-        <button data-v="remote">リモート希望</button>
-      </div>
-    </div>
+    <button class="cta" id="go" disabled>適正年収を診断する</button>
+  </section>
 
-    <div class="navrow"><button class="backbtn hidden" id="back">← 前の質問に戻る</button></div>
-    <button class="cta hidden" id="go">診断結果を見る</button>
-  </div>
-
-  <!-- 結果 -->
-  <div id="result" class="hidden">
-    <span class="pill">診断完了</span>
-    <h1>診断結果</h1>
-    <div class="card result">
-      <div class="money">現在の年収 <b id="cur"></b>万円</div>
-      <div class="up">+<span id="diff">0</span><small>万円</small></div>
-      <div class="money">あなたの適正年収は <b id="fit"></b>万円</div>
+  <!-- ================= 結果 ================= -->
+  <section id="result" class="hidden" aria-live="polite">
+    <div class="verdict">
+      <p class="cap">あなたの適正年収</p>
+      <div class="fitnum"><span id="fit">0</span><small>万円</small></div>
+      <p class="upline">今より <b>+<span id="diff">0</span>万円</b> UPの可能性</p>
       <div class="gauge"><i id="gauge"></i></div>
-      <p class="sub" id="msg" style="margin:0;"></p>
+      <p class="vmsg" id="msg"></p>
     </div>
-    <h1 style="font-size:17px;margin:22px 0 12px;">あなたに合う転職サイト TOP3</h1>
+
+    <!-- LINE集客動線 -->
+    <div class="linecard">
+      <h3>診断結果をもとに、次の一手を無料サポート</h3>
+      <p>友だち追加で「適正年収の上げ方ガイド」と非公開求人情報をLINEでお届けします。</p>
+      <a class="linebtn" id="linebtn" href="#line" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.9 3 2.8 6.4 2.8 10.6c0 3.7 3.3 6.9 7.7 7.5.3.1.7.2.8.5.1.2.1.6 0 .8l-.1.8c0 .2-.2 1 .8.5s5.6-3.3 7.6-5.6c1.4-1.5 2.1-3 2.1-4.5C21.7 6.4 17.1 3 12 3z" fill="#fff"/></svg>
+        LINEで無料相談する
+      </a>
+    </div>
+
+    <h2 class="sec-t">あなたに合う転職サイト TOP3</h2>
     <div id="sites"></div>
+
+    <button class="cta xshare" id="xshare" style="margin-top:20px;"><span class="xmark">𝕏</span>診断結果をシェア</button>
+
     <p class="note">
       ※本ページはアフィリエイト広告(PR)を含みます。<br>
-      ※推定年収は年代・業種・学歴等をもとにした統計的な参考値であり、実際の年収を保証するものではありません。
+      ※推定年収は年代・業種等をもとにした統計的な参考値であり、実際の年収を保証するものではありません。
     </p>
-    <button class="cta xshare" id="xshare" style="margin-top:16px;"><span class="xmark">𝕏</span>診断結果をXでシェア</button>
-    <button class="cta" style="background:#8a7080;box-shadow:none;margin-top:10px;" onclick="location.reload()">もう一度診断する</button>
-  </div>
-</div>
+  </section>
+</main>
 
 <script>
 // ================================================================
-// 【アフィリエイトURL設定】ここを実URLに差し替えてください
-// 例: doda: "https://px.a8.net/svt/ejp?a8mat=XXXXX"
+// 【URL設定】ここを実URLに差し替えてください
 // ================================================================
-const SITE_URL = "https://clawtech6477.github.io/clawtech-lp/simulator.html"; // ← このLPの公開URL。空の場合はlocation.hrefを使用（file://対策）
+const SITE_URL = "https://clawtech6477.github.io/clawtech-lp/simulator.html"; // ← このLPの公開URL
+const LINE_URL = "#line"; // ← LINE公式アカウントの友だち追加URL（例: https://lin.ee/XXXXXXX）
+// --- アフィリエイトURL（例: doda: "https://px.a8.net/svt/ejp?a8mat=XXXXX"）---
 const AFFILIATE_URLS = {
   doda:     "#doda",     // ← doda の実URLに差し替え
   recruit:  "#recruit",  // ← リクルートエージェント
@@ -233,47 +266,29 @@ const SITES = [
   {name:"リクナビNEXT", tags:{dir:["same","wlb","unsure"],job:["*"],age:["20","30"]}, payout:1870, affi:AFFILIATE_URLS.next, rs:"自分のペースで探せる"},
 ];
 
-// ===== 状態管理 =====
-const st = {age:"",income:"",edu:"",job:"",dir:"",area:"capital"};
-const STEPS = ["age","income","edu","job","dir","area"];
-let curStep = 1;
+// ===== 状態管理（4項目） =====
+const st = {age:"",income:"",job:"",dir:""};
 let started = false;
 
-function goStep(n){
-  curStep = n;
-  document.querySelectorAll(".step").forEach(el=>{
-    el.classList.toggle("active", +el.dataset.step === n);
-  });
-  document.getElementById("qpos").textContent = `Q${n}/${STEPS.length}`;
-  document.getElementById("prog").style.width = ((n-1)/STEPS.length*100)+"%";
-  document.getElementById("back").classList.toggle("hidden", n===1);
-  document.getElementById("go").classList.toggle("hidden", n!==STEPS.length);
-  document.getElementById("lead").classList.toggle("hidden", n!==1);
-  document.getElementById("pill").classList.toggle("hidden", n!==1);
-  window.scrollTo(0,0);
+function firstTouch(){ if(!started){ track("diagnosis_start"); started=true; } }
+
+function sync(){
+  document.getElementById("go").disabled = !(st.age && st.income && st.job && st.dir);
 }
 
-function wireGroup(id,key){
+["age","dir"].forEach(id=>{
   document.querySelectorAll(`#${id} button`).forEach(b=>{
     b.onclick=()=>{
       document.querySelectorAll(`#${id} button`).forEach(x=>x.classList.remove("on"));
       b.classList.add("on");
-      st[key]=b.dataset.v;
-      if(!started){ track("diagnosis_start"); started=true; }
-      const idx = STEPS.indexOf(key);
-      if(idx < STEPS.length-1){
-        setTimeout(()=>goStep(idx+2),280);
-      }
+      st[id]=b.dataset.v;
+      firstTouch(); sync();
     };
   });
-}
-STEPS.forEach(k=>wireGroup(k,k));
-
-document.getElementById("back").onclick=()=>{
-  if(curStep>1) goStep(curStep-1);
-};
-
-goStep(1);
+});
+["income","job"].forEach(id=>{
+  document.getElementById(id).onchange=e=>{ st[id]=e.target.value; firstTouch(); sync(); };
+});
 
 // ===== 金額カウントアップ演出 =====
 function countUp(el,to){
@@ -292,13 +307,12 @@ document.getElementById("go").onclick=()=>{
   const ageK = {20:1.0,30:1.15,40:1.2,50:1.1}[st.age];
   const dirK = st.dir==="toit"?1.2 : st.dir==="new"?1.1 : 1.0;
   const cur = +st.income;
-  let fit = Math.round(BASE[st.job] * ageK * (+st.edu) * dirK /10)*10;
+  let fit = Math.round(BASE[st.job] * ageK * dirK /10)*10;
   if(fit < cur) fit = cur + 40; // 必ず伸びしろが出る調整
   const diff = fit - cur;
   lastFit = fit; lastDiff = diff;
 
-  document.getElementById("cur").textContent = cur;
-  document.getElementById("fit").textContent = fit;
+  countUp(document.getElementById("fit"), fit);
   countUp(document.getElementById("diff"), diff);
   document.getElementById("msg").textContent =
     st.dir==="toit" ? "異業種チャレンジは伸びしろ大。特化型エージェントの活用が鍵です。"
@@ -328,13 +342,18 @@ document.getElementById("go").onclick=()=>{
     box.appendChild(a);
   });
 
-  document.getElementById("form").classList.add("hidden");
-  document.getElementById("result").classList.remove("hidden");
+  const res=document.getElementById("result");
+  res.classList.remove("hidden"); res.classList.add("show");
   setTimeout(()=>{document.getElementById("gauge").style.width=Math.min(diff/300*100,100)+"%";},100);
-  window.scrollTo(0,0);
+  res.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 
   track("diagnosis_complete",{fit_income:fit, diff:diff});
 };
+
+// ===== LINE誘導 =====
+const lb=document.getElementById("linebtn");
+lb.href = LINE_URL;
+lb.addEventListener("click",()=>{ track("line_click"); });
 
 // ===== Xシェア =====
 document.getElementById("xshare").onclick=()=>{
