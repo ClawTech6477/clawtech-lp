@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ec4899">
+<title>年収UPシミュレーター｜30秒で適正年収を診断</title>
+<!-- ================================================
+     【GA4設定】計測を有効にするには以下のコメントを外し
+     G-XXXXXXXXXX を自分の測定IDに差し替えてください
+================================================ -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+<style>
+  :root{
+    --pink:#ec4899; --deep:#be185d;
+    --ink:#26161f; --muted:#8a7080;
+    --bg:#fcf5f8; --card:#fff; --line:#f0dbe6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;}
+  body{font-family:-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  button{font-family:inherit;}
+  button:focus-visible{outline:2px solid var(--deep);outline-offset:2px;}
+  .wrap{max-width:480px;margin:0 auto;padding:20px 16px 60px;}
+
+  /* ---- ヘッダー ---- */
+  .pill{display:inline-block;font-size:11px;font-weight:700;color:var(--deep);background:#fce7f3;border-radius:99px;padding:3px 12px;margin-bottom:10px;letter-spacing:.05em;}
+  h1{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px;}
+  .sub{font-size:13px;color:var(--muted);margin-bottom:4px;}
+
+  /* ---- プログレス ---- */
+  .progrow{display:flex;align-items:center;gap:10px;margin:16px 0 14px;}
+  .bar{flex:1;height:8px;background:#f3e3ec;border-radius:99px;overflow:hidden;}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#f472b6,var(--pink));width:0;transition:width .35s ease;}
+  .qpos{font-size:12px;font-weight:800;color:var(--pink);min-width:38px;text-align:right;font-variant-numeric:tabular-nums;}
+
+  /* ---- 質問カード ---- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(190,24,93,.05);}
+  .step{display:none;position:relative;overflow:hidden;}
+  .step::before{content:attr(data-step);position:absolute;top:-18px;right:8px;font-size:88px;font-weight:800;line-height:1;color:var(--pink);opacity:.06;pointer-events:none;}
+  .step.active{display:block;animation:stepIn .28s ease;}
+  @keyframes stepIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:none;}}
+  label.q{display:block;font-weight:800;font-size:17px;margin-bottom:14px;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .opts button{min-height:48px;padding:11px 8px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-size:14px;color:var(--ink);cursor:pointer;transition:transform .12s,background .15s,border-color .15s,color .15s;}
+  .opts button:active{transform:scale(.97);}
+  .opts button.on{background:var(--pink);border-color:var(--pink);color:#fff;font-weight:700;}
+
+  /* ---- ナビ・CTA ---- */
+  .navrow{display:flex;justify-content:flex-start;margin:-4px 0 10px;}
+  .backbtn{background:none;border:none;color:var(--muted);font-size:14px;padding:10px 6px;cursor:pointer;}
+  .cta{display:block;width:100%;min-height:52px;padding:15px;background:var(--pink);color:#fff;border:none;border-radius:14px;font-size:16px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(236,72,153,.35);transition:transform .12s;}
+  .cta:active{transform:scale(.98);}
+
+  /* ---- 結果 ---- */
+  .result{text-align:center;padding:10px 0;}
+  .money{font-size:14px;color:var(--muted);}
+  .money b{color:var(--ink);font-size:16px;}
+  .up{font-size:44px;font-weight:800;color:var(--pink);margin:4px 0 2px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;}
+  .up small{font-size:20px;font-weight:800;}
+  .gauge{height:12px;background:#f3e3ec;border-radius:99px;overflow:hidden;margin:16px 0;}
+  .gauge>i{display:block;height:100%;background:linear-gradient(90deg,#f9a8d4,var(--pink));width:0;transition:width 1.2s ease;}
+  .site{display:flex;align-items:center;gap:12px;padding:15px 14px;border:1.5px solid var(--line);border-radius:14px;margin-bottom:10px;text-decoration:none;color:inherit;background:#fff;}
+  .site.top{border-color:var(--pink);background:#fff5fa;box-shadow:0 3px 12px rgba(236,72,153,.12);}
+  .rank{width:32px;height:32px;border-radius:50%;background:#f3e3ec;color:var(--deep);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;}
+  .site.top .rank{background:var(--pink);color:#fff;}
+  .site .nm{font-weight:800;font-size:15px;}
+  .site .rs{font-size:12px;color:var(--muted);line-height:1.5;}
+  .badge{margin-left:auto;font-size:11px;font-weight:700;background:#fce7f3;color:var(--deep);padding:4px 9px;border-radius:7px;flex-shrink:0;}
+  .note{font-size:11px;color:#b39aa8;margin-top:20px;line-height:1.7;}
+  .xshare{background:#000;box-shadow:0 4px 14px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;gap:8px;}
+  .xshare .xmark{font-size:18px;font-weight:900;}
+  .hidden{display:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    .step.active{animation:none;}
+    .bar>i,.gauge>i{transition:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 診断フォーム -->
+  <div id="form">
+    <span class="pill" id="pill">無料・30秒で完了</span>
+    <h1>年収UPシミュレーター</h1>
+    <p class="sub" id="lead">6つの質問に答えるだけで、あなたの「適正年収」と今より上げられる金額がわかります。</p>
+
+    <div class="progrow">
+      <div class="bar"><i id="prog"></i></div>
+      <div class="qpos" id="qpos">Q1/6</div>
+    </div>
+
+    <noscript><div class="card">診断の実行にはJavaScriptが必要です。Safari や Chrome などのブラウザで開いてください。</div></noscript>
+
+    <!-- ↓ Q1は最初からactive（JS実行前でも表示される） -->
+    <div class="card step active" data-step="1">
+      <label class="q">あなたの年代は？</label>
+      <div class="opts" id="age">
+        <button data-v="20">20〜30歳</button>
+        <button data-v="30">31〜40歳</button>
+        <button data-v="40">41〜50歳</button>
+        <button data-v="50">51歳以上</button>
+      </div>
+    </div>
+
+    <div class="card step" data-step="2">
+      <label class="q">現在の年収は？</label>
+      <div class="opts" id="income">
+        <button data-v="250">〜300万円</button>
+        <button data-v="350">300〜400万円</button>
+        <button data-v="450">400〜500万円</button>
+        <button data-v="600">500〜700万円</button>
+        <button data-v="850">700〜1000万円</button>
+        <button data-v="1100">1000万円〜</button>
+      </div>
+    </div>
+
+    <div class="card step" data-step="3">
+      <label class="q">最終学歴は？</label>
+      <div class="opts" id="edu">
+        <button data-v="0.95">高卒</button>
+        <button data-v="0.98">専門卒</button>
+        <button data-v="1.05">大学卒</button>
+        <button data-v="1.1">大学院卒</button>
+      </div>
+    </div>
+
+    <div class="card step" data-step="4">
+      <label class="q">現在の業種は？</label>
+      <div class="opts" id="job">
+        <button data-v="it">IT・Web</button>
+        <button data-v="sales">営業</button>
+        <button data-v="office">事務</button>
+        <button data-v="nurse">看護・医療</button>
+        <button data-v="care">介護・福祉</button>
+        <button data-v="maker">製造</button>
+        <button data-v="service">販売・サービス</button>
+        <button data-v="childcare">保育</button>
+        <button data-v="other">その他</button>
+      </div>
+    </div>
+
+    <div class="card step" data-step="5">
+      <label class="q">これからどうしたい？</label>
+      <div class="opts" id="dir">
+        <button data-v="same">今の業種で年収UP</button>
+        <button data-v="toit">異業種へ(IT志向)</button>
+        <button data-v="new">未経験の職種</button>
+        <button data-v="wlb">働き方を変えたい</button>
+        <button data-v="unsure">まだ迷っている</button>
+      </div>
+    </div>
+
+    <div class="card step" data-step="6">
+      <label class="q">希望の勤務地は？</label>
+      <div class="opts" id="area">
+        <button data-v="capital" class="on">首都圏</button>
+        <button data-v="kansai">関西</button>
+        <button data-v="local">地方</button>
+        <button data-v="remote">リモート希望</button>
+      </div>
+    </div>
+
+    <div class="navrow"><button class="backbtn hidden" id="back">← 前の質問に戻る</button></div>
+    <button class="cta hidden" id="go">診断結果を見る</button>
+  </div>
+
+  <!-- 結果 -->
+  <div id="result" class="hidden">
+    <span class="pill">診断完了</span>
+    <h1>診断結果</h1>
+    <div class="card result">
+      <div class="money">現在の年収 <b id="cur"></b>万円</div>
+      <div class="up">+<span id="diff">0</span><small>万円</small></div>
+      <div class="money">あなたの適正年収は <b id="fit"></b>万円</div>
+      <div class="gauge"><i id="gauge"></i></div>
+      <p class="sub" id="msg" style="margin:0;"></p>
+    </div>
+    <h1 style="font-size:17px;margin:22px 0 12px;">あなたに合う転職サイト TOP3</h1>
+    <div id="sites"></div>
+    <p class="note">
+      ※本ページはアフィリエイト広告(PR)を含みます。<br>
+      ※推定年収は年代・業種・学歴等をもとにした統計的な参考値であり、実際の年収を保証するものではありません。
+    </p>
+    <button class="cta xshare" id="xshare" style="margin-top:16px;"><span class="xmark">𝕏</span>診断結果をXでシェア</button>
+    <button class="cta" style="background:#8a7080;box-shadow:none;margin-top:10px;" onclick="location.reload()">もう一度診断する</button>
+  </div>
+</div>
+
+<script>
+// ================================================================
+// 【アフィリエイトURL設定】ここを実URLに差し替えてください
+// 例: doda: "https://px.a8.net/svt/ejp?a8mat=XXXXX"
+// ================================================================
+const SITE_URL = "https://clawtech6477.github.io/clawtech-lp/simulator.html"; // ← このLPの公開URL。空の場合はlocation.hrefを使用（file://対策）
+const AFFILIATE_URLS = {
+  doda:     "#doda",     // ← doda の実URLに差し替え
+  recruit:  "#recruit",  // ← リクルートエージェント
+  bizreach: "#bizreach", // ← ビズリーチ
+  rds:      "#rds",      // ← リクルートダイレクトスカウト
+  mynavi20: "#mynavi20", // ← マイナビジョブ20's
+  levtech:  "#levtech",  // ← レバテックキャリア
+  kaigo:    "#kaigo",    // ← かいご畑
+  pasona:   "#pasona",   // ← パソナキャリア
+  next:     "#next",     // ← リクナビNEXT
+};
+
+// ===== GA4計測 安全ラッパー（gtag未定義でもエラーにならない） =====
+function track(ev, params){ if(typeof gtag==="function") gtag("event", ev, params||{}); }
+
+// ===== 業種別 基準年収 =====
+const BASE = {it:520,sales:450,office:380,nurse:480,care:360,maker:440,service:360,childcare:340,other:400};
+// ===== 転職サイトDB(タグ+単価。affiはAFFILIATE_URLS参照) =====
+const SITES = [
+  {name:"doda",       tags:{dir:["same","new","wlb","unsure","toit"],job:["*"],age:["20","30","40"]}, payout:5500, affi:AFFILIATE_URLS.doda, rs:"求人数トップクラス。幅広く提案"},
+  {name:"リクルートエージェント", tags:{dir:["same","new","unsure"],job:["*"],age:["20","30","40","50"]}, payout:2200, affi:AFFILIATE_URLS.recruit, rs:"実績No.1。地方求人も豊富"},
+  {name:"ビズリーチ",  tags:{dir:["same"],job:["it","sales"],age:["30","40"],income:["high"]}, payout:6600, affi:AFFILIATE_URLS.bizreach, rs:"年収600万〜のハイクラス向け"},
+  {name:"リクルートダイレクトスカウト", tags:{dir:["same"],job:["*"],age:["30","40"],income:["high"]}, payout:4500, affi:AFFILIATE_URLS.rds, rs:"待つだけスカウト型"},
+  {name:"マイナビジョブ20's", tags:{dir:["new","unsure","toit"],job:["*"],age:["20"]}, payout:3572, affi:AFFILIATE_URLS.mynavi20, rs:"20代・第二新卒特化"},
+  {name:"レバテックキャリア", tags:{dir:["toit","same"],job:["it"],age:["20","30","40"]}, payout:4000, affi:AFFILIATE_URLS.levtech, rs:"IT・エンジニア専門"},
+  {name:"かいご畑",   tags:{dir:["same"],job:["care"],age:["20","30","40","50"]}, payout:3000, affi:AFFILIATE_URLS.kaigo, rs:"未経験・無資格から介護UP"},
+  {name:"パソナキャリア", tags:{dir:["wlb"],job:["*"],age:["20","30","40"]}, payout:2750, affi:AFFILIATE_URLS.pasona, rs:"手厚いサポート・働き方相談"},
+  {name:"リクナビNEXT", tags:{dir:["same","wlb","unsure"],job:["*"],age:["20","30"]}, payout:1870, affi:AFFILIATE_URLS.next, rs:"自分のペースで探せる"},
+];
+
+// ===== 状態管理 =====
+const st = {age:"",income:"",edu:"",job:"",dir:"",area:"capital"};
+const STEPS = ["age","income","edu","job","dir","area"];
+let curStep = 1;
+let started = false;
+
+function goStep(n){
+  curStep = n;
+  document.querySelectorAll(".step").forEach(el=>{
+    el.classList.toggle("active", +el.dataset.step === n);
+  });
+  document.getElementById("qpos").textContent = `Q${n}/${STEPS.length}`;
+  document.getElementById("prog").style.width = ((n-1)/STEPS.length*100)+"%";
+  document.getElementById("back").classList.toggle("hidden", n===1);
+  document.getElementById("go").classList.toggle("hidden", n!==STEPS.length);
+  document.getElementById("lead").classList.toggle("hidden", n!==1);
+  document.getElementById("pill").classList.toggle("hidden", n!==1);
+  window.scrollTo(0,0);
+}
+
+function wireGroup(id,key){
+  document.querySelectorAll(`#${id} button`).forEach(b=>{
+    b.onclick=()=>{
+      document.querySelectorAll(`#${id} button`).forEach(x=>x.classList.remove("on"));
+      b.classList.add("on");
+      st[key]=b.dataset.v;
+      if(!started){ track("diagnosis_start"); started=true; }
+      const idx = STEPS.indexOf(key);
+      if(idx < STEPS.length-1){
+        setTimeout(()=>goStep(idx+2),280);
+      }
+    };
+  });
+}
+STEPS.forEach(k=>wireGroup(k,k));
+
+document.getElementById("back").onclick=()=>{
+  if(curStep>1) goStep(curStep-1);
+};
+
+goStep(1);
+
+// ===== 金額カウントアップ演出 =====
+function countUp(el,to){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){ el.textContent=to; return; }
+  const t0=performance.now();
+  (function f(t){
+    const p=Math.min((t-t0)/900,1);
+    el.textContent=Math.round(to*(1-Math.pow(1-p,3)));
+    if(p<1) requestAnimationFrame(f);
+  })(t0);
+}
+
+// ===== 診断ロジック =====
+let lastFit=0, lastDiff=0;
+document.getElementById("go").onclick=()=>{
+  const ageK = {20:1.0,30:1.15,40:1.2,50:1.1}[st.age];
+  const dirK = st.dir==="toit"?1.2 : st.dir==="new"?1.1 : 1.0;
+  const cur = +st.income;
+  let fit = Math.round(BASE[st.job] * ageK * (+st.edu) * dirK /10)*10;
+  if(fit < cur) fit = cur + 40; // 必ず伸びしろが出る調整
+  const diff = fit - cur;
+  lastFit = fit; lastDiff = diff;
+
+  document.getElementById("cur").textContent = cur;
+  document.getElementById("fit").textContent = fit;
+  countUp(document.getElementById("diff"), diff);
+  document.getElementById("msg").textContent =
+    st.dir==="toit" ? "異業種チャレンジは伸びしろ大。特化型エージェントの活用が鍵です。"
+    : diff>=150 ? "現年収と適正年収の差が大きめ。行動すれば上げられる余地があります。"
+    : "着実に年収を伸ばせるタイプ。相性の良いサービスから始めましょう。";
+
+  // ===== 出し分けスコアリング =====
+  const isHigh = cur>=600;
+  const scored = SITES.map(s=>{
+    let sc=0;
+    if(s.tags.dir.includes(st.dir)) sc+=40;
+    if(s.tags.job.includes("*")||s.tags.job.includes(st.job)) sc+=30;
+    if(s.tags.age.includes(st.age)) sc+=15;
+    if(s.tags.income){ if(s.tags.income.includes("high")&&isHigh) sc+=35; else if(s.tags.income.includes("high")&&!isHigh) sc-=100; }
+    sc += s.payout*0.001; // 単価は"従"の微加点
+    return {...s,sc};
+  }).sort((a,b)=>b.sc-a.sc).slice(0,3);
+
+  const box=document.getElementById("sites"); box.innerHTML="";
+  scored.forEach((s,i)=>{
+    const a=document.createElement("a");
+    a.href=s.affi; a.className="site"+(i===0?" top":"");
+    a.innerHTML=`<div class="rank">${i+1}</div>
+      <div><div class="nm">${s.name}</div><div class="rs">${s.rs}</div></div>
+      ${i===0?'<span class="badge">最有力</span>':''}`;
+    a.addEventListener("click",()=>{ track("site_click",{site_name:s.name, rank:i+1}); });
+    box.appendChild(a);
+  });
+
+  document.getElementById("form").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+  setTimeout(()=>{document.getElementById("gauge").style.width=Math.min(diff/300*100,100)+"%";},100);
+  window.scrollTo(0,0);
+
+  track("diagnosis_complete",{fit_income:fit, diff:diff});
+};
+
+// ===== Xシェア =====
+document.getElementById("xshare").onclick=()=>{
+  const shareText = `私の適正年収は${lastFit}万円でした！今より+${lastDiff}万円UPの可能性🔥\n#年収診断\n`;
+  const url = SITE_URL || location.href;
+  window.open(`https://x.com/intent/post?text=${encodeURIComponent(shareText+url)}`, "_blank");
+};
+</script>
+</body>
+</html>
