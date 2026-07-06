@@ -26,6 +26,13 @@ cat > sitemap.xml << XMLEOF
   </url>
 
   <url>
+    <loc>${BASE_URL}/zentoshin-kessai/</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>${BASE_URL}/blog/</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>weekly</changefreq>
