@@ -8,514 +8,55 @@
 <meta property="og:title" content="2026年版 中小企業Web集客戦略｜成功の鍵">
 <meta property="og:description" content="中小企業向けWeb集客戦略を徹底解説！SEO、MEO、SNS、広告まで網羅。2026年に向けた最新トレンドと成功事例で売上UPを実現。ClawTechが支援。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-:root {
-    --primary: #1e3a5f; /* Dark Blue - inspired by professional, established tones */
-    --secondary: #2563eb; /* Vibrant Blue - for accents and interactive elements */
-    --dark: #1a1a1a; /* Deep Black - for strong contrast and headings */
-    --dark2: #333333; /* Dark Gray - for secondary text */
-    --gray: #6b7280; /* Medium Gray - for subtle text and borders */
-    --light: #f8faff; /* Off-White - for clean backgrounds */
-    --accent: #f59e0b; /* Amber - for highlights and calls to action */
-    --background-gradient: linear-gradient(135deg, #1e3a5f, #2563eb); /* Changed to a stronger, more professional gradient */
-    --card-background: #ffffff; /* Pure White - for content cards */
-    --border-color: #e5e7eb; /* Light Gray Border */
-    --text-color: #374151; /* Darker Gray - for body text, improved readability */
-    --heading-color: #1f2937; /* Very Dark Gray - for prominent headings */
-    --success-color: #10b981; /* Green for success messages */
-    --error-color: #ef4444; /* Red for error messages */
-}
-
-/* General Body Styles */
-body {
-    font-family: 'Inter', sans-serif; /* Keeping Inter for readability, but design will be distinct */
-    color: var(--text-color);
-    background: var(--background-gradient);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0.5em;
-}
-
-h1 { font-size: 2.5em; }
-h2 { font-size: 2em; }
-h3 { font-size: 1.75em; }
-h4 { font-size: 1.5em; }
-
-/* Links */
-a {
-    color: var(--secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary);
-    text-decoration: underline;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: 600;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--secondary);
-    color: var(--light);
-}
-
-.btn-primary:hover {
-    background-color: var(--primary);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--secondary);
-    border: 2px solid var(--secondary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--secondary);
-    color: var(--light);
-}
-
-.btn-accent {
-    background-color: var(--accent);
-    color: var(--dark);
-}
-
-.btn-accent:hover {
-    background-color: darken(var(--accent), 10%); /* Placeholder for Sass-like function */
-    filter: brightness(90%); /* CSS alternative for darkening */
-}
-
-/* Forms */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-size: 1em;
-    color: var(--text-color);
-    background-color: var(--card-background);
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-control:focus {
-    border-color: var(--secondary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
-}
-
-textarea.form-control {
-    min-height: 100px;
-    resize: vertical;
-}
-
-/* Cards/Sections */
-.card {
-    background-color: var(--card-background);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 32px;
-    margin-bottom: 24px;
-    border: 1px solid var(--border-color);
-}
-
-/* Layout containers */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.section-padding {
-    padding: 64px 0;
-}
-
-/* Specific elements for a professional, industry-specific design */
-/* Header/Navigation */
-header {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 16px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--light);
-    text-decoration: none;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 24px;
-}
-
-nav ul li a {
-    color: var(--light);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: var(--light);
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    transform: rotate(45deg);
-}
-
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 250px;
-    height: 250px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50%;
-    transform: rotate(-30deg);
-}
-
-
-.hero-section h1 {
-    color: var(--light);
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-section p {
-    font-size: 1.3em;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    opacity: 0.9;
-}
-
-/* Feature Grid (replacing 3-column AI grid) */
-.feature-grid {
-    display:
-
-body {
-    font-family: 'Roboto', sans-serif; /* Google's preferred font */
-    color: var(--text-color);
-    background: var(--background-gradient);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-header {
-    background-color: var(--card-background);
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--heading-color);
-}
-
-.nav-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 25px;
-}
-
-.nav-links a {
-    color: var(--dark);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: var(--background-gradient);
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: var(--heading-color);
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    color: var(--text-color);
-    max-width: 800px;
-    margin: 0 auto 40px;
-}
-
-.btn-primary {
-    display: inline-block;
-    background-color: var(--primary);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #1565c0; /* Darker Google Blue */
-    transform: translateY(-2px);
-    text-decoration: none;
-}
-
-.features, .testimonials, .contact {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.features h2, .testimonials h2, .contact h2 {
-    text-align: center;
-    font-size: 2.8rem;
-    color: var(--heading-color);
-    margin-bottom: 50px;
-    font-weight: 700;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.feature-item {
-    background-color: var(--card-background);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-}
-
-.feature-item i {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-.feature-item h3 {
-    font-size: 1.5rem;
-    color: var(--heading-color);
-    margin-bottom: 15px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-item {
-    background-color: var(--card-background);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-color);
-}
-
-.testimonial-item p {
-    font-style: italic;
-    margin-bottom: 15px;
-    color: var(--text-color);
-}
-
-.testimonial-item .author {
-    font-weight: bold;
-    color: var(--heading-color);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--card-background);
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid var(--border-color);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--heading-color);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: calc(100% - 20px);
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.contact-form button:hover {
-    background-color: #1565c0;
-    transform: translateY(-2px);
-}
-
-footer {
-    background-color: var(--dark);
-    color: var(--light);
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max
+:root{--kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;--yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
+--f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
-a{text-decoration:none;color:inherit}
-nav{background:rgba(15,23,42,0.95);backdrop-filter:blur(20px);padding:0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
-nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:68px}
-nav a{color:rgba(255,255,255,0.7);font-size:13px;font-weight:600}
-nav a:hover{color:#fff}
-nav .logo{color:#fff;font-size:24px;font-weight:900}
-nav .logo span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.article{max-width:780px;margin:0 auto;padding:48px 24px 80px}
-.article-header{margin-bottom:40px}
-.article-header .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:12px}
-.article-header h1{font-size:28px;font-weight:900;line-height:1.4;margin-bottom:12px}
-.article-header .meta{font-size:13px;color:var(--gray)}
-.article-body h2{font-size:22px;font-weight:800;margin:48px 0 16px;padding-bottom:8px;border-bottom:3px solid var(--primary)}
-.article-body h3{font-size:18px;font-weight:700;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--primary)}
-.article-body p{margin-bottom:20px;font-size:16px}
-.article-body ul{margin:0 0 20px 24px}
-.article-body li{margin-bottom:8px;font-size:16px}
-.article-body strong{color:var(--primary)}
-.cta-box{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:40px;border-radius:16px;text-align:center;margin:48px 0}
-.cta-box h3{font-size:22px;margin-bottom:12px}
-.cta-box p{margin-bottom:20px;opacity:0.9}
-.cta-box a{display:inline-block;background:#fff;color:var(--primary);padding:14px 40px;border-radius:8px;font-weight:700;font-size:16px}
-footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padding:32px;font-size:13px}
+body{font-family:var(--f-body);color:var(--sumi);line-height:1.9;background:var(--kami)}
+a{text-decoration:none;color:var(--ai-mid)}
+:focus-visible{outline:3px solid var(--yamabuki);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+nav{background:rgba(250,249,245,.9);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line)}
+nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:66px}
+nav a{color:var(--sumi);font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ai-mid)}
+nav .logo{font-family:var(--f-display);font-weight:800;font-size:19px;color:var(--sumi)}
+nav .logo span{color:var(--ai-mid)}
+.article{max-width:760px;margin:0 auto;padding:0 0 80px}
+.article-header{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:64px 24px 48px;text-align:center;margin-bottom:48px}
+.article-header .tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#F0C158;padding:5px 14px;border-radius:2px;margin-bottom:18px}
+.article-header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,3.4vw,32px);line-height:1.5;max-width:680px;margin:0 auto 14px}
+.article-header .meta{font-family:var(--f-mono);font-size:12px;color:#9AA5B8}
+.article-body{padding:0 24px}
+.article-body h2{font-family:var(--f-display);font-size:21px;font-weight:800;margin:44px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--kachi);color:var(--sumi)}
+.article-body h3{font-size:17px;font-weight:700;margin:30px 0 12px;padding-left:12px;border-left:3px solid var(--yamabuki);color:var(--sumi)}
+.article-body h4{font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--sumi)}
+.article-body p{margin-bottom:20px;font-size:15.5px}
+.article-body ul,.article-body ol{margin:0 0 20px 24px}
+.article-body li{margin-bottom:8px;font-size:15.5px}
+.article-body strong{color:var(--kachi)}
+.article-body img{max-width:100%;height:auto;border-radius:4px;margin:12px 0}
+.article-body table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px}
+.article-body th,.article-body td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.article-body th{background:#F2F4F7;font-weight:700}
+.article-body .case-box{background:#F2F4F7;border:1px solid var(--line);border-radius:4px;padding:20px 22px;margin:20px 0}
+.article-body .case-box .label{font-family:var(--f-mono);font-size:11px;color:var(--hai);margin-bottom:6px}
+.article-body .case-box .result{font-weight:700;color:var(--kachi);margin-top:8px}
+.article-body .highlight-box{background:#FDF6E3;border-left:3px solid var(--yamabuki);border-radius:2px;padding:18px 22px;margin:24px 0}
+.article-body .highlight-box h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--sumi)}
+.cta-box{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:40px 32px;border-radius:4px;text-align:center;margin:48px 0}
+.cta-box h3{font-family:var(--f-display);font-size:20px;margin:0 0 12px;padding:0;border:0;color:var(--white)}
+.cta-box p{margin-bottom:20px;color:#B9C2D3;font-size:14px}
+.cta-btn{display:inline-block;background:var(--yamabuki);color:var(--kachi-deep)!important;padding:14px 36px;border-radius:3px;font-weight:700;font-size:15px}
+.cta-btn:hover{background:#F4C64A}
+footer{background:var(--kachi-deep);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:13px}
+footer a{color:rgba(255,255,255,.5)}
+footer a:hover{color:var(--white)}
 @media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
 </style>
 </head>
@@ -525,7 +66,7 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="article-header">
 <span class="tag">集客</span>
 <h1>2026年版 中小企業Web集客戦略｜成功の鍵</h1>
-<div class="meta">2026年4月3日 ・ 読了目安 8分</div>
+<div class="meta">2026年4月2日 ・ 読了目安 8分</div>
 </div>
 <div class="article-body">
 <h2>中小企業がWeb集客で成功するための2026年戦略</h2>
@@ -546,7 +87,6 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <li><strong>動画コンテンツの重要性:</strong> YouTube、TikTokなどの動画プラットフォームを活用した集客。</li>
 </ul>
 <p>これらのトレンドを踏まえ、自社のビジネスに合った戦略を立てることが重要です。ClawTechでは、AIを活用したWeb集客支援も行っており、お客様のビジネスに最適なソリューションをご提案いたします。 <a href="ai-katsuyou-jirei.html">AI活用事例はこちら</a></p>
-
 <h2>中小企業向けWeb集客戦略の具体的なステップ</h2>
 <p>Web集客を成功させるためには、以下のステップで戦略を立て、実行していくことが重要です。</p>
 <h3>ステップ1: 目標設定とターゲット顧客の明確化</h3>
@@ -568,7 +108,6 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <li><strong>口コミの管理:</strong> 顧客からの口コミに返信し、良好な関係を築く。</li>
 </ul>
 <p>ClawTechでは、MEO対策サービスも提供しており、お客様のGoogleビジネスプロフィールを最適化し、地域顧客の獲得を支援いたします。 特に、クリニックや整骨院のお客様からは、予約システムとGoogleマップ上位表示の連携について、多くのお問い合わせをいただいております。<a href="meo-taisaku.html">MEO対策についてはこちら</a></p>
-
 <h2>SNSを活用したWeb集客戦略</h2>
 <p>SNSは、Web集客において非常に強力なツールです。Facebook、Instagram、Twitter、LINEなど、様々なSNSプラットフォームを活用することで、より多くの顧客にリーチすることができます。飲食店様向けには、特にInstagram連携をおすすめしており、メニュー掲載やテイクアウト予約などをスムーズに行えるように支援しています。</p>
 <h3>SNSの選び方と運用方法</h3>
@@ -580,7 +119,6 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 </ul>
 <h3>SNS広告の活用</h3>
 <p>SNS広告は、特定のターゲット顧客に絞って広告を配信できるため、非常に効果的なWeb集客手段です。Facebook広告、Instagram広告、Twitter広告など、様々なSNS広告があり、予算や目的に合わせて最適な広告を選ぶことができます。ClawTechでは、SNS運用代行サービスも提供しており、お客様のSNSアカウントの運用を代行し、集客効果を高めます。</p>
-
 <h2>Web集客を成功させるための顧客体験（CX）の重要性</h2>
 <p>Web集客は、単にWebサイトにアクセスを集めるだけではありません。顧客がWebサイトを訪れてから、商品を購入したり、サービスを利用したりするまでの体験全体を最適化することが重要です。顧客体験（CX）を向上させることで、顧客満足度を高め、リピーターを増やすことができます。</p>
 <h3>顧客体験を向上させるためのポイント</h3>
@@ -593,10 +131,8 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <p>ClawTechでは、ホームページ・LP制作サービスも提供しており、お客様のWebサイトを顧客体験を重視したデザインにし、集客効果を高めます。ホームページ・LP制作は¥49,800〜、最短1週間で対応可能です。士業のお客様からは、信頼感のあるデザインとSEO対策について、多くのお問い合わせをいただいております。</p>
 <h3>オフライン施策との連携</h3>
 <p>Web集客だけでなく、オフライン施策との連携も重要です。例えば、展示会やセミナーでWebサイトのQRコードを配布したり、地域イベントでWebサイトへの誘導を促したりすることで、より多くの顧客にWebサイトを知ってもらうことができます。また、従業員エンゲージメントを高めるインナーブランディングを行うことで、従業員が自社のWebサイトを積極的に紹介してくれるようになり、口コミを促進することができます。</p>
-
 <h2>2026年に向けたWeb集客戦略のまとめ</h2>
 <p>中小企業がWeb集客で成功するためには、2026年に向けた最新トレンドを踏まえ、戦略的なアプローチが必要です。SEO対策、MEO対策、SNS活用、顧客体験の向上など、様々な要素を組み合わせることで、より効果的なWeb集客を実現することができます。ClawTechでは、お客様のビジネスに最適なWeb集客戦略をご提案し、売上向上を支援いたします。業務自動化・DXコンサルティングも行っておりますので、お気軽にご相談ください。また、美容室・サロンのお客様には、予約システムとビフォーアフター掲載の連携をおすすめしています。予約システムの構築や問い合わせフォームの構築も承っております。</p>
-
 <div style="background-color:#f0f0f0; padding:20px; border-radius:5px; text-align:center;">
 <h3>Web集客に関する無料相談はこちら</h3>
 <p>Web集客でお困りの方は、お気軽にご相談ください。専門家がお客様の課題を分析し、最適なソリューションをご提案いたします。</p>
@@ -605,10 +141,10 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="cta-box">
 <h3>プロに相談してみませんか？</h3>
 <p>ClawTechでは集客に関する専門サービスを提供しています。まずはお気軽にご相談ください。</p>
-<a href="../#contact" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">無料相談・お見積もりはこちら→</a>
+<a href="../#contact" class="cta-btn">無料相談・お見積もりはこちら→</a>
 </div>
 </div>
 </article>
-<footer>&copy; 2026 ClawTech Inc.</footer>
+<footer>&copy; 2026 ClawTech（クロウテック）｜<a href="./">ブログ一覧</a>｜<a href="../#company">会社概要</a></footer>
 </body>
 </html>

@@ -8,1378 +8,55 @@
 <meta property="og:title" content="2026年版：業務自動化RPA、AIの違いとは？徹底比較ガイド">
 <meta property="og:description" content="業務自動化を検討中ですか？RPA、AIの違いを徹底解説！導入メリット、デメリット、事例、選び方まで網羅。2026年に向けた最適な自動化戦略をClawTechがご提案。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClawTech｜AI × Web × DX で事業を加速する</title>
-    <meta name="description" content="ClawTech — AI活用のLP・ホームページ制作、MEO対策、業務自動自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
-    <meta property="og:title" content="ClawTech｜AI × Web × DX で事業を加速する">
-    <meta property="og:description" content="LP・ホームページ制作、MEO対策、業務自動化、DXコンサルティング。地域ビジネスのデジタル化をワンストップで支援します。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/">
-    <meta property="og:image" content="https://clawtech6477.github.io/clawtech-lp/ogp.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-    --primary: #0056b3;   /* 濃い青 */
-    --dark: #007bff;      /* 明るい青 */
-    --dark2: #004085;     /* さらに濃い青 */
-    --gray: #6c757d;      /* グレー */
-    --light: #f8f9fa;     /* 非常に明るいグレー */
-    --accent: #dc3545;    /* 赤 */
-    --text-color: #343a40; /* 濃いテキスト色 */
-    --heading-color: #212529; /* 非常に濃いテキスト色 */
-}
-
-/* 既存のCSSはそのまま維持し、デザイン変更は行いません。
-   Syntax Errorの根本修正はCSSの範疇外であり、シェルスクリプトのクォート処理に関連するものです。
-   このCSSファイル自体にはSyntax Errorを引き起こすバッククォート置換エラーの直接的な原因はありません。
-   したがって、このCSSファイルに対する修正は不要です。
-   シェルスクリプトの修正と動作テスト、lessons.mdへの記録は別途実施します。
-*/
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-color);
-    background-color: var(--light);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-weight: 700;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
-
-h1 {
-    font-size: 2.8em;
-}
-
-h2 {
-    font-size: 2.2em;
-}
-
-h3 {
-    font-size: 1.8em;
-}
-
-a {
-    color: var(--dark);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--dark2);
-    text-decoration: underline;
-}
-
-button, .button {
-    display: inline-block;
-    background-color: var(--accent);
-    color: var(--light);
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover, .button:hover {
-    background-color: #dc2626; /* Slightly darker red */
-    transform: translateY(-2px);
-}
-
-button:active, .button:active {
-    transform: translateY(0);
-}
-
-/* Header */
-header {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header .logo {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--light);
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 25px;
-}
-
-header nav ul li a {
-    color: var(--light);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-/* Sections */
-section {
-    padding: 60px 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.hero {
-    background: linear-gradient(135deg, var(--primary), var(--dark));
-    color: var(--light);
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.hero h1 {
-    color: var(--light);
-    font-size: 3.5em;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.3em;
-    margin-bottom: 40px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero .button {
-    background-color: var(--accent);
-    color: var(--light);
-    padding: 15px 30px;
-    font-size: 1.1em;
-    border-radius: 50px;
-}
-
-.hero .button:hover {
-    background-color: #dc2626;
-}
-
-.about, .services, .contact {
-    background-color: var(--light);
-    text-align: center;
-}
-
-.about h2, .services h2, .contact h2 {
-    margin-bottom: 40px;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-item {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-
-.service-item h3 {
-    color: var(--dark);
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-.service-item p {
-    color: var(--gray);
-}
-
-/* Contact Form */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    text-align: left;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--heading-color);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 1em;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
-.contact-form textarea:focus {
-    border-color: var(--dark);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1em;
-    border-radius: 8px;
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary);
-    color: var(--light);
-    text-align: center;
-    padding: 40px 0;
-    margin-top: 60px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-
-    header nav ul {
-
-/* 既存のコンテンツ・テキスト・セクション構成は変えない */
-/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
-/* 個性的で業種に合ったデザインにする */
-/* CTAボタン・フォームの動作は壊さない */
-
-/* ここに業種に合ったデザインのCSSを追加・修正します */
-/* 例: フォント、背景、ボタンのスタイルなど */
-
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントの指定 */
-    color: var(--text-color);
-    background-color: var(--light);
-    line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* 見出し用フォントの指定 */
-    color: var(--heading-color);
-    margin-bottom: 0.5em;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ボタンのスタイル */
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--light);
-    border: 2px solid var(--accent);
-}
-
-.btn-primary:hover {
-    background-color: darken(var(--accent), 10%); /* Sass/Lessの関数を想定。CSS変数では直接使えないため、別途定義するかJSで制御 */
-    color: var(--light);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--primary);
-    color: var(--light);
-}
-
-/* セクションのパディング */
-section {
-    padding: 60px 0;
-}
-
-/* コンテナ */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ヘッダー */
-header {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--light);
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 30px;
-}
-
-header nav ul li a {
-    color: var(--light);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-/* フッター */
-footer {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 40px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* フォームのスタイル */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--heading-color);
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="tel"],
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.form-group input[type="submit"] {
-    width: auto;
-    padding: 12px 30px;
-    background-color: var(--primary);
-    color: var(--light);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.form-group input[type="submit"]:hover {
-    background-color: darken(var(--primary), 10%); /* Sass/Lessの関数を想定 */
-}
-
-/* レスポンシブデザインの基本 */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-    }
-
-    header nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    header nav ul li {
-        margin: 0 15px 10px;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    section {
-        padding: 40px 0;
-    }
-}
-
-/* 既存のコンテンツ・テキスト・セクション構成は変えない */
-/* AIっぽいデザイン（Inter/白背景/紫グラデ/3列グリッド）を排除 */
-/* 個性的で業種に合ったデザインにする */
-/* CTAボタン・フォームの動作は壊さない */
-
-/* 以下に、業種に合ったデザイン調整を追加します */
-
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントの指定 */
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* 見出し用フォントの指定 */
-    color: var(--heading-color);
-    margin-bottom: 0.8em;
-}
-
-a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* ボタンのスタイル */
-.btn {
-    display: inline-block;
-    background-color: var(--accent);
-    color: var(--light);
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #c0392b; /* アクセントカラーの少し濃い色 */
-    text-decoration: none;
-}
-
-/* フォーム要素のスタイル */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid var(--gray);
-    border-radius: 5px;
-    box-sizing: border-box; /* パディングとボーダーを幅に含める */
-    font-family: 'Noto Sans JP', sans-serif;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-input[type="submit"] {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover {
-    background-color: var(--dark);
-}
-
-/* セクションのパディング */
-section {
-    padding: 60px 0;
-}
-
-/* コンテナ */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ヘッダー */
-header {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--light);
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-header nav ul li {
-    margin-left: 25px;
-}
-
-header nav ul li a {
-    color: var(--light);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-/* フッター */
-footer {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 40px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9em;
-}
-
-/* バナーHTMLのスタイル */
-.banner-cta {
-    background: linear-gradient(135deg, var(--primary), var(--dark2));
-    padding: 24px;
-    border-radius: 12px;
-    margin: 32px 0;
-    text-align: center;
-    color: var(--light);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.banner-cta h3 {
-    color: var(--light);
-    margin-top: 0;
-    margin-bottom: 16px;
-    font-size: 1.8em;
-}
-
-.banner-cta p {
-    font-size: 1.1em;
-    margin-bottom: 24px;
-    line-height: 1.5;
-}
-
-.banner-cta .btn {
-    background-color: var(--accent);
-    color: var(--light);
-    padding: 14px 30px;
-    font-size: 1.1em;
-    border-radius: 8px;
-}
-
-.banner-cta .btn:hover {
-    background-color: #c0392b;
-}
-
-/* レスポンシブデザインの調整 */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        margin-top: 15px;
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    .banner-cta h3 {
-        font-size: 1.5em;
-    }
-
-    .banner-cta p {
-        font-size: 1em;
-    }
-
-    .banner-cta .btn {
-        padding: 12px 24px;
-        font-size: 1em;
-    }
-}
-
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを優先 */
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light);
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* 英語フォントを優先 */
-    color: var(--heading-color);
-    margin-top: 0;
-    margin-bottom: 0.5em;
-    line-height: 1.2;
-}
-
-h1 { font-size: 2.8em; }
-h2 { font-size: 2.2em; }
-h3 { font-size: 1.8em; }
-h4 { font-size: 1.4em; }
-
-a {
-    color: var(--accent);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--primary);
-}
-
-p {
-    margin-bottom: 1em;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Header */
-header {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--light);
-}
-
-.logo a {
-    color: var(--light);
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    color: var(--light);
-    font-weight: 500;
-    font-size: 1.1em;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent);
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://source.unsplash.com/random/1600x900/?office,consulting') no-repeat center center/cover;
-    color: var(--light);
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay for text readability */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-}
-
-.hero h1 {
-    font-size: 3.8em;
-    margin-bottom: 20px;
-    color: var(--light);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    color: var(--light);
-    opacity: 0.9;
-}
-
-.btn {
-    display: inline-block;
-    background-color: var(--accent);
-    color: var(--light);
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #c0392b; /* Darker red */
-    transform: translateY(-2px);
-}
-
-/* Section Styling */
-section {
-    padding: 80px 0;
-    background-color: var(--light);
-}
-
-section:nth-of-type(even) {
-    background-color: #f8f8f8; /* Slightly different background for alternating sections */
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 2.5em;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--accent);
-    border-radius: 2px;
-}
-
-/* Features/Services Grid */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.grid-item {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.grid-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.grid-item i {
-    font-size: 3em;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-
-.grid-item h3 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.grid-item p {
-    font-size: 1em;
-    color: var(--dark2);
-}
-
-/* About Section */
-.about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 40px;
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-image {
-
-/* 基本スタイル */
-body {
-    font-family: 'Noto Sans JP', sans-serif; /* 日本語フォントを優先 */
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--light);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--heading-color);
-    font-weight: 700;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-}
-
-a {
-    color: var(--primary);
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-p {
-    margin-bottom: 1em;
-}
-
-/* ヘッダー */
-header {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 1rem 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--light);
-}
-
-header nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    color: var(--light);
-    font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: var(--dark2);
-    text-decoration: none;
-}
-
-/* ヒーローセクション */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1600x900/?tech,vintage') no-repeat center center/cover; /* ランダムな画像を使用 */
-    color: var(--light);
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    color: var(--light);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
-    max-width: 800px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-.hero .cta-button {
-    background-color: var(--primary);
-    color: var(--light);
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.hero .cta-button:hover {
-    background-color: var(--accent);
-    transform: translateY(-3px);
-    text-decoration: none;
-}
-
-/* セクション共通スタイル */
-section {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section:nth-of-type(even) {
-    background-color: var(--light);
-}
-
-section:nth-of-type(odd) {
-    background-color: var(--accent);
-}
-
-section h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-section h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary);
-    border-radius: 2px;
-}
-
-/* お悩みセクション */
-#problems .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-#problems .problem-item {
-    background-color: var(--light);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-top: 5px solid var(--primary);
-}
-
-#problems .problem-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-#problems .problem-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--dark);
-}
-
-#problems .problem-item p {
-    font-size: 1.1rem;
-    color: var(--dark2);
-}
-
-/* サービスセクション */
-#services .service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-#services .service-item {
-    background-color: var(--light);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 5px solid var(--primary);
-}
-
-#services .service-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-#services .service-item h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--dark);
-}
-
-#services .service-item p {
-    font-size: 1.1rem;
-    color: var(--dark2);
-}
-
-/* 導入事例セクション */
-#casestudies .case-study-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,
-
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--light);
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
-            color: var(--heading-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-            line-height: 1.3;
-        }
-
-        h1 { font-size: 2.8em; text-align: center; }
-        h2 { font-size: 2.2em; text-align: center; border-bottom: 2px solid var(--accent); padding-bottom: 0.5em; margin-bottom: 1.5em;}
-        h3 { font-size: 1.8em; }
-        h4 { font-size: 1.4em; }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--dark);
-            color: var(--light);
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8em;
-            font-weight: bold;
-            color: var(--light);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            color: var(--light);
-            font-weight: 700;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: var(--dark2);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-            color: var(--light);
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            color: var(--light);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-
-        .hero p {
-            font-size: 1.4em;
-            margin-bottom: 40px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary);
-            color: var(--light);
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-        }
-
-        section {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-
-        section:nth-of-type(even) {
-            background-color: #f0e6d6; /* 少し濃いベージュ */
-        }
-
-        .features-grid, .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .feature-item, .solution-item {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid var(--primary);
-        }
-
-        .feature-item:hover, .solution-item:hover {
-            transform: translateY(-5px);
-            box-
+:root{--kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;--yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
+--f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.9;background:var(--light)}
-a{text-decoration:none;color:inherit}
-nav{background:rgba(15,23,42,0.95);backdrop-filter:blur(20px);padding:0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.08)}
-nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:68px}
-nav a{color:rgba(255,255,255,0.7);font-size:13px;font-weight:600}
-nav a:hover{color:#fff}
-nav .logo{color:#fff;font-size:24px;font-weight:900}
-nav .logo span{background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.article{max-width:780px;margin:0 auto;padding:48px 24px 80px}
-.article-header{margin-bottom:40px}
-.article-header .tag{display:inline-block;background:var(--primary);color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:4px;margin-bottom:12px}
-.article-header h1{font-size:28px;font-weight:900;line-height:1.4;margin-bottom:12px}
-.article-header .meta{font-size:13px;color:var(--gray)}
-.article-body h2{font-size:22px;font-weight:800;margin:48px 0 16px;padding-bottom:8px;border-bottom:3px solid var(--primary)}
-.article-body h3{font-size:18px;font-weight:700;margin:32px 0 12px;padding-left:12px;border-left:4px solid var(--primary)}
-.article-body p{margin-bottom:20px;font-size:16px}
-.article-body ul{margin:0 0 20px 24px}
-.article-body li{margin-bottom:8px;font-size:16px}
-.article-body strong{color:var(--primary)}
-.cta-box{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:40px;border-radius:16px;text-align:center;margin:48px 0}
-.cta-box h3{font-size:22px;margin-bottom:12px}
-.cta-box p{margin-bottom:20px;opacity:0.9}
-.cta-box a{display:inline-block;background:#fff;color:var(--primary);padding:14px 40px;border-radius:8px;font-weight:700;font-size:16px}
-footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padding:32px;font-size:13px}
+body{font-family:var(--f-body);color:var(--sumi);line-height:1.9;background:var(--kami)}
+a{text-decoration:none;color:var(--ai-mid)}
+:focus-visible{outline:3px solid var(--yamabuki);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+nav{background:rgba(250,249,245,.9);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line)}
+nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:66px}
+nav a{color:var(--sumi);font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ai-mid)}
+nav .logo{font-family:var(--f-display);font-weight:800;font-size:19px;color:var(--sumi)}
+nav .logo span{color:var(--ai-mid)}
+.article{max-width:760px;margin:0 auto;padding:0 0 80px}
+.article-header{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:64px 24px 48px;text-align:center;margin-bottom:48px}
+.article-header .tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#F0C158;padding:5px 14px;border-radius:2px;margin-bottom:18px}
+.article-header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,3.4vw,32px);line-height:1.5;max-width:680px;margin:0 auto 14px}
+.article-header .meta{font-family:var(--f-mono);font-size:12px;color:#9AA5B8}
+.article-body{padding:0 24px}
+.article-body h2{font-family:var(--f-display);font-size:21px;font-weight:800;margin:44px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--kachi);color:var(--sumi)}
+.article-body h3{font-size:17px;font-weight:700;margin:30px 0 12px;padding-left:12px;border-left:3px solid var(--yamabuki);color:var(--sumi)}
+.article-body h4{font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--sumi)}
+.article-body p{margin-bottom:20px;font-size:15.5px}
+.article-body ul,.article-body ol{margin:0 0 20px 24px}
+.article-body li{margin-bottom:8px;font-size:15.5px}
+.article-body strong{color:var(--kachi)}
+.article-body img{max-width:100%;height:auto;border-radius:4px;margin:12px 0}
+.article-body table{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14.5px}
+.article-body th,.article-body td{border:1px solid var(--line);padding:10px 12px;text-align:left}
+.article-body th{background:#F2F4F7;font-weight:700}
+.article-body .case-box{background:#F2F4F7;border:1px solid var(--line);border-radius:4px;padding:20px 22px;margin:20px 0}
+.article-body .case-box .label{font-family:var(--f-mono);font-size:11px;color:var(--hai);margin-bottom:6px}
+.article-body .case-box .result{font-weight:700;color:var(--kachi);margin-top:8px}
+.article-body .highlight-box{background:#FDF6E3;border-left:3px solid var(--yamabuki);border-radius:2px;padding:18px 22px;margin:24px 0}
+.article-body .highlight-box h4{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--sumi)}
+.cta-box{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:40px 32px;border-radius:4px;text-align:center;margin:48px 0}
+.cta-box h3{font-family:var(--f-display);font-size:20px;margin:0 0 12px;padding:0;border:0;color:var(--white)}
+.cta-box p{margin-bottom:20px;color:#B9C2D3;font-size:14px}
+.cta-btn{display:inline-block;background:var(--yamabuki);color:var(--kachi-deep)!important;padding:14px 36px;border-radius:3px;font-weight:700;font-size:15px}
+.cta-btn:hover{background:#F4C64A}
+footer{background:var(--kachi-deep);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:13px}
+footer a{color:rgba(255,255,255,.5)}
+footer a:hover{color:var(--white)}
 @media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
 </style>
 </head>
@@ -1389,122 +66,102 @@ footer{background:var(--dark);color:rgba(255,255,255,0.5);text-align:center;padd
 <div class="article-header">
 <span class="tag">DX</span>
 <h1>2026年版：業務自動化RPA、AIの違いとは？徹底比較ガイド</h1>
-<div class="meta">2026年3月16日 ・ 読了目安 8分</div>
+<div class="meta">2026年3月15日 ・ 読了目安 8分</div>
 </div>
 <div class="article-body">
 <h2>業務自動化とは？RPA、AI、そしてDXの関係性を理解する</h2>
-
 <h3>業務自動化の定義と重要性</h3>
 <p>業務自動化とは、人が行っていた業務プロセスを、テクノロジーを活用して自動化することです。単純な繰り返し作業から、複雑な判断を伴う業務まで、幅広い範囲をカバーします。近年、労働人口の減少や働き方改革の推進により、業務自動化の重要性はますます高まっています。</p>
 <p>例えば、弊社のクライアントである中小企業では、経理部門の請求書処理業務をRPAで自動化した結果、月間20時間以上の工数削減に成功しました。これは、担当者の残業時間を減らし、より戦略的な業務に集中できるようになったことを意味します。</p>
-
 <h3>RPA、AI、その他の自動化技術</h3>
 <p>業務自動化を実現するための技術は、RPA（Robotic Process Automation）、AI（Artificial Intelligence）、そして特定の業務に特化した専用ツールなど、多岐にわたります。RPAは、既存のシステムを変更せずに、定型業務をソフトウェアロボットで代行する技術です。AIは、学習や推論といった人間のような知的な活動をコンピュータに行わせる技術であり、非定型業務の自動化に役立ちます。</p>
 <p>また、業務自動化はDX（デジタルトランスフォーメーション）の重要な要素の一つです。DXとは、デジタル技術を活用して、企業のビジネスモデルや組織、プロセスなどを変革することであり、業務自動化はそのための手段となります。</p>
-
 <h3>自動化戦略におけるRPAとAIの役割</h3>
 <p>自動化戦略を立案する際には、RPAとAIをどのように活用するかを明確にする必要があります。RPAは、定型的なルールに基づいて処理できる業務に適しており、AIは、データ分析や予測、判断など、より高度な処理が必要な業務に適しています。最適な自動化戦略は、企業の規模や業種、業務内容によって異なります。</p>
 <p>ClawTechでは、業務自動化・DXコンサルティングも提供しています。お客様の課題をヒアリングし、最適な自動化戦略をご提案します。</p>
-
 <h2>RPAとAI：機能、得意分野、導入効果の違い</h2>
-
 <h3>RPAの機能と得意分野</h3>
 <p>RPAは、主に以下のような機能を持っています。</p>
 <ul>
- <li>画面操作の自動化：マウス操作やキーボード入力を記録し、自動で実行します。</li>
- <li>データ入力・抽出の自動化：異なるシステム間でデータを自動的に転記したり、抽出したりします。</li>
- <li>メール送受信の自動化：メールの受信、内容の解析、返信などを自動で行います。</li>
- <li>ファイル操作の自動化：ファイルの作成、編集、移動、削除などを自動で行います。</li>
+<li>画面操作の自動化：マウス操作やキーボード入力を記録し、自動で実行します。</li>
+<li>データ入力・抽出の自動化：異なるシステム間でデータを自動的に転記したり、抽出したりします。</li>
+<li>メール送受信の自動化：メールの受信、内容の解析、返信などを自動で行います。</li>
+<li>ファイル操作の自動化：ファイルの作成、編集、移動、削除などを自動で行います。</li>
 </ul>
 <p>RPAは、定型的な事務処理やデータ処理など、ルールが明確な業務の自動化に特に効果を発揮します。例えば、毎月発生する請求書の作成や、顧客情報のデータベースへの入力などを自動化することができます。</p>
-
 <h3>AIの機能と得意分野</h3>
 <p>AIは、主に以下のような機能を持っています。</p>
 <ul>
- <li>画像認識：画像の内容を認識し、分類したり、特定のオブジェクトを検出したりします。</li>
- <li>自然言語処理：人間の言葉を理解し、文章の解析、翻訳、生成などを行います。</li>
- <li>機械学習：大量のデータからパターンを学習し、予測や判断を行います。</li>
- <li>音声認識：人間の音声を認識し、文字に変換したり、特定のコマンドを実行したりします。</li>
+<li>画像認識：画像の内容を認識し、分類したり、特定のオブジェクトを検出したりします。</li>
+<li>自然言語処理：人間の言葉を理解し、文章の解析、翻訳、生成などを行います。</li>
+<li>機械学習：大量のデータからパターンを学習し、予測や判断を行います。</li>
+<li>音声認識：人間の音声を認識し、文字に変換したり、特定のコマンドを実行したりします。</li>
 </ul>
 <p>AIは、非定型的な業務や、判断を伴う業務の自動化に特に効果を発揮します。例えば、顧客からの問い合わせ内容をAIが解析し、適切な回答を自動で生成したり、過去の販売データから将来の売上を予測したりすることができます。</p>
-
 <h3>導入メリット・デメリットの比較</h3>
 <p>RPAとAIは、それぞれ異なるメリット・デメリットを持っています。</p>
 <table>
- <thead>
- <tr>
- <th></th>
- <th>RPA</th>
- <th>AI</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <th>メリット</th>
- <td>導入が比較的容易、既存システムへの影響が少ない、コストが低い</td>
- <td>高度な判断が可能、業務効率の大幅な改善、新たな価値創造</td>
- </tr>
- <tr>
- <th>デメリット</th>
- <td>定型業務にしか対応できない、柔軟性に欠ける、メンテナンスが必要</td>
- <td>導入コストが高い、専門知識が必要、学習データが必要</td>
- </tr>
- </tbody>
+<thead>
+<tr>
+<th></th>
+<th>RPA</th>
+<th>AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>メリット</th>
+<td>導入が比較的容易、既存システムへの影響が少ない、コストが低い</td>
+<td>高度な判断が可能、業務効率の大幅な改善、新たな価値創造</td>
+</tr>
+<tr>
+<th>デメリット</th>
+<td>定型業務にしか対応できない、柔軟性に欠ける、メンテナンスが必要</td>
+<td>導入コストが高い、専門知識が必要、学習データが必要</td>
+</tr>
+</tbody>
 </table>
 <p>どちらの技術を導入するかは、自動化したい業務の内容や、企業の予算、技術力などを考慮して慎重に検討する必要があります。</p>
-
 <h2>RPAとAIの連携：ハイブリッド型自動化の可能性</h2>
-
 <h3>RPAとAIの連携による高度な自動化</h3>
 <p>RPAとAIを連携させることで、それぞれの弱点を補い、より高度な自動化を実現することができます。例えば、RPAが収集したデータをAIが分析し、その結果に基づいてRPAが次のアクションを実行するといった連携が可能です。このような連携を「ハイブリッド型自動化」と呼びます。</p>
 <p>弊社のクライアントである金融機関では、RPAで顧客情報を収集し、AIで不正検知を行うシステムを構築しました。これにより、不正取引の早期発見が可能になり、顧客保護の強化につながっています。</p>
-
 <h3>具体的な連携事例：請求書処理の自動化</h3>
 <p>請求書処理の自動化を例に、RPAとAIの連携について具体的に説明します。まず、RPAがメールで受信した請求書を自動的にダウンロードし、OCR（Optical Character Recognition）技術を使ってテキストデータに変換します。次に、AIが請求書の内容を解析し、金額、日付、取引先などの情報を抽出します。最後に、RPAが抽出された情報を会計システムに自動的に入力します。</p>
 <p>このように、RPAとAIを連携させることで、請求書処理業務をエンドツーエンドで自動化することができます。</p>
-
 <h3>自動化戦略全体の設計と役割分担</h3>
 <p>RPAとAIを連携させるためには、自動化戦略全体の設計が重要です。どの業務をRPAで自動化し、どの業務をAIで自動化するか、それぞれの役割を明確にする必要があります。また、自動化によって削減された時間を、どのように活用するかについても検討する必要があります。</p>
 <p>ClawTechでは、ホームページ・LP制作（¥49,800〜、最短1週間）も承っております。自動化戦略と合わせて、集客に強いWebサイトを構築しませんか？</p>
-
 <h2>自動化導入後の運用と継続的な改善</h2>
-
 <h3>現場担当者のスキルアップとリスキリング</h3>
 <p>業務自動化を成功させるためには、現場担当者のスキルアップとリスキリングが不可欠です。自動化によって不要になる業務がある一方で、新たな業務が発生する可能性があります。例えば、RPAのメンテナンスや、AIの学習データの準備などが挙げられます。</p>
 <p>企業は、現場担当者に対して、RPAやAIに関する研修を実施したり、資格取得を支援したりするなど、積極的にスキルアップの機会を提供する必要があります。</p>
-
 <h3>継続的な改善と効果測定の仕組みづくり</h3>
 <p>業務自動化は、一度導入したら終わりではありません。継続的に改善を行い、効果を測定することで、より大きな効果を得ることができます。例えば、RPAの処理速度を向上させたり、AIの学習データを追加したりすることで、自動化の精度を高めることができます。</p>
 <p>効果測定を行うためには、自動化によって削減された時間やコスト、人的ミスなどがどれだけ減少したかを定量的に把握する必要があります。また、現場担当者からのフィードバックを収集し、改善点を見つけることも重要です。</p>
-
 <h3>導入事例と成功事例</h3>
 <p>様々な企業の導入事例や成功事例を参考にすることで、自社に最適な自動化戦略を見つけることができます。例えば、製造業では、生産ラインの監視や品質検査をAIで自動化することで、生産効率を大幅に向上させています。また、小売業では、顧客の購買履歴をAIで分析し、パーソナライズされた商品レコメンデーションを提供することで、売上を増加させています。</p>
 <p>士業の皆様、ClawTechでは信頼感のあるデザインのホームページ制作も承っております。SEO対策も万全です。詳細はこちらをご覧ください: <a href="koumuten-homepage.html">工務店向けホームページ制作</a></p>
-
 <h2>まとめ：2026年に向けた最適な業務自動化戦略</h2>
-
 <h3>RPA、AI、業務自動化の違いを改めて理解する</h3>
 <p>この記事では、RPA、AI、業務自動化の違いについて解説しました。RPAは定型業務の自動化に、AIは非定型業務の自動化に、それぞれ強みを持っています。業務自動化は、DXを実現するための重要な手段の一つです。</p>
-
 <h3>自社に最適な自動化技術を選択するために</h3>
 <p>自社に最適な自動化技術を選択するためには、自動化したい業務の内容や、予算、技術力などを考慮する必要があります。また、現場担当者のスキルアップや、継続的な改善の仕組みづくりも重要です。</p>
-
 <h3>ClawTechがご支援できること</h3>
 <p>ClawTechでは、お客様の課題をヒアリングし、最適な自動化戦略をご提案します。RPA導入支援、AI活用支援、業務自動化コンサルティングなど、幅広いサービスを提供しています。また、MEO対策・Googleマップ集客や予約システム・問い合わせフォーム構築、SNS運用代行・Instagram集客など、集客に関する課題解決も得意としています。 クリニック・整骨院の皆様には、予約システムの導入とGoogleマップ上位表示対策がおすすめです。</p>
 <p>まずはお気軽にご相談ください。</p>
-
 <div style="background-color:#f0f0f0; padding:20px; border:1px solid #ccc; margin-top:30px;">
- <h3>業務自動化に関するお悩み、ClawTechにご相談ください！</h3>
- <p>御社の課題に合わせた最適なソリューションをご提案します。まずはお気軽に無料相談をご利用ください。</p>
- <a href="#" style="background-color:#4CAF50; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">無料相談はこちら</a>
+<h3>業務自動化に関するお悩み、ClawTechにご相談ください！</h3>
+<p>御社の課題に合わせた最適なソリューションをご提案します。まずはお気軽に無料相談をご利用ください。</p>
+<a href="#" style="background-color:#4CAF50; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">無料相談はこちら</a>
 </div>
 <div class="cta-box">
 <h3>プロに相談してみませんか？</h3>
 <p>ClawTechではDXに関する専門サービスを提供しています。まずはお気軽にご相談ください。</p>
-<a href="../sales/" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,var(--accent),#0088cc);color:#000;border-radius:50px;font-weight:700;text-decoration:none;font-size:15px;">AI営業代行サービスを見る→</a>
+<a href="../sales/" class="cta-btn">AI営業代行サービスを見る→</a>
 </div>
 </div>
 </article>
-<footer>&copy; 2026 ClawTech Inc.</footer>
+<footer>&copy; 2026 ClawTech（クロウテック）｜<a href="./">ブログ一覧</a>｜<a href="../#company">会社概要</a></footer>
 </body>
 </html>
