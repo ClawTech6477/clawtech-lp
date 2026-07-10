@@ -17,78 +17,75 @@
 
 <style>
 :root{
-  --primary:#0052CC;--primary-dark:#003D99;--primary-light:#EBF2FF;
-  --accent:#FF6B35;--accent-dark:#E55A2B;
-  --dark:#1F2937;--gray:#6B7280;--light:#F9FAFB;--border:#E5E7EB;
+  --kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;
+  --yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
+  --f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace;
+  --shadow-md:0 2px 6px rgba(16,37,76,.07),0 12px 32px rgba(16,37,76,.09);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--dark);line-height:1.8;background:var(--light);}
+body{font-family:var(--f-body);color:var(--sumi);line-height:1.85;background:var(--kami);}
 a{text-decoration:none;color:inherit;}
+:focus-visible{outline:3px solid var(--yamabuki);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 /* NAV */
-nav{background:#fff;position:fixed;top:0;width:100%;z-index:1000;border-bottom:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,0.08);}
-nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:900;color:var(--primary);}
-.nav-logo svg{width:28px;height:28px;}
+nav{background:rgba(250,249,245,.9);backdrop-filter:blur(12px);position:fixed;top:0;width:100%;z-index:1000;border-bottom:1px solid var(--line);}
+nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:66px;}
+.nav-logo{display:flex;align-items:center;gap:8px;font-family:var(--f-display);font-size:19px;font-weight:800;color:var(--sumi);}
+.nav-logo span{color:var(--ai-mid);}
 .nav-links{display:flex;gap:20px;align-items:center;}
-.nav-links a{color:var(--gray);font-size:13px;font-weight:500;transition:color .2s;}
-.nav-links a:hover{color:var(--primary);}
-.nav-links a.active{color:var(--primary);font-weight:700;}
-.nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 20px;border-radius:8px;font-weight:700!important;transition:all .2s!important;}
-.nav-cta:hover{background:var(--accent-dark)!important;transform:scale(1.03);}
+.nav-links a{color:var(--sumi);font-size:13.5px;font-weight:500;}
+.nav-links a:hover{color:var(--ai-mid);}
+.nav-links a.active{color:var(--ai-mid);font-weight:700;}
+.nav-cta{background:var(--kachi)!important;color:var(--white)!important;padding:9px 18px;border-radius:3px;font-weight:700!important;}
+.nav-cta:hover{background:var(--ai-mid)!important;}
 
 /* HERO */
-.hero-blog{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 100%);color:#fff;padding:96px 24px 60px;text-align:center;}
-.hero-overline{display:inline-block;font-size:12px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px;}
-.hero-blog h1{font-size:clamp(24px,4vw,40px);font-weight:900;margin-bottom:12px;line-height:1.25;}
-.hero-blog p{color:rgba(255,255,255,.7);font-size:15px;max-width:560px;margin:0 auto;}
+.hero-blog{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:96px 24px 56px;text-align:center;}
+.hero-overline{display:inline-block;font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;color:#F0C158;margin-bottom:14px;}
+.hero-blog h1{font-family:var(--f-display);font-weight:800;font-size:clamp(26px,4vw,40px);margin-bottom:12px;line-height:1.4;}
+.hero-blog p{color:#B9C2D3;font-size:14.5px;max-width:560px;margin:0 auto;}
 
 /* FILTER */
-.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:14px 24px;position:sticky;top:64px;z-index:900;}
+.filter-bar{background:var(--white);border-bottom:1px solid var(--line);padding:14px 24px;position:sticky;top:66px;z-index:900;}
 .filter-inner{max-width:1120px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;}
-.filter-btn{background:var(--light);color:var(--gray);border:1px solid var(--border);padding:5px 14px;border-radius:50px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Noto Sans JP',sans-serif;}
-.filter-btn:hover,.filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+.filter-btn{background:transparent;color:var(--hai);border:1px solid var(--line);padding:7px 16px;border-radius:3px;font-size:12.5px;font-family:var(--f-mono);cursor:pointer;}
+.filter-btn:hover{border-color:var(--kachi);color:var(--kachi);}
+.filter-btn.active{background:var(--kachi);color:var(--white);border-color:var(--kachi);}
 
 /* BLOG GRID */
-.blog-container{max-width:1120px;margin:0 auto;padding:40px 24px 80px;}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;}
+.blog-container{max-width:1120px;margin:0 auto;padding:48px 24px 80px;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px;}
 
 /* CARD */
-.blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.07);border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column;}
-.blog-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.12);}
-.card-img{width:100%;height:190px;object-fit:cover;display:block;}
-.card-body{padding:22px;flex:1;display:flex;flex-direction:column;}
-.cat-badge{display:inline-block;padding:3px 12px;border-radius:50px;font-size:11px;font-weight:700;margin-bottom:10px;}
-.cat-web{background:#dbeafe;color:#1d4ed8;}
-.cat-meo{background:#dcfce7;color:#16a34a;}
-.cat-ai{background:#ede9fe;color:#6d28d9;}
-.cat-koumuten{background:#fef3c7;color:#b45309;}
-.cat-dx{background:#e0f2fe;color:#0369a1;}
-.cat-sales{background:#fce7f3;color:#be185d;}
-.cat-other{background:#f1f5f9;color:#475569;}
-.card-title{font-size:15px;font-weight:800;line-height:1.5;margin-bottom:8px;color:var(--dark);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.blog-card:hover .card-title{color:var(--primary);}
-.card-desc{font-size:13px;color:var(--gray);line-height:1.7;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;}
-.card-meta{font-size:12px;color:#94a3b8;margin-top:auto;}
+.blog-card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid var(--line);transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.card-img{width:100%;height:180px;object-fit:cover;display:block;}
+.card-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;}
+.cat-badge{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.03em;padding:3px 10px;border-radius:2px;margin-bottom:10px;width:fit-content;background:rgba(16,37,76,.08);color:var(--kachi);border:1px solid rgba(16,37,76,.14);}
+.card-title{font-family:var(--f-display);font-size:16px;font-weight:800;line-height:1.6;margin-bottom:8px;color:var(--sumi);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.blog-card:hover .card-title{color:var(--ai-mid);}
+.card-desc{font-size:13px;color:var(--hai);line-height:1.8;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;}
+.card-meta{font-family:var(--f-mono);font-size:11.5px;color:var(--hai);margin-top:auto;}
 
 /* CTA */
-.cta-band{background:var(--accent);padding:56px 24px;text-align:center;}
-.cta-band h2{font-size:clamp(18px,3vw,30px);font-weight:900;color:#fff;margin-bottom:10px;}
-.cta-band p{color:rgba(255,255,255,.9);font-size:14px;margin-bottom:24px;line-height:1.8;}
-.btn-white{display:inline-block;background:#fff;color:var(--accent);padding:13px 32px;border-radius:8px;font-size:15px;font-weight:700;transition:all .2s;box-shadow:0 4px 14px rgba(0,0,0,0.15);}
-.btn-white:hover{transform:scale(1.05);}
+.cta-band{background:var(--yamabuki);padding:56px 24px;text-align:center;}
+.cta-band h2{font-family:var(--f-display);font-size:clamp(18px,3vw,28px);font-weight:800;color:var(--kachi-deep);margin-bottom:10px;}
+.cta-band p{color:rgba(10,24,52,.75);font-size:14px;margin-bottom:24px;line-height:1.8;}
+.btn-white{display:inline-block;background:var(--kachi);color:var(--white);padding:14px 32px;border-radius:3px;font-size:15px;font-weight:700;}
+.btn-white:hover{background:var(--kachi-deep);}
 
 /* FOOTER */
-footer{background:var(--dark);color:rgba(255,255,255,.4);text-align:center;padding:32px;font-size:13px;}
-footer a{color:rgba(255,255,255,.4);transition:color .2s;}
-footer a:hover{color:#fff;}
-.footer-logo{font-size:16px;font-weight:900;color:#fff;margin-bottom:10px;}
+footer{background:var(--kachi-deep);color:rgba(255,255,255,.5);text-align:center;padding:36px 24px;font-size:13px;}
+footer a{color:rgba(255,255,255,.5);}
+footer a:hover{color:var(--white);}
+.footer-logo{font-family:var(--f-display);font-size:17px;font-weight:800;color:var(--white);margin-bottom:10px;}
 
 /* BACK TO TOP */
-#backToTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--primary);color:#fff;border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+#backToTop{position:fixed;bottom:28px;right:28px;width:44px;height:44px;background:var(--kachi);color:var(--white);border:none;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(16px);transition:opacity .3s,transform .3s;z-index:999;box-shadow:var(--shadow-md);}
 #backToTop.show{opacity:1;transform:translateY(0);}
-#backToTop:hover{background:var(--primary-dark);}
+#backToTop:hover{background:var(--ai-mid);}
 
 /* RESPONSIVE */
 @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);gap:18px;}}
@@ -96,6 +93,7 @@ footer a:hover{color:#fff;}
   nav .inner{padding:0 16px;}
   .nav-links{gap:14px;}
   .hero-blog{padding:88px 16px 48px;}
+  .filter-bar{position:static;}
   .blog-grid{grid-template-columns:1fr;}
   .blog-container{padding:28px 16px 60px;}
 }
@@ -105,15 +103,7 @@ footer a:hover{color:#fff;}
 
 <nav>
   <div class="inner">
-    <a href="../" class="nav-logo" aria-label="ClawTech ホーム">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M16 4C10 4 6 8 6 13c0 3 1.5 5.5 4 7l-2 6h16l-2-6c2.5-1.5 4-4 4-7 0-5-4-9-10-9z" fill="#0052CC"/>
-        <path d="M10 13c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" fill="#EBF2FF"/>
-        <circle cx="13" cy="13" r="1.5" fill="#0052CC"/>
-        <circle cx="19" cy="13" r="1.5" fill="#0052CC"/>
-      </svg>
-      ClawTech
-    </a>
+    <a href="../" class="nav-logo" aria-label="ClawTech ホーム">Claw<span>Tech</span></a>
     <div class="nav-links">
       <a href="../">ホーム</a>
       <a href="index.html" class="active">ブログ</a>
@@ -125,25 +115,115 @@ footer a:hover{color:#fff;}
 </nav>
 
 <div class="hero-blog">
-  <div class="hero-overline">Blog</div>
+  <div class="hero-overline">BLOG</div>
   <h1>ClawTech ブログ</h1>
   <p>中小企業・個人事業主のWeb集客・業務効率化に役立つ情報を発信</p>
 </div>
 
 <div class="filter-bar">
-  <div class="filter-inner">
-    <button class="filter-btn active" onclick="filterPosts('all',this)">すべて</button>
-    <button class="filter-btn" onclick="filterPosts('cat-ai',this)">AI活用</button>
-    <button class="filter-btn" onclick="filterPosts('cat-sales',this)">営業・集客</button>
-    <button class="filter-btn" onclick="filterPosts('cat-meo',this)">MEO対策</button>
-    <button class="filter-btn" onclick="filterPosts('cat-web',this)">Web制作</button>
-    <button class="filter-btn" onclick="filterPosts('cat-dx',this)">DX・自動化</button>
-    <button class="filter-btn" onclick="filterPosts('cat-koumuten',this)">工務店</button>
+  <div class="filter-inner" role="group" aria-label="カテゴリで絞り込み">
+    <button class="filter-btn active" aria-pressed="true" onclick="filterPosts('all',this)">すべて</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-ai',this)">AI活用</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-sales',this)">営業・集客</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-meo',this)">MEO対策</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-web',this)">Web制作</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-dx',this)">DX・自動化</button>
+    <button class="filter-btn" aria-pressed="false" onclick="filterPosts('cat-koumuten',this)">工務店</button>
   </div>
 </div>
 
 <div class="blog-container">
   <div class="blog-grid" id="blogGrid">
+    <a href="ai-tools-business-efficiency-sme.html" class="blog-card" data-cat="cat-ai">
+      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="2026年版：中小企業向けAIで業務効率化！" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-ai">AI活用</span>
+        <div class="card-title">2026年版：中小企業向けAIで業務効率化！</div>
+        <div class="card-desc">2026年、中小企業がAIで業務効率化を実現する具体的な方法を解説。ChatGPT、RPA、画像生成AI活用事例から導入ステップまで、ClawTechが徹底ガイド。</div>
+        <div class="card-meta">2026.07.09</div>
+      </div>
+    </a>
+
+    <a href="listing-ad-customer-acquisition-effect.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="リスティング広告で集客激変！2026年を勝ち抜く効果最大化戦略" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">集客</span>
+        <div class="card-title">リスティング広告で集客激変！2026年を勝ち抜く効果最大化戦略</div>
+        <div class="card-desc">リスティング広告で集客効果を最大化する方法を徹底解説。費用対効果を高める運用ポイント、成功事例、2026年の最新トレンドから、中小企業が成果を出す秘訣まで。ClawTechが豊富な実績に基づき、貴社のビジネスを加速させます。</div>
+        <div class="card-meta">2026.07.08</div>
+      </div>
+    </a>
+
+    <a href="website-creation-cheap-template.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="【2026年最新】格安Webサイト制作！テンプレート活用術" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">【2026年最新】格安Webサイト制作！テンプレート活用術</div>
+        <div class="card-desc">2026年版！Webサイトを格安で制作したい個人事業主・中小企業必見。テンプレート利用のメリット・デメリット、選び方、ClawTechのサポートまで徹底解説。</div>
+        <div class="card-meta">2026.07.07</div>
+      </div>
+    </a>
+
+    <a href="seo-cost-effectiveness-sme.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="2026年最新版！中小企業向けSEO対策費用対効果最大化戦略" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">SEO</span>
+        <div class="card-title">2026年最新版！中小企業向けSEO対策費用対効果最大化戦略</div>
+        <div class="card-desc">中小企業がSEO対策で費用対効果を最大化するための2026年最新戦略を解説。具体的な施策、費用対効果の測定方法、失敗しないための注意点まで徹底網羅。</div>
+        <div class="card-meta">2026.07.06</div>
+      </div>
+    </a>
+
+    <a href="subsidy-dx-promotion-sme-2026.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX推進、2026年までの補助金戦略" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX</span>
+        <div class="card-title">中小企業DX推進、2026年までの補助金戦略</div>
+        <div class="card-desc">中小企業のDX推進を後押しする補助金制度を徹底解説。2026年までの動向、申請のコツ、失敗事例から学ぶ教訓まで、ClawTechが実践的な情報を提供します。</div>
+        <div class="card-meta">2026.07.05</div>
+      </div>
+    </a>
+
+    <a href="hp-renewal-guide.html" class="blog-card" data-cat="cat-web">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="2026年最新版！ホームページリニューアル費用と最適なタイミング" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-web">Web制作</span>
+        <div class="card-title">2026年最新版！ホームページリニューアル費用と最適なタイミング</div>
+        <div class="card-desc">2026年のホームページリニューアル費用相場、内訳、費用を抑える秘訣を徹底解説。最適なタイミングや失敗しない進め方、ClawTechの豊富な実績もご紹介します。</div>
+        <div class="card-meta">2026.07.04</div>
+      </div>
+    </a>
+
+    <a href="seo-optimization-cost-effect-sme.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="2026年を見据える中小企業へ！SEO対策の費用対効果を最大化" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">SEO</span>
+        <div class="card-title">2026年を見据える中小企業へ！SEO対策の費用対効果を最大化</div>
+        <div class="card-desc">中小企業が2026年に向けたSEO対策の費用相場、得られる効果、失敗しないためのポイントを徹底解説。ClawTechの実績に基づき、費用対効果を最大化する戦略と具体的な施策をわかりやすくご紹介します。</div>
+        <div class="card-meta">2026.07.03</div>
+      </div>
+    </a>
+
+    <a href="business-automation-tools-sme.html" class="blog-card" data-cat="cat-dx">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業向け業務自動化ツール徹底解説【2026年版】" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-dx">DX</span>
+        <div class="card-title">中小企業向け業務自動化ツール徹底解説【2026年版】</div>
+        <div class="card-desc">2026年を見据え、中小企業の人手不足や生産性向上を解決する業務自動化ツールを徹底解説。導入のポイントから成功事例、補助金情報まで網羅し、貴社のDXを強力に推進します。</div>
+        <div class="card-meta">2026.07.02</div>
+      </div>
+    </a>
+
+    <a href="sns-management-agency-freelancer.html" class="blog-card" data-cat="cat-sales">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="個人事業主向けSNS運用代行ガイド【2026年最新版】" loading="lazy" width="600" height="180">
+      <div class="card-body">
+        <span class="cat-badge cat-sales">SNS運用</span>
+        <div class="card-title">個人事業主向けSNS運用代行ガイド【2026年最新版】</div>
+        <div class="card-desc">個人事業主がSNS運用代行を依頼するメリット・デメリット、費用相場、選び方を解説。2026年の最新トレンドを踏まえ、ビジネスを加速させるSNS戦略をClawTechが徹底解説します。</div>
+        <div class="card-meta">2026.07.02</div>
+      </div>
+    </a>
+
 
     <a href="koumuten-homepage.html" class="blog-card" data-cat="cat-koumuten">
       <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ" loading="lazy" width="600" height="190">
@@ -446,7 +526,7 @@ footer a:hover{color:#fff;}
 
 <footer>
   <div class="footer-logo">ClawTech</div>
-  <p>© 2026 ClawTech（クロウテック）｜<a href="../">ホーム</a>｜<a href="../sales/">AI営業代行</a>｜<a href="../sales/seo.html">SEO自動化</a>｜<a href="../sales/lp-kaizen.html">LP改善</a>｜<a href="#">プライバシーポリシー</a></p>
+  <p>© 2026 ClawTech（クロウテック）｜<a href="../">ホーム</a>｜<a href="../sales/">AI営業代行</a>｜<a href="../sales/seo.html">SEO自動化</a>｜<a href="../sales/lp-kaizen.html">LP改善</a>｜<a href="../#company">会社概要</a></p>
   <p style="margin-top:8px;">大阪府 / 2024年創業 / 全国対応</p>
 </footer>
 
@@ -457,8 +537,9 @@ const backBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => backBtn.classList.toggle('show', window.scrollY > 400));
 
 function filterPosts(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
   btn.classList.add('active');
+  btn.setAttribute('aria-pressed','true');
   document.querySelectorAll('.blog-card').forEach(card => {
     card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
   });
