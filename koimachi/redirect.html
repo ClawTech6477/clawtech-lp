@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>コイマチ</title>
+<style>
+  body {
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    font-family: -apple-system, "Hiragino Sans", sans-serif;
+    background: linear-gradient(135deg, #FFF3F5, #FDF6F7, #FFFFFF);
+    color: #2B2230; padding: 24px; box-sizing: border-box;
+  }
+  .logo { font-size: 28px; font-weight: 800; letter-spacing: 2px; margin-bottom: 8px; }
+  .logo .dot { color: #F2437B; }
+  p { font-size: 14px; color: #75697A; line-height: 1.7; margin: 6px 0; }
+  a.fallback {
+    display: inline-block; margin-top: 18px; padding: 12px 28px; border-radius: 999px;
+    background: linear-gradient(135deg, #FF8A9B, #F2437B); color: #fff;
+    text-decoration: none; font-weight: 700; font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <div class="logo">コイマチ<span class="dot">.</span></div>
+  <p id="msg">アプリを開いています…</p>
+  <a class="fallback" id="fallback" href="#" style="display:none">コイマチを開く</a>
+
+<script>
+  // LINE等のuriアクションはhttp(s)しか受け付けないため、このページを経由して
+  // アプリのカスタムスキーム(koimachi://)へリダイレクトする(Universal Linksは
+  // 本番ドメインが無いため未対応。将来的にはこのページ自体を廃止しUniversal Links化する)
+  var params = new URLSearchParams(window.location.search);
+  var to = params.get('to') || 'home';
+  // 許可された文字のみ(パス+英数字+ハイフン)に制限し、任意のスキームを踏ませない
+  var safe = /^[a-zA-Z0-9/_-]+$/.test(to) ? to : 'home';
+  var appUrl = 'koimachi://' + safe;
+
+  document.getElementById('fallback').href = appUrl;
+  window.location.href = appUrl;
+
+  // 一定時間後もこのページに留まっている(=アプリが開かなかった)場合はフォールバック表示
+  setTimeout(function () {
+    document.getElementById('msg').textContent = 'アプリが開かない場合は下のボタンをタップしてください';
+    document.getElementById('fallback').style.display = 'inline-block';
+  }, 1500);
+</script>
+</body>
+</html>
