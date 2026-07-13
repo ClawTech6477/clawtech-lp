@@ -252,7 +252,7 @@ section{padding:96px 0}
 
 /* ---------- サービス（bento） ---------- */
 #services{background:var(--kami)}
-.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;grid-auto-flow:dense}
 .sv{background:var(--white);border:1px solid var(--line);border-top:3px solid var(--kachi);border-radius:var(--radius);padding:30px 28px;position:relative;transition:box-shadow .25s,transform .25s}
 .sv:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
 .sv.wide{grid-column:span 2;display:flex;justify-content:space-between;gap:28px;align-items:center;border-top-color:var(--yamabuki)}
@@ -613,6 +613,21 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
           <a href="#contact" class="btn btn-primary btn-sm">相談する →</a>
         </div>
       </article>
+      <!-- Wide: アプリ開発(LP制作と並ぶメイン事業) -->
+      <article class="sv wide">
+        <span class="sv-new" aria-label="新サービス">NEW</span>
+        <div>
+          <div class="sv-icon ic-purple"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
+          <h3 class="sv-title">アプリ開発（顧客管理・会員証）</h3>
+          <p class="sv-desc">エステ・ピラティス・パーソナルジムなど個人店向けに、来店履歴・ポイントを管理する自社ブランドのスマホアプリをご提供。個別開発・審査待ちが不要な独自基盤で、低コスト・スピード導入を実現します。</p>
+          <span class="sv-tag t-purple"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>買い切り+月額保守</span>
+        </div>
+        <div class="sv-wide-right">
+          <div class="sv-wide-price">¥198,000<small>〜</small></div>
+          <div class="sv-wide-note">買い切り+月額保守¥10,000〜</div>
+          <a href="/clawtech-lp/karute-app/" class="btn btn-primary btn-sm">詳細を見る →</a>
+        </div>
+      </article>
       <!-- MEO -->
       <article class="sv dark-card">
         <div class="sv-icon ic-cyan"><i class="fa-brands fa-google" aria-hidden="true"></i></div>
@@ -640,15 +655,6 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
         <h3 class="sv-title">SEOブログ記事作成</h3>
         <p class="sv-desc">AI × 専門知識で月10本〜の高品質記事を制作。検索上位表示を狙い、継続的な集客基盤を構築。</p>
         <span class="sv-tag t-blue"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>集客強化</span>
-      </article>
-      <!-- アプリ開発 -->
-      <article class="sv">
-        <span class="sv-new" aria-label="新サービス">NEW</span>
-        <div class="sv-icon ic-purple"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i></div>
-        <h3 class="sv-title">アプリ開発（顧客管理・会員証）</h3>
-        <p class="sv-desc">エステ・ピラティス・パーソナルジムなど個人店向けに、来店履歴・ポイントを管理する自社ブランドのスマホアプリをご提供。個別開発・審査待ちが不要な独自基盤で、低コスト・スピード導入を実現します。</p>
-        <span class="sv-tag t-purple"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>買い切り+月額保守</span>
-        <a href="/clawtech-lp/karute-app/" class="sv-more-link">詳細を見る →</a>
       </article>
       <!-- AI営業代行 -->
       <article class="sv full-w">
