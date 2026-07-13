@@ -413,7 +413,7 @@ document.getElementById("retry").onclick = ()=>{
 
 // ===== リード獲得フォーム（AJAX送信、失敗時は通常送信にフォールバック） =====
 const leadForm = document.getElementById("leadForm");
-leadForm.addEventListener("submit", function(e){
+function onLeadSubmit(e){
   e.preventDefault();
   const btn = document.getElementById("leadSubmit");
   btn.disabled = true; btn.textContent = "送信中...";
@@ -427,11 +427,12 @@ leadForm.addEventListener("submit", function(e){
     .catch(()=>{
       // フォールバック: 通常のフォーム送信に切り替え
       track("shindan_lead", { lv:lastLv, src:SRC });
-      leadForm.removeEventListener("submit", arguments.callee);
+      leadForm.removeEventListener("submit", onLeadSubmit);
       leadForm.submit();
     })
     .finally(()=>{ btn.disabled = false; btn.textContent = "レポートを受け取る"; });
-});
+}
+leadForm.addEventListener("submit", onLeadSubmit);
 </script>
 </body>
 </html>
