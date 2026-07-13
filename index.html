@@ -90,6 +90,10 @@
   --white:#FFFFFF;
   --line:#DDE3EA;        /* 罫線 */
   --line-dark:rgba(255,255,255,.14);
+  --kikyo:#5B4E96;       /* 桔梗色（アプリ/DX系アイコン） */
+  --kikyo-bg:#EEEAF7;
+  --wakatake:#357056;    /* 若竹色（自動化・効率系アイコン） */
+  --wakatake-bg:#E7F2EC;
 
   /* 旧変数エイリアス（インラインstyle互換） */
   --t-dark:var(--sumi);
@@ -260,13 +264,21 @@ section{padding:96px 0}
 .sv.wide{grid-column:span 2;display:flex;justify-content:space-between;gap:28px;align-items:center;border-top-color:var(--yamabuki)}
 .sv.full-w{grid-column:1/-1;display:flex;justify-content:space-between;gap:28px;align-items:center;background:var(--kachi);border:0;border-top:3px solid var(--yamabuki);color:var(--white);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
 .sv.dark-card{background:var(--white)}
-.sv-icon{width:46px;height:46px;border-radius:var(--radius);background:var(--aijiro);color:var(--kachi);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:18px}
+.sv-icon{width:46px;height:46px;border-radius:var(--radius);background:var(--aijiro);color:var(--kachi);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:18px;transition:transform .3s ease}
+.sv:hover .sv-icon{transform:scale(1.08) rotate(-4deg)}
+.ic-blue{background:linear-gradient(135deg,var(--aijiro),#DCE9F7);color:var(--ai-mid)}
+.ic-purple{background:linear-gradient(135deg,var(--kikyo-bg),#E3DCF2);color:var(--kikyo)}
+.ic-cyan{background:linear-gradient(135deg,#E3F0FB,var(--aijiro));color:var(--ai-mid)}
+.ic-green{background:linear-gradient(135deg,var(--wakatake-bg),#DCEEE3);color:var(--wakatake)}
 .sv-title{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:.02em;margin-bottom:10px}
 .sv-desc{font-size:13.5px;line-height:1.85;color:var(--hai)}
 .sv.full-w .sv-desc{color:rgba(255,255,255,.78)}
 .sv-tag{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:5px 12px;border-radius:2px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;background:var(--aijiro);color:var(--ai-mid)}
 .sv-tag i{font-size:10px}
-.t-blue,.t-cyan,.t-green{background:var(--aijiro);color:var(--ai-mid)}
+.t-blue{background:var(--aijiro);color:var(--ai-mid)}
+.t-cyan{background:#E3F0FB;color:var(--ai-mid)}
+.t-purple{background:var(--kikyo-bg);color:var(--kikyo)}
+.t-green{background:var(--wakatake-bg);color:var(--wakatake)}
 .sv-wide-right{text-align:right;flex-shrink:0}
 .sv-wide-price{font-family:var(--f-mono);font-size:32px;font-weight:600;color:var(--kachi)}
 .sv-wide-price small{font-size:16px}
@@ -603,7 +615,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
       <h2 class="sec-title sec-title-dark" id="sv-title">サービス一覧</h2>
       <p class="sec-sub sec-sub-muted">AI活用でスピード・品質・コストを同時に実現。全サービスをワンストップで提供します</p>
     </div>
-    <div class="bento" data-aos="fade-up" data-aos-delay="100">
+    <div class="bento">
       <!-- Wide: LP制作 -->
       <article class="sv wide">
         <div>
@@ -1111,6 +1123,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
       <a href="/clawtech-lp/sales/">AI営業代行</a>
       <a href="/clawtech-lp/karute-app/">エステ・ピラティスの顧客管理アプリ「カルテ帖」</a>
       <a href="#contact">お問い合わせ</a>
+      <a href="/clawtech-lp/privacy.html">プライバシーポリシー</a>
+      <a href="/clawtech-lp/tokushoho.html">特定商取引法に基づく表記</a>
     </nav>
     <p>© 2024 ClawTech. All rights reserved.</p>
   </div>
@@ -1118,9 +1132,33 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 // AOS
 AOS.init({once:true,offset:60,easing:'ease-out-cubic',duration:650});
+
+// GSAP ScrollTrigger: サービスカード(bento)のstagger表示
+if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  gsap.registerPlugin(ScrollTrigger);
+  const isMobile = window.innerWidth <= 768;
+  const svCards = document.querySelectorAll('.bento .sv');
+  if (svCards.length) {
+    gsap.set(svCards, {opacity: 0, y: isMobile ? 18 : 26});
+    gsap.to(svCards, {
+      opacity: 1,
+      y: 0,
+      duration: isMobile ? 0.42 : 0.5,
+      stagger: 0.08,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.bento',
+        start: 'top 82%',
+        toggleActions: 'play none none none'
+      }
+    });
+  }
+}
 
 // Hero mesh + cursor glow
 (function(){

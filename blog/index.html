@@ -19,6 +19,7 @@
 :root{
   --kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;
   --yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
+  --kikyo:#5B4E96;--kikyo-bg:#EEEAF7;--wakatake:#357056;--wakatake-bg:#E7F2EC;--cyan-bg:#E3F0FB;
   --f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace;
   --shadow-md:0 2px 6px rgba(16,37,76,.07),0 12px 32px rgba(16,37,76,.09);
 }
@@ -61,9 +62,15 @@ nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-co
 /* CARD */
 .blog-card{background:var(--white);border-radius:4px;overflow:hidden;border:1px solid var(--line);transition:box-shadow .3s,transform .3s;display:flex;flex-direction:column;}
 .blog-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.card-img{width:100%;height:180px;object-fit:cover;display:block;}
+.card-img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .5s ease;}
+.blog-card:hover .card-img{transform:scale(1.06);}
 .card-body{padding:20px 22px;flex:1;display:flex;flex-direction:column;}
 .cat-badge{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.03em;padding:3px 10px;border-radius:2px;margin-bottom:10px;width:fit-content;background:rgba(16,37,76,.08);color:var(--kachi);border:1px solid rgba(16,37,76,.14);}
+.cat-badge.cat-ai{background:var(--kikyo-bg);color:var(--kikyo);border-color:rgba(91,78,150,.25);}
+.cat-badge.cat-dx{background:var(--wakatake-bg);color:var(--wakatake);border-color:rgba(63,125,92,.25);}
+.cat-badge.cat-web{background:rgba(62,111,176,.1);color:var(--ai-mid);border-color:rgba(62,111,176,.25);}
+.cat-badge.cat-sales{background:rgba(200,140,6,.1);color:var(--yamabuki-dk);border-color:rgba(200,140,6,.25);}
+.cat-badge.cat-meo{background:var(--cyan-bg);color:var(--ai-mid);border-color:rgba(62,111,176,.2);}
 .card-title{font-family:var(--f-display);font-size:16px;font-weight:800;line-height:1.6;margin-bottom:8px;color:var(--sumi);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .blog-card:hover .card-title{color:var(--ai-mid);}
 .card-desc{font-size:13px;color:var(--hai);line-height:1.8;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;}
@@ -134,6 +141,357 @@ footer a:hover{color:var(--white);}
 
 <div class="blog-container">
   <div class="blog-grid" id="blogGrid">
+  <a href="ai-sales-agent-cases.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="中小企業向けAI営業代行導入事例2026 | 効果と注意点" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">AI営業代行</span>
+      <div class="card-title">中小企業向けAI営業代行導入事例2026 | 効果と注意点</div>
+      <div class="card-desc">中小企業向けAI営業代行の導入事例を徹底解説。2026年最新の成功事例から失敗事例、費用対効果まで網羅。導入検討の参考に。ClawTech</div>
+      <div class="card-meta">📅 2026.04.09</div>
+    </div>
+  </a>
+
+  <a href="ai-side-hustle-2026.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80" alt="2026年AI副業：自動化で月5万円稼ぐ最新戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">2026年AI副業：自動化で月5万円稼ぐ最新戦略</div>
+      <div class="card-desc">2026年、AI副業で自動化して稼ぐ方法を徹底解説！ChatGPT、DALL-E 3等のツール活用、成功事例、注意点まで。ClawTechが副業成功を支援します。</div>
+      <div class="card-meta">📅 2026.05.17</div>
+    </div>
+  </a>
+
+  <a href="ai-writing-tool-sme.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="中小企業向けAIライティングツール2026年最新版" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">中小企業向けAIライティングツール2026年最新版</div>
+      <div class="card-desc">中小企業向けAIライティングツールを徹底比較！導入メリット、選び方、成功事例を解説。2026年に最適なツールで業務効率化と集客アップを実現。</div>
+      <div class="card-meta">📅 2026.04.26</div>
+    </div>
+  </a>
+
+  <a href="ai-writing-tools-comparison-sales-materials.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&q=80" alt="2026年版：AIライティングツール徹底比較！営業資料作成を効率化" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">2026年版：AIライティングツール徹底比較！営業資料作成を効率化</div>
+      <div class="card-desc">営業資料作成を劇的に効率化するAIライティングツールを徹底比較！機能、料金、導入事例、選び方まで網羅。2026年最新情報で最適なツールを見つけよう。</div>
+      <div class="card-meta">📅 2026.04.03</div>
+    </div>
+  </a>
+
+  <a href="btob-sales-automation.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="BtoB営業自動化 2026年最新戦略！成功の鍵" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">営業</span>
+      <div class="card-title">BtoB営業自動化 2026年最新戦略！成功の鍵</div>
+      <div class="card-desc">BtoB営業の自動化で2026年までに売上を最大化！最新ツール、導入ステップ、成功事例を徹底解説。ClawTechが貴社のDXを支援します。</div>
+      <div class="card-meta">📅 2026.04.16</div>
+    </div>
+  </a>
+
+  <a href="btob-sales-strategy-ai-case-studies.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="2026年版 BtoB営業戦略！AI導入事例と成功の鍵" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">2026年版 BtoB営業戦略！AI導入事例と成功の鍵</div>
+      <div class="card-desc">BtoB営業戦略におけるAI導入事例を徹底解説。2026年に向けた最新トレンド、成功の鍵、導入ステップ、注意点まで網羅。リード獲得数増加、営業効率化を実現！</div>
+      <div class="card-meta">📅 2026.04.29</div>
+    </div>
+  </a>
+
+  <a href="data-analysis-tools-sme.html" class="blog-card" data-cat="cat-dx">
+    <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="中小企業向けデータ分析ツール2026年最新版！選び方と活用法" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-dx">DX</span>
+      <div class="card-title">中小企業向けデータ分析ツール2026年最新版！選び方と活用法</div>
+      <div class="card-desc">中小企業向けデータ分析ツール2026年最新版！選び方から活用事例まで徹底解説。無料ツール紹介や導入ステップ、成功の秘訣も公開。DX推進を支援します。</div>
+      <div class="card-meta">📅 2026.05.13</div>
+    </div>
+  </a>
+
+  <a href="google-business-profile-management-agency.html" class="blog-card" data-cat="cat-meo">
+    <img class="card-img" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80" alt="2026年版！Googleビジネスプロフィール運用代行の徹底比較" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-meo">MEO</span>
+      <div class="card-title">2026年版！Googleビジネスプロフィール運用代行の徹底比較</div>
+      <div class="card-desc">2026年を見据え、Googleビジネスプロフィール（GBP）運用代行の費用対効果を徹底解説。料金相場、選び方、成功事例、自社運用との比較まで網羅。中小企業・店舗オーナー必見！</div>
+      <div class="card-meta">📅 2026.04.28</div>
+    </div>
+  </a>
+
+  <a href="google-business-profile-meo-effect.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="2026年最新！GoogleビジネスプロフィールMEO効果最大化" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">2026年最新！GoogleビジネスプロフィールMEO効果最大化</div>
+      <div class="card-desc">2026年のMEO対策はGoogleビジネスプロフィールが鍵！最新情報、効果測定、AI活用まで徹底解説。集客を最大化する秘訣をClawTechが伝授します。</div>
+      <div class="card-meta">📅 2026.04.27</div>
+    </div>
+  </a>
+
+  <a href="lead-generation-automation-mechanism.html" class="blog-card" data-cat="cat-dx">
+    <img class="card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="【2026年版】リード獲得自動化の仕組み｜成功戦略とツール" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-dx">自動化</span>
+      <div class="card-title">【2026年版】リード獲得自動化の仕組み｜成功戦略とツール</div>
+      <div class="card-desc">リード獲得を自動化して売上アップ！仕組み構築のステップ、ツール選びのポイント、成功事例を解説。中小企業向け低コスト戦略も紹介。ClawTech</div>
+      <div class="card-meta">📅 2026.04.11</div>
+    </div>
+  </a>
+
+  <a href="lead-generation-strategy-sme.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="【2026年最新】中小企業のリード獲得戦略｜成功の鍵は？" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">【2026年最新】中小企業のリード獲得戦略｜成功の鍵は？</div>
+      <div class="card-desc">中小企業向けリード獲得戦略を徹底解説！予算・人材不足でも成果を出す方法とは？最新トレンド、成功事例、費用対効果まで網羅。2026年を見据えた戦略で、リード獲得を最大化！</div>
+      <div class="card-meta">📅 2026.04.14</div>
+    </div>
+  </a>
+
+  <a href="lp-creation-cheap-effective.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="LP制作格安で効果を出す！2026年成功戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">LP制作格安で効果を出す！2026年成功戦略</div>
+      <div class="card-desc">LP制作を格安で実現し、最大限の効果を出すための2026年最新戦略を解説。費用相場、選び方、効果測定まで網羅。中小企業・個人事業主必見！</div>
+      <div class="card-meta">📅 2026.05.16</div>
+    </div>
+  </a>
+
+  <a href="lp-production-cost-market-price-effect.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="2026年版 LP制作の費用相場と効果を徹底解説！" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">2026年版 LP制作の費用相場と効果を徹底解説！</div>
+      <div class="card-desc">LP制作の費用相場は？効果測定はどうすればいい？2026年の最新情報を徹底解説！費用対効果を高める戦略、制作会社選びのポイントもご紹介。ClawTechがLP制作を成功に導きます。</div>
+      <div class="card-meta">📅 2026.04.12</div>
+    </div>
+  </a>
+
+  <a href="meo-measures-effects.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="【2026年最新】MEO対策の効果を最大化する戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">【2026年最新】MEO対策の効果を最大化する戦略</div>
+      <div class="card-desc">MEO対策で集客効果を最大化！2026年最新戦略を徹底解説。Googleマップ上位表示、口コミ対策、SEO連携で店舗ビジネスを成功に導きます。</div>
+      <div class="card-meta">📅 2026.04.20</div>
+    </div>
+  </a>
+
+  <a href="meo-measures-local-business.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="【2026年最新】MEO対策で地域ビジネスを加速！集客戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">【2026年最新】MEO対策で地域ビジネスを加速！集客戦略</div>
+      <div class="card-desc">2026年最新MEO対策で地域ビジネスを成功に導く！Googleマップ集客のコツ、費用対効果、成功事例を徹底解説。ClawTechが最適な戦略をご提案。</div>
+      <div class="card-meta">📅 2026.04.15</div>
+    </div>
+  </a>
+
+  <a href="new-customer-ai-methods.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="【2026年版】AI活用で新規顧客獲得を最大化する方法" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">AI営業代行</span>
+      <div class="card-title">【2026年版】AI活用で新規顧客獲得を最大化する方法</div>
+      <div class="card-desc">2026年、AIを駆使して新規顧客を効率的に獲得する方法を徹底解説。顧客セグメント、リード獲得、チャットボット、広告最適化、営業自動化まで網羅。事例や導入ステップ、注意点も紹介。</div>
+      <div class="card-meta">📅 2026.04.22</div>
+    </div>
+  </a>
+
+  <a href="online-customer-acquisition-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80" alt="2026年を見据えたオンライン集客術" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">2026年を見据えたオンライン集客術</div>
+      <div class="card-desc">2026年のオンライン集客はAI活用が鍵。SEO、動画、SNS、パーソナライズ戦略、自動化まで徹底解説。中小企業・個人事業主向け最新情報。</div>
+      <div class="card-meta">📅 2026.05.07</div>
+    </div>
+  </a>
+
+  <a href="online-negotiation-ai-utilization.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="2026年版：AIで劇的進化！オンライン商談成功術" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用・営業</span>
+      <div class="card-title">2026年版：AIで劇的進化！オンライン商談成功術</div>
+      <div class="card-desc">オンライン商談にAIを活用して成約率を最大化する方法を解説。ツール紹介から導入事例、注意点まで網羅。未来の営業戦略をClawTechが支援！</div>
+      <div class="card-meta">📅 2026.05.09</div>
+    </div>
+  </a>
+
+  <a href="online-negotiation-efficiency.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" alt="オンライン商談効率化2026｜成果を爆上げする秘訣" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">営業</span>
+      <div class="card-title">オンライン商談効率化2026｜成果を爆上げする秘訣</div>
+      <div class="card-desc">2026年を見据え、オンライン商談を劇的に効率化する方法を解説。準備からフォローアップ、顧客体験設計まで網羅。ツール比較や課題解決策も。ClawTechが支援。</div>
+      <div class="card-meta">📅 2026.04.08</div>
+    </div>
+  </a>
+
+  <a href="sales-automation-tools.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="2026年版｜営業自動化ツール徹底比較と成功戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">営業</span>
+      <div class="card-title">2026年版｜営業自動化ツール徹底比較と成功戦略</div>
+      <div class="card-desc">2026年を見据えた営業自動化ツールの選び方と導入戦略を徹底解説。SFA、CRM、MAの違いから、成功事例、組織変革まで網羅。最適なツールで営業効率を最大化！</div>
+      <div class="card-meta">📅 2026.04.10</div>
+    </div>
+  </a>
+
+  <a href="sales-automation-tools-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" alt="【2026年版】営業自動化ツール徹底比較！選び方と導入成功の鍵" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">AI営業代行</span>
+      <div class="card-title">【2026年版】営業自動化ツール徹底比較！選び方と導入成功の鍵</div>
+      <div class="card-desc">2026年に向けた営業自動化ツールを徹底比較！SFA/CRM、MA、営業支援ツールを網羅。機能、価格、導入事例から最適なツールを選び、営業効率を最大化しましょう。</div>
+      <div class="card-meta">📅 2026.05.12</div>
+    </div>
+  </a>
+
+  <a href="sales-automation-tools-comparison.html" class="blog-card" data-cat="cat-dx">
+    <img class="card-img" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=80" alt="【2026年版】営業自動化ツール徹底比較！最適な選び方" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-dx">自動化</span>
+      <div class="card-title">【2026年版】営業自動化ツール徹底比較！最適な選び方</div>
+      <div class="card-desc">2026年最新！営業自動化ツールを徹底比較。SFA/MA/CRM連携、価格、導入事例、使いやすさを網羅。最適なツールを選び、営業効率を最大化しましょう。ClawTechが選び方を解説。</div>
+      <div class="card-meta">📅 2026.03.30</div>
+    </div>
+  </a>
+
+  <a href="sales-efficiency-ai-tools.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1552581234-26160f608093?w=600&q=80" alt="2026年 営業効率化AIツール徹底比較" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">営業</span>
+      <div class="card-title">2026年 営業効率化AIツール徹底比較</div>
+      <div class="card-desc">2026年最新版！営業効率を劇的に向上させるAIツールを徹底比較。選び方、導入事例、価格まで網羅。ClawTechが最適なツール選びを支援します。</div>
+      <div class="card-meta">📅 2026.04.18</div>
+    </div>
+  </a>
+
+  <a href="sales-material-creation-ai.html" class="blog-card" data-cat="cat-ai">
+    <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="【2026年版】AI営業資料作成で成果爆増！劇的効率化" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-ai">AI活用</span>
+      <div class="card-title">【2026年版】AI営業資料作成で成果爆増！劇的効率化</div>
+      <div class="card-desc">営業資料作成をAIで劇的に効率化！2026年に成果を出すためのAIツール活用術、導入ステップ、注意点を徹底解説。ClawTechの支援事例も紹介。</div>
+      <div class="card-meta">📅 2026.04.07</div>
+    </div>
+  </a>
+
+  <a href="salon-reservation-system.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="【2026年版】美容室向け予約システム導入費用を徹底比較" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">【2026年版】美容室向け予約システム導入費用を徹底比較</div>
+      <div class="card-desc">美容室向け予約システム導入費用を徹底比較！種類別の料金体系、機能、導入事例、無料プランまで網羅。自社に最適なシステム選びで売上UP！ClawTechが最適なシステム選びをサポート。</div>
+      <div class="card-meta">📅 2026.04.06</div>
+    </div>
+  </a>
+
+  <a href="seo-ranking-methods-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80" alt="2026年SEO上位表示戦略！ホームページ成功の鍵" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">SEO</span>
+      <div class="card-title">2026年SEO上位表示戦略！ホームページ成功の鍵</div>
+      <div class="card-desc">2026年、ホームページSEOで上位表示を実現する方法を徹底解説！最新トレンド、キーワード戦略、テクニカルSEO、E-E-A-T対策まで網羅。ClawTechが成功事例を基に、具体的な施策をご紹介します。</div>
+      <div class="card-meta">📅 2026.05.08</div>
+    </div>
+  </a>
+
+  <a href="sme-dx-promotion-subsidies-2026.html" class="blog-card" data-cat="cat-dx">
+    <img class="card-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" alt="中小企業DX推進補助金2026年最新情報と申請攻略ガイド" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-dx">DX</span>
+      <div class="card-title">中小企業DX推進補助金2026年最新情報と申請攻略ガイド</div>
+      <div class="card-desc">2026年の中小企業DX推進補助金に関する最新情報を徹底解説！申請要件、スケジュール、採択事例、活用方法まで網羅。ClawTechが中小企業のDX推進を支援します。</div>
+      <div class="card-meta">📅 2026.05.11</div>
+    </div>
+  </a>
+
+  <a href="sns-marketing-strategy-sme-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1611162617263-4ec3060a058e?w=600&q=80" alt="中小企業のSNS集客戦略2026｜AI活用で成果を最大化" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">SNS運用</span>
+      <div class="card-title">中小企業のSNS集客戦略2026｜AI活用で成果を最大化</div>
+      <div class="card-desc">2026年に向けた中小企業のSNS集客戦略を徹底解説。AIを活用した自動化、ターゲット顧客層の明確化、効果的なコンテンツ戦略、広告運用まで、成功の秘訣を伝授します。</div>
+      <div class="card-meta">📅 2026.04.23</div>
+    </div>
+  </a>
+
+  <a href="sole-proprietor-attraction-methods-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="【2026年】個人事業主向け最新集客方法｜成功戦略" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">【2026年】個人事業主向け最新集客方法｜成功戦略</div>
+      <div class="card-desc">2026年に個人事業主が成功するための集客方法を徹底解説！SEO、SNS、MEO、Web広告、AI活用まで、最新トレンドと具体的な戦略をご紹介します。</div>
+      <div class="card-meta">📅 2026.04.21</div>
+    </div>
+  </a>
+
+  <a href="teleapo-ai-effectiveness.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="2026年 テレアポAI代行で劇的効果！費用対効果を徹底解説" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">AI営業代行</span>
+      <div class="card-title">2026年 テレアポAI代行で劇的効果！費用対効果を徹底解説</div>
+      <div class="card-desc">テレアポAI代行で2026年こそ劇的な効果を！コスト削減、効率化、成約率向上…導入効果を徹底解説。費用対効果や選び方、リスク対策まで網羅。ClawTechが成功事例をご紹介。</div>
+      <div class="card-meta">📅 2026.05.15</div>
+    </div>
+  </a>
+
+  <a href="web-design-cost-price-2026.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&q=80" alt="【2026年版】Web制作費用の相場と内訳を徹底解説" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">【2026年版】Web制作費用の相場と内訳を徹底解説</div>
+      <div class="card-desc">2026年のWeb制作費用の相場を徹底解説。LP、コーポレートサイト、ECサイトなど種類別、規模別に費用を比較。費用を抑えるコツや見積もり時の注意点もご紹介。</div>
+      <div class="card-meta">📅 2026.04.24</div>
+    </div>
+  </a>
+
+  <a href="web-marketing-strategy-2026.html" class="blog-card" data-cat="cat-sales">
+    <img class="card-img" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80" alt="Web集客戦略2026：AIと顧客体験が鍵" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-sales">集客</span>
+      <div class="card-title">Web集客戦略2026：AIと顧客体験が鍵</div>
+      <div class="card-desc">2026年のWeb集客戦略を徹底解説。AI活用、パーソナライズ、動画、コミュニティ、Cookieレス対策まで。ClawTechが最新トレンドと成功事例を紹介。</div>
+      <div class="card-meta">📅 2026.07.11</div>
+    </div>
+  </a>
+
+  <a href="website-creation-cost-price-sole-proprietor.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80" alt="2026年版：個人事業主へのWebサイト制作費用の相場と注意点" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">2026年版：個人事業主へのWebサイト制作費用の相場と注意点</div>
+      <div class="card-desc">個人事業主にWebサイト制作を依頼する際の費用相場を徹底解説！LP、コーポレートサイト、ECサイトなど種類別の料金、見積もり時の注意点、費用を抑えるコツまで網羅。2026年の最新情報をお届けします。</div>
+      <div class="card-meta">📅 2026.04.25</div>
+    </div>
+  </a>
+
+  <a href="website-production-subsidy-2026.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="2026年Webサイト制作 補助金獲得ガイド" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">2026年Webサイト制作 補助金獲得ガイド</div>
+      <div class="card-desc">2026年に使えるWebサイト制作補助金・助成金を徹底解説。申請条件、対象、申請方法、Web制作会社の選び方まで網羅。中小企業・個人事業主向け。</div>
+      <div class="card-meta">📅 2026.04.17</div>
+    </div>
+  </a>
+
+  <a href="website-renewal-cost.html" class="blog-card" data-cat="cat-web">
+    <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="【2026年版】ホームページリニューアル費用相場と成功の秘訣" loading="lazy">
+    <div class="card-body">
+      <span class="cat-badge cat-web">Web制作</span>
+      <div class="card-title">【2026年版】ホームページリニューアル費用相場と成功の秘訣</div>
+      <div class="card-desc">ホームページリニューアル費用の相場は？内訳は？費用を抑えるコツは？成功事例は？2026年最新情報を徹底解説！ClawTechが費用対効果の高いリニューアルを支援します。</div>
+      <div class="card-meta">📅 2026.04.13</div>
+    </div>
+  </a>
+
+
     <a href="nail-salon-customer-karute-app.html" class="blog-card" data-cat="cat-other">
     <img class="card-img" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80" alt="2026年版：ネイルサロンの顧客カルテアプリ活用術" loading="lazy">
     <div class="card-body">
@@ -624,15 +982,39 @@ footer a:hover{color:var(--white);}
 
 <footer>
   <div class="footer-logo">ClawTech</div>
-  <p>© 2026 ClawTech（クロウテック）｜<a href="../">ホーム</a>｜<a href="../sales/">AI営業代行</a>｜<a href="../sales/seo.html">SEO自動化</a>｜<a href="../sales/lp-kaizen.html">LP改善</a>｜<a href="../#company">会社概要</a></p>
+  <p>© 2026 ClawTech（クロウテック）｜<a href="../">ホーム</a>｜<a href="../sales/">AI営業代行</a>｜<a href="../sales/seo.html">SEO自動化</a>｜<a href="../sales/lp-kaizen.html">LP改善</a>｜<a href="../#company">会社概要</a>｜<a href="../privacy.html">プライバシーポリシー</a>｜<a href="../tokushoho.html">特定商取引法に基づく表記</a></p>
   <p style="margin-top:8px;">大阪府 / 2024年創業 / 全国対応</p>
 </footer>
 
 <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="トップへ戻る">↑</button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 const backBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => backBtn.classList.toggle('show', window.scrollY > 400));
+
+// GSAP ScrollTrigger: 記事カードをバッチ単位でstagger表示(長い一覧なので.batch()を使用)
+if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  gsap.registerPlugin(ScrollTrigger);
+  const isMobile = window.innerWidth <= 768;
+  const cards = document.querySelectorAll('.blog-card');
+  if (cards.length) {
+    gsap.set(cards, {opacity: 0, y: isMobile ? 16 : 22});
+    ScrollTrigger.batch('.blog-card', {
+      start: 'top 90%',
+      onEnter: batch => gsap.to(batch, {
+        opacity: 1,
+        y: 0,
+        duration: isMobile ? 0.4 : 0.5,
+        stagger: 0.08,
+        ease: 'power2.out',
+        overwrite: true
+      }),
+      once: true
+    });
+  }
+}
 
 function filterPosts(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
