@@ -149,6 +149,7 @@ section{padding:96px 0}
 .hero-eyebrow .live{width:8px;height:8px;border-radius:50%;background:var(--yamabuki);box-shadow:0 0 0 rgba(240,152,94,.6);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 6px 2px rgba(240,152,94,.55)}50%{opacity:.45;box-shadow:0 0 2px 0 rgba(240,152,94,.15)}}
 .hero-tagline{font-family:var(--f-mono);font-size:14px;letter-spacing:.1em;color:var(--yamabuki-dk);margin-bottom:18px}
+.tagline-word{display:inline-block}
 .hero-h1{font-family:var(--f-display);font-weight:900;font-size:clamp(32px,5.2vw,54px);line-height:1.42;letter-spacing:.015em;color:var(--sumi);margin-bottom:26px}
 .hero-h1 .kachi-em{color:var(--kachi);position:relative;white-space:nowrap}
 .hero-h1 .kachi-em::after{content:"";position:absolute;left:-1%;right:-1%;bottom:6%;height:.22em;background:var(--yamabuki);opacity:.42;z-index:-1;transform:skewX(-8deg)}
@@ -401,7 +402,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
   <div class="hero-ai-mark" aria-hidden="true">帖</div>
   <div class="container">
     <div class="hero-eyebrow"><span class="live" aria-hidden="true"></span>エステ・ピラティス・パーソナルジムのための顧客管理アプリ</div>
-    <p class="hero-tagline">「また来たい」を、仕組みにする。</p>
+    <p class="hero-tagline"><span class="tagline-word">「また来たい」を、</span><span class="tagline-word">仕組みにする。</span></p>
     <h1 class="hero-h1">ホットペッパーに頼らず<br><span class="kachi-em">リピーターが増える</span>仕組みを、<br>あなたのお店専用に。</h1>
     <p class="hero-sub">来店履歴・施術内容・お客様の好みをカルテとして一元管理し、次回提案や誕生日クーポンを自動化。予約プラットフォームの掲載費・手数料に頼らず、顧客データを自店舗の資産にするアプリをClaude Codeで低コスト・短納期に開発します。</p>
     <p class="hero-note">エステ・ピラティス・パーソナルジム・整体・ネイル・美容室など、リピーター中心の個人店に対応／全国オンライン相談可／既存の予約プラットフォームとの併用OK</p>
@@ -450,7 +451,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       <h2 class="sec-title sec-title-dark" id="prob-title">こんなお困りごとはありませんか？</h2>
       <p class="sec-sub sec-sub-muted">エステ・ピラティス・パーソナルジムのオーナー様から、こんなご相談をよくいただきます</p>
     </div>
-    <div class="prob-grid" data-aos="fade-up" data-aos-delay="100">
+    <div class="prob-grid">
       <div class="prob-card"><div class="pi"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div><p>施術履歴・カルテを紙やExcelで管理していて検索に時間がかかる</p></div>
       <div class="prob-card"><div class="pi"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div><p>どのお客様がそろそろ来店周期か把握できていない</p></div>
       <div class="prob-card"><div class="pi"><i class="fa-solid fa-gift" aria-hidden="true"></i></div><p>誕生日クーポンや次回提案まで手が回っていない</p></div>
@@ -744,9 +745,48 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 // AOS
 AOS.init({once:true,offset:60,easing:'ease-out-cubic',duration:650});
+
+// GSAP ScrollTrigger演出（ヒーローのタグライン + Problemsカードのstagger表示のみ）
+if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  gsap.registerPlugin(ScrollTrigger);
+  const isMobile = window.innerWidth <= 768;
+
+  // 1. ヒーローのメインコピー: ページ読み込み完了時に自動フェードイン
+  const taglineWords = document.querySelectorAll('.hero-tagline .tagline-word');
+  if (taglineWords.length) {
+    gsap.set(taglineWords, {opacity: 0, y: isMobile ? 14 : 20});
+    gsap.to(taglineWords, {
+      opacity: 1,
+      y: 0,
+      duration: isMobile ? 0.5 : 0.6,
+      stagger: 0.12,
+      ease: 'power2.out'
+    });
+  }
+
+  // 2. Problemsセクションのカード: スクロールで下から80%位置に入ったらstagger表示
+  const probCards = document.querySelectorAll('#problems .prob-card');
+  if (probCards.length) {
+    gsap.set(probCards, {opacity: 0, y: isMobile ? 22 : 30});
+    gsap.to(probCards, {
+      opacity: 1,
+      y: 0,
+      duration: isMobile ? 0.4 : 0.5,
+      stagger: 0.1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '#problems .prob-grid',
+        start: 'top 80%',
+        toggleActions: 'play none none none'
+      }
+    });
+  }
+}
 
 // Nav scroll
 window.addEventListener('scroll',()=>{
