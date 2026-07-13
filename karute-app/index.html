@@ -42,11 +42,12 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"初期費用・月額はどれくらいかかりますか？","acceptedAnswer":{"@type":"Answer","text":"店舗数・必要な機能によって個別にお見積もりしています。まずは無料相談で現状の顧客管理方法をお伺いした上で、目安の費用感をご案内します。"}},
+    {"@type":"Question","name":"初期費用・月額はどれくらいかかりますか？","acceptedAnswer":{"@type":"Answer","text":"1店舗向けスタンダードは初期費用¥198,000〜（買い切り）+月額保守¥10,000〜、複数店舗向けマルチ店舗プランは初期費用¥298,000〜+月額保守¥15,000〜が目安です。機能追加等により変動するため、まずは無料相談で概算をご案内します。"}},
     {"@type":"Question","name":"今使っているホットペッパービューティー等はやめないといけませんか？","acceptedAnswer":{"@type":"Answer","text":"いいえ、やめる必要はありません。新規集客はプラットフォーム、リピーター育成・顧客データの資産化はカルテ帖という役割分担での併用をおすすめしています。"}},
     {"@type":"Question","name":"エステ・ピラティス以外（整体・ネイル・美容室等）でも対応できますか？","acceptedAnswer":{"@type":"Answer","text":"はい、対応可能です。リピーター中心の予約制・個人店であれば業種を問わずカスタマイズできます。"}},
     {"@type":"Question","name":"スタッフ全員が使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい。複数アカウントでの利用に対応しており、スタッフ間で顧客情報を共有できます。"}},
-    {"@type":"Question","name":"開発にどれくらいの期間がかかりますか？","acceptedAnswer":{"@type":"Answer","text":"規模・機能によりますが、目安は2〜4週間です。Claude Codeを中心に開発することで、一般的な受託開発より短納期・低コストを実現しています。"}},
+    {"@type":"Question","name":"導入にどれくらいの期間がかかりますか？","acceptedAnswer":{"@type":"Answer","text":"多店舗運用に対応できる独自基盤の上でご提供するため、1社ごとにゼロからアプリを開発する場合と比べて大幅に短く、最短数日〜が目安です。店舗ブランドや機能の作り込み内容により変動します。"}},
+    {"@type":"Question","name":"他の店舗とデータが混ざりませんか？","acceptedAnswer":{"@type":"Answer","text":"混ざりません。会員証はQRコードまたは店舗コードでお店ごとに識別しており、各店舗のオーナー・スタッフからは自店舗の顧客データのみが見える設計です。他店舗の情報が見えたり、他店舗に自店舗の情報が渡ることはありません。"}},
     {"@type":"Question","name":"顧客データのセキュリティは大丈夫ですか？","acceptedAnswer":{"@type":"Answer","text":"個人情報保護に配慮した設計で構築します。取り扱うデータの種類や保管方法の詳細は、ご相談時に個別にご説明します。"}},
     {"@type":"Question","name":"医療行為に関わるカルテ管理も対応できますか？","acceptedAnswer":{"@type":"Answer","text":"本サービスはエステ・ピラティス・パーソナルジム等のリラクゼーション・フィットネス領域を想定しており、医療行為に該当する記録の管理は対象外です。医療機関向けのシステムについては別途ご相談ください。"}},
     {"@type":"Question","name":"導入後のサポートはありますか？","acceptedAnswer":{"@type":"Answer","text":"はい。導入後の改善・追加機能のご相談も継続的に承っています。"}},
@@ -239,6 +240,27 @@ section{padding:96px 0}
 .faq-q{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:var(--kachi);color:var(--white);font-family:var(--f-mono);font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center}
 .faq-answer{padding:0 24px 22px 68px;font-size:13.5px;line-height:1.95;color:var(--hai)}
 
+/* 料金 */
+#pricing{background:var(--white);border-top:1px solid var(--line)}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto}
+.price-card{position:relative;background:var(--kami);border:1px solid var(--line);border-radius:var(--radius);padding:38px 32px}
+.price-card.featured{background:var(--white);border:2px solid var(--yamabuki-dk);box-shadow:var(--shadow-md)}
+.price-badge{position:absolute;top:-13px;left:28px;background:var(--yamabuki-dk);color:var(--white);font-family:var(--f-mono);font-size:11px;font-weight:600;letter-spacing:.1em;padding:4px 13px;border-radius:2px}
+.price-plan{font-family:var(--f-display);font-weight:700;font-size:18px;color:var(--kachi);margin-bottom:6px}
+.price-target{font-size:12.5px;color:var(--hai);margin-bottom:22px}
+.price-row{display:flex;align-items:baseline;gap:6px;margin-bottom:4px}
+.price-row .lbl{font-size:12.5px;color:var(--hai);width:88px;flex-shrink:0}
+.price-row .num{font-family:var(--f-mono);font-size:26px;font-weight:600;color:var(--sumi)}
+.price-row .num small{font-size:13px;font-weight:500;color:var(--hai)}
+.price-row.sub{margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--line)}
+.price-feats{list-style:none;margin-bottom:24px}
+.price-feats li{display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.8;padding:6px 0;color:var(--sumi)}
+.price-feats li i{color:var(--ai-mid);margin-top:4px;flex-shrink:0;font-size:12px}
+.price-why{max-width:780px;margin:40px auto 0;background:var(--aijiro);border-radius:var(--radius);padding:22px 26px;font-size:13px;line-height:1.9;color:var(--sumi)}
+.price-why b{color:var(--kachi)}
+.price-note{max-width:780px;margin:16px auto 0;font-size:12px;line-height:1.9;color:var(--hai);text-align:center}
+@media(max-width:768px){.price-grid{grid-template-columns:1fr}}
+
 /* お問い合わせ */
 #contact{padding:0;background:var(--white)}
 .contact-split{display:grid;grid-template-columns:1fr 1fr;min-height:660px}
@@ -345,6 +367,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       <a href="#situation" role="menuitem">よくある悩み</a>
       <a href="#scope" role="menuitem">できること</a>
       <a href="#flow" role="menuitem">導入の流れ</a>
+      <a href="#pricing" role="menuitem">料金</a>
       <a href="#faq" role="menuitem">FAQ</a>
       <a href="#contact" class="nav-cta" role="menuitem"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談</a>
     </div>
@@ -357,6 +380,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
   <a href="#situation" onclick="this.closest('.nav-mobile').classList.remove('open')">よくある悩み</a>
   <a href="#scope" onclick="this.closest('.nav-mobile').classList.remove('open')">できること</a>
   <a href="#flow" onclick="this.closest('.nav-mobile').classList.remove('open')">導入の流れ</a>
+  <a href="#pricing" onclick="this.closest('.nav-mobile').classList.remove('open')">料金</a>
   <a href="#faq" onclick="this.closest('.nav-mobile').classList.remove('open')">よくある質問</a>
   <a href="#contact" onclick="this.closest('.nav-mobile').classList.remove('open')">お問い合わせ</a>
 </div>
@@ -387,7 +411,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
     </div>
     <div class="hero-stats" role="list">
       <div class="hs-item" role="listitem"><div class="num">相談無料</div><div class="lbl">まずは現状の管理方法をヒアリング</div></div>
-      <div class="hs-item" role="listitem"><div class="num">2〜4週間</div><div class="lbl">Claude Code中心で高速開発</div></div>
+      <div class="hs-item" role="listitem"><div class="num">最短数日〜</div><div class="lbl">独自基盤で個別開発より大幅短納期</div></div>
       <div class="hs-item" role="listitem"><div class="num">手数料ゼロ</div><div class="lbl">プラットフォーム送客費に依存しない</div></div>
     </div>
   </div>
@@ -460,6 +484,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
           <li><i class="fa-solid fa-check" aria-hidden="true"></i>誕生日・記念日クーポンの自動配信</li>
           <li><i class="fa-solid fa-check" aria-hidden="true"></i>複数アカウント対応でスタッフ間の顧客情報共有</li>
           <li><i class="fa-solid fa-check" aria-hidden="true"></i>既存の予約プラットフォームと併用できる予約状況の管理</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>他店舗と完全に分離された、あなたのお店専用のデータ管理</li>
         </ul>
       </div>
       <div class="compare-card no">
@@ -498,8 +523,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       </div>
       <div class="str-card">
         <div class="str-ic"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
-        <div class="str-title">Claude Codeで低コスト・短納期</div>
-        <div class="str-desc">AIエージェントを中心とした開発体制で、一般的な受託開発より短い期間・抑えた費用感での構築を実現します。</div>
+        <div class="str-title">低コスト・最短数日で導入</div>
+        <div class="str-desc">多店舗運用に対応できる独自基盤の上でご提供するため、1社ごとにゼロから開発するより大幅に低コスト・短納期。それでいて、お客様には自店舗専用アプリとしてご利用いただけます。</div>
       </div>
     </div>
   </div>
@@ -527,8 +552,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       </div>
       <div class="flow-step hl" role="listitem">
         <div class="fs-num" aria-label="ステップ3">3</div>
-        <h4>開発</h4>
-        <p>Claude Code中心で高速に構築します。</p>
+        <h4>導入設定</h4>
+        <p>店舗ブランド・会員証・カルテ項目を設定し、最短数日で使える状態にします。</p>
       </div>
       <div class="flow-step" role="listitem">
         <div class="fs-num" aria-label="ステップ4">4</div>
@@ -544,6 +569,63 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
   </div>
 </section>
 
+<!-- PRICING -->
+<section id="pricing" aria-labelledby="pricing-title">
+  <div class="container">
+    <div class="sec-head" data-aos="fade-up">
+      <div class="eyebrow eyebrow-light"><i class="fa-solid fa-tag" aria-hidden="true"></i>Pricing</div>
+      <h2 class="sec-title sec-title-dark" id="pricing-title">料金</h2>
+      <p class="sec-sub sec-sub-muted">初期費用は買い切り、運用中の安定稼働・アップデートは月額保守でシンプルに。</p>
+    </div>
+    <div class="price-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="price-card">
+        <div class="price-plan">スタンダード</div>
+        <div class="price-target">1店舗・スタッフ数名までの個人店向け</div>
+        <div class="price-row sub">
+          <span class="lbl">初期費用</span>
+          <span class="num">¥198,000<small>〜（買い切り）</small></span>
+        </div>
+        <div class="price-row">
+          <span class="lbl">月額保守</span>
+          <span class="num" style="font-size:20px">¥10,000<small>〜/月</small></span>
+        </div>
+        <ul class="price-feats">
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>会員証・カルテ機能（来店履歴・施術記録）</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>誕生日・記念日クーポンの自動配信</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>LINE公式連携での次回提案リマインド</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>店舗名・ロゴを反映した自社ブランド表示</li>
+        </ul>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge">複数店舗におすすめ</span>
+        <div class="price-plan">マルチ店舗プラン</div>
+        <div class="price-target">2店舗以上・複数スタッフでの運用向け</div>
+        <div class="price-row sub">
+          <span class="lbl">初期費用</span>
+          <span class="num">¥298,000<small>〜（買い切り）</small></span>
+        </div>
+        <div class="price-row">
+          <span class="lbl">月額保守</span>
+          <span class="num" style="font-size:20px">¥15,000<small>〜/月</small></span>
+        </div>
+        <ul class="price-feats">
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>スタンダードの全機能</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>店舗ごとに分離された顧客データ管理</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>スタッフ複数アカウント・権限管理</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i>店舗別の来店・リピート状況レポート</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-why" data-aos="fade-up" data-aos-delay="200">
+      <b>なぜこの価格で提供できるのか。</b>ゼロから1社ごとに専用アプリを作る場合、開発費用は一般的に100万円〜規模になります。カルテ帖は多店舗運用に対応できる独自基盤の上に、店舗ごとのブランド表示・データを個別に構築する仕組みのため、フルスクラッチ開発より大幅に低コスト・短納期でのご提供が可能です。他店舗のデータが混ざることはなく、お客様には「自店舗専用アプリ」としてご利用いただけます。
+    </div>
+    <div class="price-note" data-aos="fade-up" data-aos-delay="200">
+      ※ 表示価格は基本構成の目安です。機能追加・データ移行等のカスタマイズにより変動します。まずは無料相談で概算お見積もりをご案内します。<br>
+      ※ 月額保守にはアプリの安定運用・アップデート対応・お問い合わせ対応が含まれます。
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faq" aria-labelledby="faq-title">
   <div class="container">
@@ -552,11 +634,12 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       <h2 class="sec-title sec-title-dark" id="faq-title">よくある質問</h2>
     </div>
     <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
-      <div class="faq-item"><details><summary><span class="faq-q">Q</span>初期費用・月額はどれくらいかかりますか？</summary><div class="faq-answer">店舗数・必要な機能によって個別にお見積もりしています。まずは無料相談で現状の顧客管理方法をお伺いした上で、目安の費用感をご案内します。</div></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">Q</span>初期費用・月額はどれくらいかかりますか？</summary><div class="faq-answer">1店舗向けスタンダードは初期費用¥198,000〜（買い切り）+月額保守¥10,000〜、複数店舗向けマルチ店舗プランは初期費用¥298,000〜+月額保守¥15,000〜が目安です。機能追加等により変動するため、まずは無料相談で概算をご案内します。<a href="#pricing">料金の詳細はこちら</a></div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>今使っているホットペッパービューティー等はやめないといけませんか？</summary><div class="faq-answer">いいえ、やめる必要はありません。新規集客はプラットフォーム、リピーター育成・顧客データの資産化はカルテ帖という役割分担での併用をおすすめしています。</div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>エステ・ピラティス以外（整体・ネイル・美容室等）でも対応できますか？</summary><div class="faq-answer">はい、対応可能です。リピーター中心の予約制・個人店であれば業種を問わずカスタマイズできます。</div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>スタッフ全員が使えますか？</summary><div class="faq-answer">はい。複数アカウントでの利用に対応しており、スタッフ間で顧客情報を共有できます。</div></details></div>
-      <div class="faq-item"><details><summary><span class="faq-q">Q</span>開発にどれくらいの期間がかかりますか？</summary><div class="faq-answer">規模・機能によりますが、目安は2〜4週間です。Claude Codeを中心に開発することで、一般的な受託開発より短納期・低コストを実現しています。</div></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">Q</span>導入にどれくらいの期間がかかりますか？</summary><div class="faq-answer">多店舗運用に対応できる独自基盤の上でご提供するため、1社ごとにゼロからアプリを開発する場合と比べて大幅に短く、最短数日〜が目安です。店舗ブランドや機能の作り込み内容により変動します。</div></details></div>
+      <div class="faq-item"><details><summary><span class="faq-q">Q</span>他の店舗とデータが混ざりませんか？</summary><div class="faq-answer">混ざりません。会員証はQRコードまたは店舗コードでお店ごとに識別しており、各店舗のオーナー・スタッフからは自店舗の顧客データのみが見える設計です。他店舗の情報が見えたり、他店舗に自店舗の情報が渡ることはありません。</div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>顧客データのセキュリティは大丈夫ですか？</summary><div class="faq-answer">個人情報保護に配慮した設計で構築します。取り扱うデータの種類や保管方法の詳細は、ご相談時に個別にご説明します。</div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>医療行為に関わるカルテ管理も対応できますか？</summary><div class="faq-answer">本サービスはエステ・ピラティス・パーソナルジム等のリラクゼーション・フィットネス領域を想定しており、医療行為に該当する記録の管理は対象外です。医療機関向けのシステムについては別途ご相談ください。</div></details></div>
       <div class="faq-item"><details><summary><span class="faq-q">Q</span>導入後のサポートはありますか？</summary><div class="faq-answer">はい。導入後の改善・追加機能のご相談も継続的に承っています。</div></details></div>
