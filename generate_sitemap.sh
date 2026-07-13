@@ -33,6 +33,13 @@ cat > sitemap.xml << XMLEOF
   </url>
 
   <url>
+    <loc>${BASE_URL}/shindan.html</loc>
+    <lastmod>${TODAY}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
     <loc>${BASE_URL}/blog/</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>weekly</changefreq>
