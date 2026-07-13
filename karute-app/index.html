@@ -66,7 +66,11 @@
   "provider":{"@type":"Organization","name":"ClawTech","url":"https://clawtech6477.github.io/clawtech-lp/"},
   "areaServed":{"@type":"Country","name":"日本"},
   "audience":{"@type":"Audience","audienceType":"エステ・ピラティス・パーソナルジム等の個人店・小規模事業者"},
-  "description":"エステ・ピラティス・パーソナルジムなど予約制の個人店向けに、来店履歴・カルテ管理・リピート施策を自動化する顧客管理アプリをClaude Codeで開発するサービス「カルテ帖」（運営：ClawTech）。"
+  "description":"エステ・ピラティス・パーソナルジムなど予約制の個人店向けに、来店履歴・カルテ管理・リピート施策を自動化する顧客管理アプリをClaude Codeで開発するサービス「カルテ帖」（運営：ClawTech）。",
+  "offers":[
+    {"@type":"Offer","name":"スタンダードプラン（1店舗向け）","price":"198000","priceCurrency":"JPY","description":"初期費用198,000円〜（買い切り）＋月額保守10,000円〜"},
+    {"@type":"Offer","name":"マルチ店舗プラン","price":"298000","priceCurrency":"JPY","description":"初期費用298,000円〜（買い切り）＋月額保守15,000円〜"}
+  ]
 }
 </script>
 
@@ -263,6 +267,17 @@ section{padding:96px 0}
 .faq-answer{padding:0 24px 22px 68px;font-size:13.5px;line-height:1.95;color:var(--hai)}
 
 /* 料金 */
+/* SaaS比較 */
+#compare-saas{background:var(--kami)}
+.saas-table{width:100%;border-collapse:collapse;max-width:920px;margin:0 auto 28px;font-size:13.5px}
+.saas-table th,.saas-table td{border:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top}
+.saas-table th{background:var(--white);font-family:var(--f-display);font-weight:700;color:var(--kachi)}
+.saas-table td:first-child{font-weight:700;background:var(--white);white-space:nowrap}
+.saas-table td.hl{background:var(--aijiro)}
+.saas-note{max-width:780px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:24px 28px;font-size:13.5px;line-height:1.9;color:var(--sumi)}
+.saas-note b{color:var(--kachi)}
+.saas-honest{max-width:780px;margin:20px auto 0;background:var(--aijiro);border-radius:var(--radius);padding:20px 24px;font-size:13px;line-height:1.9;color:var(--sumi)}
+
 #pricing{background:var(--white);border-top:1px solid var(--line)}
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:920px;margin:0 auto}
 .price-card{position:relative;background:var(--kami);border:1px solid var(--line);border-radius:var(--radius);padding:38px 32px}
@@ -389,6 +404,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       <a href="#situation" role="menuitem">よくある悩み</a>
       <a href="#scope" role="menuitem">できること</a>
       <a href="#flow" role="menuitem">導入の流れ</a>
+      <a href="#compare-saas" role="menuitem">比較</a>
       <a href="#pricing" role="menuitem">料金</a>
       <a href="#faq" role="menuitem">FAQ</a>
       <a href="#contact" class="nav-cta" role="menuitem"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談</a>
@@ -402,6 +418,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
   <a href="#situation" onclick="this.closest('.nav-mobile').classList.remove('open')">よくある悩み</a>
   <a href="#scope" onclick="this.closest('.nav-mobile').classList.remove('open')">できること</a>
   <a href="#flow" onclick="this.closest('.nav-mobile').classList.remove('open')">導入の流れ</a>
+  <a href="#compare-saas" onclick="this.closest('.nav-mobile').classList.remove('open')">比較</a>
   <a href="#pricing" onclick="this.closest('.nav-mobile').classList.remove('open')">料金</a>
   <a href="#faq" onclick="this.closest('.nav-mobile').classList.remove('open')">よくある質問</a>
   <a href="#contact" onclick="this.closest('.nav-mobile').classList.remove('open')">お問い合わせ</a>
@@ -623,6 +640,36 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
         <p>導入後の改善・追加機能もご相談いただけます。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- COMPARE SAAS -->
+<section id="compare-saas" aria-labelledby="compare-title">
+  <div class="container">
+    <div class="sec-head" data-aos="fade-up">
+      <div class="eyebrow eyebrow-light"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i>Compare</div>
+      <h2 class="sec-title sec-title-dark" id="compare-title">月額SaaS型アプリと、どちらが向いていますか？</h2>
+      <p class="sec-sub sec-sub-muted">正直にお伝えします。カルテ帖が向いているお店と、月額の顧客管理SaaS（KaruteKun・LiME・RESERVA等）の方が向いているお店は違います。</p>
+    </div>
+    <div style="overflow-x:auto" data-aos="fade-up" data-aos-delay="100">
+    <table class="saas-table">
+      <tr><th>項目</th><th>月額SaaS型（KaruteKun・LiME・RESERVA等）</th><th class="hl">カルテ帖（自社専用アプリ）</th></tr>
+      <tr><td>初期費用</td><td>0円〜数万円が中心</td><td class="hl">¥198,000〜（買い切り）</td></tr>
+      <tr><td>月額費用</td><td>月数千円〜1万円程度が一般的</td><td class="hl">¥10,000〜（保守のみ）</td></tr>
+      <tr><td>アプリの見た目</td><td>提供元の汎用アプリ内に自店舗が表示される形が中心</td><td class="hl">店舗名・ロゴを反映した自社ブランド表示</td></tr>
+      <tr><td>データの扱い</td><td>提供元のプラットフォーム上で管理。解約時のデータ持ち出し可否はサービスにより異なる</td><td class="hl">自店舗専用の資産として蓄積・保有</td></tr>
+      <tr><td>機能のカスタマイズ</td><td>提供元が用意した標準機能の範囲内</td><td class="hl">個別のご要望に応じた機能追加が相談可能</td></tr>
+      <tr><td>複数店舗対応</td><td>サービスのプラン仕様に準拠</td><td class="hl">店舗ごとに分離したデータ管理を個別設計</td></tr>
+      <tr><td>向いているお店</td><td>1人サロン・機能はシンプルで十分・とにかく安く早く始めたい</td><td class="hl">自社ブランドを大事にしたい・長期的にデータを資産化したい・複数店舗展開の予定がある</td></tr>
+    </table>
+    </div>
+    <div class="saas-note" data-aos="fade-up" data-aos-delay="150">
+      <b>5年間のコストで考えると。</b>月額SaaSは月額料金がそのまま積み上がっていく一方、カルテ帖は初期費用（買い切り）と月額保守の合計になります。単純な支払い総額だけで見れば、シンプルな機能で十分な1店舗であれば月額SaaSの方が安くなるケースも十分にあり得ます。カルテ帖の価値は「支払い総額の安さ」ではなく、<b>自店舗ブランドでの提供・データの資産化・将来の機能拡張のしやすさ</b>にあります。
+    </div>
+    <p class="saas-honest" data-aos="fade-up" data-aos-delay="200">
+      <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+      正直なところ、「とにかく安く・早く始めたい」「機能はシンプルでいい」という1人サロン様には、月額数千円から始められるSaaS型サービスの方が合っている場合もあります。まずは無料相談で現状をお伺いし、月額SaaSとカルテ帖どちらが合うか含めて中立にご提案します。
+    </p>
   </div>
 </section>
 
