@@ -194,6 +194,27 @@ section{padding:96px 0}
 .prob-card .pi{width:44px;height:44px;margin:0 auto 14px;border-radius:50%;background:var(--aijiro);color:var(--kachi);display:flex;align-items:center;justify-content:center;font-size:17px}
 .prob-card p{font-size:13.5px;font-weight:500;line-height:1.7;color:var(--sumi)}
 
+/* アプリ画面プレビュー(モック) */
+#app-preview{background:var(--kami)}
+.phone-mock-wrap{display:flex;flex-direction:column;align-items:center}
+.phone-mock{position:relative;width:100%;max-width:300px;background:var(--kachi-deep);border-radius:36px;padding:14px;box-shadow:var(--shadow-md)}
+.phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:110px;height:22px;background:var(--kachi-deep);border-radius:0 0 14px 14px;z-index:2}
+.phone-screen{position:relative;background:var(--white);border-radius:24px;padding:34px 18px 22px;min-height:420px}
+.pm-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.pm-header-logo{display:flex;align-items:center;gap:6px;font-family:var(--f-display);font-weight:800;font-size:13px;color:var(--kachi)}
+.pm-header-dot{width:8px;height:8px;border-radius:50%;background:var(--yamabuki)}
+.pm-card{background:var(--aijiro);border-radius:var(--radius);padding:16px;margin-bottom:16px}
+.pm-card-name{font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--kachi);margin-bottom:4px}
+.pm-card-rank{font-size:11.5px;color:var(--ai-mid);font-family:var(--f-mono)}
+.pm-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;font-size:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.pm-lbl{color:var(--hai);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.pm-lbl i{font-size:11px;color:var(--ai-mid)}
+.pm-val{color:var(--sumi);font-weight:600;text-align:right}
+.pm-suggest{margin-top:16px;background:var(--kachi);color:var(--white);border-radius:var(--radius);padding:14px 16px;display:flex;gap:10px;font-size:11.5px;line-height:1.7}
+.pm-suggest i{color:var(--yamabuki);margin-top:2px;flex-shrink:0}
+.pm-suggest b{display:block;font-family:var(--f-display);font-size:12.5px;margin-bottom:4px;color:var(--yamabuki-dk)}
+.phone-caption{margin-top:22px;font-size:12.5px;color:var(--hai);text-align:center}
+
 /* できること／できないこと */
 #scope{background:var(--white);border-top:1px solid var(--line)}
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -408,6 +429,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
     <p class="hero-note">エステ・ピラティス・パーソナルジム・整体・ネイル・美容室など、リピーター中心の個人店に対応／全国オンライン相談可／既存の予約プラットフォームとの併用OK</p>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談する（24h以内返信）</a>
+      <a href="#pricing" class="btn btn-ghost"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>まずは料金シートを見る →</a>
       <a href="#situation" class="btn btn-ghost">まず現状を整理する →</a>
     </div>
     <div class="hero-stats" role="list">
@@ -464,6 +486,40 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
     <div style="text-align:center;margin-top:48px" data-aos="fade-up" data-aos-delay="200">
       <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料で現状を相談する</a>
       <p style="font-size:13px;color:var(--hai);margin-top:10px">機能・費用感、何でもOK。返信24h以内。</p>
+    </div>
+  </div>
+</section>
+
+<!-- APP PREVIEW（モック） -->
+<section id="app-preview" aria-labelledby="preview-title">
+  <div class="container">
+    <div class="sec-head" data-aos="fade-up">
+      <div class="eyebrow eyebrow-light"><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>Preview</div>
+      <h2 class="sec-title sec-title-dark" id="preview-title">こんな画面で、顧客管理ができます</h2>
+      <p class="sec-sub sec-sub-muted">来店履歴・施術内容・次回提案がひと目でわかる、あなたのお店専用のデジタル会員証イメージです。</p>
+    </div>
+    <div class="phone-mock-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="phone-mock">
+        <div class="phone-notch" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <div class="pm-header">
+            <div class="pm-header-logo"><i class="fa-solid fa-book-medical" aria-hidden="true"></i>カルテ帖</div>
+            <div class="pm-header-dot" aria-hidden="true"></div>
+          </div>
+          <div class="pm-card">
+            <div class="pm-card-name">田中 花子 様</div>
+            <div class="pm-card-rank">会員ランク：ゴールド</div>
+          </div>
+          <div class="pm-row"><span class="pm-lbl"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>前回来店日</span><span class="pm-val">2026.06.28</span></div>
+          <div class="pm-row"><span class="pm-lbl"><i class="fa-solid fa-spa" aria-hidden="true"></i>施術メニュー</span><span class="pm-val">小顔ハーブピーリング</span></div>
+          <div class="pm-row"><span class="pm-lbl"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i>お客様メモ</span><span class="pm-val">乾燥肌・強い刺激は苦手</span></div>
+          <div class="pm-suggest">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+            <div><b>次回提案</b>そろそろ来店周期の4週間が経過。次回メニューのご提案とご予約リマインドを自動送信できます。</div>
+          </div>
+        </div>
+      </div>
+      <p class="phone-caption">※画面はイメージです。実際のアプリ画面はご相談時にデモをご覧いただけます</p>
     </div>
   </div>
 </section>
