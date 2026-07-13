@@ -390,6 +390,10 @@ section{padding:96px 0}
 .cf-input,.cf-select,.cf-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--line);border-radius:var(--radius);font-family:var(--f-body);font-size:14.5px;background:var(--kami);color:var(--sumi);transition:border-color .2s}
 .cf-input:focus,.cf-select:focus,.cf-textarea:focus{outline:none;border-color:var(--ai-mid);background:var(--white)}
 .cf-textarea{resize:vertical;min-height:110px}
+.cf-radio-group{display:flex;flex-direction:column;gap:8px}
+.cf-radio{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius);font-size:14px;cursor:pointer;transition:border-color .2s,background .2s}
+.cf-radio:has(input:checked),.cf-radio.is-checked{border-color:var(--ai-mid);background:var(--aijiro)}
+.cf-radio input{accent-color:var(--kachi);width:16px;height:16px;flex-shrink:0}
 .contact-right .btn{margin-top:28px}
 
 /* ---------- 会社概要 ---------- */
@@ -522,6 +526,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
     <p class="hero-sub">個人事業主・中小企業のための、Web制作スタジオ。ホームページ制作からMEO対策・業務自動化まで、大阪から全国対応。</p>
     <div class="hero-btns">
       <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料サイト診断を申し込む（24時間以内返信）</a>
+      <a href="/clawtech-lp/shindan.html" class="btn btn-ghost"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断（30秒）</a>
       <a href="#services" class="btn btn-ghost">サービスを見る →</a>
     </div>
     <div class="hero-stats" role="list">
@@ -975,15 +980,24 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
       <div class="ci-item"><div class="ci-icon"><i class="fa-solid fa-video" aria-hidden="true"></i></div><span>オンライン打ち合わせ対応</span></div>
     </div>
     <div class="contact-right" data-aos="fade-left">
-      <form action="https://formspree.io/f/xpqjbyya" method="POST">
-        <input type="hidden" name="_subject" value="【LP制作】お問い合わせ">
+      <form action="https://formspree.io/f/xpqjbyya" method="POST" id="contactForm">
+        <input type="hidden" name="_subject" id="cfSubject" value="【LP制作】お問い合わせ">
         <input type="hidden" name="_next" value="https://clawtech6477.github.io/clawtech-lp/#contact">
+        <input type="hidden" name="流入元" id="cfSrc" value="">
         <label class="cf-label" for="name">お名前<span class="cf-req" aria-label="必須">*</span></label>
         <input type="text" id="name" name="name" class="cf-input" placeholder="山田 太郎" required autocomplete="name">
         <label class="cf-label" for="cf-company">会社名・屋号</label>
         <input type="text" id="cf-company" name="company" class="cf-input" placeholder="株式会社〇〇" autocomplete="organization">
         <label class="cf-label" for="email">メールアドレス<span class="cf-req" aria-label="必須">*</span></label>
         <input type="email" id="email" name="email" class="cf-input" placeholder="example@email.com" required autocomplete="email">
+
+        <label class="cf-label" for="cf-hope-1">ご希望の対応<span class="cf-req" aria-label="必須">*</span></label>
+        <div class="cf-radio-group" role="radiogroup" aria-required="true">
+          <label class="cf-radio"><input type="radio" name="hope" id="cf-hope-1" value="資料だけ欲しい" required> まず資料だけ欲しい</label>
+          <label class="cf-radio"><input type="radio" name="hope" id="cf-hope-2" value="診断詳細レポート希望"> 無料DX診断の詳細レポート希望</label>
+          <label class="cf-radio"><input type="radio" name="hope" id="cf-hope-3" value="無料相談したい"> 無料相談したい（オンラインOK）</label>
+        </div>
+
         <label class="cf-label" for="service">ご相談内容</label>
         <select id="service" name="service" class="cf-select">
           <option value="">選択してください</option>
@@ -994,8 +1008,41 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
           <option value="AI営業代行">AI営業代行</option>
           <option value="その他">その他</option>
         </select>
-        <label class="cf-label" for="message">メッセージ</label>
-        <textarea id="message" name="message" class="cf-textarea" rows="4" placeholder="ご要望・ご質問をご記入ください"></textarea>
+
+        <label class="cf-label" for="cf-size">会社規模</label>
+        <select id="cf-size" name="会社規模" class="cf-select">
+          <option value="">選択してください（任意）</option>
+          <option value="1人">1人</option>
+          <option value="2〜5人">2〜5人</option>
+          <option value="6〜20人">6〜20人</option>
+          <option value="21〜50人">21〜50人</option>
+          <option value="51人〜">51人〜</option>
+        </select>
+
+        <label class="cf-label" for="cf-budget">ご予算感</label>
+        <select id="cf-budget" name="予算感" class="cf-select">
+          <option value="">選択してください（任意）</option>
+          <option value="未定">未定</option>
+          <option value="〜5万">〜5万</option>
+          <option value="〜15万">〜15万</option>
+          <option value="〜50万">〜50万</option>
+          <option value="50万〜">50万〜</option>
+          <option value="月額顧問希望">月額顧問希望</option>
+        </select>
+
+        <label class="cf-label" for="cf-timing">検討時期</label>
+        <select id="cf-timing" name="検討時期" class="cf-select">
+          <option value="">選択してください（任意）</option>
+          <option value="すぐに">すぐに</option>
+          <option value="1ヶ月以内">1ヶ月以内</option>
+          <option value="3ヶ月以内">3ヶ月以内</option>
+          <option value="情報収集段階">情報収集段階</option>
+        </select>
+
+        <div id="cf-message-field">
+          <label class="cf-label" for="message">メッセージ</label>
+          <textarea id="message" name="message" class="cf-textarea" rows="4" placeholder="ご要望・ご質問をご記入ください"></textarea>
+        </div>
         <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>送信する（無料）</button>
       </form>
     </div>
@@ -1132,6 +1179,34 @@ let floatShown=false;
 function showFloat(){if(!floatShown){floatShown=true;floatCta.classList.add('show');}}
 setTimeout(showFloat,3000);
 window.addEventListener('scroll',()=>{if(scrollY>300)showFloat();},{passive:true});
+
+// Contact form: セグメント化ロジック
+(function(){
+  const form=document.getElementById('contactForm');
+  if(!form)return;
+
+  // 流入元(?src=)をhiddenフィールドに自動セット
+  const src=new URLSearchParams(location.search).get('src');
+  const srcField=document.getElementById('cfSrc');
+  if(src&&srcField)srcField.value=src;
+
+  // 「ご希望の対応」でsubjectを動的変更＋資料希望時はメッセージ欄を隠す
+  const subjectMap={
+    '資料だけ欲しい':'【資料請求】お問い合わせ',
+    '診断詳細レポート希望':'【診断レポート希望】お問い合わせ',
+    '無料相談したい':'【無料相談】お問い合わせ'
+  };
+  const subjectField=document.getElementById('cfSubject');
+  const msgField=document.getElementById('cf-message-field');
+  document.querySelectorAll('input[name="hope"]').forEach(radio=>{
+    radio.addEventListener('change',()=>{
+      document.querySelectorAll('.cf-radio').forEach(l=>l.classList.remove('is-checked'));
+      radio.closest('.cf-radio').classList.add('is-checked');
+      if(subjectField&&subjectMap[radio.value])subjectField.value=subjectMap[radio.value];
+      if(msgField)msgField.style.display=(radio.value==='資料だけ欲しい')?'none':'';
+    });
+  });
+})();
 </script>
 </body>
 </html>
