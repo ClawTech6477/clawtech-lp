@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>【2026年版】エステ・ピラティスの顧客管理アプリ導入ガイド｜ホットペッパー依存から抜け出す方法｜ClawTech</title>
+<meta name="description" content="エステ・ピラティス・パーソナルジムなど個人店がAIで顧客管理アプリを持つべき理由を解説。ホットペッパービューティー等のプラットフォーム手数料に頼らない、リピーターが増える仕組み作りとは。">
+<meta property="og:title" content="【2026年版】エステ・ピラティスの顧客管理アプリ導入ガイド｜ホットペッパー依存から抜け出す方法">
+<meta property="og:description" content="エステ・ピラティス・パーソナルジムなど個人店がAIで顧客管理アプリを持つべき理由を解説。プラットフォーム手数料に頼らないリピーター獲得の仕組み作りとは。">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
+<style>
+:root{--kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;--yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
+--f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--f-body);color:var(--sumi);line-height:1.9;background:var(--kami)}
+a{text-decoration:none;color:var(--ai-mid)}
+:focus-visible{outline:3px solid var(--yamabuki);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+nav{background:rgba(250,249,245,.9);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line)}
+nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;height:66px}
+nav a{color:var(--sumi);font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ai-mid)}
+nav .logo{font-family:var(--f-display);font-weight:800;font-size:19px;color:var(--sumi)}
+nav .logo span{color:var(--ai-mid)}
+.article{max-width:760px;margin:0 auto;padding:0 0 80px}
+.article-header{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:64px 24px 48px;text-align:center;margin-bottom:48px}
+.article-header .tag{display:inline-block;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#F0C158;padding:5px 14px;border-radius:2px;margin-bottom:18px}
+.article-header h1{font-family:var(--f-display);font-weight:800;font-size:clamp(22px,3.4vw,32px);line-height:1.5;max-width:680px;margin:0 auto 14px}
+.article-header .meta{font-family:var(--f-mono);font-size:12px;color:#9AA5B8}
+.article-body{padding:0 24px}
+.article-body h2{font-family:var(--f-display);font-size:21px;font-weight:800;margin:44px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--kachi);color:var(--sumi)}
+.article-body h3{font-size:17px;font-weight:700;margin:30px 0 12px;padding-left:12px;border-left:3px solid var(--yamabuki);color:var(--sumi)}
+.article-body p{margin-bottom:20px;font-size:15.5px}
+.article-body ul,.article-body ol{margin:0 0 20px 24px}
+.article-body li{margin-bottom:8px;font-size:15.5px}
+.article-body strong{color:var(--kachi)}
+.cta-box{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--white);padding:40px 32px;border-radius:4px;text-align:center;margin:48px 0}
+.cta-box h3{font-family:var(--f-display);font-size:20px;margin:0 0 12px;padding:0;border:0;color:var(--white)}
+.cta-box p{margin-bottom:20px;color:#B9C2D3;font-size:14px}
+.cta-btn{display:inline-block;background:var(--yamabuki);color:var(--kachi-deep)!important;padding:14px 36px;border-radius:3px;font-weight:700;font-size:15px}
+.cta-btn:hover{background:#F4C64A}
+footer{background:var(--kachi-deep);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:13px}
+footer a{color:rgba(255,255,255,.5)}
+footer a:hover{color:var(--white)}
+@media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
+</style>
+</head>
+<body>
+<nav><div class="inner"><a href="../" class="logo">Claw<span>Tech</span></a><div><a href="../#services" style="margin-right:20px">サービス</a><a href="./">ブログ</a></div></div></nav>
+<article class="article">
+<div class="article-header">
+<span class="tag">AI活用</span>
+<h1>【2026年版】エステ・ピラティスの顧客管理アプリ導入ガイド｜ホットペッパー依存から抜け出す方法</h1>
+<div class="meta">2026年7月13日 ・ 読了目安 6分</div>
+</div>
+<div class="article-body">
+<h2>「AIでアプリまで作れる」時代が、個人店の集客を変える</h2>
+<p>これまで「自社専用の顧客管理アプリを作る」というと、開発会社に発注して数百万円・数ヶ月がかりというのが相場でした。ところが2026年現在、Claude CodeのようなAIエージェントを使った開発が実用段階に入り、<strong>個人店規模でも数週間・低コストで自社専用アプリを持てる</strong>時代になっています。ClawTechでは、この技術をブログ記事の自動生成だけでなく、実際に稼働するWebアプリの制作にも活用しており、エステ・ピラティス・パーソナルジムなど予約制の個人店様向けに「顧客管理アプリ」の開発支援を行っています。</p>
+<h3>ホットペッパービューティー等プラットフォーム集客の限界</h3>
+<p>ホットペッパービューティーをはじめとする予約プラットフォームは、新規集客において依然として強力な入り口です。一方で、掲載費・成約手数料の負担は決して軽くなく、プラットフォーム上でのリピート施策（クーポン配信や来店リマインド）は各社の標準機能に依存するため、自店舗の顧客データとして蓄積・活用しづらいという課題があります。「新規は取れているのに、リピーターが定着しない」というお悩みの背景には、この構造があるケースが少なくありません。</p>
+<h3>顧客情報が紙・Excel・LINEに分散する問題</h3>
+<p>施術履歴やお客様の好み・注意事項（アレルギー等）を紙のカルテやExcelで管理し、連絡は個人のLINEで行っている、という個人店は今も多くあります。この状態では顧客対応のノウハウがスタッフ個人に依存し、スタッフの退職とともに情報が失われたり、複数店舗・複数スタッフでの共有ができなかったりといった問題が起きやすくなります。</p>
+<h2>顧客管理アプリでできること</h2>
+<h3>カルテ・来店履歴の一元管理</h3>
+<p>来店履歴・施術内容・お客様の好みをアプリ上で一元管理することで、誰が対応しても同じ質の接客が可能になります。紙のカルテを探す手間もなくなり、次回来店時の提案の質も上がります。</p>
+<h3>リピート施策の自動化</h3>
+<p>来店周期に応じた次回提案のリマインドや、誕生日・記念日クーポンの自動配信をLINE公式アカウントと連携して行うことで、これまで手が回っていなかったリピート施策を仕組み化できます。担当者が忙しくても、仕組みが自動でお客様との接点を作り続けます。</p>
+<ul>
+<li><strong>来店周期の見える化:</strong> そろそろ来店時期のお客様を自動でリストアップ</li>
+<li><strong>誕生日・記念日クーポンの自動配信:</strong> 手作業での送り忘れを防止</li>
+<li><strong>スタッフ間の情報共有:</strong> 複数アカウント対応で店舗・スタッフをまたいで一元管理</li>
+</ul>
+<h2>導入のステップ</h2>
+<p>ClawTechでの開発は、無料相談で現状の顧客管理方法をヒアリングするところから始まります。業種や店舗数に応じて必要な機能を整理し、Claude Codeを中心とした開発体制で高速に構築。目安として2〜4週間ほどで運用を開始できます。既存の予約プラットフォームをやめる必要はなく、<strong>新規集客はプラットフォーム、リピーター育成は自社アプリ</strong>という役割分担での併用が現実的な進め方です。</p>
+<p>Webからの問い合わせ導線そのものを整えたい場合は、まずLP・ホームページの見直しから着手するのも一つの方法です（<a href="lp-creation-effectiveness-measurement-tools.html">LP制作の効果測定ツールについてはこちら</a>）。すでにサイトをお持ちの場合は、Googleマップからの集客を底上げするMEO対策と組み合わせることで、新規とリピーター双方の底上げが期待できます（<a href="meo-taisaku.html">MEO対策の基本はこちら</a>）。</p>
+<h2>よくある質問</h2>
+<h3>今のプラットフォームはやめないといけませんか？</h3>
+<p>いいえ。新規集客の窓口としてプラットフォームは有効なままで構いません。自社アプリは「一度来店したお客様をリピーターに育てる」役割に特化させるのが、無理のない導入の仕方です。</p>
+<h3>エステ・ピラティス以外でも対応できますか？</h3>
+<p>はい。パーソナルジムや整体・整骨院、ネイル、美容室など、リピーター中心の予約制ビジネスであれば業種を問わず対応可能です。</p>
+<div class="cta-box">
+<h3>あなたの店舗専用の顧客管理アプリを、無料相談から</h3>
+<p>エステ・ピラティス・パーソナルジム向けの顧客管理アプリ「カルテ帖」。現状の管理方法をお伺いした上で、必要な機能をご提案します。</p>
+<a href="../karute-app/" class="cta-btn">カルテ帖の詳細を見る→</a>
+</div>
+</div>
+</article>
+<footer>&copy; 2026 ClawTech（クロウテック）｜<a href="./">ブログ一覧</a>｜<a href="../#company">会社概要</a></footer>
+</body>
+</html>

@@ -26,7 +26,7 @@ cat > sitemap.xml << XMLEOF
   </url>
 
   <url>
-    <loc>${BASE_URL}/zentoshin-kessai/</loc>
+    <loc>${BASE_URL}/karute-app/</loc>
     <lastmod>${TODAY}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
