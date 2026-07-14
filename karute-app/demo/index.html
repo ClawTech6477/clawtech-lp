@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>カルテ帖 体験デモ｜ClawTech</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@600;700;800&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+:root{
+  --radius:10px;
+}
+body[data-theme="beauty"]{
+  --kachi:#3D2B1F; --kachi-deep:#241811; --ai-mid:#B5652E; --yamabuki:#F0985E; --yamabuki-dk:#D97A3D;
+  --sumi:#2E2420; --hai:#8A7566; --white:#FFFBF7; --kami:#F4EBE0; --aijiro:#F5E1CD; --aijiro2:#F0D5B8; --line:#EAD9C7;
+  --f-display:'Zen Kaku Gothic New',sans-serif; --f-body:'Zen Kaku Gothic New',sans-serif; --f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace;
+  --cover:url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=500&q=70');
+}
+body[data-theme="gym"]{
+  --kachi:#141414; --kachi-deep:#080808; --ai-mid:#C9A227; --yamabuki:#C9A227; --yamabuki-dk:#8A6F1A;
+  --sumi:#181818; --hai:#6B6258; --white:#F7F3E6; --kami:#EFE6C8; --aijiro:#EFE6C8; --aijiro2:#E4D6A8; --line:#DCC98F;
+  --f-display:'Cormorant Garamond','Zen Kaku Gothic New',serif; --f-body:'Zen Kaku Gothic New',sans-serif; --f-mono:'Montserrat','Zen Kaku Gothic New',sans-serif;
+  --cover:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=70');
+}
+body[data-theme="saas"]{
+  --kachi:#0F172A; --kachi-deep:#0F172A; --ai-mid:#6366F1; --yamabuki:#EC4899; --yamabuki-dk:#4F46E5;
+  --sumi:#0F172A; --hai:#64748B; --white:#FFFFFF; --kami:#F1F4FE; --aijiro:#EEF2FF; --aijiro2:#E0E7FF; --line:#E2E8F0;
+  --f-display:'Inter','Zen Kaku Gothic New',sans-serif; --f-body:'Zen Kaku Gothic New',sans-serif; --f-mono:'Inter','Zen Kaku Gothic New',sans-serif;
+  --cover:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=70');
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:var(--f-body);color:var(--sumi);background:var(--white);font-size:14px;line-height:1.6;overflow:hidden;overscroll-behavior:none;transition:background .2s}
+button{font-family:inherit;cursor:pointer}
+input,textarea,select{font-family:inherit;font-size:14px}
+
+#app{display:flex;flex-direction:column;height:100vh;height:100dvh;max-width:480px;margin:0 auto;background:var(--white);position:relative}
+
+/* ヘッダー */
+.d-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--kachi-deep);color:var(--white);flex-shrink:0}
+.d-header-logo{display:flex;align-items:center;gap:7px;font-family:var(--f-display);font-weight:800;font-size:14px}
+.d-header-logo i{color:var(--yamabuki)}
+.d-badge{font-family:var(--f-mono);font-size:9.5px;background:var(--yamabuki);color:var(--kachi-deep);padding:2px 7px;border-radius:20px;font-weight:700;letter-spacing:.03em}
+.d-reset{background:none;border:0;color:rgba(255,255,255,.55);font-size:11px;display:flex;align-items:center;gap:4px}
+.d-reset:hover{color:var(--white)}
+
+/* 業種テーマ切替 */
+.theme-switch{display:flex;gap:6px;padding:8px 12px;background:var(--kachi-deep);flex-shrink:0;border-top:1px solid rgba(255,255,255,.08)}
+.theme-pill{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:7px 4px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.62);font-size:10.5px;font-weight:700;letter-spacing:.01em;transition:.15s}
+.theme-pill.active{background:var(--yamabuki);color:var(--kachi-deep);border-color:var(--yamabuki)}
+.theme-pill i{font-size:11px}
+
+/* メイン領域 */
+.d-main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 90px}
+.d-main::-webkit-scrollbar{width:0}
+
+/* カバー写真（業種イメージ＋自社ブランド表示） */
+.cover-photo{height:74px;border-radius:var(--radius);margin-bottom:14px;position:relative;overflow:hidden;background-image:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.5)),var(--cover);background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:9px 12px}
+.cover-brand{color:#fff;font-family:var(--f-display);font-weight:800;font-size:13.5px;letter-spacing:.02em;text-shadow:0 1px 5px rgba(0,0,0,.55)}
+.cover-tag{position:absolute;top:8px;right:9px;background:rgba(255,255,255,.92);color:var(--kachi);font-family:var(--f-mono);font-size:8.5px;font-weight:700;padding:3px 7px;border-radius:20px;letter-spacing:.03em}
+
+/* ホーム: 会員証 */
+.d-selector{display:flex;gap:8px;overflow-x:auto;margin-bottom:16px;padding-bottom:2px}
+.d-selector::-webkit-scrollbar{display:none}
+.chip{flex-shrink:0;padding:7px 14px;border-radius:20px;border:1.5px solid var(--line);font-size:12px;font-weight:600;color:var(--hai);background:var(--white);white-space:nowrap;transition:.15s}
+.chip.active{background:var(--kachi);border-color:var(--kachi);color:var(--white)}
+
+.member-card{background:linear-gradient(135deg,var(--aijiro),var(--aijiro2));border-radius:var(--radius);padding:20px;margin-bottom:16px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,.08)}
+.member-card::after{content:"帖";position:absolute;right:-6px;bottom:-24px;font-family:var(--f-display);font-weight:900;font-size:90px;color:var(--kachi);opacity:.07}
+.mc-name{font-family:var(--f-display);font-weight:800;font-size:19px;color:var(--kachi);margin-bottom:3px}
+.mc-rank{font-size:11px;font-family:var(--f-mono);color:var(--ai-mid);font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.mc-rank i{font-size:10px}
+
+.info-rows{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:14px;overflow:hidden}
+.info-row{display:flex;justify-content:space-between;gap:10px;padding:11px 14px;border-bottom:1px dashed var(--line);font-size:12.5px}
+.info-row:last-child{border-bottom:0}
+.info-lbl{color:var(--hai);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.info-lbl i{font-size:11px;color:var(--ai-mid);width:12px}
+.info-val{color:var(--sumi);font-weight:600;text-align:right}
+
+.suggest-box{background:var(--kachi);color:var(--white);border-radius:var(--radius);padding:14px 16px;display:flex;gap:10px;font-size:11.5px;line-height:1.7;margin-bottom:14px}
+.suggest-box i{color:var(--yamabuki);margin-top:2px;flex-shrink:0}
+.suggest-box b{display:block;font-family:var(--f-display);font-size:12.5px;margin-bottom:3px;color:var(--yamabuki)}
+
+.sec-lbl{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;color:var(--hai);margin:18px 0 8px;text-transform:uppercase;font-weight:600}
+
+/* 顧客一覧 */
+.cust-item{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px}
+.cust-avatar{width:38px;height:38px;border-radius:50%;background:var(--aijiro);color:var(--ai-mid);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;font-family:var(--f-display)}
+.cust-body{flex:1;min-width:0}
+.cust-name{font-weight:700;font-size:13.5px;color:var(--sumi)}
+.cust-meta{font-size:11px;color:var(--hai);margin-top:1px}
+.cust-arrow{color:var(--line);font-size:12px}
+
+.fab{position:absolute;right:16px;bottom:96px;width:48px;height:48px;border-radius:50%;background:var(--yamabuki);color:var(--kachi-deep);border:0;box-shadow:0 4px 14px rgba(0,0,0,.3);font-size:18px;display:flex;align-items:center;justify-content:center;z-index:5}
+.fab:active{transform:scale(.93)}
+
+/* カルテ(来店履歴) */
+.visit-item{display:flex;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;margin-bottom:8px}
+.visit-date{font-family:var(--f-mono);font-size:11px;color:var(--ai-mid);font-weight:700;flex-shrink:0;padding-top:1px}
+.visit-body{flex:1}
+.visit-menu{font-weight:700;font-size:13px;color:var(--sumi);margin-bottom:2px}
+.visit-memo{font-size:11.5px;color:var(--hai);line-height:1.6}
+.memo-box{background:var(--kami);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;font-size:12px;color:var(--sumi);line-height:1.8;margin-bottom:4px}
+.memo-box i{color:var(--ai-mid);margin-right:6px}
+
+/* 配信タブ */
+.dispatch-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:12px;display:flex;align-items:flex-start;gap:12px}
+.dispatch-ic{width:36px;height:36px;border-radius:50%;background:var(--aijiro);color:var(--ai-mid);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.dispatch-body{flex:1}
+.dispatch-title{font-weight:700;font-size:13px;color:var(--sumi);margin-bottom:3px}
+.dispatch-desc{font-size:11.5px;color:var(--hai);line-height:1.6;margin-bottom:10px}
+.dispatch-btn{background:var(--kachi);color:var(--white);border:0;border-radius:20px;padding:8px 16px;font-size:11.5px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+.dispatch-btn:active{transform:scale(.96)}
+.log-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--hai);padding:8px 2px;border-bottom:1px dashed var(--line)}
+.log-item i{color:#7A9B6E;font-size:11px}
+.empty-log{font-size:11.5px;color:var(--hai);text-align:center;padding:20px 0}
+
+/* ボトムナビ */
+.d-nav{position:absolute;left:0;right:0;bottom:0;display:flex;background:var(--white);border-top:1px solid var(--line);flex-shrink:0;z-index:4;max-width:480px;margin:0 auto}
+.d-nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 0 12px;background:none;border:0;color:var(--hai);font-size:9.5px;font-weight:600}
+.d-nav-btn i{font-size:16px}
+.d-nav-btn.active{color:var(--ai-mid)}
+
+/* モーダル */
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.5);display:none;align-items:flex-end;z-index:20}
+.modal-bg.open{display:flex}
+.modal{background:var(--white);width:100%;border-radius:18px 18px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));max-height:80%;overflow-y:auto;animation:slideUp .25s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal h3{font-family:var(--f-display);font-size:15px;font-weight:800;color:var(--kachi);margin-bottom:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:11px;color:var(--hai);margin-bottom:5px;font-weight:600}
+.field input,.field textarea,.field select{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--kami);color:var(--sumi)}
+.field textarea{resize:none;height:60px}
+.modal-actions{display:flex;gap:8px;margin-top:16px}
+.modal-actions button{flex:1;padding:12px;border-radius:8px;border:0;font-weight:700;font-size:13px}
+.btn-cancel{background:var(--kami);color:var(--hai)}
+.btn-save{background:var(--yamabuki);color:var(--kachi-deep)}
+
+/* トースト */
+.toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%) translateY(10px);background:var(--kachi-deep);color:var(--white);padding:11px 20px;border-radius:24px;font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px;opacity:0;pointer-events:none;transition:.25s;z-index:30;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast i{color:#8FD19E}
+
+.d-view{display:none}
+.d-view.active{display:block}
+</style>
+</head>
+<body data-theme="beauty">
+
+<div id="app">
+  <div class="d-header">
+    <div class="d-header-logo"><i class="fa-solid fa-book-medical" id="logoIcon" aria-hidden="true"></i><span id="appName">カルテ帖</span></div>
+    <div class="d-badge">体験デモ</div>
+    <button class="d-reset" id="resetBtn"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>データをリセット</button>
+  </div>
+
+  <div class="theme-switch" id="themeSwitch">
+    <button class="theme-pill active" data-theme="beauty"><i class="fa-solid fa-spa" aria-hidden="true"></i>エステ</button>
+    <button class="theme-pill" data-theme="gym"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i>ジム</button>
+    <button class="theme-pill" data-theme="saas"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>SaaS</button>
+  </div>
+
+  <div class="d-main">
+
+    <!-- ホーム -->
+    <div class="d-view active" id="view-home">
+      <div class="cover-photo" id="coverPhoto">
+        <span class="cover-tag" id="coverTag">PREVIEW</span>
+        <span class="cover-brand" id="coverBrand"></span>
+      </div>
+      <div class="d-selector" id="homeSelector"></div>
+      <div id="homeCard"></div>
+    </div>
+
+    <!-- 顧客一覧 -->
+    <div class="d-view" id="view-customers">
+      <div class="sec-lbl">顧客一覧（<span id="custCount">0</span>名）</div>
+      <div id="customerList"></div>
+    </div>
+
+    <!-- カルテ -->
+    <div class="d-view" id="view-karute">
+      <div class="d-selector" id="karuteSelector"></div>
+      <div class="sec-lbl"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i> お客様メモ</div>
+      <div class="memo-box" id="karuteMemo"></div>
+      <div class="sec-lbl"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> 来店履歴</div>
+      <div id="visitList"></div>
+    </div>
+
+    <!-- 配信 -->
+    <div class="d-view" id="view-dispatch">
+      <div class="sec-lbl">アクション</div>
+      <div class="dispatch-card">
+        <div class="dispatch-ic"><i class="fa-solid fa-comment-dots" id="dispatchIcon1" aria-hidden="true"></i></div>
+        <div class="dispatch-body">
+          <div class="dispatch-title" id="dispatchTitle1">次回来店リマインド</div>
+          <div class="dispatch-desc" id="reminderTarget"></div>
+          <button class="dispatch-btn" id="sendReminderBtn"><i class="fa-brands fa-line" id="dispatchBtnIcon1" aria-hidden="true"></i><span id="dispatchBtnLabel1">LINEで送信する</span></button>
+        </div>
+      </div>
+      <div class="dispatch-card">
+        <div class="dispatch-ic"><i class="fa-solid fa-gift" aria-hidden="true"></i></div>
+        <div class="dispatch-body">
+          <div class="dispatch-title" id="dispatchTitle2">誕生日クーポン配信</div>
+          <div class="dispatch-desc">今月が誕生月の会員に、来店特典クーポンを一斉配信します。</div>
+          <button class="dispatch-btn" id="sendCouponBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>クーポンを配信する</button>
+        </div>
+      </div>
+      <div class="sec-lbl">送信履歴（デモ）</div>
+      <div id="dispatchLog"></div>
+    </div>
+
+  </div>
+
+  <div class="d-nav">
+    <button class="d-nav-btn active" data-view="home"><i class="fa-solid fa-id-card" aria-hidden="true"></i>会員証</button>
+    <button class="d-nav-btn" data-view="customers"><i class="fa-solid fa-users" aria-hidden="true"></i>顧客</button>
+    <button class="d-nav-btn" data-view="karute"><i class="fa-solid fa-file-medical" aria-hidden="true"></i>カルテ</button>
+    <button class="d-nav-btn" data-view="dispatch"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>配信</button>
+  </div>
+
+  <button class="fab" id="addBtn" title="追加"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- 顧客追加モーダル -->
+  <div class="modal-bg" id="custModalBg">
+    <div class="modal">
+      <h3><i class="fa-solid fa-user-plus" aria-hidden="true"></i> 新規顧客を追加</h3>
+      <div class="field"><label>お名前 *</label><input type="text" id="newCustName" placeholder="例：山田 太郎"></div>
+      <div class="field"><label>会員ランク</label>
+        <select id="newCustRank"><option>レギュラー</option><option>シルバー</option><option>ゴールド</option></select>
+      </div>
+      <div class="field"><label>お客様メモ</label><textarea id="newCustMemo" placeholder="アレルギー・好み等"></textarea></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="custCancelBtn">キャンセル</button>
+        <button class="btn-save" id="custSaveBtn">追加する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 来店記録追加モーダル -->
+  <div class="modal-bg" id="visitModalBg">
+    <div class="modal">
+      <h3><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> 来店記録を追加</h3>
+      <div class="field"><label>来店日</label><input type="date" id="newVisitDate"></div>
+      <div class="field"><label id="visitMenuLabel">施術メニュー *</label><input type="text" id="newVisitMenu" placeholder="例：小顔ハーブピーリング"></div>
+      <div class="field"><label>メモ</label><textarea id="newVisitMemo" placeholder="施術内容・お客様の様子など"></textarea></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" id="visitCancelBtn">キャンセル</button>
+        <button class="btn-save" id="visitSaveBtn">記録する</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'karute_demo_v2';
+const THEME_KEY = 'karute_demo_theme';
+const SEED = {
+  selectedId: 'c1',
+  customers: [
+    { id:'c1', name:'田中 花子', rank:'ゴールド', phone:'090-XXXX-1122', memo:'乾燥肌・強い刺激は苦手。アロマは柑橘系が好み。',
+      visits:[{date:'2026-06-28',menu:'小顔ハーブピーリング',memo:'肌の赤みなし。次回は保湿強化コースを提案。'},{date:'2026-05-30',menu:'ハーブピーリング＋リンパドレナージュ',memo:'むくみ改善を実感していただけた様子。'}] },
+    { id:'c2', name:'佐藤 美咲', rank:'シルバー', phone:'080-XXXX-3344', memo:'金属アレルギーあり。施術前に必ず確認。',
+      visits:[{date:'2026-06-15',menu:'ピラティス60分（マンツーマン）',memo:'姿勢改善に意欲的。週1ペースを希望。'}] },
+    { id:'c3', name:'鈴木 健太', rank:'レギュラー', phone:'070-XXXX-5566', memo:'腰に持病あり。負荷は控えめに。',
+      visits:[{date:'2026-06-02',menu:'パーソナルトレーニング（体幹）',memo:'初回カウンセリング実施。目標体重を設定。'}] }
+  ]
+};
+
+// 業種テーマ設定：写真・配色・フォントはCSS変数側で切替。ここではラベル・アイコン・ブランド名のみ。
+// 顧客名・来店履歴などのデータ自体はテーマ間で共通（同一データ）。
+const THEMES = {
+  beauty:{ shop:'Grace Aesthetic Salon', logoIcon:'fa-solid fa-book-medical', appName:'カルテ帖',
+    menuLabel:'施術メニュー', dispatchIcon:'fa-solid fa-comment-dots',
+    dispatchTitle:'次回来店リマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
+    dispatchBtnIcon:'fa-brands fa-line', dispatchBtnLabel:'LINEで送信する',
+    couponTitle:'誕生日クーポン配信', sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日クーポンを一斉配信' },
+  gym:{ shop:'AURUM PERSONAL GYM', logoIcon:'fa-solid fa-dumbbell', appName:'GYM CARTE',
+    menuLabel:'トレーニングメニュー', dispatchIcon:'fa-solid fa-dumbbell',
+    dispatchTitle:'次回トレーニングリマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
+    dispatchBtnIcon:'fa-brands fa-line', dispatchBtnLabel:'LINEで送信する',
+    couponTitle:'誕生日特典クーポン配信', sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日特典クーポンを一斉配信' },
+  saas:{ shop:'CloudDesk CRM', logoIcon:'fa-solid fa-chart-line', appName:'CloudDesk',
+    menuLabel:'ご利用プラン', dispatchIcon:'fa-solid fa-envelope',
+    dispatchTitle:'フォローアップリマインド', dispatchDesc:'様に、利用状況に応じたフォローアップを送信します。',
+    dispatchBtnIcon:'fa-solid fa-envelope', dispatchBtnLabel:'メールで送信する',
+    couponTitle:'契約更新特典の配信', sentLabel:'へフォローアップメールを送信', couponSentLabel:'契約更新特典を一斉配信' }
+};
+let currentTheme = localStorage.getItem(THEME_KEY) || 'beauty';
+
+function loadData(){
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if(!raw){ const d = structuredClone(SEED); saveData(d); return d; }
+  try{ return JSON.parse(raw); }catch(e){ const d = structuredClone(SEED); saveData(d); return d; }
+}
+function saveData(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
+let data = loadData();
+
+function track(name, params){ if(window.gtag) gtag('event', name, params||{}); }
+
+function getSelected(){ return data.customers.find(c=>c.id===data.selectedId) || data.customers[0]; }
+function fmtDate(d){ return d ? d.replace(/-/g,'.') : '—'; }
+function lastVisit(c){ return c.visits && c.visits.length ? c.visits[0] : null; }
+function daysSince(dateStr){ if(!dateStr) return null; const diff = Math.floor((Date.now()-new Date(dateStr).getTime())/86400000); return diff; }
+
+function applyTheme(key){
+  currentTheme = key;
+  localStorage.setItem(THEME_KEY, key);
+  document.body.setAttribute('data-theme', key);
+  const t = THEMES[key];
+  document.querySelectorAll('.theme-pill').forEach(p=>p.classList.toggle('active', p.dataset.theme===key));
+  document.getElementById('logoIcon').className = t.logoIcon;
+  document.getElementById('appName').textContent = t.appName;
+  document.getElementById('coverBrand').textContent = t.shop;
+  document.getElementById('coverTag').textContent = key==='gym'?'GYM':(key==='saas'?'SAAS DEMO':'SALON');
+  document.getElementById('dispatchIcon1').className = t.dispatchIcon;
+  document.getElementById('dispatchTitle1').textContent = t.dispatchTitle;
+  document.getElementById('dispatchBtnIcon1').className = t.dispatchBtnIcon;
+  document.getElementById('dispatchBtnLabel1').textContent = t.dispatchBtnLabel;
+  document.getElementById('dispatchTitle2').textContent = t.couponTitle;
+  document.getElementById('visitMenuLabel').textContent = t.menuLabel + ' *';
+  renderAll();
+  track('demo_theme_' + key);
+}
+
+function renderSelector(el){
+  el.innerHTML = data.customers.map(c=>`<button class="chip ${c.id===data.selectedId?'active':''}" data-id="${c.id}">${c.name}</button>`).join('');
+  el.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click', ()=>{
+    data.selectedId = btn.dataset.id; saveData(data); renderAll();
+  }));
+}
+
+function renderHome(){
+  renderSelector(document.getElementById('homeSelector'));
+  const c = getSelected();
+  const t = THEMES[currentTheme];
+  const lv = lastVisit(c);
+  const since = lv ? daysSince(lv.date) : null;
+  document.getElementById('homeCard').innerHTML = `
+    <div class="member-card">
+      <div class="mc-name">${c.name} 様</div>
+      <div class="mc-rank"><i class="fa-solid fa-crown" aria-hidden="true"></i>会員ランク：${c.rank}</div>
+    </div>
+    <div class="info-rows">
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-calendar-days"></i>前回来店日</span><span class="info-val">${lv?fmtDate(lv.date):'来店履歴なし'}</span></div>
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-spa"></i>${t.menuLabel}</span><span class="info-val">${lv?lv.menu:'—'}</span></div>
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-phone"></i>電話番号</span><span class="info-val">${c.phone||'—'}</span></div>
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-note-sticky"></i>お客様メモ</span><span class="info-val">${c.memo||'—'}</span></div>
+    </div>
+    ${since!==null ? `<div class="suggest-box"><i class="fa-solid fa-sparkles"></i><div><b>次回提案</b>前回来店から${since}日経過。そろそろ来店周期の目安です。「配信」タブからリマインドを送信できます。</div></div>` : ''}
+  `;
+}
+
+function renderCustomers(){
+  document.getElementById('custCount').textContent = data.customers.length;
+  document.getElementById('customerList').innerHTML = data.customers.map(c=>{
+    const lv = lastVisit(c);
+    return `<div class="cust-item" data-id="${c.id}">
+      <div class="cust-avatar">${c.name[0]}</div>
+      <div class="cust-body"><div class="cust-name">${c.name} 様</div><div class="cust-meta">${c.rank}・前回 ${lv?fmtDate(lv.date):'来店なし'}</div></div>
+      <i class="fa-solid fa-chevron-right cust-arrow"></i>
+    </div>`;
+  }).join('');
+  document.querySelectorAll('.cust-item').forEach(item=>item.addEventListener('click', ()=>{
+    data.selectedId = item.dataset.id; saveData(data); switchView('karute'); renderAll();
+  }));
+}
+
+function renderKarute(){
+  renderSelector(document.getElementById('karuteSelector'));
+  const c = getSelected();
+  document.getElementById('karuteMemo').innerHTML = `<i class="fa-solid fa-note-sticky"></i>${c.memo||'メモはまだありません'}`;
+  const visits = c.visits||[];
+  document.getElementById('visitList').innerHTML = visits.length ? visits.map(v=>`
+    <div class="visit-item">
+      <div class="visit-date">${fmtDate(v.date)}</div>
+      <div class="visit-body"><div class="visit-menu">${v.menu}</div><div class="visit-memo">${v.memo||''}</div></div>
+    </div>`).join('') : `<div class="empty-log">来店記録はまだありません</div>`;
+}
+
+function renderDispatch(){
+  const c = getSelected();
+  const t = THEMES[currentTheme];
+  document.getElementById('reminderTarget').textContent = `${c.name} ${t.dispatchDesc}`;
+  const log = data.log||[];
+  document.getElementById('dispatchLog').innerHTML = log.length ? log.map(l=>`<div class="log-item"><i class="fa-solid fa-circle-check"></i>${l}</div>`).join('') : `<div class="empty-log">まだ送信履歴はありません</div>`;
+}
+
+function renderAll(){ renderHome(); renderCustomers(); renderKarute(); renderDispatch(); }
+
+function switchView(name){
+  document.querySelectorAll('.d-view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  document.querySelectorAll('.d-nav-btn').forEach(b=>b.classList.toggle('active', b.dataset.view===name));
+  document.getElementById('addBtn').style.display = (name==='customers'||name==='karute') ? 'flex' : 'none';
+  track('demo_view_' + name);
+}
+
+document.querySelectorAll('.d-nav-btn').forEach(btn=>btn.addEventListener('click', ()=>switchView(btn.dataset.view)));
+document.querySelectorAll('.theme-pill').forEach(btn=>btn.addEventListener('click', ()=>applyTheme(btn.dataset.theme)));
+
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  t.innerHTML = `<i class="fa-solid fa-circle-check"></i>${msg}`;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
+}
+
+// 追加ボタン: 顧客一覧タブなら顧客追加、カルテタブなら来店記録追加
+document.getElementById('addBtn').addEventListener('click', ()=>{
+  const activeView = document.querySelector('.d-view.active').id;
+  if(activeView === 'view-customers'){
+    document.getElementById('custModalBg').classList.add('open');
+    document.getElementById('newCustName').focus();
+  } else if(activeView === 'view-karute'){
+    document.getElementById('newVisitDate').value = new Date().toISOString().slice(0,10);
+    document.getElementById('visitModalBg').classList.add('open');
+  }
+});
+document.getElementById('addBtn').style.display = 'none';
+
+// 顧客追加モーダル
+document.getElementById('custCancelBtn').addEventListener('click', ()=>document.getElementById('custModalBg').classList.remove('open'));
+document.getElementById('custSaveBtn').addEventListener('click', ()=>{
+  const name = document.getElementById('newCustName').value.trim();
+  if(!name){ document.getElementById('newCustName').focus(); return; }
+  const rank = document.getElementById('newCustRank').value;
+  const memo = document.getElementById('newCustMemo').value.trim();
+  const id = 'c' + Date.now();
+  data.customers.push({id, name, rank, phone:'', memo, visits:[]});
+  data.selectedId = id;
+  saveData(data);
+  document.getElementById('newCustName').value=''; document.getElementById('newCustMemo').value='';
+  document.getElementById('custModalBg').classList.remove('open');
+  renderAll();
+  showToast(`${name} 様を追加しました`);
+  track('demo_customer_added');
+});
+
+// 来店記録追加モーダル
+document.getElementById('visitCancelBtn').addEventListener('click', ()=>document.getElementById('visitModalBg').classList.remove('open'));
+document.getElementById('visitSaveBtn').addEventListener('click', ()=>{
+  const menu = document.getElementById('newVisitMenu').value.trim();
+  if(!menu){ document.getElementById('newVisitMenu').focus(); return; }
+  const date = document.getElementById('newVisitDate').value || new Date().toISOString().slice(0,10);
+  const memo = document.getElementById('newVisitMemo').value.trim();
+  const c = getSelected();
+  c.visits.unshift({date, menu, memo});
+  c.visits.sort((a,b)=> b.date.localeCompare(a.date));
+  saveData(data);
+  document.getElementById('newVisitMenu').value=''; document.getElementById('newVisitMemo').value='';
+  document.getElementById('visitModalBg').classList.remove('open');
+  renderAll();
+  showToast('来店記録を追加しました');
+  track('demo_visit_added');
+});
+
+// 配信ボタン
+document.getElementById('sendReminderBtn').addEventListener('click', ()=>{
+  const c = getSelected();
+  const t = THEMES[currentTheme];
+  data.log = data.log || [];
+  data.log.unshift(`${c.name} 様${t.sentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
+  saveData(data); renderDispatch();
+  showToast(`${c.name} 様に送信しました`);
+  track('demo_reminder_sent');
+});
+document.getElementById('sendCouponBtn').addEventListener('click', ()=>{
+  const t = THEMES[currentTheme];
+  data.log = data.log || [];
+  data.log.unshift(`${t.couponSentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
+  saveData(data); renderDispatch();
+  showToast('配信しました');
+  track('demo_coupon_sent');
+});
+
+// リセット
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  if(!confirm('デモデータを初期状態に戻しますか？')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  data = loadData();
+  renderAll();
+  switchView('home');
+  showToast('デモデータをリセットしました');
+});
+
+// モーダル背景クリックで閉じる
+document.querySelectorAll('.modal-bg').forEach(bg=>bg.addEventListener('click', (e)=>{ if(e.target===bg) bg.classList.remove('open'); }));
+
+applyTheme(currentTheme);
+track('demo_loaded');
+</script>
+</body>
+</html>
