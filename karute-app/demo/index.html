@@ -17,9 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <style>
-:root{
-  --radius:10px;
-}
+:root{ --radius:10px; }
 body[data-theme="beauty"]{
   --kachi:#3D2B1F; --kachi-deep:#241811; --ai-mid:#B5652E; --yamabuki:#F0985E; --yamabuki-dk:#D97A3D;
   --sumi:#2E2420; --hai:#8A7566; --white:#FFFBF7; --kami:#F4EBE0; --aijiro:#F5E1CD; --aijiro2:#F0D5B8; --line:#EAD9C7;
@@ -54,11 +52,12 @@ input,textarea,select{font-family:inherit;font-size:14px}
 .d-reset{background:none;border:0;color:rgba(255,255,255,.55);font-size:11px;display:flex;align-items:center;gap:4px}
 .d-reset:hover{color:var(--white)}
 
-/* 業種テーマ切替 */
-.theme-switch{display:flex;gap:6px;padding:8px 12px;background:var(--kachi-deep);flex-shrink:0;border-top:1px solid rgba(255,255,255,.08)}
-.theme-pill{flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:7px 4px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:rgba(255,255,255,.62);font-size:10.5px;font-weight:700;letter-spacing:.01em;transition:.15s}
-.theme-pill.active{background:var(--yamabuki);color:var(--kachi-deep);border-color:var(--yamabuki)}
-.theme-pill i{font-size:11px}
+/* 業種テーマ切替（カード型） */
+.theme-switch{display:flex;gap:7px;padding:9px 12px;background:var(--kachi-deep);flex-shrink:0;border-top:1px solid rgba(255,255,255,.08);overflow-x:auto}
+.theme-switch::-webkit-scrollbar{display:none}
+.theme-pill{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:9px 4px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);font-size:10px;font-weight:700;letter-spacing:.01em;transition:.15s}
+.theme-pill i{font-size:15px}
+.theme-pill.active{background:var(--yamabuki);color:var(--kachi-deep);border-color:var(--yamabuki);transform:translateY(-1px);box-shadow:0 3px 10px rgba(0,0,0,.25)}
 
 /* メイン領域 */
 .d-main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 90px}
@@ -162,7 +161,7 @@ input,textarea,select{font-family:inherit;font-size:14px}
   <div class="d-header">
     <div class="d-header-logo"><i class="fa-solid fa-book-medical" id="logoIcon" aria-hidden="true"></i><span id="appName">カルテ帖</span></div>
     <div class="d-badge">体験デモ</div>
-    <button class="d-reset" id="resetBtn"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>データをリセット</button>
+    <button class="d-reset" id="resetBtn"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i>リセット</button>
   </div>
 
   <div class="theme-switch" id="themeSwitch">
@@ -176,7 +175,7 @@ input,textarea,select{font-family:inherit;font-size:14px}
     <!-- ホーム -->
     <div class="d-view active" id="view-home">
       <div class="cover-photo" id="coverPhoto">
-        <span class="cover-tag" id="coverTag">PREVIEW</span>
+        <span class="cover-tag" id="coverTag">SALON</span>
         <span class="cover-brand" id="coverBrand"></span>
       </div>
       <div class="d-selector" id="homeSelector"></div>
@@ -194,7 +193,7 @@ input,textarea,select{font-family:inherit;font-size:14px}
       <div class="d-selector" id="karuteSelector"></div>
       <div class="sec-lbl"><i class="fa-solid fa-note-sticky" aria-hidden="true"></i> お客様メモ</div>
       <div class="memo-box" id="karuteMemo"></div>
-      <div class="sec-lbl"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> 来店履歴</div>
+      <div class="sec-lbl"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i> <span id="visitHistLabel">来店履歴</span></div>
       <div id="visitList"></div>
     </div>
 
@@ -213,8 +212,8 @@ input,textarea,select{font-family:inherit;font-size:14px}
         <div class="dispatch-ic"><i class="fa-solid fa-gift" aria-hidden="true"></i></div>
         <div class="dispatch-body">
           <div class="dispatch-title" id="dispatchTitle2">誕生日クーポン配信</div>
-          <div class="dispatch-desc">今月が誕生月の会員に、来店特典クーポンを一斉配信します。</div>
-          <button class="dispatch-btn" id="sendCouponBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>クーポンを配信する</button>
+          <div class="dispatch-desc" id="couponDesc">今月が誕生月の会員に、来店特典クーポンを一斉配信します。</div>
+          <button class="dispatch-btn" id="sendCouponBtn"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i>配信する</button>
         </div>
       </div>
       <div class="sec-lbl">送信履歴（デモ）</div>
@@ -239,10 +238,10 @@ input,textarea,select{font-family:inherit;font-size:14px}
     <div class="modal">
       <h3><i class="fa-solid fa-user-plus" aria-hidden="true"></i> 新規顧客を追加</h3>
       <div class="field"><label>お名前 *</label><input type="text" id="newCustName" placeholder="例：山田 太郎"></div>
-      <div class="field"><label>会員ランク</label>
-        <select id="newCustRank"><option>レギュラー</option><option>シルバー</option><option>ゴールド</option></select>
+      <div class="field"><label id="newCustRankLabel">会員ランク</label>
+        <select id="newCustRank"></select>
       </div>
-      <div class="field"><label>お客様メモ</label><textarea id="newCustMemo" placeholder="アレルギー・好み等"></textarea></div>
+      <div class="field"><label id="newCustMemoLabel">お客様メモ</label><textarea id="newCustMemo" placeholder="アレルギー・好み等"></textarea></div>
       <div class="modal-actions">
         <button class="btn-cancel" id="custCancelBtn">キャンセル</button>
         <button class="btn-save" id="custSaveBtn">追加する</button>
@@ -253,10 +252,10 @@ input,textarea,select{font-family:inherit;font-size:14px}
   <!-- 来店記録追加モーダル -->
   <div class="modal-bg" id="visitModalBg">
     <div class="modal">
-      <h3><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> 来店記録を追加</h3>
-      <div class="field"><label>来店日</label><input type="date" id="newVisitDate"></div>
-      <div class="field"><label id="visitMenuLabel">施術メニュー *</label><input type="text" id="newVisitMenu" placeholder="例：小顔ハーブピーリング"></div>
-      <div class="field"><label>メモ</label><textarea id="newVisitMemo" placeholder="施術内容・お客様の様子など"></textarea></div>
+      <h3><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> <span id="visitModalTitle">来店記録を追加</span></h3>
+      <div class="field"><label id="visitDateLabel">来店日</label><input type="date" id="newVisitDate"></div>
+      <div class="field"><label id="visitMenuLabel">施術メニュー *</label><input type="text" id="newVisitMenu" placeholder=""></div>
+      <div class="field"><label>メモ</label><textarea id="newVisitMemo" placeholder="内容・様子など"></textarea></div>
       <div class="modal-actions">
         <button class="btn-cancel" id="visitCancelBtn">キャンセル</button>
         <button class="btn-save" id="visitSaveBtn">記録する</button>
@@ -267,55 +266,98 @@ input,textarea,select{font-family:inherit;font-size:14px}
 </div>
 
 <script>
-const STORAGE_KEY = 'karute_demo_v2';
+const STORAGE_KEY = 'karute_demo_v3';
 const THEME_KEY = 'karute_demo_theme';
-const SEED = {
-  selectedId: 'c1',
-  customers: [
-    { id:'c1', name:'田中 花子', rank:'ゴールド', phone:'090-XXXX-1122', memo:'乾燥肌・強い刺激は苦手。アロマは柑橘系が好み。',
+
+// 顧客の「名前・電話番号」だけはテーマ間で共通（同一人物という設定）。
+// ランク・メモ・来店/利用履歴はテーマ(業種)ごとに完全に独立したデータを持つ。
+const NAMES = { c1:{name:'田中 花子', phone:'090-XXXX-1122'}, c2:{name:'佐藤 美咲', phone:'080-XXXX-3344'}, c3:{name:'鈴木 健太', phone:'070-XXXX-5566'} };
+
+const SEED_BY_THEME = {
+  beauty:{
+    c1:{ rank:'ゴールド', memo:'乾燥肌・強い刺激は苦手。アロマは柑橘系が好み。',
       visits:[{date:'2026-06-28',menu:'小顔ハーブピーリング',memo:'肌の赤みなし。次回は保湿強化コースを提案。'},{date:'2026-05-30',menu:'ハーブピーリング＋リンパドレナージュ',memo:'むくみ改善を実感していただけた様子。'}] },
-    { id:'c2', name:'佐藤 美咲', rank:'シルバー', phone:'080-XXXX-3344', memo:'金属アレルギーあり。施術前に必ず確認。',
-      visits:[{date:'2026-06-15',menu:'ピラティス60分（マンツーマン）',memo:'姿勢改善に意欲的。週1ペースを希望。'}] },
-    { id:'c3', name:'鈴木 健太', rank:'レギュラー', phone:'070-XXXX-5566', memo:'腰に持病あり。負荷は控えめに。',
-      visits:[{date:'2026-06-02',menu:'パーソナルトレーニング（体幹）',memo:'初回カウンセリング実施。目標体重を設定。'}] }
-  ]
+    c2:{ rank:'シルバー', memo:'金属アレルギーあり。施術前に必ず確認。',
+      visits:[{date:'2026-06-15',menu:'ハンド＆フットトリートメント',memo:'次回はパラフィンパックをご提案予定。'}] },
+    c3:{ rank:'レギュラー', memo:'敏感肌のためパッチテスト必須。',
+      visits:[{date:'2026-06-02',menu:'メンズフェイシャル（毛穴ケア）',memo:'初回カウンセリング実施。皮脂分泌が多め。'}] }
+  },
+  gym:{
+    c1:{ rank:'ゴールド会員', memo:'膝に軽い違和感あり。高負荷スクワットは避ける。',
+      visits:[{date:'2026-06-28',menu:'体幹トレーニング60分',memo:'プランク保持時間が向上。次回は負荷を追加。'},{date:'2026-05-30',menu:'有酸素＋HIITサーキット',memo:'心拍数の回復が早くなってきた。'}] },
+    c2:{ rank:'シルバー会員', memo:'産後の骨盤矯正が目的。腹圧をかけすぎない種目を選択。',
+      visits:[{date:'2026-06-15',menu:'ダイエットプログラム（食事指導込み）',memo:'週1ペースを希望。体重-1.2kg。'}] },
+    c3:{ rank:'レギュラー会員', memo:'腰に持病あり。デッドリフト系は避け負荷は控えめに。',
+      visits:[{date:'2026-06-02',menu:'ベンチプレス・スクワット強化メニュー',memo:'初回カウンセリング実施。目標体重を設定。'}] }
+  },
+  saas:{
+    c1:{ rank:'Enterprise', memo:'請求書は月末締め希望。Slack通知連携済み。',
+      visits:[{date:'2026-06-28',menu:'管理画面カスタマイズ設定',memo:'権限グループを部署別に再設計。'},{date:'2026-05-30',menu:'オンボーディングMTG実施',memo:'導入初期の運用ルールをすり合わせ。'}] },
+    c2:{ rank:'Pro', memo:'テクニカル担当者。Webhookエラーの問い合わせが多め。',
+      visits:[{date:'2026-06-15',menu:'API連携サポート対応',memo:'エラーログを確認しAPIキーを再発行。'}] },
+    c3:{ rank:'Starter', memo:'決裁者。上位プランへの移行を検討中。',
+      visits:[{date:'2026-06-02',menu:'トライアル→有償プラン移行',memo:'初回オンボーディングを実施。'}] }
+  }
 };
 
-// 業種テーマ設定：写真・配色・フォントはCSS変数側で切替。ここではラベル・アイコン・ブランド名のみ。
-// 顧客名・来店履歴などのデータ自体はテーマ間で共通（同一データ）。
+// 業種テーマ設定：写真・配色・フォントはCSS変数側で切替、こちらはラベル・アイコン・ブランド名・入力候補を制御。
 const THEMES = {
-  beauty:{ shop:'Grace Aesthetic Salon', logoIcon:'fa-solid fa-book-medical', appName:'カルテ帖',
-    menuLabel:'施術メニュー', dispatchIcon:'fa-solid fa-comment-dots',
-    dispatchTitle:'次回来店リマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
+  beauty:{ shop:'Grace Aesthetic Salon', coverTag:'SALON', logoIcon:'fa-solid fa-book-medical', appName:'カルテ帖',
+    menuLabel:'施術メニュー', rankLabel:'会員ランク', rankIcon:'fa-crown', visitHistLabel:'来店履歴', visitDateLabel:'来店日', visitModalTitle:'来店記録を追加',
+    lastVisitLabel:'前回来店日', noVisitLabel:'来店履歴なし', menuPlaceholder:'例：小顔ハーブピーリング', memoPlaceholder:'アレルギー・好み等',
+    rankOptions:['レギュラー','シルバー','ゴールド'],
+    dispatchIcon:'fa-solid fa-comment-dots', dispatchTitle:'次回来店リマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
     dispatchBtnIcon:'fa-brands fa-line', dispatchBtnLabel:'LINEで送信する',
-    couponTitle:'誕生日クーポン配信', sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日クーポンを一斉配信' },
-  gym:{ shop:'AURUM PERSONAL GYM', logoIcon:'fa-solid fa-dumbbell', appName:'GYM CARTE',
-    menuLabel:'トレーニングメニュー', dispatchIcon:'fa-solid fa-dumbbell',
-    dispatchTitle:'次回トレーニングリマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
+    couponTitle:'誕生日クーポン配信', couponDesc:'今月が誕生月の会員に、来店特典クーポンを一斉配信します。',
+    sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日クーポンを一斉配信',
+    suggestText:'そろそろ来店周期の目安です。「配信」タブからリマインドを送信できます。' },
+  gym:{ shop:'AURUM PERSONAL GYM', coverTag:'GYM', logoIcon:'fa-solid fa-dumbbell', appName:'GYM CARTE',
+    menuLabel:'トレーニングメニュー', rankLabel:'会員ランク', rankIcon:'fa-medal', visitHistLabel:'トレーニング履歴', visitDateLabel:'来店日', visitModalTitle:'トレーニング記録を追加',
+    lastVisitLabel:'前回来店日', noVisitLabel:'来店履歴なし', menuPlaceholder:'例：体幹トレーニング60分', memoPlaceholder:'ケガ・可動域制限など',
+    rankOptions:['レギュラー会員','シルバー会員','ゴールド会員'],
+    dispatchIcon:'fa-solid fa-dumbbell', dispatchTitle:'次回トレーニングリマインド', dispatchDesc:'様に、来店周期に応じたリマインドを送信します。',
     dispatchBtnIcon:'fa-brands fa-line', dispatchBtnLabel:'LINEで送信する',
-    couponTitle:'誕生日特典クーポン配信', sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日特典クーポンを一斉配信' },
-  saas:{ shop:'CloudDesk CRM', logoIcon:'fa-solid fa-chart-line', appName:'CloudDesk',
-    menuLabel:'ご利用プラン', dispatchIcon:'fa-solid fa-envelope',
-    dispatchTitle:'フォローアップリマインド', dispatchDesc:'様に、利用状況に応じたフォローアップを送信します。',
+    couponTitle:'誕生日特典クーポン配信', couponDesc:'今月が誕生月の会員に、パーソナルトレーニング1回無料券を一斉配信します。',
+    sentLabel:'へLINEリマインドを送信', couponSentLabel:'誕生日特典クーポンを一斉配信',
+    suggestText:'そろそろ来店周期の目安です。「配信」タブからリマインドを送信できます。' },
+  saas:{ shop:'CloudDesk CRM', coverTag:'SAAS DEMO', logoIcon:'fa-solid fa-chart-line', appName:'CloudDesk',
+    menuLabel:'対応内容', rankLabel:'契約プラン', rankIcon:'fa-layer-group', visitHistLabel:'利用履歴', visitDateLabel:'対応日', visitModalTitle:'対応履歴を追加',
+    lastVisitLabel:'直近の対応日', noVisitLabel:'対応履歴なし', menuPlaceholder:'例：API連携サポート対応', memoPlaceholder:'請求条件・利用ツール等の顧客情報',
+    rankOptions:['Starter','Pro','Enterprise'],
+    dispatchIcon:'fa-solid fa-envelope', dispatchTitle:'フォローアップリマインド', dispatchDesc:'様に、利用状況に応じたフォローアップを送信します。',
     dispatchBtnIcon:'fa-solid fa-envelope', dispatchBtnLabel:'メールで送信する',
-    couponTitle:'契約更新特典の配信', sentLabel:'へフォローアップメールを送信', couponSentLabel:'契約更新特典を一斉配信' }
+    couponTitle:'契約更新特典の配信', couponDesc:'今月更新月を迎える契約者に、次期更新特典を一斉配信します。',
+    sentLabel:'へフォローアップメールを送信', couponSentLabel:'契約更新特典を一斉配信',
+    suggestText:'そろそろ定期フォローアップの目安です。「配信」タブから送信できます。' }
 };
 let currentTheme = localStorage.getItem(THEME_KEY) || 'beauty';
 
-function loadData(){
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if(!raw){ const d = structuredClone(SEED); saveData(d); return d; }
-  try{ return JSON.parse(raw); }catch(e){ const d = structuredClone(SEED); saveData(d); return d; }
+function buildThemeBucket(themeKey){
+  const seed = SEED_BY_THEME[themeKey];
+  const customers = Object.keys(NAMES).map(id => ({
+    id, name: NAMES[id].name, phone: NAMES[id].phone,
+    rank: seed[id].rank, memo: seed[id].memo,
+    visits: JSON.parse(JSON.stringify(seed[id].visits))
+  }));
+  return { customers, selectedId:'c1', log:[] };
 }
-function saveData(d){ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }
-let data = loadData();
+function loadAll(){
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if(raw){ try{ return JSON.parse(raw); }catch(e){} }
+  const fresh = { beauty:buildThemeBucket('beauty'), gym:buildThemeBucket('gym'), saas:buildThemeBucket('saas') };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(fresh));
+  return fresh;
+}
+function saveAll(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }
+let data = loadAll();
 
 function track(name, params){ if(window.gtag) gtag('event', name, params||{}); }
 
-function getSelected(){ return data.customers.find(c=>c.id===data.selectedId) || data.customers[0]; }
+function bucket(){ return data[currentTheme]; }
+function getSelected(){ const b=bucket(); return b.customers.find(c=>c.id===b.selectedId) || b.customers[0]; }
 function fmtDate(d){ return d ? d.replace(/-/g,'.') : '—'; }
 function lastVisit(c){ return c.visits && c.visits.length ? c.visits[0] : null; }
-function daysSince(dateStr){ if(!dateStr) return null; const diff = Math.floor((Date.now()-new Date(dateStr).getTime())/86400000); return diff; }
+function daysSince(dateStr){ if(!dateStr) return null; return Math.floor((Date.now()-new Date(dateStr).getTime())/86400000); }
 
 function applyTheme(key){
   currentTheme = key;
@@ -326,21 +368,31 @@ function applyTheme(key){
   document.getElementById('logoIcon').className = t.logoIcon;
   document.getElementById('appName').textContent = t.appName;
   document.getElementById('coverBrand').textContent = t.shop;
-  document.getElementById('coverTag').textContent = key==='gym'?'GYM':(key==='saas'?'SAAS DEMO':'SALON');
+  document.getElementById('coverTag').textContent = t.coverTag;
   document.getElementById('dispatchIcon1').className = t.dispatchIcon;
   document.getElementById('dispatchTitle1').textContent = t.dispatchTitle;
   document.getElementById('dispatchBtnIcon1').className = t.dispatchBtnIcon;
   document.getElementById('dispatchBtnLabel1').textContent = t.dispatchBtnLabel;
   document.getElementById('dispatchTitle2').textContent = t.couponTitle;
+  document.getElementById('couponDesc').textContent = t.couponDesc;
+  document.getElementById('visitHistLabel').textContent = t.visitHistLabel;
   document.getElementById('visitMenuLabel').textContent = t.menuLabel + ' *';
+  document.getElementById('newVisitMenu').placeholder = t.menuPlaceholder;
+  document.getElementById('newCustMemo').placeholder = t.memoPlaceholder;
+  document.getElementById('newCustMemoLabel').textContent = (key==='saas'?'担当者メモ':'お客様メモ');
+  document.getElementById('newCustRankLabel').textContent = t.rankLabel;
+  document.getElementById('newCustRank').innerHTML = t.rankOptions.map(o=>`<option>${o}</option>`).join('');
+  document.getElementById('visitDateLabel').textContent = t.visitDateLabel;
+  document.getElementById('visitModalTitle').textContent = t.visitModalTitle;
   renderAll();
   track('demo_theme_' + key);
 }
 
 function renderSelector(el){
-  el.innerHTML = data.customers.map(c=>`<button class="chip ${c.id===data.selectedId?'active':''}" data-id="${c.id}">${c.name}</button>`).join('');
+  const b = bucket();
+  el.innerHTML = b.customers.map(c=>`<button class="chip ${c.id===b.selectedId?'active':''}" data-id="${c.id}">${c.name}</button>`).join('');
   el.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click', ()=>{
-    data.selectedId = btn.dataset.id; saveData(data); renderAll();
+    bucket().selectedId = btn.dataset.id; saveAll(); renderAll();
   }));
 }
 
@@ -353,30 +405,32 @@ function renderHome(){
   document.getElementById('homeCard').innerHTML = `
     <div class="member-card">
       <div class="mc-name">${c.name} 様</div>
-      <div class="mc-rank"><i class="fa-solid fa-crown" aria-hidden="true"></i>会員ランク：${c.rank}</div>
+      <div class="mc-rank"><i class="fa-solid ${t.rankIcon}" aria-hidden="true"></i>${t.rankLabel}：${c.rank}</div>
     </div>
     <div class="info-rows">
-      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-calendar-days"></i>前回来店日</span><span class="info-val">${lv?fmtDate(lv.date):'来店履歴なし'}</span></div>
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-calendar-days"></i>${t.lastVisitLabel}</span><span class="info-val">${lv?fmtDate(lv.date):t.noVisitLabel}</span></div>
       <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-spa"></i>${t.menuLabel}</span><span class="info-val">${lv?lv.menu:'—'}</span></div>
       <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-phone"></i>電話番号</span><span class="info-val">${c.phone||'—'}</span></div>
-      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-note-sticky"></i>お客様メモ</span><span class="info-val">${c.memo||'—'}</span></div>
+      <div class="info-row"><span class="info-lbl"><i class="fa-solid fa-note-sticky"></i>${key_memoLabel()}</span><span class="info-val">${c.memo||'—'}</span></div>
     </div>
-    ${since!==null ? `<div class="suggest-box"><i class="fa-solid fa-sparkles"></i><div><b>次回提案</b>前回来店から${since}日経過。そろそろ来店周期の目安です。「配信」タブからリマインドを送信できます。</div></div>` : ''}
+    ${since!==null ? `<div class="suggest-box"><i class="fa-solid fa-sparkles"></i><div><b>次回提案</b>前回から${since}日経過。${t.suggestText}</div></div>` : ''}
   `;
 }
+function key_memoLabel(){ return currentTheme==='saas' ? '担当者メモ' : 'お客様メモ'; }
 
 function renderCustomers(){
-  document.getElementById('custCount').textContent = data.customers.length;
-  document.getElementById('customerList').innerHTML = data.customers.map(c=>{
+  const b = bucket();
+  document.getElementById('custCount').textContent = b.customers.length;
+  document.getElementById('customerList').innerHTML = b.customers.map(c=>{
     const lv = lastVisit(c);
     return `<div class="cust-item" data-id="${c.id}">
       <div class="cust-avatar">${c.name[0]}</div>
-      <div class="cust-body"><div class="cust-name">${c.name} 様</div><div class="cust-meta">${c.rank}・前回 ${lv?fmtDate(lv.date):'来店なし'}</div></div>
+      <div class="cust-body"><div class="cust-name">${c.name} 様</div><div class="cust-meta">${c.rank}・前回 ${lv?fmtDate(lv.date):'なし'}</div></div>
       <i class="fa-solid fa-chevron-right cust-arrow"></i>
     </div>`;
   }).join('');
   document.querySelectorAll('.cust-item').forEach(item=>item.addEventListener('click', ()=>{
-    data.selectedId = item.dataset.id; saveData(data); switchView('karute'); renderAll();
+    bucket().selectedId = item.dataset.id; saveAll(); switchView('karute'); renderAll();
   }));
 }
 
@@ -389,14 +443,14 @@ function renderKarute(){
     <div class="visit-item">
       <div class="visit-date">${fmtDate(v.date)}</div>
       <div class="visit-body"><div class="visit-menu">${v.menu}</div><div class="visit-memo">${v.memo||''}</div></div>
-    </div>`).join('') : `<div class="empty-log">来店記録はまだありません</div>`;
+    </div>`).join('') : `<div class="empty-log">記録はまだありません</div>`;
 }
 
 function renderDispatch(){
   const c = getSelected();
   const t = THEMES[currentTheme];
   document.getElementById('reminderTarget').textContent = `${c.name} ${t.dispatchDesc}`;
-  const log = data.log||[];
+  const log = bucket().log||[];
   document.getElementById('dispatchLog').innerHTML = log.length ? log.map(l=>`<div class="log-item"><i class="fa-solid fa-circle-check"></i>${l}</div>`).join('') : `<div class="empty-log">まだ送信履歴はありません</div>`;
 }
 
@@ -422,7 +476,7 @@ function showToast(msg){
   toastTimer = setTimeout(()=>t.classList.remove('show'), 2400);
 }
 
-// 追加ボタン: 顧客一覧タブなら顧客追加、カルテタブなら来店記録追加
+// 追加ボタン: 顧客一覧タブなら顧客追加、カルテタブなら記録追加（すべて現在のテーマ内で完結）
 document.getElementById('addBtn').addEventListener('click', ()=>{
   const activeView = document.querySelector('.d-view.active').id;
   if(activeView === 'view-customers'){
@@ -443,9 +497,10 @@ document.getElementById('custSaveBtn').addEventListener('click', ()=>{
   const rank = document.getElementById('newCustRank').value;
   const memo = document.getElementById('newCustMemo').value.trim();
   const id = 'c' + Date.now();
-  data.customers.push({id, name, rank, phone:'', memo, visits:[]});
-  data.selectedId = id;
-  saveData(data);
+  const b = bucket();
+  b.customers.push({id, name, rank, phone:'', memo, visits:[]});
+  b.selectedId = id;
+  saveAll();
   document.getElementById('newCustName').value=''; document.getElementById('newCustMemo').value='';
   document.getElementById('custModalBg').classList.remove('open');
   renderAll();
@@ -453,7 +508,7 @@ document.getElementById('custSaveBtn').addEventListener('click', ()=>{
   track('demo_customer_added');
 });
 
-// 来店記録追加モーダル
+// 記録追加モーダル
 document.getElementById('visitCancelBtn').addEventListener('click', ()=>document.getElementById('visitModalBg').classList.remove('open'));
 document.getElementById('visitSaveBtn').addEventListener('click', ()=>{
   const menu = document.getElementById('newVisitMenu').value.trim();
@@ -463,11 +518,11 @@ document.getElementById('visitSaveBtn').addEventListener('click', ()=>{
   const c = getSelected();
   c.visits.unshift({date, menu, memo});
   c.visits.sort((a,b)=> b.date.localeCompare(a.date));
-  saveData(data);
+  saveAll();
   document.getElementById('newVisitMenu').value=''; document.getElementById('newVisitMemo').value='';
   document.getElementById('visitModalBg').classList.remove('open');
   renderAll();
-  showToast('来店記録を追加しました');
+  showToast('記録を追加しました');
   track('demo_visit_added');
 });
 
@@ -475,26 +530,28 @@ document.getElementById('visitSaveBtn').addEventListener('click', ()=>{
 document.getElementById('sendReminderBtn').addEventListener('click', ()=>{
   const c = getSelected();
   const t = THEMES[currentTheme];
-  data.log = data.log || [];
-  data.log.unshift(`${c.name} 様${t.sentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
-  saveData(data); renderDispatch();
+  const b = bucket();
+  b.log = b.log || [];
+  b.log.unshift(`${c.name} 様${t.sentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
+  saveAll(); renderDispatch();
   showToast(`${c.name} 様に送信しました`);
   track('demo_reminder_sent');
 });
 document.getElementById('sendCouponBtn').addEventListener('click', ()=>{
   const t = THEMES[currentTheme];
-  data.log = data.log || [];
-  data.log.unshift(`${t.couponSentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
-  saveData(data); renderDispatch();
+  const b = bucket();
+  b.log = b.log || [];
+  b.log.unshift(`${t.couponSentLabel}（${new Date().toLocaleString('ja-JP',{month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'})}）`);
+  saveAll(); renderDispatch();
   showToast('配信しました');
   track('demo_coupon_sent');
 });
 
-// リセット
+// リセット（現在表示中のテーマのみ初期化＝各アプリは独立）
 document.getElementById('resetBtn').addEventListener('click', ()=>{
-  if(!confirm('デモデータを初期状態に戻しますか？')) return;
-  localStorage.removeItem(STORAGE_KEY);
-  data = loadData();
+  if(!confirm('このテーマのデモデータを初期状態に戻しますか？（他のテーマには影響しません）')) return;
+  data[currentTheme] = buildThemeBucket(currentTheme);
+  saveAll();
   renderAll();
   switchView('home');
   showToast('デモデータをリセットしました');
