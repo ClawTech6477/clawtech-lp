@@ -164,8 +164,8 @@ section{padding:96px 0}
 #hero{position:relative;height:100vh;min-height:680px;overflow:hidden;background:var(--kachi-deep);color:var(--white)}
 #hero-mesh{position:absolute;inset:0;width:100%;height:100%}
 #hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero-ai-mark{position:absolute;top:50%;right:-2%;transform:translateY(-50%);font-family:var(--f-display);font-weight:800;font-size:min(58vw,720px);line-height:1;color:var(--ai-mid);opacity:.09;user-select:none;pointer-events:none;animation:breathe 9s ease-in-out infinite}
-@keyframes breathe{0%,100%{opacity:.07;transform:translateY(-50%) scale(1)}50%{opacity:.13;transform:translateY(-52%) scale(1.02)}}
+.hero-ai-mark{position:absolute;top:50%;right:-2%;transform:translateY(-50%);font-family:var(--f-display);font-weight:800;font-size:min(58vw,720px);line-height:1;color:var(--ai-mid);opacity:.16;user-select:none;pointer-events:none;animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.13;transform:translateY(-50%) scale(1)}50%{opacity:.2;transform:translateY(-52%) scale(1.02)}}
 #hero-glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(232,165,17,.16), transparent 70%);pointer-events:none;transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.2,.7,.3,1), top .5s cubic-bezier(.2,.7,.3,1);filter:blur(8px)}
 .hero-inner{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center}
 .hero-eyebrow{position:relative;z-index:3;display:inline-flex;align-items:center;gap:10px;width:fit-content;font-family:var(--f-mono);font-size:12.5px;font-weight:500;letter-spacing:.14em;color:#F0C158;margin-bottom:30px;padding-left:14px;border-left:3px solid var(--yamabuki)}
@@ -264,12 +264,11 @@ section{padding:96px 0}
 .sv.wide{grid-column:span 2;display:flex;justify-content:space-between;gap:28px;align-items:center;border-top-color:var(--yamabuki)}
 .sv.full-w{grid-column:1/-1;display:flex;justify-content:space-between;gap:28px;align-items:center;background:var(--kachi);border:0;border-top:3px solid var(--yamabuki);color:var(--white);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
 .sv.dark-card{background:var(--white)}
-.sv-icon{width:46px;height:46px;border-radius:var(--radius);background:var(--aijiro);color:var(--kachi);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:18px;transition:transform .3s ease}
+.sv-icon{width:46px;height:46px;border-radius:var(--radius);background:var(--kachi);color:var(--yamabuki);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:18px;transition:transform .3s ease}
 .sv:hover .sv-icon{transform:scale(1.08) rotate(-4deg)}
-.ic-blue{background:linear-gradient(135deg,var(--aijiro),#DCE9F7);color:var(--ai-mid)}
-.ic-purple{background:linear-gradient(135deg,var(--kikyo-bg),#E3DCF2);color:var(--kikyo)}
-.ic-cyan{background:linear-gradient(135deg,#E3F0FB,var(--aijiro));color:var(--ai-mid)}
-.ic-green{background:linear-gradient(135deg,var(--wakatake-bg),#DCEEE3);color:var(--wakatake)}
+/* 2026-07-23: サービスごとのアイコン4色(青/紫/シアン/緑)は「量産SaaSの機能アイコン畑」に
+   見えるため撤去し、.sv-icon本体の単色(勝色地に山吹アイコン)に統一。クラスは互換のため残置 */
+.ic-blue,.ic-purple,.ic-cyan,.ic-green{background:var(--kachi);color:var(--yamabuki)}
 .sv-title{font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:.02em;margin-bottom:10px}
 .sv-desc{font-size:13.5px;line-height:1.85;color:var(--hai)}
 .sv.full-w .sv-desc{color:rgba(255,255,255,.78)}
@@ -296,13 +295,15 @@ section{padding:96px 0}
 
 /* ---------- 選ばれる理由 ---------- */
 #strengths{background:var(--kachi);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
-.str-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.str-card{background:rgba(255,255,255,.04);border:1px solid var(--line-dark);border-radius:var(--radius);padding:38px 30px;text-align:center}
-.str-ic{width:50px;height:50px;margin:0 auto 20px;border-radius:50%;border:1px solid var(--line-dark);color:#F2C94C;display:flex;align-items:center;justify-content:center;font-size:19px}
-.str-num{font-family:var(--f-mono);font-size:52px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:10px}
+.str-grid{display:flex;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark)}
+.str-card{flex:1;padding:48px 36px;text-align:left;border-right:1px solid var(--line-dark);position:relative}
+.str-card:last-child{border-right:0}
+.str-ic{font-family:var(--f-display);font-size:14px;letter-spacing:.14em;color:#F2C94C;margin-bottom:22px;opacity:.85}
+.str-num{font-family:var(--f-mono);font-size:52px;font-weight:600;color:var(--white);line-height:1.1;margin-bottom:14px}
 .str-num.inf{font-family:var(--f-display)}
 .str-title{font-family:var(--f-display);font-weight:700;font-size:18px;color:#F2C94C;letter-spacing:.06em;margin-bottom:12px}
-.str-desc{font-size:13.5px;line-height:1.9;color:rgba(255,255,255,.75)}
+.str-desc{font-size:13.5px;line-height:1.9;color:rgba(255,255,255,.75);max-width:280px}
+@media(max-width:900px){.str-grid{flex-direction:column}.str-card{border-right:0;border-bottom:1px solid var(--line-dark)}.str-card:last-child{border-bottom:0}}
 
 /* ---------- CTAバナー（山吹） ---------- */
 .cta-banner{background:var(--yamabuki);padding:80px 0;text-align:center;color:var(--kachi-deep)}
@@ -542,16 +543,11 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
   <div class="container hero-inner">
     <div class="hero-eyebrow"><span class="live" aria-hidden="true"></span>AI活用のWeb制作スタジオ｜個人事業主・中小企業専門</div>
     <h1 class="hero-h1"><span class="kachi-em">¥49,800</span>、最短<span class="kachi-em">7日</span>で。<br>成果の出るホームページを。</h1>
-    <p class="hero-sub">個人事業主・中小企業のための、Web制作スタジオ。ホームページ制作からMEO対策・業務自動化まで、全国対応。</p>
+    <p class="hero-sub">屋号は「藍」。藍染めが一反ずつ色を見極めて仕上げるように、AIで一社ずつ丁寧に仕上げるWeb制作スタジオです。ホームページ制作からMEO対策・業務自動化まで、全国対応。</p>
     <div class="hero-btns">
-      <a href="/clawtech-lp/shindan.html" class="btn btn-white"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断（30秒で結果）</a>
-      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料サイト診断を申し込む（24時間以内返信）</a>
+      <a href="/clawtech-lp/shindan.html" class="btn btn-primary"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断を試す（30秒・登録不要）</a>
+      <a href="#contact" class="hero-link">直接相談する（24h返信） →</a>
       <a href="#services" class="hero-link">サービスを見る →</a>
-    </div>
-    <div class="hero-stats" role="list">
-      <div class="hs-item" role="listitem"><div class="num">¥49,800〜</div><div class="lbl">LP制作（税込）</div></div>
-      <div class="hs-item" role="listitem"><div class="num">最短7日</div><div class="lbl">ヒアリングから納品まで</div></div>
-      <div class="hs-item" role="listitem"><div class="num">¥0/月〜</div><div class="lbl">ランニングコスト</div></div>
     </div>
   </div>
   <div class="hero-scrollcue"><div class="bar"></div>SCROLL</div>
@@ -761,19 +757,19 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
     </div>
     <div class="str-grid">
       <div class="str-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="str-ic"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+        <div class="str-ic">壱 — コスト</div>
         <div class="str-num" aria-label="コスト80%削減"><span class="count-num" data-target="80">0</span>%</div>
         <h3 class="str-title">コスト削減</h3>
         <p class="str-desc">AI活用により従来の制作コストを最大80%削減。高品質を適正価格で提供します。</p>
       </div>
       <div class="str-card" data-aos="fade-up" data-aos-delay="120">
-        <div class="str-ic"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+        <div class="str-ic">弐 — 納期</div>
         <div class="str-num" aria-label="最短7日納品"><span class="count-num" data-target="7">0</span>日</div>
         <h3 class="str-title">最短納品</h3>
         <p class="str-desc">テンプレートに頼らず、最短1週間での納品を実現。急ぎのご依頼もお気軽にご相談ください。</p>
       </div>
       <div class="str-card" data-aos="fade-up" data-aos-delay="240">
-        <div class="str-ic"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+        <div class="str-ic">参 — 伴走</div>
         <div class="str-num inf" aria-label="無制限サポート">∞</div>
         <h3 class="str-title">充実サポート</h3>
         <p class="str-desc">納品後も継続サポート。更新・修正・SEO改善など、長期的なパートナーとして伴走します。</p>
@@ -783,19 +779,18 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
 </section>
 
 <!-- CTA BANNER -->
-<div class="cta-banner" role="complementary" aria-label="期間限定キャンペーン">
+<div class="cta-banner" role="complementary" aria-label="初回モニター価格のご案内">
   <div class="container" data-aos="fade-up">
-    <div class="cta-limit"><i class="fa-solid fa-fire" aria-hidden="true"></i>無料モニター残り3社</div>
-    <h2>今なら初月<span style="color:#FDE047">50%OFF</span>で試せます</h2>
-    <p class="sub">実績作りのため、先着3社限定で初月半額モニターを募集中。<br>成果を確認してから継続判断できます。</p>
+    <div class="cta-limit"><i class="fa-solid fa-seedling" aria-hidden="true"></i>はじめてのご依頼限定</div>
+    <h2>初月<span style="color:#FDE047">50%OFF</span>でお試しいただけます</h2>
+    <p class="sub">成果を確認してから継続をご判断いただける、初回限定の価格です。<br>ご契約の縛りもありません。</p>
     <div class="cta-badges">
       <div class="cta-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>契約縛りなし</div>
-      <div class="cta-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>初月50%OFF</div>
-      <div class="cta-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>全サービス対応</div>
       <div class="cta-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>成果報告書付き</div>
+      <div class="cta-badge"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>全サービス対応</div>
     </div>
     <div class="btn-row">
-      <a href="#contact" class="btn btn-white"><i class="fa-solid fa-envelope" style="color:var(--orange)" aria-hidden="true"></i>今すぐモニターに申し込む（残り3社）</a>
+      <a href="#contact" class="btn btn-white"><i class="fa-solid fa-envelope" style="color:var(--orange)" aria-hidden="true"></i>初月50%OFFで相談する</a>
       <a href="/clawtech-lp/karute-app/" class="btn btn-ghost"><i class="fa-solid fa-book-medical" aria-hidden="true"></i>顧客管理アプリ「カルテ帖」を見る →</a>
     </div>
   </div>
