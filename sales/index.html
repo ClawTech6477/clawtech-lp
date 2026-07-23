@@ -97,17 +97,6 @@ nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000;padding:0 32px;
 .hero-trust span{display:flex;align-items:center;gap:6px;}
 .hero-trust span::before{content:'✓';color:var(--green);font-weight:700;}
 
-/* COUNTDOWN BAR */
-.countdown-bar{background:var(--accent);padding:12px 20px;text-align:center;}
-.countdown-inner{max-width:700px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;}
-.countdown-label{font-size:13px;color:#fff;font-weight:700;}
-.countdown-timer{display:flex;gap:6px;align-items:center;}
-.time-block{background:rgba(255,255,255,0.2);border-radius:6px;padding:4px 10px;text-align:center;min-width:44px;}
-.time-num{font-size:18px;font-weight:900;color:#fff;line-height:1;display:block;}
-.time-label{font-size:9px;color:rgba(255,255,255,.8);letter-spacing:1px;}
-.time-sep{color:#fff;font-size:16px;font-weight:900;}
-.countdown-note{font-size:12px;color:rgba(255,255,255,.9);}
-
 /* STATS */
 .stats{background:#fff;padding:56px 20px;border-bottom:1px solid var(--border);}
 .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;max-width:900px;margin:0 auto;}
@@ -329,22 +318,10 @@ footer a:hover{color:#fff;}
   </div>
 </section>
 
-<!-- COUNTDOWN -->
-<div class="countdown-bar">
-  <div class="countdown-inner">
-    <span class="countdown-label">🔥 先着3社限定キャンペーン終了まで</span>
-    <div class="countdown-timer">
-      <div class="time-block"><span class="time-num" id="cd-days">00</span><span class="time-label">DAYS</span></div>
-      <span class="time-sep">:</span>
-      <div class="time-block"><span class="time-num" id="cd-hours">00</span><span class="time-label">HRS</span></div>
-      <span class="time-sep">:</span>
-      <div class="time-block"><span class="time-num" id="cd-mins">00</span><span class="time-label">MIN</span></div>
-      <span class="time-sep">:</span>
-      <div class="time-block"><span class="time-num" id="cd-secs">00</span><span class="time-label">SEC</span></div>
-    </div>
-    <span class="countdown-note">残り <strong>3社</strong> 様のみ</span>
-  </div>
-</div>
+<!-- 2026-07-24: 常時稼働の偽カウントダウン(ページを開くたび「残り14日」にリセットされる
+     JSタイマー)を撤去。lp_analyzer.pyの週次分析で「偽の緊急性」と指摘された箇所。
+     「先着3社」の文言自体はカウントダウン無しなら許容範囲としてセクション末尾の
+     バナー(contact-urgency等)にそのまま残置 -->
 
 <!-- STATS -->
 <section class="stats" aria-label="主要指標">
@@ -780,21 +757,6 @@ const backBtn = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
   backBtn.classList.toggle('show', window.scrollY > 400);
 });
-
-const campaignEnd = new Date();
-campaignEnd.setDate(campaignEnd.getDate() + 14);
-campaignEnd.setHours(23, 59, 59, 0);
-function updateCountdown() {
-  const diff = campaignEnd - new Date();
-  if(diff <= 0){document.querySelector('.countdown-bar').style.display='none';return;}
-  const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
-  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent=String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent=String(s).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
 
 function toggleFaq(el) {
   const item = el.closest('.faq-item');

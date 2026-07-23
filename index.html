@@ -162,12 +162,28 @@ section{padding:96px 0}
 
 /* ---------- ヒーロー ---------- */
 #hero{position:relative;height:100vh;min-height:680px;overflow:hidden;background:var(--kachi-deep);color:var(--white)}
+/* 2026-07-23 v3: 抽象パーティクル/藍の透かし文字を撤去し、実際に納品したLP・アプリの
+   スクショ(ブラウザ/スマホ実機モックアップ)に差し替え。競合5社比較で「実物を見せてない」
+   のがAI感の正体と判明したため。canvas/glow要素はJS参照があるためDOMには残しつつ非表示化 */
+#hero-mesh,#hero-glow,.hero-ai-mark{display:none}
 #hero-mesh{position:absolute;inset:0;width:100%;height:100%}
 #hero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-ai-mark{position:absolute;top:50%;right:-2%;transform:translateY(-50%);font-family:var(--f-display);font-weight:800;font-size:min(58vw,720px);line-height:1;color:var(--ai-mid);opacity:.16;user-select:none;pointer-events:none;animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{0%,100%{opacity:.13;transform:translateY(-50%) scale(1)}50%{opacity:.2;transform:translateY(-52%) scale(1.02)}}
 #hero-glow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(232,165,17,.16), transparent 70%);pointer-events:none;transform:translate(-50%,-50%);transition:left .5s cubic-bezier(.2,.7,.3,1), top .5s cubic-bezier(.2,.7,.3,1);filter:blur(8px)}
-.hero-inner{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center}
+.hero-inner{position:relative;z-index:3;height:100%;display:flex;align-items:center;gap:48px}
+.hero-copy{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.hero-visual{flex:0 0 46%;position:relative;height:420px;display:block}
+.mock-browser{position:absolute;width:88%;left:0;top:6px;border-radius:10px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);transform:rotate(-4deg);background:#fff;transition:transform .4s ease}
+.mock-browser .mock-bar{height:26px;background:#EDEAE3;display:flex;align-items:center;gap:6px;padding:0 12px}
+.mock-browser .mock-dot{width:7px;height:7px;border-radius:50%}
+.mock-browser img{width:100%;display:block}
+.mock-phone{position:absolute;width:36%;right:0;bottom:-18px;border-radius:22px;overflow:hidden;box-shadow:0 24px 56px rgba(0,0,0,.5);transform:rotate(7deg);background:#1a1a1a;border:5px solid #1a1a1a;transition:transform .4s ease}
+.mock-phone img{width:100%;display:block}
+.hero:hover .mock-browser{transform:rotate(-2deg) translateY(-4px)}
+.hero:hover .mock-phone{transform:rotate(5deg) translateY(-4px)}
+@media(prefers-reduced-motion:reduce){.mock-browser,.mock-phone{transition:none}}
+@media(max-width:900px){.hero-visual{display:none}}
 .hero-eyebrow{position:relative;z-index:3;display:inline-flex;align-items:center;gap:10px;width:fit-content;font-family:var(--f-mono);font-size:12.5px;font-weight:500;letter-spacing:.14em;color:#F0C158;margin-bottom:30px;padding-left:14px;border-left:3px solid var(--yamabuki)}
 .hero-eyebrow .live{width:7px;height:7px;border-radius:50%;background:var(--yamabuki);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -322,25 +338,35 @@ section{padding:96px 0}
 .cta-banner .btn-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 
 /* ---------- 料金 ---------- */
+/* 2026-07-23: 「同じ形の丸角カードが3つ+真ん中だけ濃色」という定番SaaS料金表の骨格を撤去。
+   選ばれる理由セクションと揃えた罫線区切りの台帳レイアウトに統一(視覚言語の一貫性) */
 #pricing{background:var(--white);border-top:1px solid var(--line)}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
-.price-card{background:var(--kami);border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;display:flex;flex-direction:column;position:relative;transition:box-shadow .25s,transform .25s}
-.price-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
-.price-card.popular{background:var(--kachi);border-color:var(--kachi);color:var(--white);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
-.price-card.popular::before{content:"おすすめプラン";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--yamabuki);color:var(--kachi-deep);font-size:11.5px;font-weight:700;letter-spacing:.1em;padding:4px 16px;border-radius:2px;white-space:nowrap}
-.plan-icon{width:46px;height:46px;border-radius:50%;background:var(--aijiro)!important;color:var(--kachi);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
-.plan-icon i{color:var(--kachi)!important}
+/* 2026-07-23 v2: 「3列均等カード」という骨格自体を撤去。おすすめプランを主役として
+   左に大きく縦通しで置き、残り2プランは右側に上下スタック(非対称レイアウト) */
+/* 2026-07-23 v3: standard(おすすめ)が2行分の高さに引き伸ばされ、コンテンツ量が足りず
+   紺色の空白だけの帯ができてしまうバグを修正。行スパンをやめ、1行3列(おすすめ列だけ幅広+
+   価格タグ風の切り欠き形状)に変更。stretchによる高さ強制も外し、各カードは自然な高さに */
+.price-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;align-items:start;gap:1px;background:var(--line);border:1px solid var(--line)}
+.price-card{background:var(--white);padding:36px 34px;display:flex;flex-direction:column;position:relative}
+.price-card--standard{padding:44px 40px 40px;clip-path:polygon(0 22px,22px 0,100% 0,100% 100%,0 100%);order:-1}
+.price-card.popular{background:var(--kachi);color:var(--white)}
+.price-card.popular::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--yamabuki)}
+.price-card.popular .price-note{color:rgba(255,255,255,.65)}
+.price-card.popular li{border-bottom-color:var(--line-dark);color:rgba(255,255,255,.9)}
+.price-card.popular li i{color:#F2C94C}
+.price-card-badge{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--yamabuki-dk);margin-bottom:10px}
+.price-card.popular .price-card-badge{color:#F2C94C}
+@media(max-width:900px){.price-grid{grid-template-columns:1fr;grid-template-areas:"standard" "light" "premium"}.price-card--standard{padding:40px 32px}}
 .price-card h3{font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.04em;margin-bottom:14px}
 .price-tag{font-family:var(--f-mono);font-size:36px;font-weight:600;color:var(--kachi);line-height:1.1}
-.price-card.popular .price-tag{color:#F2C94C}
+.price-card.popular .price-tag{color:#F2C94C;font-size:46px}
+.price-card--standard h3{font-size:22px}
 .price-tag small{font-size:14px;font-weight:500}
 .price-note{font-size:12.5px;color:var(--hai);margin:8px 0 22px}
-.price-card.popular .price-note{color:rgba(255,255,255,.65)}
 .price-card ul{list-style:none;margin-bottom:28px;flex-grow:1}
 .price-card li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;padding:7px 0;border-bottom:1px dashed var(--line)}
-.price-card.popular li{border-bottom-color:var(--line-dark)}
 .price-card li i{color:var(--yamabuki-dk);margin-top:4px;font-size:12px}
-.price-card.popular li i{color:#F2C94C}
+@media(max-width:900px){.price-grid{flex-direction:column}.price-card{border-right:0;border-bottom:1px solid var(--line)}.price-card:last-child{border-bottom:0}}
 .price-ai{margin-top:22px;background:var(--kachi);border-radius:var(--radius);border-top:3px solid var(--yamabuki);padding:34px 36px;display:flex;justify-content:space-between;align-items:center;gap:28px;color:var(--white);background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:22px 22px}
 .price-ai .ai-badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;color:#F2C94C;margin-bottom:10px}
 .price-ai h3{font-family:var(--f-display);font-weight:700;font-size:21px;margin-bottom:8px}
@@ -360,15 +386,26 @@ section{padding:96px 0}
 .flow-step p{font-size:12.5px;line-height:1.8;color:rgba(255,255,255,.68)}
 
 /* ---------- お客様の声 ---------- */
+/* 2026-07-23: 丸アバター+星評価+白カードの「SaaSテスティモニアル」骨格を撤去。
+   大きな引用符+罫線区切りのエディトリアル形式に(カード枠なし) */
+/* 2026-07-23 v2: 3列均等カードの骨格を撤去。1件を主役の大きな引用として全幅に、
+   残り2件は下段に小さく並べる非対称レイアウト(価格プランと同じ「主役+脇役」の型) */
 #voices{background:var(--kami)}
-.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.voice-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column}
-.voice-stars{color:var(--yamabuki);font-size:13px;letter-spacing:2px;margin-bottom:16px}
+.voices-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"featured featured" "sub1 sub2";border-top:1px solid var(--line)}
+.voice-card{display:flex;flex-direction:column}
+.voice-card--featured{grid-area:featured;padding:52px 0 40px;border-bottom:1px solid var(--line)}
+.voice-card--featured .voice-text{font-family:var(--f-display);font-weight:700;font-size:clamp(22px,2.6vw,30px);line-height:1.7;max-width:820px}
+.voice-card--featured::before{font-size:72px;color:var(--yamabuki-dk)}
+.voice-card--sub{padding:32px 36px 30px 0;border-right:1px dashed var(--line)}
+.voice-card--sub+.voice-card--sub{padding-left:36px;border-right:0}
+.voice-card::before{content:"”";font-family:var(--f-display);font-size:44px;line-height:1;color:var(--yamabuki-dk);opacity:.55;margin-bottom:4px;display:block}
 .voice-text{font-size:14px;line-height:2;flex-grow:1;margin-bottom:22px;color:var(--sumi)}
-.voice-author{display:flex;align-items:center;gap:12px;border-top:1px dashed var(--line);padding-top:18px}
-.voice-avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--kachi);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-weight:800;font-size:15px}
-.voice-name{font-size:13.5px;font-weight:700}
-.voice-role{font-size:12px;color:var(--hai)}
+.voice-author{border-top:1px solid var(--line);padding:16px 0 4px}
+.voice-card--featured .voice-author{border-top:0;padding-top:0}
+.voice-name{font-family:var(--f-mono);font-size:12.5px;font-weight:600;letter-spacing:.04em}
+.voice-role{font-family:var(--f-mono);font-size:11.5px;color:var(--hai);margin-top:2px}
+@media(max-width:900px){.voices-grid{grid-template-columns:1fr;grid-template-areas:"featured" "sub1" "sub2"}.voice-card--sub{border-right:0;border-bottom:1px dashed var(--line);padding:28px 0}.voice-card--sub+.voice-card--sub{padding-left:0}}
+@media(max-width:900px){.voices-grid{grid-template-columns:1fr}.voice-card{border-right:0;border-bottom:1px dashed var(--line)}.voice-card:last-child{border-bottom:0}}
 
 /* ---------- ブログ ---------- */
 #blog{background:var(--white);border-top:1px solid var(--line)}
@@ -541,13 +578,24 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
   <div id="hero-glow" aria-hidden="true"></div>
   <div class="hero-ai-mark" aria-hidden="true">藍</div>
   <div class="container hero-inner">
-    <div class="hero-eyebrow"><span class="live" aria-hidden="true"></span>AI活用のWeb制作スタジオ｜個人事業主・中小企業専門</div>
-    <h1 class="hero-h1"><span class="kachi-em">¥49,800</span>、最短<span class="kachi-em">7日</span>で。<br>成果の出るホームページを。</h1>
-    <p class="hero-sub">屋号は「藍」。藍染めが一反ずつ色を見極めて仕上げるように、AIで一社ずつ丁寧に仕上げるWeb制作スタジオです。ホームページ制作からMEO対策・業務自動化まで、全国対応。</p>
-    <div class="hero-btns">
-      <a href="/clawtech-lp/shindan.html" class="btn btn-primary"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断を試す（30秒・登録不要）</a>
-      <a href="#contact" class="hero-link">直接相談する（24h返信） →</a>
-      <a href="#services" class="hero-link">サービスを見る →</a>
+    <div class="hero-copy">
+      <div class="hero-eyebrow"><span class="live" aria-hidden="true"></span>AI活用のWeb制作スタジオ｜個人事業主・中小企業専門</div>
+      <h1 class="hero-h1"><span class="kachi-em">¥49,800</span>、最短<span class="kachi-em">7日</span>で。<br>成果の出るホームページを。</h1>
+      <p class="hero-sub">屋号は「藍」。藍染めが一反ずつ色を見極めて仕上げるように、AIで一社ずつ丁寧に仕上げるWeb制作スタジオです。ホームページ制作からMEO対策・業務自動化まで、全国対応。</p>
+      <div class="hero-btns">
+        <a href="/clawtech-lp/shindan.html" class="btn btn-primary"><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断を試す（30秒・登録不要）</a>
+        <a href="#contact" class="hero-link">直接相談する（24h返信） →</a>
+        <a href="#services" class="hero-link">サービスを見る →</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="mock-browser">
+        <div class="mock-bar"><span class="mock-dot" style="background:#ED6A5E"></span><span class="mock-dot" style="background:#F4BF4F"></span><span class="mock-dot" style="background:#61C454"></span></div>
+        <img src="assets/hero-mock-beauty.jpg" alt="美容サロン向けLP制作事例" loading="lazy">
+      </div>
+      <div class="mock-phone">
+        <img src="assets/hero-mock-karute.jpg" alt="顧客管理アプリ「カルテ帖」の画面" loading="lazy">
+      </div>
     </div>
   </div>
   <div class="hero-scrollcue"><div class="bar"></div>SCROLL</div>
@@ -805,8 +853,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
       <p class="sec-sub sec-sub-muted">すべて税込表示。追加費用は一切ありません。</p>
     </div>
     <div class="price-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="price-card">
-        <div class="plan-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+      <div class="price-card price-card--light">
+        <div class="price-card-badge">01 — LIGHT</div>
         <h3>ライトプラン</h3>
         <div class="price-tag">¥49,800<small>/制作</small></div>
         <div class="price-note">LP1ページ・シンプル構成</div>
@@ -819,8 +867,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
         </ul>
         <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>¥49,800で相談する（無料）</a>
       </div>
-      <div class="price-card popular">
-        <div class="plan-icon" style="background:#DBEAFE"><i class="fa-solid fa-star" style="color:var(--blue)" aria-hidden="true"></i></div>
+      <div class="price-card popular price-card--standard">
+        <div class="price-card-badge">02 — STANDARD・おすすめ</div>
         <h3>スタンダードプラン</h3>
         <div class="price-tag">¥98,000<small>/制作</small></div>
         <div class="price-note">LP + 5ページサイト・SEO強化</div>
@@ -833,8 +881,8 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
         </ul>
         <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i>¥98,000で相談する（無料）</a>
       </div>
-      <div class="price-card">
-        <div class="plan-icon" style="background:#FEF3C7"><i class="fa-solid fa-crown" style="color:#D97706" aria-hidden="true"></i></div>
+      <div class="price-card price-card--premium">
+        <div class="price-card-badge">03 — PREMIUM</div>
         <h3>プレミアムプラン</h3>
         <div class="price-tag">¥198,000<small>/制作</small></div>
         <div class="price-note">フルカスタム + 業務自動化込み</div>
@@ -912,17 +960,17 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
       <p class="sec-sub sec-sub-muted">ご利用いただいたお客様の声を、許可を得て掲載しています</p>
     </div>
     <div class="voices-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="voice-card">
+      <div class="voice-card voice-card--featured">
         <p class="voice-text">「依頼から1週間でサイトが完成。Googleマップからの集客も月20件以上に増えました。」</p>
-        <div class="voice-author"><div class="voice-avatar" aria-hidden="true">T</div><div><div class="voice-name">飲食店オーナー T様</div><div class="voice-role">大阪府・個人事業主</div></div></div>
+        <div class="voice-author"><div class="voice-name">飲食店オーナー T様</div><div class="voice-role">大阪府・個人事業主</div></div>
       </div>
-      <div class="voice-card">
+      <div class="voice-card voice-card--sub">
         <p class="voice-text">「請求書の自動化で月20時間の事務作業がゼロに。本業に集中できるようになりました。」</p>
-        <div class="voice-author"><div class="voice-avatar" aria-hidden="true">M</div><div><div class="voice-name">士業事務所 M様</div><div class="voice-role">東京都・法人</div></div></div>
+        <div class="voice-author"><div class="voice-name">士業事務所 M様</div><div class="voice-role">東京都・法人</div></div>
       </div>
-      <div class="voice-card">
+      <div class="voice-card voice-card--sub">
         <p class="voice-text">「公開後、フォームからの問い合わせが3倍になりました。写真の見せ方まで細かく提案してもらえたのが良かったです。」</p>
-        <div class="voice-author"><div class="voice-avatar" aria-hidden="true">K</div><div><div class="voice-name">EC事業者 K様</div><div class="voice-role">愛知県・個人事業主</div></div></div>
+        <div class="voice-author"><div class="voice-name">EC事業者 K様</div><div class="voice-role">愛知県・個人事業主</div></div>
       </div>
     </div>
   </div>
