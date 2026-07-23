@@ -1272,12 +1272,14 @@ window.addEventListener('scroll',()=>{if(scrollY>300)showFloat();},{passive:true
 
   // 問い合わせフォーム送信をGA4イベントとして計測(2026-07-21新設)。
   // Formspreeへの通常POSTで画面遷移するため、遷移前のsubmit時点で発火する。
+  // transport_type:'beacon'必須(2026-07-23修正): 通常送信だとページ遷移でリクエストが
+  // 途中キャンセルされ計測が届かないことがあるため、sendBeaconで確実に送信する。
   const contactForm=document.getElementById('contactForm');
   if(contactForm){
     contactForm.addEventListener('submit',()=>{
       if(typeof gtag==='function'){
         const hopeEl=contactForm.querySelector('input[name="hope"]:checked');
-        gtag('event','contact_form_submit',{hope:hopeEl?hopeEl.value:'',service:contactForm.service?contactForm.service.value:''});
+        gtag('event','contact_form_submit',{hope:hopeEl?hopeEl.value:'',service:contactForm.service?contactForm.service.value:'',transport_type:'beacon'});
       }
     });
   }
