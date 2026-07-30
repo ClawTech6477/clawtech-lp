@@ -5,19 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1e3a8a">
 <title>年収UPシミュレーター｜30秒で適正年収を診断</title>
-<!-- ================================================
-     【GA4設定】計測を有効にするには以下のコメントを外し
-     G-XXXXXXXXXX を自分の測定IDに差し替えてください
-================================================ -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<meta name="description" content="4つの質問に答えるだけで、あなたの適正年収と上げられる金額の目安、相性の良い転職サービスTOP3がわかります。無料・30秒。">
+<link rel="canonical" href="https://clawtech6477.github.io/clawtech-lp/simulator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="年収UPシミュレーター｜30秒で適正年収を診断">
+<meta property="og:description" content="4つの質問に答えるだけで、あなたの適正年収と上げられる金額の目安、相性の良い転職サービスTOP3がわかります。無料・30秒。">
+<meta property="og:url" content="https://clawtech6477.github.io/clawtech-lp/simulator.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&q=80">
+<meta property="og:site_name" content="ClawTech">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="年収UPシミュレーター｜30秒で適正年収を診断">
+<meta name="twitter:description" content="4つの質問に答えるだけで、あなたの適正年収と上げられる金額の目安、相性の良い転職サービスTOP3がわかります。">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop&q=80">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-RZ1TP2K3N0');
 </script>
--->
 <style>
   :root{
     --blue:#2563eb; --blue-deep:#1d4ed8; --navy:#1e3a8a;
@@ -237,15 +245,24 @@ const SITE_URL = "https://clawtech6477.github.io/clawtech-lp/simulator.html"; //
 const LINE_URL = "#line"; // ← LINE公式アカウントの友だち追加URL（例: https://lin.ee/XXXXXXX）
 // --- アフィリエイトURL（例: doda: "https://px.a8.net/svt/ejp?a8mat=XXXXX"）---
 const AFFILIATE_URLS = {
-  doda:     "#doda",     // ← doda の実URLに差し替え
-  recruit:  "#recruit",  // ← リクルートエージェント
-  bizreach: "#bizreach", // ← ビズリーチ
-  rds:      "#rds",      // ← リクルートダイレクトスカウト
-  mynavi20: "#mynavi20", // ← マイナビジョブ20's
-  levtech:  "#levtech",  // ← レバテックキャリア
-  kaigo:    "#kaigo",    // ← かいご畑
-  pasona:   "#pasona",   // ← パソナキャリア
-  next:     "#next",     // ← リクナビNEXT
+  doda:       "#doda",       // ← doda の実URLに差し替え
+  recruit:    "#recruit",    // ← リクルートエージェント
+  bizreach:   "#bizreach",   // ← ビズリーチ
+  rds:        "#rds",        // ← リクルートダイレクトスカウト
+  mynavi20:   "#mynavi20",   // ← マイナビジョブ20's
+  levtech:    "#levtech",    // ← レバテックキャリア
+  kaigo:      "#kaigo",      // ← かいご畑
+  pasona:     "#pasona",     // ← パソナキャリア
+  next:       "#next",       // ← リクナビNEXT
+  // ↓ 2026-07-31追加。A8.net成果報酬1万円以上ランキング由来の高単価案件(要提携申請・要実URL差し替え)
+  technogo:   "#technogo",   // ← TechGo(テックゴー)
+  myvision:   "#myvision",   // ← MyVision(コンサル特化)
+  meiko:      "#meiko",      // ← 明光キャリアパートナーズ
+  groovement: "#groovement", // ← Groovement Agent
+  anykan:     "#anykan",     // ← AnyKan
+  samuraijob: "#samuraijob", // ← Samurai Job
+  yumecari:   "#yumecari",   // ← ユメキャリ転職エージェント
+  shanaise:   "#shanaise",   // ← 社内SE転職ナビ
 };
 
 // ===== GA4計測 安全ラッパー（gtag未定義でもエラーにならない） =====
@@ -264,6 +281,17 @@ const SITES = [
   {name:"かいご畑",   tags:{dir:["same"],job:["care"],age:["20","30","40","50"]}, payout:3000, affi:AFFILIATE_URLS.kaigo, rs:"未経験・無資格から介護UP"},
   {name:"パソナキャリア", tags:{dir:["wlb"],job:["*"],age:["20","30","40"]}, payout:2750, affi:AFFILIATE_URLS.pasona, rs:"手厚いサポート・働き方相談"},
   {name:"リクナビNEXT", tags:{dir:["same","wlb","unsure"],job:["*"],age:["20","30"]}, payout:1870, affi:AFFILIATE_URLS.next, rs:"自分のペースで探せる"},
+  // ↓ 2026-07-31追加。士業特化「ツインプロ」・建設特化「ビルドジョブ」・
+  //   障害福祉サービス「Neuro Dive」は、既存の業種選択肢では正確にタグ付けできない
+  //   （無関係な人に出るミスマッチのリスクが高い）ため、意図的に追加していない。
+  {name:"TechGo", tags:{dir:["same","toit"],job:["it"],age:["20","30","40"]}, payout:50000, affi:AFFILIATE_URLS.technogo, rs:"ITエンジニア・ITコンサル特化。アドバイザーの8割が元エンジニア"},
+  {name:"MyVision", tags:{dir:["toit","new"],job:["*"],age:["20","30"]}, payout:50000, affi:AFFILIATE_URLS.myvision, rs:"コンサル業界への転身支援。8割超が未経験からの転身実績"},
+  {name:"明光キャリアパートナーズ", tags:{dir:["toit","new"],job:["*"],age:["30","40"],income:["high"]}, payout:78000, affi:AFFILIATE_URLS.meiko, rs:"M&A・コンサル・ファンド特化のハイクラス転職"},
+  {name:"Groovement Agent", tags:{dir:["same","toit"],job:["it"],age:["30","40"],income:["high"]}, payout:18000, affi:AFFILIATE_URLS.groovement, rs:"コンサル・DX特化。想定年収650万〜2000万"},
+  {name:"AnyKan", tags:{dir:["same"],job:["it"],age:["20","30"]}, payout:10000, affi:AFFILIATE_URLS.anykan, rs:"ゲーム・Web・エンタメ業界特化のエンジニア転職"},
+  {name:"Samurai Job", tags:{dir:["same"],job:["*"],age:["30","40"],income:["high"]}, payout:10000, affi:AFFILIATE_URLS.samuraijob, rs:"外資・グローバル企業のハイクラス求人"},
+  {name:"ユメキャリ転職エージェント", tags:{dir:["same","new","unsure"],job:["*"],age:["20"]}, payout:13000, affi:AFFILIATE_URLS.yumecari, rs:"20代・第二新卒・既卒向け"},
+  {name:"社内SE転職ナビ", tags:{dir:["same","toit"],job:["it"],age:["20","30"]}, payout:18000, affi:AFFILIATE_URLS.shanaise, rs:"社内SE特化。IT経験を活かしたキャリアに強い"},
 ];
 
 // ===== 状態管理（4項目） =====
@@ -320,16 +348,40 @@ document.getElementById("go").onclick=()=>{
     : "着実に年収を伸ばせるタイプ。相性の良いサービスから始めましょう。";
 
   // ===== 出し分けスコアリング =====
+  // 1. まず「対象外」を確定する(方向性が合わない・ハイクラス限定を低年収層に出さない等)。
+  //    dir/jobは単なる加点ではなく必須条件にする。ここを単価加点より前に判定し、
+  //    除外が単価の強さで覆らないようにする(高単価だが方向性が違う案件が
+  //    1位に出てしまうミスマッチを防ぐため)。
   const isHigh = cur>=600;
-  const scored = SITES.map(s=>{
+  const fitsCore = s=>
+    s.tags.dir.includes(st.dir) &&
+    (s.tags.job.includes("*")||s.tags.job.includes(st.job)) &&
+    s.tags.age.includes(st.age) &&
+    !(s.tags.income && s.tags.income.includes("high") && !isHigh);
+  const eligible = SITES.filter(fitsCore);
+  // 2. 方向性・業種・年代が合う候補の中で、高収入ボーナスを加点
+  // 3. 単価は sqrt で圧縮したうえで重めに加点(同程度の適合度なら高単価が勝ちやすい)
+  // 4. 毎回同じ並びにならないよう小さな乱数も加える
+  const scored = eligible.map(s=>{
     let sc=0;
-    if(s.tags.dir.includes(st.dir)) sc+=40;
-    if(s.tags.job.includes("*")||s.tags.job.includes(st.job)) sc+=30;
-    if(s.tags.age.includes(st.age)) sc+=15;
-    if(s.tags.income){ if(s.tags.income.includes("high")&&isHigh) sc+=35; else if(s.tags.income.includes("high")&&!isHigh) sc-=100; }
-    sc += s.payout*0.001; // 単価は"従"の微加点
+    if(s.tags.income && s.tags.income.includes("high") && isHigh) sc+=35;
+    sc += Math.sqrt(s.payout)*0.35 + Math.random()*12;
     return {...s,sc};
   }).sort((a,b)=>b.sc-a.sc).slice(0,3);
+  // 万一、dir/job/age全部一致する候補が2件未満だった場合のフォールバック。
+  // 年代の条件だけ緩和する(方向性・業種・収入条件はミスマッチ防止のため維持)。
+  if(scored.length < 2){
+    const fallback = SITES.filter(s=>
+      s.tags.dir.includes(st.dir) &&
+      (s.tags.job.includes("*")||s.tags.job.includes(st.job)) &&
+      !(s.tags.income && s.tags.income.includes("high") && !isHigh) &&
+      !scored.some(x=>x.name===s.name)
+    ).map(s=>{
+      let sc = Math.sqrt(s.payout)*0.35 + Math.random()*12;
+      return {...s,sc};
+    }).sort((a,b)=>b.sc-a.sc);
+    scored.push(...fallback.slice(0, 3-scored.length));
+  }
 
   const box=document.getElementById("sites"); box.innerHTML="";
   scored.forEach((s,i)=>{
