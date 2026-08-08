@@ -482,12 +482,6 @@ footer{background:var(--kachi-deep);padding:52px 0 44px;text-align:center;color:
 .footer-links a:hover{color:#F2C94C}
 footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
 
-/* ---------- フローティングCTA ---------- */
-#float-cta{position:fixed;bottom:28px;right:28px;z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none;opacity:0;transform:translateY(12px);transition:all .4s ease}
-#float-cta.show{opacity:1;transform:translateY(0);pointer-events:auto}
-.float-dismiss{background:var(--sumi);color:#fff;border:0;width:26px;height:26px;border-radius:50%;font-size:11px;cursor:pointer;opacity:.7}
-.float-btn{display:inline-flex;align-items:center;gap:9px;background:var(--yamabuki);color:var(--kachi-deep);font-size:14px;font-weight:700;padding:15px 24px;border-radius:999px;box-shadow:0 6px 24px rgba(232,165,17,.45)}
-.float-btn:hover{background:#F4B62A}
 
 
 /* ---------- AOS表示制御（自前実装） ---------- */
@@ -531,7 +525,6 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
   .hs-item .num{font-size:17px}
   .company-table th{width:110px;padding:14px 12px}
   .company-table td{padding:14px 12px}
-  #float-cta{bottom:20px;right:16px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -547,12 +540,6 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
 <div id="scroll-progress" aria-hidden="true"></div>
 
 <!-- FLOATING CTA -->
-<div id="float-cta" aria-label="無料DX診断">
-  <button class="float-dismiss" onclick="document.getElementById('float-cta').remove()" aria-label="閉じる">✕</button>
-  <a href="/clawtech-lp/shindan.html" class="float-btn" onclick="document.getElementById('float-cta').remove()">
-    <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>無料DX診断（30秒）
-  </a>
-</div>
 
 <!-- NAV -->
 <nav id="nav" role="navigation" aria-label="メインナビゲーション">
@@ -1324,12 +1311,6 @@ window.addEventListener('scroll',()=>{
   prog.style.width=pct+'%';
 },{passive:true});
 
-// Floating CTA — show after 3s or 300px scroll
-const floatCta=document.getElementById('float-cta');
-let floatShown=false;
-function showFloat(){if(!floatShown){floatShown=true;floatCta.classList.add('show');}}
-setTimeout(showFloat,3000);
-window.addEventListener('scroll',()=>{if(scrollY>300)showFloat();},{passive:true});
 
 // Contact form: セグメント化ロジック
 (function(){
