@@ -524,6 +524,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.08em}
 }
 
 </style>
+<link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
 
@@ -1328,5 +1329,38 @@ window.addEventListener('scroll',()=>{if(scrollY>300)showFloat();},{passive:true
   }
 })();
 </script>
+
+<!-- 藍 AIアシスタント チャットボット -->
+<button class="chat-fab cb-hidden" id="cbFab" aria-label="AIアシスタント 藍に相談する">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 2.98.97 4.29L2 22l5.71-.97C9.02 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.4 0-2.74-.32-3.93-.88l-.28-.13-2.9.49.49-2.9-.13-.28C4.32 15.74 4 14.4 4 13c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zM8 11h2v2H8zm3 0h2v2h-2zm3 0h2v2h-2z"/>
+  </svg>
+  <span class="fab-dot"></span>
+</button>
+
+<div class="chat-widget" id="cbWidget" role="dialog" aria-label="AIアシスタント 藍">
+  <div class="cb-header">
+    <div class="cb-avatar" aria-hidden="true">藍</div>
+    <div class="cb-header-info">
+      <div class="cb-name">藍 AIアシスタント</div>
+      <div class="cb-status"><span class="cb-dot"></span>オンライン・すぐに返信します</div>
+    </div>
+    <button class="cb-min" id="cbMin" aria-label="チャットを閉じる">−</button>
+  </div>
+  <div class="cb-body" id="cbBody" role="log" aria-live="polite"></div>
+  <div class="cb-backbar" id="cbBackbar" style="display:none">
+    <button type="button" id="cbBackbarBtn">↩ 最初に戻る</button>
+  </div>
+  <div class="cb-footer">
+    <textarea class="cb-input" id="cbInput" rows="1" placeholder="質問を入力してください…" aria-label="メッセージ入力"></textarea>
+    <button class="cb-send" id="cbSend" aria-label="送信">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+      </svg>
+    </button>
+  </div>
+  <div class="cb-powered">Powered by ClawTech AI</div>
+</div>
+<script src="chatbot.js"></script>
 </body>
 </html>
