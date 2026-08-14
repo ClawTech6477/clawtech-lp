@@ -63,6 +63,72 @@
 
   var fab, widget, body, backbar, input, sendBtn;
   var isOpen = false;
+  var leadState = null; // null=通常モード、それ以外は{step, name, email, service, hope}
+
+  /* ─── チャット内完結の問い合わせフロー ───
+     2026-08-15 UU指摘: 「無料相談する」タップ後にページの#contactへ遷移していたが、
+     チャットウィジェットが被って見づらく、そもそも「チャット内で完結」という設計と
+     ずれていた。名前→メールを会話形式で聞き、既存フォームと同じFormspreeエンドポイントへ
+     fetch()で直接送信することで、ページ遷移なしに完結させる */
+  function startLeadFlow(context) {
+    context = context || {};
+    leadState = { step: 'name', service: context.service || '', hope: context.hope || '無料相談したい' };
+    typing(500, function () {
+      appendMsg('bot', 'かしこまりました！<br>まずお名前を教えてください。');
+    });
+  }
+
+  function submitLead() {
+    typing(700, function () {
+      var body = new URLSearchParams();
+      body.append('_subject', '【LP制作】お問い合わせ（チャット経由）');
+      body.append('name', leadState.name);
+      body.append('email', leadState.email);
+      body.append('hope', leadState.hope);
+      if (leadState.service) body.append('service', leadState.service);
+      body.append('流入元', 'チャットボット（藍）');
+
+      fetch('https://formspree.io/f/xpqjbyya', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString()
+      }).then(function (res) {
+        if (res.ok) {
+          appendMsg('bot', 'ありがとうございます、' + leadState.name + '様！<br>24時間以内に担当よりご連絡いたします。');
+        } else {
+          throw new Error('send failed');
+        }
+      }).catch(function () {
+        appendMsg('bot', '送信がうまくいきませんでした。お手数ですが、下記フォームからも送信いただけます。');
+        appendCTAs([{ label: '📞 フォームから送信する', href: K.contact_link }]);
+      }).finally(function () {
+        leadState = null;
+        appendRestartLink();
+      });
+    });
+  }
+
+  function handleLeadStep(text) {
+    appendMsg('user', text);
+    if (leadState.step === 'name') {
+      leadState.name = text;
+      leadState.step = 'email';
+      typing(500, function () {
+        appendMsg('bot', 'ありがとうございます！<br>次にメールアドレスを教えてください。');
+      });
+      return;
+    }
+    if (leadState.step === 'email') {
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
+        typing(400, function () {
+          appendMsg('bot', 'メールアドレスの形式が正しくないようです。もう一度入力をお願いします。');
+        });
+        return;
+      }
+      leadState.email = text;
+      submitLead();
+    }
+  }
 
   function now() {
     var d = new Date();
@@ -154,6 +220,7 @@
   function welcome() {
     body.innerHTML = '';
     showBackbar(false);
+    leadState = null;
     typing(600, function () {
       appendMsg('bot', 'こんにちは！\n<strong>藍</strong>です 😊<br>ClawTechのAIアシスタントです。\n\nご用件をお選びいただくか、\nお気軽に話しかけてください！');
       appendChips([
@@ -193,7 +260,7 @@
       var maintInfo = s.maintenance ? '\n🛠 保守: ' + s.maintenance : '';
       appendMsg('bot', '<strong>' + s.name + '</strong>' + priceInfo + turnInfo + maintInfo + '\n\n詳しくご相談しますか？');
       appendCTAs([
-        { label: '📞 無料相談する', big: true, href: K.contact_link },
+        { label: '📞 無料相談する', big: true, fn: function () { startLeadFlow({ service: s.name }); } },
         { label: '📋 DX診断（30秒）', ghost: true, href: K.diagnosis_link, blank: true }
       ]);
       appendRestartLink();
@@ -214,7 +281,7 @@
         typing(600, function () {
           appendMsg('bot', 'ご状況わかりました！\n具体的な課題を無料相談でお聞きすると、最適な自動化プランをご提案できます。');
           appendCTAs([
-            { label: '📞 無料相談する（24h返信）', big: true, href: K.contact_link },
+            { label: '📞 無料相談する（24h返信）', big: true, fn: function () { startLeadFlow({ service: 'AI・業務自動化' }); } },
             { label: '📋 DX診断で課題を整理', ghost: true, href: K.diagnosis_link, blank: true }
           ]);
           appendRestartLink();
@@ -235,7 +302,7 @@
         '規模や機能によって変わります。\n無料相談でお気軽にお聞きください！'
       );
       appendCTAs([
-        { label: '📞 無料相談する', big: true, href: K.contact_link },
+        { label: '📞 無料相談する', big: true, fn: function () { startLeadFlow({}); } },
         { label: '📋 DX診断（30秒）', ghost: true, href: K.diagnosis_link, blank: true }
       ]);
       appendRestartLink();
@@ -258,7 +325,7 @@
     typing(500, function () {
       appendMsg('bot', 'ありがとうございます！\n詳しくは無料相談でお聞かせください。\n24時間以内にご返信します。');
       appendCTAs([
-        { label: '📞 無料相談する', big: true, href: K.contact_link },
+        { label: '📞 無料相談する', big: true, fn: function () { startLeadFlow({}); } },
         { label: '📋 DX診断（30秒）', ghost: true, href: K.diagnosis_link, blank: true }
       ]);
       appendRestartLink();
@@ -279,7 +346,7 @@
         typing(600, function (a) { return function () {
           appendMsg('bot', a);
           appendCTAs([
-            { label: '📞 無料相談する', href: K.contact_link },
+            { label: '📞 無料相談する', fn: function () { startLeadFlow({}); } },
             { label: '📋 DX診断', ghost: true, href: K.diagnosis_link, blank: true }
           ]);
           appendRestartLink();
@@ -302,7 +369,7 @@
         var msg = aff.msg;
         typing(600, function (m) { return function () {
           appendMsg('bot', m);
-          appendCTAs([{ label: '📞 詳しく相談する', big: true, href: K.contact_link }]);
+          appendCTAs([{ label: '📞 詳しく相談する', big: true, fn: function () { startLeadFlow({}); } }]);
           appendRestartLink();
         }; }(msg));
         return;
@@ -322,7 +389,11 @@
     if (!text) return;
     input.value = '';
     input.style.height = '';
-    handleFreeText(text);
+    if (leadState) {
+      handleLeadStep(text);
+    } else {
+      handleFreeText(text);
+    }
   }
 
   /* ─── 開閉 ─── */
