@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How StatSlam turns public sports statistics into short videos and publishes them through platform APIs, including its TikTok Login Kit and Content Posting API integration.">
+<meta name="tiktok-developers-site-verification" content="0xNhZa3fdwRmAAUnEQ9QhZmIM7te4TeD" />
+<link rel="canonical" href="https://clawtech6477.github.io/clawtech-lp/statslam/how-it-works.html">
+<title>How it works — StatSlam</title>
+<link rel="icon" href="./icon_1024.png">
+<link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="./icon_1024.png" alt="">StatSlam</a>
+    <nav class="nav">
+      <a href="./">Home</a>
+      <a href="./how-it-works.html" aria-current="page">How it works</a>
+      <a href="./videos.html">Videos</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap prose">
+
+<h1>How StatSlam works</h1>
+<p class="updated">Last updated: August 14, 2026</p>
+
+<p>
+  StatSlam is an automated publishing pipeline. It has no user-facing app, no login, and no
+  viewer accounts. It watches public sports data, renders short videos from what changed, and
+  posts those videos to the StatSlam accounts on short-video platforms.
+</p>
+
+<h2>1. Data collection</h2>
+<p>
+  A scheduled watcher polls open sports data providers on a fixed interval and compares each
+  response against the previously stored state. Sources currently include:
+</p>
+<ul>
+  <li>Major League Baseball game results and division standings</li>
+  <li>Association football fixtures, results and top-scorer tables (football-data.org)</li>
+  <li>Formula 1 driver and constructor standings (jolpica-f1)</li>
+</ul>
+<p>
+  Only publicly published statistics are retrieved. No personal data, viewer data, or
+  platform user data is involved at this stage.
+</p>
+
+<h2>2. Change detection</h2>
+<p>
+  A video is only produced when something meaningful changed — a game reaching a final score, a
+  standings position swapping, a scoring race lead changing hands. Raw polling noise (identical
+  payloads, timestamp-only differences) is discarded, so the channel does not republish the same
+  fact twice.
+</p>
+
+<h2>3. Video generation</h2>
+<p>
+  The changed statistics are laid out into a vertical (9:16) short-form video: the headline
+  result, the teams or drivers involved, and the table movement behind it. Narration and
+  on-screen captions are generated from the same structured data that triggered the video, so
+  the spoken and written content always matches the source statistics.
+</p>
+
+<h2>4. Publishing</h2>
+<p>
+  The finished file is uploaded to the StatSlam account on each platform using that platform's
+  official API. Publishing is unattended — the pipeline runs on a schedule and no human approves
+  individual posts. Every video on <a href="./videos.html">the videos page</a> was published this way.
+</p>
+
+<h2 id="tiktok">TikTok integration</h2>
+<p>
+  StatSlam integrates with TikTok as a first-party publisher of its own content. The integration
+  has two parts:
+</p>
+<dl>
+  <dt>Login Kit</dt>
+  <dd>
+    Used once, so the owner of the StatSlam TikTok account can authorize the app via OAuth. The
+    app requests <code>user.info.basic</code> to confirm which account it is connected to. No
+    third-party users log in, and the app never asks members of the public to connect an account.
+  </dd>
+  <dt>Content Posting API (Direct Post)</dt>
+  <dd>
+    Used with the <code>video.publish</code> scope to upload each generated video to the single
+    authorized StatSlam account. The pipeline posts only videos it produced itself from public
+    sports statistics. It does not repost other creators' content, does not read other users'
+    content, and does not post to any account other than the one that granted authorization.
+  </dd>
+</dl>
+<p>
+  Access and refresh tokens are stored locally with restricted file permissions, are never shared
+  with third parties, and can be revoked at any time from the account's TikTok settings. See the
+  <a href="./privacy.html">Privacy Policy</a> for the full data handling statement.
+</p>
+
+<h2>5. This website</h2>
+<p>
+  The video list on this site is generated from the live channel data rather than hand-written,
+  so it reflects what the pipeline has actually published, including the most recent post. When
+  TikTok publishing is enabled, TikTok posts are recorded in the same list alongside the YouTube
+  ones.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Questions about the integration or the data sources:
+  <a href="mailto:opcl6477@gmail.com">opcl6477@gmail.com</a>.
+</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 StatSlam</p>
+    <div class="links">
+      <a href="./">Home</a>
+      <a href="./videos.html">Videos</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

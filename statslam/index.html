@@ -3,20 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="StatSlam posts short sports-stats highlight videos to TikTok, YouTube Shorts and other platforms.">
+<meta name="description" content="StatSlam turns public sports statistics into short-form highlight videos and publishes them automatically to YouTube Shorts and TikTok.">
 <meta name="tiktok-developers-site-verification" content="0xNhZa3fdwRmAAUnEQ9QhZmIM7te4TeD" />
 <link rel="canonical" href="https://clawtech6477.github.io/clawtech-lp/statslam/">
-<title>StatSlam - Sports Stats Shorts</title>
-<style>
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:720px;margin:0 auto;padding:60px 20px;line-height:1.7;color:#1a1a1a;background:#fff;text-align:center}
-  a{color:#1a56db}
-  p.tagline{color:#555}
-</style>
+<title>StatSlam — Automated sports-stats short videos</title>
+<link rel="icon" href="./icon_1024.png">
+<link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<h1>StatSlam</h1>
-<p class="tagline">Sports stats, slammed into 30 seconds.</p>
-<p>StatSlam is a media publisher account that produces short-form sports statistics highlight videos and posts them to TikTok, YouTube Shorts, and other short-video platforms.</p>
-<p><a href="./terms.html">Terms of Service</a> · <a href="./privacy.html">Privacy Policy</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="./icon_1024.png" alt="">StatSlam</a>
+    <nav class="nav">
+      <a href="./" aria-current="page">Home</a>
+      <a href="./how-it-works.html">How it works</a>
+      <a href="./videos.html">Videos</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Sports stats, slammed into 30 seconds.</h1>
+    <p class="lead">
+      StatSlam is a media publishing service that turns public sports data — final scores,
+      standings, scoring races — into short vertical highlight videos, and publishes them to
+      short-video platforms automatically, every day, minutes after the data changes.
+    </p>
+    <div class="cta">
+      <a class="btn" href="./videos.html">Watch what we publish</a>
+      <a class="btn ghost" href="./how-it-works.html">See how it works</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Running, not planned</h2>
+    <p class="section-note">
+      These numbers come straight from the live StatSlam channel and are re-synced every time
+      the pipeline publishes something new.
+    </p>
+    <div class="stats" data-statslam-stats>
+      <div><div class="num">63</div><div class="lbl">videos published</div></div>
+      <div><div class="num">18,816</div><div class="lbl">total views</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What StatSlam does</h2>
+    <p class="section-note">
+      Sports results are public, but they are published as tables and box scores. StatSlam's job
+      is to turn each meaningful change in those tables into something watchable in half a minute.
+    </p>
+    <div class="grid cols-3">
+      <div class="card">
+        <span class="step-n">1</span>
+        <h3>Watches public data</h3>
+        <p>
+          A scheduled watcher polls open sports data providers for MLB games, football fixtures
+          and scorers, and Formula 1 standings, and detects when a result is final.
+        </p>
+      </div>
+      <div class="card">
+        <span class="step-n">2</span>
+        <h3>Builds the video</h3>
+        <p>
+          The changed statistics are rendered into a vertical video — score, team marks, standings
+          movement — with narration and captions generated from the same data.
+        </p>
+      </div>
+      <div class="card">
+        <span class="step-n">3</span>
+        <h3>Publishes automatically</h3>
+        <p>
+          The finished video is uploaded to the StatSlam account on each platform through that
+          platform's official API. No human step sits between the result and the post.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Latest published videos</h2>
+    <p class="section-note">
+      Every video below was produced and posted by the pipeline described above.
+      <a href="./videos.html">See the full archive</a>.
+    </p>
+    <div class="videos" data-statslam-videos data-limit="8">
+      <p class="loading">Loading the latest videos…</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where StatSlam publishes</h2>
+    <div class="grid cols-2">
+      <div class="card">
+        <h3>YouTube Shorts — live</h3>
+        <p>
+          The primary channel. Every episode listed on this site is public there today, published
+          through the YouTube Data API.
+        </p>
+      </div>
+      <div class="card">
+        <h3>TikTok — integration in progress</h3>
+        <p>
+          The same videos are being brought to TikTok through Login Kit and the Content Posting
+          API, posting only to the StatSlam account that authorized the app.
+          <a href="./how-it-works.html#tiktok">Read the integration details</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 StatSlam</p>
+    <div class="links">
+      <a href="./how-it-works.html">How it works</a>
+      <a href="./videos.html">Videos</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./terms.html">Terms</a>
+      <a href="./privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="./assets/site.js"></script>
 </body>
 </html>
