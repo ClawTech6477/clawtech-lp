@@ -99,6 +99,11 @@ footer a:hover{color:var(--white);}
 @media(max-width:640px){
   nav .inner{padding:0 16px;}
   .nav-links{gap:14px;}
+  /* 2026-08-15監査: 5リンクが390px幅で1文字ずつ折り返して崩れていた。
+     個別記事ページと同じく、モバイルではロゴ+主要リンクのみに絞る */
+  .nav-links a:nth-child(1),
+  .nav-links a:nth-child(3),
+  .nav-links a:nth-child(4){display:none;}
   .hero-blog{padding:88px 16px 48px;}
   .filter-bar{position:static;}
   .blog-grid{grid-template-columns:1fr;}
