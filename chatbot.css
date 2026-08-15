@@ -321,6 +321,61 @@
 .cb-cta.ghost  { background: transparent; color: var(--cb-chip-c); border: 1.5px solid var(--cb-chip-c); box-shadow: none; }
 .cb-cta.ghost:hover { background: var(--cb-yamabuki); border-color: var(--cb-yamabuki); color: var(--cb-koiai); }
 
+/* --- ミニフォーム（問い合わせフロー: 2項目ずつ+次へ） --- */
+.cb-miniform {
+  background: var(--cb-bot-bubble);
+  border-radius: 6px 18px 18px 18px;
+  padding: 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: cbMsgIn .32s ease both;
+}
+.cb-mf-group { display: flex; flex-direction: column; gap: 6px; }
+.cb-mf-label { font-size: 12.5px; font-weight: 700; color: var(--cb-bot-text); }
+.cb-mf-req   { color: #d64545; margin-left: 2px; }
+.cb-mf-input {
+  border: 1.5px solid var(--cb-input-bd);
+  background: var(--cb-input-bg);
+  color: var(--cb-bot-text);
+  border-radius: 8px;
+  padding: 9px 11px;
+  font-size: 13.5px;
+  font-family: inherit;
+  outline: none;
+}
+.cb-mf-input:focus { border-color: var(--cb-yamabuki); }
+.cb-mf-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.cb-mf-chip {
+  border: 1.5px solid var(--cb-chip-c);
+  background: transparent;
+  color: var(--cb-chip-c);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 12.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.cb-mf-chip:hover, .cb-mf-chip.active {
+  background: var(--cb-yamabuki); border-color: var(--cb-yamabuki); color: var(--cb-koiai); font-weight: 700;
+}
+.cb-mf-next {
+  align-self: flex-end;
+  border: none;
+  background: var(--cb-yamabuki);
+  color: var(--cb-koiai);
+  border-radius: 10px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform .15s, opacity .2s;
+}
+.cb-mf-next:disabled { opacity: .4; cursor: not-allowed; }
+.cb-mf-next:not(:disabled):hover { transform: translateY(-1px); }
+
 /* --- 戻るリンク --- */
 .cb-restart {
   align-self: flex-start;

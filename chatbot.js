@@ -63,29 +63,139 @@
 
   var fab, widget, body, backbar, input, sendBtn;
   var isOpen = false;
-  var leadState = null; // null=通常モード、それ以外は{step, name, email, service, hope}
+  var leadState = null;   // null=通常モード、それ以外は{data:{...}}(ミニフォームで収集中の値)
+  var lastFreeText = '';  // 直近のユーザー自由入力(自然発語)。リード送信時にmessage欄へ引き継ぐ
 
-  /* ─── チャット内完結の問い合わせフロー ───
-     2026-08-15 UU指摘: 「無料相談する」タップ後にページの#contactへ遷移していたが、
-     チャットウィジェットが被って見づらく、そもそも「チャット内で完結」という設計と
-     ずれていた。名前→メールを会話形式で聞き、既存フォームと同じFormspreeエンドポイントへ
-     fetch()で直接送信することで、ページ遷移なしに完結させる */
+  /* ─── チャット内完結の問い合わせフロー(ミニフォーム版) ───
+     2026-08-15 UU指摘: 1問1答は「だるい」、2項目ずつ記載→次へ次へで進める方が良い。
+     既存の問い合わせフォーム(index.html #contactForm)と同じ項目・同じFormspree
+     エンドポイントへ、ページ遷移せずチャット内のミニフォームで完結させる。
+     自由入力(自然発語)で既に読み取れているサービス種別等はcontextとして
+     引き継ぎ、同じ質問を二度させない */
+  var LEAD_STEPS = [
+    { key: 'step1', fields: [
+      { name: 'name',    label: 'お名前',      type: 'text',  required: true, placeholder: '山田 太郎' },
+      { name: 'company', label: '会社名・屋号（任意）', type: 'text', required: false, placeholder: '株式会社〇〇' }
+    ]},
+    { key: 'step2', fields: [
+      { name: 'email', label: 'メールアドレス', type: 'email', required: true, placeholder: 'example@email.com' },
+      { name: 'hope',  label: 'ご希望の対応', type: 'chips', required: true,
+        options: ['まず資料だけ欲しい', '無料DX診断の詳細レポート希望', '無料相談したい（オンラインOK）'] }
+    ]},
+    { key: 'step3', fields: [
+      { name: 'service', label: 'ご相談内容（任意）', type: 'chips', required: false,
+        options: ['LP・ホームページ制作', 'MEO対策', '業務自動化', 'DXコンサルティング', 'AI営業代行', 'その他'] },
+      { name: 'budget', label: 'ご予算感（任意）', type: 'chips', required: false,
+        options: ['未定', '〜5万', '〜15万', '〜50万', '50万〜', '月額顧問希望'] }
+    ]}
+  ];
+
   function startLeadFlow(context) {
     context = context || {};
-    leadState = { step: 'name', service: context.service || '', hope: context.hope || '無料相談したい' };
+    leadState = { data: {}, message: lastFreeText || '' };
+    if (context.service) leadState.data.service = context.service;
+    if (context.hope) leadState.data.hope = context.hope;
     typing(500, function () {
-      appendMsg('bot', 'かしこまりました！<br>まずお名前を教えてください。');
+      appendMsg('bot', 'かしこまりました！<br>下の項目にご記入のうえ「次へ」をお願いします。');
+      runLeadStep(0);
     });
+  }
+
+  function runLeadStep(stepIndex) {
+    if (stepIndex >= LEAD_STEPS.length) { submitLead(); return; }
+    var step = LEAD_STEPS[stepIndex];
+    // 既に自由入力等からわかっている項目(chips型のみ、事前選択済みとして)は
+    // その値を含めてスキップ判定。ただしrequired項目は必ず表示して確認させる
+    var fieldsToShow = step.fields.filter(function (f) {
+      return f.required || !leadState.data[f.name];
+    });
+    if (fieldsToShow.length === 0) { runLeadStep(stepIndex + 1); return; }
+    appendMiniForm(fieldsToShow, leadState.data, function (values) {
+      Object.keys(values).forEach(function (k) { leadState.data[k] = values[k]; });
+      runLeadStep(stepIndex + 1);
+    });
+  }
+
+  function appendMiniForm(fields, presetData, onNext) {
+    var wrap = el('div', 'cb-msg bot');
+    var card = el('div', 'cb-miniform');
+    var getters = {};
+
+    fields.forEach(function (f) {
+      var group = el('div', 'cb-mf-group');
+      var label = el('label', 'cb-mf-label', f.label + (f.required ? '<span class="cb-mf-req">*</span>' : ''));
+      group.appendChild(label);
+
+      if (f.type === 'chips') {
+        var chipRow = el('div', 'cb-mf-chips');
+        var selected = presetData[f.name] || null;
+        f.options.forEach(function (opt) {
+          var b = el('button', 'cb-mf-chip' + (opt === selected ? ' active' : ''), opt);
+          b.type = 'button';
+          b.addEventListener('click', function () {
+            Array.prototype.forEach.call(chipRow.querySelectorAll('.cb-mf-chip'), function (c) { c.classList.remove('active'); });
+            b.classList.add('active');
+            selected = opt;
+            checkReady();
+          });
+          chipRow.appendChild(b);
+        });
+        group.appendChild(chipRow);
+        getters[f.name] = function () { return selected; };
+      } else {
+        var inp = document.createElement('input');
+        inp.type = f.type || 'text';
+        inp.className = 'cb-mf-input';
+        inp.placeholder = f.placeholder || '';
+        inp.addEventListener('input', checkReady);
+        group.appendChild(inp);
+        getters[f.name] = function () { return inp.value.trim(); };
+      }
+      card.appendChild(group);
+    });
+
+    var nextBtn = el('button', 'cb-mf-next', '次へ →');
+    nextBtn.type = 'button';
+    nextBtn.disabled = !fields.every(function (f) { return !f.required; });
+    card.appendChild(nextBtn);
+
+    function checkReady() {
+      var ok = fields.every(function (f) {
+        if (!f.required) return true;
+        var v = getters[f.name]();
+        if (f.type === 'email') return v && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        return !!v;
+      });
+      nextBtn.disabled = !ok;
+    }
+    checkReady();
+
+    nextBtn.addEventListener('click', function () {
+      var values = {};
+      fields.forEach(function (f) { values[f.name] = getters[f.name](); });
+      Array.prototype.forEach.call(card.querySelectorAll('input,button'), function (el2) { el2.disabled = true; });
+      nextBtn.textContent = '✓ 送信しました';
+      onNext(values);
+    });
+
+    wrap.appendChild(card);
+    body.appendChild(wrap);
+    scrollBottom();
+    return wrap;
   }
 
   function submitLead() {
     typing(700, function () {
+      var d = leadState.data;
       var body = new URLSearchParams();
       body.append('_subject', '【LP制作】お問い合わせ（チャット経由）');
-      body.append('name', leadState.name);
-      body.append('email', leadState.email);
-      body.append('hope', leadState.hope);
-      if (leadState.service) body.append('service', leadState.service);
+      body.append('name', d.name || '');
+      if (d.company) body.append('company', d.company);
+      body.append('email', d.email || '');
+      body.append('hope', d.hope || '無料相談したい');
+      if (d.service) body.append('service', d.service);
+      if (d.budget) body.append('予算感', d.budget);
+      if (leadState.message) body.append('message', leadState.message);
       body.append('流入元', 'チャットボット（藍）');
 
       fetch('https://formspree.io/f/xpqjbyya', {
@@ -94,7 +204,7 @@
         body: body.toString()
       }).then(function (res) {
         if (res.ok) {
-          appendMsg('bot', 'ありがとうございます、' + leadState.name + '様！<br>24時間以内に担当よりご連絡いたします。');
+          appendMsg('bot', 'ありがとうございます、' + (d.name || 'お客') + '様！<br>24時間以内に担当よりご連絡いたします。');
         } else {
           throw new Error('send failed');
         }
@@ -106,28 +216,6 @@
         appendRestartLink();
       });
     });
-  }
-
-  function handleLeadStep(text) {
-    appendMsg('user', text);
-    if (leadState.step === 'name') {
-      leadState.name = text;
-      leadState.step = 'email';
-      typing(500, function () {
-        appendMsg('bot', 'ありがとうございます！<br>次にメールアドレスを教えてください。');
-      });
-      return;
-    }
-    if (leadState.step === 'email') {
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
-        typing(400, function () {
-          appendMsg('bot', 'メールアドレスの形式が正しくないようです。もう一度入力をお願いします。');
-        });
-        return;
-      }
-      leadState.email = text;
-      submitLead();
-    }
   }
 
   function now() {
@@ -336,6 +424,7 @@
   function handleFreeText(text) {
     appendMsg('user', text);
     showBackbar(true);
+    lastFreeText = text; // 自然発語を記憶し、後でリード送信時のmessage欄に引き継ぐ
 
     var t = text;
 
@@ -389,11 +478,7 @@
     if (!text) return;
     input.value = '';
     input.style.height = '';
-    if (leadState) {
-      handleLeadStep(text);
-    } else {
-      handleFreeText(text);
-    }
+    handleFreeText(text);
   }
 
   /* ─── 開閉 ─── */
