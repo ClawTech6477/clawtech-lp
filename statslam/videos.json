@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-08-15T02:46:52+00:00",
+  "generated_at": "2026-08-15T22:49:08+00:00",
   "channel": {
     "title": "StatSlam",
     "url": "https://www.youtube.com/channel/UCykGZb7YAiOY0vbCv45OD5A",
-    "video_count": 63,
-    "view_count": 19287
+    "video_count": 64,
+    "view_count": 19374
   },
   "videos": [
     {
+      "youtube_id": "ibBHHeJR-bQ",
+      "title": "Toronto Blue Jays Beat New York Yankees 4-1! 🔥 MLB Final",
+      "published_at": "2026-08-15T22:49:06Z",
+      "url": "https://www.youtube.com/watch?v=ibBHHeJR-bQ",
+      "thumbnail": "https://i.ytimg.com/vi/ibBHHeJR-bQ/mqdefault.jpg",
+      "tiktok_id": null
+    },
+    {
       "youtube_id": "ID9kFfG8mlY",
       "title": "Toronto Blue Jays Beat New York Yankees 3-1! 🔥 MLB Final",
-      "published_at": "2026-08-15T02:46:40Z",
+      "published_at": "2026-08-15T02:47:00Z",
       "url": "https://www.youtube.com/watch?v=ID9kFfG8mlY",
       "thumbnail": "https://i.ytimg.com/vi/ID9kFfG8mlY/mqdefault.jpg",
       "tiktok_id": null
