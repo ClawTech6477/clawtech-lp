@@ -5,3 +5,15 @@ secrets/
 .secrets
 *.key
 *.pem
+
+# 内部文書・運用スクリプト(2026-08-15)。publicリポジトリ＋独自ドメインで配信されるため
+# 追跡しない。ローカルには残す。内部のスクリプトパス・cron時刻・自動化構成が
+# clawtechjp.com から誰でも読める状態になっていた
+FUNNEL_DESIGN.md
+DESIGN.md
+MEMORY.md
+analytics_report.py
+generate_sitemap.sh
+.aider.chat.history.md
+.aider.input.history
+To
