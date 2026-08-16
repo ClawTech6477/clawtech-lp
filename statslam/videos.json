@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-08-16T01:47:10+00:00",
+  "generated_at": "2026-08-16T02:46:38+00:00",
   "channel": {
     "title": "StatSlam",
     "url": "https://www.youtube.com/channel/UCykGZb7YAiOY0vbCv45OD5A",
-    "video_count": 66,
+    "video_count": 67,
     "view_count": 19374
   },
   "videos": [
     {
+      "youtube_id": "3SHBp68gbWI",
+      "title": "Boston Red Sox Beat Pittsburgh Pirates 4-0! 🔥 MLB Final",
+      "published_at": "2026-08-16T02:46:27Z",
+      "url": "https://www.youtube.com/watch?v=3SHBp68gbWI",
+      "thumbnail": "https://i.ytimg.com/vi/3SHBp68gbWI/mqdefault.jpg",
+      "tiktok_id": null
+    },
+    {
       "youtube_id": "Fo6Bjwm8W-k",
       "title": "Baltimore Orioles Beat Tampa Bay Rays 4-3! 🔥 MLB Final",
-      "published_at": "2026-08-16T01:46:56Z",
+      "published_at": "2026-08-16T01:47:18Z",
       "url": "https://www.youtube.com/watch?v=Fo6Bjwm8W-k",
       "thumbnail": "https://i.ytimg.com/vi/Fo6Bjwm8W-k/mqdefault.jpg",
       "tiktok_id": null
