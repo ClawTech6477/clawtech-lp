@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-08-16T19:32:07+00:00",
+  "generated_at": "2026-08-16T19:46:34+00:00",
   "channel": {
     "title": "StatSlam",
     "url": "https://www.youtube.com/channel/UCykGZb7YAiOY0vbCv45OD5A",
-    "video_count": 68,
+    "video_count": 69,
     "view_count": 19674
   },
   "videos": [
     {
+      "youtube_id": "1dSOfAooKw8",
+      "title": "Baltimore Orioles Beat Tampa Bay Rays 10-2! 🔥 MLB Final",
+      "published_at": "2026-08-16T19:46:24Z",
+      "url": "https://www.youtube.com/watch?v=1dSOfAooKw8",
+      "thumbnail": "https://i.ytimg.com/vi/1dSOfAooKw8/mqdefault.jpg",
+      "tiktok_id": null
+    },
+    {
       "youtube_id": "70qPAoGcveQ",
       "title": "FERNÁNDEZ Leads the Pichichi Race ⚽🔥 La Liga 2026-27 Update",
-      "published_at": "2026-08-16T19:31:56Z",
+      "published_at": "2026-08-16T19:32:18Z",
       "url": "https://www.youtube.com/watch?v=70qPAoGcveQ",
       "thumbnail": "https://i.ytimg.com/vi/70qPAoGcveQ/mqdefault.jpg",
       "tiktok_id": null
