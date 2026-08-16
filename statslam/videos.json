@@ -1,16 +1,24 @@
 {
-  "generated_at": "2026-08-16T02:46:38+00:00",
+  "generated_at": "2026-08-16T19:32:07+00:00",
   "channel": {
     "title": "StatSlam",
     "url": "https://www.youtube.com/channel/UCykGZb7YAiOY0vbCv45OD5A",
-    "video_count": 67,
-    "view_count": 19374
+    "video_count": 68,
+    "view_count": 19674
   },
   "videos": [
     {
+      "youtube_id": "70qPAoGcveQ",
+      "title": "FERNÁNDEZ Leads the Pichichi Race ⚽🔥 La Liga 2026-27 Update",
+      "published_at": "2026-08-16T19:31:56Z",
+      "url": "https://www.youtube.com/watch?v=70qPAoGcveQ",
+      "thumbnail": "https://i.ytimg.com/vi/70qPAoGcveQ/mqdefault.jpg",
+      "tiktok_id": null
+    },
+    {
       "youtube_id": "3SHBp68gbWI",
       "title": "Boston Red Sox Beat Pittsburgh Pirates 4-0! 🔥 MLB Final",
-      "published_at": "2026-08-16T02:46:27Z",
+      "published_at": "2026-08-16T02:46:51Z",
       "url": "https://www.youtube.com/watch?v=3SHBp68gbWI",
       "thumbnail": "https://i.ytimg.com/vi/3SHBp68gbWI/mqdefault.jpg",
       "tiktok_id": null
