@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-16T19:46:34+00:00",
+  "generated_at": "2026-08-16T21:46:34+00:00",
   "channel": {
     "title": "StatSlam",
     "url": "https://www.youtube.com/channel/UCykGZb7YAiOY0vbCv45OD5A",
-    "video_count": 69,
+    "video_count": 70,
     "view_count": 19674
   },
   "videos": [
     {
       "youtube_id": "1dSOfAooKw8",
       "title": "Baltimore Orioles Beat Tampa Bay Rays 10-2! 🔥 MLB Final",
-      "published_at": "2026-08-16T19:46:24Z",
+      "published_at": "2026-08-16T19:46:43Z",
       "url": "https://www.youtube.com/watch?v=1dSOfAooKw8",
       "thumbnail": "https://i.ytimg.com/vi/1dSOfAooKw8/mqdefault.jpg",
       "tiktok_id": null
@@ -397,6 +397,14 @@
       "published_at": "2026-07-26T20:18:38Z",
       "url": "https://www.youtube.com/watch?v=5yZOwDsDqs4",
       "thumbnail": "https://i.ytimg.com/vi/5yZOwDsDqs4/mqdefault.jpg",
+      "tiktok_id": null
+    },
+    {
+      "youtube_id": "o9Ji0NzGZA8",
+      "title": "Tampa Bay Rays Beat Cleveland Guardians 1-0! 🔥 MLB Final",
+      "published_at": "2026-07-26T19:18:51Z",
+      "url": "https://www.youtube.com/watch?v=o9Ji0NzGZA8",
+      "thumbnail": "https://i.ytimg.com/vi/o9Ji0NzGZA8/mqdefault.jpg",
       "tiktok_id": null
     },
     {
