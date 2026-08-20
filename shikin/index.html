@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F4F6F5">
+<title>資金繰り緊急度診断｜連絡先不要・30秒で「いま選ぶべき調達手段」がわかる</title>
+<meta name="description" content="いつまでに・いくら必要かをタップで答えるだけで、ファクタリング・ビジネスローン・公庫融資・「そもそも調達しない」まで含めた選択肢を中立に判定します。氏名・メール・電話番号の入力は一切なし。営業電話は来ません。">
+<link rel="canonical" href="https://clawtechjp.com/shikin/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="資金繰り緊急度診断｜連絡先不要・30秒">
+<meta property="og:description" content="ファクタリングありきではない資金繰り診断。公庫・支払サイト交渉・「借りない」判定まで含めて、いまの状況で選ぶべき手段を30秒で整理します。個人情報の入力なし。">
+<meta property="og:url" content="https://clawtechjp.com/shikin/">
+<meta property="og:site_name" content="資金繰り緊急度診断">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="資金繰り緊急度診断｜連絡先不要・30秒">
+<meta name="twitter:description" content="ファクタリングありきではない資金繰り診断。「借りない」判定まで含めて中立に整理します。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23F4F6F5'/%3E%3Ccircle cx='50' cy='50' r='34' fill='none' stroke='%231D4E89' stroke-width='6'/%3E%3Ctext x='50' y='66' font-size='44' font-family='serif' font-weight='800' fill='%231D4E89' text-anchor='middle'%3E資%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"資金繰り緊急度診断","url":"https://clawtechjp.com/shikin/","applicationCategory":"BusinessApplication","operatingSystem":"All","inLanguage":"ja","description":"いつまでに資金が必要か・売掛金の有無・金融機関の状況をタップで答えるだけで、ファクタリング・ビジネスローン・公庫融資・調達以外の選択肢まで含めて中立に判定する無料診断ツール。個人情報の入力不要。","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"publisher":{"@type":"Organization","name":"ClawTech","url":"https://clawtechjp.com/"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"診断に会社名や連絡先の入力は必要ですか？","acceptedAnswer":{"@type":"Answer","text":"不要です。タップで答えるだけで、その場で結果が表示されます。氏名・会社名・メールアドレス・電話番号などの入力欄は一切なく、当サイトから営業の連絡が行くことはありません。"}},
+{"@type":"Question","name":"診断は無料ですか？","acceptedAnswer":{"@type":"Answer","text":"無料です。なお本ページは資金調達サービスのアフィリエイト広告（PR）を含みます。"}},
+{"@type":"Question","name":"必ずファクタリングを勧められるのですか？","acceptedAnswer":{"@type":"Answer","text":"いいえ。この診断には「日本政策金融公庫などの融資を先に検討すべき」「いまは追加調達をすべきでない」という判定が最初から組み込まれており、状況によっては当サイトの収益にならない選択肢を提示します。ファクタリングは手数料が高い手段であり、全員に向くものではないためです。"}},
+{"@type":"Question","name":"給与ファクタリングも診断の対象ですか？","acceptedAnswer":{"@type":"Answer","text":"対象外です。個人の給与を債権として買い取る「給与ファクタリング」は貸金業に該当するというのが金融庁の見解であり、無登録で行う業者はヤミ金融です。当サイトは事業者の売掛債権に関する情報のみを扱い、給与ファクタリングは一切紹介しません。"}},
+{"@type":"Question","name":"診断結果は正確ですか？","acceptedAnswer":{"@type":"Answer","text":"簡易的な目安です。回答内容から一般的に妥当と考えられる選択肢のカテゴリを提示するものであり、個別の財務状況に基づく助言ではありません。実際の可否・条件は各社の審査や金融機関の判断によります。"}}
+]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=DotGothic16&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RZ1TP2K3N0');
+</script>
+<style>
+  /* 帳簿・通帳の意匠。年収診断(朱)と姉妹ツールだが、金の話なので藍で落ち着かせる */
+  :root{
+    --paper:#F4F6F5; --paper-2:#FBFCFB; --paper-deep:#E9EEEC;
+    --ink:#1C2430; --ink-soft:#5F6B78; --line:#D3DBD9;
+    --ai:#1D4E89; --ai-deep:#153C6B;
+    --warn:#B02F1B;
+    --f-min:'Shippori Mincho B1',serif;
+    --f-body:'Zen Kaku Gothic New',sans-serif;
+    --f-dot:'DotGothic16',monospace;
+    --ease-paper:cubic-bezier(.22,.85,.28,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+  body{font-family:var(--f-body);background:var(--paper);color:var(--ink);line-height:1.75;
+    padding-bottom:env(safe-area-inset-bottom);}
+  button{font-family:inherit;}
+  button:focus-visible,select:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--ai);outline-offset:2px;}
+
+  .hero{padding:52px 22px 30px;max-width:640px;margin:0 auto;}
+  .eyebrow{font-family:var(--f-dot);font-size:12px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:14px;}
+  .hero h1{font-family:var(--f-min);font-weight:800;font-size:clamp(26px,7vw,38px);line-height:1.45;letter-spacing:.01em;margin-bottom:14px;text-wrap:balance;}
+  .hero h1 em{font-style:normal;color:var(--ai);
+    background:linear-gradient(transparent 68%, rgba(29,78,137,.15) 68%);
+    background-size:0 100%;background-repeat:no-repeat;}
+  @keyframes riseIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  @keyframes markDraw{to{background-size:100% 100%;}}
+  .hero .eyebrow,.hero h1,.hero .lede,.hero .pills,.hero .herocta,.hero .herosub,.hero .prline{animation:riseIn .6s var(--ease-paper) both;}
+  .hero .eyebrow{animation-delay:.04s;}
+  .hero h1{animation-delay:.12s;}
+  .hero .lede{animation-delay:.24s;}
+  .hero .pills{animation-delay:.32s;}
+  .hero .herocta{animation-delay:.38s;}
+  .hero .herosub{animation-delay:.42s;}
+  .hero .prline{animation-delay:.46s;}
+  .hero h1 em{animation:markDraw .65s ease .58s both;}
+  .hero .lede{font-size:14px;color:var(--ink-soft);max-width:33em;}
+  .hero .pills{display:flex;gap:9px;margin-top:18px;flex-wrap:wrap;}
+  .hero .pill{font-size:13.5px;font-weight:800;border:1.5px solid var(--ai);background:var(--paper-2);border-radius:999px;padding:6px 15px;color:var(--ai-deep);}
+  .hero .pill::before{content:"✓ ";}
+  .herocta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:56px;
+    margin-top:22px;padding:15px 18px;background:var(--ai);color:#fff;border:none;border-radius:8px;
+    font-size:16px;font-weight:800;text-decoration:none;cursor:pointer;transition:background .15s,transform .1s;
+    box-shadow:0 6px 18px rgba(29,78,137,.28);}
+  .herocta:active{transform:scale(.985);background:var(--ai-deep);}
+  .herocta .arrow{display:inline-block;animation:heroBounce 1.4s ease-in-out infinite;}
+  @keyframes heroBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
+  .herosub{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:9px;}
+  .prline{font-size:12px;color:var(--ink-soft);margin-top:14px;}
+  .demobadge{display:none;font-family:var(--f-dot);font-size:12px;letter-spacing:.2em;color:#fff;background:var(--warn);
+    padding:4px 12px;border-radius:4px;margin-bottom:12px;}
+  body.demo .demobadge{display:inline-block;}
+
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px 64px;}
+
+  .card{background:var(--paper-2);border:1.5px solid var(--line);border-radius:10px;padding:24px 20px;margin-bottom:20px;}
+  .sheet-form{position:relative;border-radius:4px;overflow:hidden;padding-top:30px;}
+  .sheet-form::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 7px,transparent 7px 14px);}
+  .form-head{margin-bottom:20px;}
+  .field{margin-bottom:22px;}
+  .field.hidden{display:none;}
+  .field:last-of-type{margin-bottom:8px;}
+  .lbl{display:flex;align-items:baseline;gap:8px;font-size:13.5px;font-weight:700;margin-bottom:9px;}
+  .lbl .no{font-family:var(--f-dot);font-size:12px;color:var(--ai);letter-spacing:.05em;}
+  .lbl small{font-weight:500;color:var(--ink-soft);}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .seg button{position:relative;z-index:0;overflow:hidden;min-height:48px;padding:10px 6px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper-2);font-size:13.5px;color:var(--ink);cursor:pointer;transition:border-color .15s,color .15s,transform .1s;}
+  .seg button::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);border-radius:inherit;
+    transform:scale(.25);opacity:0;transition:transform .3s var(--ease-paper),opacity .18s ease;}
+  .seg button:active{transform:scale(.97);}
+  .seg button.on{border-color:var(--ink);color:var(--paper-2);font-weight:700;}
+  .seg button.on::before{transform:scale(1);opacity:1;}
+  .seg button.wide{grid-column:1/-1;}
+  .cta{display:block;width:100%;min-height:54px;padding:15px;background:var(--ai);color:#fff;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;margin-top:16px;transition:background .15s,transform .1s;}
+  .cta:active{transform:scale(.985);background:var(--ai-deep);}
+  .cta:disabled{background:#9FB3CB;cursor:not-allowed;}
+  @keyframes readyPulse{from{box-shadow:0 0 0 0 rgba(29,78,137,.42);}to{box-shadow:0 0 0 15px rgba(29,78,137,0);}}
+  .cta.ready{animation:readyPulse .75s ease-out 2;}
+  .ctanote{text-align:center;font-size:12px;color:var(--ink-soft);margin-top:10px;}
+
+  /* ---- 結果：判定書 ---- */
+  #result,#sheetForm{scroll-margin-top:12px;}
+  .sheet{position:relative;background:var(--paper-2);border:1.5px solid var(--line);border-radius:4px;padding:26px 22px 22px;margin-bottom:16px;overflow:hidden;}
+  .sheet::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 7px,transparent 7px 14px);}
+  .sheet-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:4px;}
+  .sheet-title{font-family:var(--f-min);font-weight:800;font-size:17px;letter-spacing:.22em;}
+  .sheet-date{font-family:var(--f-dot);font-size:11.5px;color:var(--ink-soft);}
+  .verdict-name{font-family:var(--f-min);font-weight:800;font-size:clamp(21px,5.6vw,27px);line-height:1.5;margin:16px 0 6px;color:var(--ai-deep);padding-right:78px;}
+  .verdict-name.warn{color:var(--warn);}
+  .vmsg{font-size:13.5px;color:var(--ink);margin-top:8px;line-height:1.9;padding-right:8px;}
+  .vwarn{font-size:13px;color:var(--warn);margin-top:12px;line-height:1.85;border:1.5px solid var(--warn);border-radius:6px;padding:10px 12px;background:rgba(176,47,27,.04);}
+  .vwarn.hidden{display:none;}
+  .basis{font-size:11px;color:var(--ink-soft);margin-top:14px;line-height:1.6;padding-right:78px;}
+  .sheet-imprint{font-family:var(--f-dot);font-size:10.5px;color:var(--ink-soft);margin-top:14px;letter-spacing:.06em;padding-right:78px;}
+  .stamp{position:absolute;right:18px;bottom:16px;width:76px;height:76px;border:3px solid var(--ai);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:var(--f-min);font-weight:800;font-size:19px;line-height:1.25;color:var(--ai);
+    transform:rotate(-8deg);opacity:0;}
+  .stamp.warn{border-color:var(--warn);color:var(--warn);}
+  .stamp.on{animation:stamp .44s var(--ease-paper) forwards;}
+  @keyframes stamp{
+    0%{opacity:0;transform:rotate(-8deg) scale(1.85);}
+    55%{opacity:.98;transform:rotate(-8deg) scale(.93);}
+    78%{opacity:.95;transform:rotate(-8deg) scale(1.04);}
+    100%{opacity:.92;transform:rotate(-8deg) scale(1);}}
+  @keyframes sheetIssue{from{opacity:0;transform:translateY(-8px);clip-path:inset(0 0 100% 0);}
+    to{opacity:1;transform:none;clip-path:inset(0 0 0 0);}}
+  .sheet.issue{animation:sheetIssue .6s var(--ease-paper) both;}
+
+  /* ---- 手取りシミュレーター(通帳の記帳欄) ---- */
+  .calc{background:var(--paper-2);border:1.5px solid var(--line);border-radius:4px;padding:20px 18px;margin-bottom:16px;}
+  .calc.hidden{display:none;}
+  .calc h3{font-family:var(--f-min);font-size:14.5px;font-weight:800;letter-spacing:.08em;margin-bottom:14px;}
+  .calc .amt{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;color:var(--ink-soft);margin-bottom:6px;}
+  .calc .amt b{font-family:var(--f-dot);font-size:22px;color:var(--ink);font-weight:400;}
+  .calc input[type=range]{width:100%;accent-color:var(--ai);min-height:28px;}
+  .calc .ledger{margin-top:14px;border-top:2px solid var(--ink);}
+  .calc .ledger .lrow{display:flex;justify-content:space-between;align-items:baseline;padding:11px 2px;border-bottom:1px dashed var(--line);}
+  .calc .ledger .lrow dt{font-size:12.5px;color:var(--ink-soft);}
+  .calc .ledger .lrow dd{font-family:var(--f-dot);font-size:18px;}
+  .calc .ledger .lrow dd small{font-size:11px;font-family:var(--f-body);color:var(--ink-soft);margin-left:2px;}
+  .calc .ledger .netrow dd{font-size:24px;color:var(--ai-deep);}
+  .calc .apr{font-size:12px;color:var(--warn);margin-top:12px;line-height:1.8;}
+  .calc .aprnote{font-size:11px;color:var(--ink-soft);margin-top:6px;line-height:1.7;}
+
+  /* ---- 紹介カード(推薦状) ---- */
+  .sec-t{position:relative;font-family:var(--f-min);font-size:17px;font-weight:800;letter-spacing:.06em;margin:28px 0 4px;padding-left:12px;}
+  .sec-t::before{content:"";position:absolute;left:0;top:.16em;bottom:.16em;width:4px;background:var(--ai);transform-origin:top;}
+  @keyframes barDraw{from{transform:scaleY(0);}to{transform:scaleY(1);}}
+  .sec-t.draw::before{animation:barDraw .38s var(--ease-paper) both;}
+  .sec-fit{font-size:12.5px;color:var(--ink-soft);margin:0 0 16px 16px;letter-spacing:.02em;line-height:1.8;}
+  .sec-fit b{color:var(--ai-deep);}
+  .inline-link{font-weight:800;color:var(--ai-deep);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:1px;}
+  .inline-link:hover{opacity:.75;}
+  .textlead{font-size:14px;line-height:1.95;margin:0 0 14px;}
+
+  .site{position:relative;display:block;padding:18px 18px 16px 54px;border:1.5px solid var(--line);border-radius:4px;
+    margin-bottom:14px;text-decoration:none;color:inherit;background:var(--paper-2);overflow:hidden;
+    transition:transform .22s var(--ease-paper),box-shadow .22s var(--ease-paper),border-color .18s;}
+  .site::before{content:"";position:absolute;left:54px;right:0;top:0;height:4px;
+    background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px);}
+  .site.top{border-color:var(--ai);border-width:2px;box-shadow:0 5px 20px rgba(29,78,137,.13);}
+  .ord{position:absolute;left:0;top:0;bottom:0;width:38px;background:var(--ink);color:var(--paper-2);
+    display:flex;align-items:center;justify-content:center;
+    writing-mode:vertical-rl;text-orientation:upright;
+    font-family:var(--f-min);font-weight:800;font-size:21px;letter-spacing:.16em;}
+  .ord small{font-size:10.5px;letter-spacing:.3em;opacity:.72;font-weight:500;}
+  .site.top .ord{background:var(--ai);}
+  .site .nm{font-family:var(--f-min);font-weight:800;font-size:17.5px;line-height:1.4;letter-spacing:.01em;}
+  .site .rs{font-size:12.5px;color:var(--ink-soft);line-height:1.7;margin:8px 0 15px;}
+  .site .facts{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 13px;}
+  .site .facts span{font-size:11.5px;border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--ink-soft);background:var(--paper);}
+  .site-cta{display:flex;align-items:center;justify-content:center;gap:9px;min-height:46px;border-radius:6px;
+    border:1.5px solid var(--ai);color:var(--ai);
+    font-family:var(--f-min);font-size:14.5px;font-weight:800;letter-spacing:.05em;
+    transition:background .18s ease,color .18s ease;}
+  .site.top .site-cta{background:var(--ai);color:#fff;box-shadow:0 2px 0 var(--ai-deep);}
+  .site-cta .arrow{transition:transform .26s var(--ease-paper);}
+  .site:active{transform:translateY(1px);}
+  .site:active .site-cta .arrow{transform:translateX(4px);}
+  @media (hover:hover){
+    .site:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(28,36,48,.11);}
+    .site.top:hover{box-shadow:0 12px 30px rgba(29,78,137,.2);}
+    .site:hover .site-cta{background:var(--ai);color:#fff;}
+    .site:hover .site-cta .arrow{transform:translateX(4px);}
+  }
+  @keyframes letterDrop{from{opacity:0;transform:translateY(20px) rotate(-.8deg);}to{opacity:1;transform:none;}}
+  .site.drop{animation:letterDrop .52s var(--ease-paper) both;animation-delay:var(--d,0ms);}
+
+  .checkcard{border:1.5px solid var(--line);border-radius:4px;background:var(--paper-2);padding:18px;margin:20px 0 0;}
+  .checkcard h3{font-family:var(--f-min);font-size:14px;font-weight:800;margin-bottom:10px;letter-spacing:.05em;}
+  .checkcard li{font-size:13px;line-height:1.9;margin:0 0 8px 20px;}
+  .checkcard p{font-size:12px;color:var(--ink-soft);margin-top:8px;}
+  .checkcard a{color:var(--ai-deep);}
+
+  .demoexplain{display:none;border:2px solid var(--ai);border-radius:4px;background:var(--paper-2);padding:20px;margin:20px 0 0;}
+  body.demo .demoexplain{display:block;}
+  .demoexplain h3{font-family:var(--f-min);font-size:15px;font-weight:800;color:var(--ai-deep);margin-bottom:10px;}
+  .demoexplain p{font-size:13.5px;line-height:1.9;margin-bottom:10px;}
+  .demoexplain a{color:var(--ai-deep);font-weight:800;}
+
+  .note{font-size:11.5px;color:var(--ink-soft);margin-top:22px;line-height:1.8;}
+
+  .doc{margin-top:48px;padding-top:28px;border-top:2px solid var(--line);}
+  .doc-h2{position:relative;font-family:var(--f-min);font-size:18px;font-weight:800;letter-spacing:.04em;margin:32px 0 12px;padding-left:12px;scroll-margin-top:16px;}
+  .doc-h2::before{content:"";position:absolute;left:0;top:.16em;bottom:.16em;width:4px;background:var(--ink);transform-origin:top;}
+  .doc-h2.pre::before{transform:scaleY(0);}
+  .doc-h2.draw::before{animation:barDraw .38s var(--ease-paper) both;}
+  .doc-h2:first-of-type{margin-top:0;}
+  .doc-h3{font-size:14.5px;font-weight:700;margin:20px 0 6px;color:var(--ink);}
+  .doc p{font-size:14px;color:var(--ink);line-height:1.95;margin-bottom:14px;}
+  .doc-list{margin:0 0 16px;padding-left:20px;}
+  .doc-list li{font-size:14px;line-height:1.9;margin-bottom:10px;}
+  .doc-tablewrap{overflow-x:auto;margin-bottom:10px;}
+  .doc-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--paper-2);}
+  .doc-table th,.doc-table td{border:1px solid var(--line);padding:9px 12px;text-align:left;}
+  .doc-table th{background:var(--paper-deep);font-weight:700;}
+  .doc-note{font-size:11.5px;color:var(--ink-soft);line-height:1.7;}
+  .doc a{color:var(--ai-deep);}
+  .faq h3{border-left:3px solid var(--ai);padding-left:10px;}
+  .hidden{display:none;}
+  .footer{text-align:center;padding:20px 16px calc(36px + env(safe-area-inset-bottom));font-size:12px;color:var(--ink-soft);}
+  .footer a{color:var(--ai-deep);text-decoration:none;}
+  .footer a:hover{text-decoration:underline;}
+
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  #result.show{animation:rise .4s ease;}
+  .reveal{opacity:0;transform:translateY(12px);}
+  .reveal.in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s var(--ease-paper);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    #result.show,.sheet.issue,.site.drop,.sec-t.draw::before,.cta.ready,
+    .hero .eyebrow,.hero h1,.hero .lede,.hero .pills,.hero .herocta,.hero .herosub,.hero .prline{animation:none;}
+    .hero h1 em{animation:none;background-size:100% 100%;}
+    .herocta .arrow{animation:none;}
+    .stamp.on{animation:none;opacity:.92;}
+    .reveal{opacity:1;transform:none;}
+    .site,.site-cta,.site-cta .arrow,.seg button::before{transition:none;}
+  }
+  @media (min-width:560px){
+    .seg.cols4{grid-template-columns:repeat(4,1fr);}
+    .seg.cols4 button.wide{grid-column:auto;}
+  }
+  .empty-article{display:inline-block;margin-top:10px;font-weight:800;
+    color:var(--ai-deep);text-decoration:none;border-bottom:2px solid currentColor;
+    padding-bottom:2px;}
+  .empty-article:hover{opacity:.75;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="demobadge">DEMO ── 営業用デモ表示中・計測とリンクは無効です</span>
+  <p class="eyebrow">SHIKIN CHECK ── タップ最短1回・判定まで 30秒</p>
+  <h1>その資金調達、<br><em>選択肢を間違えて</em>いませんか？</h1>
+  <p class="lede">いつまでに必要か・売掛金の有無・金融機関の状況を選ぶだけ。ファクタリング・ビジネスローン・公庫融資、そして「いまは調達しない」まで含めて、あなたの状況で先に検討すべき順番を中立に判定します。</p>
+  <div class="pills"><span class="pill">連絡先の入力なし</span><span class="pill">営業電話は来ません</span><span class="pill">その場で結果表示</span></div>
+  <a href="#sheetForm" class="herocta" id="heroCta">30秒で診断する<span class="arrow">↓</span></a>
+  <p class="herosub">タップだけ・会社名やメールの入力は一切ありません</p>
+  <p class="prline">［PR］本ページはアフィリエイト広告を含みます</p>
+</header>
+
+<main class="wrap">
+
+  <noscript><div class="card">診断の実行にはJavaScriptが必要です。Safari や Chrome などのブラウザで開いてください。</div></noscript>
+
+  <section class="card sheet-form" id="sheetForm" aria-label="診断フォーム">
+    <div class="sheet-head form-head">
+      <span class="sheet-title">状況確認票</span>
+      <span class="sheet-date" id="formProgress" aria-live="polite">記入 0/1</span>
+    </div>
+
+    <div class="field" id="fUrgency">
+      <span class="lbl"><span class="no">Q1</span>いつまでに資金が必要？</span>
+      <div class="seg" id="urgency">
+        <button data-v="d3">今日〜3日以内</button>
+        <button data-v="w2">1〜2週間以内</button>
+        <button data-v="m1">1ヶ月以上先</button>
+        <button data-v="none">今すぐではない<br><small>資金繰りの体質を直したい</small></button>
+      </div>
+    </div>
+
+    <div class="field hidden" id="fRecv">
+      <span class="lbl"><span class="no">Q2</span>企業向けの売掛金（未入金の請求書）はある？</span>
+      <div class="seg" id="recv">
+        <button data-v="big">ある・100万円以上</button>
+        <button data-v="small">ある・100万円未満</button>
+        <button data-v="no" class="wide">ない／取引先は個人客が中心</button>
+      </div>
+    </div>
+
+    <div class="field hidden" id="fBank">
+      <span class="lbl"><span class="no">Q3</span>銀行・公庫からの借入の状況は？</span>
+      <div class="seg" id="bank">
+        <button data-v="ok">借入なし・枠に余裕あり</button>
+        <button data-v="mid">借入あり・返済中</button>
+        <button data-v="ng">断られた／リスケ中</button>
+        <button data-v="tax">税金・社会保険に滞納あり</button>
+      </div>
+    </div>
+
+    <div class="field hidden" id="fForm">
+      <span class="lbl"><span class="no">Q4</span>事業形態は？</span>
+      <div class="seg" id="bizform">
+        <button data-v="corp">法人</button>
+        <button data-v="solo">個人事業主・フリーランス</button>
+      </div>
+    </div>
+
+    <div class="field hidden" id="fSecret">
+      <span class="lbl"><span class="no">Q5</span>資金調達を取引先に知られたくない？</span>
+      <div class="seg" id="secret">
+        <button data-v="yes">絶対に知られたくない</button>
+        <button data-v="no">知られてもかまわない</button>
+      </div>
+    </div>
+
+    <button class="cta" id="go" disabled>判定を見る</button>
+    <p class="ctanote">✓ 無料　✓ 連絡先の入力なし　✓ その場で結果表示</p>
+  </section>
+
+  <!-- ================= 結果：判定書 ================= -->
+  <section id="result" class="hidden" aria-live="polite">
+    <div class="sheet">
+      <div class="sheet-head">
+        <span class="sheet-title">資金繰り判定書</span>
+        <span class="sheet-date" id="issued"></span>
+      </div>
+      <p class="verdict-name" id="verdictName"></p>
+      <p class="vmsg" id="msg"></p>
+      <p class="vwarn hidden" id="taxwarn"><strong>滞納がある場合の注意:</strong> 税金・社会保険の滞納があると銀行融資はほぼ通らず、ファクタリングは利用できる場合がありますが手数料は高止まりしがちです。さらに滞納が進んで売掛債権が差し押さえられると、債権譲渡そのものが成立しなくなります。調達と並行して、税務署・年金事務所への<strong>納付相談（分割納付）</strong>を最優先で進めてください。</p>
+      <p class="basis" id="basis"></p>
+      <p class="sheet-imprint">SHIKIN CHECK ── clawtechjp.com/shikin</p>
+      <span class="stamp" id="stamp" aria-hidden="true">判定<br>済</span>
+    </div>
+
+    <!-- 手取りシミュレーター(ファクタリング系の分岐のみ表示) -->
+    <div class="calc hidden" id="calc">
+      <h3>手取りはいくら残るか ── 額面を動かして確認</h3>
+      <div class="amt"><span>売掛金の額面</span><b><span id="calcAmt">100</span>万円</b></div>
+      <input type="range" id="amtRange" min="30" max="1000" step="10" value="100" aria-label="売掛金の額面(万円)">
+      <dl class="ledger">
+        <div class="lrow"><dt>手数料の相場</dt><dd id="feeRange">---</dd></div>
+        <div class="lrow netrow"><dt>手取りの目安</dt><dd><span id="netRange">---</span><small>万円</small></dd></div>
+      </dl>
+      <p class="apr" id="aprLine"></p>
+      <p class="aprnote">※手数料率は各分岐の一般的な相場レンジによる概算です。実際の料率は売掛先の信用力・金額・利用回数で変わります。年率換算は「入金までの立て替え期間に対する費用」を年利に引き直した参考値で、ファクタリングは借入ではないため法律上の金利ではありません。</p>
+    </div>
+
+    <h2 class="sec-t" id="sitesTitle"></h2>
+    <p class="sec-fit" id="sitesFit"></p>
+    <p class="textlead" id="textLead"></p>
+    <div id="sites"></div>
+
+    <div class="checkcard" id="checkcard">
+      <h3>申し込む前の3点チェック（悪質業者の見分け方）</h3>
+      <ul>
+        <li><strong>「償還請求権あり」の契約は結ばない。</strong>売掛先が倒産したとき利用者が買い戻す契約は実質的な貸付であり、貸金業登録のない業者が行えばヤミ金融です。「ノンリコース（償還請求権なし）」の明記を確認。</li>
+        <li><strong>個人の給与を対象にする「給与ファクタリング」は使わない。</strong>金融庁の見解で貸金業に該当し、無登録業者はヤミ金融です。</li>
+        <li><strong>契約書・見積書を渡さない業者とは取引しない。</strong>手数料の内訳（基本手数料以外の諸費用）を書面で確認できない業者は避ける。</li>
+      </ul>
+      <p>参考: <a href="https://www.fsa.go.jp/user/factoring.html" target="_blank" rel="noopener">金融庁「ファクタリングの利用に関する注意喚起」</a></p>
+    </div>
+
+    <div class="demoexplain">
+      <h3>この診断の仕組み（デモ解説）</h3>
+      <p>回答から6つの分岐（2社間ファクタリング／少額・個人向け／3社間／ビジネスローン／公庫融資／調達を勧めない）に振り分け、紹介枠は分岐内で「実効EPC＝EPC×確定率」の実測値をもとに毎日自動で並び替えています。全員を収益案件に流さない中立分岐を持つのが設計の要点です。</p>
+      <p>同型の「診断型リード獲得ツール」を貴社サイト向けに制作できます（制作30万円〜）。<a href="https://clawtechjp.com/shindan.html?src=shikin-demo">→ ClawTechに相談する</a></p>
+    </div>
+
+    <p class="note">
+      ※本ページはアフィリエイト広告(PR)を含みます。掲載事業者から成果報酬を受け取る場合があります。<br>
+      ※この判定は回答内容にもとづく簡易的な目安であり、個別の財務状況に対する助言ではありません。実際の利用可否・条件は各社の審査によります。<br>
+      ※当サイトは貸付・媒介・斡旋を行いません。個別の申込手続き・条件交渉には関与しません。
+    </p>
+  </section>
+
+  <!-- ===== 解説(常時表示。判定根拠の開示 + 検索・空状態の受け皿) ===== -->
+  <section class="doc" aria-label="資金調達手段の考え方">
+    <h2 class="doc-h2" id="doc-order">資金調達には「検討する順番」がある</h2>
+    <p>資金繰りが苦しくなったとき、目に入りやすいのは「最短即日」「審査なし」をうたう調達手段です。しかしコストは手段によって桁が違います。急がない状況であれば、コストの低い順＝<strong>公的融資 → 銀行融資 → ビジネスローン → ファクタリング</strong>の順に検討するのが原則です。この診断が最初に「いつまでに必要か」を聞くのは、残された時間によって選べる手段が変わるためです。</p>
+    <div class="doc-tablewrap">
+      <table class="doc-table">
+        <thead><tr><th>手段</th><th>コストの目安</th><th>入金までの時間</th></tr></thead>
+        <tbody>
+          <tr><td>日本政策金融公庫</td><td>年1〜3%台の金利</td><td>2週間〜1ヶ月以上</td></tr>
+          <tr><td>銀行融資・信用保証協会付き融資</td><td>年1〜3%程度＋保証料</td><td>2週間〜1ヶ月以上</td></tr>
+          <tr><td>ビジネスローン（ノンバンク）</td><td>年3〜18%程度</td><td>即日〜数日</td></tr>
+          <tr><td>ファクタリング（3社間）</td><td>売掛金の2〜9%程度／回</td><td>数日〜1週間</td></tr>
+          <tr><td>ファクタリング（2社間）</td><td>売掛金の8〜18%程度／回</td><td>最短即日</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="doc-note">※コスト・期間は一般的な目安です。ファクタリングの手数料は「1回の売掛金に対する割合」であり、年率ではない点に注意してください（下記参照）。</p>
+
+    <h2 class="doc-h2" id="doc-fee">ファクタリングの手数料を「年率」に引き直すと</h2>
+    <p>ファクタリングの手数料10%は、一見するとカードローンの年利より安く見えます。しかしこれは「入金までの30日を立て替えるための費用が10%」という意味です。同じことを1年間繰り返すと考えて年率に引き直すと、<strong>10% × 365日 ÷ 30日 ≒ 年率122%相当</strong>になります。銀行融資の金利(年1〜3%)とは比較にならないコストです。</p>
+    <p>だからこそファクタリングは「毎月使う資金繰りの手段」ではなく、<strong>入金と支払いのズレを一度だけ埋める応急手当</strong>として使うのが正しい位置づけです。2回、3回と続けて使い始めたら、それは資金繰りの構造自体に問題があるサインであり、公庫融資への借り換えや支払サイトの交渉など、根本の対策に切り替えるべき局面です。</p>
+
+    <h2 class="doc-h2" id="doc-nofact">ファクタリングを使うべきでない状況</h2>
+    <ul class="doc-list">
+      <li><strong>企業向けの売掛金がない場合。</strong>ファクタリングは売掛債権の売買であり、個人客中心の商売（飲食・美容・小売など）では原則使えません。この場合の選択肢はビジネスローンか公的融資です。</li>
+      <li><strong>1ヶ月以上の時間的余裕がある場合。</strong>公庫や制度融資の審査を待てるなら、コストは10分の1以下で済みます。急ぎでないのに最速の手段を選ぶ理由はありません。</li>
+      <li><strong>既に資金繰りが恒常的に赤字の場合。</strong>ファクタリングは将来の入金を先食いする仕組みのため、赤字の穴埋めに使うと翌月の資金繰りがさらに苦しくなります。この状況で必要なのは調達ではなく、リスケジュール（返済条件の変更）や専門家への相談です。</li>
+    </ul>
+
+    <h2 class="doc-h2" id="doc-2026">2026年の制度変更と資金繰り</h2>
+    <p>2026年1月に施行された取引適正化の法改正（いわゆる取適法）により、下請事業者への<strong>手形払いが禁止</strong>され、代金は発注から<strong>60日以内</strong>に支払うことが求められるようになりました。また紙の約束手形は2026年度末までに利用廃止が目標とされています。受注側にとっては入金サイトが短くなる追い風であり、「支払いが遅い取引先」に対しては、この法改正を根拠に支払条件の交渉を持ちかけられる状況が生まれています。高い手数料を払って売掛金を早期化する前に、支払条件そのものを見直せないかを確認する価値があります。</p>
+
+    <h2 class="doc-h2" id="doc-check">悪質業者を避けるための基礎知識</h2>
+    <p>ファクタリング業自体には許認可制度がなく、参入障壁が低いため、貸付に該当する契約を「ファクタリング」と称して行う悪質業者が混在しています。金融庁も<a href="https://www.fsa.go.jp/user/factoring.html" target="_blank" rel="noopener">注意喚起</a>を公表しています。見分け方の要点は結果画面の3点チェックのとおりですが、原則として「償還請求権の有無」「契約書面の交付」「手数料の内訳開示」の3つを確認すれば、大half の悪質業者は避けられます。当サイトで紹介する事業者はノンリコース契約を明示している事業者に限定しています。</p>
+
+    <h2 class="doc-h2">よくある質問</h2>
+    <div class="faq">
+      <h3 class="doc-h3">診断に会社名や連絡先の入力は必要ですか？</h3>
+      <p>不要です。タップで答えるだけで、その場で結果が表示されます。氏名・会社名・メールアドレス・電話番号などの入力欄は一切なく、当サイトから営業の連絡が行くことはありません。</p>
+      <h3 class="doc-h3">診断は無料ですか？</h3>
+      <p>無料です。なお本ページは資金調達サービスのアフィリエイト広告（PR）を含みます。</p>
+      <h3 class="doc-h3">必ずファクタリングを勧められるのですか？</h3>
+      <p>いいえ。この診断には「公庫などの融資を先に検討すべき」「いまは追加調達をすべきでない」という判定が最初から組み込まれており、状況によっては当サイトの収益にならない選択肢を提示します。</p>
+      <h3 class="doc-h3">給与ファクタリングも対象ですか？</h3>
+      <p>対象外です。個人の給与を債権として買い取る給与ファクタリングは貸金業に該当するというのが金融庁の見解であり、無登録で行う業者はヤミ金融です。当サイトは事業者の売掛債権に関する情報のみを扱います。</p>
+      <h3 class="doc-h3">診断結果は正確ですか？</h3>
+      <p>簡易的な目安です。回答内容から一般的に妥当と考えられる選択肢のカテゴリを提示するものであり、個別の財務状況に基づく助言ではありません。実際の可否・条件は各社の審査や金融機関の判断によります。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p><a href="blog/">資金繰りの読みもの</a></p>
+  <p>運営: <a href="https://clawtechjp.com/" target="_blank" rel="noopener">ClawTech（クロウテック）</a>　/　<a href="https://nenshu.clawtechjp.com/" target="_blank" rel="noopener">年収UPシミュレーター</a></p>
+  <p>この診断のような「診断型リード獲得ツール」を貴社サイトにも: <a href="https://clawtechjp.com/shindan.html?src=shikin">ClawTechに相談する</a></p>
+</footer>
+
+<script>
+// ================================================================
+// 設定
+// ================================================================
+const SITE_URL = "https://clawtechjp.com/shikin/";
+// 営業デモモード(?demo=1): 計測とアフィリンクを無効化し、仕組み解説カードを出す。
+// 営業メール・CW提案に渡すURLは必ず ?demo=1 付き(素URLは渡さない)。
+const DEMO = new URLSearchParams(location.search).get("demo") === "1";
+if(DEMO) document.body.classList.add("demo");
+
+// --- アフィリエイトURL ---
+// コメントのs番号はA8のプログラムID。掲載サイトはA8副サイト004(clawtechjp.com/shikin/)。
+// "#"始まり=未承認。承認されると a8_link_sync.py が毎日実リンクへ自動で書き換える。
+// ===== 実効EPC(円/クリック) = A8実測のEPC × 確定率 =====
+// 2026-08-17 UU方針:「大事なのは確定率。単価だけで判断しない」
+// さらに2026-08-21追加: 含意CVR(EPC÷報酬単価)が20%を超える値はセルフバック混入の
+// 疑いがあるため上限20%で丸める(a8_link_sync.py実装済み)。
+// 初期値は2026-08-17のA8ジャンル調査(a8_genre_survey.json)の実測スナップショット。
+// この表は a8_link_sync.py が毎日A8から取得して自動更新する。
+const EFFECTIVE_EPC = {
+  qukumo:     1473, // s00000021184002 実測 EPC1909.49x確定率77.12%
+  no1:        1203, // s00000020552001 実測 EPC1745.5x確定率68.9%
+  beetrading: 848,  // s00000017625001 実測 EPC1181.5x確定率71.8%
+  factorplan: 460,  // s00000023181001 実測 確定率100%
+  labol:      570,  // s00000018733008 実測 含意CVR25%のため上限20%で丸め(3000x0.2x0.95)
+};
+
+const AFFILIATE_URLS = {
+  qukumo:     "#qukumo",     // s00000021184002 QuQuMo(新規無料見積申込¥11,000/実効EPC1,473円)
+  no1:        "#no1",        // s00000020552001 株式会社No.1(新規WEB申込¥20,000/実効EPC1,203円)
+  beetrading: "#beetrading", // s00000017625001 ビートレーディング(新規問い合わせ¥11,000/実効EPC848円)
+  factorplan: "#factorplan", // s00000023181001 ファクタープラン(確定率100%/実効EPC460円)
+  labol:      "#labol",      // s00000018733008 ラボル(新規会員登録¥3,000/個人事業主・少額特化)
+};
+
+// A8インプレッションピクセル。nenshuの反省(ページ最下部に無条件設置→imp=全PVで
+// 分母崩壊、CTR1.74%を誤診)を踏まえ、【カードを実際に描画した時だけ】動的に挿入する。
+// 承認後、広告リンク作成画面のimpタグURLをここに転記する(a8_link_sync対応までは手動)。
+const IMP_PIXELS = {
+  qukumo:     "",
+  no1:        "",
+  beetrading: "",
+  factorplan: "",
+  labol:      "",
+};
+
+// ===== GA4計測(デモ時は送信しない=計測汚染防止) =====
+function track(ev, params){ if(DEMO) return; if(typeof gtag==="function") gtag("event", ev, params||{}); }
+
+// ===== 紹介サービスDB(分岐タグ+実効EPC参照) =====
+const SITES = [
+  {key:"qukumo",     name:"QuQuMo",           branches:["A","B"], rs:"申込から入金までオンライン完結・最短2時間。2社間で取引先への通知なし。個人事業主も利用可",
+   facts:["2社間","オンライン完結","最短2時間"]},
+  {key:"no1",        name:"株式会社No.1",      branches:["A"],     rs:"2社間・3社間の両対応。財務コンサルティングも行う総合型",
+   facts:["2社間/3社間","相談型"]},
+  {key:"beetrading", name:"ビートレーディング", branches:["A","C"], rs:"取扱実績が多い大手。2社間・3社間の両対応で少額から相談できる",
+   facts:["2社間/3社間","実績多数"]},
+  {key:"factorplan", name:"ファクタープラン",   branches:["C"],     rs:"3社間中心の低コスト型。取引先に知られてよいなら手数料を抑えやすい",
+   facts:["3社間","低コスト型"]},
+  {key:"labol",      name:"ラボル",            branches:["B"],     rs:"1万円から買取可の少額特化。フリーランス・個人事業主向けで24時間365日入金対応",
+   facts:["1万円から","個人事業主向け","24時間入金"]},
+];
+
+// ===== 分岐定義 =====
+// fee: 手数料相場[下限%,上限%](nullならシミュレーター非表示)
+// article: 空状態・補足の読みもの(blog/)
+const BRANCHES = {
+  A: {name:"2社間ファクタリング型", warnStamp:false, fee:[8,18],
+      msg:"期限が迫っていて、取引先に知られたくない状況です。売掛金を業者に直接売却する「2社間ファクタリング」なら取引先への通知なしで最短即日の資金化が可能です。ただし手数料は高く(相場8〜18%)、繰り返し使う手段ではありません。1回で止める前提で、下のシミュレーターで手取り額を確認してから動いてください。",
+      lead:"オンライン完結で取引先に通知されない事業者から、条件を確認するのが早道です。",
+      article:["2社間と3社間の違い｜同じ売掛金で手数料が倍以上変わる構造","blog/nishakan-sanshakan-chigai.html"]},
+  B: {name:"少額・個人事業主特化型", warnStamp:false, fee:[3,10],
+      msg:"売掛金が少額の場合、一般のファクタリング業者は対応を渋るか手数料が割高になりがちです。少額買取に特化した事業者なら1万円台の請求書から資金化でき、個人事業主・フリーランスでも利用できます。",
+      lead:"少額特化型の事業者から条件を確認するのが確実です。",
+      article:["2社間と3社間の違い｜同じ売掛金で手数料が倍以上変わる構造","blog/nishakan-sanshakan-chigai.html"]},
+  C: {name:"3社間ファクタリング型", warnStamp:false, fee:[2,9],
+      msg:"取引先に知られてもよいなら、取引先を含めた「3社間ファクタリング」が使えます。売掛先が支払いに同意する分、業者のリスクが下がり、手数料は2社間の半分以下(相場2〜9%)になり得ます。数日の余裕があるなら2社間より先に検討すべき選択肢です。",
+      lead:"3社間に対応した事業者で、まず見積もりを取って2社間との差を確認してください。",
+      article:["2社間と3社間の違い｜同じ売掛金で手数料が倍以上変わる構造","blog/nishakan-sanshakan-chigai.html"]},
+  D: {name:"ビジネスローン検討型", warnStamp:false, fee:null,
+      msg:"企業向けの売掛金がないため、ファクタリングは原則使えません。急ぎの場合の現実的な選択肢はノンバンクのビジネスローン(即日〜数日・年3〜18%程度)ですが、借入である以上、返済計画が立たないまま借りるのは危険です。数日でも待てるなら、公的融資の可能性も並行して確認してください。",
+      lead:"当サイトは現在ビジネスローンの特定事業者を紹介していません。中立の情報として、公的融資を含めた選択肢の整理を下の読みものにまとめています。",
+      article:["公庫に断られた後、まだ残っている選択肢","blog/koko-kotowarareta-sentakushi.html"]},
+  E: {name:"公的融資優先型", warnStamp:false, fee:null,
+      msg:"時間の余裕があり、金融機関との関係も健全です。この状況で手数料の高い調達手段を選ぶ理由はありません。日本政策金融公庫(年1〜3%台)や自治体の制度融資を先に検討してください。ファクタリングの手数料8〜18%は「30日の立て替え」への対価であり、年率に引き直すと桁が変わります。",
+      lead:"急がない資金調達で最初に当たるべきは公庫です。申請の流れと断られた場合の次の手は、下の読みものに整理しています。",
+      article:["公庫に断られた後、まだ残っている選択肢","blog/koko-kotowarareta-sentakushi.html"]},
+  F: {name:"体質改善優先型", warnStamp:false, fee:null,
+      msg:"いま必要なのは調達ではなく、資金繰りの構造を直すことです。2026年施行の取適法で手形払いは禁止され、支払いは60日以内が原則になりました。支払いの遅い取引先への条件交渉、入金と支払いのズレの把握(資金繰り表)、固定費の見直し——お金をかけずに効く手段から着手してください。",
+      lead:"最初の一歩は支払サイトの交渉です。法改正を根拠にした交渉の進め方と文例を読みものにまとめています。",
+      article:["支払いサイト交渉の進め方と文例｜取適法の60日ルールを味方にする","blog/shiharai-site-kosho-bunrei.html"]},
+  F2:{name:"追加調達 非推奨", warnStamp:true, fee:null,
+      msg:"金融機関に断られている・滞納があるうえに売掛金もない状況での追加調達は、条件の悪い借入しか残っておらず、傷を深くする可能性が高い局面です。必要なのは調達ではなく、返済条件の変更(リスケジュール)の相談、税・社保の分割納付の相談、そして資金繰りの現状把握です。商工会議所や中小企業活性化協議会など、無料で相談できる公的窓口があります。",
+      lead:"この状況で「審査なし」「即日」をうたう業者に近づくのは最も危険です。まず公的な相談窓口と、支払条件の見直しから着手してください。",
+      article:["支払いサイト交渉の進め方と文例｜取適法の60日ルールを味方にする","blog/shiharai-site-kosho-bunrei.html"]},
+};
+const ORDINAL = ["壱","弐","参"];
+
+// ===== 状態管理(分岐に応じて質問を出し分ける) =====
+const st = {urgency:"",recv:"",bank:"",bizform:"",secret:""};
+let started = false;
+function firstTouch(){ if(!started){ track("shikin_start"); started=true; } }
+const NO_MOTION = ()=>window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// 質問の表示条件。緊急層を3問で逃さないため、不要な質問はDOMごと隠す
+function visibleFields(){
+  const v = ["urgency"];
+  if(st.urgency && st.urgency !== "none") v.push("recv");
+  if(st.recv) v.push("bank");
+  if(st.recv === "small") v.push("bizform");
+  // 売掛あり(かつ少額×個人でB確定でない)なら2社間/3社間の分岐にQ5が要る
+  if(st.recv === "big" || (st.recv === "small" && st.bizform === "corp")) v.push("secret");
+  return v;
+}
+const FIELD_EL = {urgency:"fUrgency",recv:"fRecv",bank:"fBank",bizform:"fForm",secret:"fSecret"};
+
+function branchOf(){
+  if(st.urgency === "none") return "F";
+  if(!st.recv || !st.bank) return null;
+  if(st.recv === "no"){
+    if(st.bank === "ng" || st.bank === "tax") return "F2";
+    if(st.urgency === "m1") return "E";
+    return "D";
+  }
+  if(st.urgency === "m1" && st.bank === "ok") return "E";
+  if(st.recv === "small"){
+    if(!st.bizform) return null;
+    if(st.bizform === "solo") return "B";
+  }
+  if(!st.secret) return null;
+  return st.secret === "yes" ? "A" : "C";
+}
+
+function sync(){
+  const vis = visibleFields();
+  Object.entries(FIELD_EL).forEach(([k,id])=>{
+    document.getElementById(id).classList.toggle("hidden", !vis.includes(k));
+  });
+  const filled = vis.filter(k=>st[k]).length;
+  document.getElementById("formProgress").textContent = `記入 ${filled}/${vis.length}`;
+  const go = document.getElementById("go");
+  const wasDisabled = go.disabled;
+  go.disabled = branchOf() === null;
+  if(wasDisabled && !go.disabled && !NO_MOTION()){
+    go.classList.remove("ready"); void go.offsetWidth; go.classList.add("ready");
+  }
+}
+
+[["urgency","urgency"],["recv","recv"],["bank","bank"],["bizform","bizform"],["secret","secret"]].forEach(([key,id])=>{
+  document.querySelectorAll(`#${id} button`).forEach(b=>{
+    b.setAttribute("aria-pressed","false");
+    b.onclick=()=>{
+      document.querySelectorAll(`#${id} button`).forEach(x=>{
+        x.classList.remove("on"); x.setAttribute("aria-pressed","false");
+      });
+      b.classList.add("on"); b.setAttribute("aria-pressed","true");
+      st[key]=b.dataset.v;
+      firstTouch(); sync();
+    };
+  });
+});
+
+// ===== 判定 =====
+let lastSig = "";
+document.getElementById("go").onclick=()=>{
+  const br = branchOf();
+  if(!br) return;
+  const B = BRANCHES[br];
+  const taxWarn = st.bank === "tax" && ["A","B","C"].includes(br);
+
+  const now = new Date();
+  document.getElementById("issued").textContent =
+    `判定日 ${now.getFullYear()}.${String(now.getMonth()+1).padStart(2,"0")}.${String(now.getDate()).padStart(2,"0")}`;
+  const vn = document.getElementById("verdictName");
+  vn.textContent = B.name;
+  vn.classList.toggle("warn", !!B.warnStamp);
+  document.getElementById("msg").textContent = B.msg;
+  document.getElementById("taxwarn").classList.toggle("hidden", !taxWarn);
+  document.getElementById("basis").textContent =
+    "判定根拠: 資金が必要な期限・売掛金の有無・金融機関の状況から、コストの低い順(公的融資→銀行→ローン→ファクタリング)を原則に選択肢を絞り込んだ結果";
+
+  const stamp = document.getElementById("stamp");
+  stamp.classList.toggle("warn", !!B.warnStamp);
+  stamp.classList.remove("on");
+  setTimeout(()=>{ stamp.classList.add("on"); }, NO_MOTION() ? 0 : 700);
+
+  // ---- 手取りシミュレーター ----
+  const calc = document.getElementById("calc");
+  if(B.fee){
+    calc.classList.remove("hidden");
+    calc.dataset.lo = B.fee[0]; calc.dataset.hi = B.fee[1];
+    updateCalc();
+  }else{
+    calc.classList.add("hidden");
+  }
+
+  // ---- 分岐内の紹介カード(実効EPC順+探索乱数) ----
+  const isReady = s=>!String(AFFILIATE_URLS[s.key]).startsWith("#");
+  const cand = SITES.filter(s=>s.branches.includes(br) && isReady(s));
+  const epcValues = Object.values(EFFECTIVE_EPC).filter(v=>typeof v==="number"&&v>0).sort((a,b)=>a-b);
+  const epcMedian = epcValues.length ? epcValues[Math.floor(epcValues.length/2)] : 50;
+  const effOf = s=>{
+    const v = EFFECTIVE_EPC[s.key];
+    return (typeof v==="number"&&v>0) ? v : epcMedian;
+  };
+  // 分岐内のみのソート。分岐横断でEPC順にすると「高EPC案件へ誘導する診断」になり
+  // 中立性(この診断の存在価値)が死ぬので、絶対に分岐をまたいでソートしない
+  const scored = cand.map(s=>({...s, sc: Math.sqrt(effOf(s))*6 + Math.random()*10}))
+                     .sort((a,b)=>b.sc-a.sc).slice(0,3);
+
+  const titleEl = document.getElementById("sitesTitle");
+  const fitEl = document.getElementById("sitesFit");
+  const leadEl = document.getElementById("textLead");
+  const box = document.getElementById("sites"); box.innerHTML="";
+  document.querySelectorAll(".a8imp-dyn").forEach(el=>el.remove());
+
+  if(["D","E","F","F2"].includes(br) || scored.length===0){
+    // 無収益分岐(中立性のコスト・意図的) or 未承認期間の空状態
+    titleEl.textContent = "次の一歩";
+    const art = B.article;
+    if(["A","B","C"].includes(br)){
+      // 収益分岐だが提携が未承認の期間: 準備中と明示して読みものへ送る
+      fitEl.innerHTML = "条件に合う事業者の紹介枠は現在準備中です。";
+      track("shikin_empty_state_shown",{branch:br});
+    }else{
+      fitEl.innerHTML = "";
+    }
+    leadEl.innerHTML = B.lead +
+      (art ? `<br><a class="empty-article" href="${art[1]}" data-branch="${br}">${art[0]} →</a>` : "");
+    const ea = leadEl.querySelector(".empty-article");
+    if(ea) ea.addEventListener("click",()=>track("shikin_article_click",{branch:br, pos:"empty"}));
+  }else{
+    titleEl.textContent = `条件を確認できる事業者 ${scored.length}社`;
+    fitEl.innerHTML = `判定: <b>${B.name}</b> に対応する事業者を、実測データにもとづき掲載`;
+    // 本文型テキストリンク(実測でカードの数十倍クリックされる型)を先頭カードに向けて置く
+    const topName = scored[0].name;
+    leadEl.innerHTML = B.lead +
+      ` まずは<a class="inline-link" href="${AFFILIATE_URLS[scored[0].key]}" target="_blank" rel="noopener sponsored" id="leadLink">${topName}の無料見積もり</a>で実際の手数料を確認するのが確実です。` +
+      (B.article ? `<br>仕組みを先に知りたい方: <a class="empty-article" href="${B.article[1]}" data-branch="${br}">${B.article[0]} →</a>` : "");
+    const ll = leadEl.querySelector("#leadLink");
+    if(ll){
+      if(DEMO){ ll.removeAttribute("href"); }
+      ll.addEventListener("click",()=>track("shikin_site_click",{site_name:topName, rank:0, placement:"text", branch:br}));
+    }
+    const ea2 = leadEl.querySelector(".empty-article");
+    if(ea2) ea2.addEventListener("click",()=>track("shikin_article_click",{branch:br, pos:"lead"}));
+
+    const motion = !NO_MOTION();
+    scored.forEach((s,i)=>{
+      const a=document.createElement("a");
+      if(!DEMO){ a.href=AFFILIATE_URLS[s.key]; a.target="_blank"; a.rel="noopener sponsored"; }
+      const isTop = i===0;
+      a.className="site"+(isTop?" top":"");
+      a.innerHTML=`
+        <div class="ord"><small>其の</small>${ORDINAL[i]||i+1}</div>
+        <div class="nm">${s.name}</div>
+        <div class="facts">${s.facts.map(f=>`<span>${f}</span>`).join("")}</div>
+        <p class="rs">${s.rs}</p>
+        <div class="site-cta">無料で見積もりを確認<span class="arrow" aria-hidden="true">→</span></div>`;
+      if(motion){
+        a.style.setProperty("--d", (420 + i*130) + "ms");
+        a.classList.add("drop");
+      }
+      // 分母イベント: カードが実際に描画された回数(nenshuに無かった計測。
+      // これが無いとカードCTRが永遠に測れない=OUT_B致命傷3の再発)
+      track("shikin_site_impression",{site_name:s.name, rank:i+1, branch:br});
+      // A8側のimpも「表示された時だけ」発火させる(全PV発火の分母崩壊を再現しない)
+      if(!DEMO && IMP_PIXELS[s.key]){
+        const img=document.createElement("img");
+        img.src=IMP_PIXELS[s.key]; img.width=1; img.height=1; img.alt="";
+        img.style.position="absolute"; img.className="a8imp-dyn";
+        document.body.appendChild(img);
+      }
+      a.addEventListener("click",()=>track("shikin_site_click",{site_name:s.name, rank:i+1, placement:"card", branch:br}));
+      box.appendChild(a);
+    });
+  }
+
+  const res=document.getElementById("result");
+  res.classList.remove("hidden"); res.classList.add("show");
+  if(!NO_MOTION()){
+    const sheet = res.querySelector(".sheet");
+    sheet.classList.remove("issue"); void sheet.offsetWidth;
+    sheet.classList.add("issue");
+    const t = document.getElementById("sitesTitle");
+    t.classList.remove("draw"); void t.offsetWidth; t.classList.add("draw");
+  }
+  res.scrollIntoView({behavior:NO_MOTION()?"auto":"smooth"});
+
+  const sig = [st.urgency,st.recv,st.bank,st.bizform,st.secret].join("|");
+  if(sig !== lastSig){
+    lastSig = sig;
+    track("shikin_complete",{branch:br, urgency:st.urgency, recv:st.recv, bank:st.bank});
+  }
+};
+
+// ===== 手取りシミュレーター =====
+const amtRange = document.getElementById("amtRange");
+function updateCalc(){
+  const calc = document.getElementById("calc");
+  const lo = +calc.dataset.lo || 8, hi = +calc.dataset.hi || 18;
+  const amt = +amtRange.value;
+  document.getElementById("calcAmt").textContent = amt;
+  document.getElementById("feeRange").textContent = `${lo}〜${hi}%`;
+  const netHi = Math.round(amt*(100-lo))/100, netLo = Math.round(amt*(100-hi))/100;
+  document.getElementById("netRange").textContent = `${netLo}〜${netHi}`;
+  const mid = (lo+hi)/2;
+  const apr = Math.round(mid*365/30);
+  document.getElementById("aprLine").textContent =
+    `参考: 入金まで30日の売掛金で手数料${mid}%なら、年率に引き直すと約${apr}%相当。銀行融資(年1〜3%)とは桁が違うコストです。`;
+}
+let calcTracked = false;
+amtRange.addEventListener("input", ()=>{
+  updateCalc();
+  if(!calcTracked){ track("shikin_calc_used"); calcTracked = true; }
+});
+
+// ===== 解説セクションのスクロール演出 =====
+if(!NO_MOTION() && "IntersectionObserver" in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting) return;
+      en.target.classList.add(en.target.classList.contains("doc-h2") ? "draw" : "in");
+      io.unobserve(en.target);
+    });
+  }, {rootMargin:"0px 0px -12% 0px", threshold:0.15});
+  document.querySelectorAll(".doc-h2").forEach(el=>{ el.classList.add("pre"); io.observe(el); });
+  document.querySelectorAll(".doc-tablewrap").forEach(el=>{ el.classList.add("reveal"); io.observe(el); });
+}
+</script>
+</body>
+</html>
