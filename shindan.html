@@ -254,6 +254,10 @@ footer a:hover{color:#fff}
       <h3>業種別の詳細レポートを無料で受け取る</h3>
       <p>あなたの回答内容をもとにした改善ロードマップを、メールでお届けします（勧誘の電話は一切ありません）。</p>
       <form id="leadForm" action="https://formspree.io/f/xpqjbyya" method="POST">
+        <!-- 2026-08-22: スパムボット対策(Formspree標準のハニーポット)。
+             人間には見えない欄で、埋まっていた送信はFormspree側で破棄される。
+             無料枠は月50件なので、bot送信で枠を食われると本物の問い合わせが届かなくなる -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important">
         <input type="hidden" name="_subject" id="leadSubject" value="【DX診断リード】">
         <input type="hidden" name="診断Lv" id="fLv">
         <input type="hidden" name="Q1_業種" id="fQ1">

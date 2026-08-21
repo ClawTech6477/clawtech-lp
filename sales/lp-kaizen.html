@@ -361,6 +361,10 @@ footer a:hover{color:#fff;}
     </div>
     <div class="contact-form fade-up">
       <form action="https://formspree.io/f/xpqjbyya" method="POST">
+        <!-- 2026-08-22: スパムボット対策(Formspree標準のハニーポット)。
+             人間には見えない欄で、埋まっていた送信はFormspree側で破棄される。
+             無料枠は月50件なので、bot送信で枠を食われると本物の問い合わせが届かなくなる -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important">
         <input type="hidden" name="_subject" value="【LP自動改善】お問い合わせ">
         <div class="form-group">
           <label>お名前 <span class="req">*</span></label>

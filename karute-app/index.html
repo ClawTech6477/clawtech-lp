@@ -742,6 +742,10 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
     </div>
     <div class="contact-right" data-aos="fade-left">
       <form action="https://formspree.io/f/xpqjbyya" method="POST">
+        <!-- 2026-08-22: スパムボット対策(Formspree標準のハニーポット)。
+             人間には見えない欄で、埋まっていた送信はFormspree側で破棄される。
+             無料枠は月50件なので、bot送信で枠を食われると本物の問い合わせが届かなくなる -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none !important">
         <input type="hidden" name="_subject" value="【カルテ帖】顧客管理アプリ相談">
         <label class="cf-label" for="k-name">お名前<span class="cf-req" aria-label="必須">*</span></label>
         <input type="text" id="k-name" name="name" class="cf-input" placeholder="山田 花子" required autocomplete="name">
