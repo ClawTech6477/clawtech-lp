@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MEO対策（Googleマップ集客）月額¥19,800〜 地域集客の専門代行｜ClawTech</title>
-<meta name="description" content="ClawTechのMEO対策は、Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが毎週対応。地域検索での上位表示を月額¥19,800〜で実現。歯科・整骨院・工務店・士業に特化した実績あり。">
+<title>MEO対策（Googleマップ集客）月額¥9,900〜 地域集客の専門代行｜ClawTech</title>
+<meta name="description" content="ClawTechのMEO対策は、Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが毎週対応。地域検索での上位表示を月額¥9,900〜で実現。歯科・整骨院・工務店・士業に特化した実績あり。">
 <meta name="keywords" content="MEO対策,Googleマップ集客,Googleビジネスプロフィール,MEO代行,地域集客,クチコミ対策">
 <link rel="canonical" href="https://clawtechjp.com/meo.html">
-<meta property="og:title" content="MEO対策 月額¥19,800〜 地域集客の専門代行｜ClawTech">
-<meta property="og:description" content="Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが毎週対応。地域1位を月額¥19,800〜で。歯科・整骨院・工務店に実績あり。">
+<meta property="og:title" content="MEO対策 月額¥9,900〜 地域集客の専門代行｜ClawTech">
+<meta property="og:description" content="Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが毎週対応。地域1位を月額¥9,900〜で。歯科・整骨院・工務店に実績あり。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://clawtechjp.com/meo.html">
 <meta property="og:image" content="https://clawtechjp.com/assets/og-image.jpg">
@@ -28,7 +28,6 @@
   "description":"Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが対応し、地域検索での上位表示を実現するMEO対策代行サービス。",
   "offers":[
     {"@type":"Offer","name":"スタータープラン","price":"9900","priceCurrency":"JPY"},
-    {"@type":"Offer","name":"ライトプラン","price":"19800","priceCurrency":"JPY","priceSpecification":{"@type":"UnitPriceSpecification","price":"19800","priceCurrency":"JPY","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitText":"month"}}},
     {"@type":"Offer","name":"スタンダードプラン","price":"29800","priceCurrency":"JPY"},
     {"@type":"Offer","name":"プレミアムプラン","price":"49800","priceCurrency":"JPY"}
   ]
@@ -247,7 +246,7 @@ section{padding:88px 0}
 .check-partial{color:var(--yamabuki);font-size:16px}
 
 /* ---- PRICING ---- */
-.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
 .price-card{background:var(--white);border-radius:16px;padding:36px 28px;box-shadow:var(--shadow-md);border:2px solid var(--line);position:relative;transition:transform .3s,box-shadow .3s}
 .price-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(16,37,76,.13)}
 .price-card.featured{border-color:var(--map-green);background:var(--white)}
@@ -623,40 +622,31 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
       <p class="sec-sub">「月次レポート」「投稿例」「クチコミ返信」——実際に提供するものを擬似サンプルでご確認いただけます。</p>
     </div>
 
-    <!-- タブ切り替え（CSS only） -->
+    <!-- タブ切り替え（JS） -->
     <style>
-      .tab-radio { display:none; }
       .tab-labels { display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap; }
       .tab-label {
         padding:10px 22px; border-radius:24px; cursor:pointer; font-size:14px; font-weight:600;
         border:2px solid var(--line); color:var(--hai); background:var(--white);
         transition:all .2s; user-select:none;
       }
-      #tab1:checked ~ .tab-labels label[for="tab1"],
-      #tab2:checked ~ .tab-labels label[for="tab2"],
-      #tab3:checked ~ .tab-labels label[for="tab3"] {
+      .tab-label.active {
         background:var(--kachi); color:var(--white); border-color:var(--kachi);
       }
       .tab-content { display:none; }
-      #tab1:checked ~ .tab-contents #preview-report,
-      #tab2:checked ~ .tab-contents #preview-post,
-      #tab3:checked ~ .tab-contents #preview-review { display:block; }
+      .tab-content.active { display:block; }
     </style>
 
-    <input type="radio" name="preview-tab" id="tab1" class="tab-radio" checked>
-    <input type="radio" name="preview-tab" id="tab2" class="tab-radio">
-    <input type="radio" name="preview-tab" id="tab3" class="tab-radio">
-
-    <div class="tab-labels">
-      <label for="tab1" class="tab-label"><i class="fa-solid fa-chart-bar"></i> 月次レポート</label>
-      <label for="tab2" class="tab-label"><i class="fa-solid fa-pen-nib"></i> 投稿例</label>
-      <label for="tab3" class="tab-label"><i class="fa-solid fa-star"></i> クチコミ返信例</label>
+    <div class="tab-labels" id="preview-tab-labels">
+      <button class="tab-label active" data-tab="preview-report"><i class="fa-solid fa-chart-bar"></i> 月次レポート</button>
+      <button class="tab-label" data-tab="preview-post"><i class="fa-solid fa-pen-nib"></i> 投稿例</button>
+      <button class="tab-label" data-tab="preview-review"><i class="fa-solid fa-star"></i> クチコミ返信例</button>
     </div>
 
     <div class="tab-contents">
 
       <!-- TAB 1: 月次レポート -->
-      <div class="tab-content" id="preview-report">
+      <div class="tab-content active" id="preview-report">
         <div style="background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(16,37,76,.08);">
           <!-- レポートヘッダ -->
           <div style="background:var(--kachi);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
@@ -795,9 +785,9 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
       <div class="tab-content" id="preview-review">
         <div style="max-width:640px;margin:0 auto;">
           <p style="font-size:13.5px;color:var(--hai);margin-bottom:20px;text-align:center;">口コミへの返信は、次のお客様への印象にも直結します</p>
-          <div style="display:flex;flex-direction:column;gap:20px;">
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:20px;align-items:flex-start;">
             <!-- 5スター -->
-            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);flex:1;min-width:280px;">
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
                 <div style="width:36px;height:36px;border-radius:50%;background:#E0E7FF;display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
                 <div>
@@ -813,7 +803,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
               </div>
             </div>
             <!-- 低評価 -->
-            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);flex:1;min-width:280px;">
               <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
                 <div style="width:36px;height:36px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
                 <div>
@@ -903,7 +893,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
         <tbody>
           <tr>
             <td class="col-item">月額費用</td>
-            <td class="col-us"><strong style="color:var(--map-green)">¥19,800〜</strong></td>
+            <td class="col-us"><strong style="color:var(--map-green)">¥9,900〜</strong></td>
             <td class="col-other">¥50,000〜80,000</td>
             <td class="col-other">¥30,000〜50,000</td>
           </tr>
@@ -963,7 +953,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
     <div class="sec-head" style="margin-bottom:40px;">
       <div class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> 他の集客手段と比べると</div>
       <h2 class="sec-title">チラシ・広告費と比べて、<br>MEOはどれくらい違うか</h2>
-      <p class="sec-sub">月¥19,800の投資で、どこまでリーチできるか。他の集客手段と並べると差は明確です。</p>
+      <p class="sec-sub">月¥9,900の投資で、どこまでリーチできるか。他の集客手段と並べると差は明確です。</p>
     </div>
     <div class="compare-wrap">
       <table class="compare-table" style="min-width:600px;">
@@ -979,7 +969,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
         <tbody>
           <tr style="background:#F0FBF4;">
             <td class="col-item"><strong style="color:var(--map-green);">MEO（ClawTech）</strong></td>
-            <td style="text-align:center;color:var(--map-green);font-weight:700;">¥19,800〜</td>
+            <td style="text-align:center;color:var(--map-green);font-weight:700;">¥9,900〜</td>
             <td style="text-align:center;">365日 常時</td>
             <td style="text-align:center;">今すぐ探している人</td>
             <td style="text-align:center;font-weight:700;color:var(--map-green);">数十〜数百円</td>
@@ -1049,26 +1039,6 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
         <p style="font-size:11.5px;color:var(--yamabuki);font-weight:600;margin-bottom:12px;text-align:center;">3ヶ月で成果を確認 → 上位プランへ</p>
         <a href="/#contact" class="btn btn-price btn-price-secondary" style="border-color:var(--yamabuki);color:var(--yamabuki);"><i class="fa-solid fa-arrow-right"></i> まず試してみる</a>
       </div>
-
-      <!-- ライト -->
-      <div class="price-card">
-        <div class="price-plan">LIGHT</div>
-        <div class="price-name">ライトプラン</div>
-        <div class="price-tag">¥19,800<small>/月</small></div>
-        <div class="price-note">初期費用¥0・縛りなし・1店舗</div>
-        <div class="price-divider"></div>
-        <ul class="price-features">
-          <li><i class="fa-solid fa-check"></i> GBP初期完全最適化</li>
-          <li><i class="fa-solid fa-check"></i> 定期投稿 8本/月</li>
-          <li><i class="fa-solid fa-check"></i> 基本情報メンテナンス</li>
-          <li><i class="fa-solid fa-check"></i> 月次パフォーマンスレポート</li>
-          <li class="dim"><i class="fa-solid fa-xmark"></i> クチコミ返信サポート</li>
-          <li class="dim"><i class="fa-solid fa-xmark"></i> 競合分析レポート</li>
-        </ul>
-        <a href="/#contact" class="btn btn-price btn-price-secondary"><i class="fa-solid fa-arrow-right"></i> このプランで相談する</a>
-      </div>
-
-      <!-- スタンダード（推奨） -->
       <div class="price-card featured">
         <div class="price-badge"><i class="fa-solid fa-star"></i> もっとも選ばれるプラン</div>
         <div class="price-plan">STANDARD</div>
@@ -1143,7 +1113,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
           <div class="voice-avatar av3">🏠</div>
           <div>
             <div class="voice-name">T工務店（千葉県）</div>
-            <div class="voice-biz">リフォーム・新築 / ライトプラン→スタンダードへ移行</div>
+            <div class="voice-biz">リフォーム・新築 / スタータープラン→スタンダードへ移行</div>
           </div>
         </div>
         <div class="voice-result"><i class="fa-solid fa-arrow-trend-up"></i> ルート案内リクエスト 月8回→41回（5ヶ月）</div>
@@ -1208,7 +1178,6 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
       <p class="cta-sub">現在のGoogleビジネスプロフィールの状態・競合との差・改善できるポイントをお伝えします。費用のご提案は診断後。営業は一切しません。</p>
       <div class="cta-btns">
         <a href="/#contact" class="btn btn-green" style="font-size:16px;padding:17px 32px"><i class="fa-solid fa-map-pin"></i> 無料診断を申し込む（3分）</a>
-        <a href="tel:+81-3-0000-0000" class="btn btn-ghost-white" style="font-size:16px"><i class="fa-solid fa-phone"></i> 電話で相談する</a>
       </div>
       <div class="cta-free-note">
         <i class="fa-solid fa-lock"></i> 個人情報の取り扱いはプライバシーポリシーに準じます
@@ -1279,6 +1248,18 @@ document.querySelectorAll('a[href="/#contact"]').forEach(a => {
       gtag('event', 'meo_cta_click', {page: 'meo_lp'});
     }
   });
+});
+
+// プレビュータブ切り替え
+document.getElementById('preview-tab-labels')?.addEventListener('click', function(e) {
+  const btn = e.target.closest('[data-tab]');
+  if (!btn) return;
+  const targetId = btn.dataset.tab;
+  this.querySelectorAll('.tab-label').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  const target = document.getElementById(targetId);
+  if (target) target.classList.add('active');
 });
 </script>
 </body>
