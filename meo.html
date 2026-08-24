@@ -613,6 +613,230 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
   </div>
 </section>
 
+
+<!-- DELIVERABLE PREVIEW -->
+<section id="preview" style="background:var(--shiro);padding:88px 0;">
+  <div class="container">
+    <div class="sec-head" data-aos="fade-up">
+      <div class="eyebrow"><i class="fa-solid fa-eye"></i> 実際の提供物</div>
+      <h2 class="sec-title">毎月届く成果物を、<br>先にご覧ください</h2>
+      <p class="sec-sub">「月次レポート」「投稿例」「クチコミ返信」——実際に提供するものを擬似サンプルでご確認いただけます。</p>
+    </div>
+
+    <!-- タブ切り替え（CSS only） -->
+    <style>
+      .tab-radio { display:none; }
+      .tab-labels { display:flex; gap:8px; margin-bottom:28px; flex-wrap:wrap; }
+      .tab-label {
+        padding:10px 22px; border-radius:24px; cursor:pointer; font-size:14px; font-weight:600;
+        border:2px solid var(--line); color:var(--hai); background:var(--white);
+        transition:all .2s; user-select:none;
+      }
+      #tab1:checked ~ .tab-labels label[for="tab1"],
+      #tab2:checked ~ .tab-labels label[for="tab2"],
+      #tab3:checked ~ .tab-labels label[for="tab3"] {
+        background:var(--kachi); color:var(--white); border-color:var(--kachi);
+      }
+      .tab-content { display:none; }
+      #tab1:checked ~ .tab-contents #preview-report,
+      #tab2:checked ~ .tab-contents #preview-post,
+      #tab3:checked ~ .tab-contents #preview-review { display:block; }
+    </style>
+
+    <input type="radio" name="preview-tab" id="tab1" class="tab-radio" checked>
+    <input type="radio" name="preview-tab" id="tab2" class="tab-radio">
+    <input type="radio" name="preview-tab" id="tab3" class="tab-radio">
+
+    <div class="tab-labels">
+      <label for="tab1" class="tab-label"><i class="fa-solid fa-chart-bar"></i> 月次レポート</label>
+      <label for="tab2" class="tab-label"><i class="fa-solid fa-pen-nib"></i> 投稿例</label>
+      <label for="tab3" class="tab-label"><i class="fa-solid fa-star"></i> クチコミ返信例</label>
+    </div>
+
+    <div class="tab-contents">
+
+      <!-- TAB 1: 月次レポート -->
+      <div class="tab-content" id="preview-report">
+        <div style="background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(16,37,76,.08);">
+          <!-- レポートヘッダ -->
+          <div style="background:var(--kachi);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            <div>
+              <div style="color:rgba(255,255,255,.6);font-size:12px;letter-spacing:.06em;margin-bottom:4px;">MONTHLY MEO REPORT</div>
+              <div style="color:var(--white);font-family:var(--f-display);font-size:18px;font-weight:800;">○○整骨院 様 | 2026年8月度</div>
+            </div>
+            <div style="background:rgba(255,255,255,.1);border-radius:8px;padding:8px 16px;color:rgba(255,255,255,.8);font-size:13px;">
+              ClawTech MEO運用中
+            </div>
+          </div>
+          <!-- KPIカード -->
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line);">
+            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+              <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">検索表示回数</div>
+              <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">1,842</div>
+              <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 23% 先月比</div>
+            </div>
+            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+              <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">マップ表示回数</div>
+              <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">1,104</div>
+              <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 18% 先月比</div>
+            </div>
+            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+              <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">電話タップ数</div>
+              <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">67</div>
+              <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 41% 先月比</div>
+            </div>
+            <div style="padding:20px 24px;">
+              <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">ルート検索数</div>
+              <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">89</div>
+              <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 12% 先月比</div>
+            </div>
+          </div>
+          <!-- 棒グラフエリア -->
+          <div style="padding:24px 28px;">
+            <div style="font-size:13px;font-weight:700;color:var(--sumi);margin-bottom:16px;">検索表示回数 推移（過去6ヶ月）</div>
+            <div style="display:flex;align-items:flex-end;gap:10px;height:100px;">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:42%;background:#CBD5E1;border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--hai);">3月</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:51%;background:#CBD5E1;border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--hai);">4月</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:62%;background:#94A3B8;border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--hai);">5月</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:68%;background:#64748B;border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--hai);">6月</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:79%;background:#334155;border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--hai);">7月</div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                <div style="flex:1;width:100%;background:var(--line);border-radius:4px 4px 0 0;position:relative;display:flex;align-items:flex-end;">
+                  <div style="width:100%;height:100%;background:var(--kachi);border-radius:4px 4px 0 0;"></div>
+                </div>
+                <div style="font-size:10px;color:var(--kachi);font-weight:700;">8月</div>
+              </div>
+            </div>
+          </div>
+          <!-- コメント欄 -->
+          <div style="background:#F8FAFC;border-top:1px solid var(--line);padding:18px 28px;">
+            <div style="font-size:12px;font-weight:700;color:var(--hai);letter-spacing:.04em;margin-bottom:8px;">ClawTech 担当コメント</div>
+            <p style="font-size:13.5px;color:var(--sumi);line-height:1.8;">8月は「腰痛 整骨院 ○○市」の投稿を週2回に増やしたことで検索表示回数が23%増加しました。電話タップが41%増と大きく伸びたのは、営業時間の記載を修正した効果が出た可能性があります。来月は施術例の写真を5枚追加し、写真視認性のさらなる改善を目指します。</p>
+          </div>
+          <div style="padding:10px 28px 16px;text-align:right;">
+            <span style="font-size:11px;color:var(--hai);">※ 本資料は提供イメージのサンプルです。実際の数値は店舗により異なります。</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: 投稿例 -->
+      <div class="tab-content" id="preview-post">
+        <div style="max-width:600px;margin:0 auto;">
+          <p style="font-size:13.5px;color:var(--hai);margin-bottom:20px;text-align:center;">毎週このような投稿を作成・公開します（業種・季節に合わせて内容を調整）</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <!-- 投稿カード1 -->
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+              <div style="background:#F0FBF4;padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--map-green);display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">🏥</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--kachi);">○○整骨院</div>
+                  <div style="font-size:11px;color:var(--hai);">Googleビジネスプロフィール投稿</div>
+                </div>
+                <div style="margin-left:auto;font-size:11px;color:var(--map-green);font-weight:600;">✓ 公開済み</div>
+              </div>
+              <div style="padding:16px 18px;">
+                <p style="font-size:14px;color:var(--sumi);line-height:1.85;margin-bottom:12px;">【腰痛でお悩みの方へ】<br>長時間のデスクワークやスマホ操作による腰の張り・だるさ、最近増えています。<br>当院では、筋肉の緊張を解きほぐす施術を組み合わせ、1回目から楽になったとご好評いただいています。<br>▼ ご予約・お問い合わせはGoogleマップの「予約」ボタンから</p>
+                <div style="display:flex;gap:8px;">
+                  <span style="background:#EFF6FF;color:#1D4ED8;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">#腰痛</span>
+                  <span style="background:#EFF6FF;color:#1D4ED8;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">#○○市整骨院</span>
+                  <span style="background:#EFF6FF;color:#1D4ED8;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">#デスクワーク</span>
+                </div>
+              </div>
+            </div>
+            <!-- 投稿カード2 -->
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+              <div style="background:#FFFBEB;padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--yamabuki);display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">☕</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--kachi);">△△カフェ</div>
+                  <div style="font-size:11px;color:var(--hai);">Googleビジネスプロフィール投稿</div>
+                </div>
+                <div style="margin-left:auto;font-size:11px;color:var(--map-green);font-weight:600;">✓ 公開済み</div>
+              </div>
+              <div style="padding:16px 18px;">
+                <p style="font-size:14px;color:var(--sumi);line-height:1.85;margin-bottom:12px;">【9月の新メニューのお知らせ🍂】<br>秋限定の「ほうじ茶ラテ」と「栗のタルト」が登場しました。ゆっくりとした午後のひとときに、ぜひお立ち寄りください。<br>営業時間：10:00〜19:00（火曜定休）<br>▼ 席のご予約はGoogleマップの「予約」ボタンから</p>
+                <div style="display:flex;gap:8px;">
+                  <span style="background:#FFF7ED;color:#C2410C;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">#秋限定</span>
+                  <span style="background:#FFF7ED;color:#C2410C;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;">#○○市カフェ</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--hai);margin-top:16px;text-align:center;">※ サンプルです。実際の内容はヒアリングをもとに業種・地域に合わせて作成します。</p>
+        </div>
+      </div>
+
+      <!-- TAB 3: クチコミ返信例 -->
+      <div class="tab-content" id="preview-review">
+        <div style="max-width:640px;margin:0 auto;">
+          <p style="font-size:13.5px;color:var(--hai);margin-bottom:20px;text-align:center;">口コミへの返信は、次のお客様への印象にも直結します</p>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <!-- 5スター -->
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#E0E7FF;display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--kachi);">田中 M.</div>
+                  <div style="color:#F59E0B;font-size:13px;">★★★★★</div>
+                </div>
+                <div style="margin-left:auto;font-size:11px;color:var(--hai);">2週間前</div>
+              </div>
+              <p style="font-size:13.5px;color:var(--sumi);line-height:1.8;margin-bottom:16px;">「肩こりがひどくて初めて伺いました。先生の説明がとても丁寧で、施術後は身体が軽くなりました。予約もとりやすく、また来たいと思います。」</p>
+              <div style="background:#F0FBF4;border-left:3px solid var(--map-green);border-radius:0 8px 8px 0;padding:14px 16px;">
+                <div style="font-size:11px;font-weight:700;color:var(--map-green);letter-spacing:.04em;margin-bottom:8px;">オーナーからの返信（ClawTech作成）</div>
+                <p style="font-size:13px;color:var(--sumi);line-height:1.8;">田中様、ご来院ありがとうございます。肩こりがお辛い中お越しいただき、施術後に身体が楽になったとのこと、スタッフ一同大変うれしく思います。引き続き、お身体のお悩みにしっかり向き合ってまいります。またいつでもお気軽にご来院ください。</p>
+              </div>
+            </div>
+            <!-- 低評価 -->
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;font-size:16px;">👤</div>
+                <div>
+                  <div style="font-size:13px;font-weight:700;color:var(--kachi);">匿名</div>
+                  <div style="color:#EF4444;font-size:13px;">★★★☆☆</div>
+                </div>
+                <div style="margin-left:auto;font-size:11px;color:var(--hai);">1ヶ月前</div>
+              </div>
+              <p style="font-size:13.5px;color:var(--sumi);line-height:1.8;margin-bottom:16px;">「予約が取りにくい時間帯がある。施術自体は良かったです。」</p>
+              <div style="background:#FFF5F5;border-left:3px solid #EF4444;border-radius:0 8px 8px 0;padding:14px 16px;">
+                <div style="font-size:11px;font-weight:700;color:#EF4444;letter-spacing:.04em;margin-bottom:8px;">オーナーからの返信（ClawTech作成）</div>
+                <p style="font-size:13px;color:var(--sumi);line-height:1.8;">ご来院いただきありがとうございます。予約の取りにくさについてご不便をおかけし、大変申し訳ありません。現在、夕方以降の枠を増やせるよう調整を進めております。施術自体にご満足いただけたこと、励みになります。またご都合の良い時にお越しいただければ幸いです。</p>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:12px;color:var(--hai);margin-top:16px;text-align:center;">※ サンプルです。実際の返信文はお客様の口コミ内容に合わせて個別に作成します。</p>
+        </div>
+      </div>
+
+    </div><!-- /tab-contents -->
+  </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="dark-sec" aria-labelledby="flow-title">
   <div class="container">
