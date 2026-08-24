@@ -27,6 +27,7 @@
   "provider":{"@type":"LocalBusiness","name":"ClawTech","url":"https://clawtechjp.com/"},
   "description":"Googleビジネスプロフィールの投稿・クチコミ管理・月次レポートを専任チームが対応し、地域検索での上位表示を実現するMEO対策代行サービス。",
   "offers":[
+    {"@type":"Offer","name":"スタータープラン","price":"9900","priceCurrency":"JPY"},
     {"@type":"Offer","name":"ライトプラン","price":"19800","priceCurrency":"JPY","priceSpecification":{"@type":"UnitPriceSpecification","price":"19800","priceCurrency":"JPY","referenceQuantity":{"@type":"QuantitativeValue","value":"1","unitText":"month"}}},
     {"@type":"Offer","name":"スタンダードプラン","price":"29800","priceCurrency":"JPY"},
     {"@type":"Offer","name":"プレミアムプラン","price":"49800","priceCurrency":"JPY"}
@@ -246,7 +247,7 @@ section{padding:88px 0}
 .check-partial{color:var(--yamabuki);font-size:16px}
 
 /* ---- PRICING ---- */
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
 .price-card{background:var(--white);border-radius:16px;padding:36px 28px;box-shadow:var(--shadow-md);border:2px solid var(--line);position:relative;transition:transform .3s,box-shadow .3s}
 .price-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(16,37,76,.13)}
 .price-card.featured{border-color:var(--map-green);background:var(--white)}
@@ -321,7 +322,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
   .feature-grid{grid-template-columns:1fr}
   .flow-steps{grid-template-columns:1fr 1fr;gap:32px}
   .flow-steps::before{display:none}
-  .price-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr 1fr}
   .voice-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
@@ -806,6 +807,25 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
     </div>
     </div>
     <div class="price-grid">
+      <!-- スターター（新規追加） -->
+      <div class="price-card" style="border-top:3px solid var(--yamabuki);">
+        <div class="price-plan" style="color:var(--yamabuki);">STARTER</div>
+        <div class="price-name">スタータープラン</div>
+        <div class="price-tag">¥9,900<small>/月</small></div>
+        <div class="price-note" style="font-size:11.5px;color:#888;margin-bottom:4px;">初期費用¥0・縛りなし・まず試したい方へ</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> GBP基本情報の初期最適化</li>
+          <li><i class="fa-solid fa-check"></i> 定期投稿 4本/月</li>
+          <li><i class="fa-solid fa-check"></i> 月次パフォーマンスレポート</li>
+          <li class="dim"><i class="fa-solid fa-xmark"></i> クチコミ返信サポート</li>
+          <li class="dim"><i class="fa-solid fa-xmark"></i> 競合分析レポート</li>
+          <li class="dim"><i class="fa-solid fa-xmark"></i> 週次レポート</li>
+        </ul>
+        <p style="font-size:11.5px;color:var(--yamabuki);font-weight:600;margin-bottom:12px;text-align:center;">3ヶ月で成果を確認 → 上位プランへ</p>
+        <a href="/#contact" class="btn btn-price btn-price-secondary" style="border-color:var(--yamabuki);color:var(--yamabuki);"><i class="fa-solid fa-arrow-right"></i> まず試してみる</a>
+      </div>
+
       <!-- ライト -->
       <div class="price-card">
         <div class="price-plan">LIGHT</div>
