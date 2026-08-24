@@ -1689,7 +1689,9 @@ function filterPosts(cat, btn) {
   btn.classList.add('active');
   btn.setAttribute('aria-pressed','true');
   document.querySelectorAll('.blog-card').forEach(card => {
-    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'flex' : 'none';
+    const show = cat === 'all' || card.dataset.cat === cat;
+    card.style.display = show ? 'flex' : 'none';
+    if (show && window.gsap) gsap.set(card, {opacity: 1, y: 0});
   });
 }
 </script>
