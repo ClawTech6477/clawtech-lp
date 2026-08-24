@@ -321,8 +321,10 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
   .feature-grid{grid-template-columns:1fr}
   .flow-steps{grid-template-columns:1fr 1fr;gap:32px}
   .flow-steps::before{display:none}
-  .price-grid{grid-template-columns:1fr 1fr}
-  .voice-grid{grid-template-columns:1fr}
+  .price-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:0 4px 16px;-webkit-overflow-scrolling:touch}
+  .price-card{flex:0 0 84vw;max-width:320px;scroll-snap-align:start}
+  .voice-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding:0 4px 16px;-webkit-overflow-scrolling:touch}
+  .voice-card{flex:0 0 88vw;max-width:360px;scroll-snap-align:start}
 }
 @media(max-width:600px){
   section{padding:64px 0}
@@ -453,6 +455,35 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
   </div>
 </div>
 
+<!-- 業種実績ストリップ（ローカルミエルカ参照：信頼を即座に示す） -->
+<div style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;overflow:hidden;">
+  <div style="display:flex;gap:0;justify-content:center;flex-wrap:wrap;max-width:1120px;margin:0 auto;padding:0 24px;">
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line);">
+      <i class="fa-solid fa-tooth" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">歯科・クリニック</span>
+    </div>
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line);">
+      <i class="fa-solid fa-person-walking" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">整骨院・接骨院</span>
+    </div>
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line);">
+      <i class="fa-solid fa-hammer" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">工務店・リフォーム</span>
+    </div>
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line);">
+      <i class="fa-solid fa-scissors" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">美容室・サロン</span>
+    </div>
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;border-right:1px solid var(--line);">
+      <i class="fa-solid fa-utensils" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">飲食店・カフェ</span>
+    </div>
+    <div style="padding:8px 20px;display:flex;align-items:center;gap:8px;">
+      <i class="fa-solid fa-scale-balanced" style="color:var(--ai-mid);font-size:14px;"></i>
+      <span style="font-size:13px;color:var(--sumi);font-weight:600;">士業・税理士</span>
+    </div>
+  </div>
+</div>
 
 <!-- 0次教育ブロック -->
 <section id="check-now" style="background:var(--shiro);padding:60px 0;border-bottom:1px solid var(--line);">
@@ -511,6 +542,84 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
         <div class="stat-label">順位改善の目安期間</div>
         <div class="stat-note">プロフィール充実・定期投稿・クチコミ増加の3点で、最短1〜3ヶ月で順位変動が始まる。</div>
       </div>
+    </div>
+
+    <!-- 成果グラフ: Smart MEO競合比較で学んだ「数字の可視化」 -->
+    <div style="margin-top:56px;background:var(--white);border-radius:16px;padding:36px 32px;box-shadow:var(--shadow-md);" data-aos="fade-up">
+      <div style="text-align:center;margin-bottom:28px;">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--map-green);margin-bottom:8px;">ACTUAL RESULT</div>
+        <div style="font-family:var(--f-display);font-size:20px;font-weight:800;color:var(--kachi);">実際に起きる変化——3ヶ月の推移</div>
+        <div style="font-size:13px;color:var(--hai);margin-top:6px;">N歯科クリニック（東京都）スタンダードプラン 導入事例より</div>
+      </div>
+      <div style="display:flex;gap:32px;align-items:flex-end;justify-content:center;flex-wrap:wrap;">
+        <!-- マップ表示回数 -->
+        <div style="flex:1;min-width:180px;max-width:280px;">
+          <div style="font-size:13px;font-weight:700;color:var(--sumi);margin-bottom:12px;text-align:center;">マップ表示回数</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:140px;justify-content:center;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--hai);">680</div>
+              <div style="width:100%;background:#E1E5EA;border-radius:6px 6px 0 0;height:40%;"></div>
+              <div style="font-size:11px;color:var(--hai);">導入前</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:#64748B;">1,320</div>
+              <div style="width:100%;background:#94A3B8;border-radius:6px 6px 0 0;height:62%;"></div>
+              <div style="font-size:11px;color:var(--hai);">1ヶ月後</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--kachi);">2,140</div>
+              <div style="width:100%;background:var(--kachi);border-radius:6px 6px 0 0;height:100%;"></div>
+              <div style="font-size:11px;font-weight:700;color:var(--kachi);">3ヶ月後</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:10px;font-size:13px;font-weight:700;color:var(--map-green);">▲ 3.1倍</div>
+        </div>
+        <!-- 電話タップ数 -->
+        <div style="flex:1;min-width:180px;max-width:280px;">
+          <div style="font-size:13px;font-weight:700;color:var(--sumi);margin-bottom:12px;text-align:center;">電話タップ数</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:140px;justify-content:center;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--hai);">12</div>
+              <div style="width:100%;background:#E1E5EA;border-radius:6px 6px 0 0;height:23%;"></div>
+              <div style="font-size:11px;color:var(--hai);">導入前</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:#64748B;">22</div>
+              <div style="width:100%;background:#94A3B8;border-radius:6px 6px 0 0;height:42%;"></div>
+              <div style="font-size:11px;color:var(--hai);">1ヶ月後</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--kachi);">31</div>
+              <div style="width:100%;background:var(--kachi);border-radius:6px 6px 0 0;height:100%;"></div>
+              <div style="font-size:11px;font-weight:700;color:var(--kachi);">3ヶ月後</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:10px;font-size:13px;font-weight:700;color:var(--map-green);">▲ 2.6倍</div>
+        </div>
+        <!-- ルート案内 -->
+        <div style="flex:1;min-width:180px;max-width:280px;">
+          <div style="font-size:13px;font-weight:700;color:var(--sumi);margin-bottom:12px;text-align:center;">ルート案内リクエスト</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:140px;justify-content:center;">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--hai);">8</div>
+              <div style="width:100%;background:#E1E5EA;border-radius:6px 6px 0 0;height:20%;"></div>
+              <div style="font-size:11px;color:var(--hai);">導入前</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:#64748B;">29</div>
+              <div style="width:100%;background:#94A3B8;border-radius:6px 6px 0 0;height:55%;"></div>
+              <div style="font-size:11px;color:var(--hai);">1ヶ月後</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;">
+              <div style="font-size:12px;font-weight:700;color:var(--kachi);">41</div>
+              <div style="width:100%;background:var(--kachi);border-radius:6px 6px 0 0;height:100%;"></div>
+              <div style="font-size:11px;font-weight:700;color:var(--kachi);">3ヶ月後</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:10px;font-size:13px;font-weight:700;color:var(--map-green);">▲ 5.1倍</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:20px;font-size:12px;color:var(--hai);">※ 参考値です。業種・地域・競合状況により変動します</div>
     </div>
   </div>
 </section>
@@ -659,23 +768,23 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
             </div>
           </div>
           <!-- KPIカード -->
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-bottom:1px solid var(--line);">
-            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+          <div style="display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;border-bottom:1px solid var(--line);">
+            <div style="padding:20px 24px;border-right:1px solid var(--line);min-width:130px;flex:1;">
               <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">検索表示回数</div>
               <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">1,842</div>
               <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 23% 先月比</div>
             </div>
-            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+            <div style="padding:20px 24px;border-right:1px solid var(--line);min-width:130px;flex:1;">
               <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">マップ表示回数</div>
               <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">1,104</div>
               <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 18% 先月比</div>
             </div>
-            <div style="padding:20px 24px;border-right:1px solid var(--line);">
+            <div style="padding:20px 24px;border-right:1px solid var(--line);min-width:130px;flex:1;">
               <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">電話タップ数</div>
               <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">67</div>
               <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 41% 先月比</div>
             </div>
-            <div style="padding:20px 24px;">
+            <div style="padding:20px 24px;min-width:130px;flex:1;">
               <div style="font-size:11px;color:var(--hai);letter-spacing:.04em;margin-bottom:6px;">ルート検索数</div>
               <div style="font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);font-variant-numeric:tabular-nums;">89</div>
               <div style="font-size:12px;color:var(--map-green);font-weight:600;margin-top:4px;">▲ 12% 先月比</div>
@@ -738,9 +847,9 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
       <div class="tab-content" id="preview-post">
         <div style="max-width:600px;margin:0 auto;">
           <p style="font-size:13.5px;color:var(--hai);margin-bottom:20px;text-align:center;">毎週このような投稿を作成・公開します（業種・季節に合わせて内容を調整）</p>
-          <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;flex-direction:row;flex-wrap:wrap;gap:16px;align-items:flex-start;">
             <!-- 投稿カード1 -->
-            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);flex:1;min-width:280px;">
               <div style="background:#F0FBF4;padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);">
                 <div style="width:36px;height:36px;border-radius:50%;background:var(--map-green);display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">🏥</div>
                 <div>
@@ -759,7 +868,7 @@ footer{background:var(--kachi-deep);padding:40px 0 24px;color:rgba(255,255,255,.
               </div>
             </div>
             <!-- 投稿カード2 -->
-            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);">
+            <div style="background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px rgba(16,37,76,.06);flex:1;min-width:280px;">
               <div style="background:#FFFBEB;padding:12px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);">
                 <div style="width:36px;height:36px;border-radius:50%;background:var(--yamabuki);display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">☕</div>
                 <div>
