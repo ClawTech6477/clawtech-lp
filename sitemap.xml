@@ -3,56 +3,56 @@
 
   <url>
     <loc>https://clawtechjp.com/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/meo.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/sales/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/karute-app/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/shindan.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/blog/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/shikin/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://clawtechjp.com/shikin/blog/</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -557,6 +557,13 @@
   <url>
     <loc>https://clawtechjp.com/blog/lp-production-cost-market-price-effect.html</loc>
     <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://clawtechjp.com/blog/membership-card-app-cost.html</loc>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
