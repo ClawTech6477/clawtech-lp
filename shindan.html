@@ -317,12 +317,14 @@ const LV_DATA = [
     body:"Excelや紙で個別管理している業務を一本化するだけで、月に数十時間の業務時間が浮くことがあります。" },
   { min:11, max:13, name:"Web集客中心（仕組み化進行中）",
     msg:"Web経由の集客が主軸になりつつあり、AI活用も部分的に始まっています。",
-    title:"AI営業代行で「待ち」から「攻め」の集客へ",
-    body:"問い合わせ対応・アプローチの一部をAIに任せることで、少人数でも営業力を底上げできます。" },
+    title:"業務の一部をAIエージェントに任せるフェーズです",
+    body:"営業メール自動生成・問い合わせBot・議事録自動化など、今すぐROIが出る自動化から実装できます。まず無料相談で優先順位を整理しましょう。",
+    link:"/ai-komon.html" },
   { min:14, max:99, name:"AI活用経営（攻めのDX）",
     msg:"すでに組織的にAI・自動化を活用できている先進レベルです。",
-    title:"次のステージはDX顧問での壁打ち",
-    body:"現状の仕組みをさらに磨き込むフェーズ。第三者視点での定期壁打ち・改善提案が力になります。" }
+    title:"月次AI顧問で仕組みをさらに磨き込む",
+    body:"第三者視点でのAI戦略レビュー・新ツール選定・追加実装をまとめてサポート。月¥148,000の定期顧問プランがあります。",
+    link:"/ai-komon.html" }
 ];
 
 function lvIndexFromScore(score){
@@ -381,7 +383,8 @@ document.getElementById("go").onclick = ()=>{
   document.getElementById("recoBody").textContent = `${industryLabel}の場合: ${lvData.body}`;
 
   const recoBtn = document.getElementById("recoBtn");
-  recoBtn.href = `/clawtech-lp/?src=shindan-lv${lastLv}-${SRC}#contact`;
+  const lvLink = lvData.link || `/?src=shindan-lv${lastLv}-${SRC}#contact`;
+  recoBtn.href = lvLink.includes('?') ? lvLink : `${lvLink}?src=shindan-lv${lastLv}-${SRC}`;
 
   // hidden fields for lead form
   document.getElementById("fLv").value = `Lv${lastLv}（${lvData.name}）`;
