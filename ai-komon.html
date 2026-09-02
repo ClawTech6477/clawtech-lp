@@ -2,317 +2,314 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#10254C">
 <title>生成AI顧問・業務自動化｜ClawTech</title>
-<meta name="description" content="20のAIエージェントを自社で稼働させている実績で、御社の業務自動化を支援。DX診断→実装→月次顧問まで一気通貫。まず無料相談から。">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://clawtech.jp/ai-komon.html">
-<!-- OGP -->
+<meta name="description" content="20のAIエージェントを自社で稼働させている実績で、御社の業務自動化を支援。フォームを送るだけで翌日以内に提案します。オンライン面談不要で始められます。">
+<link rel="canonical" href="https://clawtechjp.com/ai-komon.html">
 <meta property="og:title" content="生成AI顧問・業務自動化｜ClawTech">
-<meta property="og:description" content="自社で20エージェント稼働中の実績で御社のAI導入を支援します。">
+<meta property="og:description" content="自社で20エージェント稼働中の実績で御社のAI導入を支援します。フォームを送るだけで翌日以内に提案。">
 <meta property="og:type" content="website">
-<!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PFTV4M66C4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-PFTV4M66C4');</script>
+<meta property="og:url" content="https://clawtechjp.com/ai-komon.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="ClawTech">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
-  :root{
-    --yamabuki:#E8A511;--yamabuki-dk:#C48A0A;
-    --kachi:#1A2136;--kachi-deep:#0E1520;
-    --white:#FFFFFF;--kami:#F8F7F4;--hai:#6B7280;
-    --line:#E5E7EB;--ai:#3A6BC4;--ai-mid:#4A80D8;
-    --radius:6px;--shadow-md:0 4px 20px rgba(0,0,0,.10);
-    --f-display:'Hiragino Sans','Yu Gothic UI',sans-serif;
-    --f-body:'Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
-    --f-mono:'JetBrains Mono','Menlo',monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:var(--f-body);color:var(--kachi);background:var(--white);line-height:1.7;font-size:15px}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
+:root{
+  --kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#28558F;
+  --yamabuki:#E8A511;--yamabuki-dk:#C88C06;
+  --kami:#FAF9F5;--sumi:#23262B;--hai:#6B7280;
+  --line:#DDE3EA;--white:#FFFFFF;
+  --f-d:'Shippori Mincho B1',serif;
+  --f-b:'Zen Kaku Gothic New',sans-serif;
+  --f-m:'IBM Plex Mono',monospace;
+  --pad:clamp(20px,5vw,48px);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:var(--f-b);background:var(--kami);color:var(--sumi);line-height:1.85;font-size:15px;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+:focus-visible{outline:3px solid var(--yamabuki);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
-  /* NAV */
-  .topnav{background:var(--kachi);padding:0 20px;position:sticky;top:0;z-index:100}
-  .topnav .inner{max-width:1080px;margin:0 auto;height:54px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.04em;color:var(--white)}
-  .logo span{color:var(--yamabuki)}
-  .back{font-size:13px;color:rgba(255,255,255,.7);transition:color .2s}
-  .back:hover{color:var(--yamabuki)}
+.nav{background:var(--kachi);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1080px;margin:0 auto;padding:0 var(--pad);height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--f-d);font-size:17px;font-weight:800;color:var(--white);letter-spacing:.02em;}
+.nav-logo em{font-style:normal;color:var(--yamabuki);}
+.nav-back{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s;}
+.nav-back:hover{color:var(--yamabuki);}
 
-  /* HERO */
-  .hero{background:var(--kachi);color:var(--white);padding:72px 20px 64px;text-align:center;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:22px 22px}
-  .hero .eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;color:var(--yamabuki);margin-bottom:18px;text-transform:uppercase}
-  .hero h1{font-family:var(--f-display);font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.3;margin-bottom:18px;letter-spacing:.02em}
-  .hero h1 em{font-style:normal;color:var(--yamabuki)}
-  .hero .lead{font-size:clamp(14px,2vw,16px);color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 32px;line-height:1.8}
-  .btn{display:inline-block;padding:13px 28px;border-radius:var(--radius);font-weight:700;font-size:15px;transition:all .2s;cursor:pointer;border:none}
-  .btn-primary{background:var(--yamabuki);color:var(--kachi-deep);box-shadow:0 2px 0 var(--yamabuki-dk)}
-  .btn-primary:hover{background:#F4B62A;box-shadow:0 4px 12px rgba(232,165,17,.4)}
-  .btn-outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.4)}
-  .btn-outline:hover{border-color:var(--yamabuki);color:var(--yamabuki)}
-  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero{background:var(--kachi);padding:clamp(56px,10vw,96px) var(--pad) clamp(56px,8vw,80px);}
+.hero-inner{max-width:720px;}
+.hero h1{font-family:var(--f-d);font-size:clamp(32px,5.5vw,56px);font-weight:800;color:var(--white);line-height:1.25;letter-spacing:-.01em;margin-bottom:24px;}
+.hero h1 em{font-style:normal;color:var(--yamabuki);}
+.hero-sub{font-size:clamp(14px,2vw,16px);color:rgba(255,255,255,.72);line-height:1.9;max-width:560px;margin-bottom:36px;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:4px;font-family:var(--f-b);font-size:15px;font-weight:700;cursor:pointer;border:none;transition:background .2s,transform .15s;}
+.btn:hover{transform:translateY(-1px);}
+.btn-gold{background:var(--yamabuki);color:var(--kachi-deep);box-shadow:0 2px 0 var(--yamabuki-dk);}
+.btn-gold:hover{background:#F0B318;}
+.hero-note{margin-top:14px;font-size:12px;color:rgba(255,255,255,.4);font-family:var(--f-m);}
 
-  /* PROOF */
-  .proof{background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.1);padding:20px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-  .proof-item{text-align:center}
-  .proof-num{font-family:var(--f-mono);font-size:26px;font-weight:700;color:var(--yamabuki)}
-  .proof-label{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px;letter-spacing:.04em}
+.section{padding:clamp(48px,8vw,80px) var(--pad);}
+.wrap{max-width:900px;margin:0 auto;}
+.sec-h{font-family:var(--f-d);font-size:clamp(22px,3.5vw,32px);font-weight:800;color:var(--kachi);margin-bottom:8px;line-height:1.3;text-wrap:balance;}
+.sec-lead{font-size:14px;color:var(--hai);margin-bottom:40px;max-width:560px;line-height:1.9;}
 
-  /* SECTION */
-  section{padding:64px 20px}
-  .wrap{max-width:900px;margin:0 auto}
-  .sec-title{font-family:var(--f-display);font-size:clamp(20px,3vw,28px);font-weight:700;margin-bottom:10px;letter-spacing:.02em}
-  .sec-lead{color:var(--hai);font-size:14px;line-height:1.8;max-width:600px;margin-bottom:40px}
-  .bg-kami{background:var(--kami)}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden;}
+@media(max-width:680px){.tiers{grid-template-columns:1fr;}}
+.tier{background:var(--white);padding:28px 24px;}
+.tier-step{font-family:var(--f-m);font-size:11px;color:var(--yamabuki);font-weight:600;letter-spacing:.08em;margin-bottom:12px;display:block;}
+.tier-name{font-family:var(--f-d);font-size:16px;font-weight:800;color:var(--kachi);margin-bottom:14px;line-height:1.4;}
+.tier-price{font-family:var(--f-m);font-size:26px;font-weight:600;color:var(--sumi);margin-bottom:4px;line-height:1;}
+.tier-price sup{font-size:14px;vertical-align:super;font-weight:400;}
+.tier-price small{font-size:13px;font-weight:400;color:var(--hai);}
+.tier-note{font-size:12px;color:var(--hai);margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line);}
+.tier-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.tier-list li{font-size:13px;color:var(--sumi);line-height:1.6;padding-left:1.2em;position:relative;}
+.tier-list li::before{content:"—";position:absolute;left:0;color:var(--yamabuki);font-family:var(--f-m);}
+.tier-arrow{margin-top:18px;font-size:12px;color:var(--ai-mid);font-family:var(--f-m);}
 
-  /* PACKAGES */
-  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media(max-width:720px){.pkg-grid{grid-template-columns:1fr}}
-  .pkg{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:28px;position:relative;transition:box-shadow .25s,transform .25s}
-  .pkg:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
-  .pkg.featured{border-color:var(--ai-mid);border-width:2px}
-  .pkg-tag{position:absolute;top:-1px;left:20px;background:var(--ai-mid);color:#fff;font-family:var(--f-mono);font-size:10px;font-weight:700;padding:3px 10px;border-radius:0 0 6px 6px;letter-spacing:.08em}
-  .pkg-letter{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--hai);margin-bottom:10px}
-  .pkg-name{font-family:var(--f-display);font-size:17px;font-weight:700;margin-bottom:14px}
-  .pkg-price{font-family:var(--f-mono);font-size:28px;font-weight:700;color:var(--kachi);margin-bottom:4px}
-  .pkg-price small{font-size:14px;font-weight:400;color:var(--hai)}
-  .pkg-note{font-size:12px;color:var(--hai);margin-bottom:18px}
-  .pkg-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .pkg-list li{font-size:13px;color:var(--hai);display:flex;gap:8px;line-height:1.5}
-  .pkg-list li::before{content:'✓';color:var(--ai-mid);font-weight:700;flex-shrink:0}
-  .pkg-arrow{margin-top:18px;font-size:12px;color:var(--ai-mid);font-weight:600}
+.flow{list-style:none;display:flex;flex-direction:column;gap:0;}
+.flow-item{display:grid;grid-template-columns:52px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--line);}
+.flow-item:last-child{border-bottom:none;}
+.flow-num{font-family:var(--f-m);font-size:28px;font-weight:600;color:var(--line);line-height:1;margin-top:2px;}
+.flow-body strong{font-size:16px;font-weight:700;color:var(--sumi);display:block;margin-bottom:6px;}
+.flow-body p{font-size:13.5px;color:var(--hai);line-height:1.8;}
 
-  /* FLOW */
-  .flow-list{display:flex;flex-direction:column;gap:0}
-  .flow-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
-  .flow-item:last-child{border-bottom:none}
-  .flow-num{width:36px;height:36px;border-radius:50%;background:var(--kachi);color:var(--yamabuki);font-family:var(--f-mono);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-  .flow-body strong{display:block;font-size:15px;font-weight:700;margin-bottom:4px}
-  .flow-body p{font-size:13px;color:var(--hai);line-height:1.7}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+@media(max-width:640px){.case-grid{grid-template-columns:1fr;}}
+.case{border-top:3px solid var(--line);padding-top:18px;}
+.case.featured{border-top-color:var(--yamabuki);}
+.case-sector{font-family:var(--f-m);font-size:11px;color:var(--hai);letter-spacing:.06em;margin-bottom:10px;}
+.case-title{font-size:15px;font-weight:700;color:var(--sumi);margin-bottom:8px;line-height:1.45;}
+.case-desc{font-size:13px;color:var(--hai);line-height:1.8;margin-bottom:12px;}
+.case-result{font-family:var(--f-m);font-size:12px;font-weight:600;color:var(--kachi);background:rgba(16,37,76,.05);padding:6px 10px;border-radius:3px;display:inline-block;}
 
-  /* CASES */
-  .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  @media(max-width:640px){.case-grid{grid-template-columns:1fr}}
-  .case{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:22px}
-  .case-industry{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--hai);margin-bottom:8px}
-  .case-title{font-size:15px;font-weight:700;margin-bottom:8px}
-  .case-desc{font-size:13px;color:var(--hai);line-height:1.7;margin-bottom:12px}
-  .case-result{background:var(--kami);border-radius:6px;padding:8px 12px;font-size:13px;font-weight:600;color:var(--ai)}
+.contact-band{background:var(--kachi);padding:clamp(48px,8vw,80px) var(--pad);}
+.contact-inner{max-width:520px;}
+.contact-h{font-family:var(--f-d);font-size:clamp(22px,3.5vw,30px);font-weight:800;color:var(--white);margin-bottom:10px;line-height:1.35;}
+.contact-note{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:32px;line-height:1.8;}
+.form{display:flex;flex-direction:column;gap:10px;}
+.form input,.form select,.form textarea{
+  width:100%;padding:11px 14px;
+  border:1px solid rgba(255,255,255,.15);border-radius:4px;
+  background:rgba(255,255,255,.07);color:var(--white);
+  font-family:var(--f-b);font-size:14px;transition:border-color .2s;
+}
+.form input::placeholder,.form textarea::placeholder{color:rgba(255,255,255,.35);}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--yamabuki);outline:none;}
+.form select option{background:var(--kachi-deep);}
+.form textarea{min-height:110px;resize:vertical;}
+.form-hint{font-size:11px;color:rgba(255,255,255,.35);text-align:center;font-family:var(--f-m);}
 
-  /* CTA */
-  .cta-section{background:var(--kachi);color:var(--white);padding:72px 20px;text-align:center;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:22px 22px}
-  .cta-section h2{font-family:var(--f-display);font-size:clamp(22px,4vw,34px);font-weight:700;margin-bottom:12px}
-  .cta-section p{color:rgba(255,255,255,.75);font-size:14px;margin-bottom:28px;line-height:1.8}
-
-  /* CONTACT FORM */
-  .contact-form{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-  .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,.2);border-radius:var(--radius);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--f-body);font-size:14px;outline:none;transition:border-color .2s}
-  .contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.4)}
-  .contact-form input:focus,.contact-form textarea:focus{border-color:var(--yamabuki)}
-  .contact-form select option{background:var(--kachi);color:var(--white)}
-  .contact-form textarea{resize:vertical;min-height:100px}
-  .form-note{font-size:11px;color:rgba(255,255,255,.5);text-align:center;margin-top:4px}
-  .form-ok{color:var(--yamabuki);font-weight:700;font-size:14px;display:none;text-align:center;margin-top:8px}
-
-  /* FOOTER */
-  footer{background:var(--kachi-deep);color:rgba(255,255,255,.5);padding:24px 20px;text-align:center;font-size:12px}
-  footer a{color:rgba(255,255,255,.5)}
-  footer a:hover{color:var(--yamabuki)}
+footer{background:var(--kachi-deep);padding:20px var(--pad);text-align:center;}
+footer p{font-size:12px;color:rgba(255,255,255,.35);}
+footer a{color:rgba(255,255,255,.35);}
+footer a:hover{color:var(--yamabuki);}
 </style>
 </head>
 <body>
 
-<nav class="topnav">
-  <div class="inner">
-    <span class="logo">Claw<span>Tech</span></span>
-    <a href="/" class="back">← トップへ戻る</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Claw<em>Tech</em></a>
+    <a href="/" class="nav-back">← トップへ戻る</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <p class="eyebrow">AI CONSULTING &amp; AUTOMATION</p>
-  <h1>AI、<em>全部まかせて</em>ください。<br>自社で20エージェント稼働中。</h1>
-  <p class="lead">プロンプト設計・Claude/Dify/n8n実装・Discord Bot・RAG構築まで、私たちが自社業務で毎日使っている仕組みを、そのまま御社に移植します。助言だけの顧問ではなく、毎月「動く仕組み」を納品します。</p>
-  <div class="hero-btns">
-    <a href="#contact" class="btn btn-primary">無料相談を申し込む</a>
-    <a href="/shindan.html" class="btn btn-outline">まずDX診断をする（30秒）</a>
-  </div>
-  <div class="proof">
-    <div class="proof-item"><div class="proof-num">20</div><div class="proof-label">自社稼働AIエージェント数</div></div>
-    <div class="proof-item"><div class="proof-num">24h</div><div class="proof-label">返信保証</div></div>
-    <div class="proof-item"><div class="proof-num">¥298K〜</div><div class="proof-label">実装プロジェクト最小単価</div></div>
+  <div class="hero-inner">
+    <h1>AI、<em>全部まかせて</em><br>ください。</h1>
+    <p class="hero-sub">プロンプト設計・Claude/Dify/n8n実装・Discord Bot・RAG構築まで、自社で毎日稼働させている20エージェントをそのまま御社に移植します。助言だけの顧問ではなく、毎月「動く仕組み」を納品します。</p>
+    <a href="#contact" class="btn btn-gold">相談する（無料・返信24h以内）</a>
+    <p class="hero-note">オンライン面談不要 · 返信24h以内 · 電話営業なし · 有料診断なし</p>
   </div>
 </section>
 
-<!-- PACKAGES -->
-<section class="bg-kami">
+<section class="section">
   <div class="wrap">
-    <h2 class="sec-title">サービスパッケージ</h2>
-    <p class="sec-lead">まず無料相談で課題を整理し、必要な実装だけを進めます。有料診断はありません。</p>
-    <div class="pkg-grid">
-      <div class="pkg">
-        <div class="pkg-letter">STEP 01</div>
-        <div class="pkg-name">無料相談・課題整理</div>
-        <div class="pkg-price">¥0<small></small></div>
-        <div class="pkg-note">Zoom 30分 / 翌日以内に返信</div>
-        <ul class="pkg-list">
-          <li>現状の課題をヒアリング</li>
-          <li>AIで解決できる範囲を整理</li>
+    <h2 class="sec-h">サービス概要</h2>
+    <p class="sec-lead">まずフォームで課題を送ってください。翌日以内に整理・提案をお返しします。</p>
+    <div class="tiers">
+      <div class="tier">
+        <span class="tier-step">STEP 01</span>
+        <div class="tier-name">フォームで課題ヒアリング</div>
+        <div class="tier-price"><sup>¥</sup>0</div>
+        <div class="tier-note">翌日以内にメール返信 · オンライン面談不要</div>
+        <ul class="tier-list">
+          <li>業種・規模・現在の課題をフォームで送信</li>
+          <li>AIで解決できる範囲をメールで整理</li>
           <li>優先度の高い自動化を1〜2件提案</li>
           <li>見積もり・スコープを提示</li>
+          <li>必要な場合のみオンライン面談をご提案</li>
         </ul>
-        <div class="pkg-arrow">→ そのまま実装へ進める</div>
+        <div class="tier-arrow">→ そのまま実装へ</div>
       </div>
-      <div class="pkg featured">
-        <div class="pkg-tag">MAIN</div>
-        <div class="pkg-letter">STEP 02</div>
-        <div class="pkg-name">AI実装プロジェクト</div>
-        <div class="pkg-price">¥298,000<small>〜</small></div>
-        <div class="pkg-note">プロジェクト型 / 2〜4週間 <span style="color:var(--ai-mid)">※規模により個別見積もり</span></div>
-        <ul class="pkg-list">
+      <div class="tier">
+        <span class="tier-step">STEP 02</span>
+        <div class="tier-name">AI実装プロジェクト</div>
+        <div class="tier-price"><sup>¥</sup>298,000<small>〜</small></div>
+        <div class="tier-note">プロジェクト型 · 2〜4週間</div>
+        <ul class="tier-list">
           <li>Dify / n8n / Claude API 実装</li>
           <li>LINE Bot / Discord Bot 開発</li>
           <li>RAG（社内ナレッジBot）構築</li>
           <li>営業メール・提案文自動生成</li>
-          <li>非エンジニアが使える形で納品</li>
-          <li>運用マニュアル + 2週間サポート込み</li>
+          <li>運用マニュアル＋2週間サポート込み</li>
         </ul>
-        <div class="pkg-arrow">→ 実績が出たら顧問へ</div>
+        <div class="tier-arrow">→ 実績が出たら顧問へ</div>
       </div>
-      <div class="pkg">
-        <div class="pkg-letter">STEP 03</div>
-        <div class="pkg-name">月次AI顧問</div>
-        <div class="pkg-price">¥148,000<small>/月〜</small></div>
-        <div class="pkg-note">継続型 / 最低3ヶ月〜 <span style="color:var(--ai-mid)">※内容により個別見積もり</span></div>
-        <ul class="pkg-list">
-          <li>月2回Zoom定例（各60分）</li>
+      <div class="tier">
+        <span class="tier-step">STEP 03</span>
+        <div class="tier-name">月次AI顧問</div>
+        <div class="tier-price"><sup>¥</sup>148,000<small>/月〜</small></div>
+        <div class="tier-note">継続型 · 最低3ヶ月〜</div>
+        <ul class="tier-list">
+          <li>月2回オンライン面談（各60分）</li>
           <li>Slack/Discord 非同期サポート</li>
           <li>新ツール・API選定アドバイス</li>
           <li>小規模改修（月4h分）込み</li>
           <li>四半期レポート</li>
         </ul>
-        <div class="pkg-arrow">→ 実装後1ヶ月で提案します</div>
+        <div class="tier-arrow">→ 実装後1ヶ月で提案</div>
       </div>
     </div>
-    <p style="margin-top:16px;font-size:12px;color:var(--hai)">※ 上記は目安価格です。業務範囲・期間・チーム規模によって個別に見積もりを作成します。</p>
+    <p style="margin-top:14px;font-size:12px;color:var(--hai);font-family:var(--f-m);">※ 目安価格。業務範囲・規模によって個別見積もりを作成します。</p>
   </div>
 </section>
 
-<!-- FLOW -->
-<section>
+<section class="section" style="padding-top:0;">
   <div class="wrap">
-    <h2 class="sec-title">進め方</h2>
-    <p class="sec-lead">有料診断なし。相談→実装→顧問の3ステップで完結します。</p>
-    <div class="flow-list">
-      <div class="flow-item">
-        <div class="flow-num">1</div>
+    <h2 class="sec-h">進め方</h2>
+    <p class="sec-lead">有料診断なし。フォームで課題を送るだけで始められます。</p>
+    <ol class="flow">
+      <li class="flow-item">
+        <span class="flow-num">01</span>
         <div class="flow-body">
-          <strong>無料相談（Zoom 30分）</strong>
-          <p>現状の業務課題をヒアリングし、AIで解決できる範囲・できない範囲を整理します。その場でスコープと概算費用をお伝えします。</p>
+          <strong>フォームで課題ヒアリング（翌日返信）</strong>
+          <p>業種・人数・現在困っていること・試したことをフォームで送信してください。翌日以内にメールで整理・提案をお返しします。オンライン面談は不要です。</p>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num">2</div>
+      </li>
+      <li class="flow-item">
+        <span class="flow-num">02</span>
         <div class="flow-body">
-          <strong>見積もり・仕様確認</strong>
-          <p>相談内容をもとに詳細な見積書と実装仕様を提示。変更・縮小・分割もご相談可能です。</p>
+          <strong>見積もり・仕様確認（メール往復）</strong>
+          <p>ヒアリング内容をもとに詳細な見積書と実装仕様を提示。変更・縮小・分割もご相談可能です。必要に応じてオンライン面談をご提案します。</p>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num">3</div>
+      </li>
+      <li class="flow-item">
+        <span class="flow-num">03</span>
         <div class="flow-body">
           <strong>実装・納品（2〜4週間）</strong>
           <p>実装中は週次で進捗を共有。非エンジニアが使いやすい形で納品し、運用マニュアル・2週間の初期サポートが含まれます。</p>
         </div>
-      </div>
-      <div class="flow-item">
-        <div class="flow-num">4</div>
+      </li>
+      <li class="flow-item">
+        <span class="flow-num">04</span>
         <div class="flow-body">
           <strong>月次顧問（任意）</strong>
           <p>実装後1ヶ月で効果測定し、継続サポートが必要な場合は月次顧問をご提案します。不要であればここで完結です。</p>
         </div>
-      </div>
-    </div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- CASES -->
-<section class="bg-kami">
+<section class="section" style="padding-top:0;">
   <div class="wrap">
-    <h2 class="sec-title">対応できる実装例</h2>
+    <h2 class="sec-h">対応できる実装例</h2>
     <p class="sec-lead">自社で実際に稼働させているシステムを基に提供します。</p>
     <div class="case-grid">
-      <div class="case">
-        <div class="case-industry">飲食・サービス業</div>
+      <div class="case featured">
+        <div class="case-sector">飲食・サービス業</div>
         <div class="case-title">予約・問い合わせ自動回答Bot</div>
-        <div class="case-desc">LINE公式に届く予約メッセージをAIが読み取り、カレンダー登録＋リマインド自動送信。FAQ自動回答も同時構築。</div>
-        <div class="case-result">月52時間の電話対応を削減</div>
+        <p class="case-desc">LINE公式に届く予約メッセージをAIが読み取り、カレンダー登録＋リマインド自動送信。FAQ自動回答も同時構築。</p>
+        <span class="case-result">月52時間の電話対応を削減</span>
       </div>
-      <div class="case">
-        <div class="case-industry">建設・士業・コンサル</div>
+      <div class="case featured">
+        <div class="case-sector">建設・士業・コンサル</div>
         <div class="case-title">提案書・見積書 AI草案生成</div>
-        <div class="case-desc">過去案件データをRAGに学習させ、案件概要を入力するだけでClaude APIが草案を生成。担当者は確認・修正のみ。</div>
-        <div class="case-result">1件7時間 → 1.5時間に短縮</div>
+        <p class="case-desc">過去案件データをRAGに学習させ、案件概要を入力するだけでClaude APIが草案を生成。担当者は確認・修正のみ。</p>
+        <span class="case-result">1件7時間 → 1.5時間に短縮</span>
       </div>
       <div class="case">
-        <div class="case-industry">営業・マーケティング</div>
+        <div class="case-sector">営業・マーケティング</div>
         <div class="case-title">個別化営業メール自動生成</div>
-        <div class="case-desc">リストの企業情報をClaude APIに渡し、業種・課題に応じた個別化提案文を自動生成。送信まで自動化可能。</div>
-        <div class="case-result">月30時間の文書作成を1時間へ</div>
+        <p class="case-desc">リストの企業情報をClaude APIに渡し、業種・課題に応じた個別化提案文を自動生成。送信まで自動化可能。</p>
+        <span class="case-result">月30時間の文書作成を1時間へ</span>
       </div>
       <div class="case">
-        <div class="case-industry">社内業務全般</div>
+        <div class="case-sector">社内業務全般</div>
         <div class="case-title">議事録・週報 自動生成ワークフロー</div>
-        <div class="case-desc">Zoom文字起こし→Claude API→要約・議事録→Slack通知/Notion保存。n8nでパイプライン構築。</div>
-        <div class="case-result">週3回MTG分 / 月12時間削減</div>
+        <p class="case-desc">オンライン会議の文字起こし→Claude API→要約・議事録→Slack通知/Notion保存。n8nでパイプライン構築。</p>
+        <span class="case-result">週3回MTG分 / 月12時間削減</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA / CONTACT -->
-<section class="cta-section" id="contact">
-  <h2>まず30分、無料で相談してみてください</h2>
-  <p>返信は原則24時間以内。電話での勧誘は一切ありません。<br>「まだ具体的じゃないけど…」という段階でも大丈夫です。</p>
-  <form class="contact-form" id="contactForm" action="https://formspree.io/f/xpqjbyya" method="POST">
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none!important">
-    <input type="hidden" name="_subject" value="【AI顧問相談】お問い合わせ">
-    <input type="hidden" name="流入元" value="ai-komon">
-    <input type="email" name="email" placeholder="メールアドレス（必須）" required autocomplete="email">
-    <input type="text" name="company" placeholder="会社名・屋号（任意）">
-    <select name="service">
-      <option value="">気になるサービス（任意）</option>
-      <option>無料相談・課題整理</option>
-      <option>AI実装プロジェクト（¥298,000〜）</option>
-      <option>月次AI顧問（¥148,000/月）</option>
-      <option>まだ決めていない</option>
-    </select>
-    <textarea name="message" placeholder="課題や相談内容（任意）&#10;「◯◯が自動化できるか知りたい」「AI導入を検討中」など何でも"></textarea>
-    <button type="submit" class="btn btn-primary" style="width:100%;font-size:15px;padding:15px">相談を申し込む（無料）</button>
-    <div class="form-note">送信後、担当者より24時間以内にご連絡します</div>
-    <div class="form-ok" id="formOk">送信しました。24時間以内にご連絡します。</div>
-  </form>
+<section class="contact-band" id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-h">課題を送るだけ。<br>オンライン面談不要で始められます。</h2>
+    <p class="contact-note">フォームを送信するだけで、翌日以内に整理・提案をメールでお返しします。電話での勧誘は一切ありません。「まだ具体的じゃない」段階でも大丈夫です。</p>
+    <form class="form" id="contactForm" action="https://formspree.io/f/xpqjbyya" method="POST">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none!important">
+      <input type="hidden" name="_subject" value="【AI顧問相談】お問い合わせ">
+      <input type="hidden" name="流入元" value="ai-komon">
+      <input type="email" name="email" placeholder="メールアドレス（必須）" required autocomplete="email">
+      <input type="text" name="company" placeholder="会社名・屋号（任意）">
+      <select name="industry">
+        <option value="">業種（任意）</option>
+        <option>製造・建設</option>
+        <option>士業・コンサル</option>
+        <option>IT・Web</option>
+        <option>飲食・サービス</option>
+        <option>医療・介護</option>
+        <option>小売・EC</option>
+        <option>その他</option>
+      </select>
+      <select name="size">
+        <option value="">従業員数（任意）</option>
+        <option>1名（個人）</option>
+        <option>2〜10名</option>
+        <option>11〜50名</option>
+        <option>51名以上</option>
+      </select>
+      <select name="service">
+        <option value="">気になるサービス（任意）</option>
+        <option>AI実装プロジェクト（¥298,000〜）</option>
+        <option>月次AI顧問（¥148,000/月）</option>
+        <option>まだ決めていない</option>
+      </select>
+      <textarea name="message" placeholder="今困っていること・自動化したい業務・試したことなど、何でも書いてください（任意）"></textarea>
+      <button type="submit" class="btn btn-gold" style="width:100%;font-size:15px;padding:15px;justify-content:center;">送信する（無料・返信24h以内）</button>
+      <p class="form-hint">送信後、担当者よりメールでご連絡します · オンライン面談は必要な場合のみご提案</p>
+    </form>
+  </div>
 </section>
 
 <footer>
-  <p>&copy; 2026 ClawTech（クロウテック）｜<a href="/">トップページ</a>｜<a href="/shindan.html">DX診断</a>｜<a href="/#contact">お問い合わせ</a></p>
+  <p>&copy; 2026 ClawTech｜<a href="/">トップページ</a>｜<a href="/shindan.html">DX診断（30秒）</a>｜<a href="/meo.html">MEO対策</a></p>
 </footer>
 
 <script>
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', function(e) {
+const form=document.getElementById('contactForm');
+if(form){form.addEventListener('submit',function(e){
   e.preventDefault();
-  const btn = form.querySelector('button[type=submit]');
-  btn.disabled = true; btn.textContent = '送信中...';
-  fetch(form.action, {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}})
-    .then(() => {
-      if (typeof gtag === 'function') gtag('event', 'ai_komon_lead', {page: 'ai-komon'});
-      document.getElementById('formOk').style.display = 'block';
-      form.reset();
-    })
-    .catch(() => { form.removeEventListener('submit', arguments.callee); form.submit(); })
-    .finally(() => { btn.disabled = false; btn.textContent = '相談を申し込む（無料）'; });
-});
+  const btn=form.querySelector('button[type=submit]');
+  btn.disabled=true;btn.textContent='送信中...';
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    .then(()=>{btn.textContent='送信しました ✓';form.reset();})
+    .catch(()=>{form.submit();})
+    .finally(()=>{setTimeout(()=>{btn.disabled=false;btn.textContent='送信する（無料・返信24h以内）';},3000);});
+});}
 </script>
 </body>
 </html>
