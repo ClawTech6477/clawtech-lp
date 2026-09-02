@@ -17,3 +17,7 @@ generate_sitemap.sh
 .aider.chat.history.md
 .aider.input.history
 To
+
+# SQLiteデータベース(2026-09-02追加): blog_articles.dbはopenclaw側で管理するローカルDB
+blog/*.db
+*.db
