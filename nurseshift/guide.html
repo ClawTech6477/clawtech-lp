@@ -69,20 +69,20 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
     </section>
     <section id="s2">
       <h2><span class="num">2</span>スタッフを登録する</h2>
-      <div class="txt"><p>「スタッフ」タブで<strong>右下の＋ボタン</strong>を押し、1人ずつ追加します。</p>
+      <div class="txt"><p>「スタッフ」タブで<strong>右下の＋ボタン</strong>を押し、1人ずつ追加します。夜勤なしの人は「夜勤可」をオフにすると、夜勤上限の欄は消えます。</p>
 <ul><li><strong>夜勤可</strong>: 夜勤に入れる人はオン</li><li><strong>リーダー</strong>: 日勤・夜勤のリーダーができる人はオン（各勤務に1人は入るように組みます）</li><li><strong>新人</strong>: 1〜2年目。新人だけの勤務にならないよう配慮します</li><li><strong>月夜勤上限</strong>: その人が月に入れる夜勤の最大回数</li></ul>
 <div class="tip">自動作成は<strong>5名以上</strong>が目安です。人数やリーダーが足りないと、作成時に「事前チェック」で不足をお知らせします。</div></div>
       <div class="shots2"><figure class="shot"><img src="img/03_staff_list.jpg" alt="登録したスタッフの一覧。L＝リーダー、新＝新人、夜×＝夜勤なし" loading="lazy" width="390" height="848"><figcaption>登録したスタッフの一覧。L＝リーダー、新＝新人、夜×＝夜勤なし</figcaption></figure><figure class="shot"><img src="img/04_staff_edit.jpg" alt="スタッフの編集画面" loading="lazy" width="390" height="848"><figcaption>スタッフの編集画面</figcaption></figure></div>
     </section>
     <section id="s3">
       <h2><span class="num">3</span>勤務区分と必要人数を確認する</h2>
-      <div class="txt"><p>「勤務区分」タブには、日勤・準夜・深夜・有給・休みが最初から入っています。勤務をタップすると、時刻と<strong>曜日ごとの必要人数（最低・最大）</strong>、経験年数ごとの人数を変えられます。</p>
+      <div class="txt"><p>「勤務区分」タブには、日勤・準夜・深夜・有給・休みが最初から入っています。勤務をタップすると、時刻、<strong>曜日ごとの必要人数（最低・最大）</strong>、経験年数ごとの人数、<strong>「リーダーを必ず1人入れる」</strong>のオン／オフを変えられます。リーダーができる人が少ない病棟では、夜勤のリーダー必須をオフにすると組みやすくなります。</p>
 <div class="tip">必要人数を多くしすぎると、組めない日が増えます。まずは実際に必要な最低人数から始めるのがおすすめです。</div></div>
       <div class="shots2"><figure class="shot"><img src="img/05_shift_types.jpg" alt="勤務区分の一覧" loading="lazy" width="390" height="848"><figcaption>勤務区分の一覧</figcaption></figure><figure class="shot"><img src="img/06_shift_type_edit.jpg" alt="曜日ごとの必要人数を設定" loading="lazy" width="390" height="848"><figcaption>曜日ごとの必要人数を設定</figcaption></figure></div>
     </section>
     <section id="s4">
       <h2><span class="num">4</span>希望休・固定したい勤務を入れる</h2>
-      <div class="txt"><p>「シフト表」タブで、スタッフと日付のマスを<strong>長押し</strong>します。勤務（休みなど）を選んで、</p>
+      <div class="txt"><p>「シフト表」タブで、スタッフと日付のマスを<strong>長押し</strong>します（空のマスでもOK）。出てきた一覧から勤務（休み・日勤など）を選び、</p>
 <ul><li><strong>✓ 必須（必ず通す）</strong>: 必ずその勤務にする</li><li><strong>〜 希望（なるべく通す）</strong>: できるだけその勤務にする</li></ul>
 <p>を選びます。必須は緑、希望は青の枠で表示されます。</p></div>
       <div class="shots2"><figure class="shot"><img src="img/07_grid_empty.jpg" alt="作成前のシフト表" loading="lazy" width="390" height="848"><figcaption>作成前のシフト表</figcaption></figure><figure class="shot"><img src="img/08_request_modal.jpg" alt="マスを長押しして必須／希望を登録" loading="lazy" width="390" height="848"><figcaption>マスを長押しして必須／希望を登録</figcaption></figure></div>
@@ -91,7 +91,7 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
       <h2><span class="num">5</span>「作成」を押す</h2>
       <div class="txt"><p>右上の<strong>「作成」</strong>を押すと、下の「守っているきまり」を守りながら自動でシフトを組みます（人数によって数秒〜十数秒）。</p>
 <p>守りきれなかったことがあれば、表の下に<strong>「制約違反」</strong>として理由と必要な対策が表示されます。</p>
-<p>作成後はマスを<strong>タップ</strong>するたびに勤務が切り替わるので、そのまま手直しできます。手直ししたマスは、もう一度「作成」しても残ります。「‹ ›」で月を切り替えられます。</p></div>
+<p>作成後はマスを<strong>タップ</strong>するたびに勤務が切り替わるので、そのまま手直しできます。手直ししたマスには<strong>オレンジの三角</strong>が付き、違反の一覧もすぐ再チェックされます。もう一度「作成」しても手直しは残ります。「‹ ›」で月を切り替えられます（表は月ごとに保存）。</p></div>
       <div class="shots2"><figure class="shot"><img src="img/09_grid_created.jpg" alt="作成後のシフト表。下に日ごとの人数合計" loading="lazy" width="390" height="848"><figcaption>作成後のシフト表。下に日ごとの人数合計</figcaption></figure><figure class="shot"><img src="img/10_violations.jpg" alt="守れなかった点と対策が表示される" loading="lazy" width="390" height="848"><figcaption>守れなかった点と対策が表示される</figcaption></figure></div>
     </section>
     <section id="s6">
@@ -110,7 +110,7 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
     </section>
     <section id="s7">
       <h2><span class="num">7</span>印刷する</h2>
-      <div class="step"><div class="txt"><p>「印刷」を押すと、AirPrint対応のプリンターにそのまま印刷できます。プリンターとiPhoneが同じWi-Fiにつながっていれば、インターネットは不要です。印刷画面からPDFとして保存・共有もできます。</p></div><figure class="shot"><img src="img/13_print_preview.jpg" alt="印刷プレビュー" loading="lazy" width="390" height="848"><figcaption>印刷プレビュー</figcaption></figure></div>
+      <div class="step"><div class="txt"><p>「印刷」を押すと、<strong>A4横・勤務ごとの色分け</strong>で、病院名・病棟名・凡例つきで印刷できます（AirPrint対応プリンター）。プリンターとiPhoneが同じWi-Fiにつながっていれば、インターネットは不要です。印刷画面からPDFとして保存・共有もできます。</p></div><figure class="shot"><img src="img/13_print_preview.jpg" alt="印刷プレビュー" loading="lazy" width="390" height="848"><figcaption>印刷プレビュー</figcaption></figure></div>
     </section>
     <section id="faq">
       <h2>困ったとき</h2>
