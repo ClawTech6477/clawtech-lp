@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>使い方 | 師長のシフト表</title>
-<meta name="description" content="師長のシフト表の使い方。病棟・スタッフ・勤務区分を登録して「作成」を押すだけで、夜勤回数や連続勤務のきまりを守ったシフト表を自動で作れます。">
+<meta name="description" content="師長のシフト表の使い方。病棟名と必要人数を入れ、名簿を貼り付けて「作成」を押すだけで、夜勤回数や連続勤務のきまりを守ったシフト表を自動で作れます。">
 <link rel="canonical" href="https://clawtechjp.com/nurseshift/guide.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2020/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%85%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@ h2+h3{margin-top:4px}
 <header>
   <div class="wrap">
     <h1>師長のシフト表 — 使い方</h1>
-    <p>登録から作成・印刷まで、画面つきで説明します</p>
+    <p>はじめ方から作成・印刷まで、画面つきで説明します</p>
   </div>
 </header>
 
@@ -65,166 +65,135 @@ h2+h3{margin-top:4px}
 
     <section>
       <h2>はじめに（5分で最初の1枚）</h2>
-      <p>下の順番で登録して「作成」を押すだけで、夜勤回数や連続勤務のきまりを守ったシフト表ができます。</p>
+      <p>病棟名と必要人数を入れ、名簿を貼り付けて「作成」を押すだけで、夜勤回数や連続勤務のきまりを守ったシフト表ができます。</p>
       <p>データはすべてiPhoneの中だけに保存され、外部には送信されません。ログインも、インターネット接続も不要です。</p>
-      <div class="tip">まず触ってみたいときは、「病棟」タブの<strong>「サンプルで試す」</strong>を押すと、見本の病棟（12名）ができます。あとで「サンプルを削除」で消せます。</div>
-      <div class="toc" style="margin-top:14px"><a href="#s1">1 病棟</a><a href="#s2">2 スタッフ</a><a href="#s3">3 勤務区分</a><a href="#s4">4 希望休</a><a href="#s5">5 作成</a><a href="#s6">6 違反を直す</a><a href="#s7">7 印刷・PDF</a><a href="#s8">8 病院のPCへ写す</a><a href="#s9">9 きまり</a><a href="#faq">困ったとき</a></div>
+      <div class="toc" style="margin-top:14px"><a href="#s1">1 はじめる</a><a href="#s2">2 スタッフ</a><a href="#s3">3 希望休</a><a href="#s4">4 作成</a><a href="#s5">5 違反を直す</a><a href="#s6">6 印刷・PDF</a><a href="#s7">7 病院のPCへ写す</a><a href="#s8">8 ルール</a><a href="#faq">困ったとき</a></div>
     </section>
 
     <section id="s1">
-      <h2><span class="num">1</span>病棟を登録する</h2>
+      <h2><span class="num">1</span>はじめる</h2>
+      <p>はじめて開くと、「シフト表」タブにこの画面が出ます。</p>
       <ol class="steps">
-        <li>下のタブの「病棟」を開き、<strong>「最初の病棟を追加」</strong>を押します。</li>
-        <li>病棟名（例: 3階東病棟）を入れて「保存」します。病院名は空欄でもかまいません。</li>
+        <li><strong>病棟名</strong>を入れます（例: 3階東病棟）。</li>
+        <li><strong>1日に必要な人数</strong>を、平日の日勤・土日の日勤・準夜・深夜の4つだけ入れます。</li>
+        <li>夜勤にリーダーが必ず要るなら、スイッチをオンのままにします。</li>
+        <li><strong>「はじめる」</strong>を押します。</li>
       </ol>
-      <p class="note">病棟は複数登録でき、病棟ごとにスタッフ・きまり・シフト表が別々に保存されます。病棟名は長押しで編集できます。</p>
-      <div class="shots2"><figure class="shot"><img src="img/01_ward_empty.jpg" alt="「最初の病棟を追加」を押す" loading="lazy" width="390" height="848"><figcaption>「最初の病棟を追加」を押す</figcaption></figure><figure class="shot"><img src="img/02_ward_add.jpg" alt="病棟名を入れて保存" loading="lazy" width="390" height="848"><figcaption>病棟名を入れて保存</figcaption></figure></div>
+      <ul>
+        <li>まず触ってみたいときは、下の<strong>「サンプルで試す」</strong>で見本の病棟（12名）を作れます。消すときは「設定」→「病棟」の<strong>「サンプルを削除」</strong>。</li>
+        <li>2交代の病棟や、曜日ごとに人数が違う病棟は、あとで「ルール」→「勤務の種類と必要人数」で変えられます。</li>
+      </ul>
+      <div class="shots2"><figure class="shot"><img src="img/20_first.jpg" alt="はじめの画面" loading="lazy" width="390" height="848"><figcaption>はじめの画面</figcaption></figure></div>
     </section>
 
     <section id="s2">
       <h2><span class="num">2</span>スタッフを登録する</h2>
-      <h3>1人ずつ追加する</h3>
-      <ol class="steps">
-        <li>「スタッフ」タブの<strong>右下の＋</strong>を押します。</li>
-        <li>名前を入れ、下の項目を選んで保存します。</li>
-      </ol>
-      <ul>
-        <li><strong>夜勤可</strong>：夜勤に入れる人はオン。オフにすると夜勤は入りません。</li>
-        <li><strong>リーダー</strong>：リーダーができる人はオン。</li>
-        <li><strong>新人（1〜2年目）</strong>：新人だけの勤務にならないよう配慮します。</li>
-        <li><strong>月夜勤上限</strong>：その人が月に入れる夜勤の最大回数。</li>
-      </ul>
       <h3>名簿を貼り付けてまとめて登録する</h3>
       <ol class="steps">
-        <li>「スタッフ」タブ右上の<strong>「取り込み」</strong>を押し、<strong>「スタッフを一括登録（名簿の貼り付け）」</strong>を選びます。</li>
-        <li>Excelやメモの名簿をコピーして貼り付けます。1行に1人です。</li>
-        <li>読み取った一覧を確認して登録します。</li>
+        <li>Excelやメモの名簿をコピーします。1行に1人です。</li>
+        <li>「スタッフ」タブの<strong>「名簿を貼り付けてまとめて登録」</strong>を押して貼り付けます（2回目以降は右上の「取り込み」から）。</li>
+        <li>読み取った一覧で、<strong>「リーダー」「夜勤なし」</strong>をタップして付け外しし、「登録する」を押します。</li>
       </ol>
-      <div class="tip">自動作成は<strong>5名以上</strong>が目安です。人数やリーダーが足りないと、作成時に不足をお知らせします。</div>
-      <div class="shots2"><figure class="shot"><img src="img/03_staff_list.jpg" alt="スタッフの一覧（L＝リーダー、新＝新人、夜×＝夜勤なし）" loading="lazy" width="390" height="848"><figcaption>スタッフの一覧（L＝リーダー、新＝新人、夜×＝夜勤なし）</figcaption></figure><figure class="shot"><img src="img/04_staff_edit.jpg" alt="スタッフの編集画面" loading="lazy" width="390" height="848"><figcaption>スタッフの編集画面</figcaption></figure></div>
+      <div class="shots2"><figure class="shot"><img src="img/21_staff_empty.jpg" alt="スタッフが0人のとき" loading="lazy" width="390" height="848"><figcaption>スタッフが0人のとき</figcaption></figure><figure class="shot"><img src="img/22_staff_preview.jpg" alt="読み取った名簿。リーダー・夜勤なしはタップで切り替え" loading="lazy" width="390" height="848"><figcaption>読み取った名簿。リーダー・夜勤なしはタップで切り替え</figcaption></figure></div>
+      <h3>1人ずつ追加・直す</h3>
+      <p>右下の＋で追加、名前をタップで編集します。</p>
+      <ul>
+        <li><strong>夜勤可</strong>：オフにすると夜勤は入りません。</li>
+        <li><strong>リーダー</strong>：リーダーができる人はオン。</li>
+        <li><strong>新人（1〜2年目）</strong>：新人だけの勤務にならないよう配慮します。</li>
+        <li><strong>月の夜勤上限</strong>：空欄なら病棟の上限に従います。少なくしたい人だけ数字を入れます。</li>
+      </ul>
     </section>
 
     <section id="s3">
-      <h2><span class="num">3</span>勤務区分と必要人数を確認する</h2>
-      <p>「勤務区分」タブには、日勤・準夜・深夜・有給・休みが最初から入っています。勤務をタップすると、次の項目を変えられます。</p>
-      <ul>
-        <li>開始・終了の時刻</li>
-        <li><strong>曜日ごとの必要人数</strong></li>
-        <li>経験年数ごとの人数</li>
-        <li><strong>「リーダーを必ず1人入れる」</strong>のオン／オフ</li>
-      </ul>
-      <div class="tip">必要人数を多くしすぎると、組めない日が増えます。まずは実際に必要な最低人数から始めてください。リーダーができる人が少ない病棟では、夜勤の「リーダーを必ず1人入れる」をオフにすると組みやすくなります。</div>
-      <div class="shots2"><figure class="shot"><img src="img/05_shift_types.jpg" alt="勤務区分の一覧" loading="lazy" width="390" height="848"><figcaption>勤務区分の一覧</figcaption></figure><figure class="shot"><img src="img/06_shift_type_edit.jpg" alt="曜日ごとの必要人数を設定" loading="lazy" width="390" height="848"><figcaption>曜日ごとの必要人数を設定</figcaption></figure></div>
-    </section>
-
-    <section id="s4">
-      <h2><span class="num">4</span>希望休・固定したい勤務を入れる</h2>
-      <h3>1つずつ入れる</h3>
+      <h2><span class="num">3</span>希望休を入れる</h2>
+      <h3>チャットやメールで届いた希望をまとめて入れる</h3>
       <ol class="steps">
-        <li>「シフト表」タブで、スタッフと日付のマスを<strong>長押し</strong>します（空のマスでもOK）。</li>
-        <li>勤務（休み・日勤など）を選びます。</li>
-        <li><strong>「必須（必ず通す）」</strong>か<strong>「希望（なるべく通す）」</strong>を選びます。</li>
-      </ol>
-      <p class="note">必須は緑、希望は青の印が付きます。</p>
-      <div class="shots2"><figure class="shot"><img src="img/07_grid_empty.jpg" alt="作成前のシフト表" loading="lazy" width="390" height="848"><figcaption>作成前のシフト表</figcaption></figure><figure class="shot"><img src="img/08_request_modal.jpg" alt="マスを長押しして必須／希望を登録" loading="lazy" width="390" height="848"><figcaption>マスを長押しして必須／希望を登録</figcaption></figure></div>
-      <h3>チャットやメールで届いた希望休をまとめて入れる</h3>
-      <ol class="steps">
-        <li>チャット（LINE・院内チャットなど）やメールで届いた希望の文をコピーします（複数人分をまとめてでもかまいません）。</li>
-        <li>「スタッフ」タブ右上の<strong>「取り込み」</strong>を押し、<strong>「希望休を貼り付けで取り込む」</strong>を選んで貼り付けます。</li>
-        <li>読み取った一覧（誰の・何日・何の勤務か）を確認し、違うものはオフにしてから「取り込む」を押します。</li>
+        <li>チャット（LINE・院内チャットなど）やメールで届いた希望の文をコピーします。複数人分まとめてでもかまいません。</li>
+        <li>「シフト表」の表の下にある<strong>「希望休を貼り付けで取り込む」</strong>を押し、「クリップボードから貼り付け」→「読み取る」。</li>
+        <li>読み取った一覧（誰の・何日・何の勤務か）を確かめて「取り込む」を押します。</li>
       </ol>
       <ul>
-        <li>読み取りに自信がない行（3交代で「夜勤」とだけ書かれた日など）は、<strong>オレンジの枠でオフ</strong>になっています。内容を確かめてからオンにしてください。</li>
-        <li>名前が分からない行は、名前を1回選ぶと、同じ書き方の行にまとめて当たります。</li>
+        <li>自信がない行（3交代で「夜勤」とだけ書かれた日など）は、<strong>オレンジの枠でオフ</strong>になっています。確かめてからオンにしてください。</li>
         <li>「午前休」「無理です」「取り消し」の日や、別の月の日付は取り込みません。</li>
       </ul>
       <div class="tip"><strong>確実に読める書き方</strong><br>
-① 1行に1人「名前 日付 勤務」<br>　例: 山田 葵 3日 休み ／ 佐藤 恵 5日 有給、12日 準夜<br>
-② 必ず休みたい日は「必須」、できればの日は「できれば」<br>　例: 鈴木 真由美 20日 休み 必須<br>
-チャットのトーク履歴、「山田 3,5,12」「伊藤 3〜5」「10/3」、Excel・AIで作った表も読めます。</div>
-      <div class="shots2"><figure class="shot"><img src="img/19_import_format.jpg" alt="取り込み画面。上に書き方の例" loading="lazy" width="390" height="848"><figcaption>取り込み画面。上に書き方の例</figcaption></figure><figure class="shot"><img src="img/16_import.jpg" alt="読み取った希望の確認画面" loading="lazy" width="390" height="848"><figcaption>読み取った希望の確認画面</figcaption></figure></div>
+① 1行に1人「名前 日付 勤務」　例: 山田 葵 3日 休み<br>
+② 必ず休みたい日は「必須」、できればの日は「できれば」　例: 鈴木 真由美 20日 休み 必須</div>
+      <div class="shots2"><figure class="shot"><img src="img/27_req_input.jpg" alt="貼り付けて「読み取る」" loading="lazy" width="390" height="848"><figcaption>貼り付けて「読み取る」</figcaption></figure><figure class="shot"><img src="img/28_req_preview.jpg" alt="読み取った希望の確認" loading="lazy" width="390" height="848"><figcaption>読み取った希望の確認</figcaption></figure></div>
+      <h3>1つずつ入れる</h3>
+      <ol class="steps">
+        <li>「シフト表」でマスを<strong>長押し</strong>します（空のマスでもOK）。</li>
+        <li>勤務を選び、<strong>「必須」</strong>か<strong>「希望（なるべく通す）」</strong>を選びます。</li>
+      </ol>
+      <div class="shots2"><figure class="shot"><img src="img/08_request_modal.jpg" alt="マスを長押しして登録" loading="lazy" width="390" height="848"><figcaption>マスを長押しして登録</figcaption></figure></div>
+    </section>
+
+    <section id="s4">
+      <h2><span class="num">4</span>「作成」を押す</h2>
+      <ol class="steps">
+        <li>「‹ ›」で作りたい月を選び、右上の<strong>「作成」</strong>を押します。数秒〜十数秒で、上に進み具合（%）が出ます。</li>
+        <li>守りきれなかったことがあれば、表の下に<strong>「制約違反」</strong>が出ます。直し方は「5」へ。</li>
+        <li>マスを<strong>タップ</strong>するたびに勤務が切り替わります。そのまま手直しできます。</li>
+      </ol>
+      <ul>
+        <li>手直ししたマスにはオレンジの三角が付き、もう一度「作成」しても残ります。</li>
+        <li>前の月の表があれば、月末の勤務を見て月初の連勤や夜勤明けも守ります。</li>
+      </ul>
+      <div class="shots2"><figure class="shot"><img src="img/17_creating.jpg" alt="作成中は上に進み具合（%）" loading="lazy" width="390" height="848"><figcaption>作成中は上に進み具合（%）</figcaption></figure></div>
     </section>
 
     <section id="s5">
-      <h2><span class="num">5</span>「作成」を押す</h2>
+      <h2><span class="num">5</span>違反をまとめて直す</h2>
+      <p>違反があると、違反一覧に赤い<strong>「違反をまとめて直す」</strong>ボタンが出ます。押すと10〜20秒で次の3つを行います。</p>
       <ol class="steps">
-        <li>右上の<strong>「作成」</strong>を押します。「9 守っているきまり」を守りながら、自動でシフトを組みます。人数によって数秒〜十数秒かかり、上に進み具合（%）が出ます。</li>
-        <li>守りきれなかったことがあれば、表の下に<strong>「制約違反」</strong>として表示されます。直し方は「6」を見てください。</li>
-        <li>マスを<strong>タップ</strong>するたびに勤務が切り替わるので、そのまま手直しできます。</li>
+        <li><strong>組み替え</strong>：手直ししたマスと必須の希望は動かさずに、違反を減らします。</li>
+        <li><strong>原因</strong>：埋まらない日に、なぜ入れる人がいないのかを出します。</li>
+        <li><strong>設定の案</strong>：必要人数を減らす・リーダー必須を外すなど、違反が減る変え方を、組み直した件数つきで最大3つ出します。</li>
       </ol>
-      <ul>
-        <li>手直ししたマスにはオレンジの三角が付き、違反の一覧もすぐ数え直されます。</li>
-        <li>もう一度「作成」しても、手直ししたマスはそのまま残ります。</li>
-        <li>前の月の表があれば、月末の勤務を見て月初の連勤や夜勤明けも守ります。</li>
-        <li>「‹ ›」で月を切り替えられます。表は月ごとに保存されます。</li>
-      </ul>
-      <div class="shots2"><figure class="shot"><img src="img/17_creating.jpg" alt="作成中は上に進み具合（%）が出る" loading="lazy" width="390" height="848"><figcaption>作成中は上に進み具合（%）が出る</figcaption></figure><figure class="shot"><img src="img/18_after_create.jpg" alt="作成後。違反と「違反をまとめて直す」、下にリンク" loading="lazy" width="390" height="848"><figcaption>作成後。違反と「違反をまとめて直す」、下にリンク</figcaption></figure></div>
-    </section>
-
-    <section id="s6">
-      <h2><span class="num">6</span>違反をまとめて直す</h2>
-      <p>違反があると、違反一覧の中に赤い<strong>「違反をまとめて直す」</strong>ボタンが出ます。押すと10〜20秒（%で進み具合を表示）で、次の3つを順に行います。</p>
-      <ol class="steps">
-        <li><strong>組み替え</strong>：手直ししたマスと必須の希望は動かさずに、勤務を組み替えて違反を減らします。元より悪くなる組み替えは使いません。</li>
-        <li><strong>原因の表示</strong>：埋まらない日ごとに、なぜ入れる人がいないのか（夜勤回数の上限・勤務の間隔など）を表示します。</li>
-        <li><strong>設定の案</strong>：違反が減る設定の変え方を最大3つ、実際に組み直したときの件数つきで出します。</li>
-      </ol>
-      <p>あとは<strong>「この表にする」</strong>か<strong>「この設定で直す」</strong>を押すだけです。設定を変える前には確認が出ます。変えた設定は、あとから設定画面で戻せます。</p>
+      <p>「この表にする」か「この設定で直す」を押すだけです。変えた設定は、あとから「ルール」で戻せます。</p>
       <div class="shots2"><figure class="shot"><img src="img/14_fix.jpg" alt="組み替えの結果・原因・設定の案" loading="lazy" width="390" height="848"><figcaption>組み替えの結果・原因・設定の案</figcaption></figure></div>
     </section>
 
-    <section id="s7">
-      <h2><span class="num">7</span>印刷する・PDFで送る</h2>
-      <h3>印刷する</h3>
-      <p>右上の<strong>「印刷」</strong>を押すと、A4横・勤務ごとの色分けで、病院名・病棟名・凡例つきで印刷できます（AirPrint対応プリンター）。</p>
-      <p class="note">プリンターとiPhoneが同じWi-Fiにつながっていれば、インターネットは不要です。</p>
-      <h3>PDFにしてチャット・メールで送る</h3>
-      <ol class="steps">
-        <li>作成後、表の下の<strong>「PDFにしてチャット・メールで送る」</strong>を押します。</li>
-        <li>「勤務表のみ」か「勤務表＋集計」を選びます。</li>
-        <li>送り先（チャット・メール・ファイルに保存など）を選びます。コンビニのネットプリントでも印刷できます。</li>
-      </ol>
+    <section id="s6">
+      <h2><span class="num">6</span>印刷する・PDFで送る</h2>
+      <p>右上の<strong>「印刷」</strong>で、A4横・色分け・凡例つきで印刷できます（AirPrint対応プリンター）。</p>
+      <p>表の下の<strong>「PDFにしてチャット・メールで送る」</strong>なら、「勤務表のみ」か「勤務表＋集計」を選んで、PDFで送ったり保存したりできます。コンビニのネットプリントでも印刷できます。</p>
       <div class="shots2"><figure class="shot"><img src="img/13_print_preview.jpg" alt="印刷プレビュー" loading="lazy" width="390" height="848"><figcaption>印刷プレビュー</figcaption></figure></div>
     </section>
 
-    <section id="s8">
-      <h2><span class="num">8</span>病院のパソコンへ写す・集計を見る</h2>
+    <section id="s7">
+      <h2><span class="num">7</span>病院のパソコンへ写す・集計を見る</h2>
       <h3>1人ずつ大きく表示</h3>
-      <p>病院のパソコン（勤務管理システム）に手で打ち込むときの見本です。</p>
       <ol class="steps">
-        <li>作成後、表の下の<strong>「1人ずつ大きく表示」</strong>を押します。</li>
-        <li>1人分の1か月がカレンダーの形で大きく出ます。見ながら打ち込みます。</li>
-        <li>打ち終えたら<strong>「この人は病院のパソコンに入力済み」</strong>にチェックを付け、「次の人」へ進みます。</li>
+        <li>表の下の<strong>「1人ずつ大きく表示」</strong>を押します。</li>
+        <li>1人分の1か月が大きく出ます。見ながら病院のパソコンに打ち込みます。</li>
+        <li>打ち終えたら<strong>「この人は病院のパソコンに入力済み」</strong>にチェックを付けて「次の人」へ。途中でやめても、次は未入力の人から始まります。</li>
       </ol>
-      <p class="note">途中でアプリを閉じてもチェックは残り、次は未入力の人から始まります。表を作り直すとチェックは消えます。「日ごと」に切り替えると、その日の担当者を勤務ごとに表示します。</p>
       <div class="shots2"><figure class="shot"><img src="img/15_one_by_one.jpg" alt="1人ずつ大きく表示" loading="lazy" width="390" height="848"><figcaption>1人ずつ大きく表示</figcaption></figure></div>
       <h3>夜勤時間（様式9）と公平性の集計</h3>
-      <p>表の下の<strong>「夜勤時間（様式9）と公平性の集計を見る」</strong>から開きます。月平均夜勤時間と、スタッフごとの夜勤回数・休み・土日の休み・希望の通り方を並べ、偏りがあれば知らせます。</p>
-      <p class="note">提出用の正式な帳票ではなく、確認用の集計です。</p>
+      <p>表の下から開きます。月平均夜勤時間と、夜勤回数・休み・希望の通り方の偏りを確かめられます（提出用の帳票ではなく確認用です）。</p>
     </section>
 
-    <section id="s9">
-      <h2><span class="num">9</span>守っているきまり</h2>
-      <div class="step"><div class="txt">
-      <p>「ルール」タブで変更できます。</p>
+    <section id="s8">
+      <h2><span class="num">8</span>ルールを変える</h2>
+      <p>「ルール」タブで変えます。</p>
       <ul>
-        <li>月夜勤上限・夜勤の連続上限・勤務間インターバル（初期は11時間。深夜の翌日の準夜などは自動で入りません）</li>
-        <li>月平均夜勤時間の上限（様式9）</li>
-        <li>連続勤務の上限、夜勤後の休み、週末の連続休み</li>
-        <li>2連休の翌日は夜勤にしない</li>
-        <li>禁止したい勤務の並び（初期: 深→休→深）、一緒にしないペア</li>
-        <li>月の希望休の上限</li>
+        <li><strong>勤務の種類と必要人数</strong>：一番上。勤務の時刻、曜日ごとの必要人数、「リーダーを必ず1人」を変えられます。</li>
+        <li>夜勤：月の夜勤上限、夜勤の連続上限、連続夜勤のあとの休み、月平均夜勤時間の上限（様式9）</li>
+        <li>連続勤務の上限、勤務間インターバル（初期11時間）、週末の連休、2連休の翌日は夜勤にしない</li>
+        <li>禁止したい勤務の並び（記号を順に押して作ります）、一緒にしないペア</li>
       </ul>
-      <p class="note">初期設定では「土日の休みの翌日は深夜にしない」も守ります（この項目は今のところ画面からは変更できません）。</p>
-      <p>師長が手直しした並びは「師長の手直しパターン」に集まります。「ルール化」を押すと、次から自動作成がその並びを避けます。</p>
-      </div><figure class="shot"><img src="img/11_rules.jpg" alt="ルールタブ" loading="lazy" width="390" height="848"><figcaption>ルールタブ</figcaption></figure></div>
+      <p class="note">マスを手直しした並びは「師長の手直しパターン」に出ます。「ルール化」を押すと、次から自動作成がその並びを避けます。</p>
+      <p class="note">初期設定では「土日の休みの翌日は深夜にしない」も守ります（この項目は今のところ画面からは変えられません）。病棟の名前の変更や、月の表のリセットは「設定」タブにあります。</p>
+      <div class="shots2"><figure class="shot"><img src="img/24_rules.jpg" alt="ルールタブ" loading="lazy" width="390" height="848"><figcaption>ルールタブ</figcaption></figure><figure class="shot"><img src="img/25_shift_types.jpg" alt="勤務の種類と必要人数" loading="lazy" width="390" height="848"><figcaption>勤務の種類と必要人数</figcaption></figure></div>
     </section>
 
     <section id="faq">
       <h2>困ったとき</h2>
       <div class="qa">
         <p class="q">Q. 「作成」しても制約違反がたくさん出る</p>
-        <p>まず違反一覧の中の<strong>「違反をまとめて直す」</strong>を押してください（「6」を参照）。原因と、違反が減る設定の変え方を表示します。</p>
+        <p>まず違反一覧の中の<strong>「違反をまとめて直す」</strong>を押してください（「5」を参照）。原因と、違反が減る設定の変え方を表示します。</p>
         <p>多くの場合、人数に対して条件が厳しすぎます。「必須」の希望が多すぎる場合も組みにくくなります。</p>
       </div>
       <div class="qa">
@@ -233,7 +202,7 @@ h2+h3{margin-top:4px}
       </div>
       <div class="qa">
         <p class="q">Q. データを消したい／機種変更したい</p>
-        <p>「設定」→「データ管理」から表示中の月の表を消去できます。データは端末内だけに保存されるため、機種変更では自動で移りません。</p>
+        <p>「設定」の「◯月のシフト表をリセット」で、表示中の月の表を消去できます。データは端末内だけに保存されるため、機種変更では自動で移りません。</p>
       </div>
       <p>そのほかのご質問・ご要望は <a href="mailto:nurseshift@clawtechjp.com?subject=師長のシフト表 お問い合わせ">nurseshift@clawtechjp.com</a> へ。<a href="/nurseshift/support.html">サポート</a> ／ <a href="/nurseshift/privacy.html">プライバシーポリシー</a></p>
     </section>
