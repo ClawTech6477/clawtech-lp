@@ -376,7 +376,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
 <!-- FLOATING CTA -->
 <div id="float-cta" aria-label="無料相談">
   <button class="float-dismiss" onclick="document.getElementById('float-cta').remove()" aria-label="閉じる">✕</button>
-  <a href="#contact" class="float-btn" onclick="document.getElementById('float-cta').remove()">
+  <a href="#contact" class="float-btn" onclick="gtag('event','cta_click',{'page':'karute','position':'float'});document.getElementById('float-cta').remove()">
     <i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談（24h返信）
   </a>
 </div>
@@ -434,7 +434,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
     <p class="hero-sub">来店履歴・施術内容・お客様の好みをカルテとして一元管理し、次回提案や誕生日クーポンを自動化。予約プラットフォームの掲載費・手数料に頼らず、顧客データを自店舗の資産にするアプリをClaude Codeで低コスト・短納期に開発します。</p>
     <p class="hero-note">エステ・ピラティス・パーソナルジム・整体・ネイル・美容室など、リピーター中心の個人店に対応／全国オンライン相談可／既存の予約プラットフォームとの併用OK</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談する（24h以内返信）</a>
+      <a href="#contact" class="btn btn-primary" onclick="gtag('event','cta_click',{'page':'karute','position':'hero'})"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料相談する（24h以内返信）</a>
       <a href="#pricing" class="btn btn-ghost"><i class="fa-solid fa-file-lines" aria-hidden="true"></i>まずは料金シートを見る →</a>
       <a href="#situation" class="btn btn-ghost">まず現状を整理する →</a>
     </div>
@@ -490,7 +490,7 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
       <div class="prob-card"><div class="pi"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div><p>予約変更・キャンセルのやり取りが電話やDMに集中して大変</p></div>
     </div>
     <div style="text-align:center;margin-top:48px" data-aos="fade-up" data-aos-delay="200">
-      <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料で現状を相談する</a>
+      <a href="#contact" class="btn btn-primary" onclick="gtag('event','cta_click',{'page':'karute','position':'mid'})"><i class="fa-solid fa-comments" aria-hidden="true"></i>無料で現状を相談する</a>
       <p style="font-size:13px;color:var(--hai);margin-top:10px">機能・費用感、何でもOK。返信24h以内。</p>
     </div>
   </div>
