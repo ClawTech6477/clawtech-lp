@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>TikTok OAuth Callback</title>
+<style>
+body{font-family:monospace;background:#111;color:#0f0;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;flex-direction:column;gap:16px}
+.box{background:#1a1a1a;border:2px solid #0f0;padding:24px 32px;border-radius:8px;max-width:600px;width:90%;word-break:break-all}
+h1{color:#0f0;font-size:1.2rem;margin:0 0 16px}
+.code{font-size:1.4rem;color:#ff0;padding:12px;background:#000;border-radius:4px;user-select:all;cursor:pointer}
+.err{color:#f44;font-size:1.2rem}
+.hint{color:#888;font-size:0.85rem;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="box" id="box">
+<h1 id="title">TikTok OAuth Callback</h1>
+<div id="content">Loading...</div>
+</div>
+<script>
+const p = new URLSearchParams(location.search);
+const code = p.get('code'), err = p.get('error'), state = p.get('state');
+const box = document.getElementById('content');
+if (code) {
+  document.getElementById('title').textContent = '✅ 認証コード取得完了';
+  box.innerHTML = '<p>以下のコードをClaudeに貼り付けてください:</p>'
+    + '<div class="code" onclick="navigator.clipboard.writeText(this.textContent).then(()=>this.textContent+=\' [コピー済]\').catch(()=>{})" title="クリックでコピー">' + code + '</div>'
+    + '<p class="hint">state: ' + (state||'—') + '</p>'
+    + '<p class="hint">クリックでクリップボードにコピーされます</p>';
+} else if (err) {
+  document.getElementById('title').textContent = '❌ エラー';
+  box.innerHTML = '<div class="err">' + err + '</div><p>state: ' + (state||'—') + '</p>';
+} else {
+  document.getElementById('title').textContent = '⚠️ パラメータなし';
+  box.innerHTML = '<p class="err">code もしくは error パラメータがありません</p><p class="hint">URL: ' + location.href + '</p>';
+}
+</script>
+</body>
+</html>
