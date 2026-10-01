@@ -59,7 +59,8 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
     <section>
       <h2>はじめに（5分で最初の1枚）</h2>
       <p>下の順番で登録して「作成」を押すだけで、夜勤回数や連続勤務のきまりを守ったシフト表ができます。データはすべてiPhoneの中だけに保存され、外部には送信されません。ログインも、インターネット接続も不要です。</p>
-      <div class="toc"><a href="#s1">1 病棟</a><a href="#s2">2 スタッフ</a><a href="#s3">3 勤務区分</a><a href="#s4">4 希望休</a><a href="#s5">5 作成</a><a href="#s6">6 きまり</a><a href="#s7">7 印刷</a><a href="#faq">困ったとき</a></div>
+      <p>まず触ってみたいときは、「病棟」タブの<strong>「サンプルで試す」</strong>で見本の病棟（12名）を作れます。あとで削除できます。</p>
+      <div class="toc"><a href="#s1">1 病棟</a><a href="#s2">2 スタッフ</a><a href="#s3">3 勤務区分</a><a href="#s4">4 希望休</a><a href="#s5">5 作成</a><a href="#s6">6 きまり</a><a href="#s7">7 印刷</a><a href="#s8">8 作成後</a><a href="#faq">困ったとき</a></div>
     </section>
     <section id="s1">
       <h2><span class="num">1</span>病棟を登録する</h2>
@@ -86,14 +87,18 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
 <ul><li><strong>✓ 必須（必ず通す）</strong>: 必ずその勤務にする</li><li><strong>〜 希望（なるべく通す）</strong>: できるだけその勤務にする</li></ul>
 <p>を選びます。必須は緑、希望は青の枠で表示されます。</p></div>
       <div class="shots2"><figure class="shot"><img src="img/07_grid_empty.jpg" alt="作成前のシフト表" loading="lazy" width="390" height="848"><figcaption>作成前のシフト表</figcaption></figure><figure class="shot"><img src="img/08_request_modal.jpg" alt="マスを長押しして必須／希望を登録" loading="lazy" width="390" height="848"><figcaption>マスを長押しして必須／希望を登録</figcaption></figure></div>
-    </section>
+          <div class="txt" style="margin-top:18px"><p><strong>LINEで届いた希望休をまとめて入れる</strong>：「スタッフ」タブ右上の<strong>「貼り付けで取り込む」</strong>から、「山田 3日 5日休み」「佐藤 10/12-14 有給 必須」のような文をそのまま貼り付けます。名前と日付を読み取って一覧にするので、確認してから「取り込む」を押します。</p></div>
+      <figure class="shot"><img src="img/16_import.jpg" alt="貼り付けた文から読み取った希望の確認画面" loading="lazy" width="390" height="848"><figcaption>貼り付けた文から読み取った希望の確認</figcaption></figure>
+</section>
     <section id="s5">
       <h2><span class="num">5</span>「作成」を押す</h2>
       <div class="txt"><p>右上の<strong>「作成」</strong>を押すと、下の「守っているきまり」を守りながら自動でシフトを組みます（人数によって数秒〜十数秒）。</p>
 <p>守りきれなかったことがあれば、表の下に<strong>「制約違反」</strong>として理由と必要な対策が表示されます。</p>
 <p>作成後はマスを<strong>タップ</strong>するたびに勤務が切り替わるので、そのまま手直しできます。手直ししたマスには<strong>オレンジの三角</strong>が付き、違反の一覧もすぐ再チェックされます。もう一度「作成」しても手直しは残ります。「‹ ›」で月を切り替えられます（表は月ごとに保存）。</p></div>
       <div class="shots2"><figure class="shot"><img src="img/09_grid_created.jpg" alt="作成後のシフト表。下に日ごとの人数合計" loading="lazy" width="390" height="848"><figcaption>作成後のシフト表。下に日ごとの人数合計</figcaption></figure><figure class="shot"><img src="img/10_violations.jpg" alt="守れなかった点と対策が表示される" loading="lazy" width="390" height="848"><figcaption>守れなかった点と対策が表示される</figcaption></figure></div>
-    </section>
+          <div class="txt" style="margin-top:18px"><p><strong>違反をまとめて直す</strong>：違反があると、違反一覧の中に赤いボタンが出ます。押すと10〜20秒で、①手直しと必須の希望は動かさずに組み替えて違反を減らし、②埋まらない日ごとに「なぜ入れる人がいないのか」（夜勤回数の上限・勤務の間隔など）を表示し、③違反が減る設定の変え方を、実際に組み直した件数つきで最大3つ出します。「この表にする」か「この設定で直す」を押すだけで反映されます。設定はあとから設定画面で戻せます。</p></div>
+      <figure class="shot"><img src="img/14_fix.jpg" alt="違反をまとめて直すの結果画面" loading="lazy" width="390" height="848"><figcaption>組み替えの結果・原因・設定の案</figcaption></figure>
+</section>
     <section id="s6">
       <h2><span class="num">6</span>守っているきまり</h2>
       <div class="step"><div class="txt">
@@ -112,11 +117,20 @@ li{color:var(--sub);font-size:14px;margin-bottom:4px}
       <h2><span class="num">7</span>印刷する</h2>
       <div class="step"><div class="txt"><p>「印刷」を押すと、<strong>A4横・勤務ごとの色分け</strong>で、病院名・病棟名・凡例つきで印刷できます（AirPrint対応プリンター）。プリンターとiPhoneが同じWi-Fiにつながっていれば、インターネットは不要です。印刷画面からPDFとして保存・共有もできます。</p></div><figure class="shot"><img src="img/13_print_preview.jpg" alt="印刷プレビュー" loading="lazy" width="390" height="848"><figcaption>印刷プレビュー</figcaption></figure></div>
     </section>
+    <section id="s8">
+      <h2><span class="num">8</span>作成後に使えること（表の下のリンク）</h2>
+      <div class="txt"><ul>
+<li><strong>夜勤時間（様式9）と公平性の集計</strong>：月平均夜勤時間と、スタッフごとの夜勤回数・休み・土日の休み・希望の通り方を並べ、偏りがあれば知らせます（提出用の正式な帳票ではなく確認用です）。</li>
+<li><strong>1人ずつ大きく表示</strong>：病院のパソコンに手で打ち込むときの見本です。1人分の1か月をカレンダーの形で大きく表示し、打ち終えた人にチェックを付けられます（途中でやめてもチェックは残ります）。「日ごと」に切り替えると、その日の担当者を勤務ごとに表示します。</li>
+<li><strong>PDFにしてLINE・メールで送る</strong>：勤務表（必要なら集計つき）をPDFにします。コンビニのネットプリントなどでも印刷できます。</li>
+</ul></div>
+      <figure class="shot"><img src="img/15_one_by_one.jpg" alt="1人ずつ大きく表示" loading="lazy" width="390" height="848"><figcaption>1人ずつ大きく表示</figcaption></figure>
+    </section>
     <section id="faq">
       <h2>困ったとき</h2>
       <div class="qa">
         <p class="q">Q. 「作成」しても制約違反がたくさん出る</p>
-        <p>多くの場合、人数に対して条件が厳しすぎます。表示された対策（夜勤できる人を増やす、必要人数を減らす、リーダーができる人を増やす等）を試してください。「必須」の希望が多すぎる場合も組みにくくなります。</p>
+        <p>まず違反一覧の中の<strong>「違反をまとめて直す」</strong>を押してください。原因と、違反が減る設定の変え方を表示します。多くの場合、人数に対して条件が厳しすぎます。表示された対策（夜勤できる人を増やす、必要人数を減らす、リーダーができる人を増やす等）を試してください。「必須」の希望が多すぎる場合も組みにくくなります。</p>
       </div>
       <div class="qa">
         <p class="q">Q. 月を切り替えたら表が消えた</p>
