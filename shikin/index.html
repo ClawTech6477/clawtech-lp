@@ -502,7 +502,7 @@ const IMP_PIXELS = {
 };
 
 // ===== GA4計測(デモ時は送信しない=計測汚染防止) =====
-function track(ev, params){ if(DEMO) return; if(typeof gtag==="function") gtag("event", ev, params||{}); }
+function track(ev, params){ if(DEMO) return; if(typeof gtag==="function") gtag("event", ev, Object.assign({transport_type:"beacon"},params||{})); }
 
 // ===== 紹介サービスDB(分岐タグ+実効EPC参照) =====
 const SITES = [

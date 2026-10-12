@@ -289,7 +289,7 @@ footer a:hover{color:#fff}
 
 <script>
 // ===== GA4計測 安全ラッパー =====
-function track(ev, params){ if(typeof gtag==="function") gtag("event", ev, params||{}); }
+function track(ev, params){ if(typeof gtag==="function") gtag("event", ev, Object.assign({transport_type:"beacon"},params||{})); }
 
 // ===== 流入元slug（?src=）取得 =====
 const params = new URLSearchParams(location.search);
