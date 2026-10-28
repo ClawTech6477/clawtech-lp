@@ -36,6 +36,7 @@
   --ct-ok-text: var(--dads-green-900);
   --ct-warn: var(--dads-yellow-700);
   --ct-error: var(--dads-red-900);
+  --ct-ok-soft: #e6f5ec; --ct-error-soft: #fdeeee;   /* 状態の面(バッジ・注意帯の背景) */
   --ct-focus: #ffb800;             /* DADS同様、どの面でも見える黄のリング */
 
   /* 影は2段だけ(色付き=面の色相に合わせる) */
@@ -78,7 +79,7 @@
     --ct-line: #2a2f3a; --ct-line-strong: #3b414e;
     --ct-accent: var(--dads-blue-400); --ct-accent-press: var(--dads-blue-500);
     --ct-accent-soft: rgba(112, 150, 248, .14); --ct-on-accent: #0b0d12; --ct-link: var(--dads-blue-200);
-    --ct-ok: #4fc68a; --ct-ok-text: #7fd8a9; --ct-error: #ff6b6b; --ct-warn: #e6c14a;
+    --ct-ok: #4fc68a; --ct-ok-text: #7fd8a9; --ct-error: #ff6b6b; --ct-warn: #e6c14a; --ct-ok-soft: rgba(79, 198, 138, .14); --ct-error-soft: rgba(255, 107, 107, .14);
     --ct-shadow-1: 0 1px 2px rgba(0, 0, 0, .4); --ct-shadow-2: 0 12px 40px rgba(0, 0, 0, .5);
     color-scheme: dark;
   }
@@ -89,7 +90,7 @@
   --ct-line: #2a2f3a; --ct-line-strong: #3b414e;
   --ct-accent: var(--dads-blue-400); --ct-accent-press: var(--dads-blue-500);
   --ct-accent-soft: rgba(112, 150, 248, .14); --ct-on-accent: #0b0d12; --ct-link: var(--dads-blue-200);
-  --ct-ok: #4fc68a; --ct-ok-text: #7fd8a9; --ct-error: #ff6b6b; --ct-warn: #e6c14a;
+  --ct-ok: #4fc68a; --ct-ok-text: #7fd8a9; --ct-error: #ff6b6b; --ct-warn: #e6c14a; --ct-ok-soft: rgba(79, 198, 138, .14); --ct-error-soft: rgba(255, 107, 107, .14);
   --ct-shadow-1: 0 1px 2px rgba(0, 0, 0, .4); --ct-shadow-2: 0 12px 40px rgba(0, 0, 0, .5);
   color-scheme: dark;
 }
