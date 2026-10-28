@@ -216,6 +216,54 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 /* 注記・出典 */
 .ct-note { font-size: var(--ct-fs-xs); color: var(--ct-text-3); line-height: 1.7; border-top: 1px solid var(--ct-line); padding-top: var(--ct-s-4); }
 
+/* ---------- 5b. 記事(解説ページ。content/render_article.py が組む) ---------- */
+/* ヒーロー: 写真の上に題名。写真の明るさに依らず読めるよう下側だけ暗く敷く(この面の文字色は写真基準で固定) */
+.ct-hero-photo { position: relative; isolation: isolate; min-height: min(72dvh, 620px); display: flex; align-items: flex-end; overflow: hidden; border-radius: 0 0 var(--ct-r-lg) var(--ct-r-lg); }
+.ct-hero-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.ct-hero-photo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(10, 14, 24, 0) 30%, rgba(10, 14, 24, .55) 62%, rgba(10, 14, 24, .86) 100%); }
+.ct-hero-photo__in { padding-block: var(--ct-s-8) var(--ct-s-7); color: #fff; }
+.ct-hero-photo .ct-eyebrow { color: #c5d7fb; }
+.ct-hero-photo .ct-h1 { color: #fff; max-width: 18em; text-shadow: 0 2px 24px rgba(0, 0, 0, .35); }
+.ct-hero-photo .ct-lead { color: rgba(255, 255, 255, .86); max-width: 32em; margin-top: var(--ct-s-3); }
+
+/* 要点の数字: ヒーローに少し重ねて浮かせる */
+.ct-keyfacts { margin-top: calc(var(--ct-s-7) * -1); position: relative; display: grid; gap: var(--ct-s-5); grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.ct-keyfacts .ct-stat__value { font-size: var(--ct-fs-2xl); color: var(--ct-accent); }
+
+/* 本文 */
+.ct-article { display: grid; gap: var(--ct-s-7); grid-template-columns: 1fr; padding-block: var(--ct-s-7) var(--ct-s-8); }
+@media (min-width: 960px) { .ct-article { grid-template-columns: 220px minmax(0, 1fr); } }
+.ct-toc { align-self: start; position: sticky; top: 72px; font-size: var(--ct-fs-sm); }
+.ct-toc ol { list-style: none; margin: var(--ct-s-3) 0 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.ct-toc a { display: block; padding: 6px 10px; border-radius: var(--ct-r-xs); color: var(--ct-text-2); text-decoration: none; line-height: 1.5; }
+.ct-toc a:hover, .ct-toc a.is-current { background: var(--ct-accent-soft); color: var(--ct-accent); }
+@media (max-width: 959px) { .ct-toc { position: static; } }
+.ct-body { max-width: var(--ct-measure); font-size: var(--ct-fs-lg); line-height: 1.95; }
+.ct-body > * + * { margin-top: 1.1em; }
+.ct-body h2 { font-size: var(--ct-fs-2xl); margin-top: var(--ct-s-8); padding-top: var(--ct-s-2); scroll-margin-top: 80px; }
+.ct-body h3 { font-size: var(--ct-fs-xl); margin-top: var(--ct-s-6); }
+.ct-body ul, .ct-body ol { padding-left: 1.3em; }
+.ct-body li + li { margin-top: .4em; }
+.ct-body strong { font-weight: 700; background: linear-gradient(transparent 62%, var(--ct-accent-soft) 62%); }
+.ct-figure { margin: var(--ct-s-6) 0; }
+.ct-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--ct-r-md); box-shadow: var(--ct-shadow-1); }
+.ct-figure figcaption { margin-top: var(--ct-s-2); }
+.ct-callout { background: var(--ct-accent-soft); border-radius: var(--ct-r-md); padding: var(--ct-s-4) var(--ct-s-5); font-size: var(--ct-fs-md); }
+.ct-callout b { color: var(--ct-accent); display: block; margin-bottom: 4px; }
+
+/* 相談への導線(本文の後に1か所だけ) */
+.ct-cta-card { display: grid; gap: var(--ct-s-4); }
+.ct-cta-card .ct-h3 { line-height: 1.45; }
+.ct-body > .ct-cta-card + .ct-cta-card { margin-top: var(--ct-s-4); }
+
+/* パンくず・関連記事(内部リンクは site_focus_loop の重み順で並ぶ) */
+.ct-crumb { padding-block: var(--ct-s-3); font-size: var(--ct-fs-sm); color: var(--ct-text-2); }
+.ct-crumb a { color: inherit; }
+.ct-related { margin-top: var(--ct-s-7); }
+.ct-related ul { list-style: none; padding: 0; display: grid; gap: var(--ct-s-2); }
+.ct-related a { display: block; padding: var(--ct-s-3) var(--ct-s-4); border-radius: var(--ct-r-md); background: var(--ct-surface-2); text-decoration: none; color: var(--ct-text); min-height: 44px; }
+.ct-related a:hover { background: var(--ct-accent-soft); }
+
 /* ---------- 6. motion(ct-motion.js と対) ---------- */
 [data-ct-reveal] { opacity: 0; transform: translateY(16px); }
 .ct-no-js [data-ct-reveal], .ct-reduced [data-ct-reveal] { opacity: 1; transform: none; }
