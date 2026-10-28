@@ -269,6 +269,38 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 .ct-related a { display: block; padding: var(--ct-s-3) var(--ct-s-4); border-radius: var(--ct-r-md); background: var(--ct-surface-2); text-decoration: none; color: var(--ct-text); min-height: 44px; }
 .ct-related a:hover { background: var(--ct-accent-soft); }
 
+/* ---------- 5c. 診断ツール(souba-checker で追加) ---------- */
+/* 処理の進み: CT.steps() が li に is-active / is-done を付ける。行は実処理の段階と1対1 */
+.ct-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--ct-s-2); }
+.ct-steps li { display: flex; align-items: center; gap: var(--ct-s-3); min-height: 40px; color: var(--ct-text-3); font-size: var(--ct-fs-sm); font-weight: 600; transition: color var(--ct-dur-2) var(--ct-ease); }
+.ct-steps li::before { content: ""; flex: none; width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--ct-line-strong); transition: all var(--ct-dur-2) var(--ct-ease); }
+.ct-steps li.is-active { color: var(--ct-text); }
+.ct-steps li.is-active::before { border-color: var(--ct-accent); border-right-color: transparent; animation: ct-spin .7s linear infinite; }
+.ct-steps li.is-done { color: var(--ct-text-2); }
+.ct-steps li.is-done::before { border-color: var(--ct-ok); background: var(--ct-ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat; }
+.ct-steps .ct-num { margin-left: auto; font-weight: 400; color: var(--ct-text-3); }
+@keyframes ct-spin { to { transform: rotate(360deg); } }
+/* タブ(role=tablist)。下線ではなく面で選択を示す */
+.ct-tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: var(--ct-r-pill); background: var(--ct-surface-2); }
+.ct-tabs [role="tab"] { min-height: 44px; padding: 0 var(--ct-s-5); border: 0; border-radius: var(--ct-r-pill); background: transparent; color: var(--ct-text-2); font: 600 var(--ct-fs-sm) var(--ct-font); cursor: pointer; transition: background-color var(--ct-dur-2) var(--ct-ease), color var(--ct-dur-2) var(--ct-ease); }
+.ct-tabs [role="tab"][aria-selected="true"] { background: var(--ct-surface); color: var(--ct-text); box-shadow: var(--ct-shadow-1); }
+/* 表(根拠の事例一覧)。横に溢れる時は .ct-scroll-x で包む */
+.ct-table { width: 100%; border-collapse: collapse; font-size: var(--ct-fs-sm); }
+.ct-table th { text-align: left; font-weight: 600; color: var(--ct-text-3); font-size: var(--ct-fs-xs); padding: var(--ct-s-2) var(--ct-s-3); white-space: nowrap; }
+.ct-table td { padding: var(--ct-s-3); border-top: 1px solid var(--ct-line); white-space: nowrap; }
+.ct-table td.is-num, .ct-table th.is-num { text-align: right; font-family: var(--ct-font-num); font-variant-numeric: tabular-nums; }
+/* 帯グラフ(価格帯): 下位25%〜上位25%の幅と、自分の位置 */
+.ct-range { position: relative; height: 12px; border-radius: var(--ct-r-pill); background: var(--ct-surface-2); }
+.ct-range > i { position: absolute; top: 0; bottom: 0; left: var(--a, 25%); right: calc(100% - var(--b, 75%)); border-radius: inherit; background: var(--ct-accent-soft); box-shadow: inset 0 0 0 1.5px var(--ct-accent); }
+.ct-range > b { position: absolute; top: 50%; left: var(--x, 50%); width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--ct-accent); border: 3px solid var(--ct-surface); box-shadow: var(--ct-shadow-1); }
+/* 折れ線グラフ(SVG)。線は currentColor、軸と目盛は控えめに */
+.ct-chart { width: 100%; height: auto; overflow: visible; color: var(--ct-accent); }
+.ct-chart .ct-chart__grid { stroke: var(--ct-line); stroke-width: 1; }
+.ct-chart .ct-chart__axis { fill: var(--ct-text-3); font: 400 11px var(--ct-font-num); }
+.ct-chart .ct-chart__line { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.ct-chart .ct-chart__area { fill: currentColor; opacity: .10; }
+.ct-chart .ct-chart__dot { fill: currentColor; stroke: var(--ct-surface); stroke-width: 2; }
+
 /* ---------- 6. motion(ct-motion.js と対) ---------- */
 [data-ct-reveal] { opacity: 0; transform: translateY(16px); }
 .ct-no-js [data-ct-reveal], .ct-reduced [data-ct-reveal] { opacity: 1; transform: none; }
