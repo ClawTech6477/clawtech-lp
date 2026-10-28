@@ -138,7 +138,7 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 .ct-btn {
   --_bg: var(--ct-surface); --_fg: var(--ct-text); --_bd: var(--ct-line-strong);
   display: inline-flex; align-items: center; justify-content: center; gap: var(--ct-s-2);
-  min-height: var(--ct-tap); padding: 0 var(--ct-s-5); border-radius: var(--ct-r-pill);
+  min-height: var(--ct-tap); padding: var(--ct-s-2) var(--ct-s-5); border-radius: var(--ct-r-pill);
   background: var(--_bg); color: var(--_fg); border: 1px solid var(--_bd);
   font: 600 var(--ct-fs-md)/1 var(--ct-font); letter-spacing: .03em; text-decoration: none; cursor: pointer;
   transition: transform var(--ct-dur-1) var(--ct-ease), background-color var(--ct-dur-2) var(--ct-ease), box-shadow var(--ct-dur-2) var(--ct-ease);
@@ -247,13 +247,17 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 .ct-body li + li { margin-top: .4em; }
 .ct-body strong { font-weight: 700; background: linear-gradient(transparent 62%, var(--ct-accent-soft) 62%); }
 .ct-figure { margin: var(--ct-s-6) 0; }
-.ct-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--ct-r-md); box-shadow: var(--ct-shadow-1); }
+.ct-figure img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--ct-r-md); box-shadow: var(--ct-shadow-1); }
 .ct-figure figcaption { margin-top: var(--ct-s-2); }
 .ct-callout { background: var(--ct-accent-soft); border-radius: var(--ct-r-md); padding: var(--ct-s-4) var(--ct-s-5); font-size: var(--ct-fs-md); }
 .ct-callout b { color: var(--ct-accent); display: block; margin-bottom: 4px; }
 
 /* 相談への導線(本文の後に1か所だけ) */
 .ct-cta-card { display: grid; gap: var(--ct-s-4); }
+.ct-body .ct-cta-card > * { margin: 0; }
+.ct-body .ct-cta-card > h2 { padding-top: 0; }
+.ct-cta-card .ct-btn { text-align: center; text-wrap: balance; line-height: 1.4; }
+.ct-cta-card > .ct-pr, .ct-cta-card > .ct-eyebrow { justify-self: start; }
 .ct-cta-card .ct-h3 { line-height: 1.45; }
 .ct-body > .ct-cta-card + .ct-cta-card { margin-top: var(--ct-s-4); }
 
