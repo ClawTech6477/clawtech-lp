@@ -165,6 +165,7 @@ img, svg, video, canvas { display: block; max-width: 100%; }
   transition: border-color var(--ct-dur-2) var(--ct-ease), box-shadow var(--ct-dur-2) var(--ct-ease);
 }
 .ct-input:focus, .ct-select:focus { outline: none; border-color: var(--ct-accent); box-shadow: 0 0 0 4px var(--ct-accent-soft); }
+.ct-input:focus-visible, .ct-select:focus-visible { outline: 3px solid var(--ct-focus); outline-offset: 2px; }
 .ct-field.is-error .ct-input, .ct-field.is-error .ct-select { border-color: var(--ct-error); }
 .ct-error-text { font-size: var(--ct-fs-sm); color: var(--ct-error); }
 
