@@ -87,7 +87,26 @@
 .pl-steps li{counter-increment:s;display:grid;grid-template-columns:2em 1fr;gap:10px;align-items:start;color:var(--ct-text-2)}
 .pl-steps li::before{content:counter(s);width:2em;height:2em;border-radius:10px;display:grid;place-items:center;background:var(--ct-accent-soft);color:var(--ct-accent);font-weight:800}
 @media (min-width:760px){.pl-cards{grid-template-columns:1fr 1fr}.pl-plans{grid-template-columns:repeat(3,1fr)}}
-@media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}}
+.pl-demo{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px;backdrop-filter:blur(8px);display:grid;gap:8px;justify-items:start}
+.pl-hero .pl-demo__k{font-size:.72rem;color:#9fb4ff;letter-spacing:.12em;font-weight:700}
+.pl-hero .pl-demo__t{color:#eef0f4;font-size:.95rem;line-height:1.95}
+.pl-slot{background:rgba(255,214,102,.16);color:#ffd666;border-radius:6px;padding:1px 4px;transition:background .3s,color .3s}
+.pl-slot.is-typing::after{content:"";display:inline-block;width:2px;height:1em;background:currentColor;margin-left:1px;vertical-align:-2px;animation:pl-blink .8s steps(1) infinite}
+.pl-slot.is-filled{background:rgba(91,124,255,.32);color:#fff}
+.pl-demo__btn{font-size:.8rem;font-weight:700;padding:6px 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#c9cfdb;transition:background .35s,color .35s,transform .35s}
+.pl-demo.is-done .pl-demo__btn{background:#3d5afe;color:#fff;transform:scale(1.06)}
+@keyframes pl-blink{50%{opacity:0}}
+@keyframes pl-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pl-fix:not([hidden]){animation:pl-up .45s cubic-bezier(.2,.8,.2,1) both}
+.pl-case.is-done .pl-ans[data-ok="1"]::before{content:"✓ ";font-weight:800;color:var(--ct-accent)}
+.pl-case.is-done .pl-why{animation:pl-up .35s ease both}
+.pl-prog{display:grid;gap:6px;position:sticky;top:8px;z-index:2;background:var(--ct-surface);border-radius:14px;padding:10px 14px;box-shadow:var(--ct-shadow-1)}
+.pl-prog__t{font-size:.85rem;font-weight:700;color:var(--ct-text-2)}
+.pl-prog__n{color:var(--ct-accent);font-size:1.1rem;font-variant-numeric:tabular-nums}
+.pl-prog__bar{height:6px;border-radius:99px;background:var(--ct-surface-2);overflow:hidden}
+.pl-prog__bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--ct-accent);border-radius:inherit;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.pl-sim-end.is-ready{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-1);animation:pl-up .5s ease both}
+@media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}.pl-fix:not([hidden]),.pl-case.is-done .pl-why,.pl-sim-end.is-ready{animation:none}.pl-slot.is-typing::after{animation:none}.pl-prog__bar i{transition:none}}
 </style></head><body>
 <a class="ct-skip" href="#main">本文へ</a>
 <header class="pl-hero"><img src="/prompts/img/hero.jpg" alt="机に向かって働く小さなロボットたちのオフィスの模型" width="1344" height="768" fetchpriority="high">
@@ -95,7 +114,10 @@
 <p class="ct-eyebrow">ハル ・ 毎日1本の指示文</p>
 <h1>AIに任せた仕事の<br><em>指示文</em>、ぜんぶ見せます。</h1>
 <p>AIに仕事を任せて効いた指示文を、登録なしで全文置いています。［ ］の欄に自分の内容を書き込めば、そのまま使える完成版をコピーできます。</p>
-<div class="pl-stats"><div><b class="ct-num" data-count="1">1</b><span>公開中の指示文</span></div><div><b class="ct-num">0</b><span>登録・料金</span></div><div><b class="ct-num">毎日</b><span>1本ずつ追加</span></div></div>
+<div class="pl-demo" aria-label="書き込みの例"><span class="pl-demo__k">［ ］に書き込むと、こうなる</span>
+<p class="pl-demo__t">あなたは<span class="pl-slot" data-to="花屋">［業種］</span>の受付係です。<span class="pl-slot" data-to="母の日の予約">［よくある問い合わせ］</span>に、<span class="pl-slot" data-to="60字">［文字数］</span>以内で答えてください。</p>
+<span class="pl-demo__btn" aria-hidden="true">このままコピー</span></div>
+<div class="pl-stats"><div><b class="ct-num" data-count="1">1</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
 <div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
 </div></header>
 <main id="main">
@@ -120,6 +142,7 @@
 <h2 class="ct-h2" data-ct-reveal>架空の花屋「ハナミチ」で、<br>あなたが直してください。</h2>
 <p class="ct-lead" data-ct-reveal>注文の受付・在庫の案内・返信をAIに任せた小さな花屋で、実際によく起きる事故を3つ用意しました。選ぶと理由と、直すための指示文が出ます。</p>
 <p class="ct-caption" data-ct-reveal>※説明のための架空のお店です。</p>
+<div class="pl-prog" data-ct-reveal aria-live="polite"><span class="pl-prog__t"><b class="pl-prog__n">0</b> / 3 問 解いた</span><span class="pl-prog__bar"><i style="--p:0"></i></span></div>
 <div class="pl-sim"><article class="pl-case" data-ct-reveal>
 <p class="pl-case__k">事故 1 / 3</p>
 <h3>受付AIが、お客様のメールに書かれた命令に従いかけた</h3>
@@ -271,8 +294,16 @@ document.querySelectorAll('[data-fillopen]').forEach(function(b){var pre=documen
 if(!box){b.hidden=true;return}b.addEventListener('click',function(){var o=box.hidden;box.hidden=!o;b.setAttribute('aria-expanded',o);b.textContent=o?'書き込み欄を閉じる':'自分用に書き込む';
 if(o){pre.classList.add('is-full');var t=box.querySelector('textarea');if(t)t.focus();ev('prompt_fill_open',{prompt_id:pre.id})}})});
 document.querySelectorAll('.pl-ans').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.pl-case');if(c.classList.contains('is-done'))return;
-c.classList.add('is-done');b.classList.add('is-picked');c.querySelector('.pl-fix').hidden=false;
+c.classList.add('is-done');b.classList.add('is-picked');c.querySelector('.pl-fix').hidden=false;prog();
 say(b.getAttribute('data-ok')==='1'?'正解です。直し方の指示文が出ました':'惜しい。正解と理由が出ました');ev('sim_answer',{case:b.getAttribute('data-case'),ok:b.getAttribute('data-ok')})})});
+function prog(){var all=document.querySelectorAll('.pl-case').length,d=document.querySelectorAll('.pl-case.is-done').length,n=document.querySelector('.pl-prog__n'),i=document.querySelector('.pl-prog__bar i');
+if(n)n.textContent=d;if(i)i.style.setProperty('--p',all?d/all:0);if(d===all){var e=document.querySelector('.pl-sim-end');if(e){e.classList.add('is-ready');ev('sim_complete',{})}}}
+var dm=document.querySelector('.pl-demo');
+if(dm){var sl=[].slice.call(dm.querySelectorAll('[data-to]')),rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var done=function(){sl.forEach(function(s){s.textContent=s.getAttribute('data-to');s.classList.add('is-filled')});dm.classList.add('is-done')};
+var fill=function(i){if(i>=sl.length){dm.classList.add('is-done');return}var s=sl[i],to=s.getAttribute('data-to'),k=0;s.textContent='';s.classList.add('is-typing');
+var t=setInterval(function(){s.textContent=to.slice(0,++k);if(k>=to.length){clearInterval(t);s.classList.remove('is-typing');s.classList.add('is-filled');setTimeout(function(){fill(i+1)},380)}},110)};
+if(rm||!('IntersectionObserver' in window))done();else{var ob=new IntersectionObserver(function(es){if(es[0].isIntersecting){ob.disconnect();setTimeout(function(){fill(0)},700)}});ob.observe(dm)}}
 var f=document.querySelector('.pl-form');
 if(f)f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('[type=submit]');btn.disabled=true;
 fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){
