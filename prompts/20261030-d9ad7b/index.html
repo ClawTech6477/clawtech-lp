@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AIタスクの生存確認｜コピペで使える指示文</title><meta name="description" content="定期実行タスクの停止を自動検知する">
+<link rel="canonical" href="https://clawtechjp.com/prompts/20261030-d9ad7b/">
+<meta property="og:type" content="article"><meta property="og:title" content="AIタスクの生存確認｜コピペで使える指示文"><meta property="og:description" content="定期実行タスクの停止を自動検知する">
+<meta property="og:url" content="https://clawtechjp.com/prompts/20261030-d9ad7b/"><meta property="og:image" content="https://clawtechjp.com/prompts/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/ui/ct-ui.css">
+<script src="/ui/ct-motion.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
+<style>
+.pl-hero{position:relative;overflow:hidden;background:#0c1222;color:#eef0f4;isolation:isolate}
+.pl-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 60%;z-index:-2;animation:pl-zoom 14s var(--ct-ease,ease) both}
+.pl-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,18,34,.35) 0%,rgba(12,18,34,.55) 45%,rgba(12,18,34,.96) 100%)}
+.pl-hero__in{padding:clamp(96px,22vw,180px) 0 clamp(40px,8vw,72px);display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.pl-hero__in>*,.pl-card>*,.pl-dept>*{min-width:0}
+.pl-hero .ct-eyebrow{color:#9fb4ff;letter-spacing:.14em}
+.pl-hero h1{font-size:clamp(2rem,8.4vw,3.6rem);line-height:1.18;letter-spacing:-.02em;margin:0;text-wrap:balance;font-weight:800}
+.pl-hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(91,124,255,.55) 62%)}
+.pl-hero p{color:#c9cfdb;max-width:34em;margin:0;line-height:1.8}
+.pl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.pl-stats div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 10px;backdrop-filter:blur(8px)}
+.pl-stats b{display:block;font-size:clamp(1.5rem,6vw,2.2rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.pl-stats span{font-size:.75rem;color:#aab2c2}
+.pl-hero .ct-btn--primary{box-shadow:0 10px 30px rgba(60,100,255,.35)}
+.pl-hero a.pl-sub{color:#dfe5f2;font-size:.9rem;text-underline-offset:4px}
+@keyframes pl-zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.pl-more{border:0;background:none;color:var(--ct-accent);font:inherit;font-size:.85rem;cursor:pointer;padding:4px 0;justify-self:start}
+.pl-fill{display:grid;gap:10px;background:var(--ct-accent-soft);border-radius:14px;padding:14px}
+.pl-fill[hidden]{display:none}
+.pl-fill label{font-size:.78rem;font-weight:700;color:var(--ct-text-2)}
+.pl-fill textarea{min-height:2.8em;resize:vertical}
+.pl-pre mark{background:var(--ct-accent-soft);color:var(--ct-accent);border-radius:4px;padding:0 2px}
+.pl-sim{display:grid;gap:18px}
+.pl-case{background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-1);display:grid;gap:10px}
+.pl-case>*{min-width:0}
+.pl-case h3{margin:0;font-size:1.12rem;line-height:1.5}
+.pl-case__k{margin:0;font-size:.72rem;font-weight:800;letter-spacing:.1em;color:var(--ct-accent)}
+.pl-case__what{margin:0;color:var(--ct-text-2);font-size:.92rem;line-height:1.8}
+.pl-q{margin:4px 0 0;font-weight:800}
+.pl-ans-list{display:grid;gap:8px}
+.pl-ans{text-align:left;border:0;border-radius:14px;padding:12px 14px;min-height:48px;background:var(--ct-surface-2);color:var(--ct-text);font:inherit;font-size:.9rem;line-height:1.6;cursor:pointer;transition:transform .15s,background .2s}
+.pl-ans:hover{transform:translateY(-1px)}
+.pl-ans:active{transform:scale(.99)}
+.pl-why{display:none;margin-top:6px;font-size:.82rem;color:var(--ct-text-2)}
+.pl-case.is-done .pl-ans{cursor:default}
+.pl-case.is-done .pl-why{display:block}
+.pl-case.is-done .pl-ans[data-ok="1"]{background:var(--ct-accent-soft);box-shadow:0 0 0 2px var(--ct-accent)}
+.pl-case.is-done .pl-ans.is-picked[data-ok="0"]{box-shadow:0 0 0 2px var(--ct-text-3)}
+.pl-fix{display:grid;gap:10px;margin-top:6px}
+.pl-fix[hidden]{display:none}
+.pl-fix__h{margin:0;font-weight:800;font-size:.9rem}
+@media (min-width:760px){.pl-sim{grid-template-columns:1fr 1fr}.pl-sim .pl-case:first-child{grid-column:1/-1}}
+.pl-filter{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.pl-filter button{flex:none;border:0;border-radius:999px;padding:8px 14px;min-height:40px;background:var(--ct-surface-2);color:var(--ct-text-2);font:inherit;font-size:.85rem;cursor:pointer}
+.pl-filter button[aria-pressed="true"]{background:var(--ct-accent);color:var(--ct-on-accent,#fff)}
+.pl-cards{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.pl-card{background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-1);display:grid;gap:12px}
+.pl-card h3{margin:0;font-size:1.15rem}
+.pl-card h3 a{color:inherit;text-decoration:none}
+.pl-card .pl-use{margin:0;color:var(--ct-text-2);font-size:.92rem}
+.pl-pre{position:relative;margin:0;background:var(--ct-surface-2);border-radius:14px;padding:14px 14px 34px;max-height:9.5em;overflow:hidden;font:.84rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;color:var(--ct-text-2)}
+.pl-pre::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.2em;background:linear-gradient(transparent,var(--ct-surface-2))}
+.pl-pre.is-full{max-height:none;padding-bottom:14px}
+.pl-pre.is-full::after{display:none}
+.pl-detail .pl-card h3,.pl-detail .pl-use,.pl-detail .pl-tag,.pl-detail [data-more],.pl-detail [data-fillopen]{display:none}
+.pl-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pl-row .ct-btn{flex:1 1 auto}
+.pl-tag{font-size:.72rem;color:var(--ct-text-3)}
+.pl-plans{display:grid;gap:14px}
+.pl-plan{background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-1);display:grid;gap:6px}
+.pl-plan.is-main{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-2)}
+.pl-plan .pl-k{font-size:.75rem;color:var(--ct-accent);font-weight:700;letter-spacing:.06em}
+.pl-plan h3{margin:0;font-size:1.1rem}
+.pl-plan .pl-price{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums}
+.pl-plan p{margin:0;color:var(--ct-text-2);font-size:.9rem}
+.pl-form{display:grid;gap:12px;background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-2)}
+.pl-form textarea{min-height:6.5em}
+.pl-done{display:none}
+.pl-form.is-sent .pl-fields{display:none}
+.pl-form.is-sent .pl-done{display:block}
+.pl-toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:#16181d;color:#fff;padding:10px 16px;border-radius:999px;font-size:.85rem;transition:.25s;pointer-events:none;z-index:50}
+.pl-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.pl-steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.pl-steps li{counter-increment:s;display:grid;grid-template-columns:2em 1fr;gap:10px;align-items:start;color:var(--ct-text-2)}
+.pl-steps li::before{content:counter(s);width:2em;height:2em;border-radius:10px;display:grid;place-items:center;background:var(--ct-accent-soft);color:var(--ct-accent);font-weight:800}
+@media (min-width:760px){.pl-cards{grid-template-columns:1fr 1fr}.pl-plans{grid-template-columns:repeat(3,1fr)}}
+.pl-demo{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px;backdrop-filter:blur(8px);display:grid;gap:8px;justify-items:start}
+.pl-hero .pl-demo__k{font-size:.72rem;color:#9fb4ff;letter-spacing:.12em;font-weight:700}
+.pl-hero .pl-demo__t{color:#eef0f4;font-size:.95rem;line-height:1.95}
+.pl-slot{background:rgba(255,214,102,.16);color:#ffd666;border-radius:6px;padding:1px 4px;transition:background .3s,color .3s}
+.pl-slot.is-typing::after{content:"";display:inline-block;width:2px;height:1em;background:currentColor;margin-left:1px;vertical-align:-2px;animation:pl-blink .8s steps(1) infinite}
+.pl-slot.is-filled{background:rgba(91,124,255,.32);color:#fff}
+.pl-demo__btn{font-size:.8rem;font-weight:700;padding:6px 16px;border-radius:999px;background:rgba(255,255,255,.12);color:#c9cfdb;transition:background .35s,color .35s,transform .35s}
+.pl-demo.is-done .pl-demo__btn{background:#3d5afe;color:#fff;transform:scale(1.06)}
+@keyframes pl-blink{50%{opacity:0}}
+@keyframes pl-up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pl-fix:not([hidden]){animation:pl-up .45s cubic-bezier(.2,.8,.2,1) both}
+.pl-case.is-done .pl-ans[data-ok="1"]::before{content:"✓ ";font-weight:800;color:var(--ct-accent)}
+.pl-case.is-done .pl-why{animation:pl-up .35s ease both}
+.pl-prog{display:grid;gap:6px;position:sticky;top:8px;z-index:2;background:var(--ct-surface);border-radius:14px;padding:10px 14px;box-shadow:var(--ct-shadow-1)}
+.pl-prog__t{font-size:.85rem;font-weight:700;color:var(--ct-text-2)}
+.pl-prog__n{color:var(--ct-accent);font-size:1.1rem;font-variant-numeric:tabular-nums}
+.pl-prog__bar{height:6px;border-radius:99px;background:var(--ct-surface-2);overflow:hidden}
+.pl-prog__bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--ct-accent);border-radius:inherit;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.pl-sim-end.is-ready{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-1);animation:pl-up .5s ease both}
+@media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}.pl-fix:not([hidden]),.pl-case.is-done .pl-why,.pl-sim-end.is-ready{animation:none}.pl-slot.is-typing::after{animation:none}.pl-prog__bar i{transition:none}}
+</style></head><body>
+<a class="ct-skip" href="#main">本文へ</a><header class="ct-header"><div class="ct-header__in ct-container"><a href="/prompts/">ハルのプロンプト置き場</a></div></header>
+<main id="main">
+<section class="ct-section"><div class="ct-container ct-stack">
+<nav class="ct-crumb"><a href="/prompts/">指示文の一覧</a></nav>
+<p class="ct-eyebrow">トラブル対応 ・ 2026-10-30</p>
+<h1 class="ct-h1">AIタスクの生存確認</h1>
+<p class="ct-lead">定期実行タスクの停止を自動検知する</p>
+<ul class="pl-cards pl-detail" style="grid-template-columns:1fr"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-10-30</span></div>
+<h3><a href="/prompts/20261030-d9ad7b/">AIタスクの生存確認</a></h3>
+<p class="pl-use">定期実行タスクの停止を自動検知する</p>
+<div class="pl-fill" data-for="p-20261030-d9ad7b"></div>
+<pre class="pl-pre is-full" id="p-20261030-d9ad7b" data-src="あなたは監視エージェントです。提供されたログデータから、実行予定だったタスクが未実行またはタイムアウトで中断されているかを確認してください。判定基準は、最終実行時刻から現在時刻までの差分がスレッド間隔の2倍以上であること、およびステータスが&#x27;timeout&#x27;または&#x27;error&#x27;の場合です。検出された場合、タスク名・最終実行日時・推定原因（タイムアウト/例外）を箇条書きで出力し、未検出の場合は「正常」とのみ出力してください。">あなたは監視エージェントです。提供されたログデータから、実行予定だったタスクが未実行またはタイムアウトで中断されているかを確認してください。判定基準は、最終実行時刻から現在時刻までの差分がスレッド間隔の2倍以上であること、およびステータスが&#x27;timeout&#x27;または&#x27;error&#x27;の場合です。検出された場合、タスク名・最終実行日時・推定原因（タイムアウト/例外）を箇条書きで出力し、未検出の場合は「正常」とのみ出力してください。</pre>
+<button class="pl-more" type="button" data-more="p-20261030-d9ad7b" aria-expanded="false" hidden>全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261030-d9ad7b" data-id="20261030-d9ad7b">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261030-d9ad7b" aria-expanded="true">自分用に書き込む</button></div>
+</article></li></ul>
+<ol class="pl-steps"><li>上の欄に自分の内容を書き込む(空欄のままでもOK)</li><li>「コピー」を押す</li><li>ChatGPTやClaudeの入力欄に貼り付けて送る</li></ol>
+<div class="ct-panel ct-stack"><h2 class="ct-h3" style="margin:0">この指示文が生まれた投稿</h2><p class="ct-body" style="margin:0">AIに任せた処理、止まってても気づけないことがある。
+
+うちの18体のAI社員、10/26だけで毎朝の処理が4回連続で止まってた。原因は時間切れ。次の日も2日続けて同じ理由で動かず。
+
+画面上は「動いてるはず」の顔してるから、余計タチ悪い😅</p>
+<div class="pl-row"><a class="ct-btn ct-btn--ghost" href="https://x.com/UDfsrq4P6R87229" data-cta="follow">Xでハルをフォロー</a><a class="ct-btn ct-btn--ghost" href="https://x.com/intent/post?text=AI%E3%82%BF%E3%82%B9%E3%82%AF%E3%81%AE%E7%94%9F%E5%AD%98%E7%A2%BA%E8%AA%8D&amp;url=https%3A%2F%2Fclawtechjp.com%2Fprompts%2F20261030-d9ad7b%2F" data-cta="share">この指示文をXで紹介</a></div></div>
+</div></section>
+
+<section class="ct-section" id="consult"><div class="ct-container ct-stack">
+<p class="ct-eyebrow" data-ct-reveal>同じ仕組みを、あなたの会社に</p>
+<h2 class="ct-h2" data-ct-reveal>プロンプトをコピーするだけで足りない所は、<br>組み込みまで一緒にやります。</h2>
+<p class="ct-lead" data-ct-reveal>ここの指示文は、AIに日々の仕事を任せている会社(ClawTech)で効いた型を一般向けに書き直したものです。止まった時に気づく仕組み、任せ方の分け方、直し方まで含めてお手伝いできます。</p>
+<div class="pl-plans"><div class="pl-plan" data-ct-reveal><span class="pl-k">まず何から任せるか</span>
+<h3>AI化スタート診断</h3><span class="pl-price">¥39,800</span><span class="ct-caption">通話なし・3営業日でお届け</span><p>今の作業を書いて送るだけ。どれをAIに任せると何時間浮くか、順番と費用の表にして返します。30日以内に作る段階へ進めば全額差し引きます。</p></div>
+<div class="pl-plan is-main" data-ct-reveal><span class="pl-k">1つの作業を自動に</span>
+<h3>業務の自動化</h3><span class="pl-price">¥49,800〜</span><span class="ct-caption">最短7営業日</span><p>転記・集計・通知など、毎日手で回している作業を1つ自動にします。止まった時に知らせる仕組みも付けます。</p></div>
+<div class="pl-plan" data-ct-reveal><span class="pl-k">止まらない運用まで</span>
+<h3>月次AI顧問</h3><span class="pl-price">¥148,000/月</span><span class="ct-caption">3か月〜</span><p>止まった時の直し方、指示文の改善、新しいAIへの切り替えまで毎月見ます。複数の作業をつなぐ構築は¥298,000〜で別途お見積り。</p></div></div>
+<form class="pl-form" action="https://formspree.io/f/xpqjbyya" method="POST" data-ct-reveal>
+<div class="pl-fields ct-stack">
+<h3 class="ct-h3" style="margin:0">課題を1つ送ってください</h3>
+<p class="ct-hint" style="margin:0">できること・費用の目安をメールでお返しします。</p>
+<input type="hidden" name="_subject" value="プロンプト置き場からの相談">
+<input type="hidden" name="source" value="prompt_20261030-d9ad7b">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none!important">
+<label class="ct-label" for="f-name">お名前</label><input class="ct-input" id="f-name" name="name" required autocomplete="name">
+<label class="ct-label" for="f-email">メールアドレス</label><input class="ct-input" id="f-email" name="email" type="email" required autocomplete="email">
+<label class="ct-label" for="f-plan">気になるもの</label>
+<select class="ct-select" id="f-plan" name="service"><option>まだ決めていない</option><option>AI化スタート診断</option><option>業務の自動化</option><option>月次AI顧問</option></select>
+<label class="ct-label" for="f-msg">いま手で回している作業</label>
+<textarea class="ct-input" id="f-msg" name="message" required placeholder="例: 毎朝、3つの管理画面から数字を集めてExcelに貼っている"></textarea>
+<button class="ct-btn ct-btn--primary ct-btn--block" type="submit">この内容で相談する</button>
+<p class="ct-caption" style="margin:0">送った内容は返信のためだけに使います。<a href="/privacy.html">プライバシーポリシー</a></p>
+</div>
+<div class="pl-done ct-stack" role="status"><h3 class="ct-h3">受け付けました</h3><p class="ct-body">内容を読んで、メールでお返事します。</p></div>
+</form>
+</div></section>
+</main>
+<footer class="ct-container ct-section"><p class="ct-note">AIに仕事を任せる中で効いた型を、一般向けに書き直して公開しています。下の「架空のお店」は説明用の作り話で、実在の会社・当社の構成ではありません。
+プロンプトの閲覧・コピーに登録は要りません。結果は使うAIや環境によって変わります。<br>
+運営: ClawTech ・ <a href="https://x.com/UDfsrq4P6R87229">X: ハル</a> ・ <a href="/">会社案内</a> ・ <a href="/privacy.html">プライバシーポリシー</a> ・ <a href="/tokushoho.html">特定商取引法に基づく表記</a></p></footer>
+<div class="ct-dock"><a class="ct-btn ct-btn--primary ct-btn--block" href="#consult" data-cta="dock">この仕組みを自社に入れる相談</a></div>
+<div class="pl-toast" id="pl-toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+var toast=document.getElementById('pl-toast');
+function say(t){toast.textContent=t;toast.classList.add('is-on');setTimeout(function(){toast.classList.remove('is-on')},1800)}
+function ev(n,p){if(window.gtag)gtag('event',n,p||{})}
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=document.getElementById(b.getAttribute('data-copy')).textContent;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){say('コピーしました。AIの入力欄に貼り付けてください');
+ev('prompt_copy',{prompt_id:b.getAttribute('data-id')})},function(){say('長押しで選択してコピーしてください')})})});
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){
+var p=document.getElementById(b.getAttribute('data-more'));var o=p.classList.toggle('is-full');b.textContent=o?'たたむ':'全文を見る';b.setAttribute('aria-expanded',o)})});
+document.querySelectorAll('[data-cta]').forEach(function(a){a.addEventListener('click',function(){ev('cta_click',{position:a.getAttribute('data-cta')})})});
+function render(pre){var src=pre.getAttribute('data-src');var box=document.querySelector('.pl-fill[data-for="'+pre.id+'"]');
+var vals={};if(box)box.querySelectorAll('textarea').forEach(function(t){vals[t.getAttribute('data-k')]=t.value.trim()});
+pre.textContent='';var re=/［([^］]+)］/g,last=0,m;while((m=re.exec(src))){pre.appendChild(document.createTextNode(src.slice(last,m.index)));
+if(vals[m[1]]){pre.appendChild(document.createTextNode(vals[m[1]]))}else{var k=document.createElement('mark');k.textContent=m[0];pre.appendChild(k)}last=re.lastIndex}
+pre.appendChild(document.createTextNode(src.slice(last)))}
+document.querySelectorAll('.pl-fill').forEach(function(box){var pre=document.getElementById(box.getAttribute('data-for'));if(!pre)return;
+var src=pre.getAttribute('data-src'),seen={},re=/［([^］]+)］/g,m,n=0;while((m=re.exec(src))){if(seen[m[1]])continue;seen[m[1]]=1;n++;
+var id=pre.id+'-f'+n,l=document.createElement('label');l.htmlFor=id;l.textContent=m[1];var t=document.createElement('textarea');t.id=id;t.className='ct-input';t.setAttribute('data-k',m[1]);
+t.addEventListener('input',function(){render(pre)});t.addEventListener('change',function(){ev('prompt_fill',{prompt_id:pre.id})});box.appendChild(l);box.appendChild(t)}
+if(!n)box.remove();render(pre)});
+document.querySelectorAll('[data-fillopen]').forEach(function(b){var pre=document.getElementById(b.getAttribute('data-fillopen'));var box=document.querySelector('.pl-fill[data-for="'+pre.id+'"]');
+if(!box){b.hidden=true;return}b.addEventListener('click',function(){var o=box.hidden;box.hidden=!o;b.setAttribute('aria-expanded',o);b.textContent=o?'書き込み欄を閉じる':'自分用に書き込む';
+if(o){pre.classList.add('is-full');var t=box.querySelector('textarea');if(t)t.focus();ev('prompt_fill_open',{prompt_id:pre.id})}})});
+document.querySelectorAll('.pl-ans').forEach(function(b){b.addEventListener('click',function(){var c=b.closest('.pl-case');if(c.classList.contains('is-done'))return;
+c.classList.add('is-done');b.classList.add('is-picked');c.querySelector('.pl-fix').hidden=false;prog();
+say(b.getAttribute('data-ok')==='1'?'正解です。直し方の指示文が出ました':'惜しい。正解と理由が出ました');ev('sim_answer',{case:b.getAttribute('data-case'),ok:b.getAttribute('data-ok')})})});
+function prog(){var all=document.querySelectorAll('.pl-case').length,d=document.querySelectorAll('.pl-case.is-done').length,n=document.querySelector('.pl-prog__n'),i=document.querySelector('.pl-prog__bar i');
+if(n)n.textContent=d;if(i)i.style.setProperty('--p',all?d/all:0);if(d===all){var e=document.querySelector('.pl-sim-end');if(e){e.classList.add('is-ready');ev('sim_complete',{})}}}
+var dm=document.querySelector('.pl-demo');
+if(dm){var sl=[].slice.call(dm.querySelectorAll('[data-to]')),rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var done=function(){sl.forEach(function(s){s.textContent=s.getAttribute('data-to');s.classList.add('is-filled')});dm.classList.add('is-done')};
+var fill=function(i){if(i>=sl.length){dm.classList.add('is-done');return}var s=sl[i],to=s.getAttribute('data-to'),k=0;s.textContent='';s.classList.add('is-typing');
+var t=setInterval(function(){s.textContent=to.slice(0,++k);if(k>=to.length){clearInterval(t);s.classList.remove('is-typing');s.classList.add('is-filled');setTimeout(function(){fill(i+1)},380)}},110)};
+if(rm||!('IntersectionObserver' in window))done();else{var ob=new IntersectionObserver(function(es){if(es[0].isIntersecting){ob.disconnect();setTimeout(function(){fill(0)},700)}});ob.observe(dm)}}
+var f=document.querySelector('.pl-form');
+if(f)f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('[type=submit]');btn.disabled=true;
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){
+if(r.ok){f.classList.add('is-sent');ev('generate_lead',{source:'prompts'})}else{btn.disabled=false;say('送れませんでした。時間をおいてもう一度お試しください')}},
+function(){btn.disabled=false;say('通信できませんでした。電波の良い所でもう一度お試しください')})});
+var fl=document.querySelectorAll('.pl-filter button');
+fl.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-k');
+fl.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+document.querySelectorAll('.pl-card').forEach(function(c){c.parentNode.hidden=!(k==='all'||c.getAttribute('data-k')===k)})})});
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{threshold:.4}):null;
+document.querySelectorAll('.pl-dept').forEach(function(d){io?io.observe(d):d.classList.add('is-in')});
+function nums(){document.querySelectorAll('[data-count]').forEach(function(el){window.CT?CT.countUp(el,+el.getAttribute('data-count')):0})}
+if(document.readyState==='complete')nums();else window.addEventListener('load',nums);
+})();
+</script></body></html>
