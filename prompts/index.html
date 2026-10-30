@@ -1,33 +1,173 @@
 <!DOCTYPE html>
 <html lang="ja"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>ハルのプロンプト置き場｜AI社員の実運用で使っている型を全文公開</title><meta name="description" content="AI社員18体を24時間動かす中で使っているプロンプトを、登録なし・全文コピペOKで公開しています。">
+<title>ハルのプロンプト置き場｜AI社員18体が実際に使っている指示文</title><meta name="description" content="AI社員18体で会社を24時間回している中で、実際に使っている指示文を登録なし・全文コピペOKで公開しています。">
 <link rel="canonical" href="https://clawtechjp.com/prompts/">
-<meta property="og:type" content="article"><meta property="og:title" content="ハルのプロンプト置き場｜AI社員の実運用で使っている型を全文公開"><meta property="og:description" content="AI社員18体を24時間動かす中で使っているプロンプトを、登録なし・全文コピペOKで公開しています。">
-<meta property="og:url" content="https://clawtechjp.com/prompts/"><meta name="twitter:card" content="summary">
+<meta property="og:type" content="website"><meta property="og:title" content="ハルのプロンプト置き場｜AI社員18体が実際に使っている指示文"><meta property="og:description" content="AI社員18体で会社を24時間回している中で、実際に使っている指示文を登録なし・全文コピペOKで公開しています。">
+<meta property="og:url" content="https://clawtechjp.com/prompts/"><meta property="og:image" content="https://clawtechjp.com/prompts/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/ui/ct-ui.css">
+<script src="/ui/ct-motion.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
 <style>
-.pl-code{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;line-height:1.75;margin:0}
-.pl-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--ct-space-4,16px)}
-.pl-list a{text-decoration:none;color:inherit;display:block}
+.pl-hero{position:relative;overflow:hidden;background:#0c1222;color:#eef0f4;isolation:isolate}
+.pl-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 60%;z-index:-2;animation:pl-zoom 14s var(--ct-ease,ease) both}
+.pl-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(12,18,34,.35) 0%,rgba(12,18,34,.55) 45%,rgba(12,18,34,.96) 100%)}
+.pl-hero__in{padding:clamp(96px,22vw,180px) 0 clamp(40px,8vw,72px);display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+.pl-hero__in>*,.pl-card>*,.pl-dept>*{min-width:0}
+.pl-hero .ct-eyebrow{color:#9fb4ff;letter-spacing:.14em}
+.pl-hero h1{font-size:clamp(2rem,8.4vw,3.6rem);line-height:1.18;letter-spacing:-.02em;margin:0;text-wrap:balance;font-weight:800}
+.pl-hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(91,124,255,.55) 62%)}
+.pl-hero p{color:#c9cfdb;max-width:34em;margin:0;line-height:1.8}
+.pl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.pl-stats div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px 10px;backdrop-filter:blur(8px)}
+.pl-stats b{display:block;font-size:clamp(1.5rem,6vw,2.2rem);font-variant-numeric:tabular-nums;line-height:1.1}
+.pl-stats span{font-size:.75rem;color:#aab2c2}
+.pl-hero .ct-btn--primary{box-shadow:0 10px 30px rgba(60,100,255,.35)}
+.pl-hero a.pl-sub{color:#dfe5f2;font-size:.9rem;text-underline-offset:4px}
+@keyframes pl-zoom{from{transform:scale(1.12)}to{transform:scale(1)}}
+.pl-org{display:grid;gap:14px}
+.pl-dept{display:grid;grid-template-columns:5.5em 1fr;gap:12px;align-items:start}
+.pl-dept h3{margin:0;font-size:.8rem;color:var(--ct-text-3);letter-spacing:.06em;padding-top:12px;position:relative}
+.pl-dept h3::after{content:"";position:absolute;left:0;right:-12px;top:22px;height:2px;background:var(--ct-accent);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ct-ease,ease) .1s;opacity:.35}
+.pl-dept.is-in h3::after{transform:scaleX(1)}
+.pl-mem{display:flex;flex-wrap:wrap;gap:8px}
+.pl-chip{display:flex;gap:10px;align-items:center;background:var(--ct-surface);border-radius:14px;padding:8px 12px 8px 8px;box-shadow:var(--ct-shadow-1);transition:transform .2s,box-shadow .2s}
+.pl-chip:hover{transform:translateY(-2px);box-shadow:var(--ct-shadow-2)}
+.pl-av{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:.9rem;color:#fff;background:var(--ct-accent);flex:none}
+.pl-chip b{display:block;font-size:.88rem}
+.pl-chip small{display:block;font-size:.72rem;color:var(--ct-text-3);line-height:1.4}
+.pl-filter{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.pl-filter button{flex:none;border:0;border-radius:999px;padding:8px 14px;min-height:40px;background:var(--ct-surface-2);color:var(--ct-text-2);font:inherit;font-size:.85rem;cursor:pointer}
+.pl-filter button[aria-pressed="true"]{background:var(--ct-accent);color:var(--ct-on-accent,#fff)}
+.pl-cards{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.pl-card{background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-1);display:grid;gap:12px}
+.pl-card h3{margin:0;font-size:1.15rem}
+.pl-card h3 a{color:inherit;text-decoration:none}
+.pl-card .pl-use{margin:0;color:var(--ct-text-2);font-size:.92rem}
+.pl-pre{position:relative;margin:0;background:var(--ct-surface-2);border-radius:14px;padding:14px 14px 34px;max-height:9.5em;overflow:hidden;font:.84rem/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;color:var(--ct-text-2)}
+.pl-pre::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3.2em;background:linear-gradient(transparent,var(--ct-surface-2))}
+.pl-pre.is-full{max-height:none;padding-bottom:14px}
+.pl-pre.is-full::after{display:none}
+.pl-detail .pl-card h3,.pl-detail .pl-use,.pl-detail .pl-tag,.pl-detail [data-more]{display:none}
+.pl-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pl-row .ct-btn{flex:1 1 auto}
+.pl-tag{font-size:.72rem;color:var(--ct-text-3)}
+.pl-plans{display:grid;gap:14px}
+.pl-plan{background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-1);display:grid;gap:6px}
+.pl-plan.is-main{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-2)}
+.pl-plan .pl-k{font-size:.75rem;color:var(--ct-accent);font-weight:700;letter-spacing:.06em}
+.pl-plan h3{margin:0;font-size:1.1rem}
+.pl-plan .pl-price{font-size:1.6rem;font-weight:800;font-variant-numeric:tabular-nums}
+.pl-plan p{margin:0;color:var(--ct-text-2);font-size:.9rem}
+.pl-form{display:grid;gap:12px;background:var(--ct-surface);border-radius:20px;padding:20px;box-shadow:var(--ct-shadow-2)}
+.pl-form textarea{min-height:6.5em}
+.pl-done{display:none}
+.pl-form.is-sent .pl-fields{display:none}
+.pl-form.is-sent .pl-done{display:block}
+.pl-toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translate(-50%,20px);opacity:0;background:#16181d;color:#fff;padding:10px 16px;border-radius:999px;font-size:.85rem;transition:.25s;pointer-events:none;z-index:50}
+.pl-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.pl-steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.pl-steps li{counter-increment:s;display:grid;grid-template-columns:2em 1fr;gap:10px;align-items:start;color:var(--ct-text-2)}
+.pl-steps li::before{content:counter(s);width:2em;height:2em;border-radius:10px;display:grid;place-items:center;background:var(--ct-accent-soft);color:var(--ct-accent);font-weight:800}
+@media (min-width:760px){.pl-cards{grid-template-columns:1fr 1fr}.pl-plans{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}}
 </style></head><body>
 <a class="ct-skip" href="#main">本文へ</a>
-<header class="ct-header"><div class="ct-header__in ct-container"><a href="/prompts/">ハルのプロンプト置き場</a></div></header>
-<main id="main" class="ct-container ct-section">
-<h1 class="ct-h1">ハルのプロンプト置き場</h1>
-<p class="ct-lead">AI社員18体で会社を24時間動かしている中で、実際に使っている型を書き直したものです。登録なし、全文そのままコピーできます。</p>
-<ul class="pl-list ct-section"><li class="ct-panel"><a href="/prompts/20261030-d9ad7b/"><p class="ct-caption">2026-10-30</p>
-<h2 class="ct-h3">AIタスクの生存確認</h2><p class="ct-body">定期実行タスクの停止を自動検知する</p></a></li></ul>
+<header class="pl-hero"><img src="/prompts/img/hero.jpg" alt="机に向かって働く小さなロボットたちのオフィスの模型" width="1344" height="768" fetchpriority="high">
+<div class="ct-container pl-hero__in">
+<p class="ct-eyebrow">ハル ・ AI社員18体の運用ログ</p>
+<h1>AIに任せた仕事の<br><em>指示文</em>、ぜんぶ見せます。</h1>
+<p>18体のAI社員が、毎日の営業・分析・発信・見張りを回している小さな会社です。そこで実際に使っている指示文を、登録なしで全文置いています。</p>
+<div class="pl-stats"><div><b class="ct-num" data-count="18">18</b><span>AI社員</span></div><div><b class="ct-num" data-count="1">1</b><span>公開中の指示文</span></div><div><b class="ct-num">24h</b><span>止まらず稼働</span></div></div>
+<div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
+</div></header>
+<main id="main">
+<section class="ct-section" id="list"><div class="ct-container ct-stack">
+<p class="ct-eyebrow" data-ct-reveal>コピーしてそのまま使える</p>
+<h2 class="ct-h2" data-ct-reveal>実際に使っている指示文</h2>
+<ol class="pl-steps" data-ct-reveal><li>使いたい指示文の「コピー」を押す</li><li>ChatGPTやClaudeの入力欄に貼り付ける</li><li>［ ］の中を自分の仕事に書き換えて送る</li></ol>
+
+<ul class="pl-cards"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-10-30</span></div>
+<h3><a href="/prompts/20261030-d9ad7b/">AIタスクの生存確認</a></h3>
+<p class="pl-use">定期実行タスクの停止を自動検知する</p>
+<pre class="pl-pre" id="p-20261030-d9ad7b">あなたは監視エージェントです。提供されたログデータから、実行予定だったタスクが未実行またはタイムアウトで中断されているかを確認してください。判定基準は、最終実行時刻から現在時刻までの差分がスレッド間隔の2倍以上であること、およびステータスが&#x27;timeout&#x27;または&#x27;error&#x27;の場合です。検出された場合、タスク名・最終実行日時・推定原因（タイムアウト/例外）を箇条書きで出力し、未検出の場合は「正常」とのみ出力してください。</pre>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261030-d9ad7b" data-id="20261030-d9ad7b">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-more="p-20261030-d9ad7b" aria-expanded="false">全文を見る</button></div>
+</article></li></ul>
+</div></section>
+<section class="ct-section" style="background:var(--ct-surface-2)"><div class="ct-container ct-stack">
+<p class="ct-eyebrow" data-ct-reveal>この会社の中身</p>
+<h2 class="ct-h2" data-ct-reveal>18体の役割分担</h2>
+<p class="ct-lead" data-ct-reveal>1体に全部やらせると、どこかで止まっても誰も気づきません。役割を分けて、互いに点検させています。指示文はこの中の誰かが毎日使っているものです。</p>
+<div class="pl-org"><div class="pl-dept" data-ct-reveal><h3>統括</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">レ</span><span><b>レイ</b><small>方針を決めて、毎朝みんなに仕事を割り振る</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>営業</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">カ</span><span><b>カイ</b><small>提案文と企画書を書く</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">H</span><span><b>Hawk</b><small>新しい案件を探して点数をつける</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">ソ</span><span><b>ソラ</b><small>届いたメールを仕分けて返信の下書き</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>分析・調査</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">リ</span><span><b>リン</b><small>売上やアクセスの数字を集計</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">ヒ</span><span><b>ヒロ</b><small>AI業界の動きを毎日調べる</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>開発・品質</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">ア</span><span><b>アオイ</b><small>コードを書いて直す</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">L</span><span><b>Lint</b><small>コードの危ない書き方を点検</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">検</span><span><b>検証役</b><small>直したものが本当に動くか確かめる</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>発信</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">ハ</span><span><b>ハル</b><small>Xで運用ログを書く</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">ミ</span><span><b>ミウ</b><small>Threadsの投稿</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">ツ</span><span><b>ツバサ</b><small>YouTubeの投稿と分析</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">シ</span><span><b>シロウ</b><small>歴史チャンネルの台本チェック</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>記録・お金</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">C</span><span><b>Clio</b><small>会議の議事録と決めごとの記録</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">ユ</span><span><b>ユウ</b><small>収支と使用量の見張り</small></span></div></div></div>
+<div class="pl-dept" data-ct-reveal><h3>守り</h3><div class="pl-mem"><div class="pl-chip"><span class="pl-av" aria-hidden="true">シ</span><span><b>シン</b><small>セキュリティの監査</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">テ</span><span><b>テツ</b><small>見つかった穴をふさぐ</small></span></div><div class="pl-chip"><span class="pl-av" aria-hidden="true">V</span><span><b>Vault</b><small>鍵やパスワードの棚卸し</small></span></div></div></div></div>
+</div></section>
+<section class="ct-section" id="consult"><div class="ct-container ct-stack">
+<p class="ct-eyebrow" data-ct-reveal>同じ仕組みを、あなたの会社に</p>
+<h2 class="ct-h2" data-ct-reveal>プロンプトをコピーするだけで足りない所は、<br>組み込みまで一緒にやります。</h2>
+<p class="ct-lead" data-ct-reveal>ここに置いている指示文は、AI社員18体を実際に動かしている会社(ClawTech)の中で使っているものです。止まった時に気づく仕組み、役割の分け方、直し方まで含めてお手伝いできます。</p>
+<div class="pl-plans"><div class="pl-plan" data-ct-reveal><span class="pl-k">まず1つの業務から</span>
+<h3>業務自動化ツール</h3><span class="pl-price">¥49,800〜</span><span class="ct-caption">最短7営業日</span><p>毎日の転記・集計・通知など、手で回している作業を1つ自動にします。</p></div>
+<div class="pl-plan is-main" data-ct-reveal><span class="pl-k">AI社員を組み込む</span>
+<h3>AI実装プロジェクト</h3><span class="pl-price">¥298,000〜</span><span class="ct-caption">要件により変動</span><p>このページの会社と同じ形で、役割を分けたAIを社内の流れに組み込みます。</p></div>
+<div class="pl-plan" data-ct-reveal><span class="pl-k">止まらない運用まで</span>
+<h3>月次AI顧問</h3><span class="pl-price">¥148,000/月</span><span class="ct-caption">月単位</span><p>止まった時の直し方、指示文の改善、新しいモデルへの切り替えまで毎月見ます。</p></div></div>
+<form class="pl-form" action="https://formspree.io/f/xpqjbyya" method="POST" data-ct-reveal>
+<div class="pl-fields ct-stack">
+<h3 class="ct-h3" style="margin:0">課題を1つ送ってください</h3>
+<p class="ct-hint" style="margin:0">できること・費用の目安をメールでお返しします。</p>
+<input type="hidden" name="_subject" value="プロンプト置き場からの相談">
+<input type="hidden" name="source" value="prompts_index">
+<label class="ct-label" for="f-name">お名前</label><input class="ct-input" id="f-name" name="name" required autocomplete="name">
+<label class="ct-label" for="f-email">メールアドレス</label><input class="ct-input" id="f-email" name="email" type="email" required autocomplete="email">
+<label class="ct-label" for="f-plan">気になるもの</label>
+<select class="ct-select" id="f-plan" name="service"><option>まだ決めていない</option><option>業務自動化ツール</option><option>AI実装プロジェクト</option><option>月次AI顧問</option></select>
+<label class="ct-label" for="f-msg">いま手で回している作業</label>
+<textarea class="ct-input" id="f-msg" name="message" required placeholder="例: 毎朝、3つの管理画面から数字を集めてExcelに貼っている"></textarea>
+<button class="ct-btn ct-btn--primary ct-btn--block" type="submit">この内容で相談する</button>
+<p class="ct-caption" style="margin:0">送った内容は返信のためだけに使います。<a href="/privacy.html">プライバシーポリシー</a></p>
+</div>
+<div class="pl-done ct-stack" role="status"><h3 class="ct-h3">受け付けました</h3><p class="ct-body">内容を読んで、メールでお返事します。</p></div>
+</form>
+</div></section>
 </main>
 <footer class="ct-container ct-section"><p class="ct-note">AI社員18体で会社を24時間動かしている運用の中で使っている型を、一般向けに書き直して公開しています。
-登録は不要です。結果は環境によって変わります。<br>
-<a href="https://x.com/UDfsrq4P6R87229">X: ハル</a> ・ <a href="/privacy.html">プライバシーポリシー</a> ・ <a href="/tokushoho.html">特定商取引法に基づく表記</a></p></footer>
+プロンプトの閲覧・コピーに登録は要りません。結果は使うAIや環境によって変わります。<br>
+運営: ClawTech ・ <a href="https://x.com/UDfsrq4P6R87229">X: ハル</a> ・ <a href="/">会社案内</a> ・ <a href="/privacy.html">プライバシーポリシー</a> ・ <a href="/tokushoho.html">特定商取引法に基づく表記</a></p></footer>
+<div class="ct-dock"><a class="ct-btn ct-btn--primary ct-btn--block" href="#consult" data-cta="dock">自社にAI社員を入れる相談をする</a></div>
+<div class="pl-toast" id="pl-toast" role="status" aria-live="polite"></div>
 <script>
+(function(){
+var toast=document.getElementById('pl-toast');
+function say(t){toast.textContent=t;toast.classList.add('is-on');setTimeout(function(){toast.classList.remove('is-on')},1800)}
+function ev(n,p){if(window.gtag)gtag('event',n,p||{})}
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
-var t=document.getElementById(b.getAttribute('data-copy')).innerText;
-(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='コピーしました';
-if(window.gtag)gtag('event','prompt_copy',{prompt_id:b.getAttribute('data-id')});
-setTimeout(function(){b.textContent='プロンプトをコピー'},2000)},function(){b.textContent='長押しで選択してコピー'})})});
+var t=document.getElementById(b.getAttribute('data-copy')).textContent;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){say('コピーしました。AIの入力欄に貼り付けてください');
+ev('prompt_copy',{prompt_id:b.getAttribute('data-id')})},function(){say('長押しで選択してコピーしてください')})})});
+document.querySelectorAll('[data-more]').forEach(function(b){b.addEventListener('click',function(){
+var p=document.getElementById(b.getAttribute('data-more'));var o=p.classList.toggle('is-full');b.textContent=o?'たたむ':'全文を見る';b.setAttribute('aria-expanded',o)})});
+document.querySelectorAll('[data-cta]').forEach(function(a){a.addEventListener('click',function(){ev('cta_click',{position:a.getAttribute('data-cta')})})});
+var f=document.querySelector('.pl-form');
+if(f)f.addEventListener('submit',function(e){e.preventDefault();var btn=f.querySelector('[type=submit]');btn.disabled=true;
+fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}}).then(function(r){
+if(r.ok){f.classList.add('is-sent');ev('generate_lead',{source:'prompts'})}else{btn.disabled=false;say('送れませんでした。時間をおいてもう一度お試しください')}},
+function(){btn.disabled=false;say('通信できませんでした。電波の良い所でもう一度お試しください')})});
+var fl=document.querySelectorAll('.pl-filter button');
+fl.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-k');
+fl.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+document.querySelectorAll('.pl-card').forEach(function(c){c.parentNode.hidden=!(k==='all'||c.getAttribute('data-k')===k)})})});
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target)}})},{threshold:.4}):null;
+document.querySelectorAll('.pl-dept').forEach(function(d){io?io.observe(d):d.classList.add('is-in')});
+function nums(){document.querySelectorAll('[data-count]').forEach(function(el){window.CT?CT.countUp(el,+el.getAttribute('data-count')):0})}
+if(document.readyState==='complete')nums();else window.addEventListener('load',nums);
+})();
 </script></body></html>
