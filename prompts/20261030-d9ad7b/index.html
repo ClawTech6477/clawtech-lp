@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AIタスクの生存確認｜コピペで使えるプロンプト</title><meta name="description" content="定期実行タスクの停止を自動検知する">
+<link rel="canonical" href="https://clawtechjp.com/prompts/20261030-d9ad7b/">
+<meta property="og:type" content="article"><meta property="og:title" content="AIタスクの生存確認｜コピペで使えるプロンプト"><meta property="og:description" content="定期実行タスクの停止を自動検知する">
+<meta property="og:url" content="https://clawtechjp.com/prompts/20261030-d9ad7b/"><meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/ui/ct-ui.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RZ1TP2K3N0"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RZ1TP2K3N0');</script>
+<style>
+.pl-code{white-space:pre-wrap;word-break:break-word;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;line-height:1.75;margin:0}
+.pl-list{list-style:none;padding:0;margin:0;display:grid;gap:var(--ct-space-4,16px)}
+.pl-list a{text-decoration:none;color:inherit;display:block}
+</style></head><body>
+<a class="ct-skip" href="#main">本文へ</a>
+<header class="ct-header"><div class="ct-header__in ct-container"><a href="/prompts/">ハルのプロンプト置き場</a></div></header>
+<main id="main" class="ct-container ct-section">
+<nav class="ct-crumb"><a href="/prompts/">プロンプト一覧</a></nav>
+<p class="ct-eyebrow">2026-10-30</p>
+<h1 class="ct-h1">AIタスクの生存確認</h1>
+<p class="ct-lead">定期実行タスクの停止を自動検知する</p>
+<section class="ct-panel ct-panel--raised ct-stack">
+<pre class="pl-code" id="p">あなたは監視エージェントです。提供されたログデータから、実行予定だったタスクが未実行またはタイムアウトで中断されているかを確認してください。判定基準は、最終実行時刻から現在時刻までの差分がスレッド間隔の2倍以上であること、およびステータスが&#x27;timeout&#x27;または&#x27;error&#x27;の場合です。検出された場合、タスク名・最終実行日時・推定原因（タイムアウト/例外）を箇条書きで出力し、未検出の場合は「正常」とのみ出力してください。</pre>
+<button class="ct-btn ct-btn--primary ct-btn--block" type="button" data-copy="p" data-id="20261030-d9ad7b">プロンプトをコピー</button>
+</section>
+<section class="ct-section ct-stack"><h2 class="ct-h3">元になった投稿</h2>
+<p class="ct-body">AIに任せた処理、止まってても気づけないことがある。
+
+うちの18体のAI社員、10/26だけで毎朝の処理が4回連続で止まってた。原因は時間切れ。次の日も2日続けて同じ理由で動かず。
+
+画面上は「動いてるはず」の顔してるから、余計タチ悪い😅</p>
+<a class="ct-btn ct-btn--ghost" href="/prompts/">ほかのプロンプトを見る</a></section>
+</main>
+<footer class="ct-container ct-section"><p class="ct-note">AI社員18体で会社を24時間動かしている運用の中で使っている型を、一般向けに書き直して公開しています。
+登録は不要です。結果は環境によって変わります。<br>
+<a href="https://x.com/UDfsrq4P6R87229">X: ハル</a> ・ <a href="/privacy.html">プライバシーポリシー</a> ・ <a href="/tokushoho.html">特定商取引法に基づく表記</a></p></footer>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){
+var t=document.getElementById(b.getAttribute('data-copy')).innerText;
+(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='コピーしました';
+if(window.gtag)gtag('event','prompt_copy',{prompt_id:b.getAttribute('data-id')});
+setTimeout(function(){b.textContent='プロンプトをコピー'},2000)},function(){b.textContent='長押しで選択してコピー'})})});
+</script></body></html>
