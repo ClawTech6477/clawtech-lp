@@ -117,7 +117,7 @@
 <div class="pl-demo" aria-label="書き込みの例"><span class="pl-demo__k">［ ］に書き込むと、こうなる</span>
 <p class="pl-demo__t">あなたは<span class="pl-slot" data-to="花屋">［業種］</span>の受付係です。<span class="pl-slot" data-to="母の日の予約">［よくある問い合わせ］</span>に、<span class="pl-slot" data-to="60字">［文字数］</span>以内で答えてください。</p>
 <span class="pl-demo__btn" aria-hidden="true">このままコピー</span></div>
-<div class="pl-stats"><div><b class="ct-num" data-count="3">3</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
+<div class="pl-stats"><div><b class="ct-num" data-count="4">4</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
 <div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
 </div></header>
 <main id="main">
@@ -127,6 +127,39 @@
 <ol class="pl-steps" data-ct-reveal><li>「自分用に書き込む」を押して、［ ］の欄を埋める</li><li>「コピー」を押す(書き込んだ内容入りでコピーされます)</li><li>ChatGPTやClaudeの入力欄に貼り付けて送る</li></ol>
 <div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button></div>
 <ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">#3 ・ 今日の指示文 ・ 2026-11-02</span></div>
+<h3><a href="/prompts/20261102-691eda/">メールからタスク抽出</a></h3>
+<p class="pl-use">未読メールが溜まって、やることと期限が把握できない時</p>
+<div class="pl-fill" hidden data-for="p-20261102-691eda"></div>
+<pre class="pl-pre" id="p-20261102-691eda" data-src="あなたは業務メールの整理アシスタントです。添付されたメール内容から、決まったこと・宿題・期限の3要素を抽出してください。
+
+[ここにメール本文を貼る]
+[ここに自分の判断基準や優先順位を貼る]
+
+手順:
+1. 本文を精読し、完了済みの事実を抽出
+2. 未完了のアクションを宿題として抽出
+3. 各項目に関連する期限を特定
+4. 期限が明示されていない場合は「不明」と記載
+5. 各要素を指定された形式で出力
+
+出力形式: 箇条書きで、各項目に【決まった】/【宿題】/【期限】のタグを付ける。1項目1行。">あなたは業務メールの整理アシスタントです。添付されたメール内容から、決まったこと・宿題・期限の3要素を抽出してください。
+
+[ここにメール本文を貼る]
+[ここに自分の判断基準や優先順位を貼る]
+
+手順:
+1. 本文を精読し、完了済みの事実を抽出
+2. 未完了のアクションを宿題として抽出
+3. 各項目に関連する期限を特定
+4. 期限が明示されていない場合は「不明」と記載
+5. 各要素を指定された形式で出力
+
+出力形式: 箇条書きで、各項目に【決まった】/【宿題】/【期限】のタグを付ける。1項目1行。</pre>
+<button class="pl-more" type="button" data-more="p-20261102-691eda" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261102-691eda" data-id="20261102-691eda">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261102-691eda" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#2 ・ 今日の指示文 ・ 2026-11-01</span></div>
 <h3><a href="/prompts/20261101-645fef/">朝のタスク優先度自動ソート</a></h3>
 <p class="pl-use">締切・重要度でタスクを再整理したい時</p>
