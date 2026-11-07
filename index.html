@@ -43,6 +43,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--ink);border
 .ni{max-width:calc(var(--max)+var(--pad)*2);margin:0 auto;padding:0 var(--pad);height:54px;display:flex;align-items:center;gap:28px;}
 .logo{font-weight:700;font-size:17px;color:var(--white);letter-spacing:.04em;margin-right:auto;}
 .logo span{color:var(--gold);}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) nav .logo{color:#fff;}}
+:root[data-theme="dark"] nav .logo{color:#fff;}
 .nl{display:flex;gap:22px;}
 .nl a{font-size:13px;color:rgba(255,255,255,.55);font-weight:500;transition:color .15s;}
 .nl a:hover{color:var(--white);}
@@ -56,6 +58,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--ink);border
 /* BTN */
 .btn-p{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-b);font-weight:700;font-size:14.5px;background:var(--gold);color:var(--on-gold);padding:13px 26px;border:none;cursor:pointer;box-shadow:inset 0 -2px 0 var(--gold-dk);transition:background .15s;}
 .btn-p:hover{background:#f5c43c;}
+.hero-sec{background:none;border:none;border-bottom:1px solid rgba(255,255,255,.5);color:#fff;font-family:var(--f-b);font-size:14px;padding:12px 2px;cursor:pointer;min-height:44px;}
+.hero-sec:hover{border-bottom-color:#fff;}
+.hero-sec:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 
 /* ===== HERO ===== */
 #hero{
@@ -361,8 +366,10 @@ label.fl{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;margi
   display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
 }
 .flogo{font-weight:700;font-size:17px;}
-.flogo span{color:var(--gold);}
-.flinks{display:flex;gap:18px;flex-wrap:wrap;}
+.flogo span{color:#8A5F00;}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .flogo span{color:var(--gold);}}
+:root[data-theme="dark"] .flogo span{color:var(--gold);}
+.flinks{position:static;background:none;border:0;z-index:auto;display:flex;gap:18px;flex-wrap:wrap;}
 .flinks a{font-size:12px;color:var(--ink2);transition:color .15s;}
 .flinks a:hover{color:var(--ink);}
 .fcopy{font-family:var(--f-m);font-size:11px;color:var(--ink2);}
@@ -510,8 +517,8 @@ label.fl{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;margi
       <span style="background:rgba(232,165,17,.15);color:#E8A511;font-size:12px;font-family:var(--f-b);padding:5px 14px;border-radius:20px;border:1px solid rgba(232,165,17,.35);letter-spacing:.02em;">修正1ヶ月無料</span>
     </div>
     <div class="ha">
-      <button class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">相談する（無料・24h返信）</button>
-      <a href="https://clawtechjp.com/shindan.html" target="_blank" style="font-family:var(--f-b);font-size:13.5px;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;transition:color .15s;" onmouseover="this.style.color='rgba(255,255,255,.9)'" onmouseout="this.style.color='rgba(255,255,255,.55)'">→ 30秒DX診断（無料）</a>
+      <a class="btn-p" href="https://clawtechjp.com/shindan.html" style="text-decoration:none;" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'shindan'})">30秒で無料DX診断（登録不要）</a>
+      <button class="hero-sec" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'consult'});document.getElementById('contact').scrollIntoView({behavior:'smooth'})">診断せずに相談する（無料・24h返信）</button>
     </div>
   </div>
 </section>
@@ -855,7 +862,7 @@ label.fl{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;margi
             <label class="fl" for="fe">メールアドレス<span class="freq">*</span></label>
             <input type="email" id="fe" name="email" class="fi" placeholder="example@email.com" required>
             <label class="fl">ご相談内容</label>
-            <select name="service" class="fs">
+            <select name="service" class="fs" aria-label="ご相談内容">
               <option value="">選択してください（任意）</option>
               <option>LP・ホームページ制作</option>
               <option>コーポレートサイト</option>
