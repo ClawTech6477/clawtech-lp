@@ -20,6 +20,19 @@
    }
   ]
  },
+ "nenshu_cta": {
+  "exp": 5,
+  "variants": [
+   {
+    "content": "無料で求人を見る",
+    "label": "base"
+   },
+   {
+    "content": "求人を見る",
+    "label": "B"
+   }
+  ]
+ },
  "shikin_cta": {
   "exp": 4,
   "variants": [
