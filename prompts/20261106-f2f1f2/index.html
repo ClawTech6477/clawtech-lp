@@ -158,7 +158,16 @@
 <div class="pl-row"><a class="ct-btn ct-btn--ghost" href="https://x.com/UDfsrq4P6R87229" data-cta="follow">Xでハルをフォロー</a><a class="ct-btn ct-btn--ghost" href="https://x.com/intent/post?text=%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%AD%E3%82%B0%E8%A7%A3%E6%9E%90%E3%81%A8%E5%AF%BE%E5%BF%9C%E6%A1%88%E4%BD%9C%E6%88%90&amp;url=https%3A%2F%2Fclawtechjp.com%2Fprompts%2F20261106-f2f1f2%2F" data-cta="share">この指示文をXで紹介</a></div></div>
 </div></section>
 <section class="ct-section"><div class="ct-container ct-stack">
-<h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="official_jp" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">最新情報の読み方 ・ 2026-11-09</span></div>
+<h3><a href="/prompts/20261109-5fd0c7/">夜間バグ誤検知フィルタ</a></h3>
+<p class="pl-use">夜間アラートで誤検知が多い時に使います</p>
+<div class="pl-fill" hidden data-for="p-20261109-5fd0c7"></div>
+<pre class="pl-pre" id="p-20261109-5fd0c7" data-src="以下の夜間アラートログを分析し、実バグと誤検知を判定してください。判定基準は「過去30日間の類似パターン」「直近のデプロイ履歴」「一時的なスパイク後の自己回復」の3点です。出力は以下の3項目を箇条書きで返してください。1. 判定結果（実バグ/誤検知/要調査）2. 根拠となるログの具体的な値（タイムスタンプ、エラーコード、リクエスト数など）3. 再発防止のための監視閾値の調整案。断定は避け、不確実な箇所は「要調査」と明記してください。">以下の夜間アラートログを分析し、実バグと誤検知を判定してください。判定基準は「過去30日間の類似パターン」「直近のデプロイ履歴」「一時的なスパイク後の自己回復」の3点です。出力は以下の3項目を箇条書きで返してください。1. 判定結果（実バグ/誤検知/要調査）2. 根拠となるログの具体的な値（タイムスタンプ、エラーコード、リクエスト数など）3. 再発防止のための監視閾値の調整案。断定は避け、不確実な箇所は「要調査」と明記してください。</pre>
+<button class="pl-more" type="button" data-more="p-20261109-5fd0c7" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261109-5fd0c7" data-id="20261109-5fd0c7">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261109-5fd0c7" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#7 ・ 今日の指示文 ・ 2026-11-08</span></div>
 <h3><a href="/prompts/20261108-7c9cf1/">業務自動化の可否診断プロンプト</a></h3>
 <p class="pl-use">手作業の工程をAIに任せるか判断したい時</p>
@@ -273,15 +282,6 @@
 <button class="pl-more" type="button" data-more="p-20261105-6adde9" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261105-6adde9" data-id="20261105-6adde9">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261105-6adde9" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="incident" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-05</span></div>
-<h3><a href="/prompts/20261105-579c86/">放置アラートの一括調査</a></h3>
-<p class="pl-use">監視アラートの根本原因を迅速に特定したい時</p>
-<div class="pl-fill" hidden data-for="p-20261105-579c86"></div>
-<pre class="pl-pre" id="p-20261105-579c86" data-src="以下の監視ログを分析し、アラートの根本原因を特定してください。1. 各アラートの発生頻度と影響範囲をリストアップする。2. 共通するパターンやトリガーを特定し、原因を推測する。3. 修正手順と再発防止策を具体的に提示する。出力はMarkdown形式で、各項目に優先度と所要時間を見積もって記載する。">以下の監視ログを分析し、アラートの根本原因を特定してください。1. 各アラートの発生頻度と影響範囲をリストアップする。2. 共通するパターンやトリガーを特定し、原因を推測する。3. 修正手順と再発防止策を具体的に提示する。出力はMarkdown形式で、各項目に優先度と所要時間を見積もって記載する。</pre>
-<button class="pl-more" type="button" data-more="p-20261105-579c86" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261105-579c86" data-id="20261105-579c86">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261105-579c86" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
