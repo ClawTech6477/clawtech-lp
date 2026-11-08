@@ -1,1 +1,23 @@
-{}
+{
+ "lp_hero": {
+  "exp": 3,
+  "variants": [
+   {
+    "content": "30秒で無料DX診断（登録不要）",
+    "label": "base"
+   },
+   {
+    "content": "今すぐ30秒で無料DX診断",
+    "label": "B"
+   },
+   {
+    "content": "30秒で業務の抜け漏れを特定",
+    "label": "C"
+   },
+   {
+    "content": "30秒で3つの非効率を可視化",
+    "label": "D"
+   }
+  ]
+ }
+}
