@@ -19,5 +19,18 @@
     "label": "D"
    }
   ]
+ },
+ "shikin_cta": {
+  "exp": 4,
+  "variants": [
+   {
+    "content": "無料で見積もりを確認",
+    "label": "base"
+   },
+   {
+    "content": "資金調達先へ進む",
+    "label": "B"
+   }
+  ]
  }
 }
