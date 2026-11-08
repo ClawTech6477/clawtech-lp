@@ -706,6 +706,9 @@ document.getElementById("go").onclick=()=>{
     if(ea2) ea2.addEventListener("click",()=>track("shikin_article_click",{branch:br, pos:"lead"}));
 
     const motion = !NO_MOTION();
+    const AB_CTA="無料で見積もりを確認"; // ct-ab:shikin_cta (勝ち案が決まると improve_loop が書き換える)
+    const abCta=window.CTAB?CTAB.html("shikin_cta",AB_CTA):AB_CTA;
+    if(window.CTAB && !DEMO) CTAB.view("shikin_cta");
     scored.forEach((s,i)=>{
       const a=document.createElement("a");
       if(!DEMO){ a.href=AFFILIATE_URLS[s.key]; a.target="_blank"; a.rel="noopener sponsored"; }
@@ -716,7 +719,7 @@ document.getElementById("go").onclick=()=>{
         <div class="nm">${s.name}</div>
         <div class="facts">${s.facts.map(f=>`<span>${f}</span>`).join("")}</div>
         <p class="rs">${s.rs}</p>
-        <div class="site-cta">無料で見積もりを確認<span class="arrow" aria-hidden="true">→</span></div>`;
+        <div class="site-cta">${abCta}<span class="arrow" aria-hidden="true">→</span></div>`;
       if(motion){
         a.style.setProperty("--d", (420 + i*130) + "ms");
         a.classList.add("drop");
@@ -731,7 +734,7 @@ document.getElementById("go").onclick=()=>{
         img.style.position="absolute"; img.className="a8imp-dyn";
         document.body.appendChild(img);
       }
-      a.addEventListener("click",()=>track("shikin_site_click",{site_name:s.name, rank:i+1, placement:"card", branch:br}));
+      a.addEventListener("click",()=>{ track("shikin_site_click",{site_name:s.name, rank:i+1, placement:"card", branch:br}); if(window.CTAB && !DEMO) CTAB.click("shikin_cta"); });
       box.appendChild(a);
     });
   }
@@ -788,5 +791,6 @@ if(!NO_MOTION() && "IntersectionObserver" in window){
   document.querySelectorAll(".doc-tablewrap").forEach(el=>{ el.classList.add("reveal"); io.observe(el); });
 }
 </script>
+<script src="https://clawtechjp.com/ui/ct-ab.js" defer></script>
 </body>
 </html>

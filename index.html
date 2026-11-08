@@ -517,7 +517,7 @@ label.fl{display:block;font-size:12px;font-weight:700;letter-spacing:.04em;margi
       <span style="background:rgba(232,165,17,.15);color:#E8A511;font-size:12px;font-family:var(--f-b);padding:5px 14px;border-radius:20px;border:1px solid rgba(232,165,17,.35);letter-spacing:.02em;">修正1ヶ月無料</span>
     </div>
     <div class="ha">
-      <a class="btn-p" href="https://clawtechjp.com/shindan.html" style="text-decoration:none;" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'shindan'})">30秒で無料DX診断（登録不要）</a>
+      <a class="btn-p" href="https://clawtechjp.com/shindan.html" style="text-decoration:none;" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'shindan'})" data-ct-ab="lp_hero">30秒で無料DX診断（登録不要）</a>
       <button class="hero-sec" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'consult'});document.getElementById('contact').scrollIntoView({behavior:'smooth'})">診断せずに相談する（無料・24h返信）</button>
     </div>
   </div>
@@ -1002,5 +1002,6 @@ function init(){fab=document.getElementById('cbFab');widget=document.getElementB
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
+<script src="https://clawtechjp.com/ui/ct-ab.js" defer></script>
 </body>
 </html>
