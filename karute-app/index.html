@@ -828,30 +828,20 @@ footer p{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em}
 </footer>
 
 <!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha384-n1AULnKdMJlK1oQCLNDL9qZsDgXtH6jRYFCpBtWFc+a9Yve0KSoMn575rk755NJZ" crossorigin="anonymous"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-// AOS
-AOS.init({once:true,offset:60,easing:'ease-out-cubic',duration:650});
+window.addEventListener('DOMContentLoaded',function(){
+// AOS(読めなければ出現アニメ無しで全表示)
+if(window.AOS){AOS.init({once:true,offset:60,easing:'ease-out-cubic',duration:650});}else{document.querySelectorAll('[data-aos]').forEach(function(e){e.classList.add('aos-animate');});}
 
 // GSAP ScrollTrigger演出（ヒーローのタグライン + Problemsカードのstagger表示のみ）
 if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   gsap.registerPlugin(ScrollTrigger);
   const isMobile = window.innerWidth <= 768;
 
-  // 1. ヒーローのメインコピー: ページ読み込み完了時に自動フェードイン
-  const taglineWords = document.querySelectorAll('.hero-tagline .tagline-word');
-  if (taglineWords.length) {
-    gsap.set(taglineWords, {opacity: 0, y: isMobile ? 14 : 20});
-    gsap.to(taglineWords, {
-      opacity: 1,
-      y: 0,
-      duration: isMobile ? 0.5 : 0.6,
-      stagger: 0.12,
-      ease: 'power2.out'
-    });
-  }
+  // 1. ヒーロー見出しはLCPなので出現アニメを掛けない(2026-11-10)
 
   // 2. Problemsセクションのカード: スクロールで下から80%位置に入ったらstagger表示
   const probCards = document.querySelectorAll('#problems .prob-card');
@@ -893,6 +883,7 @@ function showFloat(){if(!floatShown){floatShown=true;floatCta.classList.add('sho
 const heroCta=document.querySelector('#hero .btn-primary');
 if(heroCta&&'IntersectionObserver' in window){new IntersectionObserver(es=>{es.forEach(e=>{floatCta.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0);});}).observe(heroCta);}
 else{window.addEventListener('scroll',()=>{if(scrollY>600)showFloat();},{passive:true});}
+});
 </script>
 </body>
 </html>
