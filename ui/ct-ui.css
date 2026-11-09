@@ -22,7 +22,7 @@
   --ct-surface-2: #eef0f4;
   --ct-text: #16181d;
   --ct-text-2: #4b5160;
-  --ct-text-3: #6e7483;            /* AA: on --ct-bg 4.6:1 */
+  --ct-text-3: #5d6372;            /* AA: on --ct-bg/--ct-surface-2 5.4:1 (旧#6e7483はbg上4.4でLighthouse不合格 2026-11-10) */
   --ct-line: #dcdfe6;
   --ct-line-strong: #b9bec9;
 

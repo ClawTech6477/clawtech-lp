@@ -7,7 +7,7 @@
 <meta name="description" content="FLOWBOARDはAI搭載のプロジェクト管理ツール。タスク・進捗・チームコミュニケーションを一元管理。無料から始められます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=optional" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=optional" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=optional"></noscript></noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -32,7 +32,7 @@ html{scroll-behavior:smooth}
   --sh-lg:0 16px 56px rgba(0,0,0,.12);
   --tr:200ms ease;
 }
-body{font-family:'Noto Sans JP',sans-serif;color:var(--t-dark);background:var(--bg-white);line-height:1.7;overflow-x:hidden}
+body{font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;color:var(--t-dark);background:var(--bg-white);line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 img{max-width:100%;height:auto;display:block}
@@ -204,7 +204,7 @@ img{max-width:100%;height:auto;display:block}
 .price-card.popular::before{content:'✦ 最もお得';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--indigo),var(--pink));color:#fff;padding:7px 24px;border-radius:0 0 12px 12px;font-size:11px;font-weight:800;white-space:nowrap}
 .pc-plan{font-size:12px;font-weight:700;color:var(--t-muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
 .pc-price{font-family:'Inter',sans-serif;font-size:48px;font-weight:800;color:var(--t-dark);line-height:1;margin-bottom:4px}
-.pc-price small{font-size:14px;color:var(--t-muted);font-family:'Noto Sans JP',sans-serif;font-weight:400}
+.pc-price small{font-size:14px;color:var(--t-muted);font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-weight:400}
 .pc-desc{font-size:13px;color:var(--t-gray);margin-bottom:24px}
 .pc-ul{margin-bottom:28px}
 .pc-ul li{font-size:13px;color:var(--t-gray);padding:9px 0;border-bottom:1px solid #F1F5F9;display:flex;align-items:center;gap:8px}
@@ -299,7 +299,7 @@ footer{background:#0F172A;padding:56px 0 40px;color:rgba(255,255,255,.45)}
 <body>
 
 <!-- 制作デモ明記バナー（正直化対応） -->
-<div id="ct-demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#10254C;color:#fff;text-align:center;font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:700;padding:9px 16px;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.15)">
+<div id="ct-demo-banner" style="position:fixed;top:0;left:0;right:0;z-index:99999;background:#10254C;color:#fff;text-align:center;font-family:'Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;font-size:12px;font-weight:700;padding:9px 16px;letter-spacing:.02em;box-shadow:0 2px 8px rgba(0,0,0,.15)">
   制作デモページです（実在の企業・案件ではありません）— このクオリティを<strong>¥49,800〜</strong>で制作します <a href="/#contact" style="color:#F0C158;text-decoration:underline;margin-left:6px">相談する→</a>
 </div>
 <style>#nav{top:38px!important}</style>

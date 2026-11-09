@@ -29,7 +29,7 @@
   --kami:#FAF9F5;--kachi:#10254C;--kachi-deep:#0A1834;--ai-mid:#3E6FB0;
   --yamabuki:#E8A511;--yamabuki-dk:#C88C06;--sumi:#23262B;--hai:#6B7280;--white:#FFFFFF;--line:#E1E5EA;
   --kikyo:#5B4E96;--kikyo-bg:#EEEAF7;--wakatake:#357056;--wakatake-bg:#E7F2EC;--cyan-bg:#E3F0FB;
-  --f-display:'Shippori Mincho B1',serif;--f-body:'Zen Kaku Gothic New',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace;
+  --f-display:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;--f-body:'Zen Kaku Gothic New','Hiragino Sans','Noto Sans JP','Hiragino Sans','Yu Gothic',sans-serif;--f-mono:'IBM Plex Mono','Zen Kaku Gothic New',monospace;
   --shadow-md:0 2px 6px rgba(16,37,76,.07),0 12px 32px rgba(16,37,76,.09);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -80,7 +80,7 @@ nav .inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-co
 .cat-badge.cat-web{background:rgba(62,111,176,.1);color:var(--ai-mid);border-color:rgba(62,111,176,.25);}
 .cat-badge.cat-sales{background:rgba(200,140,6,.1);color:var(--yamabuki-dk);border-color:rgba(200,140,6,.25);}
 .cat-badge.cat-meo{background:var(--cyan-bg);color:var(--ai-mid);border-color:rgba(62,111,176,.2);}
-.cat-badge.cat-other{background:rgba(107,114,128,.1);color:var(--hai);border-color:rgba(107,114,128,.25);}
+.cat-badge.cat-other{background:rgba(107,114,128,.1);color:#4b5563;border-color:rgba(107,114,128,.25);}
 .card-title{font-family:var(--f-display);font-size:16px;font-weight:800;line-height:1.6;margin-bottom:8px;color:var(--sumi);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .blog-card:hover .card-title{color:var(--ai-mid);}
 .card-desc{font-size:13px;color:var(--hai);line-height:1.8;flex:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;}
@@ -156,7 +156,7 @@ footer a:hover{color:var(--white);}
 <div class="blog-container">
   <div class="blog-grid" id="blogGrid">
   <a href="subscription-kaiin-app-kaihatsu-hiyou.html" class="blog-card" data-cat="cat-other">
-    <img class="card-img" src="https://clawtechjp.com/assets/blog-img/subscription-kaiin-app-kaihatsu-hiyou.jpg" alt="サブスク会員管理アプリ開発費用の相場と内訳" loading="lazy">
+    <img class="card-img" src="https://clawtechjp.com/assets/blog-img/subscription-kaiin-app-kaihatsu-hiyou.jpg" alt="サブスク会員管理アプリ開発費用の相場と内訳" fetchpriority="high">
     <div class="card-body">
       <span class="cat-badge cat-other">アプリ開発・顧客管理</span>
       <div class="card-title">サブスク会員管理アプリ開発費用の相場と内訳</div>
@@ -167,7 +167,7 @@ footer a:hover{color:var(--white);}
 
 
   <a href="small-shop-customer-management-app.html" class="blog-card" data-cat="cat-other">
-    <img class="card-img" src="https://clawtechjp.com/assets/blog-img/small-shop-customer-management-app.jpg" alt="個人店顧客管理アプリおすすめの選び方" loading="lazy">
+    <img class="card-img" src="https://clawtechjp.com/assets/blog-img/small-shop-customer-management-app.jpg" alt="個人店顧客管理アプリおすすめの選び方">
     <div class="card-body">
       <span class="cat-badge cat-other">顧客管理・アプリ開発</span>
       <div class="card-title">個人店顧客管理アプリおすすめの選び方</div>
@@ -913,7 +913,7 @@ footer a:hover{color:var(--white);}
 
 
   <a href="ai-kenshu-jinzai-kaihatsu-joseikin.html" class="blog-card" data-cat="cat-ai">
-    <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="AI研修の自己負担が75%減に｜人材開発支援助成金の使い方【2027年3月まで】" loading="lazy" width="600" height="180">
+    <img class="card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="AI研修の自己負担が75%減に｜人材開発支援助成金の使い方【2027年3月まで】" width="600" height="180" loading="lazy">
     <div class="card-body">
       <span class="cat-badge cat-ai">AI活用</span>
       <div class="card-title">AI研修の自己負担が75%減に｜人材開発支援助成金の使い方【2027年3月まで】</div>
@@ -923,7 +923,7 @@ footer a:hover{color:var(--white);}
   </a>
 
   <a href="ai-kenshu-vendor-check-sme.html" class="blog-card" data-cat="cat-ai">
-    <img class="card-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="中小企業のAI研修、失敗しないベンダー選び5つのチェックポイント" loading="lazy" width="600" height="180">
+    <img class="card-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="中小企業のAI研修、失敗しないベンダー選び5つのチェックポイント" width="600" height="180" loading="lazy">
     <div class="card-body">
       <span class="cat-badge cat-ai">AI活用</span>
       <div class="card-title">中小企業のAI研修、失敗しないベンダー選び5つのチェックポイント</div>
@@ -933,7 +933,7 @@ footer a:hover{color:var(--white);}
   </a>
 
   <a href="ai-mitsumorisho-jikan-tanshuku.html" class="blog-card" data-cat="cat-ai">
-    <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="見積書作成が3時間→10分に。AI活用で変わる中小企業の業務時間" loading="lazy" width="600" height="180">
+    <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="見積書作成が3時間→10分に。AI活用で変わる中小企業の業務時間" width="600" height="180" loading="lazy">
     <div class="card-body">
       <span class="cat-badge cat-ai">AI活用</span>
       <div class="card-title">見積書作成が3時間→10分に。AI活用で変わる中小企業の業務時間</div>
@@ -1492,7 +1492,7 @@ footer a:hover{color:var(--white);}
 
 
   <a href="salon-customer-management-app.html" class="blog-card" data-cat="cat-ai">
-    <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="エステ・ピラティスの顧客管理アプリ" loading="lazy" width="600" height="190">
+    <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="エステ・ピラティスの顧客管理アプリ" width="600" height="190" loading="lazy">
     <div class="card-body">
       <span class="cat-badge cat-ai">AI活用</span>
       <div class="card-title">エステ・ピラティスの顧客管理アプリ導入ガイド｜ホットペッパー依存から抜け出す方法</div>
@@ -1535,7 +1535,7 @@ footer a:hover{color:var(--white);}
 
 
     <a href="ai-tools-business-efficiency-sme.html" class="blog-card" data-cat="cat-ai">
-      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="：中小企業向けAIで業務効率化！" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="：中小企業向けAIで業務効率化！" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-ai">AI活用</span>
         <div class="card-title">中小企業向けAIで業務効率化！</div>
@@ -1545,7 +1545,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="listing-ad-customer-acquisition-effect.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="リスティング広告で集客激変！2026年を勝ち抜く効果最大化戦略" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="リスティング広告で集客激変！2026年を勝ち抜く効果最大化戦略" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">集客</span>
         <div class="card-title">リスティング広告で集客激変！2026年を勝ち抜く効果最大化戦略</div>
@@ -1555,7 +1555,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="website-creation-cheap-template.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="格安Webサイト制作！テンプレート活用術" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="格安Webサイト制作！テンプレート活用術" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">格安Webサイト制作！テンプレート活用術</div>
@@ -1565,7 +1565,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="seo-cost-effectiveness-sme.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="中小企業向けSEO対策費用対効果最大化戦略" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="中小企業向けSEO対策費用対効果最大化戦略" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">SEO</span>
         <div class="card-title">中小企業向けSEO対策費用対効果最大化戦略</div>
@@ -1575,7 +1575,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="subsidy-dx-promotion-sme-2026.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX推進、2026年までの補助金戦略" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX推進、2026年までの補助金戦略" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX</span>
         <div class="card-title">中小企業DX推進、2026年までの補助金戦略</div>
@@ -1585,7 +1585,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="hp-renewal-guide.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ホームページリニューアル費用と最適なタイミング" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ホームページリニューアル費用と最適なタイミング" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">ホームページリニューアル費用と最適なタイミング</div>
@@ -1595,7 +1595,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="seo-optimization-cost-effect-sme.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="2026年を見据える中小企業へ！SEO対策の費用対効果を最大化" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="2026年を見据える中小企業へ！SEO対策の費用対効果を最大化" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">SEO</span>
         <div class="card-title">2026年を見据える中小企業へ！SEO対策の費用対効果を最大化</div>
@@ -1605,7 +1605,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="business-automation-tools-sme.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業向け業務自動化ツール徹底解説" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業向け業務自動化ツール徹底解説" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX</span>
         <div class="card-title">中小企業向け業務自動化ツール徹底解説</div>
@@ -1615,7 +1615,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="sns-management-agency-freelancer.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="個人事業主向けSNS運用代行ガイド【】" loading="lazy" width="600" height="180">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="個人事業主向けSNS運用代行ガイド【】" width="600" height="180" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">SNS運用</span>
         <div class="card-title">個人事業主向けSNS運用代行ガイド【】</div>
@@ -1626,7 +1626,7 @@ footer a:hover{color:var(--white);}
 
 
     <a href="koumuten-homepage.html" class="blog-card" data-cat="cat-koumuten">
-      <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店ホームページ" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-koumuten">工務店</span>
         <div class="card-title">工務店がホームページを持つべき5つの理由</div>
@@ -1636,7 +1636,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-taisaku.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=80" alt="MEO対策" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600&q=80" alt="MEO対策" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">MEO対策とは？Googleマップで集客する方法を徹底解説</div>
@@ -1646,7 +1646,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="gbp-setup-guide.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Googleビジネスプロフィール" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Googleビジネスプロフィール" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">Googleビジネスプロフィール登録方法完全ガイド</div>
@@ -1656,7 +1656,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="ai-katsuyou-jirei.html" class="blog-card" data-cat="cat-ai">
-      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI活用事例" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80" alt="AI活用事例" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-ai">AI活用</span>
         <div class="card-title">中小企業のAI活用事例5選｜業務自動化で月30時間削減する方法</div>
@@ -1666,7 +1666,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="homepage-cost-2026.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="ホームページ制作費用" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="ホームページ制作費用" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">ホームページ制作費用の相場と賢い選び方</div>
@@ -1676,7 +1676,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="lp-beginner-guide.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ランディングページ制作" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="ランディングページ制作" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">LP(ランディングページ)の作り方｜初心者向け完全ガイド</div>
@@ -1686,7 +1686,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="sme-dx-guide.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="中小企業DX" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX</span>
         <div class="card-title">中小企業DX成功の道標2026！事例と進め方を徹底解説</div>
@@ -1696,7 +1696,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="chatgpt-business-use.html" class="blog-card" data-cat="cat-ai">
-      <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="ChatGPT業務活用" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" alt="ChatGPT業務活用" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-ai">AI活用</span>
         <div class="card-title">ChatGPT業務効率化術！プロが教える活用法</div>
@@ -1706,7 +1706,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="restaurant-website.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="飲食店ホームページ" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="飲食店ホームページ" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">飲食店にHPは必須？集客を最大化する秘訣</div>
@@ -1716,7 +1716,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="seo-beginner-guide.html" class="blog-card" data-cat="cat-other">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SEO対策初心者" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SEO対策初心者" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-other">SEO</span>
         <div class="card-title">SEO対策 初心者がやるべき事</div>
@@ -1726,7 +1726,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="instagram-business.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="Instagram集客" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="Instagram集客" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">SNS集客</span>
         <div class="card-title">Instagram集客で成功する秘訣</div>
@@ -1736,7 +1736,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="it-hojo-kin.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="IT補助金" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="IT補助金" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">補助金・DX</span>
         <div class="card-title">IT導入補助金でホームページ制作を成功させる！</div>
@@ -1746,7 +1746,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="seikotsuin-marketing.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="整骨院集客" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="整骨院集客" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">集客</span>
         <div class="card-title">整骨院集客 2026年成功戦略｜最新Webマーケティング</div>
@@ -1756,7 +1756,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="koumuten-hp-case.html" class="blog-card" data-cat="cat-koumuten">
-      <img class="card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="工務店HP集客成功事例" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="工務店HP集客成功事例" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-koumuten">工務店</span>
         <div class="card-title">工務店HP集客成功事例｜Web戦略徹底解説</div>
@@ -1766,7 +1766,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="lp-creation-effectiveness-measurement-tools.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="LP効果測定ツール" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="LP効果測定ツール" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">LP制作の効果測定ツール完全ガイド</div>
@@ -1776,7 +1776,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="seikotsuin-homepage.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="整骨院ホームページ" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="整骨院ホームページ" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">整骨院ホームページ集客成功の秘訣！</div>
@@ -1786,7 +1786,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="rpa-vs-ai-automation.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="RPA vs AI自動化" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="RPA vs AI自動化" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX・自動化</span>
         <div class="card-title">業務自動化RPA、AIの違いとは？徹底比較ガイド</div>
@@ -1796,7 +1796,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="lead-generation-lp-template.html" class="blog-card" data-cat="cat-web">
-      <img class="card-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="リード獲得LPテンプレート" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="リード獲得LPテンプレート" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-web">Web制作</span>
         <div class="card-title">リード獲得LPテンプレートと成功事例</div>
@@ -1806,7 +1806,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="line-auto-reply-setup.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="LINE自動返信設定" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80" alt="LINE自動返信設定" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">自動化</span>
         <div class="card-title">LINE公式アカウント自動返信：設定方法を徹底解説</div>
@@ -1816,7 +1816,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="ai-sales-agency-cost-price.html" class="blog-card" data-cat="cat-ai">
-      <img class="card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="AI営業代行費用" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="AI営業代行費用" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-ai">AI活用・営業</span>
         <div class="card-title">AI営業代行の費用相場と効果を徹底解説</div>
@@ -1826,7 +1826,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="sns-marketing-success-stories-sme.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SNSマーケティング成功事例" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="SNSマーケティング成功事例" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">SNS運用</span>
         <div class="card-title">中小企業のSNSマーケティング成功事例集</div>
@@ -1836,7 +1836,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="inside-sales-introduction-benefits.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="インサイドセールス" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="インサイドセールス" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">営業</span>
         <div class="card-title">インサイドセールス導入で売上爆増の秘訣</div>
@@ -1846,7 +1846,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="business-automation-tools-recommended-sole-proprietor.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="個人事業主向け自動化ツール" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" alt="個人事業主向け自動化ツール" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX・自動化</span>
         <div class="card-title">個人事業主向け事業自動化ツールおすすめ10選</div>
@@ -1856,7 +1856,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-optimization-cost-effectiveness.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="MEO対策費用対効果" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=600&q=80" alt="MEO対策費用対効果" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">MEO対策費用対効果を徹底解説</div>
@@ -1866,7 +1866,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="sme-sales-cost-reduction.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="営業コスト削減" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="営業コスト削減" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">AI営業</span>
         <div class="card-title">2026年 中小企業向けAI営業コスト削減術</div>
@@ -1876,7 +1876,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="web-marketing-strategy-sme.html" class="blog-card" data-cat="cat-sales">
-      <img class="card-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" alt="Web集客戦略" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" alt="Web集客戦略" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-sales">集客</span>
         <div class="card-title"> 中小企業Web集客戦略｜成功の鍵</div>
@@ -1886,7 +1886,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-measures-roi-sme.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="中小企業MEO対策" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="中小企業MEO対策" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">中小企業のMEO対策｜費用対効果を最大化</div>
@@ -1896,7 +1896,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-for-seikotsuin.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="整骨院MEO対策" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="整骨院MEO対策" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">整骨院・接骨院のMEO対策完全ガイド｜Googleマップ集客の手順</div>
@@ -1906,7 +1906,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-for-komuten.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店MEO対策" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="工務店MEO対策" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">工務店・リフォームのMEO対策完全ガイド｜地域検索で選ばれる方法</div>
@@ -1916,7 +1916,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="meo-for-shika.html" class="blog-card" data-cat="cat-meo">
-      <img class="card-img" src="https://images.unsplash.com/photo-1609840112990-4b8f2c1a9e5e?w=600&q=80" alt="歯科医院MEO対策" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1609840112990-4b8f2c1a9e5e?w=600&q=80" alt="歯科医院MEO対策" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-meo">MEO対策</span>
         <div class="card-title">歯科医院のMEO対策完全ガイド｜医療広告ガイドラインに準拠した集客</div>
@@ -1926,7 +1926,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="business-efficiency-ai-tools.html" class="blog-card" data-cat="cat-ai">
-      <img class="card-img" src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&q=80" alt="業務効率化AIツール" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&q=80" alt="業務効率化AIツール" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-ai">AI活用</span>
         <div class="card-title">業務効率化AIツール比較｜中小企業が今すぐ導入すべき10選</div>
@@ -1936,7 +1936,7 @@ footer a:hover{color:var(--white);}
     </a>
 
     <a href="dx-promotion-sme-success-cases-2026.html" class="blog-card" data-cat="cat-dx">
-      <img class="card-img" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80" alt="中小企業DX成功事例" loading="lazy" width="600" height="190">
+      <img class="card-img" src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80" alt="中小企業DX成功事例" width="600" height="190" loading="lazy">
       <div class="card-body">
         <span class="cat-badge cat-dx">DX</span>
         <div class="card-title">中小企業DX推進ガイド｜2026年成功事例から学ぶ業務デジタル化</div>
@@ -1972,10 +1972,11 @@ window.addEventListener('scroll', () => backBtn.classList.toggle('show', window.
 if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   gsap.registerPlugin(ScrollTrigger);
   const isMobile = window.innerWidth <= 768;
-  const cards = document.querySelectorAll('.blog-card');
+  // 先頭2枚は最初から表示(LCPを透明にしない)。3枚目以降だけスクロールで出す
+  const cards = Array.from(document.querySelectorAll('.blog-card')).slice(2);
   if (cards.length) {
     gsap.set(cards, {opacity: 0, y: isMobile ? 16 : 22});
-    ScrollTrigger.batch('.blog-card', {
+    ScrollTrigger.batch(cards, {
       start: 'top 90%',
       onEnter: batch => gsap.to(batch, {
         opacity: 1,
