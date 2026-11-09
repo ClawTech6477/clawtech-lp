@@ -891,7 +891,7 @@ let floatShown=false;
 function showFloat(){if(!floatShown){floatShown=true;floatCta.classList.add('show');}}
 // ヒーローの相談ボタンが画面外に出てから出す(重なり防止 2026-11-10)
 const heroCta=document.querySelector('#hero .btn-primary');
-if(heroCta&&'IntersectionObserver' in window){new IntersectionObserver(es=>{es.forEach(e=>{if(!e.isIntersecting&&e.boundingClientRect.top<0)showFloat();});}).observe(heroCta);}
+if(heroCta&&'IntersectionObserver' in window){new IntersectionObserver(es=>{es.forEach(e=>{floatCta.classList.toggle('show',!e.isIntersecting&&e.boundingClientRect.top<0);});}).observe(heroCta);}
 else{window.addEventListener('scroll',()=>{if(scrollY>600)showFloat();},{passive:true});}
 </script>
 </body>
