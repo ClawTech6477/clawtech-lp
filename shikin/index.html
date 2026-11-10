@@ -59,7 +59,10 @@
   button{font-family:inherit;}
   button:focus-visible,select:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--ai);outline-offset:2px;}
 
-  .hero{padding:52px 22px 30px;max-width:640px;margin:0 auto;}
+  .hero{padding:24px 22px 30px;max-width:640px;margin:0 auto;}
+  .heroimg{display:block;width:100%;height:auto;aspect-ratio:16/7;object-fit:cover;border-radius:14px;margin:0 0 22px;background:var(--paper-deep);}
+  .docfig{margin:4px 0 18px;}
+  .docfig img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--paper-deep);}
   .eyebrow{font-family:var(--f-dot);font-size:12px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:14px;}
   .hero h1{font-family:var(--f-min);font-weight:800;font-size:clamp(26px,7vw,38px);line-height:1.45;letter-spacing:.01em;margin-bottom:14px;text-wrap:balance;}
   .hero h1 em{font-style:normal;color:var(--ai);
@@ -275,6 +278,7 @@
 <body>
 
 <header class="hero">
+  <img class="heroimg" src="img/hero-720.webp" srcset="img/hero-720.webp 720w, img/hero-1280.webp 1280w" sizes="(max-width:640px) 100vw, 596px" width="1280" height="560" alt="請求書を手に、資金繰りを考える町工場の経営者のイラスト" fetchpriority="high" decoding="async">
   <span class="demobadge">DEMO ── 営業用デモ表示中・計測とリンクは無効です</span>
   <p class="eyebrow">SHIKIN CHECK ── 資金調達の選択肢を30秒で整理</p>
   <h1>その資金調達、<br><em>選択肢を間違えて</em>いませんか？</h1>
@@ -404,6 +408,7 @@
   <section class="doc" aria-label="資金調達手段の考え方">
     <h2 class="doc-h2" id="doc-order">資金調達には「検討する順番」がある</h2>
     <p>資金繰りが苦しくなったとき、目に入りやすいのは「最短即日」「審査なし」をうたう調達手段です。しかしコストは手段によって桁が違います。急がない状況であれば、コストの低い順＝<strong>公的融資 → 銀行融資 → ビジネスローン → ファクタリング</strong>の順に検討するのが原則です。この診断が最初に「いつまでに必要か」を聞くのは、残された時間によって選べる手段が変わるためです。</p>
+    <figure class="docfig"><img src="img/doc-order-720.webp" srcset="img/doc-order-720.webp 720w, img/doc-order-1280.webp 1280w" sizes="(max-width:640px) 100vw, 600px" width="1280" height="720" alt="左から順に開けていく4つの扉と、最初の扉の前に立つ経営者のイラスト。コストの低い手段から順に検討する考え方を表しています" loading="lazy" decoding="async"></figure>
     <div class="doc-tablewrap">
       <table class="doc-table">
         <thead><tr><th>手段</th><th>コストの目安</th><th>入金までの時間</th></tr></thead>
