@@ -169,6 +169,49 @@
 </div></section>
 <section class="ct-section"><div class="ct-container ct-stack">
 <h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">#10 ・ 今日の指示文 ・ 2026-11-11</span></div>
+<h3><a href="/prompts/20261111-c1c4d5/">失敗を再発防止チェックに変換</a></h3>
+<p class="pl-use">バグ対応や作業ミスで、同じ失敗を繰り返さない仕組みを作る時</p>
+<div class="pl-fill" hidden data-for="p-20261111-c1c4d5"></div>
+<pre class="pl-pre" id="p-20261111-c1c4d5" data-src="あなたは品質保証エンジニアです。提供された失敗事例を分析し、再発防止のためのチェックリストを作成してください。
+
+1. 提供情報: 
+- エラーログ: ［ここにエラーログを貼る］
+- 発生日時: ［ここに発生日時を記入］
+- 影響範囲: ［ここに影響範囲を記入］
+
+2. 手順: 
+1. 直接原因と根本原因を分離して記載する。
+2. 再発防止策として、技術的対策と人的対策を各1つずつ提案する。
+3. 検証方法として、再発がないことを確認するための具体的なテスト手順を3つ列挙する。
+
+3. 出力形式: 
+- 直接原因: 1行で記述
+- 根本原因: 1行で記述
+- 技術的対策: 箇条書き2項目
+- 人的対策: 箇条書き2項目
+- 検証手順: 番号付きリスト3項目">あなたは品質保証エンジニアです。提供された失敗事例を分析し、再発防止のためのチェックリストを作成してください。
+
+1. 提供情報: 
+- エラーログ: ［ここにエラーログを貼る］
+- 発生日時: ［ここに発生日時を記入］
+- 影響範囲: ［ここに影響範囲を記入］
+
+2. 手順: 
+1. 直接原因と根本原因を分離して記載する。
+2. 再発防止策として、技術的対策と人的対策を各1つずつ提案する。
+3. 検証方法として、再発がないことを確認するための具体的なテスト手順を3つ列挙する。
+
+3. 出力形式: 
+- 直接原因: 1行で記述
+- 根本原因: 1行で記述
+- 技術的対策: 箇条書き2項目
+- 人的対策: 箇条書き2項目
+- 検証手順: 番号付きリスト3項目</pre>
+<button class="pl-more" type="button" data-more="p-20261111-c1c4d5" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261111-c1c4d5" data-id="20261111-c1c4d5">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261111-c1c4d5" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#9 ・ 今日の指示文 ・ 2026-11-10</span></div>
 <h3><a href="/prompts/20261110-fadbb4/">新ツール導入の要否判定テンプレ</a></h3>
 <p class="pl-use">新ツール導入前にROIを定量的に確認したい時</p>
@@ -247,37 +290,6 @@
 <button class="pl-more" type="button" data-more="p-20261109-0e2bed" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261109-0e2bed" data-id="20261109-0e2bed">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261109-0e2bed" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">#7 ・ 今日の指示文 ・ 2026-11-08</span></div>
-<h3><a href="/prompts/20261108-7c9cf1/">業務自動化の可否診断プロンプト</a></h3>
-<p class="pl-use">手作業の工程をAIに任せるか判断したい時</p>
-<div class="pl-fill" hidden data-for="p-20261108-7c9cf1"></div>
-<pre class="pl-pre" id="p-20261108-7c9cf1" data-src="あなたは業務プロセスの自動化コンサルタントです。提供された手作業の手順から、自動化が可能な工程と、人的判断や物理操作が必要で自動化が困難な工程を分類してください。
-
-[ここに手作業の手順を記載]
-[ここにエラーや例外時の対応を記載]
-
-手順は以下の通りです。
-1. 各工程を「入力情報」「処理内容」「出力結果」の3要素に分解します。
-2. 入力情報が構造化されており、処理がルールベースである場合は「自動化可」と判定します。
-3. 主観的評価、対面での合意形成、物理的な機器操作を含む場合は「自動化不可」と判定します。
-4. 自動化不可の場合、その理由を簡潔に記述します。
-
-出力形式は、列が「工程名」「判定結果」「根拠」の3列のMarkdown表にしてください。">あなたは業務プロセスの自動化コンサルタントです。提供された手作業の手順から、自動化が可能な工程と、人的判断や物理操作が必要で自動化が困難な工程を分類してください。
-
-[ここに手作業の手順を記載]
-[ここにエラーや例外時の対応を記載]
-
-手順は以下の通りです。
-1. 各工程を「入力情報」「処理内容」「出力結果」の3要素に分解します。
-2. 入力情報が構造化されており、処理がルールベースである場合は「自動化可」と判定します。
-3. 主観的評価、対面での合意形成、物理的な機器操作を含む場合は「自動化不可」と判定します。
-4. 自動化不可の場合、その理由を簡潔に記述します。
-
-出力形式は、列が「工程名」「判定結果」「根拠」の3列のMarkdown表にしてください。</pre>
-<button class="pl-more" type="button" data-more="p-20261108-7c9cf1" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261108-7c9cf1" data-id="20261108-7c9cf1">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261108-7c9cf1" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
