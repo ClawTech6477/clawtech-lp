@@ -58,6 +58,27 @@
   </url>
 
   <url>
+    <loc>https://clawtechjp.com/ai-komon.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://clawtechjp.com/sales/seo.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://clawtechjp.com/sales/lp-kaizen.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://clawtechjp.com/blog/ai-automation-tools-case-studies.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -716,13 +737,6 @@
   </url>
 
   <url>
-    <loc>https://clawtechjp.com/blog/meo-measures-cost-effectiveness.html</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://clawtechjp.com/blog/meo-measures-effects.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
@@ -738,13 +752,6 @@
 
   <url>
     <loc>https://clawtechjp.com/blog/meo-measures-roi-sme.html</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://clawtechjp.com/blog/meo-optimization-cost-effectiveness.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
