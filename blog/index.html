@@ -2024,6 +2024,33 @@ function filterPosts(cat, btn) {
     if (show && window.gsap) gsap.set(card, {opacity: 1, y: 0});
   });
 }
+
+// 12件ごとに区切る処理
+const allCards = Array.from(document.querySelectorAll('.blog-card'));
+const pageSize = 12;
+let currentPage = 1;
+const container = document.querySelector('.blog-container');
+if (container && allCards.length > pageSize) {
+  // 12件目以降を非表示にする
+  allCards.slice(pageSize).forEach(card => card.style.display = 'none');
+  
+  // 「もっと見る」ボタンを追加
+  const loadMoreBtn = document.createElement('button');
+  loadMoreBtn.textContent = 'もっと見る';
+  loadMoreBtn.style.cssText = 'display:block;margin:40px auto 0;padding:12px 32px;background:var(--kachi);color:var(--white);border:none;border-radius:3px;font-size:15px;font-weight:700;cursor:pointer;';
+  loadMoreBtn.onclick = () => {
+    const nextBatch = allCards.slice(pageSize * currentPage, pageSize * (currentPage + 1));
+    nextBatch.forEach(card => {
+      card.style.display = 'flex';
+      if (window.gsap) gsap.set(card, {opacity: 1, y: 0});
+    });
+    currentPage++;
+    if (currentPage * pageSize >= allCards.length) {
+      loadMoreBtn.remove();
+    }
+  };
+  container.appendChild(loadMoreBtn);
+}
 </script>
 </body>
 </html>
