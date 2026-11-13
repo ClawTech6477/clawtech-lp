@@ -363,6 +363,7 @@
     </div>
 
     <!-- 手取りシミュレーター(ファクタリング系の分岐のみ表示) -->
+    <a id="mainCta" class="main-cta hidden" href="#sites" target="_blank" rel="noopener sponsored" style="display:block;margin:16px 0 8px;padding:16px 20px;border-radius:999px;text-align:center;font-weight:700;font-size:17px;text-decoration:none;background:#1f6f43;color:#fff">この条件で、まず見積もりを確かめる <small style="opacity:.8">PR</small></a>
     <div class="calc hidden" id="calc">
       <h3>手取りはいくら残るか ── 額面を動かして確認</h3>
       <div class="amt"><span>売掛金の額面</span><b><span id="calcAmt">100</span>万円</b></div>
@@ -685,6 +686,7 @@ document.getElementById("go").onclick=()=>{
     if(["A","B","C"].includes(br)){
       // 収益分岐だが提携が未承認の期間: 準備中と明示して読みものへ送る
       fitEl.innerHTML = "条件に合う事業者の紹介枠は現在準備中です。";
+      document.getElementById("mainCta").classList.add("hidden");
       track("shikin_empty_state_shown",{branch:br});
     }else{
       fitEl.innerHTML = "";
@@ -698,6 +700,12 @@ document.getElementById("go").onclick=()=>{
     fitEl.innerHTML = `判定: <b>${B.name}</b> に対応する事業者を、実測データにもとづき掲載`;
     // 本文型テキストリンク(実測でカードの数十倍クリックされる型)を先頭カードに向けて置く
     const topName = scored[0].name;
+    const mc = document.getElementById("mainCta");
+    if(!DEMO){
+      mc.href = AFFILIATE_URLS[scored[0].key];
+      mc.classList.remove("hidden");
+      mc.addEventListener("click",()=>track("shikin_site_click",{site_name:topName, rank:0, placement:"main_btn"}));
+    }
     leadEl.innerHTML = B.lead +
       ` まずは<a class="inline-link" href="${AFFILIATE_URLS[scored[0].key]}" target="_blank" rel="noopener sponsored" id="leadLink">${topName}の無料見積もり</a>で実際の手数料を確認するのが確実です。` +
       (B.article ? `<br>仕組みを先に知りたい方: <a class="empty-article" href="${B.article[1]}" data-branch="${br}">${B.article[0]} →</a>` : "");
