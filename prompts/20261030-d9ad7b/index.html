@@ -135,6 +135,15 @@
 </div></section>
 <section class="ct-section"><div class="ct-container ct-stack">
 <h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-14</span></div>
+<h3><a href="/prompts/20261114-3b7795/">夜間タスクの朝チェック</a></h3>
+<p class="pl-use">夜間バッチの停止件数を確認したい時</p>
+<div class="pl-fill" hidden data-for="p-20261114-3b7795"></div>
+<pre class="pl-pre" id="p-20261114-3b7795" data-src="以下のログを解析し、実行が完了しなかったタスクを抽出して一覧化してください。出力形式はMarkdownの表とし、列は「タスク名」「停止時刻」「エラーメッセージ(抜粋)」「推定原因」にしてください。推定原因はログ内のエラーコードやスタックトレースに基づき、確実でない場合は「要確認」と記載してください。最後に、停止件数と正常完了件数を数値で報告してください。ログデータ: [ここにログを貼り付け]">以下のログを解析し、実行が完了しなかったタスクを抽出して一覧化してください。出力形式はMarkdownの表とし、列は「タスク名」「停止時刻」「エラーメッセージ(抜粋)」「推定原因」にしてください。推定原因はログ内のエラーコードやスタックトレースに基づき、確実でない場合は「要確認」と記載してください。最後に、停止件数と正常完了件数を数値で報告してください。ログデータ: [ここにログを貼り付け]</pre>
+<button class="pl-more" type="button" data-more="p-20261114-3b7795" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261114-3b7795" data-id="20261114-3b7795">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261114-3b7795" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="incident" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-13</span></div>
 <h3><a href="/prompts/20261113-bc00df/">夜間バッチ停止アラート</a></h3>
 <p class="pl-use">自動化が中断した翌朝に原因を特定する</p>
@@ -207,33 +216,6 @@
 <button class="pl-more" type="button" data-more="p-20261112-516dfc" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261112-516dfc" data-id="20261112-516dfc">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261112-516dfc" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="official_jp" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">最新情報の読み方 ・ 2026-11-12</span></div>
-<h3><a href="/prompts/20261112-241bf0/">運用コスト増時の自動化棚卸し</a></h3>
-<p class="pl-use">エージェント運用コストが上昇した際、優先順位を見直す時</p>
-<div class="pl-fill" hidden data-for="p-20261112-241bf0"></div>
-<pre class="pl-pre" id="p-20261112-241bf0" data-src="以下の条件で、AIエージェント運用のコスト最適化チェックリストを作成してください。
-
-条件:
-1. 対象: 個人開発におけるClaude CodeまたはChatGPTの使用。
-2. 視点: 「コスト増で手を止めるリスク」を避けるため、投資対効果が不明確な自動化タスクを洗い出す。
-3. 出力形式: 表形式で、「タスク名」「現状の手間（時間/回）」「期待される自動化効果」「コスト増時の優先度（高/中/低）」「保留時の代替手段（手動手順）」の5列で記載。
-4. 制約: 具体的なサービス名や企業名は使わず、一般論で記述する。「必ず」「完全」などの絶対的な表現は禁止。
-5. 論理: 指示の曖昧さによる失敗リスクと、コスト増による停止リスクを比較し、どちらの影響が大きいかで優先度を判定する根拠を各項目の末尾に1行ずつ添えること。
-
-出力はMarkdown形式の表のみで、前置きや結論の文章は含めないこと。">以下の条件で、AIエージェント運用のコスト最適化チェックリストを作成してください。
-
-条件:
-1. 対象: 個人開発におけるClaude CodeまたはChatGPTの使用。
-2. 視点: 「コスト増で手を止めるリスク」を避けるため、投資対効果が不明確な自動化タスクを洗い出す。
-3. 出力形式: 表形式で、「タスク名」「現状の手間（時間/回）」「期待される自動化効果」「コスト増時の優先度（高/中/低）」「保留時の代替手段（手動手順）」の5列で記載。
-4. 制約: 具体的なサービス名や企業名は使わず、一般論で記述する。「必ず」「完全」などの絶対的な表現は禁止。
-5. 論理: 指示の曖昧さによる失敗リスクと、コスト増による停止リスクを比較し、どちらの影響が大きいかで優先度を判定する根拠を各項目の末尾に1行ずつ添えること。
-
-出力はMarkdown形式の表のみで、前置きや結論の文章は含めないこと。</pre>
-<button class="pl-more" type="button" data-more="p-20261112-241bf0" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261112-241bf0" data-id="20261112-241bf0">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261112-241bf0" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">

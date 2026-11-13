@@ -155,6 +155,15 @@
 </div></section>
 <section class="ct-section"><div class="ct-container ct-stack">
 <h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-14</span></div>
+<h3><a href="/prompts/20261114-3b7795/">夜間タスクの朝チェック</a></h3>
+<p class="pl-use">夜間バッチの停止件数を確認したい時</p>
+<div class="pl-fill" hidden data-for="p-20261114-3b7795"></div>
+<pre class="pl-pre" id="p-20261114-3b7795" data-src="以下のログを解析し、実行が完了しなかったタスクを抽出して一覧化してください。出力形式はMarkdownの表とし、列は「タスク名」「停止時刻」「エラーメッセージ(抜粋)」「推定原因」にしてください。推定原因はログ内のエラーコードやスタックトレースに基づき、確実でない場合は「要確認」と記載してください。最後に、停止件数と正常完了件数を数値で報告してください。ログデータ: [ここにログを貼り付け]">以下のログを解析し、実行が完了しなかったタスクを抽出して一覧化してください。出力形式はMarkdownの表とし、列は「タスク名」「停止時刻」「エラーメッセージ(抜粋)」「推定原因」にしてください。推定原因はログ内のエラーコードやスタックトレースに基づき、確実でない場合は「要確認」と記載してください。最後に、停止件数と正常完了件数を数値で報告してください。ログデータ: [ここにログを貼り付け]</pre>
+<button class="pl-more" type="button" data-more="p-20261114-3b7795" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261114-3b7795" data-id="20261114-3b7795">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261114-3b7795" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="incident" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-13</span></div>
 <h3><a href="/prompts/20261113-bc00df/">夜間バッチ停止アラート</a></h3>
 <p class="pl-use">自動化が中断した翌朝に原因を特定する</p>
@@ -221,49 +230,6 @@
 <button class="pl-more" type="button" data-more="p-20261112-241bf0" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261112-241bf0" data-id="20261112-241bf0">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261112-241bf0" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">#10 ・ 今日の指示文 ・ 2026-11-11</span></div>
-<h3><a href="/prompts/20261111-c1c4d5/">失敗を再発防止チェックに変換</a></h3>
-<p class="pl-use">バグ対応や作業ミスで、同じ失敗を繰り返さない仕組みを作る時</p>
-<div class="pl-fill" hidden data-for="p-20261111-c1c4d5"></div>
-<pre class="pl-pre" id="p-20261111-c1c4d5" data-src="あなたは品質保証エンジニアです。提供された失敗事例を分析し、再発防止のためのチェックリストを作成してください。
-
-1. 提供情報: 
-- エラーログ: ［ここにエラーログを貼る］
-- 発生日時: ［ここに発生日時を記入］
-- 影響範囲: ［ここに影響範囲を記入］
-
-2. 手順: 
-1. 直接原因と根本原因を分離して記載する。
-2. 再発防止策として、技術的対策と人的対策を各1つずつ提案する。
-3. 検証方法として、再発がないことを確認するための具体的なテスト手順を3つ列挙する。
-
-3. 出力形式: 
-- 直接原因: 1行で記述
-- 根本原因: 1行で記述
-- 技術的対策: 箇条書き2項目
-- 人的対策: 箇条書き2項目
-- 検証手順: 番号付きリスト3項目">あなたは品質保証エンジニアです。提供された失敗事例を分析し、再発防止のためのチェックリストを作成してください。
-
-1. 提供情報: 
-- エラーログ: ［ここにエラーログを貼る］
-- 発生日時: ［ここに発生日時を記入］
-- 影響範囲: ［ここに影響範囲を記入］
-
-2. 手順: 
-1. 直接原因と根本原因を分離して記載する。
-2. 再発防止策として、技術的対策と人的対策を各1つずつ提案する。
-3. 検証方法として、再発がないことを確認するための具体的なテスト手順を3つ列挙する。
-
-3. 出力形式: 
-- 直接原因: 1行で記述
-- 根本原因: 1行で記述
-- 技術的対策: 箇条書き2項目
-- 人的対策: 箇条書き2項目
-- 検証手順: 番号付きリスト3項目</pre>
-<button class="pl-more" type="button" data-more="p-20261111-c1c4d5" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261111-c1c4d5" data-id="20261111-c1c4d5">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261111-c1c4d5" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
