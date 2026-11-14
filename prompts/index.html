@@ -117,7 +117,7 @@
 <div class="pl-demo" aria-label="書き込みの例"><span class="pl-demo__k">［ ］に書き込むと、こうなる</span>
 <p class="pl-demo__t">あなたは<span class="pl-slot" data-to="花屋">［業種］</span>の受付係です。<span class="pl-slot" data-to="母の日の予約">［よくある問い合わせ］</span>に、<span class="pl-slot" data-to="60字">［文字数］</span>以内で答えてください。</p>
 <span class="pl-demo__btn" aria-hidden="true">このままコピー</span></div>
-<div class="pl-stats"><div><b class="ct-num" data-count="18">18</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
+<div class="pl-stats"><div><b class="ct-num" data-count="19">19</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
 <div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
 </div></header>
 <main id="main">
@@ -125,8 +125,47 @@
 <p class="ct-eyebrow" data-ct-reveal>コピーしてそのまま使える</p>
 <h2 class="ct-h2" data-ct-reveal>実際に使っている指示文</h2>
 <ol class="pl-steps" data-ct-reveal><li>「自分用に書き込む」を押して、［ ］の欄を埋める</li><li>「コピー」を押す(書き込んだ内容入りでコピーされます)</li><li>ChatGPTやClaudeの入力欄に貼り付けて送る</li></ol>
-<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
-<ul class="pl-cards"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
+<ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">#13 ・ 今日の指示文 ・ 2026-11-14</span></div>
+<h3><a href="/prompts/20261114-a92956/">競合ギャップ分析プロンプト</a></h3>
+<p class="pl-use">競合の文章を貼り、自社未対応の論点を洗い出す際</p>
+<div class="pl-fill" hidden data-for="p-20261114-a92956"></div>
+<pre class="pl-pre" id="p-20261114-a92956" data-src="あなたはマーケティングの専門分析家です。競合の文章と自社の文章を比較し、競合が触れているが自社が未対応の切り口を特定してください。
+
+【競合の文章】
+［ここに競合サイトの説明文を貼り付け］
+
+【自社の文章】
+［ここに自社の説明文を貼り付け］
+
+手順:
+1. 競合の文章から主要な主張を箇条書きで抽出する
+2. 自社の文章から主要な主張を箇条書きで抽出する
+3. 競合にあり自社にない主張をリスト化する
+4. 各未対応項目について、競合がどのような文脈で使っているか一言で補足する
+5. 未対応項目を重要度（高・中・低）で分類する
+
+出力形式: 表（列: 未対応の切り口 / 競合の文脈 / 重要度）">あなたはマーケティングの専門分析家です。競合の文章と自社の文章を比較し、競合が触れているが自社が未対応の切り口を特定してください。
+
+【競合の文章】
+［ここに競合サイトの説明文を貼り付け］
+
+【自社の文章】
+［ここに自社の説明文を貼り付け］
+
+手順:
+1. 競合の文章から主要な主張を箇条書きで抽出する
+2. 自社の文章から主要な主張を箇条書きで抽出する
+3. 競合にあり自社にない主張をリスト化する
+4. 各未対応項目について、競合がどのような文脈で使っているか一言で補足する
+5. 未対応項目を重要度（高・中・低）で分類する
+
+出力形式: 表（列: 未対応の切り口 / 競合の文脈 / 重要度）</pre>
+<button class="pl-more" type="button" data-more="p-20261114-a92956" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261114-a92956" data-id="20261114-a92956">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261114-a92956" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="incident" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-14</span></div>
 <h3><a href="/prompts/20261114-3b7795/">夜間タスクの朝チェック</a></h3>
 <p class="pl-use">夜間バッチの停止件数を確認したい時</p>
