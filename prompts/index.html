@@ -117,7 +117,7 @@
 <div class="pl-demo" aria-label="書き込みの例"><span class="pl-demo__k">［ ］に書き込むと、こうなる</span>
 <p class="pl-demo__t">あなたは<span class="pl-slot" data-to="花屋">［業種］</span>の受付係です。<span class="pl-slot" data-to="母の日の予約">［よくある問い合わせ］</span>に、<span class="pl-slot" data-to="60字">［文字数］</span>以内で答えてください。</p>
 <span class="pl-demo__btn" aria-hidden="true">このままコピー</span></div>
-<div class="pl-stats"><div><b class="ct-num" data-count="20">20</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
+<div class="pl-stats"><div><b class="ct-num" data-count="21">21</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
 <div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
 </div></header>
 <main id="main">
@@ -125,8 +125,29 @@
 <p class="ct-eyebrow" data-ct-reveal>コピーしてそのまま使える</p>
 <h2 class="ct-h2" data-ct-reveal>実際に使っている指示文</h2>
 <ol class="pl-steps" data-ct-reveal><li>「自分用に書き込む」を押して、［ ］の欄を埋める</li><li>「コピー」を押す(書き込んだ内容入りでコピーされます)</li><li>ChatGPTやClaudeの入力欄に貼り付けて送る</li></ol>
-<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
-<ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="claude_code" aria-pressed="false">Claude Code</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
+<ul class="pl-cards"><li><article class="pl-card" data-k="claude_code" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">Claude Code ・ 2026-11-17</span></div>
+<h3><a href="/prompts/20261117-059cba/">夜間バッチ監視チェック</a></h3>
+<p class="pl-use">夜間バッチの連鎖停止に気づく遅れを防ぐ</p>
+<div class="pl-fill" hidden data-for="p-20261117-059cba"></div>
+<pre class="pl-pre" id="p-20261117-059cba" data-src="あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
+1. ［ここに最近のバッチ実行ログを貼る］
+2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
+3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
+4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
+5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
+出力は表のみとし、前置きや補足文は書かないでください。">あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
+1. ［ここに最近のバッチ実行ログを貼る］
+2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
+3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
+4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
+5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
+出力は表のみとし、前置きや補足文は書かないでください。</pre>
+<button class="pl-more" type="button" data-more="p-20261117-059cba" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261117-059cba" data-id="20261117-059cba">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261117-059cba" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#14 ・ 今日の指示文 ・ 2026-11-16</span></div>
 <h3><a href="/prompts/20261116-791db0/">見積依頼の範囲整理</a></h3>
 <p class="pl-use">見積依頼が来た時に作業範囲と確認事項を整理する</p>

@@ -164,7 +164,28 @@
 <div class="pl-row"><a class="ct-btn ct-btn--ghost" href="https://x.com/UDfsrq4P6R87229" data-cta="follow">Xでハルをフォロー</a><a class="ct-btn ct-btn--ghost" href="https://x.com/intent/post?text=%E5%A4%B1%E6%95%97%E3%82%92%E5%86%8D%E7%99%BA%E9%98%B2%E6%AD%A2%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%AB%E5%A4%89%E6%8F%9B&amp;url=https%3A%2F%2Fclawtechjp.com%2Fprompts%2F20261111-c1c4d5%2F" data-cta="share">この指示文をXで紹介</a></div></div>
 </div></section>
 <section class="ct-section"><div class="ct-container ct-stack">
-<h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<h2 class="ct-h3">ほかの指示文</h2><ul class="pl-cards"><li><article class="pl-card" data-k="claude_code" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">Claude Code ・ 2026-11-17</span></div>
+<h3><a href="/prompts/20261117-059cba/">夜間バッチ監視チェック</a></h3>
+<p class="pl-use">夜間バッチの連鎖停止に気づく遅れを防ぐ</p>
+<div class="pl-fill" hidden data-for="p-20261117-059cba"></div>
+<pre class="pl-pre" id="p-20261117-059cba" data-src="あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
+1. ［ここに最近のバッチ実行ログを貼る］
+2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
+3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
+4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
+5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
+出力は表のみとし、前置きや補足文は書かないでください。">あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
+1. ［ここに最近のバッチ実行ログを貼る］
+2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
+3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
+4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
+5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
+出力は表のみとし、前置きや補足文は書かないでください。</pre>
+<button class="pl-more" type="button" data-more="p-20261117-059cba" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261117-059cba" data-id="20261117-059cba">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261117-059cba" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#14 ・ 今日の指示文 ・ 2026-11-16</span></div>
 <h3><a href="/prompts/20261116-791db0/">見積依頼の範囲整理</a></h3>
 <p class="pl-use">見積依頼が来た時に作業範囲と確認事項を整理する</p>
@@ -233,15 +254,6 @@
 <button class="pl-more" type="button" data-more="p-20261114-3b7795" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261114-3b7795" data-id="20261114-3b7795">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261114-3b7795" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="incident" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-13</span></div>
-<h3><a href="/prompts/20261113-bc00df/">夜間バッチ停止アラート</a></h3>
-<p class="pl-use">自動化が中断した翌朝に原因を特定する</p>
-<div class="pl-fill" hidden data-for="p-20261113-bc00df"></div>
-<pre class="pl-pre" id="p-20261113-bc00df" data-src="以下のログを解析し、処理が停止した理由を特定せよ。1. 最終実行時刻とエラーメッセージを抽出する。2. 停止原因を「APIレート制限」「メモリ不足」「未定義エラー」「その他」の4分類で判断する。3. 再実行に必要な手順を3ステップで出力する。4. 出力形式はMarkdownの箇条書きで、各項目は50文字以内に収める。ログデータ: [ここにログを貼り付け]">以下のログを解析し、処理が停止した理由を特定せよ。1. 最終実行時刻とエラーメッセージを抽出する。2. 停止原因を「APIレート制限」「メモリ不足」「未定義エラー」「その他」の4分類で判断する。3. 再実行に必要な手順を3ステップで出力する。4. 出力形式はMarkdownの箇条書きで、各項目は50文字以内に収める。ログデータ: [ここにログを貼り付け]</pre>
-<button class="pl-more" type="button" data-more="p-20261113-bc00df" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261113-bc00df" data-id="20261113-bc00df">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261113-bc00df" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
