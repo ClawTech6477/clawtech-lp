@@ -273,6 +273,25 @@
     padding-bottom:2px;}
   .empty-article:hover{opacity:.75;}
 </style>
+<script>
+/* ct-aff-loop(2026-11-17): アフィボタンごとの 表示(cta_view)・クリック(cta_click) を GA4 へ送り、
+   a8_link_sync が毎日クリック率から CTR_W(並び順の点数に掛ける倍率。データが無ければ1)を書き換える。
+   link_id は a8mat の案件部分(サイトや画像が変わっても同じ案件なら同じ) */
+var CTR_W = {
+};
+function ctaKey(url){var m=String(url||"").match(/a8mat=[0-9A-Z]+\+([0-9A-Z]+\+[0-9A-Z]+)/);return m?m[1]:null}
+function ctaW(url){var k=ctaKey(url);return (k&&CTR_W[k])||1}
+document.addEventListener("DOMContentLoaded",function(){
+  var send=function(n,p){try{window.gtag&&gtag("event",n,p)}catch(e){}};
+  var seen=new WeakSet();
+  var io=("IntersectionObserver" in window)?new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){var k=ctaKey(e.target.href);if(k)send("cta_view",{link_id:k});io.unobserve(e.target)}})},{threshold:0.5}):null;
+  var scan=function(){document.querySelectorAll('a[href*="px.a8.net"]').forEach(function(a){if(!seen.has(a)){seen.add(a);io&&io.observe(a)}})};
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"]');
+    if(a){var k=ctaKey(a.href);if(k)send("cta_click",{link_id:k,transport_type:"beacon"})}},true);
+  scan();new MutationObserver(scan).observe(document.body,{childList:true,subtree:true});
+});
+</script>
 </head>
 <body>
 
@@ -670,7 +689,7 @@ document.getElementById("go").onclick=()=>{
   };
   // 分岐内のみのソート。分岐横断でEPC順にすると「高EPC案件へ誘導する診断」になり
   // 中立性(この診断の存在価値)が死ぬので、絶対に分岐をまたいでソートしない
-  const scored = cand.map(s=>({...s, sc: Math.sqrt(effOf(s))*6 + Math.random()*10}))
+  const scored = cand.map(s=>({...s, sc: Math.sqrt(effOf(s)*ctaW(AFFILIATE_URLS[s.key]))*6 + Math.random()*10}))   /* ctaW=クリック率の倍率(ct-aff-loop) */
                      .sort((a,b)=>b.sc-a.sc).slice(0,3);
 
   const titleEl = document.getElementById("sitesTitle");
