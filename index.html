@@ -545,6 +545,23 @@ label.fl{font-size:14px;}
 .why-n,.w3-tag{color:#8A5F00;}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .why-n,:root:not([data-theme="light"]) .w3-tag{color:var(--gold);}}
 :root[data-theme="dark"] .why-n,:root[data-theme="dark"] .w3-tag{color:var(--gold);}
+
+/* AIチームのドット絵(2026-11-18。キャラは自社オリジナル。個人名は出さず担当名だけ) */
+.team{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);}
+.team-h{font-size:12px;color:rgba(255,255,255,.7);letter-spacing:.06em;margin-bottom:6px;}
+.team-row{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;max-width:640px;}
+.tm{display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;padding-top:26px;}
+.tm svg{width:64px;height:64px;animation:tbob 1.2s steps(2) infinite;}
+.tm:nth-child(2) svg{animation-delay:.3s}.tm:nth-child(3) svg{animation-delay:.6s}.tm:nth-child(4) svg{animation-delay:.15s}.tm:nth-child(5) svg{animation-delay:.45s}.tm:nth-child(6) svg{animation-delay:.75s}
+.tm-n{font-size:12px;font-weight:700;color:#fff;}
+.tm-c{position:absolute;top:0;font-size:10.5px;border:1px solid var(--gold);color:var(--gold);background:#0b1a38;padding:1px 6px;white-space:nowrap;opacity:0;animation:tpop 7.2s steps(6) infinite;}
+.tm:nth-child(2) .tm-c{animation-delay:1.2s}.tm:nth-child(3) .tm-c{animation-delay:2.4s}.tm:nth-child(4) .tm-c{animation-delay:3.6s}.tm:nth-child(5) .tm-c{animation-delay:4.8s}.tm:nth-child(6) .tm-c{animation-delay:6s}
+.eye{animation:tblink 4s steps(1) infinite;}
+@keyframes tbob{50%{transform:translateY(-4px)}}
+@keyframes tpop{0%{opacity:0}4%,14%{opacity:1}18%,100%{opacity:0}}
+@keyframes tblink{0%,92%,100%{opacity:1}94%,98%{opacity:0}}
+@media(max-width:480px){.tm svg{width:46px;height:46px}.tm-n{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.tm svg,.tm-c,.eye{animation:none}}
 @media(max-width:768px){
   .why,.work3{grid-template-columns:1fr;gap:16px;}
   .sec{padding:48px 0;}
@@ -605,6 +622,10 @@ label.fl{font-size:14px;}
       <a class="hero-sec" href="#contact" onclick="gtag('event','cta_click',{'page':'lp-top','position':'hero','cta':'consult'})">診断せずに、まず無料で相談する（24時間以内に返信）</a>
     </div>
     <p class="h-facts"><span>見積もり無料</span><span>納品後1ヶ月は修正無料</span><span>NDA締結可</span></p>
+    <div class="team" aria-label="社内で動いているAIの担当">
+      <p class="team-h">社内で毎日動いているAIの担当 <small style="opacity:.6">※表示はイメージ</small></p>
+      <div class="team-row" id="teamRow"></div>
+    </div>
   </div>
 </section>
 
@@ -836,6 +857,21 @@ function closeChat(){widget.classList.remove('cb-open');fab.classList.remove('cb
 function init(){fab=document.getElementById('cbFab');widget=document.getElementById('cbWidget');cbBody=document.getElementById('cbBody');backbar=document.getElementById('cbBackbar');inp=document.getElementById('cbInput');send=document.getElementById('cbSend');if(!fab)return;fab.addEventListener('click',openChat);document.getElementById('cbMin').addEventListener('click',closeChat);document.getElementById('cbBackbarBtn').addEventListener('click',welcome);send.addEventListener('click',sendText);inp.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendText();}});inp.addEventListener('input',function(){this.style.height='';this.style.height=Math.min(this.scrollHeight,88)+'px';});fab.classList.remove('cb-hidden');welcome();}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
+</script>
+<script>
+// AIチームのドット絵(16x16・自社オリジナル)。表示は担当名だけ
+(function(){var C={K:'#0b1a38',G:'#E8A511',N:'#3b6fd8',B:'#7fb2ff',R:'#e2574c',P:'#f29bb8',T:'#45c4a0',S:'#c9ced8',D:'#8a5f00',V:'#a98bf0'};
+var BASE=["................","................","......XXXX......",".....XXXXXX.....","....XXXXXXXX....","...XXXXXXXXXX...","...XXEXXXXEXX...","...XXEXXXXEXX...","...XXXXXXXXXX...","...XXXXMMXXXX...","....XXXXXXXX....",".....XXXXXX.....","....XXXXXXXX....","...XX.XXXX.XX...","....X.X..X.X....","......X..X......"];
+var T=[{n:'統括',c:'G',o:[[2,"......K.K.K....."],[1,"......G.G.G....."]],k:['朝礼 3分で終了','仕事を 12件 割り振り','会議 0回 (平和)']},
+{n:'営業',c:'N',o:[[11,"..........DDD..."],[12,"..........DDD..."]],k:['提案文 7本目','見積り 秒で作成','敬語チェック 完了']},
+{n:'開発',c:'T',o:[[1,"......KKKK......"],[11,"..SSSSS........."],[12,"..SKKKS........."]],k:['バグ 42匹 退治','修正 → テスト 緑','深夜も 静かに作業中']},
+{n:'調査',c:'B',o:[[10,"............KK.."],[11,"...........K..K."],[12,"...........K..K."],[13,"............KK.."]],k:['記事 128本 読破','競合 5社 比較中','気になる記事 保存']},
+{n:'SNS',c:'P',o:[[1,".....R....R....."],[2,"....RRR..RRR...."]],k:['投稿 3本 予約','いいね 待ち…','ハッシュタグ 選定中']},
+{n:'品質',c:'V',o:[[1,".......SS......."],[0,".......SS......."]],k:['誤字 0件 確認','スマホ表示 OK','リンク切れ なし']}];
+function sp(a){var g=BASE.map(function(l){return l.split('')});a.o.forEach(function(o){o[1].split('').forEach(function(ch,x){if(ch!=='.')g[o[0]][x]=ch})});var r='';
+g.forEach(function(row,y){row.forEach(function(ch,x){var col=ch==='X'?C[a.c]:(ch==='E'||ch==='M')?C.K:C[ch];if(!col)return;r+='<rect '+(ch==='E'?'class="eye" ':'')+'x="'+x+'" y="'+y+'" width="1.02" height="1.02" fill="'+col+'"/>'})});
+return '<svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">'+r+'</svg>'}
+var el=document.getElementById('teamRow');if(!el)return;el.innerHTML=T.map(function(a){return '<div class="tm"><span class="tm-c">'+a.k[0]+'</span>'+sp(a)+'<span class="tm-n">'+a.n+'</span></div>'}).join('');var i=0;if(!matchMedia('(prefers-reduced-motion: reduce)').matches)setInterval(function(){i++;el.querySelectorAll('.tm-c').forEach(function(c,j){c.textContent=T[j].k[i%T[j].k.length]})},7200);})();
 </script>
 <script src="https://clawtechjp.com/ui/ct-ab.js" defer></script>
 </body>
