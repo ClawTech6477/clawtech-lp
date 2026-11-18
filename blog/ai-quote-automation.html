@@ -9,10 +9,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="AI見積書自動作成の実装手順を6ステップで解説">
 <meta property="og:description" content="見積書のAI自動作成を導入手順で解説。テンプレート設計からChatGPT/Claude API連携、会計システム統合、インボイス対応まで実装ステップを網羅し、業種別カスタマイズも紹介。">
-<meta property="og:image" content="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80">
+<meta property="og:image" content="https://clawtechjp.com/assets/blog-img/ai-quote-automation.jpg">
 <meta property="og:type" content="article">
 <link rel="canonical" href="https://clawtechjp.com/blog/ai-quote-automation.html">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI見積書自動作成の実装手順を6ステップで解説", "description": "見積書のAI自動作成を導入手順で解説。テンプレート設計からChatGPT/Claude API連携、会計システム統合、インボイス対応まで実装ステップを網羅し、業種別カスタマイズも紹介。", "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80", "datePublished": "2026-09-04T08:32:27+09:00", "dateModified": "2026-09-04T08:32:27+09:00", "author": {"@type": "Organization", "name": "ClawTech"}, "publisher": {"@type": "Organization", "name": "ClawTech", "logo": {"@type": "ImageObject", "url": "https://clawtechjp.com/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://clawtechjp.com/blog/ai-quote-automation.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "AI見積書自動作成の実装手順を6ステップで解説", "description": "見積書のAI自動作成を導入手順で解説。テンプレート設計からChatGPT/Claude API連携、会計システム統合、インボイス対応まで実装ステップを網羅し、業種別カスタマイズも紹介。", "image": "https://clawtechjp.com/assets/blog-img/ai-quote-automation.jpg", "datePublished": "2026-09-04T08:32:27+09:00", "dateModified": "2026-09-04T08:32:27+09:00", "author": {"@type": "Organization", "name": "ClawTech"}, "publisher": {"@type": "Organization", "name": "ClawTech", "logo": {"@type": "ImageObject", "url": "https://clawtechjp.com/favicon.svg"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://clawtechjp.com/blog/ai-quote-automation.html"}}</script>
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,6 +62,7 @@ footer a:hover{color:var(--white)}
 @media(max-width:640px){.article-header h1{font-size:22px}.article-body h2{font-size:19px}}
 </style>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfeyltk7y2");</script>
+<style data-aimg>.aimg{margin:24px 0 28px}.aimg img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:rgba(128,128,128,.12)}.aimg--hero{margin-top:8px}@media (prefers-color-scheme:dark){.aimg img{filter:brightness(.9)}}</style>
 </head>
 <body>
 <nav><div class="inner"><a href="../" class="logo">Claw<span>Tech</span></a><div><a href="../#services" style="margin-right:20px">サービス</a><a href="./">ブログ</a></div></div></nav>
@@ -72,6 +73,8 @@ footer a:hover{color:var(--white)}
 <div class="meta">2026年9月4日 ・ 読了目安 8分</div>
 </div>
 <div class="article-body">
+<figure class="aimg aimg--hero" data-aimg><img src="/assets/blog-img/ai/ai-quote-automation-hero-1280.webp" srcset="/assets/blog-img/ai/ai-quote-automation-hero-720.webp 720w, /assets/blog-img/ai/ai-quote-automation-hero-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 760px" width="1280" height="720" alt="建設現場でタブレットを確認する現場監督" fetchpriority="high" decoding="async"></figure>
+
 <p>見積書作成は、営業や事務担当者が日常的に行う業務でありながら、テンプレートへの手入力・単価表の参照・過去見積の流用といった手作業が多く残る領域です。中小企業庁の調査でも、バックオフィス業務の中で「見積書・請求書作成」は定型作業ながら属人化しやすい工程として繰り返し指摘されています。ChatGPTやClaude APIを使った自動化が現実的な選択肢になった今、どこから着手すればよいのかを、実装の順番に沿って解説します。</p>
 
 <h2>見積書作成の手作業、どこにどれだけ時間を溶かしているか</h2>
@@ -103,6 +106,8 @@ footer a:hover{color:var(--white)}
 
 <h2>業種ごとに見積ルールをカスタマイズする</h2>
 <p>見積書の構造は業種によって大きく異なります。汎用テンプレートのまま自動化すると、現場で使われず形骸化するケースが少なくありません。</p>
+<figure class="aimg" data-aimg><img src="/assets/blog-img/ai/ai-quote-automation-s3-1280.webp" srcset="/assets/blog-img/ai/ai-quote-automation-s3-720.webp 720w, /assets/blog-img/ai/ai-quote-automation-s3-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 760px" width="1280" height="720" alt="足場の上でタブレットと図面を確認する手元" loading="lazy" decoding="async"></figure>
+
 
 <h3>建設・工務店は数量×単価の階層構造に対応する</h3>
 <p>工務店やリフォーム業では、大項目(内装工事・外構工事など)の下に中項目・小項目がぶら下がる階層構造の見積が一般的です。AIに階層構造を認識させるには、プロンプト内で階層のルールを明示するか、既存の見積フォーマットをサンプルとして与える設計が有効です。施工事例やお問い合わせフォームと合わせて見積導線を整備したい場合は、当社の<a href="koumuten-homepage.html">工務店向けホームページ制作</a>の考え方も参考になります。</p>
