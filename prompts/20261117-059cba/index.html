@@ -107,8 +107,7 @@
 .pl-prog__bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--ct-accent);border-radius:inherit;transition:width .5s cubic-bezier(.2,.8,.2,1)}
 .pl-sim-end.is-ready{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-1);animation:pl-up .5s ease both}
 @media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}.pl-fix:not([hidden]),.pl-case.is-done .pl-why,.pl-sim-end.is-ready{animation:none}.pl-slot.is-typing::after{animation:none}.pl-prog__bar i{transition:none}}
-</style><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfeyltk7y2");</script>
-</head><body>
+</style></head><body>
 <a class="ct-skip" href="#main">本文へ</a><header class="ct-header"><div class="ct-header__in ct-container"><a href="/prompts/">ハルのプロンプト置き場</a></div></header>
 <main id="main">
 <section class="ct-section"><div class="ct-container ct-stack">
@@ -169,6 +168,27 @@
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261118-ff57ca" data-id="20261118-ff57ca">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261118-ff57ca" aria-expanded="false">自分用に書き込む</button></div>
 </article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">#16 ・ 今日の指示文 ・ 2026-11-18</span></div>
+<h3><a href="/prompts/20261118-308938/">列説明から集計式を生成</a></h3>
+<p class="pl-use">列名と定義が揃った直後に集計手順を確定したい時</p>
+<div class="pl-fill" hidden data-for="p-20261118-308938"></div>
+<pre class="pl-pre" id="p-20261118-308938" data-src="あなたはデータ集計の自動化を支援するアシスタントです。スプレッドシートの列説明から集計数式と手順を生成するのが目的です。
+1. ［ここに各列の名称と意味を記述］
+2. ［ここに集計したい対象や条件を記述］
+3. 入力された列説明を読み込み、必要な集計項目を抽出してください。
+4. 抽出した項目ごとに、集計に使う数式を特定してください。
+5. 数式を適用するための手順を、実行順序通りに整理してください。
+出力は「集計項目」「数式」「実行手順」の3列を持つ表の形式で記述してください。">あなたはデータ集計の自動化を支援するアシスタントです。スプレッドシートの列説明から集計数式と手順を生成するのが目的です。
+1. ［ここに各列の名称と意味を記述］
+2. ［ここに集計したい対象や条件を記述］
+3. 入力された列説明を読み込み、必要な集計項目を抽出してください。
+4. 抽出した項目ごとに、集計に使う数式を特定してください。
+5. 数式を適用するための手順を、実行順序通りに整理してください。
+出力は「集計項目」「数式」「実行手順」の3列を持つ表の形式で記述してください。</pre>
+<button class="pl-more" type="button" data-more="p-20261118-308938" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261118-308938" data-id="20261118-308938">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261118-308938" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#15 ・ 今日の指示文 ・ 2026-11-17</span></div>
 <h3><a href="/prompts/20261117-fcd47a/">依頼文の書き直し</a></h3>
 <p class="pl-use">依頼文が曖昧で回答がずれる時に背景を整理して使う</p>
@@ -210,45 +230,6 @@
 <button class="pl-more" type="button" data-more="p-20261116-791db0" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261116-791db0" data-id="20261116-791db0">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261116-791db0" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">#13 ・ 今日の指示文 ・ 2026-11-14</span></div>
-<h3><a href="/prompts/20261114-a92956/">競合ギャップ分析プロンプト</a></h3>
-<p class="pl-use">競合の文章を貼り、自社未対応の論点を洗い出す際</p>
-<div class="pl-fill" hidden data-for="p-20261114-a92956"></div>
-<pre class="pl-pre" id="p-20261114-a92956" data-src="あなたはマーケティングの専門分析家です。競合の文章と自社の文章を比較し、競合が触れているが自社が未対応の切り口を特定してください。
-
-【競合の文章】
-［ここに競合サイトの説明文を貼り付け］
-
-【自社の文章】
-［ここに自社の説明文を貼り付け］
-
-手順:
-1. 競合の文章から主要な主張を箇条書きで抽出する
-2. 自社の文章から主要な主張を箇条書きで抽出する
-3. 競合にあり自社にない主張をリスト化する
-4. 各未対応項目について、競合がどのような文脈で使っているか一言で補足する
-5. 未対応項目を重要度（高・中・低）で分類する
-
-出力形式: 表（列: 未対応の切り口 / 競合の文脈 / 重要度）">あなたはマーケティングの専門分析家です。競合の文章と自社の文章を比較し、競合が触れているが自社が未対応の切り口を特定してください。
-
-【競合の文章】
-［ここに競合サイトの説明文を貼り付け］
-
-【自社の文章】
-［ここに自社の説明文を貼り付け］
-
-手順:
-1. 競合の文章から主要な主張を箇条書きで抽出する
-2. 自社の文章から主要な主張を箇条書きで抽出する
-3. 競合にあり自社にない主張をリスト化する
-4. 各未対応項目について、競合がどのような文脈で使っているか一言で補足する
-5. 未対応項目を重要度（高・中・低）で分類する
-
-出力形式: 表（列: 未対応の切り口 / 競合の文脈 / 重要度）</pre>
-<button class="pl-more" type="button" data-more="p-20261114-a92956" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261114-a92956" data-id="20261114-a92956">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261114-a92956" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
