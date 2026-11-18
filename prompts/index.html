@@ -107,8 +107,7 @@
 .pl-prog__bar i{display:block;height:100%;width:calc(var(--p)*100%);background:var(--ct-accent);border-radius:inherit;transition:width .5s cubic-bezier(.2,.8,.2,1)}
 .pl-sim-end.is-ready{box-shadow:0 0 0 2px var(--ct-accent),var(--ct-shadow-1);animation:pl-up .5s ease both}
 @media (prefers-reduced-motion:reduce){.pl-hero img{animation:none}.pl-dept h3::after{transition:none}.pl-fix:not([hidden]),.pl-case.is-done .pl-why,.pl-sim-end.is-ready{animation:none}.pl-slot.is-typing::after{animation:none}.pl-prog__bar i{transition:none}}
-</style><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","zfeyltk7y2");</script>
-</head><body>
+</style></head><body>
 <a class="ct-skip" href="#main">本文へ</a>
 <header class="pl-hero"><img src="/prompts/img/hero.jpg" alt="机に向かって働く小さなロボットたちのオフィスの模型" width="1344" height="768" fetchpriority="high">
 <div class="ct-container pl-hero__in">
@@ -118,7 +117,7 @@
 <div class="pl-demo" aria-label="書き込みの例"><span class="pl-demo__k">［ ］に書き込むと、こうなる</span>
 <p class="pl-demo__t">あなたは<span class="pl-slot" data-to="花屋">［業種］</span>の受付係です。<span class="pl-slot" data-to="母の日の予約">［よくある問い合わせ］</span>に、<span class="pl-slot" data-to="60字">［文字数］</span>以内で答えてください。</p>
 <span class="pl-demo__btn" aria-hidden="true">このままコピー</span></div>
-<div class="pl-stats"><div><b class="ct-num" data-count="24">24</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
+<div class="pl-stats"><div><b class="ct-num" data-count="25">25</b><span>公開中の指示文</span></div><div><b class="ct-num" data-count="3">3</b><span>事故クイズ</span></div><div><b class="ct-num">不要</b><span>登録・料金</span></div></div>
 <div class="pl-row"><a class="ct-btn ct-btn--primary" href="#list" data-cta="hero">指示文を見る</a><a class="pl-sub" href="#consult" data-cta="hero_sub">自社に入れたい方はこちら</a></div>
 </div></header>
 <main id="main">
@@ -126,8 +125,27 @@
 <p class="ct-eyebrow" data-ct-reveal>コピーしてそのまま使える</p>
 <h2 class="ct-h2" data-ct-reveal>実際に使っている指示文</h2>
 <ol class="pl-steps" data-ct-reveal><li>「自分用に書き込む」を押して、［ ］の欄を埋める</li><li>「コピー」を押す(書き込んだ内容入りでコピーされます)</li><li>ChatGPTやClaudeの入力欄に貼り付けて送る</li></ol>
-<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="claude_code" aria-pressed="false">Claude Code</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
-<ul class="pl-cards"><li><article class="pl-card" data-k="claude_code" data-ct-reveal>
+<div class="pl-filter" role="group" aria-label="種類で絞り込む"><button type="button" data-k="all" aria-pressed="true">すべて</button><button type="button" data-k="incident" aria-pressed="false">トラブル対応</button><button type="button" data-k="claude_code" aria-pressed="false">Claude Code</button><button type="button" data-k="daily" aria-pressed="false">今日の指示文</button><button type="button" data-k="official_jp" aria-pressed="false">最新情報の読み方</button></div>
+<ul class="pl-cards"><li><article class="pl-card" data-k="incident" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">トラブル対応 ・ 2026-11-19</span></div>
+<h3><a href="/prompts/20261119-efaba3/">AI処理の停止検知</a></h3>
+<p class="pl-use">バッチ処理が想定外に停止していることを早期に発見したい時</p>
+<div class="pl-fill" hidden data-for="p-20261119-efaba3"></div>
+<pre class="pl-pre" id="p-20261119-efaba3" data-src="あなたはバッチ処理の監視設定を手伝うアシスタントです。指定した処理が停止している場合のみアラートを発行するための監視設定案を作成してください。
+1. 監視対象の処理名、実行頻度、正常終了時のログ出力先を記載してください。
+2. 処理が停止したと判定する条件（例：最終更新時刻から30分以上経過、エラーログの存在）を具体的に記載してください。
+3. 停止を検知した際に通知先（メールやチャットツールなど）へ送信するメッセージの内容例を記載してください。
+4. 上記をもとに、監視設定の構成案を箇条書きで出力してください。
+出力は設定案の箇条書きのみとし、前置きや補足文は書かないでください。">あなたはバッチ処理の監視設定を手伝うアシスタントです。指定した処理が停止している場合のみアラートを発行するための監視設定案を作成してください。
+1. 監視対象の処理名、実行頻度、正常終了時のログ出力先を記載してください。
+2. 処理が停止したと判定する条件（例：最終更新時刻から30分以上経過、エラーログの存在）を具体的に記載してください。
+3. 停止を検知した際に通知先（メールやチャットツールなど）へ送信するメッセージの内容例を記載してください。
+4. 上記をもとに、監視設定の構成案を箇条書きで出力してください。
+出力は設定案の箇条書きのみとし、前置きや補足文は書かないでください。</pre>
+<button class="pl-more" type="button" data-more="p-20261119-efaba3" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261119-efaba3" data-id="20261119-efaba3">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261119-efaba3" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="claude_code" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">Claude Code ・ 2026-11-18</span></div>
 <h3><a href="/prompts/20261118-ff57ca/">処理の軽量化検討</a></h3>
 <p class="pl-use">コスト削減のため重い処理の代替手段を探す</p>
