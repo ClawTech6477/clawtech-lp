@@ -542,6 +542,9 @@ label.fl{font-size:14px;}
 .f-col a{font-size:13px;color:var(--ink2);}
 .f-col a:hover{color:var(--ink);}
 :focus-visible{outline:2px solid var(--gold-dk);outline-offset:3px;}
+.why-n,.w3-tag{color:#8A5F00;}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .why-n,:root:not([data-theme="light"]) .w3-tag{color:var(--gold);}}
+:root[data-theme="dark"] .why-n,:root[data-theme="dark"] .w3-tag{color:var(--gold);}
 @media(max-width:768px){
   .why,.work3{grid-template-columns:1fr;gap:16px;}
   .sec{padding:48px 0;}
