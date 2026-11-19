@@ -166,6 +166,39 @@
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261119-efaba3" data-id="20261119-efaba3">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261119-efaba3" aria-expanded="false">自分用に書き込む</button></div>
 </article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
+<div class="pl-row"><span class="pl-tag">#17 ・ 今日の指示文 ・ 2026-11-19</span></div>
+<h3><a href="/prompts/20261119-53ca8c/">監視タスクの死活確認指示文</a></h3>
+<p class="pl-use">定期実行スクリプトの停止を早期発見したい時</p>
+<div class="pl-fill" hidden data-for="p-20261119-53ca8c"></div>
+<pre class="pl-pre" id="p-20261119-53ca8c" data-src="あなたはSREアシスタントです。定期実行処理の死活監視手順を作成します。以下に情報を記入してください。
+［監視対象タスク名］
+［エラーログの保存先パス］
+
+手順：
+1. 直近24時間のログから、エラーメッセージやタイムアウトを検出する。
+2. 正常終了した最終実行時刻を特定し、期待される実行間隔と比較する。
+3. 遅延や未実行の場合、プロセスが起動しているかを確認する。
+4. 異常があれば、影響範囲と復旧の優先度を評価する。
+5. 結果を管理者に通知する手段を定義する。
+
+出力形式：
+箇条書きで「正常/異常」の判定、検出されたエラー内容、推奨アクションを3点で記述。">あなたはSREアシスタントです。定期実行処理の死活監視手順を作成します。以下に情報を記入してください。
+［監視対象タスク名］
+［エラーログの保存先パス］
+
+手順：
+1. 直近24時間のログから、エラーメッセージやタイムアウトを検出する。
+2. 正常終了した最終実行時刻を特定し、期待される実行間隔と比較する。
+3. 遅延や未実行の場合、プロセスが起動しているかを確認する。
+4. 異常があれば、影響範囲と復旧の優先度を評価する。
+5. 結果を管理者に通知する手段を定義する。
+
+出力形式：
+箇条書きで「正常/異常」の判定、検出されたエラー内容、推奨アクションを3点で記述。</pre>
+<button class="pl-more" type="button" data-more="p-20261119-53ca8c" aria-expanded="false">全文を見る</button>
+<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261119-53ca8c" data-id="20261119-53ca8c">コピー</button>
+<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261119-53ca8c" aria-expanded="false">自分用に書き込む</button></div>
+</article></li><li><article class="pl-card" data-k="daily" data-ct-reveal>
 <div class="pl-row"><span class="pl-tag">#16 ・ 今日の指示文 ・ 2026-11-18</span></div>
 <h3><a href="/prompts/20261118-308938/">列説明から集計式を生成</a></h3>
 <p class="pl-use">列名と定義が揃った直後に集計手順を確定したい時</p>
@@ -207,27 +240,6 @@
 <button class="pl-more" type="button" data-more="p-20261117-fcd47a" aria-expanded="false">全文を見る</button>
 <div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261117-fcd47a" data-id="20261117-fcd47a">コピー</button>
 <button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261117-fcd47a" aria-expanded="false">自分用に書き込む</button></div>
-</article></li><li><article class="pl-card" data-k="claude_code" data-ct-reveal>
-<div class="pl-row"><span class="pl-tag">Claude Code ・ 2026-11-17</span></div>
-<h3><a href="/prompts/20261117-059cba/">夜間バッチ監視チェック</a></h3>
-<p class="pl-use">夜間バッチの連鎖停止に気づく遅れを防ぐ</p>
-<div class="pl-fill" hidden data-for="p-20261117-059cba"></div>
-<pre class="pl-pre" id="p-20261117-059cba" data-src="あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
-1. ［ここに最近のバッチ実行ログを貼る］
-2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
-3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
-4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
-5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
-出力は表のみとし、前置きや補足文は書かないでください。">あなたは運用ログの分析を手伝うアシスタントです。夜間バッチの連鎖停止に気づく遅れを防ぐのが目的です。
-1. ［ここに最近のバッチ実行ログを貼る］
-2. ［ここに監視対象のバッチ名や想定実行時刻を書く］
-3. ログから、予定時刻から遅延または失敗しているタスクを列挙してください。
-4. 失敗が連鎖している可能性のあるタスクの依存関係を箇条書きで整理してください。
-5. 「遅延・失敗タスク」と「連鎖リスク」を2列のMarkdown表にまとめてください。
-出力は表のみとし、前置きや補足文は書かないでください。</pre>
-<button class="pl-more" type="button" data-more="p-20261117-059cba" aria-expanded="false">全文を見る</button>
-<div class="pl-row"><button class="ct-btn ct-btn--primary" type="button" data-copy="p-20261117-059cba" data-id="20261117-059cba">コピー</button>
-<button class="ct-btn ct-btn--ghost" type="button" data-fillopen="p-20261117-059cba" aria-expanded="false">自分用に書き込む</button></div>
 </article></li></ul>
 <a class="ct-btn ct-btn--ghost" href="/prompts/">一覧を見る</a></div></section>
 <section class="ct-section" id="consult"><div class="ct-container ct-stack">
