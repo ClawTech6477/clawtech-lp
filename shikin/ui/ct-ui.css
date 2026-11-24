@@ -255,6 +255,11 @@ img, svg, video, canvas { display: block; max-width: 100%; }
 .ct-callout { background: var(--ct-accent-soft); border-radius: var(--ct-r-md); padding: var(--ct-s-4) var(--ct-s-5); font-size: var(--ct-fs-md); }
 .ct-callout b { color: var(--ct-accent); display: block; margin-bottom: 4px; }
 
+/* 導入直後の1行診断リンク(A5-2: 入口が本文の最後まで無かった対策) */
+.ct-inline-cta { background: var(--ct-accent-soft); border-radius: var(--ct-r-md); padding: var(--ct-s-3) var(--ct-s-5); font-size: var(--ct-fs-sm); }
+.ct-inline-cta a { color: var(--ct-accent); font-weight: 700; text-decoration: none; }
+.ct-inline-cta a:hover { text-decoration: underline; }
+
 /* 相談への導線(本文の後に1か所だけ) */
 .ct-cta-card { display: grid; gap: var(--ct-s-4); }
 .ct-body .ct-cta-card > * { margin: 0; }
