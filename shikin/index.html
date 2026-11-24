@@ -508,6 +508,7 @@ const EFFECTIVE_EPC = {
   beetrading: 848,  // s00000017625001 実測 EPC1181.5x確定率71.8%
   factorplan: 460,  // s00000023181001 実測 確定率100%
   labol:      570,  // s00000018733008 実測 含意CVR25%のため上限20%で丸め(3000x0.2x0.95)
+  paytner:    488,  // s00000021957001 実測 EPC570.93x確定率85.39%(2026-11-24 年収診断から移動。請求書の先払いなのでこちらが筋)
 };
 
 const AFFILIATE_URLS = {
@@ -516,6 +517,7 @@ const AFFILIATE_URLS = {
   beetrading: "#beetrading", // s00000017625001 ビートレーディング(新規問い合わせ¥11,000/実効EPC848円)
   factorplan: "https://px.a8.net/svt/ejp?a8mat=4B8B4P+DSJLM2+4YV6+64C3L", // s00000023181001 ファクタープラン(確定率100%/実効EPC460円)
   labol:      "https://px.a8.net/svt/ejp?a8mat=4BAB1A+37I6GA+40JM+1BMW42",      // s00000018733008 ラボル(新規会員登録¥3,000/個人事業主・少額特化)
+  paytner:    "https://px.a8.net/svt/ejp?a8mat=4BGS12+3XP7IY+4PF6+609HU",      // s00000021957001 ペイトナー(フリーランス・個人事業主向けの請求書先払い)
 };
 
 // A8インプレッションピクセル。nenshuの反省(ページ最下部に無条件設置→imp=全PVで
@@ -527,6 +529,7 @@ const IMP_PIXELS = {
   beetrading: "",
   factorplan: "https://www17.a8.net/0.gif?a8mat=4B8B4P+DSJLM2+4YV6+64C3L",
   labol:      "https://www17.a8.net/0.gif?a8mat=4BAB1A+37I6GA+40JM+1BMW42",
+  paytner:    "",
 };
 
 // ===== GA4計測(デモ時は送信しない=計測汚染防止) =====
@@ -544,6 +547,8 @@ const SITES = [
    facts:["3社間","低コスト型"]},
   {key:"labol",      name:"ラボル",            branches:["B"],     rs:"1万円から買取可の少額特化。フリーランス・個人事業主向けで24時間365日入金対応",
    facts:["1万円から","個人事業主向け","24時間入金"]},
+  {key:"paytner",    name:"ペイトナー",         branches:["B"],     rs:"フリーランス・個人事業主向けの請求書先払い。手数料は一律10%、1万円から。面談なしでスマホから申請でき、取引先に知られない",
+   facts:["手数料一律10%","1万円から","審査後 最短即日"]},
 ];
 
 // ===== 分岐定義 =====
