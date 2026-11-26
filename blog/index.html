@@ -1560,7 +1560,7 @@ footer a:hover{color:var(--white);}
 
 
     <a href="small-business-membership-app-price.html" class="blog-card" data-cat="cat-other">
-    <img class="card-img" src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&amp;q=70&amp;fm=webp" alt="個人店向け会員証アプリ開発費用相場【】" width="400" height="180" loading="lazy">
+    <img class="card-img" src="https://clawtechjp.com/assets/blog-img/ai/small-business-membership-app-price-hero-400.webp" alt="個人店向け会員証アプリ開発費用相場【】" width="400" height="180" loading="lazy">
     <div class="card-body">
       <span class="cat-badge cat-other">アプリ開発</span>
       <div class="card-title">個人店向け会員証アプリ開発費用相場【】</div>
@@ -2070,43 +2070,49 @@ if (window.gsap && window.ScrollTrigger && !window.matchMedia('(prefers-reduced-
   }
 }
 
+// 12件ごとに区切る処理(フィルタと連動: カテゴリ切替時はそのカテゴリの先頭12件から出し直す)
+const allCards = Array.from(document.querySelectorAll('.blog-card'));
+const pageSize = 12;
+let currentPage = 1;
+let currentFilter = 'all';
+const container = document.querySelector('.blog-container');
+let loadMoreBtn = null;
+
+function applyPaging() {
+  const matched = allCards.filter(card => currentFilter === 'all' || card.dataset.cat === currentFilter);
+  const visibleCount = pageSize * currentPage;
+  allCards.forEach(card => { card.style.display = 'none'; });
+  matched.forEach((card, i) => {
+    if (i < visibleCount) {
+      card.style.display = 'flex';
+      if (window.gsap) gsap.set(card, {opacity: 1, y: 0});
+    }
+  });
+  if (!container) return;
+  if (matched.length > visibleCount) {
+    if (!loadMoreBtn) {
+      loadMoreBtn = document.createElement('button');
+      loadMoreBtn.textContent = 'もっと見る';
+      loadMoreBtn.style.cssText = 'display:block;margin:40px auto 0;padding:12px 32px;background:var(--kachi);color:var(--white);border:none;border-radius:3px;font-size:15px;font-weight:700;cursor:pointer;';
+      loadMoreBtn.onclick = () => { currentPage++; applyPaging(); };
+    }
+    container.appendChild(loadMoreBtn);
+    loadMoreBtn.style.display = 'block';
+  } else if (loadMoreBtn) {
+    loadMoreBtn.style.display = 'none';
+  }
+}
+
 function filterPosts(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
   btn.classList.add('active');
   btn.setAttribute('aria-pressed','true');
-  document.querySelectorAll('.blog-card').forEach(card => {
-    const show = cat === 'all' || card.dataset.cat === cat;
-    card.style.display = show ? 'flex' : 'none';
-    if (show && window.gsap) gsap.set(card, {opacity: 1, y: 0});
-  });
+  currentFilter = cat;
+  currentPage = 1;
+  applyPaging();
 }
 
-// 12件ごとに区切る処理
-const allCards = Array.from(document.querySelectorAll('.blog-card'));
-const pageSize = 12;
-let currentPage = 1;
-const container = document.querySelector('.blog-container');
-if (container && allCards.length > pageSize) {
-  // 12件目以降を非表示にする
-  allCards.slice(pageSize).forEach(card => card.style.display = 'none');
-  
-  // 「もっと見る」ボタンを追加
-  const loadMoreBtn = document.createElement('button');
-  loadMoreBtn.textContent = 'もっと見る';
-  loadMoreBtn.style.cssText = 'display:block;margin:40px auto 0;padding:12px 32px;background:var(--kachi);color:var(--white);border:none;border-radius:3px;font-size:15px;font-weight:700;cursor:pointer;';
-  loadMoreBtn.onclick = () => {
-    const nextBatch = allCards.slice(pageSize * currentPage, pageSize * (currentPage + 1));
-    nextBatch.forEach(card => {
-      card.style.display = 'flex';
-      if (window.gsap) gsap.set(card, {opacity: 1, y: 0});
-    });
-    currentPage++;
-    if (currentPage * pageSize >= allCards.length) {
-      loadMoreBtn.remove();
-    }
-  };
-  container.appendChild(loadMoreBtn);
-}
+applyPaging();
 </script>
 </body>
 </html>
