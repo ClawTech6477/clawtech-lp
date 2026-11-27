@@ -424,6 +424,44 @@ document.addEventListener("DOMContentLoaded",function(){
     </p>
   </section>
 
+  <style>
+  .vs{--vs-acc:var(--ai);margin-top:46px;padding:28px 22px 0;border-top:2px solid var(--line);max-width:640px;margin-left:auto;margin-right:auto}
+  .vs .eyebrow{font-family:var(--f-dot);font-size:12px;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:10px}
+  .vs h2{position:relative;font-family:var(--f-min);font-size:18px;font-weight:800;letter-spacing:.04em;padding-left:12px;margin-bottom:8px}
+  .vs h2::before{content:"";position:absolute;left:0;top:.16em;bottom:.16em;width:4px;background:var(--vs-acc)}
+  .vs__lede{font-size:14px;color:var(--ink-soft);margin-bottom:14px}
+  .vs__tbl{border:1.5px solid var(--line);border-radius:14px;overflow:hidden;background:var(--paper-2)}
+  .vs__head{display:grid;grid-template-columns:1fr 1fr}
+  .vs__head span{padding:10px 13px;font-size:12px;font-weight:800;font-family:var(--f-dot);letter-spacing:.04em}
+  .vs__u{color:var(--vs-acc)}.vs__t{color:var(--ink-soft)}
+  .vs__row{display:grid;grid-template-columns:1fr 1fr;border-top:1.5px solid var(--line)}
+  .vs__rh{grid-column:1/3;background:var(--paper-deep);padding:7px 13px;font-size:11.5px;font-weight:800;color:var(--ink-soft);font-family:var(--f-dot);letter-spacing:.03em}
+  .vs__c{padding:12px 13px;font-size:13.5px;border-top:1.5px solid var(--line)}
+  .vs__c--u{background:var(--paper-2)}.vs__c--u{background:color-mix(in srgb,var(--vs-acc) 7%,var(--paper-2))}
+  .vs__c b{font-weight:800;display:block;line-height:1.5;font-family:var(--f-min)}
+  .vs__c small{color:var(--ink-soft);font-size:11px;display:block;margin-top:3px}
+  .vs__c:not(.vs__c--u) b{color:var(--ink-soft);font-weight:700}
+  .vs__note{font-size:11px;color:var(--ink-soft);margin-top:10px}
+  </style>
+  <section class="vs" aria-label="他の資金調達診断との違い">
+    <p class="eyebrow">他との違い</p>
+    <h2>「よくある資金調達診断」との違い</h2>
+    <p class="vs__lede">同じ“無料診断”でも、連絡先の要否と中立性が違います。</p>
+    <div class="vs__tbl">
+      <div class="vs__head"><span class="vs__u">この診断</span><span class="vs__t">よくある資金調達診断</span></div>
+      <div class="vs__row"><div class="vs__rh">連絡先</div>
+        <div class="vs__c vs__c--u"><b>会社名・電話なしで30秒</b><small>営業電話は来ません</small></div>
+        <div class="vs__c"><b>会社名・電話・メールが必要</b></div></div>
+      <div class="vs__row"><div class="vs__rh">出てくるもの</div>
+        <div class="vs__c vs__c--u"><b>公庫/銀行/ローン/ファクタリング＋“調達しない改善策”を中立に</b></div>
+        <div class="vs__c"><b>自社の商品(ファクタリング等)へ誘導</b></div></div>
+      <div class="vs__row"><div class="vs__rh">このあと</div>
+        <div class="vs__c vs__c--u"><b>見るだけでOK</b></div>
+        <div class="vs__c"><b>そのまま申し込み・営業連絡</b></div></div>
+    </div>
+    <p class="vs__note">比較は一般的な無料の資金調達・資金繰り診断サービスの公開情報にもとづく一般論で、特定の社名を指すものではありません。</p>
+  </section>
+
   <!-- ===== 解説(常時表示。判定根拠の開示 + 検索・空状態の受け皿) ===== -->
   <section class="doc" aria-label="資金調達手段の考え方">
     <h2 class="doc-h2" id="doc-order">資金調達には「検討する順番」がある</h2>
